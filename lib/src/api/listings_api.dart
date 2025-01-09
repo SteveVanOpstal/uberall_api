@@ -12,6 +12,7 @@ import 'package:openapi/src/model/directory_page_response_wrapper.dart';
 import 'package:openapi/src/model/google_venue_details_wrapper.dart';
 import 'package:openapi/src/model/listings_details_response_wrapper.dart';
 import 'package:openapi/src/model/success_response_wrapper.dart';
+import 'package:openapi/src/model/response.dart' as openApi;
 
 class ListingsApi {
   final Dio _dio;
@@ -126,7 +127,7 @@ class ListingsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Response>> deleteLocationsIdGooglePage({
+  Future<Response<openApi.Response>> deleteLocationsIdGooglePage({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -172,7 +173,7 @@ class ListingsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Response? _responseData;
+    openApi.Response? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -180,8 +181,8 @@ class ListingsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(Response),
-            ) as Response;
+              specifiedType: const FullType(openApi.Response),
+            ) as openApi.Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -192,7 +193,7 @@ class ListingsApi {
       );
     }
 
-    return Response<Response>(
+    return Response<openApi.Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -587,7 +588,7 @@ class ListingsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Response>> patchListingsId({
+  Future<Response<openApi.Response>> patchListingsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -633,7 +634,7 @@ class ListingsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Response? _responseData;
+    openApi.Response? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -641,8 +642,8 @@ class ListingsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(Response),
-            ) as Response;
+              specifiedType: const FullType(openApi.Response),
+            ) as openApi.Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -653,7 +654,7 @@ class ListingsApi {
       );
     }
 
-    return Response<Response>(
+    return Response<openApi.Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -786,7 +787,7 @@ class ListingsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Response>> putListingsIdFlag({
+  Future<Response<openApi.Response>> putListingsIdFlag({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -832,7 +833,7 @@ class ListingsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Response? _responseData;
+    openApi.Response? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -840,8 +841,8 @@ class ListingsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(Response),
-            ) as Response;
+              specifiedType: const FullType(openApi.Response),
+            ) as openApi.Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -852,7 +853,7 @@ class ListingsApi {
       );
     }
 
-    return Response<Response>(
+    return Response<openApi.Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

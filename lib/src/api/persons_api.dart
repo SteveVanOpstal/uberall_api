@@ -8,7 +8,6 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_value/json_object.dart';
 import 'package:openapi/src/api_util.dart';
 import 'package:openapi/src/model/person.dart';
 import 'package:openapi/src/model/person_response_wrapper.dart';
@@ -110,7 +109,7 @@ class PersonsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Response>> deletePersonsId({
+  Future<Response<openApi.Response>> deletePersonsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -156,7 +155,7 @@ class PersonsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Response? _responseData;
+    openApi.Response? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -164,8 +163,8 @@ class PersonsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(Response),
-            ) as Response;
+              specifiedType: const FullType(openApi.Response),
+            ) as openApi.Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -176,7 +175,7 @@ class PersonsApi {
       );
     }
 
-    return Response<Response>(
+    return Response<openApi.Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

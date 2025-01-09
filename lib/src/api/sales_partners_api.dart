@@ -8,13 +8,12 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_value/json_object.dart';
 import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/response.dart' as openApi;
 import 'package:openapi/src/model/sales_partner.dart';
 import 'package:openapi/src/model/sales_partner_list_response_wrapper.dart';
 import 'package:openapi/src/model/sales_partner_wrapper.dart';
 import 'package:openapi/src/model/subscribable_event_types_wrapper.dart';
+import 'package:openapi/src/model/response.dart' as openApi;
 
 class SalesPartnersApi {
   final Dio _dio;
@@ -576,7 +575,8 @@ class SalesPartnersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Response>> postSalesPartnersIdUserAccountsAccountIdAppleMaps({
+  Future<Response<openApi.Response>>
+      postSalesPartnersIdUserAccountsAccountIdAppleMaps({
     required String id,
     required String accountId,
     CancelToken? cancelToken,
@@ -629,7 +629,7 @@ class SalesPartnersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Response? _responseData;
+    openApi.Response? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -637,8 +637,8 @@ class SalesPartnersApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(Response),
-            ) as Response;
+              specifiedType: const FullType(openApi.Response),
+            ) as openApi.Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -649,7 +649,7 @@ class SalesPartnersApi {
       );
     }
 
-    return Response<Response>(
+    return Response<openApi.Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

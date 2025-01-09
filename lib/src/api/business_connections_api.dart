@@ -4,7 +4,6 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
@@ -156,7 +155,7 @@ class BusinessConnectionsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Response>>
+  Future<Response<openApi.Response>>
       getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdList({
     required String directoryType,
     required String salesPartnerId,
@@ -230,7 +229,7 @@ class BusinessConnectionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Response? _responseData;
+    openApi.Response? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -238,8 +237,8 @@ class BusinessConnectionsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(Response),
-            ) as Response;
+              specifiedType: const FullType(openApi.Response),
+            ) as openApi.Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -250,7 +249,7 @@ class BusinessConnectionsApi {
       );
     }
 
-    return Response<Response>(
+    return Response<openApi.Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -394,7 +393,7 @@ class BusinessConnectionsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Response>>
+  Future<Response<openApi.Response>>
       postBusinessConnectionsDirectoryTypeConnectBusinessId({
     required String directoryType,
     required String businessId,
@@ -472,7 +471,7 @@ class BusinessConnectionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Response? _responseData;
+    openApi.Response? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -480,8 +479,8 @@ class BusinessConnectionsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(Response),
-            ) as Response;
+              specifiedType: const FullType(openApi.Response),
+            ) as openApi.Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -492,7 +491,7 @@ class BusinessConnectionsApi {
       );
     }
 
-    return Response<Response>(
+    return Response<openApi.Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -520,7 +519,7 @@ class BusinessConnectionsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Response>>
+  Future<Response<openApi.Response>>
       putBusinessConnectionsDirectoryTypeDisconnectBusinessId({
     required String directoryType,
     required String businessId,
@@ -599,7 +598,7 @@ class BusinessConnectionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Response? _responseData;
+    openApi.Response? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -607,8 +606,8 @@ class BusinessConnectionsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(Response),
-            ) as Response;
+              specifiedType: const FullType(openApi.Response),
+            ) as openApi.Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -619,7 +618,7 @@ class BusinessConnectionsApi {
       );
     }
 
-    return Response<Response>(
+    return Response<openApi.Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
