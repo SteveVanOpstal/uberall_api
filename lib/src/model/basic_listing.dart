@@ -3707,7 +3707,7 @@ class BasicListingCategoriesStatusEnum extends EnumClass {
       _$basicListingCategoriesStatusEnum_PRESENT2;
 
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
+  @BuiltValueEnumConst(wireName: r'MISSING3')
   static const BasicListingCategoriesStatusEnum MISSING3 =
       _$basicListingCategoriesStatusEnum_MISSING3;
 
@@ -7224,32 +7224,32 @@ class BasicListingClaimStatusEnum extends EnumClass {
       _$basicListingClaimStatusEnum_UNKNOWN;
 
   /// Claim status of the listing. One of CLAIMABLE, NOT_CLAIMABLE, CLAIMED_BY_US, CLAIMED_BY_OTHERS, CLAIMING_IN_PROGRESS, UNKNOWN
-  @BuiltValueEnumConst(wireName: r'CLAIMABLE')
+  @BuiltValueEnumConst(wireName: r'CLAIMABLE2')
   static const BasicListingClaimStatusEnum CLAIMABLE2 =
       _$basicListingClaimStatusEnum_CLAIMABLE2;
 
   /// Claim status of the listing. One of CLAIMABLE, NOT_CLAIMABLE, CLAIMED_BY_US, CLAIMED_BY_OTHERS, CLAIMING_IN_PROGRESS, UNKNOWN
-  @BuiltValueEnumConst(wireName: r'CLAIMED_BY_US')
+  @BuiltValueEnumConst(wireName: r'CLAIMED_BY_US2')
   static const BasicListingClaimStatusEnum CLAIMED_BY_US2 =
       _$basicListingClaimStatusEnum_CLAIMED_BY_US2;
 
   /// Claim status of the listing. One of CLAIMABLE, NOT_CLAIMABLE, CLAIMED_BY_US, CLAIMED_BY_OTHERS, CLAIMING_IN_PROGRESS, UNKNOWN
-  @BuiltValueEnumConst(wireName: r'CLAIMED_BY_OTHERS')
+  @BuiltValueEnumConst(wireName: r'CLAIMED_BY_OTHERS2')
   static const BasicListingClaimStatusEnum CLAIMED_BY_OTHERS2 =
       _$basicListingClaimStatusEnum_CLAIMED_BY_OTHERS2;
 
   /// Claim status of the listing. One of CLAIMABLE, NOT_CLAIMABLE, CLAIMED_BY_US, CLAIMED_BY_OTHERS, CLAIMING_IN_PROGRESS, UNKNOWN
-  @BuiltValueEnumConst(wireName: r'CLAIMING_IN_PROGRESS')
+  @BuiltValueEnumConst(wireName: r'CLAIMING_IN_PROGRESS2')
   static const BasicListingClaimStatusEnum CLAIMING_IN_PROGRESS2 =
       _$basicListingClaimStatusEnum_CLAIMING_IN_PROGRESS2;
 
   /// Claim status of the listing. One of CLAIMABLE, NOT_CLAIMABLE, CLAIMED_BY_US, CLAIMED_BY_OTHERS, CLAIMING_IN_PROGRESS, UNKNOWN
-  @BuiltValueEnumConst(wireName: r'NOT_CLAIMABLE')
+  @BuiltValueEnumConst(wireName: r'NOT_CLAIMABLE2')
   static const BasicListingClaimStatusEnum NOT_CLAIMABLE2 =
       _$basicListingClaimStatusEnum_NOT_CLAIMABLE2;
 
   /// Claim status of the listing. One of CLAIMABLE, NOT_CLAIMABLE, CLAIMED_BY_US, CLAIMED_BY_OTHERS, CLAIMING_IN_PROGRESS, UNKNOWN
-  @BuiltValueEnumConst(wireName: r'UNKNOWN')
+  @BuiltValueEnumConst(wireName: r'UNKNOWN2')
   static const BasicListingClaimStatusEnum UNKNOWN2 =
       _$basicListingClaimStatusEnum_UNKNOWN2;
 
