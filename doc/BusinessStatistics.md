@@ -1,8 +1,8 @@
-# openapi.model.BusinessStatistics
+# uberall_api.model.BusinessStatistics
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

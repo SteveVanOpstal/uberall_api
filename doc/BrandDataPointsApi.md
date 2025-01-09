@@ -1,8 +1,8 @@
-# openapi.api.BrandDataPointsApi
+# uberall_api.api.BrandDataPointsApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -26,9 +26,9 @@ Unlike a brand data point
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 
-final api = Openapi().getBrandDataPointsApi();
+final api = UberallApi().getBrandDataPointsApi();
 final String id = id_example; // String | The ID of the Brand Data Point
 
 try {
@@ -69,7 +69,7 @@ Deletes a reply to a brand data point that needs approval.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -79,7 +79,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getBrandDataPointsApi();
+final api = UberallApi().getBrandDataPointsApi();
 final String id = id_example; // String | The id of the root brand data point
 final String replyId = replyId_example; // String | The id  of the replying brand data point
 
@@ -122,7 +122,7 @@ Reply with a text to a Brand Data Point, e.g. a review
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -132,7 +132,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getBrandDataPointsApi();
+final api = UberallApi().getBrandDataPointsApi();
 final String id = id_example; // String | The uberall unique ID of the brand data point you want to reply to
 final String reply = reply_example; // String | The text you want to reply, on most directories this will be published and can be read by the author of the original data point
 
@@ -175,7 +175,7 @@ Like a brand data point
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -185,7 +185,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getBrandDataPointsApi();
+final api = UberallApi().getBrandDataPointsApi();
 final String id = id_example; // String | The ID of the Brand Data Point
 
 try {
@@ -226,7 +226,7 @@ Approves a reply to a brand data point.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -236,7 +236,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getBrandDataPointsApi();
+final api = UberallApi().getBrandDataPointsApi();
 final String id = id_example; // String | The id of the root brand data point
 final String replyId = replyId_example; // String | The id  of the replying brand data point
 
@@ -279,7 +279,7 @@ Editing an existing reply that needs approval to a Brand Data Point
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -289,7 +289,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getBrandDataPointsApi();
+final api = UberallApi().getBrandDataPointsApi();
 final String id = id_example; // String | The id of the root brand data point to approve
 final String replyId = replyId_example; // String | The id of the replying brand data point to approve
 final String replyText = replyText_example; // String | The edited text of the reply

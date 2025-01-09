@@ -1,8 +1,8 @@
-# openapi.model.ProfileCompleteness
+# uberall_api.model.ProfileCompleteness
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

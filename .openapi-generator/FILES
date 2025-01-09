@@ -238,7 +238,6 @@ doc/ProfileCompleteness.md
 doc/ProfileCompletenessWrapper.md
 doc/ProvincesResponse.md
 doc/ProvincesResponseWrapper.md
-doc/Response.md
 doc/ResponseBusiness.md
 doc/ResponseLocation.md
 doc/ResponseTemplate.md
@@ -316,6 +315,7 @@ doc/TimeSeriesSegment.md
 doc/TrackingEventsResponseObject.md
 doc/TrackingEventsResponseWrapper.md
 doc/UTM.md
+doc/UberallResponse.md
 doc/UnsubscribeActionLinkObject.md
 doc/UnsubscribeActionLinkWrapper.md
 doc/UpdateResponseObject.md
@@ -343,7 +343,6 @@ doc/WebhookWrapper.md
 doc/WebhooksApi.md
 doc/WhitelabelInformation.md
 doc/WhitelabelInformationWrapper.md
-lib/openapi.dart
 lib/src/api.dart
 lib/src/api/auto_response_api.dart
 lib/src/api/batch_operation_api.dart
@@ -601,7 +600,6 @@ lib/src/model/profile_completeness.dart
 lib/src/model/profile_completeness_wrapper.dart
 lib/src/model/provinces_response.dart
 lib/src/model/provinces_response_wrapper.dart
-lib/src/model/response.dart
 lib/src/model/response_business.dart
 lib/src/model/response_location.dart
 lib/src/model/response_template.dart
@@ -670,6 +668,7 @@ lib/src/model/suppressed_duplicates_wrapper.dart
 lib/src/model/time_series_segment.dart
 lib/src/model/tracking_events_response_object.dart
 lib/src/model/tracking_events_response_wrapper.dart
+lib/src/model/uberall_response.dart
 lib/src/model/unsubscribe_action_link_object.dart
 lib/src/model/unsubscribe_action_link_wrapper.dart
 lib/src/model/update_response_object.dart
@@ -697,3 +696,5 @@ lib/src/model/webhook_wrapper.dart
 lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
+lib/uberall_api.dart
+test/uberall_response_test.dart

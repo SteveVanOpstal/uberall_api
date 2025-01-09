@@ -7,10 +7,10 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/post_social_templates_request.dart';
-import 'package:openapi/src/model/social_post_template.dart';
-import 'package:openapi/src/model/social_post_template_response_wrapper.dart';
+import 'package:uberall_api/src/api_util.dart';
+import 'package:uberall_api/src/model/post_social_templates_request.dart';
+import 'package:uberall_api/src/model/social_post_template.dart';
+import 'package:uberall_api/src/model/social_post_template_response_wrapper.dart';
 
 class DigitalAssetManagementApi {
   final Dio _dio;

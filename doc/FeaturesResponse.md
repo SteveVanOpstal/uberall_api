@@ -1,8 +1,8 @@
-# openapi.model.FeaturesResponse
+# uberall_api.model.FeaturesResponse
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

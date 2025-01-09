@@ -1,8 +1,8 @@
-# openapi.model.DirectoriesDetailsCountriesResponseWrapper
+# uberall_api.model.DirectoriesDetailsCountriesResponseWrapper
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

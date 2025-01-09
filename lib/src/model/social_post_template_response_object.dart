@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:openapi/src/model/social_post_template.dart';
+import 'package:uberall_api/src/model/social_post_template.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

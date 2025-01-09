@@ -1,8 +1,8 @@
-# openapi.model.SocialPostsResponseWrapper
+# uberall_api.model.SocialPostsResponseWrapper
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

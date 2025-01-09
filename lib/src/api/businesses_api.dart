@@ -9,13 +9,14 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
-import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/brand_pages_response_wrapper.dart';
-import 'package:openapi/src/model/business.dart';
-import 'package:openapi/src/model/business_page_response_wrapper.dart';
-import 'package:openapi/src/model/business_response_wrapper.dart';
-import 'package:openapi/src/model/business_statistics_wrapper.dart';
-import 'package:openapi/src/model/success_response_wrapper.dart';
+import 'package:built_value/json_object.dart';
+import 'package:uberall_api/src/api_util.dart';
+import 'package:uberall_api/src/model/brand_pages_response_wrapper.dart';
+import 'package:uberall_api/src/model/business.dart';
+import 'package:uberall_api/src/model/business_page_response_wrapper.dart';
+import 'package:uberall_api/src/model/business_response_wrapper.dart';
+import 'package:uberall_api/src/model/business_statistics_wrapper.dart';
+import 'package:uberall_api/src/model/success_response_wrapper.dart';
 
 class BusinessesApi {
   final Dio _dio;

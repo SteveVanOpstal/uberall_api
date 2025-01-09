@@ -7,10 +7,10 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/product_plan.dart';
-import 'package:openapi/src/model/product_plan_list_response_wrapper.dart';
-import 'package:openapi/src/model/product_plan_response_wrapper.dart';
+import 'package:uberall_api/src/api_util.dart';
+import 'package:uberall_api/src/model/product_plan.dart';
+import 'package:uberall_api/src/model/product_plan_list_response_wrapper.dart';
+import 'package:uberall_api/src/model/product_plan_response_wrapper.dart';
 
 class ProductPlansApi {
   final Dio _dio;

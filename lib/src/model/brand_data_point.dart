@@ -12,6 +12,10 @@ part 'brand_data_point.g.dart';
 /// Brand Data Point Model
 ///
 /// Properties:
+/// * [type] - Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+/// * [data] - Content of the datapoint (text of the review, url of the photo, count of checkins...)
+/// * [liked] - Whether this datapoint has been liked or not
+/// * [actionDate] - The date when the review/photo/... was published in the online directory
 /// * [author] - Username of the datapoints author
 /// * [authorImage] - Author profile picture url
 /// * [countComments] - Number of comments to this item.
@@ -23,14 +27,27 @@ part 'brand_data_point.g.dart';
 /// * [rating] - Rating given by the user. Float value, max: 5.
 /// * [repliedByOwner] - True if the owner of the business has replied
 /// * [secondaryData] - Additional info about the datapoint (eg. text content on instagram pictures)
-/// * [liked] - Whether this datapoint has been liked or not
-/// * [data] - Content of the datapoint (text of the review, url of the photo, count of checkins...)
 /// * [threadActionDate] - The date of the last interaction in that thread. When a review receives a new comment, the parent will update.
-/// * [type] - Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-/// * [actionDate] - The date when the review/photo/... was published in the online directory
 @BuiltValue()
 abstract class BrandDataPoint
     implements Built<BrandDataPoint, BrandDataPointBuilder> {
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueField(wireName: r'type')
+  BrandDataPointTypeEnum? get type;
+  // enum typeEnum {  REVIEW,  PHOTO,  CHECKIN,  CONVERSATION,  COMMENT,  QUESTION,  POST,  IMAGE,  VIDEO,  CAROUSEL_ALBUM,  LINK,  EXPANDEDREVIEW,  };
+
+  /// Content of the datapoint (text of the review, url of the photo, count of checkins...)
+  @BuiltValueField(wireName: r'data')
+  String? get data;
+
+  /// Whether this datapoint has been liked or not
+  @BuiltValueField(wireName: r'liked')
+  bool? get liked;
+
+  /// The date when the review/photo/... was published in the online directory
+  @BuiltValueField(wireName: r'actionDate')
+  DateTime? get actionDate;
+
   /// Username of the datapoints author
   @BuiltValueField(wireName: r'author')
   String? get author;
@@ -76,26 +93,9 @@ abstract class BrandDataPoint
   @BuiltValueField(wireName: r'secondaryData')
   String? get secondaryData;
 
-  /// Whether this datapoint has been liked or not
-  @BuiltValueField(wireName: r'liked')
-  bool? get liked;
-
-  /// Content of the datapoint (text of the review, url of the photo, count of checkins...)
-  @BuiltValueField(wireName: r'data')
-  String? get data;
-
   /// The date of the last interaction in that thread. When a review receives a new comment, the parent will update.
   @BuiltValueField(wireName: r'threadActionDate')
   DateTime? get threadActionDate;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueField(wireName: r'type')
-  BrandDataPointTypeEnum? get type;
-  // enum typeEnum {  REVIEW,  PHOTO,  CHECKIN,  CONVERSATION,  COMMENT,  QUESTION,  POST,  IMAGE,  VIDEO,  CAROUSEL_ALBUM,  LINK,  EXPANDEDREVIEW,  };
-
-  /// The date when the review/photo/... was published in the online directory
-  @BuiltValueField(wireName: r'actionDate')
-  DateTime? get actionDate;
 
   BrandDataPoint._();
 
@@ -123,6 +123,34 @@ class _$BrandDataPointSerializer
     BrandDataPoint object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.type != null) {
+      yield r'type';
+      yield serializers.serialize(
+        object.type,
+        specifiedType: const FullType(BrandDataPointTypeEnum),
+      );
+    }
+    if (object.data != null) {
+      yield r'data';
+      yield serializers.serialize(
+        object.data,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.liked != null) {
+      yield r'liked';
+      yield serializers.serialize(
+        object.liked,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.actionDate != null) {
+      yield r'actionDate';
+      yield serializers.serialize(
+        object.actionDate,
+        specifiedType: const FullType(DateTime),
+      );
+    }
     if (object.author != null) {
       yield r'author';
       yield serializers.serialize(
@@ -200,38 +228,10 @@ class _$BrandDataPointSerializer
         specifiedType: const FullType(String),
       );
     }
-    if (object.liked != null) {
-      yield r'liked';
-      yield serializers.serialize(
-        object.liked,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.data != null) {
-      yield r'data';
-      yield serializers.serialize(
-        object.data,
-        specifiedType: const FullType(String),
-      );
-    }
     if (object.threadActionDate != null) {
       yield r'threadActionDate';
       yield serializers.serialize(
         object.threadActionDate,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.type != null) {
-      yield r'type';
-      yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType(BrandDataPointTypeEnum),
-      );
-    }
-    if (object.actionDate != null) {
-      yield r'actionDate';
-      yield serializers.serialize(
-        object.actionDate,
         specifiedType: const FullType(DateTime),
       );
     }
@@ -260,6 +260,34 @@ class _$BrandDataPointSerializer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BrandDataPointTypeEnum),
+          ) as BrandDataPointTypeEnum;
+          result.type = valueDes;
+          break;
+        case r'data':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.data = valueDes;
+          break;
+        case r'liked':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.liked = valueDes;
+          break;
+        case r'actionDate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.actionDate = valueDes;
+          break;
         case r'author':
           final valueDes = serializers.deserialize(
             value,
@@ -337,40 +365,12 @@ class _$BrandDataPointSerializer
           ) as String;
           result.secondaryData = valueDes;
           break;
-        case r'liked':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.liked = valueDes;
-          break;
-        case r'data':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.data = valueDes;
-          break;
         case r'threadActionDate':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.threadActionDate = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BrandDataPointTypeEnum),
-          ) as BrandDataPointTypeEnum;
-          result.type = valueDes;
-          break;
-        case r'actionDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.actionDate = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -399,6 +399,72 @@ class _$BrandDataPointSerializer
     );
     return result.build();
   }
+}
+
+class BrandDataPointTypeEnum extends EnumClass {
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'REVIEW')
+  static const BrandDataPointTypeEnum REVIEW = _$brandDataPointTypeEnum_REVIEW;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'PHOTO')
+  static const BrandDataPointTypeEnum PHOTO = _$brandDataPointTypeEnum_PHOTO;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'CHECKIN')
+  static const BrandDataPointTypeEnum CHECKIN =
+      _$brandDataPointTypeEnum_CHECKIN;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'CONVERSATION')
+  static const BrandDataPointTypeEnum CONVERSATION =
+      _$brandDataPointTypeEnum_CONVERSATION;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'COMMENT')
+  static const BrandDataPointTypeEnum COMMENT =
+      _$brandDataPointTypeEnum_COMMENT;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'QUESTION')
+  static const BrandDataPointTypeEnum QUESTION =
+      _$brandDataPointTypeEnum_QUESTION;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'POST')
+  static const BrandDataPointTypeEnum POST = _$brandDataPointTypeEnum_POST;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'IMAGE')
+  static const BrandDataPointTypeEnum IMAGE = _$brandDataPointTypeEnum_IMAGE;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'VIDEO')
+  static const BrandDataPointTypeEnum VIDEO = _$brandDataPointTypeEnum_VIDEO;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'CAROUSEL_ALBUM')
+  static const BrandDataPointTypeEnum CAROUSEL_ALBUM =
+      _$brandDataPointTypeEnum_CAROUSEL_ALBUM;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'LINK')
+  static const BrandDataPointTypeEnum LINK = _$brandDataPointTypeEnum_LINK;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'EXPANDEDREVIEW')
+  static const BrandDataPointTypeEnum EXPANDEDREVIEW =
+      _$brandDataPointTypeEnum_EXPANDEDREVIEW;
+
+  static Serializer<BrandDataPointTypeEnum> get serializer =>
+      _$brandDataPointTypeEnumSerializer;
+
+  const BrandDataPointTypeEnum._(String name) : super(name);
+
+  static BuiltSet<BrandDataPointTypeEnum> get values =>
+      _$brandDataPointTypeEnumValues;
+  static BrandDataPointTypeEnum valueOf(String name) =>
+      _$brandDataPointTypeEnumValueOf(name);
 }
 
 class BrandDataPointDirectoryTypeEnum extends EnumClass {
@@ -1436,70 +1502,4 @@ class BrandDataPointDirectoryTypeEnum extends EnumClass {
       _$brandDataPointDirectoryTypeEnumValues;
   static BrandDataPointDirectoryTypeEnum valueOf(String name) =>
       _$brandDataPointDirectoryTypeEnumValueOf(name);
-}
-
-class BrandDataPointTypeEnum extends EnumClass {
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueEnumConst(wireName: r'REVIEW')
-  static const BrandDataPointTypeEnum REVIEW = _$brandDataPointTypeEnum_REVIEW;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueEnumConst(wireName: r'PHOTO')
-  static const BrandDataPointTypeEnum PHOTO = _$brandDataPointTypeEnum_PHOTO;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueEnumConst(wireName: r'CHECKIN')
-  static const BrandDataPointTypeEnum CHECKIN =
-      _$brandDataPointTypeEnum_CHECKIN;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueEnumConst(wireName: r'CONVERSATION')
-  static const BrandDataPointTypeEnum CONVERSATION =
-      _$brandDataPointTypeEnum_CONVERSATION;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueEnumConst(wireName: r'COMMENT')
-  static const BrandDataPointTypeEnum COMMENT =
-      _$brandDataPointTypeEnum_COMMENT;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueEnumConst(wireName: r'QUESTION')
-  static const BrandDataPointTypeEnum QUESTION =
-      _$brandDataPointTypeEnum_QUESTION;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueEnumConst(wireName: r'POST')
-  static const BrandDataPointTypeEnum POST = _$brandDataPointTypeEnum_POST;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueEnumConst(wireName: r'IMAGE')
-  static const BrandDataPointTypeEnum IMAGE = _$brandDataPointTypeEnum_IMAGE;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueEnumConst(wireName: r'VIDEO')
-  static const BrandDataPointTypeEnum VIDEO = _$brandDataPointTypeEnum_VIDEO;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueEnumConst(wireName: r'CAROUSEL_ALBUM')
-  static const BrandDataPointTypeEnum CAROUSEL_ALBUM =
-      _$brandDataPointTypeEnum_CAROUSEL_ALBUM;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueEnumConst(wireName: r'LINK')
-  static const BrandDataPointTypeEnum LINK = _$brandDataPointTypeEnum_LINK;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueEnumConst(wireName: r'EXPANDEDREVIEW')
-  static const BrandDataPointTypeEnum EXPANDEDREVIEW =
-      _$brandDataPointTypeEnum_EXPANDEDREVIEW;
-
-  static Serializer<BrandDataPointTypeEnum> get serializer =>
-      _$brandDataPointTypeEnumSerializer;
-
-  const BrandDataPointTypeEnum._(String name) : super(name);
-
-  static BuiltSet<BrandDataPointTypeEnum> get values =>
-      _$brandDataPointTypeEnumValues;
-  static BrandDataPointTypeEnum valueOf(String name) =>
-      _$brandDataPointTypeEnumValueOf(name);
 }

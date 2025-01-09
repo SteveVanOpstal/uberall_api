@@ -1,8 +1,8 @@
-# openapi.api.SuggestionsApi
+# uberall_api.api.SuggestionsApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -23,7 +23,7 @@ Get location suggestions given a search data
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -33,7 +33,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getSuggestionsApi();
+final api = UberallApi().getSuggestionsApi();
 final String id = id_example; // String | The uberall unique id for the location
 final String language = language_example; // String | Filter suggestion attributes by language
 final String directoryTypes = directoryTypes_example; // String | Filter suggestions by directories
@@ -80,9 +80,9 @@ Get a list of suggestions for all locations managed by the logged user
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 
-final api = Openapi().getSuggestionsApi();
+final api = UberallApi().getSuggestionsApi();
 final String query = Berlin; // String | Filter by name, zip, street, city, label
 final String sort = sort_example; // String | The location property to sort by (ascending unless order is specified)
 final String order = order_example; // String | use asc for ascending sort or desc for descending sort
@@ -139,7 +139,7 @@ Update the given suggestion object, used to track the status of incoming suggest
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -149,7 +149,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getSuggestionsApi();
+final api = UberallApi().getSuggestionsApi();
 final String id = id_example; // String | The uberall unique id for the location
 final BuiltList<Suggestion> suggestion = ; // BuiltList<Suggestion> | List of Maps with both an id and a status key: [[id: 123, status: ACCEPTED], ...]
 

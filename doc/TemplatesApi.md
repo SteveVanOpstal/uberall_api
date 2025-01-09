@@ -1,8 +1,8 @@
-# openapi.api.TemplatesApi
+# uberall_api.api.TemplatesApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -28,7 +28,7 @@ Delete a Template
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -38,7 +38,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getTemplatesApi();
+final api = UberallApi().getTemplatesApi();
 final String id = id_example; // String | The uberall unique id of the template
 
 try {
@@ -79,7 +79,7 @@ Get all templates, potentially filtered by businesses, locations, authors, ...
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -89,7 +89,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getTemplatesApi();
+final api = UberallApi().getTemplatesApi();
 final String query = query_example; // String | Free text search that applies to title and message
 final String tags = tags_example; // String | The tags values you want templates for
 final String minLastEdited = minLastEdited_example; // String | The min date of the last update of the template
@@ -154,7 +154,7 @@ Returns a list containing template authors for the input business ids
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -164,7 +164,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getTemplatesApi();
+final api = UberallApi().getTemplatesApi();
 final GetTemplatesAuthorsRequest getTemplatesAuthorsRequest = ; // GetTemplatesAuthorsRequest | The ids of businesses you want authors for
 
 try {
@@ -205,7 +205,7 @@ Get all information about a specific template
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -215,7 +215,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getTemplatesApi();
+final api = UberallApi().getTemplatesApi();
 final String id = id_example; // String | The uberall unique id of the template
 
 try {
@@ -256,7 +256,7 @@ Returns a list containing template tags for the input business ids
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -266,7 +266,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getTemplatesApi();
+final api = UberallApi().getTemplatesApi();
 final GetTemplatesAuthorsRequest getTemplatesAuthorsRequest = ; // GetTemplatesAuthorsRequest | The ids of businesses you want templates for
 
 try {
@@ -307,7 +307,7 @@ Make changes to a template. Any blank parameter deletes an old value, any unspec
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -317,7 +317,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getTemplatesApi();
+final api = UberallApi().getTemplatesApi();
 final String id = id_example; // String | The uberall unique id of the template
 final CreateTemplateRequest createTemplateRequest = ; // CreateTemplateRequest | Template to update
 
@@ -360,7 +360,7 @@ Creates a template
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -370,7 +370,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getTemplatesApi();
+final api = UberallApi().getTemplatesApi();
 final CreateTemplateRequest createTemplateRequest = ; // CreateTemplateRequest | Template to create
 
 try {
@@ -411,7 +411,7 @@ Every time a template is used we trigger this endpoint to increment the usage co
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -421,7 +421,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getTemplatesApi();
+final api = UberallApi().getTemplatesApi();
 final String id = id_example; // String | The uberall unique id of the template
 
 try {

@@ -1,8 +1,8 @@
-# openapi.model.CustomItemResponseObject
+# uberall_api.model.CustomItemResponseObject
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

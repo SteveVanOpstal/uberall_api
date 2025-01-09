@@ -1,8 +1,8 @@
-# openapi.model.FeedItemWrapper
+# uberall_api.model.FeedItemWrapper
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

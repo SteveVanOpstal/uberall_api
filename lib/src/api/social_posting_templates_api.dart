@@ -7,11 +7,11 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/social_post_template.dart';
-import 'package:openapi/src/model/social_post_template_response_wrapper.dart';
-import 'package:openapi/src/model/social_post_templates_response_wrapper.dart';
-import 'package:openapi/src/model/success_response_wrapper.dart';
+import 'package:uberall_api/src/api_util.dart';
+import 'package:uberall_api/src/model/social_post_template.dart';
+import 'package:uberall_api/src/model/social_post_template_response_wrapper.dart';
+import 'package:uberall_api/src/model/social_post_templates_response_wrapper.dart';
+import 'package:uberall_api/src/model/success_response_wrapper.dart';
 
 class SocialPostingTemplatesApi {
   final Dio _dio;

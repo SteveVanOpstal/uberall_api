@@ -1,8 +1,8 @@
-# openapi.model.BasicListing
+# uberall_api.model.BasicListing
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties
@@ -107,13 +107,13 @@ Name | Type | Description | Notes
 **sublocality** | **String** | The sublocality field is only available for countries that require this for their postal address. The following countries have this for: Indonesia - Sub-district, Phillipines - Barangay, Thailand - Tambon / Khwaeng, and Vietnam - Sublocality. | [optional] 
 **sublocalityStatus** | **String** | The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH | [optional] 
 **websiteExtra** | **String** | Utm or tracking path - only sent to GOOGLE | [optional] 
+**photos** | **bool** | Boolean indicating whether or not the listing has photos | [optional] 
+**socialProfiles** | [**BuiltList&lt;SocialProfile&gt;**](SocialProfile.md) | Social profiles of the location | [optional] 
+**contentLists** | [**BuiltList&lt;ContentList&gt;**](ContentList.md) | Content lists shown on the listing | [optional] 
 **keywords** | **BuiltList&lt;String&gt;** | The video of the social post (can only be one) | [optional] 
 **brands** | **BuiltList&lt;String&gt;** | The video of the social post (can only be one) | [optional] 
 **services** | **BuiltList&lt;String&gt;** | The video of the social post (can only be one) | [optional] 
 **languages** | **BuiltList&lt;String&gt;** | The video of the social post (can only be one) | [optional] 
-**photos** | **bool** | Boolean indicating whether or not the listing has photos | [optional] 
-**socialProfiles** | [**BuiltList&lt;SocialProfile&gt;**](SocialProfile.md) | Social profiles of the location | [optional] 
-**contentLists** | [**BuiltList&lt;ContentList&gt;**](ContentList.md) | Content lists shown on the listing | [optional] 
 **videos** | [**BuiltList&lt;Video&gt;**](Video.md) | A list of videos about the location | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

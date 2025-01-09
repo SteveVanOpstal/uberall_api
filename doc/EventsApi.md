@@ -1,8 +1,8 @@
-# openapi.api.EventsApi
+# uberall_api.api.EventsApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -27,7 +27,7 @@ Delete an event identified by identifier in the url param
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -37,7 +37,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getEventsApi();
+final api = UberallApi().getEventsApi();
 
 try {
     final response = api.deleteEvents();
@@ -74,7 +74,7 @@ Delete an event
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -84,7 +84,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getEventsApi();
+final api = UberallApi().getEventsApi();
 final String id = id_example; // String | The uberall unique id for the event
 
 try {
@@ -125,7 +125,7 @@ Get all events the current API user can manage. <br>To specify events with ident
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -135,7 +135,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getEventsApi();
+final api = UberallApi().getEventsApi();
 final JsonObject body = Object; // JsonObject | 
 
 try {
@@ -176,7 +176,7 @@ Get a single event identified by its uberall unique id
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -186,7 +186,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getEventsApi();
+final api = UberallApi().getEventsApi();
 final String id = id_example; // String | The uberall unique id for the event
 
 try {
@@ -227,7 +227,7 @@ Make changes to an event, always use ?identifier= in url param to identify the e
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -237,7 +237,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getEventsApi();
+final api = UberallApi().getEventsApi();
 final EventResponseWrapper eventResponseWrapper = ; // EventResponseWrapper | Event object that needs to be updated
 
 try {
@@ -278,7 +278,7 @@ Make changes to an event. Any blank parameter deletes an old value, any unspecif
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -288,7 +288,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getEventsApi();
+final api = UberallApi().getEventsApi();
 final String id = id_example; // String | The uberall unique id for the event
 final EventResponseWrapper eventResponseWrapper = ; // EventResponseWrapper | Event object that needs to be updated
 
@@ -331,7 +331,7 @@ Create a new event. It can be added to a content list later
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -341,7 +341,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getEventsApi();
+final api = UberallApi().getEventsApi();
 final EventResponseWrapper eventResponseWrapper = ; // EventResponseWrapper | Event object that needs to be created
 
 try {

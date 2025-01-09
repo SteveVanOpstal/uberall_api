@@ -1,8 +1,8 @@
-# openapi.model.PersonSearchResponseWrapper
+# uberall_api.model.PersonSearchResponseWrapper
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

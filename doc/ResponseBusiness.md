@@ -1,8 +1,8 @@
-# openapi.model.ResponseBusiness
+# uberall_api.model.ResponseBusiness
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

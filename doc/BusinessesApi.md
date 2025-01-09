@@ -1,8 +1,8 @@
-# openapi.api.BusinessesApi
+# uberall_api.api.BusinessesApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -29,7 +29,7 @@ Delete the business with the given id. Current user needs UserRole ADMIN, ACCOUN
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -39,7 +39,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getBusinessesApi();
+final api = UberallApi().getBusinessesApi();
 final String id = id_example; // String | The uberall unique id for the business
 
 try {
@@ -80,7 +80,7 @@ Get a list of businesses managed by the current user.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -90,7 +90,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getBusinessesApi();
+final api = UberallApi().getBusinessesApi();
 final String query = query_example; // String | Value used to filter the results by the fields provided in the \"queryFields\" query parameter.                         By default, the value will be searched for in the following fields: \"name\", \"streetAndNo\", \"zip\", \"city\", \"country\", \"identifier\".
 final BuiltList<String> queryFields = ; // BuiltList<String> | The fields that will be searched to contain the value provided in the \"query\" query parameter.                         The default query fields are \"name\", \"streetAndNo\", \"zip\", \"city\", \"country\", \"identifier
 final String identifier = identifier_example; // String | Only return one business based on your internal identification system
@@ -157,7 +157,7 @@ Get information about the business with the given id. Current user needs UserRol
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -167,7 +167,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getBusinessesApi();
+final api = UberallApi().getBusinessesApi();
 final String id = id_example; // String | The uberall unique id for the business
 
 try {
@@ -208,7 +208,7 @@ Returns only the Facebook brand pages
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -218,7 +218,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getBusinessesApi();
+final api = UberallApi().getBusinessesApi();
 final String id = id_example; // String | Id of the business that will be used for the search
 final String facebookAccountId = facebookAccountId_example; // String | Unique facebook account id which will be used for locating brand pages
 
@@ -261,7 +261,7 @@ Get statistics about the businesses the current user is managing: total and brea
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -271,7 +271,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getBusinessesApi();
+final api = UberallApi().getBusinessesApi();
 
 try {
     final response = api.getBusinessesStatistics();
@@ -308,7 +308,7 @@ Edit information of the business with the given id. Current user needs UserRole 
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -318,7 +318,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getBusinessesApi();
+final api = UberallApi().getBusinessesApi();
 final String id = id_example; // String | The uberall unique id for the business
 final Business business = ; // Business | A Business object
 
@@ -361,7 +361,7 @@ Create a Business belonging to the SalesPartner of the current User. User needs 
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -371,7 +371,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getBusinessesApi();
+final api = UberallApi().getBusinessesApi();
 final Business business = ; // Business | A Business object
 
 try {
@@ -412,7 +412,7 @@ Start a sync on all directories for all locations in the business with the given
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -422,7 +422,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getBusinessesApi();
+final api = UberallApi().getBusinessesApi();
 final String businessId = businessId_example; // String | The uberall unique id of the business
 
 try {
@@ -463,7 +463,7 @@ Migration is only possible from parent sales partner to child sales partner or b
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -473,7 +473,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getBusinessesApi();
+final api = UberallApi().getBusinessesApi();
 final String id = id_example; // String | The uberall unique id for the business
 final String targetSalesPartnerId = targetSalesPartnerId_example; // String | ID of the sales partner where the business should be migrated
 final String targetWhiteLabelIdentifier = targetWhiteLabelIdentifier_example; // String | If the target sales partner has more then one whitelabel, please specify which one has to be chosen

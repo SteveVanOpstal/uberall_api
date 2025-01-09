@@ -1,8 +1,8 @@
-# openapi.model.ContentList
+# uberall_api.model.ContentList
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

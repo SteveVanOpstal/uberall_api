@@ -1,8 +1,8 @@
-# openapi.model.SalesPartner
+# uberall_api.model.SalesPartner
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties
@@ -27,18 +27,18 @@ Name | Type | Description | Notes
 **whitelabelInformations** | [**BuiltSet&lt;WhitelabelInformation&gt;**](WhitelabelInformation.md) | List of the sales partner''s white-label information | [optional] 
 **activeLocations** | **int** |  | [optional] 
 **contractualMaxLocations** | **int** |  | [optional] 
-**locationsLeft** | **int** |  | [optional] 
+**typeId** | [**JsonObject**](.md) |  | [optional] 
 **contactPerson** | [**User**](User.md) |  | [optional] 
+**locationsLeft** | **int** |  | [optional] 
+**usersLeft** | **int** |  | [optional] 
+**invoicePaymentInformationId** | [**JsonObject**](.md) |  | [optional] 
+**salesPartnerStatusId** | [**JsonObject**](.md) |  | [optional] 
 **parentId** | [**JsonObject**](.md) |  | [optional] 
-**onboardingStatusId** | [**JsonObject**](.md) |  | [optional] 
+**resellerTypeId** | [**JsonObject**](.md) |  | [optional] 
+**attributionId** | [**JsonObject**](.md) |  | [optional] 
 **publicTokenId** | [**JsonObject**](.md) |  | [optional] 
 **privateTokenId** | [**JsonObject**](.md) |  | [optional] 
-**typeId** | [**JsonObject**](.md) |  | [optional] 
-**invoicePaymentInformationId** | [**JsonObject**](.md) |  | [optional] 
-**resellerTypeId** | [**JsonObject**](.md) |  | [optional] 
-**salesPartnerStatusId** | [**JsonObject**](.md) |  | [optional] 
-**attributionId** | [**JsonObject**](.md) |  | [optional] 
-**usersLeft** | **int** |  | [optional] 
+**onboardingStatusId** | [**JsonObject**](.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

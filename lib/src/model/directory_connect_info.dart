@@ -3,8 +3,8 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:uberall_api/src/model/connect_flow_user_details.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:openapi/src/model/connect_flow_user_details.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

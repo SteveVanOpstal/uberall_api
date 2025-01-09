@@ -1,8 +1,8 @@
-# openapi.api.LocationGroupsApi
+# uberall_api.api.LocationGroupsApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -25,13 +25,13 @@ Can be used for deleting a single LocationGroup.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: accessToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getLocationGroupsApi();
+final api = UberallApi().getLocationGroupsApi();
 final String id = id_example; // String | ID of the LocationGroup that should be deleted.
 
 try {
@@ -72,13 +72,13 @@ Can be used to search for specific location groups or even return all, depending
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: accessToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getLocationGroupsApi();
+final api = UberallApi().getLocationGroupsApi();
 final BuiltList<String> fieldMask = ; // BuiltList<String> | Used for bypassing pagination and reducing the response objects, following are supported ['id'', 'name']
 final BuiltList<int> locationGroupIds = ; // BuiltList<int> | Used for restricting the to be returned location groups within the given range of IDs.
 final String query = query_example; // String | Used for searching for a specific keyword within the location group names, only groups matching the given query via 'like' will be returned.
@@ -137,13 +137,13 @@ Can be used to retrieve a single LocationGroup.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: accessToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getLocationGroupsApi();
+final api = UberallApi().getLocationGroupsApi();
 final String id = id_example; // String | ID of the LocationGroup that should be returned.
 
 try {
@@ -184,13 +184,13 @@ Can be used for updating a single LocationGroup.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: accessToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getLocationGroupsApi();
+final api = UberallApi().getLocationGroupsApi();
 final String id = id_example; // String | ID of the LocationGroup that should be updated.
 final LocationGroupParams locationGroupParams = ; // LocationGroupParams | LocationGroup to update
 
@@ -233,13 +233,13 @@ Can be used to create a new LocationGroup
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: accessToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getLocationGroupsApi();
+final api = UberallApi().getLocationGroupsApi();
 final LocationGroupParams locationGroupParams = ; // LocationGroupParams | LocationGroup to create
 
 try {

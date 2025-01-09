@@ -7,12 +7,12 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/success_response_wrapper.dart';
-import 'package:openapi/src/model/webhook.dart';
-import 'package:openapi/src/model/webhook_command.dart';
-import 'package:openapi/src/model/webhook_list_wrapper.dart';
-import 'package:openapi/src/model/webhook_wrapper.dart';
+import 'package:uberall_api/src/api_util.dart';
+import 'package:uberall_api/src/model/success_response_wrapper.dart';
+import 'package:uberall_api/src/model/webhook.dart';
+import 'package:uberall_api/src/model/webhook_command.dart';
+import 'package:uberall_api/src/model/webhook_list_wrapper.dart';
+import 'package:uberall_api/src/model/webhook_wrapper.dart';
 
 class WebhooksApi {
   final Dio _dio;

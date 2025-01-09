@@ -1,8 +1,8 @@
-# openapi.api.DataPointsApi
+# uberall_api.api.DataPointsApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -34,7 +34,7 @@ Unlike a review (Facebook, Foursquare, ...)
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -44,7 +44,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDataPointsApi();
+final api = UberallApi().getDataPointsApi();
 final String id = id_example; // String | The data point id you want to unlike
 
 try {
@@ -85,7 +85,7 @@ Deletes a reply to a data point that needs approval.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -95,7 +95,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDataPointsApi();
+final api = UberallApi().getDataPointsApi();
 final String id = id_example; // String | The id of the root data point
 final String replyId = replyId_example; // String | The id  of the replying data point
 
@@ -138,7 +138,7 @@ Mark one or several inbox items as unread
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -148,7 +148,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDataPointsApi();
+final api = UberallApi().getDataPointsApi();
 final bool selectAll = true; // bool | If all data points matching the current filter settings should be marked as unread
 final BuiltList<String> businessIds = ; // BuiltList<String> | Filter by business ids
 final String countries = countries_example; // String | Filter by countries. ISO 3166-1 alpha-2 codes
@@ -209,7 +209,7 @@ Get all data points, potentially filtered by directory, business, rating...
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -219,7 +219,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDataPointsApi();
+final api = UberallApi().getDataPointsApi();
 final int max = 789; // int | Used for pagination. Maximum number of results per page
 final int page = 789; // int | The page number for pagination
 final String labels = labels_example; // String | Filter by location labels
@@ -296,7 +296,7 @@ Get information about a single Data Point
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -306,7 +306,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDataPointsApi();
+final api = UberallApi().getDataPointsApi();
 final String id = id_example; // String | The uberall unique ID of the data point you want to retrieve
 
 try {
@@ -347,7 +347,7 @@ Returns statistics about the locations inbox.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -357,7 +357,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDataPointsApi();
+final api = UberallApi().getDataPointsApi();
 final String businessIds = businessIds_example; // String | Ids of businesses you want inbox statistics for
 final String countries = countries_example; // String | The countries you want data points' statistics for. ISO 3166-1 alpha-2 codes
 final String locationIds = locationIds_example; // String | Only consider data points belonging to any of these locationIds
@@ -422,7 +422,7 @@ Returns time series of Data Points
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -432,7 +432,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDataPointsApi();
+final api = UberallApi().getDataPointsApi();
 final BuiltList<String> dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // BuiltList<String> | Types of datapoints you want inbox statistics for.
 final BuiltList<String> directoryTypes = ; // BuiltList<String> | Directories you want data points time series for
 final BuiltList<String> businessIds = ; // BuiltList<String> | Ids of businesses you want data points for
@@ -487,7 +487,7 @@ Reply with a text to a Data Point, e.g. a review
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -497,7 +497,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDataPointsApi();
+final api = UberallApi().getDataPointsApi();
 final String id = id_example; // String | The uberall unique ID of the data point you want to reply to
 final String reply = reply_example; // String | The text you want to reply, on most directories this will be published and can be read by the author of the original data point
 
@@ -540,7 +540,7 @@ Flag a data point on the directory
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -550,7 +550,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDataPointsApi();
+final api = UberallApi().getDataPointsApi();
 final String id = id_example; // String | The data point id you want to report
 final String flagType = [OFFENSIVE, SPAM, NOLONGERRELEVANT, EXTERNAL_URL]; // String | Must be one supported flagType for that directory
 
@@ -593,7 +593,7 @@ LIke a review (Facebook, Foursquare, ...)
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -603,7 +603,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDataPointsApi();
+final api = UberallApi().getDataPointsApi();
 final String id = id_example; // String | The data point id you want to like
 
 try {
@@ -644,7 +644,7 @@ Moderate a Data Point.  Only Data Points that belong to a WEBSITE_WIDGETS direct
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -654,7 +654,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDataPointsApi();
+final api = UberallApi().getDataPointsApi();
 final String id = id_example; // String | The uberall unique ID of the data point you want to moderate
 final String operation = operation_example; // String | One of APPROVE or REJECT
 
@@ -697,7 +697,7 @@ Approves a reply to a data point.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -707,7 +707,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDataPointsApi();
+final api = UberallApi().getDataPointsApi();
 final String id = id_example; // String | The id of the root data point
 final String replyId = replyId_example; // String | The id  of the replying data point
 
@@ -750,7 +750,7 @@ Mark one or several inbox items as read
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -760,7 +760,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDataPointsApi();
+final api = UberallApi().getDataPointsApi();
 final bool selectAll = true; // bool | If all data points matching the current filter settings should be marked as read
 final BuiltList<String> businessIds = ; // BuiltList<String> | Filter by business ids
 final String countries = countries_example; // String | Filter by countries. ISO 3166-1 alpha-2 codes
@@ -821,7 +821,7 @@ Editing an existing reply that needs approval to a Data Point
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -831,7 +831,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDataPointsApi();
+final api = UberallApi().getDataPointsApi();
 final String id = id_example; // String | The id of the root data point
 final String replyId = replyId_example; // String | The id  of the replying data point
 final String replyText = replyText_example; // String | The edited text of the reply

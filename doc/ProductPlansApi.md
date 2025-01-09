@@ -1,8 +1,8 @@
-# openapi.api.ProductPlansApi
+# uberall_api.api.ProductPlansApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -23,7 +23,7 @@ Get all product plans available to the current API user
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -33,7 +33,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getProductPlansApi();
+final api = UberallApi().getProductPlansApi();
 final String country = country_example; // String | Optional parameter to retrieve plans and supported directories for a specific country
 
 try {
@@ -74,7 +74,7 @@ Update an existing Product Plan. Only defaultPlan, description, name, status are
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -84,7 +84,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getProductPlansApi();
+final api = UberallApi().getProductPlansApi();
 final String id = id_example; // String | The uberall unique id of the Product Plan
 final ProductPlan productPlan = ; // ProductPlan | A Product Plan object
 
@@ -127,7 +127,7 @@ Create a new Product Plan. The new Product Plan will be always created into PEND
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -137,7 +137,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getProductPlansApi();
+final api = UberallApi().getProductPlansApi();
 final ProductPlan productPlan = ; // ProductPlan | A Product Plan object
 
 try {

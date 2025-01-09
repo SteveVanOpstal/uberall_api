@@ -7,14 +7,14 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/create_template_request.dart';
-import 'package:openapi/src/model/get_templates_authors_request.dart';
-import 'package:openapi/src/model/response_template_wrapper.dart';
-import 'package:openapi/src/model/response_templates_wrapper.dart';
-import 'package:openapi/src/model/response_users_wrapper.dart';
-import 'package:openapi/src/model/string_list_response_wrapper.dart';
-import 'package:openapi/src/model/success_response_wrapper.dart';
+import 'package:uberall_api/src/api_util.dart';
+import 'package:uberall_api/src/model/create_template_request.dart';
+import 'package:uberall_api/src/model/get_templates_authors_request.dart';
+import 'package:uberall_api/src/model/response_template_wrapper.dart';
+import 'package:uberall_api/src/model/response_templates_wrapper.dart';
+import 'package:uberall_api/src/model/response_users_wrapper.dart';
+import 'package:uberall_api/src/model/string_list_response_wrapper.dart';
+import 'package:uberall_api/src/model/success_response_wrapper.dart';
 
 class TemplatesApi {
   final Dio _dio;

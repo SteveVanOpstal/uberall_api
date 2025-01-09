@@ -8,12 +8,13 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/accepted_extra_fields_response_wrapper.dart';
-import 'package:openapi/src/model/generic_map_response_wrapper.dart';
-import 'package:openapi/src/model/menu_item.dart';
-import 'package:openapi/src/model/menu_item_response_wrapper.dart';
-import 'package:openapi/src/model/menu_item_search_response_wrapper.dart';
+import 'package:built_value/json_object.dart';
+import 'package:uberall_api/src/api_util.dart';
+import 'package:uberall_api/src/model/accepted_extra_fields_response_wrapper.dart';
+import 'package:uberall_api/src/model/generic_map_response_wrapper.dart';
+import 'package:uberall_api/src/model/menu_item.dart';
+import 'package:uberall_api/src/model/menu_item_response_wrapper.dart';
+import 'package:uberall_api/src/model/menu_item_search_response_wrapper.dart';
 
 class MenuItemsApi {
   final Dio _dio;

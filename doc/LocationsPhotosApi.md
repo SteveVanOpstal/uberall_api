@@ -1,8 +1,8 @@
-# openapi.api.LocationsPhotosApi
+# uberall_api.api.LocationsPhotosApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **deletePhotosId**
-> Response deletePhotosId(id)
+> UberallResponse deletePhotosId(id)
 
 Delete a Photo
 
@@ -24,7 +24,7 @@ Delete a photo identified by its uberall unique id
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -34,7 +34,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getLocationsPhotosApi();
+final api = UberallApi().getLocationsPhotosApi();
 final String id = id_example; // String | The uberall unique id of the photo
 
 try {
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Response**](Response.md)
+[**UberallResponse**](UberallResponse.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Get a photo identified by its uberall unique id
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -85,7 +85,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getLocationsPhotosApi();
+final api = UberallApi().getLocationsPhotosApi();
 final String id = id_example; // String | The uberall unique id of the photo
 
 try {
@@ -126,7 +126,7 @@ Edit a photo
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -136,7 +136,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getLocationsPhotosApi();
+final api = UberallApi().getLocationsPhotosApi();
 final String id = id_example; // String | The uberall unique id of the photo
 final LocationPhoto locationPhoto = ; // LocationPhoto | The photo data to update
 
@@ -179,7 +179,7 @@ Upload a photo
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -189,7 +189,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getLocationsPhotosApi();
+final api = UberallApi().getLocationsPhotosApi();
 final LocationPhoto locationPhoto = ; // LocationPhoto | The photo data to upload
 
 try {

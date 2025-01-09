@@ -1,8 +1,8 @@
-# openapi.model.ListingHealth
+# uberall_api.model.ListingHealth
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

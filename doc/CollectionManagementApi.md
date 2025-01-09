@@ -1,8 +1,8 @@
-# openapi.api.CollectionManagementApi
+# uberall_api.api.CollectionManagementApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -25,7 +25,7 @@ Delete a specific Collection by id
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -35,7 +35,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getCollectionManagementApi();
+final api = UberallApi().getCollectionManagementApi();
 final String id = id_example; // String | The uberall unique id of the Collection to delete
 final ContentCollection contentCollection = ; // ContentCollection | ContentCollection object to delete
 
@@ -78,7 +78,7 @@ Get all the collections managed by the current API user.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -88,7 +88,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getCollectionManagementApi();
+final api = UberallApi().getCollectionManagementApi();
 final JsonObject body = Object; // JsonObject | 
 
 try {
@@ -129,7 +129,7 @@ Retrieve a specific Collection by id
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -139,7 +139,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getCollectionManagementApi();
+final api = UberallApi().getCollectionManagementApi();
 final String id = id_example; // String | The uberall unique id of the Collection to retrieve
 
 try {
@@ -180,7 +180,7 @@ Update a specific Collection by id
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -190,7 +190,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getCollectionManagementApi();
+final api = UberallApi().getCollectionManagementApi();
 final String id = id_example; // String | The uberall unique id of the Collection to update
 final ContentCollection contentCollection = ; // ContentCollection | ContentCollection object to update
 
@@ -233,7 +233,7 @@ Create a new collection managed by the current API user. If the user specifies a
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -243,7 +243,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getCollectionManagementApi();
+final api = UberallApi().getCollectionManagementApi();
 final ContentCollection contentCollection = ; // ContentCollection | ContentCollection object to create
 
 try {

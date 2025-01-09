@@ -3,11 +3,11 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:openapi/src/model/business.dart';
-import 'package:openapi/src/model/location.dart';
+import 'package:uberall_api/src/model/sales_partner.dart';
+import 'package:uberall_api/src/model/email_settings.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:openapi/src/model/sales_partner.dart';
-import 'package:openapi/src/model/email_settings.dart';
+import 'package:uberall_api/src/model/business.dart';
+import 'package:uberall_api/src/model/location.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -31,10 +31,10 @@ part 'user.g.dart';
 /// * [identifier] - The unique user identifier based on your internal identification system
 /// * [features] - A list of features this user can work with. Values:  <pre>ADS_READ ADS_WRITE ADVANCED_ANALYTICS AI_SUGGESTED_REPLIES APPLE_POSTING_WRITE AUTO_RESPONSE_WRITE BULK_UPDATES BUSINESS_LEVEL_CONNECT CAN_PAY_INVOICE CAN_SEE_HELP_SECTION CHAT_READ CHAT_WRITE CHATBOT_READ CHATBOT_WRITE DAM ENTERPRISE_ONBOARDING FIRST_PARTY_REVIEW_APPROVAL FORMS INBOX_2_0_BETA_READ INBOX_2_0_BETA_WRITE INBOX_APPROVAL INBOX_READ INBOX_WRITE INSTAGRAM_POSTING_WRITE LISTINGS_PAGE_NEW LISTINGS LIVE_CHAT LOCATION_GROUP LOCATION_READ LOCATION_SCHEDULED_UPDATES LOCATION_STATUS_CHANGE LOCATION_WRITE POSTING_APPROVAL POSTING_READ POSTING_WRITE PRICE_INFO RESPONSE_LIBRARY_READ RESPONSE_LIBRARY_WRITE REVIEW_GENERATION_CREATE REVIEW_GENERATION_SEND SINGLE_SIGN_ON SOCIAL_ADS SUPPRESSION TRACKING UPGRADE USER_OTHERS_EDIT USER_SELF_EDIT</pre>
 /// * [emailSettings] - A list of EmailSettings for this user. Only one EmailSettings object per EmailType possible.
-/// * [parentId]
-/// * [salesPartnerId]
-/// * [whitelabelInformationId]
 /// * [directoryUsers]
+/// * [whitelabelInformationId]
+/// * [salesPartnerId]
+/// * [parentId]
 /// * [readDataPoints]
 /// * [featuresDetailed] - Map containing the feature names and corresponding feature-specific parameters. \"featuresDetailed\" is supported for the features LOCATION_WRITE and ADVANCED_ANALYTICS.  For LOCATION_WRITE a list of fields that this user can update is expected.  For ADVANCED_ANALYTICS a list of dashboards the user has access to is expected. For example: <pre> \"featuresDetailed\": '{' '{'    \"featuresDetailed\":'{'       \"LOCATION_WRITE\":[          \"fax\",          \"openingHours\",          \"callTrackingNumbers\",          \"streetNo\",          \"openingHoursNotes\",          \"specialOpeningHours\",          \"street\",          \"languages\",          \"customFields\",          \"contentLists\",          \"photos\",          \"services\",          \"moreHours\",          \"descriptionLong\",          \"zip\",          \"lat\",          \"openingDate\",          \"email\",          \"addressDisplay\",          \"labels\",          \"taxNumber\",          \"city\",          \"cellphone\",          \"contentCollections\",          \"attributes\",          \"categories\",          \"imprint\",          \"phone\",          \"utms\",          \"addressExtra\",          \"keywords\",          \"legalIdent\",          \"lng\",          \"paymentOptions\",          \"descriptionShort\",          \"socialProfiles\",          \"identifier\",          \"website\",          \"country\",          \"province\",          \"name\",          \"videos\",          \"brands\",          \"serviceAreas\"       ],       \"ADVANCED_ANALYTICS\":[          \"overview\",          \"listings-google\",          \"customer-feedback\"       ]    '}' '}' </pre>
 /// * [locationGroupIds] - A list of all location IDs the user can manage because of assignment to certain group(s)
@@ -101,17 +101,17 @@ abstract class User implements Built<User, UserBuilder> {
   @BuiltValueField(wireName: r'emailSettings')
   BuiltSet<EmailSettings>? get emailSettings;
 
-  @BuiltValueField(wireName: r'parentId')
-  JsonObject? get parentId;
-
-  @BuiltValueField(wireName: r'salesPartnerId')
-  JsonObject? get salesPartnerId;
+  @BuiltValueField(wireName: r'directoryUsers')
+  JsonObject? get directoryUsers;
 
   @BuiltValueField(wireName: r'whitelabelInformationId')
   JsonObject? get whitelabelInformationId;
 
-  @BuiltValueField(wireName: r'directoryUsers')
-  JsonObject? get directoryUsers;
+  @BuiltValueField(wireName: r'salesPartnerId')
+  JsonObject? get salesPartnerId;
+
+  @BuiltValueField(wireName: r'parentId')
+  JsonObject? get parentId;
 
   @BuiltValueField(wireName: r'readDataPoints')
   JsonObject? get readDataPoints;
@@ -247,17 +247,10 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
         specifiedType: const FullType(BuiltSet, [FullType(EmailSettings)]),
       );
     }
-    if (object.parentId != null) {
-      yield r'parentId';
+    if (object.directoryUsers != null) {
+      yield r'directoryUsers';
       yield serializers.serialize(
-        object.parentId,
-        specifiedType: const FullType(JsonObject),
-      );
-    }
-    if (object.salesPartnerId != null) {
-      yield r'salesPartnerId';
-      yield serializers.serialize(
-        object.salesPartnerId,
+        object.directoryUsers,
         specifiedType: const FullType(JsonObject),
       );
     }
@@ -268,10 +261,17 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
         specifiedType: const FullType(JsonObject),
       );
     }
-    if (object.directoryUsers != null) {
-      yield r'directoryUsers';
+    if (object.salesPartnerId != null) {
+      yield r'salesPartnerId';
       yield serializers.serialize(
-        object.directoryUsers,
+        object.salesPartnerId,
+        specifiedType: const FullType(JsonObject),
+      );
+    }
+    if (object.parentId != null) {
+      yield r'parentId';
+      yield serializers.serialize(
+        object.parentId,
         specifiedType: const FullType(JsonObject),
       );
     }
@@ -434,19 +434,12 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
           ) as BuiltSet<EmailSettings>;
           result.emailSettings.replace(valueDes);
           break;
-        case r'parentId':
+        case r'directoryUsers':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(JsonObject),
           ) as JsonObject;
-          result.parentId = valueDes;
-          break;
-        case r'salesPartnerId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.salesPartnerId = valueDes;
+          result.directoryUsers = valueDes;
           break;
         case r'whitelabelInformationId':
           final valueDes = serializers.deserialize(
@@ -455,12 +448,19 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
           ) as JsonObject;
           result.whitelabelInformationId = valueDes;
           break;
-        case r'directoryUsers':
+        case r'salesPartnerId':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(JsonObject),
           ) as JsonObject;
-          result.directoryUsers = valueDes;
+          result.salesPartnerId = valueDes;
+          break;
+        case r'parentId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
+          result.parentId = valueDes;
           break;
         case r'readDataPoints':
           final valueDes = serializers.deserialize(

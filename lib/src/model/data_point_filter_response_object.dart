@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:openapi/src/model/data_point_filter.dart';
+import 'package:uberall_api/src/model/data_point_filter.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

@@ -1,8 +1,8 @@
-# openapi.api.CategoriesApi
+# uberall_api.api.CategoriesApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -26,7 +26,7 @@ Get a list of all available location categories, or specific location categories
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -36,7 +36,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getCategoriesApi();
+final api = UberallApi().getCategoriesApi();
 final String language = language_example; // String | Show categories in the specified language. One of de, en, es, fr
 final int categories = 789; // int | The uberall unique id of the category you want to get
 final String q = Auto; // String | Filter categories by a search query
@@ -87,7 +87,7 @@ Get all Recommended attributes for the Category, Country excluding (already appl
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -97,7 +97,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getCategoriesApi();
+final api = UberallApi().getCategoriesApi();
 final String id = id_example; // String | The Category id
 final String country = country_example; // String | The country to retrieve the attribute recommendations for
 final BuiltList<String> keywords = ; // BuiltList<String> | Keywords to look for which are associated with attributes
@@ -144,7 +144,7 @@ Get all Attributes for the Category, Country and Language <br> <p>Notes:  <br>- 
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -154,7 +154,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getCategoriesApi();
+final api = UberallApi().getCategoriesApi();
 final String id = id_example; // String | The Category id
 final String country = country_example; // String | The country to retrieve the attributes for
 final String language = language_example; // String | The language to show the attributes in, this affects only the name of the results
@@ -199,7 +199,7 @@ Google limits photo types for each business category. GET a list of available ph
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -209,7 +209,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getCategoriesApi();
+final api = UberallApi().getCategoriesApi();
 final String id = id_example; // String | Photo types for the location id
 
 try {
@@ -250,7 +250,7 @@ GET the list of Google''s structured services for a location''s business categor
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -260,7 +260,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getCategoriesApi();
+final api = UberallApi().getCategoriesApi();
 final String id = id_example; // String | Category ID for retrieving services
 final String country = country_example; // String | Available structured services vary by country, so a country is needed to provide the available structured services from Google.
 final String language = language_example; // String | The language the structured services should be returned in.
@@ -305,7 +305,7 @@ Get all supported More Hours types for a specific Category. Optionally specify l
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -315,7 +315,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getCategoriesApi();
+final api = UberallApi().getCategoriesApi();
 final String id = id_example; // String | The Category id
 final String language = en or de; // String | The language to show the values in
 

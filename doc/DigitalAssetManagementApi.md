@@ -1,8 +1,8 @@
-# openapi.api.DigitalAssetManagementApi
+# uberall_api.api.DigitalAssetManagementApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -22,9 +22,9 @@ Edit an existing social template identified by its unique uberall ID
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 
-final api = Openapi().getDigitalAssetManagementApi();
+final api = UberallApi().getDigitalAssetManagementApi();
 final String id = id_example; // String | The unique uberall ID for the Social Post Template you want to edit
 final SocialPostTemplate socialPostTemplate = ; // SocialPostTemplate | A SocialPostTemplate object
 
@@ -67,9 +67,9 @@ Create a new social template as a part of the Digital Asset Management (DAM) fra
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 
-final api = Openapi().getDigitalAssetManagementApi();
+final api = UberallApi().getDigitalAssetManagementApi();
 final PostSocialTemplatesRequest postSocialTemplatesRequest = ; // PostSocialTemplatesRequest | A SocialPostTemplate object that should be created
 
 try {

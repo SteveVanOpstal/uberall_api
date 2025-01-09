@@ -1,8 +1,8 @@
-# openapi.api.SocialPostingApi
+# uberall_api.api.SocialPostingApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -28,9 +28,9 @@ Delete an existing Social Post identified by its unique uberall ID.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 
-final api = Openapi().getSocialPostingApi();
+final api = UberallApi().getSocialPostingApi();
 final String id = id_example; // String | The uberall unique ID of the Social Post that should be deleted
 
 try {
@@ -71,7 +71,7 @@ Get several Social Posts.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -81,7 +81,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getSocialPostingApi();
+final api = UberallApi().getSocialPostingApi();
 final int offset = 789; // int | The offset of the first social post to return
 final int max = 789; // int | The maximum number of social posts to return
 final BuiltList<String> locationIds = ; // BuiltList<String> | Return social posts for this locations
@@ -130,7 +130,7 @@ Get a list of directories where a posting is possible for the given combination 
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -140,7 +140,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getSocialPostingApi();
+final api = UberallApi().getSocialPostingApi();
 final BuiltList<String> locationIds = ; // BuiltList<String> | Return directories where posting is possible for these locationIds
 final BuiltList<String> businessIds = ; // BuiltList<String> | Return directories where posting is possible for these businessIds
 final BuiltList<String> locationGroupIds = ; // BuiltList<String> | Return directories where posting is possible for these locationGroupIds
@@ -189,7 +189,7 @@ Get several Directory Pages.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -199,7 +199,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getSocialPostingApi();
+final api = UberallApi().getSocialPostingApi();
 final String types = types_example; // String | The directory types we want pages for.
 final String levels = levels_example; // String | String that represents the level of a directory page. The 2 possible values are \"LISTING\" and \"BUSINESS\"
 final BuiltList<String> locationIds = ; // BuiltList<String> | Return directory pages where input locationIds have access to
@@ -252,7 +252,7 @@ Get a Social Plan identified by its unique uberall ID.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -262,7 +262,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getSocialPostingApi();
+final api = UberallApi().getSocialPostingApi();
 final String id = id_example; // String | The uberall unique ID of the Social Post you want to get
 
 try {
@@ -303,7 +303,7 @@ Edit an existing Social Post identified by its unique uberall ID.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -313,7 +313,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getSocialPostingApi();
+final api = UberallApi().getSocialPostingApi();
 final String id = id_example; // String | The uberall unique ID of the Social Post yu want to edit
 final SocialPost socialPost = ; // SocialPost | A SocialPost object
 
@@ -356,7 +356,7 @@ Create a new Social Post.  Requires either one businessId or one locationId or o
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -366,7 +366,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getSocialPostingApi();
+final api = UberallApi().getSocialPostingApi();
 final SocialPost socialPost = ; // SocialPost | A SocialPost object
 
 try {
@@ -407,7 +407,7 @@ Check if the CTA is valid for an Apple post
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -417,7 +417,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getSocialPostingApi();
+final api = UberallApi().getSocialPostingApi();
 final String cta = cta_example; // String | The call to action
 final BuiltList<String> locationIds = ; // BuiltList<String> | The location IDs
 

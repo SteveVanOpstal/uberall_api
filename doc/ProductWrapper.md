@@ -1,8 +1,8 @@
-# openapi.model.ProductWrapper
+# uberall_api.model.ProductWrapper
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

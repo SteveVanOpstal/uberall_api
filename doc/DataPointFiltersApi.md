@@ -1,8 +1,8 @@
-# openapi.api.DataPointFiltersApi
+# uberall_api.api.DataPointFiltersApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -28,7 +28,7 @@ Deletes a specific DataPointFilter
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -38,7 +38,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDataPointFiltersApi();
+final api = UberallApi().getDataPointFiltersApi();
 final String id = id_example; // String | ID of a DataPointFilter
 final int userId = 789; // int | The user that is the owner of the filter. Required when request is done as API_ADMIN
 
@@ -81,7 +81,7 @@ Unsubscribe from a specific DataPointFilter
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -91,7 +91,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDataPointFiltersApi();
+final api = UberallApi().getDataPointFiltersApi();
 final String id = id_example; // String | ID of a DataPointFilter
 final int userId = 789; // int | ID of a user that should be unsubscribed from the filter
 
@@ -134,7 +134,7 @@ Get available filters for filtering data points, which the current api user has 
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -144,7 +144,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDataPointFiltersApi();
+final api = UberallApi().getDataPointFiltersApi();
 final String locationIds = locationIds_example; // String | Applies a filter of locationIds
 final String userId = userId_example; // String | Shows the filters of the user with this id
 
@@ -187,7 +187,7 @@ The Uberall locationId
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -197,7 +197,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDataPointFiltersApi();
+final api = UberallApi().getDataPointFiltersApi();
 final String id = id_example; // String | ID of a DataPointFilter
 
 try {
@@ -238,7 +238,7 @@ Shows owned or subscribed DataPointFilters
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -248,7 +248,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDataPointFiltersApi();
+final api = UberallApi().getDataPointFiltersApi();
 final String userId = userId_example; // String | Shows the filters of the user with this id
 
 try {
@@ -289,7 +289,7 @@ Changes a specific DataPointFilter
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -299,7 +299,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDataPointFiltersApi();
+final api = UberallApi().getDataPointFiltersApi();
 final String id = id_example; // String | ID of a DataPointFilter
 final DataPointFilter dataPointFilter = ; // DataPointFilter | A DataPointFilter object that needs to be updated
 
@@ -342,7 +342,7 @@ Creates a new DataPointFilter
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -352,7 +352,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDataPointFiltersApi();
+final api = UberallApi().getDataPointFiltersApi();
 final DataPointFilter dataPointFilter = ; // DataPointFilter | DataPointFilter object that needs to be created
 
 try {
@@ -393,7 +393,7 @@ Subscribe to a specific DataPointFilter
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -403,7 +403,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDataPointFiltersApi();
+final api = UberallApi().getDataPointFiltersApi();
 final String id = id_example; // String | ID of a DataPointFilter
 final int userId = 789; // int | ID of a user that should be subscribed to the filter
 

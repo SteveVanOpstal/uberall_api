@@ -1,8 +1,8 @@
-# openapi.model.SubscribableEventTypesWrapper
+# uberall_api.model.SubscribableEventTypesWrapper
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

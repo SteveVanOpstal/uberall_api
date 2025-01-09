@@ -1,8 +1,8 @@
-# openapi.model.LocationGroupListResponseWrapper
+# uberall_api.model.LocationGroupListResponseWrapper
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

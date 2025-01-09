@@ -1,8 +1,8 @@
-# openapi.api.SocialPostingTemplatesApi
+# uberall_api.api.SocialPostingTemplatesApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -25,7 +25,7 @@ Delete an existing Social Post Template identified by its unique uberall ID.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -35,7 +35,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getSocialPostingTemplatesApi();
+final api = UberallApi().getSocialPostingTemplatesApi();
 final String id = id_example; // String | Id of the Social Post Template that should be deleted
 final String userId = userId_example; // String | Id of the user requesting to delete the social post template
 
@@ -78,7 +78,7 @@ Get several Social Post Templates.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -88,7 +88,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getSocialPostingTemplatesApi();
+final api = UberallApi().getSocialPostingTemplatesApi();
 final String userId = userId_example; // String | Shows the templates of the user with this id
 final int max = 789; // int | Used for pagination. Maximum number of results per page.
 final int offset = 789; // int | Offset used for pagination.
@@ -133,7 +133,7 @@ Get a Social Plan Template identified by its unique uberall ID.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -143,7 +143,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getSocialPostingTemplatesApi();
+final api = UberallApi().getSocialPostingTemplatesApi();
 final String id = id_example; // String | Id of the Social Post Template
 final String userId = userId_example; // String | Id of the user requesting the social post template
 
@@ -186,7 +186,7 @@ Edit an existing Social Post Template identified by its unique uberall ID.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -196,7 +196,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getSocialPostingTemplatesApi();
+final api = UberallApi().getSocialPostingTemplatesApi();
 final String id = id_example; // String | The unique uberall ID of the Social Post Template you want to edit
 final SocialPostTemplate socialPostTemplate = ; // SocialPostTemplate | A SocialPostTemplate object
 
@@ -239,7 +239,7 @@ Create a new Social Post Template.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -249,7 +249,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getSocialPostingTemplatesApi();
+final api = UberallApi().getSocialPostingTemplatesApi();
 final SocialPostTemplate socialPostTemplate = ; // SocialPostTemplate | The Social Post Template to create
 
 try {

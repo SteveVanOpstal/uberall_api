@@ -1,8 +1,8 @@
-# openapi.model.DataPointFiltersResponseWrapper
+# uberall_api.model.DataPointFiltersResponseWrapper
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

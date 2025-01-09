@@ -1,8 +1,8 @@
-# openapi.model.DataPointFilter
+# uberall_api.model.DataPointFilter
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties
@@ -22,8 +22,8 @@ Name | Type | Description | Notes
 **timeSpan** | **String** | The date range for which the dataPoints should be filtered. | [optional] 
 **crossfeedFilterId** | **int** | The id of a filter saved by a user in the Feed | [optional] 
 **businessIds** | **BuiltSet&lt;int&gt;** | The list of businesses IDs for which the dataPoints should be filtered | [optional] 
-**dateStart** | [**DateTime**](DateTime.md) | The minimum date for which the dataPoints should be filtered | [optional] 
 **dateEnd** | [**DateTime**](DateTime.md) | The maximum date for which the dataPoints should be filtered | [optional] 
+**dateStart** | [**DateTime**](DateTime.md) | The minimum date for which the dataPoints should be filtered | [optional] 
 **ownerId** | **int** | The id of the user that owns the filter | [optional] 
 **ownerName** | **String** | The name of the user that owns the filter | [optional] 
 **salesPartnerId** | **int** | The sales partner to which the filter belongs | [optional] 

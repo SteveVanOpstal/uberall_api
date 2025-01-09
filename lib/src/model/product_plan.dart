@@ -4,8 +4,8 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
+import 'package:uberall_api/src/model/price_per_country.dart';
 import 'package:built_value/json_object.dart';
-import 'package:openapi/src/model/price_per_country.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -439,16 +439,16 @@ class ProductPlanStatusEnum extends EnumClass {
   static const ProductPlanStatusEnum DELETED = _$productPlanStatusEnum_DELETED;
 
   /// One among PENDING_APPROVAL, ACTIVE, INACTIVE
-  @BuiltValueEnumConst(wireName: r'PENDING_APPROVAL')
+  @BuiltValueEnumConst(wireName: r'PENDING_APPROVAL2')
   static const ProductPlanStatusEnum PENDING_APPROVAL2 =
       _$productPlanStatusEnum_PENDING_APPROVAL2;
 
   /// One among PENDING_APPROVAL, ACTIVE, INACTIVE
-  @BuiltValueEnumConst(wireName: r'ACTIVE')
+  @BuiltValueEnumConst(wireName: r'ACTIVE2')
   static const ProductPlanStatusEnum ACTIVE2 = _$productPlanStatusEnum_ACTIVE2;
 
   /// One among PENDING_APPROVAL, ACTIVE, INACTIVE
-  @BuiltValueEnumConst(wireName: r'INACTIVE')
+  @BuiltValueEnumConst(wireName: r'INACTIVE2')
   static const ProductPlanStatusEnum INACTIVE2 =
       _$productPlanStatusEnum_INACTIVE2;
 

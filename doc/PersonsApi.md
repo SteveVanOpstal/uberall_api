@@ -1,8 +1,8 @@
-# openapi.api.PersonsApi
+# uberall_api.api.PersonsApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **deletePersons**
-> Response deletePersons()
+> UberallResponse deletePersons()
 
 Delete a Person using identifier
 
@@ -27,9 +27,9 @@ Delete a person identified by identifier in the url param
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 
-final api = Openapi().getPersonsApi();
+final api = UberallApi().getPersonsApi();
 
 try {
     final response = api.deletePersons();
@@ -44,7 +44,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Response**](Response.md)
+[**UberallResponse**](UberallResponse.md)
 
 ### Authorization
 
@@ -58,7 +58,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deletePersonsId**
-> Response deletePersonsId(id)
+> UberallResponse deletePersonsId(id)
 
 Delete a Person
 
@@ -66,7 +66,7 @@ Delete a person
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -76,7 +76,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getPersonsApi();
+final api = UberallApi().getPersonsApi();
 final String id = id_example; // String | The uberall unique id of the person you want to delete
 
 try {
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Response**](Response.md)
+[**UberallResponse**](UberallResponse.md)
 
 ### Authorization
 
@@ -117,7 +117,7 @@ Get all persons the current API user can manage. <br>To specify products with id
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -127,7 +127,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getPersonsApi();
+final api = UberallApi().getPersonsApi();
 final JsonObject body = Object; // JsonObject | 
 
 try {
@@ -168,7 +168,7 @@ Get a person identified by its uberall unique id
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -178,7 +178,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getPersonsApi();
+final api = UberallApi().getPersonsApi();
 final String id = id_example; // String | The uberall unique id of the person you want to get
 
 try {
@@ -219,7 +219,7 @@ Make changes to a person, always use ?identifier= in url param to identify the p
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -229,7 +229,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getPersonsApi();
+final api = UberallApi().getPersonsApi();
 final Person person = ; // Person | Person object that needs to be updated
 
 try {
@@ -270,7 +270,7 @@ Make changes to a person. Any blank parameter deletes an old value, any unspecif
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -280,7 +280,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getPersonsApi();
+final api = UberallApi().getPersonsApi();
 final String id = id_example; // String | The uberall unique id of the person you want to update
 final Person person = ; // Person | Person object that needs to be updated
 
@@ -323,7 +323,7 @@ Create a person. It can be added to a content list later
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -333,7 +333,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getPersonsApi();
+final api = UberallApi().getPersonsApi();
 final Person person = ; // Person | Person object that needs to be created
 
 try {

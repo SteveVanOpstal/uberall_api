@@ -1,8 +1,8 @@
-# openapi.api.DashboardExportsApi
+# uberall_api.api.DashboardExportsApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -24,7 +24,7 @@ Get a list of dashboard exports.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -34,7 +34,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDashboardExportsApi();
+final api = UberallApi().getDashboardExportsApi();
 final String locationIds = locationIds_example; // String | List of location IDs to filter by
 final int max = 789; // int | Max number of items to return
 final int offset = 789; // int | Offset used for pagination. Default: 0
@@ -79,7 +79,7 @@ Get details of dashboard export by ID.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -89,7 +89,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDashboardExportsApi();
+final api = UberallApi().getDashboardExportsApi();
 final String id = id_example; // String | DashboardExportData Id
 
 try {
@@ -130,7 +130,7 @@ Download the result of a dashboard export (a PDF file).
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -140,7 +140,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDashboardExportsApi();
+final api = UberallApi().getDashboardExportsApi();
 final String id = id_example; // String | DashboardExportData Id
 
 try {
@@ -181,7 +181,7 @@ Invoke creation of a dashboard export (in PDF format) asynchronously.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -191,7 +191,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDashboardExportsApi();
+final api = UberallApi().getDashboardExportsApi();
 final String start = 2017-01-01; // String | Start date of export, in yyyy-MM-dd format
 final String end = 2017-12-31; // String | End date of export, in yyyy-MM-dd format
 final String group = group_example; // String | Grouping of the historical data

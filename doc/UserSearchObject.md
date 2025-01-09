@@ -1,8 +1,8 @@
-# openapi.model.UserSearchObject
+# uberall_api.model.UserSearchObject
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

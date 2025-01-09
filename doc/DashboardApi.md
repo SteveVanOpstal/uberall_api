@@ -1,8 +1,8 @@
-# openapi.api.DashboardApi
+# uberall_api.api.DashboardApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -34,7 +34,7 @@ Get the Customer Feedback of the user managed locations filtered by the given id
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -44,7 +44,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDashboardApi();
+final api = UberallApi().getDashboardApi();
 final BuiltList<int> businessIds = ; // BuiltList<int> | The ids of the businesses you want customer feedback for
 final BuiltList<int> locationIds = ; // BuiltList<int> | The ids of the locations you want customer feedback data for
 final String textFilter = Berlin; // String | Filter locations to get customer feedback for by name, zip, street, city, label
@@ -95,7 +95,7 @@ Get the Customer Feedback of the user managed locations filtered by the given id
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -105,7 +105,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDashboardApi();
+final api = UberallApi().getDashboardApi();
 final BuiltList<int> businessIds = ; // BuiltList<int> | The ids of the businesses you want customer feedback by period for
 final BuiltList<int> locationIds = ; // BuiltList<int> | The ids of the locations you want customer feedback by period data for
 final String textFilter = Berlin; // String | Filter locations to get customer feedback by period for by name, zip, street, city, label
@@ -158,7 +158,7 @@ Returns the 100 most mentioned Keywords and the average Rating of the Reviews wh
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -168,7 +168,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDashboardApi();
+final api = UberallApi().getDashboardApi();
 final BuiltList<int> businessIds = ; // BuiltList<int> | The ids of the businesses you want customer feedback keywords for
 final BuiltList<int> locationIds = ; // BuiltList<int> | The ids of the locations you want customer feedback keywords data for
 final String textFilter = Berlin; // String | Filter locations to get customer feedback keywords for by name, zip, street, city, label
@@ -217,7 +217,7 @@ Get the exported insights data
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -227,7 +227,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDashboardApi();
+final api = UberallApi().getDashboardApi();
 final BuiltList<int> businessIds = ; // BuiltList<int> | The ids of the businesses you want insights data for
 final BuiltList<int> locationIds = ; // BuiltList<int> | The ids of the locations you want insights data for
 final String textFilter = Berlin; // String | Filter locations to get insights data for by name, zip, street, city, label
@@ -276,7 +276,7 @@ Gets all insights data for the locations. When the request takes too much time, 
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -286,7 +286,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDashboardApi();
+final api = UberallApi().getDashboardApi();
 final BuiltList<int> businessIds = ; // BuiltList<int> | Filter export data by these businessIds
 final BuiltList<int> locationIds = ; // BuiltList<int> | Filter export data by these locationIds
 final String textFilter = textFilter_example; // String | Filter export data by this query. It is applied across these location properties: name, street, streetNo, zip, city, country, identifier, labels
@@ -335,7 +335,7 @@ Get the Feed of latest activities related to the managed locations
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -345,7 +345,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDashboardApi();
+final api = UberallApi().getDashboardApi();
 final BuiltList<int> businessIds = ; // BuiltList<int> | The ids of the businesses you want feed items for
 final BuiltList<int> locationIds = ; // BuiltList<int> | The ids of the locations you want feed items for
 final String textFilter = Berlin; // String | Filter locations to get feed for by name, zip, street, city, label
@@ -394,7 +394,7 @@ Get Insights Data
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -404,7 +404,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDashboardApi();
+final api = UberallApi().getDashboardApi();
 final String type = type_example; // String | The directory you want insights for. Can be GOOGLE, FACEBOOK, BING or YELP_API
 final BuiltList<int> businessIds = ; // BuiltList<int> | The ids of the businesses you want insights data for
 final BuiltList<int> locationIds = ; // BuiltList<int> | The ids of the locations you want insights data for
@@ -459,7 +459,7 @@ Get the Insights warnings. The list of locations/accounts connected/unconnected,
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -469,7 +469,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDashboardApi();
+final api = UberallApi().getDashboardApi();
 final BuiltList<int> businessIds = ; // BuiltList<int> | The ids of the businesses you want insights data warnings for
 final BuiltList<int> locationIds = ; // BuiltList<int> | The ids of the locations you want insights data warnings for
 final String textFilter = Berlin; // String | Filter locations to get insights data warnings for by name, zip, street, city, label
@@ -520,7 +520,7 @@ Get the Listing Health for the locations managed by the current user
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -530,7 +530,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDashboardApi();
+final api = UberallApi().getDashboardApi();
 final int id = 789; // int | The id of the location you want the listing health for
 final BuiltList<int> locationIds = ; // BuiltList<int> | The ids of the locations you want listing health data for
 final BuiltList<int> businessIds = ; // BuiltList<int> | The ids of the businesses you want listing health for
@@ -577,7 +577,7 @@ Get the Managers Count
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -587,7 +587,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDashboardApi();
+final api = UberallApi().getDashboardApi();
 final String id = id_example; // String | The uberall unique id for the location
 
 try {
@@ -628,7 +628,7 @@ Get the Next Best Actions recommended to the current user
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -638,7 +638,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDashboardApi();
+final api = UberallApi().getDashboardApi();
 final String id = id_example; // String | The uberall unique id for the location
 
 try {
@@ -679,7 +679,7 @@ Get the profile completeness of the locations managed by the current user
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -689,7 +689,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDashboardApi();
+final api = UberallApi().getDashboardApi();
 final BuiltList<int> businessIds = ; // BuiltList<int> | The ids of the businesses you want profile completeness for
 final BuiltList<int> locationIds = ; // BuiltList<int> | The ids of the locations you want profile completeness data for
 
@@ -732,7 +732,7 @@ Get the suppressed duplicates info
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -742,7 +742,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDashboardApi();
+final api = UberallApi().getDashboardApi();
 final BuiltList<int> businessIds = ; // BuiltList<int> | The ids of the businesses you want suppressed duplicates for
 final BuiltList<int> locationIds = ; // BuiltList<int> | The ids of the locations you want suppressed duplicates data for
 final String type = type_example; // String | The directory you want suppressed duplicates data for
@@ -791,7 +791,7 @@ Get the Visibility Index of the locations managed by the current user
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -801,7 +801,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getDashboardApi();
+final api = UberallApi().getDashboardApi();
 final String id = id_example; // String | The id of the location you want the visibility index for
 
 try {

@@ -1,8 +1,8 @@
-# openapi.model.DirectoryPageResponseObject
+# uberall_api.model.DirectoryPageResponseObject
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

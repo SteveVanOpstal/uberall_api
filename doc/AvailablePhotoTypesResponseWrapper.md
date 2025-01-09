@@ -1,8 +1,8 @@
-# openapi.model.AvailablePhotoTypesResponseWrapper
+# uberall_api.model.AvailablePhotoTypesResponseWrapper
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

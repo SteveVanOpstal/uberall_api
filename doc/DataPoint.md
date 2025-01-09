@@ -1,16 +1,20 @@
-# openapi.model.DataPoint
+# uberall_api.model.DataPoint
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **comments** | [**BuiltList&lt;DataPoint&gt;**](DataPoint.md) |  | [optional] 
-**locationId** | **int** | The Location ID associated with this datapoint | [optional] 
+**type** | **String** | Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION] | [optional] 
 **countLikes** | **int** | Number of likes to this item | [optional] 
+**locationId** | **int** | The Location ID associated with this datapoint | [optional] 
+**data** | **String** | Content of the datapoint (text of the review, url of the photo, count of checkins...) | [optional] 
+**liked** | **bool** | Whether this datapoint has been liked or not | [optional] 
+**actionDate** | [**DateTime**](DateTime.md) | The date when the review/photo/... was published in the online directory | [optional] 
 **author** | **String** | Username of the datapoint's author | [optional] 
 **authorImage** | **String** | Author profile picture url | [optional] 
 **countComments** | **int** | Number of comments to this item. | [optional] 
@@ -22,11 +26,7 @@ Name | Type | Description | Notes
 **rating** | **double** | Rating given by the user. Float value, max: 5. | [optional] 
 **repliedByOwner** | **bool** | True if the owner of the business has replied | [optional] 
 **secondaryData** | **String** | Additional info about the datapoint (eg. text content on instagram pictures) | [optional] 
-**liked** | **bool** | Whether this datapoint has been liked or not | [optional] 
-**data** | **String** | Content of the datapoint (text of the review, url of the photo, count of checkins...) | [optional] 
 **threadActionDate** | [**DateTime**](DateTime.md) | The date of the last interaction in that thread. When a review receives a new comment, the parent will update. | [optional] 
-**type** | **String** | Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION] | [optional] 
-**actionDate** | [**DateTime**](DateTime.md) | The date when the review/photo/... was published in the online directory | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -3,10 +3,10 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:openapi/src/model/asset_info.dart';
-import 'package:openapi/src/model/photo_container.dart';
+import 'package:uberall_api/src/model/social_post_template_call_to_action.dart';
+import 'package:uberall_api/src/model/asset_info.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:openapi/src/model/social_post_template_call_to_action.dart';
+import 'package:uberall_api/src/model/photo_container.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

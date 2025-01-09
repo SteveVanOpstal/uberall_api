@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:openapi/src/model/visibility_index.dart';
+import 'package:uberall_api/src/model/visibility_index.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

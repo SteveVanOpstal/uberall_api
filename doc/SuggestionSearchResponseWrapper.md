@@ -1,8 +1,8 @@
-# openapi.model.SuggestionSearchResponseWrapper
+# uberall_api.model.SuggestionSearchResponseWrapper
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

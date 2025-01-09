@@ -1,8 +1,8 @@
-# openapi.model.WebhookWrapper
+# uberall_api.model.WebhookWrapper
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

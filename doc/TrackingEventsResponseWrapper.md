@@ -1,8 +1,8 @@
-# openapi.model.TrackingEventsResponseWrapper
+# uberall_api.model.TrackingEventsResponseWrapper
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

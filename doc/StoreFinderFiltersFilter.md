@@ -1,8 +1,8 @@
-# openapi.model.StoreFinderFiltersFilter
+# uberall_api.model.StoreFinderFiltersFilter
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

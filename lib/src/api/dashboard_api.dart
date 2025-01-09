@@ -9,21 +9,21 @@ import 'package:dio/dio.dart';
 
 import 'dart:typed_data';
 import 'package:built_collection/built_collection.dart';
-import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/customer_feedback_by_period_wrapper.dart';
-import 'package:openapi/src/model/customer_feedback_keywords_wrapper.dart';
-import 'package:openapi/src/model/customer_feedback_wrapper.dart';
-import 'package:openapi/src/model/dashboard_export_insights_data_response_wrapper.dart';
-import 'package:openapi/src/model/date.dart';
-import 'package:openapi/src/model/feed_item_wrapper.dart';
-import 'package:openapi/src/model/insights_wrapper.dart';
-import 'package:openapi/src/model/listing_health_wrapper.dart';
-import 'package:openapi/src/model/location_managers_count_wrapper.dart';
-import 'package:openapi/src/model/location_task_wrapper.dart';
-import 'package:openapi/src/model/profile_completeness_wrapper.dart';
-import 'package:openapi/src/model/suppressed_duplicates_wrapper.dart';
-import 'package:openapi/src/model/user_missing_connection_warnings_wrapper.dart';
-import 'package:openapi/src/model/visibility_index_wrapper.dart';
+import 'package:uberall_api/src/api_util.dart';
+import 'package:uberall_api/src/model/customer_feedback_by_period_wrapper.dart';
+import 'package:uberall_api/src/model/customer_feedback_keywords_wrapper.dart';
+import 'package:uberall_api/src/model/customer_feedback_wrapper.dart';
+import 'package:uberall_api/src/model/dashboard_export_insights_data_response_wrapper.dart';
+import 'package:uberall_api/src/model/date.dart';
+import 'package:uberall_api/src/model/feed_item_wrapper.dart';
+import 'package:uberall_api/src/model/insights_wrapper.dart';
+import 'package:uberall_api/src/model/listing_health_wrapper.dart';
+import 'package:uberall_api/src/model/location_managers_count_wrapper.dart';
+import 'package:uberall_api/src/model/location_task_wrapper.dart';
+import 'package:uberall_api/src/model/profile_completeness_wrapper.dart';
+import 'package:uberall_api/src/model/suppressed_duplicates_wrapper.dart';
+import 'package:uberall_api/src/model/user_missing_connection_warnings_wrapper.dart';
+import 'package:uberall_api/src/model/visibility_index_wrapper.dart';
 
 class DashboardApi {
   final Dio _dio;

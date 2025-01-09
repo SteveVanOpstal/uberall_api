@@ -1,8 +1,8 @@
-# openapi.api.ServiceItemsApi
+# uberall_api.api.ServiceItemsApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **deleteServiceItemsId**
-> Response deleteServiceItemsId(id)
+> UberallResponse deleteServiceItemsId(id)
 
 Delete a Service Item
 
@@ -25,7 +25,7 @@ Delete a service item identified by identifier in the url param
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -35,7 +35,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getServiceItemsApi();
+final api = UberallApi().getServiceItemsApi();
 final String id = id_example; // String | The uberall unique ID for the service item
 
 try {
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Response**](Response.md)
+[**UberallResponse**](UberallResponse.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ Get all service items the current API user can manage. <br>To specify services w
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -86,7 +86,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getServiceItemsApi();
+final api = UberallApi().getServiceItemsApi();
 final JsonObject body = Object; // JsonObject | 
 
 try {
@@ -127,7 +127,7 @@ Get a single service item
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -137,7 +137,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getServiceItemsApi();
+final api = UberallApi().getServiceItemsApi();
 final String id = id_example; // String | The uberall unique ID for the service item
 
 try {
@@ -178,7 +178,7 @@ Make changes to a service item. <br> Always use ?identifier= in url param to ide
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -188,7 +188,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getServiceItemsApi();
+final api = UberallApi().getServiceItemsApi();
 final String id = id_example; // String | The uberall unique ID for the service item you want to update
 final ServiceItem serviceItem = ; // ServiceItem | A ServiceItem object
 
@@ -231,7 +231,7 @@ Create a menu item. It can be added to a content collection later
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -241,7 +241,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getServiceItemsApi();
+final api = UberallApi().getServiceItemsApi();
 final ServiceItem serviceItem = ; // ServiceItem | A ServiceItem object
 
 try {

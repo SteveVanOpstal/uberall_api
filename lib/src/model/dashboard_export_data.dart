@@ -18,9 +18,9 @@ part 'dashboard_export_data.g.dart';
 /// * [language] - Language of a generated PDF report (e.g. ''de'', ''fr'', ''en'')
 /// * [token] - Token of the export job
 /// * [status] - Current status of the export process (e.g. ''FINISHED'', ''SCHEDULED'', ''FAILED'')
-/// * [locationIds] - A list of location IDs for which to generate a report
 /// * [whitelabelIdentifier] - Whitelabel identifier which will be used in the outline of the PDF report
 /// * [salesPartnerCountry] - Country of the SalesPartner
+/// * [locationIds] - A list of location IDs for which to generate a report
 @BuiltValue()
 abstract class DashboardExportData
     implements Built<DashboardExportData, DashboardExportDataBuilder> {
@@ -50,10 +50,6 @@ abstract class DashboardExportData
   DashboardExportDataStatusEnum? get status;
   // enum statusEnum {  CREATED,  SCHEDULED,  FAILED,  FINISHED,  };
 
-  /// A list of location IDs for which to generate a report
-  @BuiltValueField(wireName: r'locationIds')
-  BuiltSet<String>? get locationIds;
-
   /// Whitelabel identifier which will be used in the outline of the PDF report
   @BuiltValueField(wireName: r'whitelabelIdentifier')
   String? get whitelabelIdentifier;
@@ -61,6 +57,10 @@ abstract class DashboardExportData
   /// Country of the SalesPartner
   @BuiltValueField(wireName: r'salesPartnerCountry')
   String? get salesPartnerCountry;
+
+  /// A list of location IDs for which to generate a report
+  @BuiltValueField(wireName: r'locationIds')
+  BuiltSet<String>? get locationIds;
 
   DashboardExportData._();
 
@@ -133,13 +133,6 @@ class _$DashboardExportDataSerializer
         specifiedType: const FullType(DashboardExportDataStatusEnum),
       );
     }
-    if (object.locationIds != null) {
-      yield r'locationIds';
-      yield serializers.serialize(
-        object.locationIds,
-        specifiedType: const FullType(BuiltSet, [FullType(String)]),
-      );
-    }
     if (object.whitelabelIdentifier != null) {
       yield r'whitelabelIdentifier';
       yield serializers.serialize(
@@ -152,6 +145,13 @@ class _$DashboardExportDataSerializer
       yield serializers.serialize(
         object.salesPartnerCountry,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.locationIds != null) {
+      yield r'locationIds';
+      yield serializers.serialize(
+        object.locationIds,
+        specifiedType: const FullType(BuiltSet, [FullType(String)]),
       );
     }
   }
@@ -221,13 +221,6 @@ class _$DashboardExportDataSerializer
           ) as DashboardExportDataStatusEnum;
           result.status = valueDes;
           break;
-        case r'locationIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltSet, [FullType(String)]),
-          ) as BuiltSet<String>;
-          result.locationIds.replace(valueDes);
-          break;
         case r'whitelabelIdentifier':
           final valueDes = serializers.deserialize(
             value,
@@ -241,6 +234,13 @@ class _$DashboardExportDataSerializer
             specifiedType: const FullType(String),
           ) as String;
           result.salesPartnerCountry = valueDes;
+          break;
+        case r'locationIds':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltSet, [FullType(String)]),
+          ) as BuiltSet<String>;
+          result.locationIds.replace(valueDes);
           break;
         default:
           unhandled.add(key);

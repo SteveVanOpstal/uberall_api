@@ -3,19 +3,19 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:openapi/src/model/special_opening_hours.dart';
-import 'package:openapi/src/model/person.dart';
-import 'package:openapi/src/model/menu_item.dart';
-import 'package:openapi/src/model/video.dart';
-import 'package:openapi/src/model/event.dart';
+import 'package:uberall_api/src/model/service_item.dart';
+import 'package:uberall_api/src/model/social_profile.dart';
+import 'package:uberall_api/src/model/opening_hours.dart';
+import 'package:uberall_api/src/model/video.dart';
+import 'package:uberall_api/src/model/next_open.dart';
+import 'package:uberall_api/src/model/custom_item.dart';
+import 'package:uberall_api/src/model/product.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:openapi/src/model/next_open.dart';
-import 'package:openapi/src/model/opening_hours.dart';
-import 'package:openapi/src/model/product.dart';
-import 'package:openapi/src/model/social_profile.dart';
-import 'package:openapi/src/model/custom_item.dart';
+import 'package:uberall_api/src/model/person.dart';
+import 'package:uberall_api/src/model/menu_item.dart';
+import 'package:uberall_api/src/model/special_opening_hours.dart';
+import 'package:uberall_api/src/model/event.dart';
 import 'package:built_value/json_object.dart';
-import 'package:openapi/src/model/service_item.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

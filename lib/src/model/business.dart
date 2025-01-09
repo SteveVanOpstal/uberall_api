@@ -3,10 +3,10 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:openapi/src/model/product_plan.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:uberall_api/src/model/product_plan.dart';
+import 'package:uberall_api/src/model/price_per_country.dart';
 import 'package:built_value/json_object.dart';
-import 'package:openapi/src/model/price_per_country.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -29,22 +29,22 @@ part 'business.g.dart';
 /// * [productPlan]
 /// * [dateCreated] - The date and time the business was created in uberall database
 /// * [status] - Business's status
-/// * [defaultPrice] - Business default price in cent
+/// * [productPlanId]
 /// * [defaultOriginalPrice] - Default Original Price in cent
-/// * [defaultPriceSetup] - Business default setup price in cent
+/// * [activeLocations] - Number of active locations in the business
+/// * [defaultPrice] - Business default price in cent
 /// * [defaultMarketDevelopmentFunds]
 /// * [typeId]
-/// * [productPlanId]
+/// * [countryPrices] - List of country specific prices
+/// * [defaultPriceSetup] - Business default setup price in cent
 /// * [salesPartnerId]
 /// * [invoicePaymentInformationId]
-/// * [activeLocations] - Number of active locations in the business
-/// * [countryPrices] - List of country specific prices
-/// * [customFields] - Custom fields allow for additional information to be added at the location level. All locations within the business will have the same list of custom fields.
+/// * [nextProductPlanId] - ID of the next product plan applied for the business on the defined effectiveDate
 /// * [businessSyncable] - True if the business is allowed to start a sync. Only relevant for Businesses with more than 10 locations.
-/// * [numOfLocations] - Number of active locations
 /// * [dateExpiration] - The date the business's contract expires
 /// * [effectiveDate] - Date when the business automatically changes its product plan to the new product plan (defined by nextProductPlanId)
-/// * [nextProductPlanId] - ID of the next product plan applied for the business on the defined effectiveDate
+/// * [customFields] - Custom fields allow for additional information to be added at the location level. All locations within the business will have the same list of custom fields.
+/// * [numOfLocations] - Number of active locations
 @BuiltValue()
 abstract class Business implements Built<Business, BusinessBuilder> {
   /// The uberall unique id for the business
@@ -105,17 +105,20 @@ abstract class Business implements Built<Business, BusinessBuilder> {
   BusinessStatusEnum? get status;
   // enum statusEnum {  CREATED,  NOT_CONFIRMED,  ACTIVE,  DELETED,  };
 
-  /// Business default price in cent
-  @BuiltValueField(wireName: r'defaultPrice')
-  int? get defaultPrice;
+  @BuiltValueField(wireName: r'productPlanId')
+  JsonObject? get productPlanId;
 
   /// Default Original Price in cent
   @BuiltValueField(wireName: r'defaultOriginalPrice')
   int? get defaultOriginalPrice;
 
-  /// Business default setup price in cent
-  @BuiltValueField(wireName: r'defaultPriceSetup')
-  int? get defaultPriceSetup;
+  /// Number of active locations in the business
+  @BuiltValueField(wireName: r'activeLocations')
+  int? get activeLocations;
+
+  /// Business default price in cent
+  @BuiltValueField(wireName: r'defaultPrice')
+  int? get defaultPrice;
 
   @BuiltValueField(wireName: r'defaultMarketDevelopmentFunds')
   int? get defaultMarketDevelopmentFunds;
@@ -123,8 +126,13 @@ abstract class Business implements Built<Business, BusinessBuilder> {
   @BuiltValueField(wireName: r'typeId')
   JsonObject? get typeId;
 
-  @BuiltValueField(wireName: r'productPlanId')
-  JsonObject? get productPlanId;
+  /// List of country specific prices
+  @BuiltValueField(wireName: r'countryPrices')
+  BuiltSet<PricePerCountry>? get countryPrices;
+
+  /// Business default setup price in cent
+  @BuiltValueField(wireName: r'defaultPriceSetup')
+  int? get defaultPriceSetup;
 
   @BuiltValueField(wireName: r'salesPartnerId')
   JsonObject? get salesPartnerId;
@@ -132,25 +140,13 @@ abstract class Business implements Built<Business, BusinessBuilder> {
   @BuiltValueField(wireName: r'invoicePaymentInformationId')
   JsonObject? get invoicePaymentInformationId;
 
-  /// Number of active locations in the business
-  @BuiltValueField(wireName: r'activeLocations')
-  int? get activeLocations;
-
-  /// List of country specific prices
-  @BuiltValueField(wireName: r'countryPrices')
-  BuiltSet<PricePerCountry>? get countryPrices;
-
-  /// Custom fields allow for additional information to be added at the location level. All locations within the business will have the same list of custom fields.
-  @BuiltValueField(wireName: r'customFields')
-  String? get customFields;
+  /// ID of the next product plan applied for the business on the defined effectiveDate
+  @BuiltValueField(wireName: r'nextProductPlanId')
+  int? get nextProductPlanId;
 
   /// True if the business is allowed to start a sync. Only relevant for Businesses with more than 10 locations.
   @BuiltValueField(wireName: r'businessSyncable')
   bool? get businessSyncable;
-
-  /// Number of active locations
-  @BuiltValueField(wireName: r'numOfLocations')
-  int? get numOfLocations;
 
   /// The date the business's contract expires
   @BuiltValueField(wireName: r'dateExpiration')
@@ -160,9 +156,13 @@ abstract class Business implements Built<Business, BusinessBuilder> {
   @BuiltValueField(wireName: r'effectiveDate')
   DateTime? get effectiveDate;
 
-  /// ID of the next product plan applied for the business on the defined effectiveDate
-  @BuiltValueField(wireName: r'nextProductPlanId')
-  int? get nextProductPlanId;
+  /// Custom fields allow for additional information to be added at the location level. All locations within the business will have the same list of custom fields.
+  @BuiltValueField(wireName: r'customFields')
+  String? get customFields;
+
+  /// Number of active locations
+  @BuiltValueField(wireName: r'numOfLocations')
+  int? get numOfLocations;
 
   Business._();
 
@@ -285,11 +285,11 @@ class _$BusinessSerializer implements PrimitiveSerializer<Business> {
         specifiedType: const FullType(BusinessStatusEnum),
       );
     }
-    if (object.defaultPrice != null) {
-      yield r'defaultPrice';
+    if (object.productPlanId != null) {
+      yield r'productPlanId';
       yield serializers.serialize(
-        object.defaultPrice,
-        specifiedType: const FullType(int),
+        object.productPlanId,
+        specifiedType: const FullType(JsonObject),
       );
     }
     if (object.defaultOriginalPrice != null) {
@@ -299,10 +299,17 @@ class _$BusinessSerializer implements PrimitiveSerializer<Business> {
         specifiedType: const FullType(int),
       );
     }
-    if (object.defaultPriceSetup != null) {
-      yield r'defaultPriceSetup';
+    if (object.activeLocations != null) {
+      yield r'activeLocations';
       yield serializers.serialize(
-        object.defaultPriceSetup,
+        object.activeLocations,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.defaultPrice != null) {
+      yield r'defaultPrice';
+      yield serializers.serialize(
+        object.defaultPrice,
         specifiedType: const FullType(int),
       );
     }
@@ -320,11 +327,18 @@ class _$BusinessSerializer implements PrimitiveSerializer<Business> {
         specifiedType: const FullType(JsonObject),
       );
     }
-    if (object.productPlanId != null) {
-      yield r'productPlanId';
+    if (object.countryPrices != null) {
+      yield r'countryPrices';
       yield serializers.serialize(
-        object.productPlanId,
-        specifiedType: const FullType(JsonObject),
+        object.countryPrices,
+        specifiedType: const FullType(BuiltSet, [FullType(PricePerCountry)]),
+      );
+    }
+    if (object.defaultPriceSetup != null) {
+      yield r'defaultPriceSetup';
+      yield serializers.serialize(
+        object.defaultPriceSetup,
+        specifiedType: const FullType(int),
       );
     }
     if (object.salesPartnerId != null) {
@@ -341,25 +355,11 @@ class _$BusinessSerializer implements PrimitiveSerializer<Business> {
         specifiedType: const FullType(JsonObject),
       );
     }
-    if (object.activeLocations != null) {
-      yield r'activeLocations';
+    if (object.nextProductPlanId != null) {
+      yield r'nextProductPlanId';
       yield serializers.serialize(
-        object.activeLocations,
+        object.nextProductPlanId,
         specifiedType: const FullType(int),
-      );
-    }
-    if (object.countryPrices != null) {
-      yield r'countryPrices';
-      yield serializers.serialize(
-        object.countryPrices,
-        specifiedType: const FullType(BuiltSet, [FullType(PricePerCountry)]),
-      );
-    }
-    if (object.customFields != null) {
-      yield r'customFields';
-      yield serializers.serialize(
-        object.customFields,
-        specifiedType: const FullType(String),
       );
     }
     if (object.businessSyncable != null) {
@@ -367,13 +367,6 @@ class _$BusinessSerializer implements PrimitiveSerializer<Business> {
       yield serializers.serialize(
         object.businessSyncable,
         specifiedType: const FullType(bool),
-      );
-    }
-    if (object.numOfLocations != null) {
-      yield r'numOfLocations';
-      yield serializers.serialize(
-        object.numOfLocations,
-        specifiedType: const FullType(int),
       );
     }
     if (object.dateExpiration != null) {
@@ -390,10 +383,17 @@ class _$BusinessSerializer implements PrimitiveSerializer<Business> {
         specifiedType: const FullType(DateTime),
       );
     }
-    if (object.nextProductPlanId != null) {
-      yield r'nextProductPlanId';
+    if (object.customFields != null) {
+      yield r'customFields';
       yield serializers.serialize(
-        object.nextProductPlanId,
+        object.customFields,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.numOfLocations != null) {
+      yield r'numOfLocations';
+      yield serializers.serialize(
+        object.numOfLocations,
         specifiedType: const FullType(int),
       );
     }
@@ -520,12 +520,12 @@ class _$BusinessSerializer implements PrimitiveSerializer<Business> {
           ) as BusinessStatusEnum;
           result.status = valueDes;
           break;
-        case r'defaultPrice':
+        case r'productPlanId':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.defaultPrice = valueDes;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
+          result.productPlanId = valueDes;
           break;
         case r'defaultOriginalPrice':
           final valueDes = serializers.deserialize(
@@ -534,12 +534,19 @@ class _$BusinessSerializer implements PrimitiveSerializer<Business> {
           ) as int;
           result.defaultOriginalPrice = valueDes;
           break;
-        case r'defaultPriceSetup':
+        case r'activeLocations':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(int),
           ) as int;
-          result.defaultPriceSetup = valueDes;
+          result.activeLocations = valueDes;
+          break;
+        case r'defaultPrice':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.defaultPrice = valueDes;
           break;
         case r'defaultMarketDevelopmentFunds':
           final valueDes = serializers.deserialize(
@@ -555,12 +562,20 @@ class _$BusinessSerializer implements PrimitiveSerializer<Business> {
           ) as JsonObject;
           result.typeId = valueDes;
           break;
-        case r'productPlanId':
+        case r'countryPrices':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.productPlanId = valueDes;
+            specifiedType:
+                const FullType(BuiltSet, [FullType(PricePerCountry)]),
+          ) as BuiltSet<PricePerCountry>;
+          result.countryPrices.replace(valueDes);
+          break;
+        case r'defaultPriceSetup':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.defaultPriceSetup = valueDes;
           break;
         case r'salesPartnerId':
           final valueDes = serializers.deserialize(
@@ -576,27 +591,12 @@ class _$BusinessSerializer implements PrimitiveSerializer<Business> {
           ) as JsonObject;
           result.invoicePaymentInformationId = valueDes;
           break;
-        case r'activeLocations':
+        case r'nextProductPlanId':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(int),
           ) as int;
-          result.activeLocations = valueDes;
-          break;
-        case r'countryPrices':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltSet, [FullType(PricePerCountry)]),
-          ) as BuiltSet<PricePerCountry>;
-          result.countryPrices.replace(valueDes);
-          break;
-        case r'customFields':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.customFields = valueDes;
+          result.nextProductPlanId = valueDes;
           break;
         case r'businessSyncable':
           final valueDes = serializers.deserialize(
@@ -604,13 +604,6 @@ class _$BusinessSerializer implements PrimitiveSerializer<Business> {
             specifiedType: const FullType(bool),
           ) as bool;
           result.businessSyncable = valueDes;
-          break;
-        case r'numOfLocations':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.numOfLocations = valueDes;
           break;
         case r'dateExpiration':
           final valueDes = serializers.deserialize(
@@ -626,12 +619,19 @@ class _$BusinessSerializer implements PrimitiveSerializer<Business> {
           ) as DateTime;
           result.effectiveDate = valueDes;
           break;
-        case r'nextProductPlanId':
+        case r'customFields':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.customFields = valueDes;
+          break;
+        case r'numOfLocations':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(int),
           ) as int;
-          result.nextProductPlanId = valueDes;
+          result.numOfLocations = valueDes;
           break;
         default:
           unhandled.add(key);

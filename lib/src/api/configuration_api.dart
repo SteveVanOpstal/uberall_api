@@ -7,12 +7,12 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/create_directory_brand_request.dart';
-import 'package:openapi/src/model/directories_details_countries_response_wrapper.dart';
-import 'package:openapi/src/model/directory_brand_page_response_wrapper.dart';
-import 'package:openapi/src/model/directory_brand_wrapper.dart';
-import 'package:openapi/src/model/features_response_wrapper.dart';
+import 'package:uberall_api/src/api_util.dart';
+import 'package:uberall_api/src/model/create_directory_brand_request.dart';
+import 'package:uberall_api/src/model/directories_details_countries_response_wrapper.dart';
+import 'package:uberall_api/src/model/directory_brand_page_response_wrapper.dart';
+import 'package:uberall_api/src/model/directory_brand_wrapper.dart';
+import 'package:uberall_api/src/model/features_response_wrapper.dart';
 
 class ConfigurationApi {
   final Dio _dio;

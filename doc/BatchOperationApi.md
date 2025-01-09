@@ -1,8 +1,8 @@
-# openapi.api.BatchOperationApi
+# uberall_api.api.BatchOperationApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -22,7 +22,7 @@ Returns a list of all existing location imports for the current user
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -32,7 +32,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getBatchOperationApi();
+final api = UberallApi().getBatchOperationApi();
 final int max = 789; // int | Used for pagination. Maximum number of results per page
 final int offset = 789; // int | Offset used for pagination
 final String sort = sort_example; // String | Order results by the specified field. Default is location id.
@@ -79,7 +79,7 @@ After a file import, a results report is created with all location failures. Thi
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -89,7 +89,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getBatchOperationApi();
+final api = UberallApi().getBatchOperationApi();
 final String id = id_example; // String | The uberall unique ID of the location import
 
 try {

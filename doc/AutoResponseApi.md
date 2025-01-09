@@ -1,8 +1,8 @@
-# openapi.api.AutoResponseApi
+# uberall_api.api.AutoResponseApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -26,7 +26,7 @@ Delete an Auto Response Rule. Only rules that can be edited by the current user 
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -36,7 +36,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getAutoResponseApi();
+final api = UberallApi().getAutoResponseApi();
 final String id = id_example; // String | id of Auto Response Rule
 
 try {
@@ -77,7 +77,7 @@ List Auto Response Rules with filters
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -87,7 +87,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getAutoResponseApi();
+final api = UberallApi().getAutoResponseApi();
 final BuiltList<String> businesses = ; // BuiltList<String> | Only return Auto Response Rules identified by the business ids listed in businesses
 final BuiltList<String> locations = ; // BuiltList<String> | Only return Auto Response Rules identified by the location ids listed in locations
 final BuiltList<String> excludedLocations = ; // BuiltList<String> | List of location ids that should be excluded from the result
@@ -140,7 +140,7 @@ Get an Auto Response Rule
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -150,7 +150,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getAutoResponseApi();
+final api = UberallApi().getAutoResponseApi();
 final String id = id_example; // String | id of Auto Response Rule
 
 try {
@@ -191,7 +191,7 @@ Edit an Auto Response Rule. The current user can edit this rule when they have a
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -201,7 +201,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getAutoResponseApi();
+final api = UberallApi().getAutoResponseApi();
 final String id = id_example; // String | id of Auto Response Rule
 final PostAutoResponseRulesRequest postAutoResponseRulesRequest = ; // PostAutoResponseRulesRequest | Auto Response Rule to be edited
 
@@ -244,7 +244,7 @@ Create an Auto Response Rule
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -254,7 +254,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getAutoResponseApi();
+final api = UberallApi().getAutoResponseApi();
 final PostAutoResponseRulesRequest postAutoResponseRulesRequest = ; // PostAutoResponseRulesRequest | Auto Response Rule to be created
 
 try {
@@ -295,7 +295,7 @@ Check if there are any other Auto Response Rules that have status ACTIVE, apply 
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -305,7 +305,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getAutoResponseApi();
+final api = UberallApi().getAutoResponseApi();
 final CheckConflictRequest checkConflictRequest = ; // CheckConflictRequest | A CheckConflictRequest object
 
 try {

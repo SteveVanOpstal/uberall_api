@@ -172,20 +172,20 @@ class FeedItemTypeEnum extends EnumClass {
       _$feedItemTypeEnum_LISTING_EVENT;
 
   /// The Feed item type, one of [INTERACTION, TRACKING, LOCATION_EVENT, LISTING_EVENT]
-  @BuiltValueEnumConst(wireName: r'INTERACTION')
+  @BuiltValueEnumConst(wireName: r'INTERACTION2')
   static const FeedItemTypeEnum INTERACTION2 = _$feedItemTypeEnum_INTERACTION2;
 
   /// The Feed item type, one of [INTERACTION, TRACKING, LOCATION_EVENT, LISTING_EVENT]
-  @BuiltValueEnumConst(wireName: r'TRACKING')
+  @BuiltValueEnumConst(wireName: r'TRACKING2')
   static const FeedItemTypeEnum TRACKING2 = _$feedItemTypeEnum_TRACKING2;
 
   /// The Feed item type, one of [INTERACTION, TRACKING, LOCATION_EVENT, LISTING_EVENT]
-  @BuiltValueEnumConst(wireName: r'LOCATION_EVENT')
+  @BuiltValueEnumConst(wireName: r'LOCATION_EVENT2')
   static const FeedItemTypeEnum LOCATION_EVENT2 =
       _$feedItemTypeEnum_LOCATION_EVENT2;
 
   /// The Feed item type, one of [INTERACTION, TRACKING, LOCATION_EVENT, LISTING_EVENT]
-  @BuiltValueEnumConst(wireName: r'LISTING_EVENT')
+  @BuiltValueEnumConst(wireName: r'LISTING_EVENT2')
   static const FeedItemTypeEnum LISTING_EVENT2 =
       _$feedItemTypeEnum_LISTING_EVENT2;
 

@@ -1,8 +1,8 @@
-# openapi.model.DirectoryConnectInfo
+# uberall_api.model.DirectoryConnectInfo
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

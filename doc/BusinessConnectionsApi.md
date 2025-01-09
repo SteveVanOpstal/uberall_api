@@ -1,8 +1,8 @@
-# openapi.api.BusinessConnectionsApi
+# uberall_api.api.BusinessConnectionsApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdCount**
-> Response getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdCount(directoryType, salesPartnerId, status, name)
+> UberallResponse getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdCount(directoryType, salesPartnerId, status, name)
 
 Count of connections
 
@@ -25,7 +25,7 @@ Get number of all business connections created under given salesPartner
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -35,7 +35,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getBusinessConnectionsApi();
+final api = UberallApi().getBusinessConnectionsApi();
 final String directoryType = directoryType_example; // String | Type of the directory
 final String salesPartnerId = salesPartnerId_example; // String | Id of the SalesPartner
 final String status = status_example; // String | Filter by status
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Response**](Response.md)
+[**UberallResponse**](UberallResponse.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdList**
-> Response getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdList(directoryType, salesPartnerId, status, name, max, offset)
+> UberallResponse getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdList(directoryType, salesPartnerId, status, name, max, offset)
 
 List of business connections
 
@@ -82,7 +82,7 @@ Get detailed list of business connections created under given salesPartner
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -92,7 +92,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getBusinessConnectionsApi();
+final api = UberallApi().getBusinessConnectionsApi();
 final String directoryType = directoryType_example; // String | Type of the directory
 final String salesPartnerId = salesPartnerId_example; // String | Id of the SalesPartner
 final String status = status_example; // String | Filter by status
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Response**](Response.md)
+[**UberallResponse**](UberallResponse.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Get list of all the external entities on directories that correspond to all conn
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -153,7 +153,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getBusinessConnectionsApi();
+final api = UberallApi().getBusinessConnectionsApi();
 final String directoryType = directoryType_example; // String | Type of the directory
 final String salesPartnerId = salesPartnerId_example; // String | Id of the SalesPartner
 final int max = 789; // int | Maximum number of items to return
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postBusinessConnectionsDirectoryTypeConnectBusinessId**
-> Response postBusinessConnectionsDirectoryTypeConnectBusinessId(directoryType, businessId, businessConnectionRequest)
+> UberallResponse postBusinessConnectionsDirectoryTypeConnectBusinessId(directoryType, businessId, businessConnectionRequest)
 
 Connect a business
 
@@ -200,7 +200,7 @@ Creates a business connection between the business and the external entity on di
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -210,7 +210,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getBusinessConnectionsApi();
+final api = UberallApi().getBusinessConnectionsApi();
 final String directoryType = directoryType_example; // String | Type of the directory
 final String businessId = businessId_example; // String | Id of the Business
 final BusinessConnectionRequest businessConnectionRequest = ; // BusinessConnectionRequest | Business connection parameters
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Response**](Response.md)
+[**UberallResponse**](UberallResponse.md)
 
 ### Authorization
 
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **putBusinessConnectionsDirectoryTypeDisconnectBusinessId**
-> Response putBusinessConnectionsDirectoryTypeDisconnectBusinessId(directoryType, businessId, businessConnectionRequest)
+> UberallResponse putBusinessConnectionsDirectoryTypeDisconnectBusinessId(directoryType, businessId, businessConnectionRequest)
 
 Disconnect a business
 
@@ -255,7 +255,7 @@ Deletes or disconnects the current business connection
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -265,7 +265,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getBusinessConnectionsApi();
+final api = UberallApi().getBusinessConnectionsApi();
 final String directoryType = directoryType_example; // String | Type of the directory
 final String businessId = businessId_example; // String | Id of the Business
 final BusinessConnectionRequest businessConnectionRequest = ; // BusinessConnectionRequest | Business connection parameters
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Response**](Response.md)
+[**UberallResponse**](UberallResponse.md)
 
 ### Authorization
 

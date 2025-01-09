@@ -9,10 +9,11 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
-import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/location_group_list_response_wrapper.dart';
-import 'package:openapi/src/model/location_group_params.dart';
-import 'package:openapi/src/model/location_group_wrapper.dart';
+import 'package:built_value/json_object.dart';
+import 'package:uberall_api/src/api_util.dart';
+import 'package:uberall_api/src/model/location_group_list_response_wrapper.dart';
+import 'package:uberall_api/src/model/location_group_params.dart';
+import 'package:uberall_api/src/model/location_group_wrapper.dart';
 
 class LocationGroupsApi {
   final Dio _dio;

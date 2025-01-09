@@ -1,8 +1,8 @@
-# openapi.model.LocationResponseWrapper
+# uberall_api.model.LocationResponseWrapper
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

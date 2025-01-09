@@ -7,10 +7,10 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/business_connection_request.dart';
-import 'package:openapi/src/model/external_entities_wrapper.dart';
-import 'package:openapi/src/model/response.dart' as openApi;
+import 'package:uberall_api/src/api_util.dart';
+import 'package:uberall_api/src/model/business_connection_request.dart';
+import 'package:uberall_api/src/model/external_entities_wrapper.dart';
+import 'package:uberall_api/src/model/uberall_response.dart';
 
 class BusinessConnectionsApi {
   final Dio _dio;
@@ -34,9 +34,9 @@ class BusinessConnectionsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Response] as data
+  /// Returns a [Future] containing a [Response] with a [UberallResponse] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<openApi.Response>>
+  Future<Response<UberallResponse>>
       getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdCount({
     required String directoryType,
     required String salesPartnerId,
@@ -104,7 +104,7 @@ class BusinessConnectionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    openApi.Response? _responseData;
+    UberallResponse? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -112,8 +112,8 @@ class BusinessConnectionsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(openApi.Response),
-            ) as openApi.Response;
+              specifiedType: const FullType(UberallResponse),
+            ) as UberallResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -124,7 +124,7 @@ class BusinessConnectionsApi {
       );
     }
 
-    return Response<openApi.Response>(
+    return Response<UberallResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -153,9 +153,9 @@ class BusinessConnectionsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Response] as data
+  /// Returns a [Future] containing a [Response] with a [UberallResponse] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<openApi.Response>>
+  Future<Response<UberallResponse>>
       getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdList({
     required String directoryType,
     required String salesPartnerId,
@@ -229,7 +229,7 @@ class BusinessConnectionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    openApi.Response? _responseData;
+    UberallResponse? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -237,8 +237,8 @@ class BusinessConnectionsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(openApi.Response),
-            ) as openApi.Response;
+              specifiedType: const FullType(UberallResponse),
+            ) as UberallResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -249,7 +249,7 @@ class BusinessConnectionsApi {
       );
     }
 
-    return Response<openApi.Response>(
+    return Response<UberallResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -391,9 +391,9 @@ class BusinessConnectionsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Response] as data
+  /// Returns a [Future] containing a [Response] with a [UberallResponse] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<openApi.Response>>
+  Future<Response<UberallResponse>>
       postBusinessConnectionsDirectoryTypeConnectBusinessId({
     required String directoryType,
     required String businessId,
@@ -471,7 +471,7 @@ class BusinessConnectionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    openApi.Response? _responseData;
+    UberallResponse? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -479,8 +479,8 @@ class BusinessConnectionsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(openApi.Response),
-            ) as openApi.Response;
+              specifiedType: const FullType(UberallResponse),
+            ) as UberallResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -491,7 +491,7 @@ class BusinessConnectionsApi {
       );
     }
 
-    return Response<openApi.Response>(
+    return Response<UberallResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -517,9 +517,9 @@ class BusinessConnectionsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Response] as data
+  /// Returns a [Future] containing a [Response] with a [UberallResponse] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<openApi.Response>>
+  Future<Response<UberallResponse>>
       putBusinessConnectionsDirectoryTypeDisconnectBusinessId({
     required String directoryType,
     required String businessId,
@@ -598,7 +598,7 @@ class BusinessConnectionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    openApi.Response? _responseData;
+    UberallResponse? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -606,8 +606,8 @@ class BusinessConnectionsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(openApi.Response),
-            ) as openApi.Response;
+              specifiedType: const FullType(UberallResponse),
+            ) as UberallResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -618,7 +618,7 @@ class BusinessConnectionsApi {
       );
     }
 
-    return Response<openApi.Response>(
+    return Response<UberallResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

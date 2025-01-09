@@ -1,8 +1,8 @@
-# openapi.model.PostcodesResponse
+# uberall_api.model.PostcodesResponse
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

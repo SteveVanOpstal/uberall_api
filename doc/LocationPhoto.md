@@ -1,8 +1,8 @@
-# openapi.model.LocationPhoto
+# uberall_api.model.LocationPhoto
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

@@ -1,8 +1,8 @@
-# openapi.model.VisibilityIndexesWrapper
+# uberall_api.model.VisibilityIndexesWrapper
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

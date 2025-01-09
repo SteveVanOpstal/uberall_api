@@ -1,8 +1,8 @@
-# openapi.api.SalesPartnersApi
+# uberall_api.api.SalesPartnersApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -27,7 +27,7 @@ Can be used for searching through all children SalesPartner for the given parent
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -37,7 +37,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getSalesPartnersApi();
+final api = UberallApi().getSalesPartnersApi();
 final String id = id_example; // String | Filter by specific uberall SalesPartner id
 final String query = query_example; // String | Filter by name or identifier
 final String status = status_example; // String | Filter by status
@@ -92,7 +92,7 @@ Can be used for retrieving informations about a single SalesPartner. This could 
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -102,7 +102,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getSalesPartnersApi();
+final api = UberallApi().getSalesPartnersApi();
 final String id = id_example; // String | ID of the SalesPartner
 
 try {
@@ -143,7 +143,7 @@ Can be used to get a full list of all subscribable event types. These event type
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -153,7 +153,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getSalesPartnersApi();
+final api = UberallApi().getSalesPartnersApi();
 
 try {
     final response = api.getSalesPartnersSubscribableEventTypes();
@@ -190,7 +190,7 @@ Can be used to update certain SSO settings for a single SalesPartner.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -200,7 +200,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getSalesPartnersApi();
+final api = UberallApi().getSalesPartnersApi();
 final bool body = true; // bool | forceSso
 
 try {
@@ -241,7 +241,7 @@ Can be used to create new child SalesPartner that will be then associated to you
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -251,7 +251,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getSalesPartnersApi();
+final api = UberallApi().getSalesPartnersApi();
 final SalesPartner salesPartner = ; // SalesPartner | SalesPartner data to create a new child SalesPartner
 
 try {
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postSalesPartnersIdUserAccountsAccountIdAppleMaps**
-> Response postSalesPartnersIdUserAccountsAccountIdAppleMaps(id, accountId)
+> UberallResponse postSalesPartnersIdUserAccountsAccountIdAppleMaps(id, accountId)
 
 Disconnect Apple directory User Account
 
@@ -292,7 +292,7 @@ Disconnects the Apple account for the given sales partner and account ID
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -302,7 +302,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getSalesPartnersApi();
+final api = UberallApi().getSalesPartnersApi();
 final String id = id_example; // String | Sales Partner ID
 final String accountId = accountId_example; // String | Directory User Account ID
 
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Response**](Response.md)
+[**UberallResponse**](UberallResponse.md)
 
 ### Authorization
 
@@ -345,7 +345,7 @@ Can be used to either update your own SalesPartner or if your SalesPartner is a 
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -355,7 +355,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getSalesPartnersApi();
+final api = UberallApi().getSalesPartnersApi();
 final String id = id_example; // String | ID of the SalesPartner
 final SalesPartner salesPartner = ; // SalesPartner | SalesPartner data to update
 

@@ -1,8 +1,8 @@
-# openapi.model.DataPointTimeSeriesResponseWrapper
+# uberall_api.model.DataPointTimeSeriesResponseWrapper
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

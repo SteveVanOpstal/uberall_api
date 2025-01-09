@@ -1,8 +1,8 @@
-# openapi.model.Insights
+# uberall_api.model.Insights
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

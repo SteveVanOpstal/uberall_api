@@ -1,8 +1,8 @@
-# openapi.model.ServiceArea
+# uberall_api.model.ServiceArea
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

@@ -15,9 +15,9 @@ part 'email_settings.g.dart';
 /// Properties:
 /// * [frequency] - Frequency of the emailType. The available frequencies by email type are: DIGEST: WEEKLY, MONTHLY or NEVER; ACTIVATION: ALWAYS or NEVER; START_VERIFICATION_GOOGLE: ALWAYS or NEVER; FINISH_VERIFICATION_GOOGLE: ALWAYS or NEVER; UNREAD_REVIEW_NOTIFICATION: ALWAYS or NEVER; PENDING_APPROVAL_REPLY_NOTIFICATION: DAILY, ALWAYS or NEVER.
 /// * [emailType] - Type of email. Currently, the types of email supported are: DIGEST, ACTIVATION, START_VERIFICATION_GOOGLE, FINISH_VERIFICATION_GOOGLE, UNREAD_REVIEW_NOTIFICATION, PENDING_APPROVAL_REPLY_NOTIFICATION, SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION, NEW_CHATS_NOTIFICATION, NEW_CONTACT_FORM_NOTIFICATION
-/// * [userId]
 /// * [emailTypeId]
 /// * [frequencyId]
+/// * [userId]
 @BuiltValue()
 abstract class EmailSettings
     implements Built<EmailSettings, EmailSettingsBuilder> {
@@ -31,14 +31,14 @@ abstract class EmailSettings
   EmailSettingsEmailTypeEnum? get emailType;
   // enum emailTypeEnum {  DIGEST,  UNREAD_REVIEW_NOTIFICATION,  PENDING_APPROVAL_REPLY_NOTIFICATION,  ACTIVATION,  START_VERIFICATION_GOOGLE,  FINISH_VERIFICATION_GOOGLE,  NEW_CHATS_NOTIFICATION,  NEW_CONTACT_FORM_NOTIFICATION,  SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION,  DASHBOARD_EXPORT,  RENEWAL_FAIL,  RENEWAL_SUCCESS,  RESET_PASSWORD_SP,  SALES_PARTNER_APPROVAL,  USER_INVITATION,  SALES_PARTNER_ENTERPRISE_ONBOARDING_COMPLETE,  NEW_CHAT_NOTIFICATION_LOCATION,  NEW_CHAT_NOTIFICATION_BUSINESS,  NEW_CONTACT_FORM_NOTIFICATION_LOCATION,  NEW_CONTACT_FORM_NOTIFICATION_BUSINESS,  };
 
-  @BuiltValueField(wireName: r'userId')
-  JsonObject? get userId;
-
   @BuiltValueField(wireName: r'emailTypeId')
   JsonObject? get emailTypeId;
 
   @BuiltValueField(wireName: r'frequencyId')
   JsonObject? get frequencyId;
+
+  @BuiltValueField(wireName: r'userId')
+  JsonObject? get userId;
 
   EmailSettings._();
 
@@ -79,13 +79,6 @@ class _$EmailSettingsSerializer implements PrimitiveSerializer<EmailSettings> {
         specifiedType: const FullType(EmailSettingsEmailTypeEnum),
       );
     }
-    if (object.userId != null) {
-      yield r'userId';
-      yield serializers.serialize(
-        object.userId,
-        specifiedType: const FullType(JsonObject),
-      );
-    }
     if (object.emailTypeId != null) {
       yield r'emailTypeId';
       yield serializers.serialize(
@@ -97,6 +90,13 @@ class _$EmailSettingsSerializer implements PrimitiveSerializer<EmailSettings> {
       yield r'frequencyId';
       yield serializers.serialize(
         object.frequencyId,
+        specifiedType: const FullType(JsonObject),
+      );
+    }
+    if (object.userId != null) {
+      yield r'userId';
+      yield serializers.serialize(
+        object.userId,
         specifiedType: const FullType(JsonObject),
       );
     }
@@ -139,13 +139,6 @@ class _$EmailSettingsSerializer implements PrimitiveSerializer<EmailSettings> {
           ) as EmailSettingsEmailTypeEnum;
           result.emailType = valueDes;
           break;
-        case r'userId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.userId = valueDes;
-          break;
         case r'emailTypeId':
           final valueDes = serializers.deserialize(
             value,
@@ -159,6 +152,13 @@ class _$EmailSettingsSerializer implements PrimitiveSerializer<EmailSettings> {
             specifiedType: const FullType(JsonObject),
           ) as JsonObject;
           result.frequencyId = valueDes;
+          break;
+        case r'userId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
+          result.userId = valueDes;
           break;
         default:
           unhandled.add(key);

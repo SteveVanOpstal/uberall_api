@@ -1,8 +1,8 @@
-# openapi.api.ConfigurationApi
+# uberall_api.api.ConfigurationApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -24,13 +24,13 @@ Returns a list of directories details filtered by country
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: accessToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getConfigurationApi();
+final api = UberallApi().getConfigurationApi();
 final String countries = US, DE; // String | Optional list parameter of comma separated ISO 3166 alpha-2 country codes to filter response
 
 try {
@@ -71,7 +71,7 @@ Returns a list of directory brands for the given account and directory
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -81,7 +81,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getConfigurationApi();
+final api = UberallApi().getConfigurationApi();
 final String salesPartnerId = salesPartnerId_example; // String | Sales Partner ID
 final String accountId = accountId_example; // String | Directory User Account ID
 final String directoryType = directoryType_example; // String | Type of Directory
@@ -126,7 +126,7 @@ Get user features partitioned by location.
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -136,7 +136,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getConfigurationApi();
+final api = UberallApi().getConfigurationApi();
 
 try {
     final response = api.getFeatures();
@@ -173,7 +173,7 @@ Create directory brand for the given sales partner id, directory user account an
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -183,7 +183,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getConfigurationApi();
+final api = UberallApi().getConfigurationApi();
 final String salesPartnerId = salesPartnerId_example; // String | Sales Partner ID
 final String accountId = accountId_example; // String | Directory User Account ID
 final String directoryType = directoryType_example; // String | Type of Directory

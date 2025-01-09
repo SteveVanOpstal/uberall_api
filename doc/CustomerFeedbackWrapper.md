@@ -1,8 +1,8 @@
-# openapi.model.CustomerFeedbackWrapper
+# uberall_api.model.CustomerFeedbackWrapper
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

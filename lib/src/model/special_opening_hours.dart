@@ -12,15 +12,19 @@ part 'special_opening_hours.g.dart';
 ///
 /// Properties:
 /// * [closed] - Indicates whether a location is closed on a date.
+/// * [date] - The date of a special opening hour, e.g.: 2017-06-30
 /// * [fromX] - A beginning of a period. Up to two periods are supported per date, e.g.: \"from1\": \"09:00\", \"from2\": \"15:00\"
 /// * [toX] - An end of a period. Up to two periods are supported per date, e.g.: \"to1\": \"09:00\", \"to2\": \"15:00\"
-/// * [date] - The date of a special opening hour, e.g.: 2017-06-30
 @BuiltValue()
 abstract class SpecialOpeningHours
     implements Built<SpecialOpeningHours, SpecialOpeningHoursBuilder> {
   /// Indicates whether a location is closed on a date.
   @BuiltValueField(wireName: r'closed')
   bool? get closed;
+
+  /// The date of a special opening hour, e.g.: 2017-06-30
+  @BuiltValueField(wireName: r'date')
+  String get date;
 
   /// A beginning of a period. Up to two periods are supported per date, e.g.: \"from1\": \"09:00\", \"from2\": \"15:00\"
   @BuiltValueField(wireName: r'fromX')
@@ -29,10 +33,6 @@ abstract class SpecialOpeningHours
   /// An end of a period. Up to two periods are supported per date, e.g.: \"to1\": \"09:00\", \"to2\": \"15:00\"
   @BuiltValueField(wireName: r'toX')
   String? get toX;
-
-  /// The date of a special opening hour, e.g.: 2017-06-30
-  @BuiltValueField(wireName: r'date')
-  String get date;
 
   SpecialOpeningHours._();
 
@@ -70,6 +70,11 @@ class _$SpecialOpeningHoursSerializer
         specifiedType: const FullType(bool),
       );
     }
+    yield r'date';
+    yield serializers.serialize(
+      object.date,
+      specifiedType: const FullType(String),
+    );
     if (object.fromX != null) {
       yield r'fromX';
       yield serializers.serialize(
@@ -84,11 +89,6 @@ class _$SpecialOpeningHoursSerializer
         specifiedType: const FullType(String),
       );
     }
-    yield r'date';
-    yield serializers.serialize(
-      object.date,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -121,6 +121,13 @@ class _$SpecialOpeningHoursSerializer
           ) as bool;
           result.closed = valueDes;
           break;
+        case r'date':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.date = valueDes;
+          break;
         case r'fromX':
           final valueDes = serializers.deserialize(
             value,
@@ -134,13 +141,6 @@ class _$SpecialOpeningHoursSerializer
             specifiedType: const FullType(String),
           ) as String;
           result.toX = valueDes;
-          break;
-        case r'date':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.date = valueDes;
           break;
         default:
           unhandled.add(key);

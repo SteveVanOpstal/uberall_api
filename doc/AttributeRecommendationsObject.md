@@ -1,8 +1,8 @@
-# openapi.model.AttributeRecommendationsObject
+# uberall_api.model.AttributeRecommendationsObject
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

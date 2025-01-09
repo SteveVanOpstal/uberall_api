@@ -1,8 +1,8 @@
-# openapi.model.User
+# uberall_api.model.User
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties
@@ -22,10 +22,10 @@ Name | Type | Description | Notes
 **identifier** | **String** | The unique user identifier based on your internal identification system | [optional] 
 **features** | **BuiltSet&lt;String&gt;** | A list of features this user can work with. Values:  <pre>ADS_READ ADS_WRITE ADVANCED_ANALYTICS AI_SUGGESTED_REPLIES APPLE_POSTING_WRITE AUTO_RESPONSE_WRITE BULK_UPDATES BUSINESS_LEVEL_CONNECT CAN_PAY_INVOICE CAN_SEE_HELP_SECTION CHAT_READ CHAT_WRITE CHATBOT_READ CHATBOT_WRITE DAM ENTERPRISE_ONBOARDING FIRST_PARTY_REVIEW_APPROVAL FORMS INBOX_2_0_BETA_READ INBOX_2_0_BETA_WRITE INBOX_APPROVAL INBOX_READ INBOX_WRITE INSTAGRAM_POSTING_WRITE LISTINGS_PAGE_NEW LISTINGS LIVE_CHAT LOCATION_GROUP LOCATION_READ LOCATION_SCHEDULED_UPDATES LOCATION_STATUS_CHANGE LOCATION_WRITE POSTING_APPROVAL POSTING_READ POSTING_WRITE PRICE_INFO RESPONSE_LIBRARY_READ RESPONSE_LIBRARY_WRITE REVIEW_GENERATION_CREATE REVIEW_GENERATION_SEND SINGLE_SIGN_ON SOCIAL_ADS SUPPRESSION TRACKING UPGRADE USER_OTHERS_EDIT USER_SELF_EDIT</pre> | [optional] 
 **emailSettings** | [**BuiltSet&lt;EmailSettings&gt;**](EmailSettings.md) | A list of EmailSettings for this user. Only one EmailSettings object per EmailType possible. | [optional] 
-**parentId** | [**JsonObject**](.md) |  | [optional] 
-**salesPartnerId** | [**JsonObject**](.md) |  | [optional] 
-**whitelabelInformationId** | [**JsonObject**](.md) |  | [optional] 
 **directoryUsers** | [**JsonObject**](.md) |  | [optional] 
+**whitelabelInformationId** | [**JsonObject**](.md) |  | [optional] 
+**salesPartnerId** | [**JsonObject**](.md) |  | [optional] 
+**parentId** | [**JsonObject**](.md) |  | [optional] 
 **readDataPoints** | [**JsonObject**](.md) |  | [optional] 
 **featuresDetailed** | [**JsonObject**](.md) | Map containing the feature names and corresponding feature-specific parameters. \"featuresDetailed\" is supported for the features LOCATION_WRITE and ADVANCED_ANALYTICS.  For LOCATION_WRITE a list of fields that this user can update is expected.  For ADVANCED_ANALYTICS a list of dashboards the user has access to is expected. For example: <pre> \"featuresDetailed\": '{' '{'    \"featuresDetailed\":'{'       \"LOCATION_WRITE\":[          \"fax\",          \"openingHours\",          \"callTrackingNumbers\",          \"streetNo\",          \"openingHoursNotes\",          \"specialOpeningHours\",          \"street\",          \"languages\",          \"customFields\",          \"contentLists\",          \"photos\",          \"services\",          \"moreHours\",          \"descriptionLong\",          \"zip\",          \"lat\",          \"openingDate\",          \"email\",          \"addressDisplay\",          \"labels\",          \"taxNumber\",          \"city\",          \"cellphone\",          \"contentCollections\",          \"attributes\",          \"categories\",          \"imprint\",          \"phone\",          \"utms\",          \"addressExtra\",          \"keywords\",          \"legalIdent\",          \"lng\",          \"paymentOptions\",          \"descriptionShort\",          \"socialProfiles\",          \"identifier\",          \"website\",          \"country\",          \"province\",          \"name\",          \"videos\",          \"brands\",          \"serviceAreas\"       ],       \"ADVANCED_ANALYTICS\":[          \"overview\",          \"listings-google\",          \"customer-feedback\"       ]    '}' '}' </pre> | [optional] 
 **locationGroupIds** | **BuiltList&lt;int&gt;** | A list of all location IDs the user can manage because of assignment to certain group(s) | [optional] 

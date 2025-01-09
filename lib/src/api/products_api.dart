@@ -8,11 +8,12 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/product.dart';
-import 'package:openapi/src/model/product_search_wrapper.dart';
-import 'package:openapi/src/model/product_wrapper.dart';
-import 'package:openapi/src/model/response.dart' as openApi;
+import 'package:built_value/json_object.dart';
+import 'package:uberall_api/src/api_util.dart';
+import 'package:uberall_api/src/model/product.dart';
+import 'package:uberall_api/src/model/product_search_wrapper.dart';
+import 'package:uberall_api/src/model/product_wrapper.dart';
+import 'package:uberall_api/src/model/uberall_response.dart';
 
 class ProductsApi {
   final Dio _dio;
@@ -32,9 +33,9 @@ class ProductsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Response] as data
+  /// Returns a [Future] containing a [Response] with a [UberallResponse] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<openApi.Response>> deleteProducts({
+  Future<Response<UberallResponse>> deleteProducts({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -76,7 +77,7 @@ class ProductsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    openApi.Response? _responseData;
+    UberallResponse? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -84,8 +85,8 @@ class ProductsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(openApi.Response),
-            ) as openApi.Response;
+              specifiedType: const FullType(UberallResponse),
+            ) as UberallResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -96,7 +97,7 @@ class ProductsApi {
       );
     }
 
-    return Response<openApi.Response>(
+    return Response<UberallResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -120,9 +121,9 @@ class ProductsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Response] as data
+  /// Returns a [Future] containing a [Response] with a [UberallResponse] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<openApi.Response>> deleteProductsId({
+  Future<Response<UberallResponse>> deleteProductsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -168,7 +169,7 @@ class ProductsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    openApi.Response? _responseData;
+    UberallResponse? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -176,8 +177,8 @@ class ProductsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(openApi.Response),
-            ) as openApi.Response;
+              specifiedType: const FullType(UberallResponse),
+            ) as UberallResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -188,7 +189,7 @@ class ProductsApi {
       );
     }
 
-    return Response<openApi.Response>(
+    return Response<UberallResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

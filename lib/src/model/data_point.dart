@@ -13,8 +13,12 @@ part 'data_point.g.dart';
 ///
 /// Properties:
 /// * [comments]
-/// * [locationId] - The Location ID associated with this datapoint
+/// * [type] - Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
 /// * [countLikes] - Number of likes to this item
+/// * [locationId] - The Location ID associated with this datapoint
+/// * [data] - Content of the datapoint (text of the review, url of the photo, count of checkins...)
+/// * [liked] - Whether this datapoint has been liked or not
+/// * [actionDate] - The date when the review/photo/... was published in the online directory
 /// * [author] - Username of the datapoint's author
 /// * [authorImage] - Author profile picture url
 /// * [countComments] - Number of comments to this item.
@@ -26,23 +30,36 @@ part 'data_point.g.dart';
 /// * [rating] - Rating given by the user. Float value, max: 5.
 /// * [repliedByOwner] - True if the owner of the business has replied
 /// * [secondaryData] - Additional info about the datapoint (eg. text content on instagram pictures)
-/// * [liked] - Whether this datapoint has been liked or not
-/// * [data] - Content of the datapoint (text of the review, url of the photo, count of checkins...)
 /// * [threadActionDate] - The date of the last interaction in that thread. When a review receives a new comment, the parent will update.
-/// * [type] - Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-/// * [actionDate] - The date when the review/photo/... was published in the online directory
 @BuiltValue()
 abstract class DataPoint implements Built<DataPoint, DataPointBuilder> {
   @BuiltValueField(wireName: r'comments')
   BuiltList<DataPoint>? get comments;
 
-  /// The Location ID associated with this datapoint
-  @BuiltValueField(wireName: r'locationId')
-  int? get locationId;
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueField(wireName: r'type')
+  DataPointTypeEnum? get type;
+  // enum typeEnum {  REVIEW,  PHOTO,  CHECKIN,  CONVERSATION,  COMMENT,  QUESTION,  POST,  IMAGE,  VIDEO,  CAROUSEL_ALBUM,  LINK,  EXPANDEDREVIEW,  };
 
   /// Number of likes to this item
   @BuiltValueField(wireName: r'countLikes')
   int? get countLikes;
+
+  /// The Location ID associated with this datapoint
+  @BuiltValueField(wireName: r'locationId')
+  int? get locationId;
+
+  /// Content of the datapoint (text of the review, url of the photo, count of checkins...)
+  @BuiltValueField(wireName: r'data')
+  String? get data;
+
+  /// Whether this datapoint has been liked or not
+  @BuiltValueField(wireName: r'liked')
+  bool? get liked;
+
+  /// The date when the review/photo/... was published in the online directory
+  @BuiltValueField(wireName: r'actionDate')
+  DateTime? get actionDate;
 
   /// Username of the datapoint's author
   @BuiltValueField(wireName: r'author')
@@ -89,26 +106,9 @@ abstract class DataPoint implements Built<DataPoint, DataPointBuilder> {
   @BuiltValueField(wireName: r'secondaryData')
   String? get secondaryData;
 
-  /// Whether this datapoint has been liked or not
-  @BuiltValueField(wireName: r'liked')
-  bool? get liked;
-
-  /// Content of the datapoint (text of the review, url of the photo, count of checkins...)
-  @BuiltValueField(wireName: r'data')
-  String? get data;
-
   /// The date of the last interaction in that thread. When a review receives a new comment, the parent will update.
   @BuiltValueField(wireName: r'threadActionDate')
   DateTime? get threadActionDate;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueField(wireName: r'type')
-  DataPointTypeEnum? get type;
-  // enum typeEnum {  REVIEW,  PHOTO,  CHECKIN,  CONVERSATION,  COMMENT,  QUESTION,  POST,  IMAGE,  VIDEO,  CAROUSEL_ALBUM,  LINK,  EXPANDEDREVIEW,  };
-
-  /// The date when the review/photo/... was published in the online directory
-  @BuiltValueField(wireName: r'actionDate')
-  DateTime? get actionDate;
 
   DataPoint._();
 
@@ -140,11 +140,11 @@ class _$DataPointSerializer implements PrimitiveSerializer<DataPoint> {
         specifiedType: const FullType(BuiltList, [FullType(DataPoint)]),
       );
     }
-    if (object.locationId != null) {
-      yield r'locationId';
+    if (object.type != null) {
+      yield r'type';
       yield serializers.serialize(
-        object.locationId,
-        specifiedType: const FullType(int),
+        object.type,
+        specifiedType: const FullType(DataPointTypeEnum),
       );
     }
     if (object.countLikes != null) {
@@ -152,6 +152,34 @@ class _$DataPointSerializer implements PrimitiveSerializer<DataPoint> {
       yield serializers.serialize(
         object.countLikes,
         specifiedType: const FullType(int),
+      );
+    }
+    if (object.locationId != null) {
+      yield r'locationId';
+      yield serializers.serialize(
+        object.locationId,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.data != null) {
+      yield r'data';
+      yield serializers.serialize(
+        object.data,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.liked != null) {
+      yield r'liked';
+      yield serializers.serialize(
+        object.liked,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.actionDate != null) {
+      yield r'actionDate';
+      yield serializers.serialize(
+        object.actionDate,
+        specifiedType: const FullType(DateTime),
       );
     }
     if (object.author != null) {
@@ -231,38 +259,10 @@ class _$DataPointSerializer implements PrimitiveSerializer<DataPoint> {
         specifiedType: const FullType(String),
       );
     }
-    if (object.liked != null) {
-      yield r'liked';
-      yield serializers.serialize(
-        object.liked,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.data != null) {
-      yield r'data';
-      yield serializers.serialize(
-        object.data,
-        specifiedType: const FullType(String),
-      );
-    }
     if (object.threadActionDate != null) {
       yield r'threadActionDate';
       yield serializers.serialize(
         object.threadActionDate,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.type != null) {
-      yield r'type';
-      yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType(DataPointTypeEnum),
-      );
-    }
-    if (object.actionDate != null) {
-      yield r'actionDate';
-      yield serializers.serialize(
-        object.actionDate,
         specifiedType: const FullType(DateTime),
       );
     }
@@ -298,12 +298,12 @@ class _$DataPointSerializer implements PrimitiveSerializer<DataPoint> {
           ) as BuiltList<DataPoint>;
           result.comments.replace(valueDes);
           break;
-        case r'locationId':
+        case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.locationId = valueDes;
+            specifiedType: const FullType(DataPointTypeEnum),
+          ) as DataPointTypeEnum;
+          result.type = valueDes;
           break;
         case r'countLikes':
           final valueDes = serializers.deserialize(
@@ -311,6 +311,34 @@ class _$DataPointSerializer implements PrimitiveSerializer<DataPoint> {
             specifiedType: const FullType(int),
           ) as int;
           result.countLikes = valueDes;
+          break;
+        case r'locationId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.locationId = valueDes;
+          break;
+        case r'data':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.data = valueDes;
+          break;
+        case r'liked':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.liked = valueDes;
+          break;
+        case r'actionDate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.actionDate = valueDes;
           break;
         case r'author':
           final valueDes = serializers.deserialize(
@@ -389,40 +417,12 @@ class _$DataPointSerializer implements PrimitiveSerializer<DataPoint> {
           ) as String;
           result.secondaryData = valueDes;
           break;
-        case r'liked':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.liked = valueDes;
-          break;
-        case r'data':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.data = valueDes;
-          break;
         case r'threadActionDate':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.threadActionDate = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DataPointTypeEnum),
-          ) as DataPointTypeEnum;
-          result.type = valueDes;
-          break;
-        case r'actionDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.actionDate = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -451,6 +451,68 @@ class _$DataPointSerializer implements PrimitiveSerializer<DataPoint> {
     );
     return result.build();
   }
+}
+
+class DataPointTypeEnum extends EnumClass {
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'REVIEW')
+  static const DataPointTypeEnum REVIEW = _$dataPointTypeEnum_REVIEW;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'PHOTO')
+  static const DataPointTypeEnum PHOTO = _$dataPointTypeEnum_PHOTO;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'CHECKIN')
+  static const DataPointTypeEnum CHECKIN = _$dataPointTypeEnum_CHECKIN;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'CONVERSATION')
+  static const DataPointTypeEnum CONVERSATION =
+      _$dataPointTypeEnum_CONVERSATION;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'COMMENT')
+  static const DataPointTypeEnum COMMENT = _$dataPointTypeEnum_COMMENT;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'QUESTION')
+  static const DataPointTypeEnum QUESTION = _$dataPointTypeEnum_QUESTION;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'POST')
+  static const DataPointTypeEnum POST = _$dataPointTypeEnum_POST;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'IMAGE')
+  static const DataPointTypeEnum IMAGE = _$dataPointTypeEnum_IMAGE;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'VIDEO')
+  static const DataPointTypeEnum VIDEO = _$dataPointTypeEnum_VIDEO;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'CAROUSEL_ALBUM')
+  static const DataPointTypeEnum CAROUSEL_ALBUM =
+      _$dataPointTypeEnum_CAROUSEL_ALBUM;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'LINK')
+  static const DataPointTypeEnum LINK = _$dataPointTypeEnum_LINK;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'EXPANDEDREVIEW')
+  static const DataPointTypeEnum EXPANDEDREVIEW =
+      _$dataPointTypeEnum_EXPANDEDREVIEW;
+
+  static Serializer<DataPointTypeEnum> get serializer =>
+      _$dataPointTypeEnumSerializer;
+
+  const DataPointTypeEnum._(String name) : super(name);
+
+  static BuiltSet<DataPointTypeEnum> get values => _$dataPointTypeEnumValues;
+  static DataPointTypeEnum valueOf(String name) =>
+      _$dataPointTypeEnumValueOf(name);
 }
 
 class DataPointDirectoryTypeEnum extends EnumClass {
@@ -1486,66 +1548,4 @@ class DataPointDirectoryTypeEnum extends EnumClass {
       _$dataPointDirectoryTypeEnumValues;
   static DataPointDirectoryTypeEnum valueOf(String name) =>
       _$dataPointDirectoryTypeEnumValueOf(name);
-}
-
-class DataPointTypeEnum extends EnumClass {
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueEnumConst(wireName: r'REVIEW')
-  static const DataPointTypeEnum REVIEW = _$dataPointTypeEnum_REVIEW;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueEnumConst(wireName: r'PHOTO')
-  static const DataPointTypeEnum PHOTO = _$dataPointTypeEnum_PHOTO;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueEnumConst(wireName: r'CHECKIN')
-  static const DataPointTypeEnum CHECKIN = _$dataPointTypeEnum_CHECKIN;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueEnumConst(wireName: r'CONVERSATION')
-  static const DataPointTypeEnum CONVERSATION =
-      _$dataPointTypeEnum_CONVERSATION;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueEnumConst(wireName: r'COMMENT')
-  static const DataPointTypeEnum COMMENT = _$dataPointTypeEnum_COMMENT;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueEnumConst(wireName: r'QUESTION')
-  static const DataPointTypeEnum QUESTION = _$dataPointTypeEnum_QUESTION;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueEnumConst(wireName: r'POST')
-  static const DataPointTypeEnum POST = _$dataPointTypeEnum_POST;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueEnumConst(wireName: r'IMAGE')
-  static const DataPointTypeEnum IMAGE = _$dataPointTypeEnum_IMAGE;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueEnumConst(wireName: r'VIDEO')
-  static const DataPointTypeEnum VIDEO = _$dataPointTypeEnum_VIDEO;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueEnumConst(wireName: r'CAROUSEL_ALBUM')
-  static const DataPointTypeEnum CAROUSEL_ALBUM =
-      _$dataPointTypeEnum_CAROUSEL_ALBUM;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueEnumConst(wireName: r'LINK')
-  static const DataPointTypeEnum LINK = _$dataPointTypeEnum_LINK;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueEnumConst(wireName: r'EXPANDEDREVIEW')
-  static const DataPointTypeEnum EXPANDEDREVIEW =
-      _$dataPointTypeEnum_EXPANDEDREVIEW;
-
-  static Serializer<DataPointTypeEnum> get serializer =>
-      _$dataPointTypeEnumSerializer;
-
-  const DataPointTypeEnum._(String name) : super(name);
-
-  static BuiltSet<DataPointTypeEnum> get values => _$dataPointTypeEnumValues;
-  static DataPointTypeEnum valueOf(String name) =>
-      _$dataPointTypeEnumValueOf(name);
 }

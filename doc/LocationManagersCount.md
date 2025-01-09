@@ -1,8 +1,8 @@
-# openapi.model.LocationManagersCount
+# uberall_api.model.LocationManagersCount
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

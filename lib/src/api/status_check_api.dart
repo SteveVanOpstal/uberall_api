@@ -7,10 +7,10 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/basic_listing_result_wrapper.dart';
-import 'package:openapi/src/model/search_data_list_wrapper.dart';
-import 'package:openapi/src/model/search_data_wrapper.dart';
+import 'package:uberall_api/src/api_util.dart';
+import 'package:uberall_api/src/model/basic_listing_result_wrapper.dart';
+import 'package:uberall_api/src/model/search_data_list_wrapper.dart';
+import 'package:uberall_api/src/model/search_data_wrapper.dart';
 
 class StatusCheckApi {
   final Dio _dio;

@@ -7,12 +7,12 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/data_point_filter.dart';
-import 'package:openapi/src/model/data_point_filter_response_wrapper.dart';
-import 'package:openapi/src/model/data_point_filters_response_wrapper.dart';
-import 'package:openapi/src/model/filters_response_wrapper.dart';
-import 'package:openapi/src/model/success_response_wrapper.dart';
+import 'package:uberall_api/src/api_util.dart';
+import 'package:uberall_api/src/model/data_point_filter.dart';
+import 'package:uberall_api/src/model/data_point_filter_response_wrapper.dart';
+import 'package:uberall_api/src/model/data_point_filters_response_wrapper.dart';
+import 'package:uberall_api/src/model/filters_response_wrapper.dart';
+import 'package:uberall_api/src/model/success_response_wrapper.dart';
 
 class DataPointFiltersApi {
   final Dio _dio;

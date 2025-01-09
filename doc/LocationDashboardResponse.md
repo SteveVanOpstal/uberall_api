@@ -1,8 +1,8 @@
-# openapi.model.LocationDashboardResponse
+# uberall_api.model.LocationDashboardResponse
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

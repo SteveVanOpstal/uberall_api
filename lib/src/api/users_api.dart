@@ -7,17 +7,17 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/create_user_request.dart';
-import 'package:openapi/src/model/login_command.dart';
-import 'package:openapi/src/model/login_response_wrapper.dart';
-import 'package:openapi/src/model/logout_response_wrapper.dart';
-import 'package:openapi/src/model/success_response_wrapper.dart';
-import 'package:openapi/src/model/unsubscribe_action_link_wrapper.dart';
-import 'package:openapi/src/model/user_left_wrapper.dart';
-import 'package:openapi/src/model/user_search_wrapper.dart';
-import 'package:openapi/src/model/user_wrapper.dart';
-import 'package:openapi/src/model/whitelabel_information_wrapper.dart';
+import 'package:uberall_api/src/api_util.dart';
+import 'package:uberall_api/src/model/create_user_request.dart';
+import 'package:uberall_api/src/model/login_command.dart';
+import 'package:uberall_api/src/model/login_response_wrapper.dart';
+import 'package:uberall_api/src/model/logout_response_wrapper.dart';
+import 'package:uberall_api/src/model/success_response_wrapper.dart';
+import 'package:uberall_api/src/model/unsubscribe_action_link_wrapper.dart';
+import 'package:uberall_api/src/model/user_left_wrapper.dart';
+import 'package:uberall_api/src/model/user_search_wrapper.dart';
+import 'package:uberall_api/src/model/user_wrapper.dart';
+import 'package:uberall_api/src/model/whitelabel_information_wrapper.dart';
 
 class UsersApi {
   final Dio _dio;

@@ -1,8 +1,8 @@
-# openapi.model.DataPointTimeSeriesValue
+# uberall_api.model.DataPointTimeSeriesValue
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

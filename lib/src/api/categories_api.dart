@@ -8,13 +8,13 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
-import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/attribute_recommendations_wrapper.dart';
-import 'package:openapi/src/model/attributes_response_wrapper.dart';
-import 'package:openapi/src/model/available_photo_types_response_wrapper.dart';
-import 'package:openapi/src/model/generic_map_response_wrapper.dart';
-import 'package:openapi/src/model/google_services_response_wrapper.dart';
-import 'package:openapi/src/model/more_hours_wrapper.dart';
+import 'package:uberall_api/src/api_util.dart';
+import 'package:uberall_api/src/model/attribute_recommendations_wrapper.dart';
+import 'package:uberall_api/src/model/attributes_response_wrapper.dart';
+import 'package:uberall_api/src/model/available_photo_types_response_wrapper.dart';
+import 'package:uberall_api/src/model/generic_map_response_wrapper.dart';
+import 'package:uberall_api/src/model/google_services_response_wrapper.dart';
+import 'package:uberall_api/src/model/more_hours_wrapper.dart';
 
 class CategoriesApi {
   final Dio _dio;

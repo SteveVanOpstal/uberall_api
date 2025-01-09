@@ -1,8 +1,8 @@
-# openapi.model.SalesPartnerListResponseWrapper
+# uberall_api.model.SalesPartnerListResponseWrapper
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

@@ -1,8 +1,8 @@
-# openapi.model.CustomerFeedbackKeyword
+# uberall_api.model.CustomerFeedbackKeyword
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

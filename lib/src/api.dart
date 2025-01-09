@@ -4,54 +4,54 @@
 
 import 'package:dio/dio.dart';
 import 'package:built_value/serializer.dart';
-import 'package:openapi/src/serializers.dart';
-import 'package:openapi/src/auth/api_key_auth.dart';
-import 'package:openapi/src/auth/basic_auth.dart';
-import 'package:openapi/src/auth/bearer_auth.dart';
-import 'package:openapi/src/auth/oauth.dart';
-import 'package:openapi/src/api/auto_response_api.dart';
-import 'package:openapi/src/api/batch_operation_api.dart';
-import 'package:openapi/src/api/brand_data_points_api.dart';
-import 'package:openapi/src/api/business_connections_api.dart';
-import 'package:openapi/src/api/businesses_api.dart';
-import 'package:openapi/src/api/categories_api.dart';
-import 'package:openapi/src/api/collection_management_api.dart';
-import 'package:openapi/src/api/configuration_api.dart';
-import 'package:openapi/src/api/content_list_api.dart';
-import 'package:openapi/src/api/custom_items_api.dart';
-import 'package:openapi/src/api/dashboard_api.dart';
-import 'package:openapi/src/api/dashboard_exports_api.dart';
-import 'package:openapi/src/api/data_point_filters_api.dart';
-import 'package:openapi/src/api/data_points_api.dart';
-import 'package:openapi/src/api/digital_asset_management_api.dart';
-import 'package:openapi/src/api/events_api.dart';
-import 'package:openapi/src/api/labels_api.dart';
-import 'package:openapi/src/api/listings_api.dart';
-import 'package:openapi/src/api/location_groups_api.dart';
-import 'package:openapi/src/api/locations_data_api.dart';
-import 'package:openapi/src/api/locations_photos_api.dart';
-import 'package:openapi/src/api/menu_items_api.dart';
-import 'package:openapi/src/api/persons_api.dart';
-import 'package:openapi/src/api/product_plans_api.dart';
-import 'package:openapi/src/api/products_api.dart';
-import 'package:openapi/src/api/sales_partners_api.dart';
-import 'package:openapi/src/api/service_items_api.dart';
-import 'package:openapi/src/api/social_posting_api.dart';
-import 'package:openapi/src/api/social_posting_templates_api.dart';
-import 'package:openapi/src/api/status_check_api.dart';
-import 'package:openapi/src/api/store_finder_api.dart';
-import 'package:openapi/src/api/suggestions_api.dart';
-import 'package:openapi/src/api/templates_api.dart';
-import 'package:openapi/src/api/users_api.dart';
-import 'package:openapi/src/api/webhooks_api.dart';
+import 'package:uberall_api/src/serializers.dart';
+import 'package:uberall_api/src/auth/api_key_auth.dart';
+import 'package:uberall_api/src/auth/basic_auth.dart';
+import 'package:uberall_api/src/auth/bearer_auth.dart';
+import 'package:uberall_api/src/auth/oauth.dart';
+import 'package:uberall_api/src/api/auto_response_api.dart';
+import 'package:uberall_api/src/api/batch_operation_api.dart';
+import 'package:uberall_api/src/api/brand_data_points_api.dart';
+import 'package:uberall_api/src/api/business_connections_api.dart';
+import 'package:uberall_api/src/api/businesses_api.dart';
+import 'package:uberall_api/src/api/categories_api.dart';
+import 'package:uberall_api/src/api/collection_management_api.dart';
+import 'package:uberall_api/src/api/configuration_api.dart';
+import 'package:uberall_api/src/api/content_list_api.dart';
+import 'package:uberall_api/src/api/custom_items_api.dart';
+import 'package:uberall_api/src/api/dashboard_api.dart';
+import 'package:uberall_api/src/api/dashboard_exports_api.dart';
+import 'package:uberall_api/src/api/data_point_filters_api.dart';
+import 'package:uberall_api/src/api/data_points_api.dart';
+import 'package:uberall_api/src/api/digital_asset_management_api.dart';
+import 'package:uberall_api/src/api/events_api.dart';
+import 'package:uberall_api/src/api/labels_api.dart';
+import 'package:uberall_api/src/api/listings_api.dart';
+import 'package:uberall_api/src/api/location_groups_api.dart';
+import 'package:uberall_api/src/api/locations_data_api.dart';
+import 'package:uberall_api/src/api/locations_photos_api.dart';
+import 'package:uberall_api/src/api/menu_items_api.dart';
+import 'package:uberall_api/src/api/persons_api.dart';
+import 'package:uberall_api/src/api/product_plans_api.dart';
+import 'package:uberall_api/src/api/products_api.dart';
+import 'package:uberall_api/src/api/sales_partners_api.dart';
+import 'package:uberall_api/src/api/service_items_api.dart';
+import 'package:uberall_api/src/api/social_posting_api.dart';
+import 'package:uberall_api/src/api/social_posting_templates_api.dart';
+import 'package:uberall_api/src/api/status_check_api.dart';
+import 'package:uberall_api/src/api/store_finder_api.dart';
+import 'package:uberall_api/src/api/suggestions_api.dart';
+import 'package:uberall_api/src/api/templates_api.dart';
+import 'package:uberall_api/src/api/users_api.dart';
+import 'package:uberall_api/src/api/webhooks_api.dart';
 
-class Openapi {
+class UberallApi {
   static const String basePath = r'https://uberall.com/api';
 
   final Dio dio;
   final Serializers serializers;
 
-  Openapi({
+  UberallApi({
     Dio? dio,
     Serializers? serializers,
     String? basePathOverride,

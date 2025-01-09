@@ -1,8 +1,8 @@
-# openapi.api.StatusCheckApi
+# uberall_api.api.StatusCheckApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -23,13 +23,13 @@ Returns a list of the last searches
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: publicKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('publicKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('publicKey').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getStatusCheckApi();
+final api = UberallApi().getStatusCheckApi();
 final int max = 50; // int | Used for pagination. Maximum number of results per page. Default: 50
 final int offset = 0; // int | Offset used for pagination. Default: 0
 
@@ -72,13 +72,13 @@ Search for a location identified by a uberall unique id in a specific directory
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: publicKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('publicKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('publicKey').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getStatusCheckApi();
+final api = UberallApi().getStatusCheckApi();
 final String id = id_example; // String | The unique id of the SearchData returned by /api/search/
 final String directory = directory_example; // String | The directory you want to search in
 final String token = token_example; // String | The token you got using /api/search
@@ -123,13 +123,13 @@ Initiate an online presence check starting with the name and address of the loca
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: publicKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('publicKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('publicKey').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getStatusCheckApi();
+final api = UberallApi().getStatusCheckApi();
 final String name = name_example; // String | The name of the location
 final String street = street_example; // String | The street address of the location
 final String country = country_example; // String | The country of the location Country. One of AT, CH, DE, ES, UK, FR, IT, NL

@@ -1,8 +1,8 @@
-# openapi.model.LabelListObject
+# uberall_api.model.LabelListObject
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

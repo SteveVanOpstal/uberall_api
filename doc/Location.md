@@ -1,8 +1,8 @@
-# openapi.model.Location
+# uberall_api.model.Location
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties
@@ -56,30 +56,30 @@ Name | Type | Description | Notes
 **utms** | [**BuiltSet&lt;UTM&gt;**](UTM.md) | UTM parameter to be appended to the location''s website. Codes can be sent to Google, Facebook, and Bing. | [optional] 
 **transactionLinks** | [**BuiltSet&lt;LocationTransactionLink&gt;**](LocationTransactionLink.md) | Links that appear on some directories for specific types of customer actions, such as food ordering, appointment setting, and booking reservations. Only available for specific business categories. | [optional] 
 **temporarilyClosed** | [**LocationTemporarilyClosed**](LocationTemporarilyClosed.md) |  | [optional] 
-**nameDescriptor** | **String** | An addition to the location''s name which gives specific info about the location''s address (e.g. Mall level 2 OR Inside Departures). Sent only to FACEBOOK | [optional] 
 **evData** | [**EvData**](EvData.md) |  | [optional] 
 **features** | **BuiltSet&lt;String&gt;** | Output only. List of features available to the location | [optional] 
-**businessId** | **int** | ID of the business this location is linked to. Mandatory when creating a location. Sending a different ID than the current businessId when updating will lead to changing the business. This is only possible in case all connected accounts (Facebook, Google, …) are compatible.  | [optional] 
-**cleansingComment** | **String** | Cleansing comment by user, set only when cleansingStatus is INVALID_DATA. Possible Values (ADDRESS_DETAILS_VERIFIED, NAME_ADDRESS_DETAILS_UPDATED, NON_CLOSURE_CONFIRMATION,) | [optional] 
-**cleansingStatus** | **String** | Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA | [optional] 
+**nameDescriptor** | **String** | An addition to the location''s name which gives specific info about the location''s address (e.g. Mall level 2 OR Inside Departures). Sent only to FACEBOOK | [optional] 
+**moreHours** | [**BuiltSet&lt;BuiltMap&lt;String, JsonObject&gt;&gt;**](BuiltMap.md) | The location''s additional service hours, such as delivery, pickup, happy hours etc. Submitted to Google. e.g. <pre>[&#123;     \"type\": \"ONLINE_SERVICE_HOURS\",     \"hours\": [&#123;         \"dayOfWeek\": 1,         \"from1\": \"09:00\",         \"to1\": \"18:00\"     &#125;, &#123;         \"dayOfWeek\": 2,         \"from1\": \"09:00\",         \"to1\": \"13:00\"     &#125;] &#125;, &#123;     \"type\": \"ACCESS\",     \"hours\": [&#123;         \"dayOfWeek\": 1,         \"from1\": \"06:00\",         \"to1\": \"20:00\"     &#125;] &#125;]</pre> | [optional] 
 **profileCompleteness** | **int** | Output only. Number representing completeness of location data, up to 100 | [optional] 
 **publishedListingsCount** | **int** | Output only. Number of published listings | [optional] 
 **socialProfiles** | [**BuiltSet&lt;SocialProfile&gt;**](SocialProfile.md) | The profiles of the location on social and professional networks (FACEBOOK, FOURSQUARE, INSTAGRAM, LINKEDIN, PINTEREST, TWITTER, VIMEO, XING, YOUTUBE) | [optional] 
-**timeZone** | **String** | The location''s timezone  | [optional] 
+**businessId** | **int** | ID of the business this location is linked to. Mandatory when creating a location. Sending a different ID than the current businessId when updating will lead to changing the business. This is only possible in case all connected accounts (Facebook, Google, …) are compatible.  | [optional] 
+**cleansingComment** | **String** | Cleansing comment by user, set only when cleansingStatus is INVALID_DATA. Possible Values (ADDRESS_DETAILS_VERIFIED, NAME_ADDRESS_DETAILS_UPDATED, NON_CLOSURE_CONFIRMATION,) | [optional] 
 **cleansingInvalidDataReason** | **String** | Output only. Invalid Cleansing Reason (eg. INCOMPLETE_ADDRESS,ADDRESS_ IS_PO_BOX,ADDRESS_ DOES_NOT_EXIST, LOCATION_IS_CLOSED, INFORMATION_IS_WRONG, LOCATION_IS_MOVED, NON_LATIN_CHARACTERS_ADDRESS, OTHER). Guide on how to fix invalid data issues - http://ubr.al/fix_invalid_data | [optional] 
+**cleansingStatus** | **String** | Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA | [optional] 
 **contentLists** | **BuiltList&lt;int&gt;** | The content list IDs (EVENTS, PRODUCTS, MENU, PEOPLE) describing the location | [optional] 
-**missingMandatoryFields** | **BuiltSet&lt;String&gt;** | Output only. Compile all the fields that are currently missing but mandatory for some directories. They have to be set in the Location object, so that the Listing can be created / updated on the respective platform. List of Strings, e.g. [NAME, ZIP, PHONE] | [optional] 
-**moreHours** | [**BuiltSet&lt;BuiltMap&lt;String, JsonObject&gt;&gt;**](BuiltMap.md) | The location''s additional service hours, such as delivery, pickup, happy hours etc. Submitted to Google. e.g. <pre>[&#123;     \"type\": \"ONLINE_SERVICE_HOURS\",     \"hours\": [&#123;         \"dayOfWeek\": 1,         \"from1\": \"09:00\",         \"to1\": \"18:00\"     &#125;, &#123;         \"dayOfWeek\": 2,         \"from1\": \"09:00\",         \"to1\": \"13:00\"     &#125;] &#125;, &#123;     \"type\": \"ACCESS\",     \"hours\": [&#123;         \"dayOfWeek\": 1,         \"from1\": \"06:00\",         \"to1\": \"20:00\"     &#125;] &#125;]</pre> | [optional] 
-**videos** | [**BuiltList&lt;Video&gt;**](Video.md) | The location''s videos | [optional] 
-**visibilityIndex** | **int** | Output only. The location''s latest visibility index | [optional] 
+**dataPoints** | **int** | Output only. Number of dataPoints (reviews, photos) left by users at this location | [optional] 
 **activeDirectoriesCount** | **int** | Output only. Number of active directories | [optional] 
 **activeListingsCount** | **int** | Output only. Number of active listings | [optional] 
 **attributes** | [**BuiltList&lt;AttributeWrapper&gt;**](AttributeWrapper.md) | Google attributes | [optional] 
-**dataPoints** | **int** | Output only. Number of dataPoints (reviews, photos) left by users at this location | [optional] 
+**customFields** | [**JsonObject**](.md) | A Map for identifying the value input for a specific custom field name on the location. Custom fields are created at the business level. <pre>   \"customFields\": [     '{'       \"name\": \"foo\",       \"value\": \"bar\"     '}',     '{'       \"name\": \"baz\",       \"value\": \"qux\"     '}'   ] </pre> | [optional] 
 **listingsBeingUpdated** | **int** | Output only. Number of listings still being updated | [optional] 
 **listingsInSync** | **int** | Output only. The number of listings in sync | [optional] 
 **mainPhoto** | [**LocationPhoto**](LocationPhoto.md) |  | [optional] 
-**customFields** | [**JsonObject**](.md) | A Map for identifying the value input for a specific custom field name on the location. Custom fields are created at the business level. <pre>   \"customFields\": [     '{'       \"name\": \"foo\",       \"value\": \"bar\"     '}',     '{'       \"name\": \"baz\",       \"value\": \"qux\"     '}'   ] </pre> | [optional] 
+**missingMandatoryFields** | **BuiltSet&lt;String&gt;** | Output only. Compile all the fields that are currently missing but mandatory for some directories. They have to be set in the Location object, so that the Listing can be created / updated on the respective platform. List of Strings, e.g. [NAME, ZIP, PHONE] | [optional] 
+**timeZone** | **String** | The location''s timezone  | [optional] 
+**videos** | [**BuiltList&lt;Video&gt;**](Video.md) | The location''s videos | [optional] 
+**visibilityIndex** | **int** | Output only. The location''s latest visibility index | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

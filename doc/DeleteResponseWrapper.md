@@ -1,8 +1,8 @@
-# openapi.model.DeleteResponseWrapper
+# uberall_api.model.DeleteResponseWrapper
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

@@ -8,11 +8,12 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/response.dart' as openApi;
-import 'package:openapi/src/model/service_item.dart';
-import 'package:openapi/src/model/service_item_search_wrapper.dart';
-import 'package:openapi/src/model/service_item_wrapper.dart';
+import 'package:built_value/json_object.dart';
+import 'package:uberall_api/src/api_util.dart';
+import 'package:uberall_api/src/model/service_item.dart';
+import 'package:uberall_api/src/model/service_item_search_wrapper.dart';
+import 'package:uberall_api/src/model/service_item_wrapper.dart';
+import 'package:uberall_api/src/model/uberall_response.dart';
 
 class ServiceItemsApi {
   final Dio _dio;
@@ -33,9 +34,9 @@ class ServiceItemsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Response] as data
+  /// Returns a [Future] containing a [Response] with a [UberallResponse] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<openApi.Response>> deleteServiceItemsId({
+  Future<Response<UberallResponse>> deleteServiceItemsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -81,7 +82,7 @@ class ServiceItemsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    openApi.Response? _responseData;
+    UberallResponse? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -89,8 +90,8 @@ class ServiceItemsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(openApi.Response),
-            ) as openApi.Response;
+              specifiedType: const FullType(UberallResponse),
+            ) as UberallResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -101,7 +102,7 @@ class ServiceItemsApi {
       );
     }
 
-    return Response<openApi.Response>(
+    return Response<UberallResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

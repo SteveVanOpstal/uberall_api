@@ -1,8 +1,8 @@
-# openapi.model.BusinessPageResponseWrapper
+# uberall_api.model.BusinessPageResponseWrapper
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

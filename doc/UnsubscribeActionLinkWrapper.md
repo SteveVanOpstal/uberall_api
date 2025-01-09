@@ -1,8 +1,8 @@
-# openapi.model.UnsubscribeActionLinkWrapper
+# uberall_api.model.UnsubscribeActionLinkWrapper
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 ## Properties

@@ -9,31 +9,32 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
-import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/cities_response_wrapper.dart';
-import 'package:openapi/src/model/countries_response_wrapper.dart';
-import 'package:openapi/src/model/datapoint_statistics_response_wrapper.dart';
-import 'package:openapi/src/model/date.dart';
-import 'package:openapi/src/model/delete_response_wrapper.dart';
-import 'package:openapi/src/model/directories_response_wrapper.dart';
-import 'package:openapi/src/model/ev_dynamic_data_wrapper.dart';
-import 'package:openapi/src/model/inbox_response_wrapper.dart';
-import 'package:openapi/src/model/keywords_wrapper.dart';
-import 'package:openapi/src/model/labels_response_wrapper.dart';
-import 'package:openapi/src/model/location.dart';
-import 'package:openapi/src/model/location_dashboard_response_wrapper.dart';
-import 'package:openapi/src/model/location_response_wrapper.dart';
-import 'package:openapi/src/model/location_search_response_wrapper.dart';
-import 'package:openapi/src/model/location_statistics_response.dart';
-import 'package:openapi/src/model/location_wrapper.dart';
-import 'package:openapi/src/model/lodging_field_response_wrapper.dart';
-import 'package:openapi/src/model/postcodes_response_wrapper.dart';
-import 'package:openapi/src/model/provinces_response_wrapper.dart';
-import 'package:openapi/src/model/response.dart' as openApi;
-import 'package:openapi/src/model/tracking_events_response_wrapper.dart';
-import 'package:openapi/src/model/update_response_wrapper.dart';
-import 'package:openapi/src/model/visibility_index_wrapper.dart';
-import 'package:openapi/src/model/visibility_indexes_wrapper.dart';
+import 'package:built_value/json_object.dart';
+import 'package:uberall_api/src/api_util.dart';
+import 'package:uberall_api/src/model/cities_response_wrapper.dart';
+import 'package:uberall_api/src/model/countries_response_wrapper.dart';
+import 'package:uberall_api/src/model/datapoint_statistics_response_wrapper.dart';
+import 'package:uberall_api/src/model/date.dart';
+import 'package:uberall_api/src/model/delete_response_wrapper.dart';
+import 'package:uberall_api/src/model/directories_response_wrapper.dart';
+import 'package:uberall_api/src/model/ev_dynamic_data_wrapper.dart';
+import 'package:uberall_api/src/model/inbox_response_wrapper.dart';
+import 'package:uberall_api/src/model/keywords_wrapper.dart';
+import 'package:uberall_api/src/model/labels_response_wrapper.dart';
+import 'package:uberall_api/src/model/location.dart';
+import 'package:uberall_api/src/model/location_dashboard_response_wrapper.dart';
+import 'package:uberall_api/src/model/location_response_wrapper.dart';
+import 'package:uberall_api/src/model/location_search_response_wrapper.dart';
+import 'package:uberall_api/src/model/location_statistics_response.dart';
+import 'package:uberall_api/src/model/location_wrapper.dart';
+import 'package:uberall_api/src/model/lodging_field_response_wrapper.dart';
+import 'package:uberall_api/src/model/postcodes_response_wrapper.dart';
+import 'package:uberall_api/src/model/provinces_response_wrapper.dart';
+import 'package:uberall_api/src/model/tracking_events_response_wrapper.dart';
+import 'package:uberall_api/src/model/uberall_response.dart';
+import 'package:uberall_api/src/model/update_response_wrapper.dart';
+import 'package:uberall_api/src/model/visibility_index_wrapper.dart';
+import 'package:uberall_api/src/model/visibility_indexes_wrapper.dart';
 
 class LocationsDataApi {
   final Dio _dio;
@@ -2730,9 +2731,9 @@ class LocationsDataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Response] as data
+  /// Returns a [Future] containing a [Response] with a [UberallResponse] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<openApi.Response>> postLocationsSync({
+  Future<Response<UberallResponse>> postLocationsSync({
     required BuiltList<String> locationIds,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -2785,7 +2786,7 @@ class LocationsDataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    openApi.Response? _responseData;
+    UberallResponse? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -2793,8 +2794,8 @@ class LocationsDataApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(openApi.Response),
-            ) as openApi.Response;
+              specifiedType: const FullType(UberallResponse),
+            ) as UberallResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2805,7 +2806,7 @@ class LocationsDataApi {
       );
     }
 
-    return Response<openApi.Response>(
+    return Response<UberallResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

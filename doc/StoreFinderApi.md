@@ -1,8 +1,8 @@
-# openapi.api.StoreFinderApi
+# uberall_api.api.StoreFinderApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 ```
 
 All URIs are relative to *https://uberall.com/api*
@@ -24,7 +24,7 @@ Will return all possible filter values for the given store finder. If locations 
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -34,7 +34,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getStoreFinderApi();
+final api = UberallApi().getStoreFinderApi();
 final String storeKey = storeKey_example; // String | Your store finder key
 final String language = 'en' or 'de'; // String | The language to show the filter values in
 final BuiltList<String> country = ; // BuiltList<String> | Optional parameter to filter locations from a specific country
@@ -81,7 +81,7 @@ Search among the locations of the store finder
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -91,7 +91,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getStoreFinderApi();
+final api = UberallApi().getStoreFinderApi();
 final String storeKey = storeKey_example; // String | Your store finder key
 final BuiltList<String> leftCurlyBracketFilterRightCurlyBracket = services=pickup&services=wifi&my-cool-filter=custom-value; // BuiltList<String> | Only return those locations that match the given filter
 final BuiltList<String> cities = ; // BuiltList<String> | List of cites to search for
@@ -164,7 +164,7 @@ Get all locations in your store finder
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -174,7 +174,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getStoreFinderApi();
+final api = UberallApi().getStoreFinderApi();
 final String storeKey = storeKey_example; // String | Your store finder key
 final BuiltList<String> country = ; // BuiltList<String> | Optional parameter to filter locations from a specific country
 final BuiltList<String> fieldMask = fieldMask=name&fieldMask=id; // BuiltList<String> | The list of fields the response object should contain
@@ -221,7 +221,7 @@ Get details for a specific location within the store finder
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:uberall_api/api.dart';
 // TODO Configure API key authorization: privateKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -231,7 +231,7 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api = Openapi().getStoreFinderApi();
+final api = UberallApi().getStoreFinderApi();
 final String storeKey = storeKey_example; // String | Your store finder key
 final String id = id_example; // String | The location identifier or its id
 final BuiltList<String> country = ; // BuiltList<String> | Countries to filter for
