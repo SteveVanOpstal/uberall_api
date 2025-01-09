@@ -9,7 +9,6 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
-import 'package:built_value/json_object.dart';
 import 'package:uberall_api/src/api_util.dart';
 import 'package:uberall_api/src/model/suggestion.dart';
 import 'package:uberall_api/src/model/suggestion_list_wrapper.dart';
