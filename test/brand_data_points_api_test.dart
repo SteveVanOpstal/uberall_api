@@ -11,7 +11,6 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for BrandDataPointsApi
 void main() {
   // final instance = BrandDataPointsApi();
@@ -70,6 +69,5 @@ void main() {
     test('test putBrandDataPointsIdReplyReplyIdApproval', () async {
       // TODO
     });
-
   });
 }

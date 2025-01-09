@@ -15,7 +15,6 @@ import 'package:openapi/src/model/content_lists_wrapper.dart';
 import 'package:openapi/src/model/generic_map_response_wrapper.dart';
 
 class CollectionManagementApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -37,7 +36,7 @@ class CollectionManagementApi {
   ///
   /// Returns a [Future] containing a [Response] with a [GenericMapResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GenericMapResponseWrapper>> deleteCollectionsId({ 
+  Future<Response<GenericMapResponseWrapper>> deleteCollectionsId({
     required String id,
     ContentCollection? contentCollection,
     CancelToken? cancelToken,
@@ -47,7 +46,10 @@ class CollectionManagementApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/collections/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/collections/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -60,7 +62,8 @@ class CollectionManagementApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -77,11 +80,12 @@ class CollectionManagementApi {
 
     try {
       const _type = FullType(ContentCollection);
-      _bodyData = contentCollection == null ? null : _serializers.serialize(contentCollection, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData = contentCollection == null
+          ? null
+          : _serializers.serialize(contentCollection, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -104,11 +108,12 @@ class CollectionManagementApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(GenericMapResponseWrapper),
-      ) as GenericMapResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(GenericMapResponseWrapper),
+            ) as GenericMapResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -135,7 +140,7 @@ class CollectionManagementApi {
   /// Get all the collections managed by the current API user.
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [body]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -145,7 +150,7 @@ class CollectionManagementApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ContentListsWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ContentListsWrapper>> getCollections({ 
+  Future<Response<ContentListsWrapper>> getCollections({
     JsonObject? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -167,7 +172,8 @@ class CollectionManagementApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -183,10 +189,9 @@ class CollectionManagementApi {
 
     try {
       _bodyData = body;
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -209,11 +214,12 @@ class CollectionManagementApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ContentListsWrapper),
-      ) as ContentListsWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ContentListsWrapper),
+            ) as ContentListsWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -250,7 +256,7 @@ class CollectionManagementApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ContentCollection] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ContentCollection>> getCollectionsId({ 
+  Future<Response<ContentCollection>> getCollectionsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -259,7 +265,10 @@ class CollectionManagementApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/collections/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/collections/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -272,7 +281,8 @@ class CollectionManagementApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -296,11 +306,12 @@ class CollectionManagementApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ContentCollection),
-      ) as ContentCollection;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ContentCollection),
+            ) as ContentCollection;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -338,7 +349,7 @@ class CollectionManagementApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ContentCollection] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ContentCollection>> patchCollectionsId({ 
+  Future<Response<ContentCollection>> patchCollectionsId({
     required String id,
     ContentCollection? contentCollection,
     CancelToken? cancelToken,
@@ -348,7 +359,10 @@ class CollectionManagementApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/collections/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/collections/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -361,7 +375,8 @@ class CollectionManagementApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -378,11 +393,12 @@ class CollectionManagementApi {
 
     try {
       const _type = FullType(ContentCollection);
-      _bodyData = contentCollection == null ? null : _serializers.serialize(contentCollection, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData = contentCollection == null
+          ? null
+          : _serializers.serialize(contentCollection, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -405,11 +421,12 @@ class CollectionManagementApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ContentCollection),
-      ) as ContentCollection;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ContentCollection),
+            ) as ContentCollection;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -446,7 +463,7 @@ class CollectionManagementApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ContentCollection] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ContentCollection>> postCollections({ 
+  Future<Response<ContentCollection>> postCollections({
     ContentCollection? contentCollection,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -468,7 +485,8 @@ class CollectionManagementApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -485,11 +503,12 @@ class CollectionManagementApi {
 
     try {
       const _type = FullType(ContentCollection);
-      _bodyData = contentCollection == null ? null : _serializers.serialize(contentCollection, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData = contentCollection == null
+          ? null
+          : _serializers.serialize(contentCollection, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -512,11 +531,12 @@ class CollectionManagementApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ContentCollection),
-      ) as ContentCollection;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ContentCollection),
+            ) as ContentCollection;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -538,5 +558,4 @@ class CollectionManagementApi {
       extra: _response.extra,
     );
   }
-
 }

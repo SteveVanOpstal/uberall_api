@@ -17,7 +17,7 @@ part 'sales_partner.g.dart';
 ///
 /// Properties:
 /// * [aggregateInvoicesToParent] - (only used for child SalesPartner) Indicates if the invoice for this SalesPartner should be aggregated to the parent invoice
-/// * [attribution] 
+/// * [attribution]
 /// * [canSeePrices] - Indicates if the SalesPartner should be allowed to see price information for e.g. product plans
 /// * [emailCustomerSupport] - Customer support email of the SalesPartner
 /// * [emailProjectLead] - Project lead email of the SalesPartner
@@ -33,22 +33,23 @@ part 'sales_partner.g.dart';
 /// * [type] - The type, e.g. STANDARD or CUSTOM
 /// * [resellerType] - Applicable only for Sales Partner type = CUSTOM. Can be one of OEM_RESELLER or STANRAD_RESELLER. Depending on the selection, different reports in Advanced Analytics will be shown.
 /// * [whitelabelInformations] - List of the sales partner''s white-label information
-/// * [activeLocations] 
-/// * [contractualMaxLocations] 
-/// * [locationsLeft] 
-/// * [contactPerson] 
-/// * [parentId] 
-/// * [onboardingStatusId] 
-/// * [publicTokenId] 
-/// * [privateTokenId] 
-/// * [typeId] 
-/// * [invoicePaymentInformationId] 
-/// * [resellerTypeId] 
-/// * [salesPartnerStatusId] 
-/// * [attributionId] 
-/// * [usersLeft] 
+/// * [activeLocations]
+/// * [contractualMaxLocations]
+/// * [locationsLeft]
+/// * [contactPerson]
+/// * [parentId]
+/// * [onboardingStatusId]
+/// * [publicTokenId]
+/// * [privateTokenId]
+/// * [typeId]
+/// * [invoicePaymentInformationId]
+/// * [resellerTypeId]
+/// * [salesPartnerStatusId]
+/// * [attributionId]
+/// * [usersLeft]
 @BuiltValue()
-abstract class SalesPartner implements Built<SalesPartner, SalesPartnerBuilder> {
+abstract class SalesPartner
+    implements Built<SalesPartner, SalesPartnerBuilder> {
   /// (only used for child SalesPartner) Indicates if the invoice for this SalesPartner should be aggregated to the parent invoice
   @BuiltValueField(wireName: r'aggregateInvoicesToParent')
   bool? get aggregateInvoicesToParent;
@@ -300,7 +301,8 @@ class _$SalesPartnerSerializer implements PrimitiveSerializer<SalesPartner> {
       yield r'whitelabelInformations';
       yield serializers.serialize(
         object.whitelabelInformations,
-        specifiedType: const FullType(BuiltSet, [FullType(WhitelabelInformation)]),
+        specifiedType:
+            const FullType(BuiltSet, [FullType(WhitelabelInformation)]),
       );
     }
     if (object.activeLocations != null) {
@@ -409,7 +411,9 @@ class _$SalesPartnerSerializer implements PrimitiveSerializer<SalesPartner> {
     SalesPartner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -539,7 +543,8 @@ class _$SalesPartnerSerializer implements PrimitiveSerializer<SalesPartner> {
         case r'whitelabelInformations':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltSet, [FullType(WhitelabelInformation)]),
+            specifiedType:
+                const FullType(BuiltSet, [FullType(WhitelabelInformation)]),
           ) as BuiltSet<WhitelabelInformation>;
           result.whitelabelInformations.replace(valueDes);
           break;
@@ -671,65 +676,85 @@ class _$SalesPartnerSerializer implements PrimitiveSerializer<SalesPartner> {
 }
 
 class SalesPartnerSalesPartnerStatusEnum extends EnumClass {
-
   /// SalesPartner status of the SalesPartner (Be aware: Only sending ''INACTIVE'' for child SalesPartner update is allowed)
   @BuiltValueEnumConst(wireName: r'CREATED')
-  static const SalesPartnerSalesPartnerStatusEnum CREATED = _$salesPartnerSalesPartnerStatusEnum_CREATED;
+  static const SalesPartnerSalesPartnerStatusEnum CREATED =
+      _$salesPartnerSalesPartnerStatusEnum_CREATED;
+
   /// SalesPartner status of the SalesPartner (Be aware: Only sending ''INACTIVE'' for child SalesPartner update is allowed)
   @BuiltValueEnumConst(wireName: r'APPROVED')
-  static const SalesPartnerSalesPartnerStatusEnum APPROVED = _$salesPartnerSalesPartnerStatusEnum_APPROVED;
+  static const SalesPartnerSalesPartnerStatusEnum APPROVED =
+      _$salesPartnerSalesPartnerStatusEnum_APPROVED;
+
   /// SalesPartner status of the SalesPartner (Be aware: Only sending ''INACTIVE'' for child SalesPartner update is allowed)
   @BuiltValueEnumConst(wireName: r'DECLINED')
-  static const SalesPartnerSalesPartnerStatusEnum DECLINED = _$salesPartnerSalesPartnerStatusEnum_DECLINED;
+  static const SalesPartnerSalesPartnerStatusEnum DECLINED =
+      _$salesPartnerSalesPartnerStatusEnum_DECLINED;
+
   /// SalesPartner status of the SalesPartner (Be aware: Only sending ''INACTIVE'' for child SalesPartner update is allowed)
   @BuiltValueEnumConst(wireName: r'DELETED')
-  static const SalesPartnerSalesPartnerStatusEnum DELETED = _$salesPartnerSalesPartnerStatusEnum_DELETED;
+  static const SalesPartnerSalesPartnerStatusEnum DELETED =
+      _$salesPartnerSalesPartnerStatusEnum_DELETED;
+
   /// SalesPartner status of the SalesPartner (Be aware: Only sending ''INACTIVE'' for child SalesPartner update is allowed)
   @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const SalesPartnerSalesPartnerStatusEnum INACTIVE = _$salesPartnerSalesPartnerStatusEnum_INACTIVE;
+  static const SalesPartnerSalesPartnerStatusEnum INACTIVE =
+      _$salesPartnerSalesPartnerStatusEnum_INACTIVE;
 
-  static Serializer<SalesPartnerSalesPartnerStatusEnum> get serializer => _$salesPartnerSalesPartnerStatusEnumSerializer;
+  static Serializer<SalesPartnerSalesPartnerStatusEnum> get serializer =>
+      _$salesPartnerSalesPartnerStatusEnumSerializer;
 
-  const SalesPartnerSalesPartnerStatusEnum._(String name): super(name);
+  const SalesPartnerSalesPartnerStatusEnum._(String name) : super(name);
 
-  static BuiltSet<SalesPartnerSalesPartnerStatusEnum> get values => _$salesPartnerSalesPartnerStatusEnumValues;
-  static SalesPartnerSalesPartnerStatusEnum valueOf(String name) => _$salesPartnerSalesPartnerStatusEnumValueOf(name);
+  static BuiltSet<SalesPartnerSalesPartnerStatusEnum> get values =>
+      _$salesPartnerSalesPartnerStatusEnumValues;
+  static SalesPartnerSalesPartnerStatusEnum valueOf(String name) =>
+      _$salesPartnerSalesPartnerStatusEnumValueOf(name);
 }
 
 class SalesPartnerTypeEnum extends EnumClass {
-
   /// The type, e.g. STANDARD or CUSTOM
   @BuiltValueEnumConst(wireName: r'STANDARD')
   static const SalesPartnerTypeEnum STANDARD = _$salesPartnerTypeEnum_STANDARD;
+
   /// The type, e.g. STANDARD or CUSTOM
   @BuiltValueEnumConst(wireName: r'CUSTOM')
   static const SalesPartnerTypeEnum CUSTOM = _$salesPartnerTypeEnum_CUSTOM;
+
   /// The type, e.g. STANDARD or CUSTOM
   @BuiltValueEnumConst(wireName: r'ENTERPRISE')
-  static const SalesPartnerTypeEnum ENTERPRISE = _$salesPartnerTypeEnum_ENTERPRISE;
+  static const SalesPartnerTypeEnum ENTERPRISE =
+      _$salesPartnerTypeEnum_ENTERPRISE;
 
-  static Serializer<SalesPartnerTypeEnum> get serializer => _$salesPartnerTypeEnumSerializer;
+  static Serializer<SalesPartnerTypeEnum> get serializer =>
+      _$salesPartnerTypeEnumSerializer;
 
-  const SalesPartnerTypeEnum._(String name): super(name);
+  const SalesPartnerTypeEnum._(String name) : super(name);
 
-  static BuiltSet<SalesPartnerTypeEnum> get values => _$salesPartnerTypeEnumValues;
-  static SalesPartnerTypeEnum valueOf(String name) => _$salesPartnerTypeEnumValueOf(name);
+  static BuiltSet<SalesPartnerTypeEnum> get values =>
+      _$salesPartnerTypeEnumValues;
+  static SalesPartnerTypeEnum valueOf(String name) =>
+      _$salesPartnerTypeEnumValueOf(name);
 }
 
 class SalesPartnerResellerTypeEnum extends EnumClass {
-
   /// Applicable only for Sales Partner type = CUSTOM. Can be one of OEM_RESELLER or STANRAD_RESELLER. Depending on the selection, different reports in Advanced Analytics will be shown.
   @BuiltValueEnumConst(wireName: r'OEM_RESELLER')
-  static const SalesPartnerResellerTypeEnum OEM_RESELLER = _$salesPartnerResellerTypeEnum_OEM_RESELLER;
+  static const SalesPartnerResellerTypeEnum OEM_RESELLER =
+      _$salesPartnerResellerTypeEnum_OEM_RESELLER;
+
   /// Applicable only for Sales Partner type = CUSTOM. Can be one of OEM_RESELLER or STANRAD_RESELLER. Depending on the selection, different reports in Advanced Analytics will be shown.
   @BuiltValueEnumConst(wireName: r'STANDARD_RESELLER')
-  static const SalesPartnerResellerTypeEnum STANDARD_RESELLER = _$salesPartnerResellerTypeEnum_STANDARD_RESELLER;
+  static const SalesPartnerResellerTypeEnum STANDARD_RESELLER =
+      _$salesPartnerResellerTypeEnum_STANDARD_RESELLER;
 
-  static Serializer<SalesPartnerResellerTypeEnum> get serializer => _$salesPartnerResellerTypeEnumSerializer;
+  static Serializer<SalesPartnerResellerTypeEnum> get serializer =>
+      _$salesPartnerResellerTypeEnumSerializer;
 
-  const SalesPartnerResellerTypeEnum._(String name): super(name);
+  const SalesPartnerResellerTypeEnum._(String name) : super(name);
 
-  static BuiltSet<SalesPartnerResellerTypeEnum> get values => _$salesPartnerResellerTypeEnumValues;
-  static SalesPartnerResellerTypeEnum valueOf(String name) => _$salesPartnerResellerTypeEnumValueOf(name);
+  static BuiltSet<SalesPartnerResellerTypeEnum> get values =>
+      _$salesPartnerResellerTypeEnumValues;
+  static SalesPartnerResellerTypeEnum valueOf(String name) =>
+      _$salesPartnerResellerTypeEnumValueOf(name);
 }
-

@@ -14,7 +14,8 @@ part 'conflicting_rule_response.g.dart';
 /// * [id] - id of conflicting Auto Response Rule
 /// * [name] - Name of conflicting Auto Response Rule
 @BuiltValue()
-abstract class ConflictingRuleResponse implements Built<ConflictingRuleResponse, ConflictingRuleResponseBuilder> {
+abstract class ConflictingRuleResponse
+    implements Built<ConflictingRuleResponse, ConflictingRuleResponseBuilder> {
   /// id of conflicting Auto Response Rule
   @BuiltValueField(wireName: r'id')
   String? get id;
@@ -25,18 +26,25 @@ abstract class ConflictingRuleResponse implements Built<ConflictingRuleResponse,
 
   ConflictingRuleResponse._();
 
-  factory ConflictingRuleResponse([void updates(ConflictingRuleResponseBuilder b)]) = _$ConflictingRuleResponse;
+  factory ConflictingRuleResponse(
+          [void updates(ConflictingRuleResponseBuilder b)]) =
+      _$ConflictingRuleResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ConflictingRuleResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ConflictingRuleResponse> get serializer => _$ConflictingRuleResponseSerializer();
+  static Serializer<ConflictingRuleResponse> get serializer =>
+      _$ConflictingRuleResponseSerializer();
 }
 
-class _$ConflictingRuleResponseSerializer implements PrimitiveSerializer<ConflictingRuleResponse> {
+class _$ConflictingRuleResponseSerializer
+    implements PrimitiveSerializer<ConflictingRuleResponse> {
   @override
-  final Iterable<Type> types = const [ConflictingRuleResponse, _$ConflictingRuleResponse];
+  final Iterable<Type> types = const [
+    ConflictingRuleResponse,
+    _$ConflictingRuleResponse
+  ];
 
   @override
   final String wireName = r'ConflictingRuleResponse';
@@ -68,7 +76,9 @@ class _$ConflictingRuleResponseSerializer implements PrimitiveSerializer<Conflic
     ConflictingRuleResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -125,4 +135,3 @@ class _$ConflictingRuleResponseSerializer implements PrimitiveSerializer<Conflic
     return result.build();
   }
 }
-

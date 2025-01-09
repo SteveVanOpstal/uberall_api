@@ -13,13 +13,16 @@ part 'unsubscribe_action_link_wrapper.g.dart';
 /// UnsubscribeActionLinkWrapper
 ///
 /// Properties:
-/// * [status] 
+/// * [status]
 /// * [message] - (optional) Holds further information about the response
-/// * [errorCode] 
+/// * [errorCode]
 /// * [warnings] - (optional) Holds further warnings
-/// * [response] 
+/// * [response]
 @BuiltValue()
-abstract class UnsubscribeActionLinkWrapper implements Built<UnsubscribeActionLinkWrapper, UnsubscribeActionLinkWrapperBuilder> {
+abstract class UnsubscribeActionLinkWrapper
+    implements
+        Built<UnsubscribeActionLinkWrapper,
+            UnsubscribeActionLinkWrapperBuilder> {
   @BuiltValueField(wireName: r'status')
   UnsubscribeActionLinkWrapperStatusEnum? get status;
   // enum statusEnum {  SUCCESS,  QUOTA_LIMIT_EXCEED,  NOT_AUTHORIZED,  FORBIDDEN,  BAD_ACCESS_TOKEN,  BAD_PRIVATE_KEY,  BAD_PUBLIC_KEY,  MISSING_PARAMETER,  INVALID_PARAMETER,  WRONG_PARAMETER_TYPE,  CONFLICT,  RESOURCE_LOCKED,  SERVER_ERROR,  ERROR,  NOT_FOUND,  BAD_REQUEST,  USER_ERROR,  PARTIAL_ERROR,  METHOD_NOT_ALLOWED,  };
@@ -41,18 +44,25 @@ abstract class UnsubscribeActionLinkWrapper implements Built<UnsubscribeActionLi
 
   UnsubscribeActionLinkWrapper._();
 
-  factory UnsubscribeActionLinkWrapper([void updates(UnsubscribeActionLinkWrapperBuilder b)]) = _$UnsubscribeActionLinkWrapper;
+  factory UnsubscribeActionLinkWrapper(
+          [void updates(UnsubscribeActionLinkWrapperBuilder b)]) =
+      _$UnsubscribeActionLinkWrapper;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UnsubscribeActionLinkWrapperBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<UnsubscribeActionLinkWrapper> get serializer => _$UnsubscribeActionLinkWrapperSerializer();
+  static Serializer<UnsubscribeActionLinkWrapper> get serializer =>
+      _$UnsubscribeActionLinkWrapperSerializer();
 }
 
-class _$UnsubscribeActionLinkWrapperSerializer implements PrimitiveSerializer<UnsubscribeActionLinkWrapper> {
+class _$UnsubscribeActionLinkWrapperSerializer
+    implements PrimitiveSerializer<UnsubscribeActionLinkWrapper> {
   @override
-  final Iterable<Type> types = const [UnsubscribeActionLinkWrapper, _$UnsubscribeActionLinkWrapper];
+  final Iterable<Type> types = const [
+    UnsubscribeActionLinkWrapper,
+    _$UnsubscribeActionLinkWrapper
+  ];
 
   @override
   final String wireName = r'UnsubscribeActionLinkWrapper';
@@ -80,7 +90,8 @@ class _$UnsubscribeActionLinkWrapperSerializer implements PrimitiveSerializer<Un
       yield r'errorCode';
       yield serializers.serialize(
         object.errorCode,
-        specifiedType: const FullType(UnsubscribeActionLinkWrapperErrorCodeEnum),
+        specifiedType:
+            const FullType(UnsubscribeActionLinkWrapperErrorCodeEnum),
       );
     }
     if (object.warnings != null) {
@@ -105,7 +116,9 @@ class _$UnsubscribeActionLinkWrapperSerializer implements PrimitiveSerializer<Un
     UnsubscribeActionLinkWrapper object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -123,7 +136,8 @@ class _$UnsubscribeActionLinkWrapperSerializer implements PrimitiveSerializer<Un
         case r'status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(UnsubscribeActionLinkWrapperStatusEnum),
+            specifiedType:
+                const FullType(UnsubscribeActionLinkWrapperStatusEnum),
           ) as UnsubscribeActionLinkWrapperStatusEnum;
           result.status = valueDes;
           break;
@@ -137,7 +151,8 @@ class _$UnsubscribeActionLinkWrapperSerializer implements PrimitiveSerializer<Un
         case r'errorCode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(UnsubscribeActionLinkWrapperErrorCodeEnum),
+            specifiedType:
+                const FullType(UnsubscribeActionLinkWrapperErrorCodeEnum),
           ) as UnsubscribeActionLinkWrapperErrorCodeEnum;
           result.errorCode = valueDes;
           break;
@@ -185,102 +200,147 @@ class _$UnsubscribeActionLinkWrapperSerializer implements PrimitiveSerializer<Un
 }
 
 class UnsubscribeActionLinkWrapperStatusEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'SUCCESS')
-  static const UnsubscribeActionLinkWrapperStatusEnum SUCCESS = _$unsubscribeActionLinkWrapperStatusEnum_SUCCESS;
+  static const UnsubscribeActionLinkWrapperStatusEnum SUCCESS =
+      _$unsubscribeActionLinkWrapperStatusEnum_SUCCESS;
   @BuiltValueEnumConst(wireName: r'QUOTA_LIMIT_EXCEED')
-  static const UnsubscribeActionLinkWrapperStatusEnum QUOTA_LIMIT_EXCEED = _$unsubscribeActionLinkWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
+  static const UnsubscribeActionLinkWrapperStatusEnum QUOTA_LIMIT_EXCEED =
+      _$unsubscribeActionLinkWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
   @BuiltValueEnumConst(wireName: r'NOT_AUTHORIZED')
-  static const UnsubscribeActionLinkWrapperStatusEnum NOT_AUTHORIZED = _$unsubscribeActionLinkWrapperStatusEnum_NOT_AUTHORIZED;
+  static const UnsubscribeActionLinkWrapperStatusEnum NOT_AUTHORIZED =
+      _$unsubscribeActionLinkWrapperStatusEnum_NOT_AUTHORIZED;
   @BuiltValueEnumConst(wireName: r'FORBIDDEN')
-  static const UnsubscribeActionLinkWrapperStatusEnum FORBIDDEN = _$unsubscribeActionLinkWrapperStatusEnum_FORBIDDEN;
+  static const UnsubscribeActionLinkWrapperStatusEnum FORBIDDEN =
+      _$unsubscribeActionLinkWrapperStatusEnum_FORBIDDEN;
   @BuiltValueEnumConst(wireName: r'BAD_ACCESS_TOKEN')
-  static const UnsubscribeActionLinkWrapperStatusEnum BAD_ACCESS_TOKEN = _$unsubscribeActionLinkWrapperStatusEnum_BAD_ACCESS_TOKEN;
+  static const UnsubscribeActionLinkWrapperStatusEnum BAD_ACCESS_TOKEN =
+      _$unsubscribeActionLinkWrapperStatusEnum_BAD_ACCESS_TOKEN;
   @BuiltValueEnumConst(wireName: r'BAD_PRIVATE_KEY')
-  static const UnsubscribeActionLinkWrapperStatusEnum BAD_PRIVATE_KEY = _$unsubscribeActionLinkWrapperStatusEnum_BAD_PRIVATE_KEY;
+  static const UnsubscribeActionLinkWrapperStatusEnum BAD_PRIVATE_KEY =
+      _$unsubscribeActionLinkWrapperStatusEnum_BAD_PRIVATE_KEY;
   @BuiltValueEnumConst(wireName: r'BAD_PUBLIC_KEY')
-  static const UnsubscribeActionLinkWrapperStatusEnum BAD_PUBLIC_KEY = _$unsubscribeActionLinkWrapperStatusEnum_BAD_PUBLIC_KEY;
+  static const UnsubscribeActionLinkWrapperStatusEnum BAD_PUBLIC_KEY =
+      _$unsubscribeActionLinkWrapperStatusEnum_BAD_PUBLIC_KEY;
   @BuiltValueEnumConst(wireName: r'MISSING_PARAMETER')
-  static const UnsubscribeActionLinkWrapperStatusEnum MISSING_PARAMETER = _$unsubscribeActionLinkWrapperStatusEnum_MISSING_PARAMETER;
+  static const UnsubscribeActionLinkWrapperStatusEnum MISSING_PARAMETER =
+      _$unsubscribeActionLinkWrapperStatusEnum_MISSING_PARAMETER;
   @BuiltValueEnumConst(wireName: r'INVALID_PARAMETER')
-  static const UnsubscribeActionLinkWrapperStatusEnum INVALID_PARAMETER = _$unsubscribeActionLinkWrapperStatusEnum_INVALID_PARAMETER;
+  static const UnsubscribeActionLinkWrapperStatusEnum INVALID_PARAMETER =
+      _$unsubscribeActionLinkWrapperStatusEnum_INVALID_PARAMETER;
   @BuiltValueEnumConst(wireName: r'WRONG_PARAMETER_TYPE')
-  static const UnsubscribeActionLinkWrapperStatusEnum WRONG_PARAMETER_TYPE = _$unsubscribeActionLinkWrapperStatusEnum_WRONG_PARAMETER_TYPE;
+  static const UnsubscribeActionLinkWrapperStatusEnum WRONG_PARAMETER_TYPE =
+      _$unsubscribeActionLinkWrapperStatusEnum_WRONG_PARAMETER_TYPE;
   @BuiltValueEnumConst(wireName: r'CONFLICT')
-  static const UnsubscribeActionLinkWrapperStatusEnum CONFLICT = _$unsubscribeActionLinkWrapperStatusEnum_CONFLICT;
+  static const UnsubscribeActionLinkWrapperStatusEnum CONFLICT =
+      _$unsubscribeActionLinkWrapperStatusEnum_CONFLICT;
   @BuiltValueEnumConst(wireName: r'RESOURCE_LOCKED')
-  static const UnsubscribeActionLinkWrapperStatusEnum RESOURCE_LOCKED = _$unsubscribeActionLinkWrapperStatusEnum_RESOURCE_LOCKED;
+  static const UnsubscribeActionLinkWrapperStatusEnum RESOURCE_LOCKED =
+      _$unsubscribeActionLinkWrapperStatusEnum_RESOURCE_LOCKED;
   @BuiltValueEnumConst(wireName: r'SERVER_ERROR')
-  static const UnsubscribeActionLinkWrapperStatusEnum SERVER_ERROR = _$unsubscribeActionLinkWrapperStatusEnum_SERVER_ERROR;
+  static const UnsubscribeActionLinkWrapperStatusEnum SERVER_ERROR =
+      _$unsubscribeActionLinkWrapperStatusEnum_SERVER_ERROR;
   @BuiltValueEnumConst(wireName: r'ERROR')
-  static const UnsubscribeActionLinkWrapperStatusEnum ERROR = _$unsubscribeActionLinkWrapperStatusEnum_ERROR;
+  static const UnsubscribeActionLinkWrapperStatusEnum ERROR =
+      _$unsubscribeActionLinkWrapperStatusEnum_ERROR;
   @BuiltValueEnumConst(wireName: r'NOT_FOUND')
-  static const UnsubscribeActionLinkWrapperStatusEnum NOT_FOUND = _$unsubscribeActionLinkWrapperStatusEnum_NOT_FOUND;
+  static const UnsubscribeActionLinkWrapperStatusEnum NOT_FOUND =
+      _$unsubscribeActionLinkWrapperStatusEnum_NOT_FOUND;
   @BuiltValueEnumConst(wireName: r'BAD_REQUEST')
-  static const UnsubscribeActionLinkWrapperStatusEnum BAD_REQUEST = _$unsubscribeActionLinkWrapperStatusEnum_BAD_REQUEST;
+  static const UnsubscribeActionLinkWrapperStatusEnum BAD_REQUEST =
+      _$unsubscribeActionLinkWrapperStatusEnum_BAD_REQUEST;
   @BuiltValueEnumConst(wireName: r'USER_ERROR')
-  static const UnsubscribeActionLinkWrapperStatusEnum USER_ERROR = _$unsubscribeActionLinkWrapperStatusEnum_USER_ERROR;
+  static const UnsubscribeActionLinkWrapperStatusEnum USER_ERROR =
+      _$unsubscribeActionLinkWrapperStatusEnum_USER_ERROR;
   @BuiltValueEnumConst(wireName: r'PARTIAL_ERROR')
-  static const UnsubscribeActionLinkWrapperStatusEnum PARTIAL_ERROR = _$unsubscribeActionLinkWrapperStatusEnum_PARTIAL_ERROR;
+  static const UnsubscribeActionLinkWrapperStatusEnum PARTIAL_ERROR =
+      _$unsubscribeActionLinkWrapperStatusEnum_PARTIAL_ERROR;
   @BuiltValueEnumConst(wireName: r'METHOD_NOT_ALLOWED')
-  static const UnsubscribeActionLinkWrapperStatusEnum METHOD_NOT_ALLOWED = _$unsubscribeActionLinkWrapperStatusEnum_METHOD_NOT_ALLOWED;
+  static const UnsubscribeActionLinkWrapperStatusEnum METHOD_NOT_ALLOWED =
+      _$unsubscribeActionLinkWrapperStatusEnum_METHOD_NOT_ALLOWED;
 
-  static Serializer<UnsubscribeActionLinkWrapperStatusEnum> get serializer => _$unsubscribeActionLinkWrapperStatusEnumSerializer;
+  static Serializer<UnsubscribeActionLinkWrapperStatusEnum> get serializer =>
+      _$unsubscribeActionLinkWrapperStatusEnumSerializer;
 
-  const UnsubscribeActionLinkWrapperStatusEnum._(String name): super(name);
+  const UnsubscribeActionLinkWrapperStatusEnum._(String name) : super(name);
 
-  static BuiltSet<UnsubscribeActionLinkWrapperStatusEnum> get values => _$unsubscribeActionLinkWrapperStatusEnumValues;
-  static UnsubscribeActionLinkWrapperStatusEnum valueOf(String name) => _$unsubscribeActionLinkWrapperStatusEnumValueOf(name);
+  static BuiltSet<UnsubscribeActionLinkWrapperStatusEnum> get values =>
+      _$unsubscribeActionLinkWrapperStatusEnumValues;
+  static UnsubscribeActionLinkWrapperStatusEnum valueOf(String name) =>
+      _$unsubscribeActionLinkWrapperStatusEnumValueOf(name);
 }
 
 class UnsubscribeActionLinkWrapperErrorCodeEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'NORMALIZATION_FAILED')
-  static const UnsubscribeActionLinkWrapperErrorCodeEnum NORMALIZATION_FAILED = _$unsubscribeActionLinkWrapperErrorCodeEnum_NORMALIZATION_FAILED;
+  static const UnsubscribeActionLinkWrapperErrorCodeEnum NORMALIZATION_FAILED =
+      _$unsubscribeActionLinkWrapperErrorCodeEnum_NORMALIZATION_FAILED;
   @BuiltValueEnumConst(wireName: r'DATA_CORRUPTED')
-  static const UnsubscribeActionLinkWrapperErrorCodeEnum DATA_CORRUPTED = _$unsubscribeActionLinkWrapperErrorCodeEnum_DATA_CORRUPTED;
+  static const UnsubscribeActionLinkWrapperErrorCodeEnum DATA_CORRUPTED =
+      _$unsubscribeActionLinkWrapperErrorCodeEnum_DATA_CORRUPTED;
   @BuiltValueEnumConst(wireName: r'INVALID_INPUT')
-  static const UnsubscribeActionLinkWrapperErrorCodeEnum INVALID_INPUT = _$unsubscribeActionLinkWrapperErrorCodeEnum_INVALID_INPUT;
+  static const UnsubscribeActionLinkWrapperErrorCodeEnum INVALID_INPUT =
+      _$unsubscribeActionLinkWrapperErrorCodeEnum_INVALID_INPUT;
   @BuiltValueEnumConst(wireName: r'NOT_SYNCABLE')
-  static const UnsubscribeActionLinkWrapperErrorCodeEnum NOT_SYNCABLE = _$unsubscribeActionLinkWrapperErrorCodeEnum_NOT_SYNCABLE;
+  static const UnsubscribeActionLinkWrapperErrorCodeEnum NOT_SYNCABLE =
+      _$unsubscribeActionLinkWrapperErrorCodeEnum_NOT_SYNCABLE;
   @BuiltValueEnumConst(wireName: r'PAYMENT_FAILED')
-  static const UnsubscribeActionLinkWrapperErrorCodeEnum PAYMENT_FAILED = _$unsubscribeActionLinkWrapperErrorCodeEnum_PAYMENT_FAILED;
+  static const UnsubscribeActionLinkWrapperErrorCodeEnum PAYMENT_FAILED =
+      _$unsubscribeActionLinkWrapperErrorCodeEnum_PAYMENT_FAILED;
   @BuiltValueEnumConst(wireName: r'FREE_TIER_REACHED')
-  static const UnsubscribeActionLinkWrapperErrorCodeEnum FREE_TIER_REACHED = _$unsubscribeActionLinkWrapperErrorCodeEnum_FREE_TIER_REACHED;
+  static const UnsubscribeActionLinkWrapperErrorCodeEnum FREE_TIER_REACHED =
+      _$unsubscribeActionLinkWrapperErrorCodeEnum_FREE_TIER_REACHED;
   @BuiltValueEnumConst(wireName: r'LIMIT_REACHED')
-  static const UnsubscribeActionLinkWrapperErrorCodeEnum LIMIT_REACHED = _$unsubscribeActionLinkWrapperErrorCodeEnum_LIMIT_REACHED;
+  static const UnsubscribeActionLinkWrapperErrorCodeEnum LIMIT_REACHED =
+      _$unsubscribeActionLinkWrapperErrorCodeEnum_LIMIT_REACHED;
   @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const UnsubscribeActionLinkWrapperErrorCodeEnum INACTIVE = _$unsubscribeActionLinkWrapperErrorCodeEnum_INACTIVE;
+  static const UnsubscribeActionLinkWrapperErrorCodeEnum INACTIVE =
+      _$unsubscribeActionLinkWrapperErrorCodeEnum_INACTIVE;
   @BuiltValueEnumConst(wireName: r'UNKNOWN')
-  static const UnsubscribeActionLinkWrapperErrorCodeEnum UNKNOWN = _$unsubscribeActionLinkWrapperErrorCodeEnum_UNKNOWN;
+  static const UnsubscribeActionLinkWrapperErrorCodeEnum UNKNOWN =
+      _$unsubscribeActionLinkWrapperErrorCodeEnum_UNKNOWN;
   @BuiltValueEnumConst(wireName: r'IDENTIFIER_NOT_UNIQUE')
-  static const UnsubscribeActionLinkWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE = _$unsubscribeActionLinkWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
+  static const UnsubscribeActionLinkWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE =
+      _$unsubscribeActionLinkWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
   @BuiltValueEnumConst(wireName: r'ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT')
-  static const UnsubscribeActionLinkWrapperErrorCodeEnum ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT = _$unsubscribeActionLinkWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
+  static const UnsubscribeActionLinkWrapperErrorCodeEnum
+      ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT =
+      _$unsubscribeActionLinkWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
   @BuiltValueEnumConst(wireName: r'NO_ACCOUNT_CONNECTED')
-  static const UnsubscribeActionLinkWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED = _$unsubscribeActionLinkWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
+  static const UnsubscribeActionLinkWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED =
+      _$unsubscribeActionLinkWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
   @BuiltValueEnumConst(wireName: r'NO_PAGE_SELECTED')
-  static const UnsubscribeActionLinkWrapperErrorCodeEnum NO_PAGE_SELECTED = _$unsubscribeActionLinkWrapperErrorCodeEnum_NO_PAGE_SELECTED;
+  static const UnsubscribeActionLinkWrapperErrorCodeEnum NO_PAGE_SELECTED =
+      _$unsubscribeActionLinkWrapperErrorCodeEnum_NO_PAGE_SELECTED;
   @BuiltValueEnumConst(wireName: r'PAGE_NOT_CREATED')
-  static const UnsubscribeActionLinkWrapperErrorCodeEnum PAGE_NOT_CREATED = _$unsubscribeActionLinkWrapperErrorCodeEnum_PAGE_NOT_CREATED;
+  static const UnsubscribeActionLinkWrapperErrorCodeEnum PAGE_NOT_CREATED =
+      _$unsubscribeActionLinkWrapperErrorCodeEnum_PAGE_NOT_CREATED;
   @BuiltValueEnumConst(wireName: r'PAGE_IN_REVIEW')
-  static const UnsubscribeActionLinkWrapperErrorCodeEnum PAGE_IN_REVIEW = _$unsubscribeActionLinkWrapperErrorCodeEnum_PAGE_IN_REVIEW;
+  static const UnsubscribeActionLinkWrapperErrorCodeEnum PAGE_IN_REVIEW =
+      _$unsubscribeActionLinkWrapperErrorCodeEnum_PAGE_IN_REVIEW;
   @BuiltValueEnumConst(wireName: r'PAGE_CLAIMED_BY_OTHERS')
-  static const UnsubscribeActionLinkWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS = _$unsubscribeActionLinkWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
+  static const UnsubscribeActionLinkWrapperErrorCodeEnum
+      PAGE_CLAIMED_BY_OTHERS =
+      _$unsubscribeActionLinkWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
   @BuiltValueEnumConst(wireName: r'OVERLAPPING_SOCIALPOST')
-  static const UnsubscribeActionLinkWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST = _$unsubscribeActionLinkWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
+  static const UnsubscribeActionLinkWrapperErrorCodeEnum
+      OVERLAPPING_SOCIALPOST =
+      _$unsubscribeActionLinkWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
   @BuiltValueEnumConst(wireName: r'TOO_MANY_REPLIES')
-  static const UnsubscribeActionLinkWrapperErrorCodeEnum TOO_MANY_REPLIES = _$unsubscribeActionLinkWrapperErrorCodeEnum_TOO_MANY_REPLIES;
+  static const UnsubscribeActionLinkWrapperErrorCodeEnum TOO_MANY_REPLIES =
+      _$unsubscribeActionLinkWrapperErrorCodeEnum_TOO_MANY_REPLIES;
   @BuiltValueEnumConst(wireName: r'REPLY_TOO_LONG')
-  static const UnsubscribeActionLinkWrapperErrorCodeEnum REPLY_TOO_LONG = _$unsubscribeActionLinkWrapperErrorCodeEnum_REPLY_TOO_LONG;
+  static const UnsubscribeActionLinkWrapperErrorCodeEnum REPLY_TOO_LONG =
+      _$unsubscribeActionLinkWrapperErrorCodeEnum_REPLY_TOO_LONG;
   @BuiltValueEnumConst(wireName: r'DEPRECATED')
-  static const UnsubscribeActionLinkWrapperErrorCodeEnum DEPRECATED = _$unsubscribeActionLinkWrapperErrorCodeEnum_DEPRECATED;
+  static const UnsubscribeActionLinkWrapperErrorCodeEnum DEPRECATED =
+      _$unsubscribeActionLinkWrapperErrorCodeEnum_DEPRECATED;
 
-  static Serializer<UnsubscribeActionLinkWrapperErrorCodeEnum> get serializer => _$unsubscribeActionLinkWrapperErrorCodeEnumSerializer;
+  static Serializer<UnsubscribeActionLinkWrapperErrorCodeEnum> get serializer =>
+      _$unsubscribeActionLinkWrapperErrorCodeEnumSerializer;
 
-  const UnsubscribeActionLinkWrapperErrorCodeEnum._(String name): super(name);
+  const UnsubscribeActionLinkWrapperErrorCodeEnum._(String name) : super(name);
 
-  static BuiltSet<UnsubscribeActionLinkWrapperErrorCodeEnum> get values => _$unsubscribeActionLinkWrapperErrorCodeEnumValues;
-  static UnsubscribeActionLinkWrapperErrorCodeEnum valueOf(String name) => _$unsubscribeActionLinkWrapperErrorCodeEnumValueOf(name);
+  static BuiltSet<UnsubscribeActionLinkWrapperErrorCodeEnum> get values =>
+      _$unsubscribeActionLinkWrapperErrorCodeEnumValues;
+  static UnsubscribeActionLinkWrapperErrorCodeEnum valueOf(String name) =>
+      _$unsubscribeActionLinkWrapperErrorCodeEnumValueOf(name);
 }
-

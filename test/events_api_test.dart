@@ -11,7 +11,6 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for EventsApi
 void main() {
   // final instance = EventsApi();
@@ -79,6 +78,5 @@ void main() {
     test('test postEvents', () async {
       // TODO
     });
-
   });
 }

@@ -13,12 +13,13 @@ part 'search_data_list_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [results] 
+/// * [results]
 /// * [offset] - The offset for pagination
 /// * [max] - The maximum number of results to return
 /// * [count] - The total count of search data
 @BuiltValue()
-abstract class SearchDataListObject implements Built<SearchDataListObject, SearchDataListObjectBuilder> {
+abstract class SearchDataListObject
+    implements Built<SearchDataListObject, SearchDataListObjectBuilder> {
   @BuiltValueField(wireName: r'results')
   BuiltList<SearchData>? get results;
 
@@ -36,18 +37,24 @@ abstract class SearchDataListObject implements Built<SearchDataListObject, Searc
 
   SearchDataListObject._();
 
-  factory SearchDataListObject([void updates(SearchDataListObjectBuilder b)]) = _$SearchDataListObject;
+  factory SearchDataListObject([void updates(SearchDataListObjectBuilder b)]) =
+      _$SearchDataListObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SearchDataListObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<SearchDataListObject> get serializer => _$SearchDataListObjectSerializer();
+  static Serializer<SearchDataListObject> get serializer =>
+      _$SearchDataListObjectSerializer();
 }
 
-class _$SearchDataListObjectSerializer implements PrimitiveSerializer<SearchDataListObject> {
+class _$SearchDataListObjectSerializer
+    implements PrimitiveSerializer<SearchDataListObject> {
   @override
-  final Iterable<Type> types = const [SearchDataListObject, _$SearchDataListObject];
+  final Iterable<Type> types = const [
+    SearchDataListObject,
+    _$SearchDataListObject
+  ];
 
   @override
   final String wireName = r'SearchDataListObject';
@@ -93,7 +100,9 @@ class _$SearchDataListObjectSerializer implements PrimitiveSerializer<SearchData
     SearchDataListObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -164,4 +173,3 @@ class _$SearchDataListObjectSerializer implements PrimitiveSerializer<SearchData
     return result.build();
   }
 }
-

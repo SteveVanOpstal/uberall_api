@@ -12,26 +12,33 @@ part 'person_response_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [person] 
+/// * [person]
 @BuiltValue()
-abstract class PersonResponseObject implements Built<PersonResponseObject, PersonResponseObjectBuilder> {
+abstract class PersonResponseObject
+    implements Built<PersonResponseObject, PersonResponseObjectBuilder> {
   @BuiltValueField(wireName: r'person')
   Person? get person;
 
   PersonResponseObject._();
 
-  factory PersonResponseObject([void updates(PersonResponseObjectBuilder b)]) = _$PersonResponseObject;
+  factory PersonResponseObject([void updates(PersonResponseObjectBuilder b)]) =
+      _$PersonResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PersonResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<PersonResponseObject> get serializer => _$PersonResponseObjectSerializer();
+  static Serializer<PersonResponseObject> get serializer =>
+      _$PersonResponseObjectSerializer();
 }
 
-class _$PersonResponseObjectSerializer implements PrimitiveSerializer<PersonResponseObject> {
+class _$PersonResponseObjectSerializer
+    implements PrimitiveSerializer<PersonResponseObject> {
   @override
-  final Iterable<Type> types = const [PersonResponseObject, _$PersonResponseObject];
+  final Iterable<Type> types = const [
+    PersonResponseObject,
+    _$PersonResponseObject
+  ];
 
   @override
   final String wireName = r'PersonResponseObject';
@@ -56,7 +63,9 @@ class _$PersonResponseObjectSerializer implements PrimitiveSerializer<PersonResp
     PersonResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +115,3 @@ class _$PersonResponseObjectSerializer implements PrimitiveSerializer<PersonResp
     return result.build();
   }
 }
-

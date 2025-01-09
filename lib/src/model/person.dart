@@ -18,7 +18,7 @@ part 'person.g.dart';
 /// * [listName] - Name of the section this person belongs to
 /// * [id] - The uberall unique id for the person
 /// * [name] - The person''s full name
-/// * [image] 
+/// * [image]
 /// * [url] - A valid url of a page with more details about the person
 @BuiltValue()
 abstract class Person implements Built<Person, PersonBuilder> {
@@ -136,7 +136,9 @@ class _$PersonSerializer implements PrimitiveSerializer<Person> {
     Person object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -235,4 +237,3 @@ class _$PersonSerializer implements PrimitiveSerializer<Person> {
     return result.build();
   }
 }
-

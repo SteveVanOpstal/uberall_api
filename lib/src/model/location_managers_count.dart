@@ -13,25 +13,32 @@ part 'location_managers_count.g.dart';
 /// Properties:
 /// * [managersCount] - The number of managers managing the location
 @BuiltValue()
-abstract class LocationManagersCount implements Built<LocationManagersCount, LocationManagersCountBuilder> {
+abstract class LocationManagersCount
+    implements Built<LocationManagersCount, LocationManagersCountBuilder> {
   /// The number of managers managing the location
   @BuiltValueField(wireName: r'managersCount')
   int? get managersCount;
 
   LocationManagersCount._();
 
-  factory LocationManagersCount([void updates(LocationManagersCountBuilder b)]) = _$LocationManagersCount;
+  factory LocationManagersCount(
+      [void updates(LocationManagersCountBuilder b)]) = _$LocationManagersCount;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LocationManagersCountBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LocationManagersCount> get serializer => _$LocationManagersCountSerializer();
+  static Serializer<LocationManagersCount> get serializer =>
+      _$LocationManagersCountSerializer();
 }
 
-class _$LocationManagersCountSerializer implements PrimitiveSerializer<LocationManagersCount> {
+class _$LocationManagersCountSerializer
+    implements PrimitiveSerializer<LocationManagersCount> {
   @override
-  final Iterable<Type> types = const [LocationManagersCount, _$LocationManagersCount];
+  final Iterable<Type> types = const [
+    LocationManagersCount,
+    _$LocationManagersCount
+  ];
 
   @override
   final String wireName = r'LocationManagersCount';
@@ -56,7 +63,9 @@ class _$LocationManagersCountSerializer implements PrimitiveSerializer<LocationM
     LocationManagersCount object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +115,3 @@ class _$LocationManagersCountSerializer implements PrimitiveSerializer<LocationM
     return result.build();
   }
 }
-

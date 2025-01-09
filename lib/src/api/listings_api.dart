@@ -4,7 +4,6 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
@@ -12,11 +11,9 @@ import 'package:openapi/src/api_util.dart';
 import 'package:openapi/src/model/directory_page_response_wrapper.dart';
 import 'package:openapi/src/model/google_venue_details_wrapper.dart';
 import 'package:openapi/src/model/listings_details_response_wrapper.dart';
-import 'package:openapi/src/model/response.dart';
 import 'package:openapi/src/model/success_response_wrapper.dart';
 
 class ListingsApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -37,7 +34,7 @@ class ListingsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SuccessResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SuccessResponseWrapper>> deleteLocationsIdFacebookPage({ 
+  Future<Response<SuccessResponseWrapper>> deleteLocationsIdFacebookPage({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -46,7 +43,10 @@ class ListingsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/locations/{id}/facebook/page'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/locations/{id}/facebook/page'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -59,7 +59,8 @@ class ListingsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -83,11 +84,12 @@ class ListingsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SuccessResponseWrapper),
-      ) as SuccessResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SuccessResponseWrapper),
+            ) as SuccessResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -124,7 +126,7 @@ class ListingsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Response>> deleteLocationsIdGooglePage({ 
+  Future<Response<Response>> deleteLocationsIdGooglePage({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -133,7 +135,10 @@ class ListingsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/locations/{id}/google/page'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/locations/{id}/google/page'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -146,7 +151,8 @@ class ListingsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -170,11 +176,12 @@ class ListingsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(Response),
-      ) as Response;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(Response),
+            ) as Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -211,7 +218,7 @@ class ListingsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SuccessResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SuccessResponseWrapper>> deleteLocationsIdInstagramPage({ 
+  Future<Response<SuccessResponseWrapper>> deleteLocationsIdInstagramPage({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -220,7 +227,10 @@ class ListingsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/locations/{id}/instagram/page'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/locations/{id}/instagram/page'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -233,7 +243,8 @@ class ListingsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -257,11 +268,12 @@ class ListingsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SuccessResponseWrapper),
-      ) as SuccessResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SuccessResponseWrapper),
+            ) as SuccessResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -298,7 +310,7 @@ class ListingsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DirectoryPageResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DirectoryPageResponseWrapper>> getLocationsIdFacebookPage({ 
+  Future<Response<DirectoryPageResponseWrapper>> getLocationsIdFacebookPage({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -307,7 +319,10 @@ class ListingsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/locations/{id}/facebook/page'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/locations/{id}/facebook/page'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -320,7 +335,8 @@ class ListingsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -344,11 +360,12 @@ class ListingsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DirectoryPageResponseWrapper),
-      ) as DirectoryPageResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DirectoryPageResponseWrapper),
+            ) as DirectoryPageResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -385,7 +402,7 @@ class ListingsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [GoogleVenueDetailsWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GoogleVenueDetailsWrapper>> getLocationsIdGooglePage({ 
+  Future<Response<GoogleVenueDetailsWrapper>> getLocationsIdGooglePage({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -394,7 +411,10 @@ class ListingsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/locations/{id}/google/page'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/locations/{id}/google/page'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -407,7 +427,8 @@ class ListingsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -431,11 +452,12 @@ class ListingsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(GoogleVenueDetailsWrapper),
-      ) as GoogleVenueDetailsWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(GoogleVenueDetailsWrapper),
+            ) as GoogleVenueDetailsWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -472,7 +494,8 @@ class ListingsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ListingsDetailsResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ListingsDetailsResponseWrapper>> getLocationsIdListingsDetailsList({ 
+  Future<Response<ListingsDetailsResponseWrapper>>
+      getLocationsIdListingsDetailsList({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -481,7 +504,10 @@ class ListingsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/locations/{id}/listings-details/list'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/locations/{id}/listings-details/list'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -494,7 +520,8 @@ class ListingsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -518,11 +545,12 @@ class ListingsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ListingsDetailsResponseWrapper),
-      ) as ListingsDetailsResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ListingsDetailsResponseWrapper),
+            ) as ListingsDetailsResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -559,7 +587,7 @@ class ListingsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Response>> patchListingsId({ 
+  Future<Response<Response>> patchListingsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -568,7 +596,10 @@ class ListingsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/listings/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/listings/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -581,7 +612,8 @@ class ListingsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -605,11 +637,12 @@ class ListingsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(Response),
-      ) as Response;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(Response),
+            ) as Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -649,7 +682,7 @@ class ListingsApi {
   /// Returns a [Future] containing a [Response] with a [DirectoryPageResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
   @Deprecated('This operation has been deprecated')
-  Future<Response<DirectoryPageResponseWrapper>> postLocationsIdFacebookPage({ 
+  Future<Response<DirectoryPageResponseWrapper>> postLocationsIdFacebookPage({
     required String id,
     String? fbAccessToken,
     String? pageId,
@@ -660,7 +693,10 @@ class ListingsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/locations/{id}/facebook/page'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/locations/{id}/facebook/page'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -673,7 +709,8 @@ class ListingsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -686,8 +723,12 @@ class ListingsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (fbAccessToken != null) r'fb_access_token': encodeQueryParameter(_serializers, fbAccessToken, const FullType(String)),
-      if (pageId != null) r'pageId': encodeQueryParameter(_serializers, pageId, const FullType(String)),
+      if (fbAccessToken != null)
+        r'fb_access_token': encodeQueryParameter(
+            _serializers, fbAccessToken, const FullType(String)),
+      if (pageId != null)
+        r'pageId':
+            encodeQueryParameter(_serializers, pageId, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -703,11 +744,12 @@ class ListingsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DirectoryPageResponseWrapper),
-      ) as DirectoryPageResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DirectoryPageResponseWrapper),
+            ) as DirectoryPageResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -744,7 +786,7 @@ class ListingsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Response>> putListingsIdFlag({ 
+  Future<Response<Response>> putListingsIdFlag({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -753,7 +795,10 @@ class ListingsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/listings/{id}/flag'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/listings/{id}/flag'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -766,7 +811,8 @@ class ListingsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -790,11 +836,12 @@ class ListingsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(Response),
-      ) as Response;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(Response),
+            ) as Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -816,5 +863,4 @@ class ListingsApi {
       extra: _response.extra,
     );
   }
-
 }

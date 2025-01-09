@@ -17,12 +17,12 @@ part 'menu_item.g.dart';
 /// * [title] - Title
 /// * [description] - Description of the menu item: e.g. 'With mozzarella, fresh basil and tomatoes'
 /// * [identifier] - Unique Identifier for the Menu
-/// * [listName] 
+/// * [listName]
 /// * [id] - The uberall unique id for the menu item
 /// * [price] - Price of the menu item in cents: e.g. '1500' for 15 €
 /// * [currency] - Currency used for prices in ISO-4217: e.g. EUR, USD, CHF
 /// * [category] - Category or section of the menu item (e.g. Starters, Drinks, Desert, etc.)
-/// * [image] 
+/// * [image]
 /// * [url] - A valid page url with more details about the item
 /// * [priceMax] - Maximum price if you want to use a price range for the item
 /// * [caloriesLow] - The lowest possible number of calories for a menu item
@@ -223,7 +223,9 @@ class _$MenuItemSerializer implements PrimitiveSerializer<MenuItem> {
     MenuItem object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -371,4 +373,3 @@ class _$MenuItemSerializer implements PrimitiveSerializer<MenuItem> {
     return result.build();
   }
 }
-

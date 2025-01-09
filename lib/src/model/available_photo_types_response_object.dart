@@ -12,26 +12,36 @@ part 'available_photo_types_response_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [availablePhotoTypes] 
+/// * [availablePhotoTypes]
 @BuiltValue()
-abstract class AvailablePhotoTypesResponseObject implements Built<AvailablePhotoTypesResponseObject, AvailablePhotoTypesResponseObjectBuilder> {
+abstract class AvailablePhotoTypesResponseObject
+    implements
+        Built<AvailablePhotoTypesResponseObject,
+            AvailablePhotoTypesResponseObjectBuilder> {
   @BuiltValueField(wireName: r'availablePhotoTypes')
   BuiltList<String>? get availablePhotoTypes;
 
   AvailablePhotoTypesResponseObject._();
 
-  factory AvailablePhotoTypesResponseObject([void updates(AvailablePhotoTypesResponseObjectBuilder b)]) = _$AvailablePhotoTypesResponseObject;
+  factory AvailablePhotoTypesResponseObject(
+          [void updates(AvailablePhotoTypesResponseObjectBuilder b)]) =
+      _$AvailablePhotoTypesResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AvailablePhotoTypesResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AvailablePhotoTypesResponseObject> get serializer => _$AvailablePhotoTypesResponseObjectSerializer();
+  static Serializer<AvailablePhotoTypesResponseObject> get serializer =>
+      _$AvailablePhotoTypesResponseObjectSerializer();
 }
 
-class _$AvailablePhotoTypesResponseObjectSerializer implements PrimitiveSerializer<AvailablePhotoTypesResponseObject> {
+class _$AvailablePhotoTypesResponseObjectSerializer
+    implements PrimitiveSerializer<AvailablePhotoTypesResponseObject> {
   @override
-  final Iterable<Type> types = const [AvailablePhotoTypesResponseObject, _$AvailablePhotoTypesResponseObject];
+  final Iterable<Type> types = const [
+    AvailablePhotoTypesResponseObject,
+    _$AvailablePhotoTypesResponseObject
+  ];
 
   @override
   final String wireName = r'AvailablePhotoTypesResponseObject';
@@ -56,7 +66,9 @@ class _$AvailablePhotoTypesResponseObjectSerializer implements PrimitiveSerializ
     AvailablePhotoTypesResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +118,3 @@ class _$AvailablePhotoTypesResponseObjectSerializer implements PrimitiveSerializ
     return result.build();
   }
 }
-

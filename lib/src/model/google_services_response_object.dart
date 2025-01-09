@@ -12,26 +12,36 @@ part 'google_services_response_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [googleServices] 
+/// * [googleServices]
 @BuiltValue()
-abstract class GoogleServicesResponseObject implements Built<GoogleServicesResponseObject, GoogleServicesResponseObjectBuilder> {
+abstract class GoogleServicesResponseObject
+    implements
+        Built<GoogleServicesResponseObject,
+            GoogleServicesResponseObjectBuilder> {
   @BuiltValueField(wireName: r'googleServices')
   BuiltList<String>? get googleServices;
 
   GoogleServicesResponseObject._();
 
-  factory GoogleServicesResponseObject([void updates(GoogleServicesResponseObjectBuilder b)]) = _$GoogleServicesResponseObject;
+  factory GoogleServicesResponseObject(
+          [void updates(GoogleServicesResponseObjectBuilder b)]) =
+      _$GoogleServicesResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(GoogleServicesResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<GoogleServicesResponseObject> get serializer => _$GoogleServicesResponseObjectSerializer();
+  static Serializer<GoogleServicesResponseObject> get serializer =>
+      _$GoogleServicesResponseObjectSerializer();
 }
 
-class _$GoogleServicesResponseObjectSerializer implements PrimitiveSerializer<GoogleServicesResponseObject> {
+class _$GoogleServicesResponseObjectSerializer
+    implements PrimitiveSerializer<GoogleServicesResponseObject> {
   @override
-  final Iterable<Type> types = const [GoogleServicesResponseObject, _$GoogleServicesResponseObject];
+  final Iterable<Type> types = const [
+    GoogleServicesResponseObject,
+    _$GoogleServicesResponseObject
+  ];
 
   @override
   final String wireName = r'GoogleServicesResponseObject';
@@ -56,7 +66,9 @@ class _$GoogleServicesResponseObjectSerializer implements PrimitiveSerializer<Go
     GoogleServicesResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +118,3 @@ class _$GoogleServicesResponseObjectSerializer implements PrimitiveSerializer<Go
     return result.build();
   }
 }
-

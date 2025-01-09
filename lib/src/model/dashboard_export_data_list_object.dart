@@ -16,9 +16,12 @@ part 'dashboard_export_data_list_object.g.dart';
 /// * [offset] - The offset for pagination
 /// * [max] - The maximum number of results to return
 /// * [count] - The total count of export data
-/// * [exportDatas] 
+/// * [exportDatas]
 @BuiltValue()
-abstract class DashboardExportDataListObject implements Built<DashboardExportDataListObject, DashboardExportDataListObjectBuilder> {
+abstract class DashboardExportDataListObject
+    implements
+        Built<DashboardExportDataListObject,
+            DashboardExportDataListObjectBuilder> {
   /// The offset for pagination
   @BuiltValueField(wireName: r'offset')
   int? get offset;
@@ -36,18 +39,25 @@ abstract class DashboardExportDataListObject implements Built<DashboardExportDat
 
   DashboardExportDataListObject._();
 
-  factory DashboardExportDataListObject([void updates(DashboardExportDataListObjectBuilder b)]) = _$DashboardExportDataListObject;
+  factory DashboardExportDataListObject(
+          [void updates(DashboardExportDataListObjectBuilder b)]) =
+      _$DashboardExportDataListObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DashboardExportDataListObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DashboardExportDataListObject> get serializer => _$DashboardExportDataListObjectSerializer();
+  static Serializer<DashboardExportDataListObject> get serializer =>
+      _$DashboardExportDataListObjectSerializer();
 }
 
-class _$DashboardExportDataListObjectSerializer implements PrimitiveSerializer<DashboardExportDataListObject> {
+class _$DashboardExportDataListObjectSerializer
+    implements PrimitiveSerializer<DashboardExportDataListObject> {
   @override
-  final Iterable<Type> types = const [DashboardExportDataListObject, _$DashboardExportDataListObject];
+  final Iterable<Type> types = const [
+    DashboardExportDataListObject,
+    _$DashboardExportDataListObject
+  ];
 
   @override
   final String wireName = r'DashboardExportDataListObject';
@@ -82,7 +92,8 @@ class _$DashboardExportDataListObjectSerializer implements PrimitiveSerializer<D
       yield r'exportDatas';
       yield serializers.serialize(
         object.exportDatas,
-        specifiedType: const FullType(BuiltList, [FullType(DashboardExportData)]),
+        specifiedType:
+            const FullType(BuiltList, [FullType(DashboardExportData)]),
       );
     }
   }
@@ -93,7 +104,9 @@ class _$DashboardExportDataListObjectSerializer implements PrimitiveSerializer<D
     DashboardExportDataListObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -132,7 +145,8 @@ class _$DashboardExportDataListObjectSerializer implements PrimitiveSerializer<D
         case r'exportDatas':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(DashboardExportData)]),
+            specifiedType:
+                const FullType(BuiltList, [FullType(DashboardExportData)]),
           ) as BuiltList<DashboardExportData>;
           result.exportDatas.replace(valueDes);
           break;
@@ -164,4 +178,3 @@ class _$DashboardExportDataListObjectSerializer implements PrimitiveSerializer<D
     return result.build();
   }
 }
-

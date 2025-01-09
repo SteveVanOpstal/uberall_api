@@ -17,7 +17,8 @@ part 'connect_flow_user_details.g.dart';
 /// * [defaultForSalesPartner] - This should indicate whether the connection in place has been produced by a salesPartner level connection
 /// * [defaultForBusiness] - This should indicate whether the connection in place has been produced by a business level connection
 @BuiltValue()
-abstract class ConnectFlowUserDetails implements Built<ConnectFlowUserDetails, ConnectFlowUserDetailsBuilder> {
+abstract class ConnectFlowUserDetails
+    implements Built<ConnectFlowUserDetails, ConnectFlowUserDetailsBuilder> {
   /// Connected account detail (Account name)
   @BuiltValueField(wireName: r'name')
   String? get name;
@@ -40,18 +41,25 @@ abstract class ConnectFlowUserDetails implements Built<ConnectFlowUserDetails, C
 
   ConnectFlowUserDetails._();
 
-  factory ConnectFlowUserDetails([void updates(ConnectFlowUserDetailsBuilder b)]) = _$ConnectFlowUserDetails;
+  factory ConnectFlowUserDetails(
+          [void updates(ConnectFlowUserDetailsBuilder b)]) =
+      _$ConnectFlowUserDetails;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ConnectFlowUserDetailsBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ConnectFlowUserDetails> get serializer => _$ConnectFlowUserDetailsSerializer();
+  static Serializer<ConnectFlowUserDetails> get serializer =>
+      _$ConnectFlowUserDetailsSerializer();
 }
 
-class _$ConnectFlowUserDetailsSerializer implements PrimitiveSerializer<ConnectFlowUserDetails> {
+class _$ConnectFlowUserDetailsSerializer
+    implements PrimitiveSerializer<ConnectFlowUserDetails> {
   @override
-  final Iterable<Type> types = const [ConnectFlowUserDetails, _$ConnectFlowUserDetails];
+  final Iterable<Type> types = const [
+    ConnectFlowUserDetails,
+    _$ConnectFlowUserDetails
+  ];
 
   @override
   final String wireName = r'ConnectFlowUserDetails';
@@ -104,7 +112,9 @@ class _$ConnectFlowUserDetailsSerializer implements PrimitiveSerializer<ConnectF
     ConnectFlowUserDetails object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -182,4 +192,3 @@ class _$ConnectFlowUserDetailsSerializer implements PrimitiveSerializer<ConnectF
     return result.build();
   }
 }
-

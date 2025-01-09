@@ -13,10 +13,9 @@ import 'package:openapi/src/api_util.dart';
 import 'package:openapi/src/model/product.dart';
 import 'package:openapi/src/model/product_search_wrapper.dart';
 import 'package:openapi/src/model/product_wrapper.dart';
-import 'package:openapi/src/model/response.dart';
+import 'package:openapi/src/model/response.dart' as openApi;
 
 class ProductsApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -36,7 +35,7 @@ class ProductsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Response>> deleteProducts({ 
+  Future<Response<openApi.Response>> deleteProducts({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -57,7 +56,8 @@ class ProductsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -77,15 +77,16 @@ class ProductsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Response? _responseData;
+    openApi.Response? _responseData;
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(Response),
-      ) as Response;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(openApi.Response),
+            ) as openApi.Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -96,7 +97,7 @@ class ProductsApi {
       );
     }
 
-    return Response<Response>(
+    return Response<openApi.Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -122,7 +123,7 @@ class ProductsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Response>> deleteProductsId({ 
+  Future<Response<Response>> deleteProductsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -131,7 +132,10 @@ class ProductsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/products/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/products/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -144,7 +148,8 @@ class ProductsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -168,11 +173,12 @@ class ProductsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(Response),
-      ) as Response;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(Response),
+            ) as Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -199,7 +205,7 @@ class ProductsApi {
   /// Get all products the current API user can manage. &lt;br&gt;To specify products with identifier please provide ?identifier&#x3D; in the URL param &lt;br&gt;By default, 50 are returned, you can use up to max&#x3D;10000 URL param
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [body]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -209,7 +215,7 @@ class ProductsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ProductSearchWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ProductSearchWrapper>> getProducts({ 
+  Future<Response<ProductSearchWrapper>> getProducts({
     JsonObject? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -231,7 +237,8 @@ class ProductsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -247,10 +254,9 @@ class ProductsApi {
 
     try {
       _bodyData = body;
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -273,11 +279,12 @@ class ProductsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ProductSearchWrapper),
-      ) as ProductSearchWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ProductSearchWrapper),
+            ) as ProductSearchWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -314,7 +321,7 @@ class ProductsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ProductWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ProductWrapper>> getProductsId({ 
+  Future<Response<ProductWrapper>> getProductsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -323,7 +330,10 @@ class ProductsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/products/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/products/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -336,7 +346,8 @@ class ProductsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -360,11 +371,12 @@ class ProductsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ProductWrapper),
-      ) as ProductWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ProductWrapper),
+            ) as ProductWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -401,7 +413,7 @@ class ProductsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ProductWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ProductWrapper>> patchProducts({ 
+  Future<Response<ProductWrapper>> patchProducts({
     required Product product,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -423,7 +435,8 @@ class ProductsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -441,10 +454,9 @@ class ProductsApi {
     try {
       const _type = FullType(Product);
       _bodyData = _serializers.serialize(product, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -467,11 +479,12 @@ class ProductsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ProductWrapper),
-      ) as ProductWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ProductWrapper),
+            ) as ProductWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -509,7 +522,7 @@ class ProductsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ProductWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ProductWrapper>> patchProductsId({ 
+  Future<Response<ProductWrapper>> patchProductsId({
     required String id,
     required Product product,
     CancelToken? cancelToken,
@@ -519,7 +532,10 @@ class ProductsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/products/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/products/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -532,7 +548,8 @@ class ProductsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -550,10 +567,9 @@ class ProductsApi {
     try {
       const _type = FullType(Product);
       _bodyData = _serializers.serialize(product, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -576,11 +592,12 @@ class ProductsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ProductWrapper),
-      ) as ProductWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ProductWrapper),
+            ) as ProductWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -617,7 +634,7 @@ class ProductsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ProductWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ProductWrapper>> postProducts({ 
+  Future<Response<ProductWrapper>> postProducts({
     required Product product,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -639,7 +656,8 @@ class ProductsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -657,10 +675,9 @@ class ProductsApi {
     try {
       const _type = FullType(Product);
       _bodyData = _serializers.serialize(product, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -683,11 +700,12 @@ class ProductsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ProductWrapper),
-      ) as ProductWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ProductWrapper),
+            ) as ProductWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -709,5 +727,4 @@ class ProductsApi {
       extra: _response.extra,
     );
   }
-
 }

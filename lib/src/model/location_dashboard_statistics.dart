@@ -23,12 +23,14 @@ part 'location_dashboard_statistics.g.dart';
 /// * [profileCompleteness] - Percentage of profile completeness
 /// * [publishedListingsCount] - Number of managed online listings
 /// * [synced] - Number of synced listings
-/// * [visibilityIndex] 
+/// * [visibilityIndex]
 /// * [activeDirectories] - List of active directories
 /// * [inactiveDirectories] - List of inactive directories
 /// * [unfilledFields] - Unfilled location fields
 @BuiltValue()
-abstract class LocationDashboardStatistics implements Built<LocationDashboardStatistics, LocationDashboardStatisticsBuilder> {
+abstract class LocationDashboardStatistics
+    implements
+        Built<LocationDashboardStatistics, LocationDashboardStatisticsBuilder> {
   /// Output only. Number of active directories
   @BuiltValueField(wireName: r'activeDirectoriesCount')
   int? get activeDirectoriesCount;
@@ -86,18 +88,25 @@ abstract class LocationDashboardStatistics implements Built<LocationDashboardSta
 
   LocationDashboardStatistics._();
 
-  factory LocationDashboardStatistics([void updates(LocationDashboardStatisticsBuilder b)]) = _$LocationDashboardStatistics;
+  factory LocationDashboardStatistics(
+          [void updates(LocationDashboardStatisticsBuilder b)]) =
+      _$LocationDashboardStatistics;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LocationDashboardStatisticsBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LocationDashboardStatistics> get serializer => _$LocationDashboardStatisticsSerializer();
+  static Serializer<LocationDashboardStatistics> get serializer =>
+      _$LocationDashboardStatisticsSerializer();
 }
 
-class _$LocationDashboardStatisticsSerializer implements PrimitiveSerializer<LocationDashboardStatistics> {
+class _$LocationDashboardStatisticsSerializer
+    implements PrimitiveSerializer<LocationDashboardStatistics> {
   @override
-  final Iterable<Type> types = const [LocationDashboardStatistics, _$LocationDashboardStatistics];
+  final Iterable<Type> types = const [
+    LocationDashboardStatistics,
+    _$LocationDashboardStatistics
+  ];
 
   @override
   final String wireName = r'LocationDashboardStatistics';
@@ -213,7 +222,9 @@ class _$LocationDashboardStatisticsSerializer implements PrimitiveSerializer<Loc
     LocationDashboardStatistics object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -354,4 +365,3 @@ class _$LocationDashboardStatisticsSerializer implements PrimitiveSerializer<Loc
     return result.build();
   }
 }
-

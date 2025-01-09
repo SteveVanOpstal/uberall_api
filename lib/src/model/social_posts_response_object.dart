@@ -16,9 +16,11 @@ part 'social_posts_response_object.g.dart';
 /// * [offset] - Offset for pagination
 /// * [max] - Maximum number of results per page
 /// * [count] - Count of social posts
-/// * [socialPosts] 
+/// * [socialPosts]
 @BuiltValue()
-abstract class SocialPostsResponseObject implements Built<SocialPostsResponseObject, SocialPostsResponseObjectBuilder> {
+abstract class SocialPostsResponseObject
+    implements
+        Built<SocialPostsResponseObject, SocialPostsResponseObjectBuilder> {
   /// Offset for pagination
   @BuiltValueField(wireName: r'offset')
   int? get offset;
@@ -36,18 +38,25 @@ abstract class SocialPostsResponseObject implements Built<SocialPostsResponseObj
 
   SocialPostsResponseObject._();
 
-  factory SocialPostsResponseObject([void updates(SocialPostsResponseObjectBuilder b)]) = _$SocialPostsResponseObject;
+  factory SocialPostsResponseObject(
+          [void updates(SocialPostsResponseObjectBuilder b)]) =
+      _$SocialPostsResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialPostsResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<SocialPostsResponseObject> get serializer => _$SocialPostsResponseObjectSerializer();
+  static Serializer<SocialPostsResponseObject> get serializer =>
+      _$SocialPostsResponseObjectSerializer();
 }
 
-class _$SocialPostsResponseObjectSerializer implements PrimitiveSerializer<SocialPostsResponseObject> {
+class _$SocialPostsResponseObjectSerializer
+    implements PrimitiveSerializer<SocialPostsResponseObject> {
   @override
-  final Iterable<Type> types = const [SocialPostsResponseObject, _$SocialPostsResponseObject];
+  final Iterable<Type> types = const [
+    SocialPostsResponseObject,
+    _$SocialPostsResponseObject
+  ];
 
   @override
   final String wireName = r'SocialPostsResponseObject';
@@ -93,7 +102,9 @@ class _$SocialPostsResponseObjectSerializer implements PrimitiveSerializer<Socia
     SocialPostsResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -164,4 +175,3 @@ class _$SocialPostsResponseObjectSerializer implements PrimitiveSerializer<Socia
     return result.build();
   }
 }
-

@@ -15,11 +15,12 @@ part 'update_response_object.g.dart';
 /// * [updatedCount] - Total count of updated items
 /// * [failedCount] - Total count of failed items
 /// * [missingIdCount] - Total count of missing IDs
-/// * [updatedIds] 
-/// * [failed] 
-/// * [warnings] 
+/// * [updatedIds]
+/// * [failed]
+/// * [warnings]
 @BuiltValue()
-abstract class UpdateResponseObject implements Built<UpdateResponseObject, UpdateResponseObjectBuilder> {
+abstract class UpdateResponseObject
+    implements Built<UpdateResponseObject, UpdateResponseObjectBuilder> {
   /// Total count of updated items
   @BuiltValueField(wireName: r'updatedCount')
   int? get updatedCount;
@@ -43,18 +44,24 @@ abstract class UpdateResponseObject implements Built<UpdateResponseObject, Updat
 
   UpdateResponseObject._();
 
-  factory UpdateResponseObject([void updates(UpdateResponseObjectBuilder b)]) = _$UpdateResponseObject;
+  factory UpdateResponseObject([void updates(UpdateResponseObjectBuilder b)]) =
+      _$UpdateResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UpdateResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<UpdateResponseObject> get serializer => _$UpdateResponseObjectSerializer();
+  static Serializer<UpdateResponseObject> get serializer =>
+      _$UpdateResponseObjectSerializer();
 }
 
-class _$UpdateResponseObjectSerializer implements PrimitiveSerializer<UpdateResponseObject> {
+class _$UpdateResponseObjectSerializer
+    implements PrimitiveSerializer<UpdateResponseObject> {
   @override
-  final Iterable<Type> types = const [UpdateResponseObject, _$UpdateResponseObject];
+  final Iterable<Type> types = const [
+    UpdateResponseObject,
+    _$UpdateResponseObject
+  ];
 
   @override
   final String wireName = r'UpdateResponseObject';
@@ -114,7 +121,9 @@ class _$UpdateResponseObjectSerializer implements PrimitiveSerializer<UpdateResp
     UpdateResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -199,4 +208,3 @@ class _$UpdateResponseObjectSerializer implements PrimitiveSerializer<UpdateResp
     return result.build();
   }
 }
-

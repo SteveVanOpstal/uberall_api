@@ -12,26 +12,35 @@ part 'product_plan_response_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [productPlan] 
+/// * [productPlan]
 @BuiltValue()
-abstract class ProductPlanResponseObject implements Built<ProductPlanResponseObject, ProductPlanResponseObjectBuilder> {
+abstract class ProductPlanResponseObject
+    implements
+        Built<ProductPlanResponseObject, ProductPlanResponseObjectBuilder> {
   @BuiltValueField(wireName: r'productPlan')
   ProductPlan? get productPlan;
 
   ProductPlanResponseObject._();
 
-  factory ProductPlanResponseObject([void updates(ProductPlanResponseObjectBuilder b)]) = _$ProductPlanResponseObject;
+  factory ProductPlanResponseObject(
+          [void updates(ProductPlanResponseObjectBuilder b)]) =
+      _$ProductPlanResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ProductPlanResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ProductPlanResponseObject> get serializer => _$ProductPlanResponseObjectSerializer();
+  static Serializer<ProductPlanResponseObject> get serializer =>
+      _$ProductPlanResponseObjectSerializer();
 }
 
-class _$ProductPlanResponseObjectSerializer implements PrimitiveSerializer<ProductPlanResponseObject> {
+class _$ProductPlanResponseObjectSerializer
+    implements PrimitiveSerializer<ProductPlanResponseObject> {
   @override
-  final Iterable<Type> types = const [ProductPlanResponseObject, _$ProductPlanResponseObject];
+  final Iterable<Type> types = const [
+    ProductPlanResponseObject,
+    _$ProductPlanResponseObject
+  ];
 
   @override
   final String wireName = r'ProductPlanResponseObject';
@@ -56,7 +65,9 @@ class _$ProductPlanResponseObjectSerializer implements PrimitiveSerializer<Produ
     ProductPlanResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +117,3 @@ class _$ProductPlanResponseObjectSerializer implements PrimitiveSerializer<Produ
     return result.build();
   }
 }
-

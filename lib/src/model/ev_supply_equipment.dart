@@ -14,18 +14,19 @@ part 'ev_supply_equipment.g.dart';
 ///
 /// Properties:
 /// * [uid] - Unique ID in the system of the CPO
-/// * [evseId] - Required - Unique id for the outside world. Compliant with “eMI3standard version V1.0” 
+/// * [evseId] - Required - Unique id for the outside world. Compliant with “eMI3standard version V1.0”
 /// * [physicalReference] - A number/string printed on the outside of the EVSE for visual identification
 /// * [updateTime] - Date/time of the Equipment's last update
 /// * [connectors] - Details on each connector
 /// * [parkingRestrictions] - This value, if provided by CPO, represents the restriction to the parking spot for different purposes
 @BuiltValue()
-abstract class EvSupplyEquipment implements Built<EvSupplyEquipment, EvSupplyEquipmentBuilder> {
+abstract class EvSupplyEquipment
+    implements Built<EvSupplyEquipment, EvSupplyEquipmentBuilder> {
   /// Unique ID in the system of the CPO
   @BuiltValueField(wireName: r'uid')
   String get uid;
 
-  /// Required - Unique id for the outside world. Compliant with “eMI3standard version V1.0” 
+  /// Required - Unique id for the outside world. Compliant with “eMI3standard version V1.0”
   @BuiltValueField(wireName: r'evseId')
   String? get evseId;
 
@@ -48,16 +49,19 @@ abstract class EvSupplyEquipment implements Built<EvSupplyEquipment, EvSupplyEqu
 
   EvSupplyEquipment._();
 
-  factory EvSupplyEquipment([void updates(EvSupplyEquipmentBuilder b)]) = _$EvSupplyEquipment;
+  factory EvSupplyEquipment([void updates(EvSupplyEquipmentBuilder b)]) =
+      _$EvSupplyEquipment;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EvSupplyEquipmentBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<EvSupplyEquipment> get serializer => _$EvSupplyEquipmentSerializer();
+  static Serializer<EvSupplyEquipment> get serializer =>
+      _$EvSupplyEquipmentSerializer();
 }
 
-class _$EvSupplyEquipmentSerializer implements PrimitiveSerializer<EvSupplyEquipment> {
+class _$EvSupplyEquipmentSerializer
+    implements PrimitiveSerializer<EvSupplyEquipment> {
   @override
   final Iterable<Type> types = const [EvSupplyEquipment, _$EvSupplyEquipment];
 
@@ -102,7 +106,8 @@ class _$EvSupplyEquipmentSerializer implements PrimitiveSerializer<EvSupplyEquip
       yield r'parkingRestrictions';
       yield serializers.serialize(
         object.parkingRestrictions,
-        specifiedType: const FullType(BuiltSet, [FullType(EvSupplyEquipmentParkingRestrictionsEnum)]),
+        specifiedType: const FullType(
+            BuiltSet, [FullType(EvSupplyEquipmentParkingRestrictionsEnum)]),
       );
     }
   }
@@ -113,7 +118,9 @@ class _$EvSupplyEquipmentSerializer implements PrimitiveSerializer<EvSupplyEquip
     EvSupplyEquipment object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -166,7 +173,8 @@ class _$EvSupplyEquipmentSerializer implements PrimitiveSerializer<EvSupplyEquip
         case r'parkingRestrictions':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltSet, [FullType(EvSupplyEquipmentParkingRestrictionsEnum)]),
+            specifiedType: const FullType(
+                BuiltSet, [FullType(EvSupplyEquipmentParkingRestrictionsEnum)]),
           ) as BuiltSet<EvSupplyEquipmentParkingRestrictionsEnum>;
           result.parkingRestrictions.replace(valueDes);
           break;
@@ -200,28 +208,38 @@ class _$EvSupplyEquipmentSerializer implements PrimitiveSerializer<EvSupplyEquip
 }
 
 class EvSupplyEquipmentParkingRestrictionsEnum extends EnumClass {
-
   /// This value, if provided by CPO, represents the restriction to the parking spot for different purposes
   @BuiltValueEnumConst(wireName: r'CUSTOMERS')
-  static const EvSupplyEquipmentParkingRestrictionsEnum CUSTOMERS = _$evSupplyEquipmentParkingRestrictionsEnum_CUSTOMERS;
+  static const EvSupplyEquipmentParkingRestrictionsEnum CUSTOMERS =
+      _$evSupplyEquipmentParkingRestrictionsEnum_CUSTOMERS;
+
   /// This value, if provided by CPO, represents the restriction to the parking spot for different purposes
   @BuiltValueEnumConst(wireName: r'DISABLED')
-  static const EvSupplyEquipmentParkingRestrictionsEnum DISABLED = _$evSupplyEquipmentParkingRestrictionsEnum_DISABLED;
+  static const EvSupplyEquipmentParkingRestrictionsEnum DISABLED =
+      _$evSupplyEquipmentParkingRestrictionsEnum_DISABLED;
+
   /// This value, if provided by CPO, represents the restriction to the parking spot for different purposes
   @BuiltValueEnumConst(wireName: r'EV_ONLY')
-  static const EvSupplyEquipmentParkingRestrictionsEnum EV_ONLY = _$evSupplyEquipmentParkingRestrictionsEnum_EV_ONLY;
+  static const EvSupplyEquipmentParkingRestrictionsEnum EV_ONLY =
+      _$evSupplyEquipmentParkingRestrictionsEnum_EV_ONLY;
+
   /// This value, if provided by CPO, represents the restriction to the parking spot for different purposes
   @BuiltValueEnumConst(wireName: r'MOTORCYCLES')
-  static const EvSupplyEquipmentParkingRestrictionsEnum MOTORCYCLES = _$evSupplyEquipmentParkingRestrictionsEnum_MOTORCYCLES;
+  static const EvSupplyEquipmentParkingRestrictionsEnum MOTORCYCLES =
+      _$evSupplyEquipmentParkingRestrictionsEnum_MOTORCYCLES;
+
   /// This value, if provided by CPO, represents the restriction to the parking spot for different purposes
   @BuiltValueEnumConst(wireName: r'PLUGGED')
-  static const EvSupplyEquipmentParkingRestrictionsEnum PLUGGED = _$evSupplyEquipmentParkingRestrictionsEnum_PLUGGED;
+  static const EvSupplyEquipmentParkingRestrictionsEnum PLUGGED =
+      _$evSupplyEquipmentParkingRestrictionsEnum_PLUGGED;
 
-  static Serializer<EvSupplyEquipmentParkingRestrictionsEnum> get serializer => _$evSupplyEquipmentParkingRestrictionsEnumSerializer;
+  static Serializer<EvSupplyEquipmentParkingRestrictionsEnum> get serializer =>
+      _$evSupplyEquipmentParkingRestrictionsEnumSerializer;
 
-  const EvSupplyEquipmentParkingRestrictionsEnum._(String name): super(name);
+  const EvSupplyEquipmentParkingRestrictionsEnum._(String name) : super(name);
 
-  static BuiltSet<EvSupplyEquipmentParkingRestrictionsEnum> get values => _$evSupplyEquipmentParkingRestrictionsEnumValues;
-  static EvSupplyEquipmentParkingRestrictionsEnum valueOf(String name) => _$evSupplyEquipmentParkingRestrictionsEnumValueOf(name);
+  static BuiltSet<EvSupplyEquipmentParkingRestrictionsEnum> get values =>
+      _$evSupplyEquipmentParkingRestrictionsEnumValues;
+  static EvSupplyEquipmentParkingRestrictionsEnum valueOf(String name) =>
+      _$evSupplyEquipmentParkingRestrictionsEnumValueOf(name);
 }
-

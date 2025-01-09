@@ -13,13 +13,16 @@ part 'data_point_filters_response_wrapper.g.dart';
 /// DataPointFiltersResponseWrapper
 ///
 /// Properties:
-/// * [status] 
+/// * [status]
 /// * [message] - (optional) Holds further information about the response
-/// * [errorCode] 
+/// * [errorCode]
 /// * [warnings] - (optional) Holds further warnings
-/// * [response] 
+/// * [response]
 @BuiltValue()
-abstract class DataPointFiltersResponseWrapper implements Built<DataPointFiltersResponseWrapper, DataPointFiltersResponseWrapperBuilder> {
+abstract class DataPointFiltersResponseWrapper
+    implements
+        Built<DataPointFiltersResponseWrapper,
+            DataPointFiltersResponseWrapperBuilder> {
   @BuiltValueField(wireName: r'status')
   DataPointFiltersResponseWrapperStatusEnum? get status;
   // enum statusEnum {  SUCCESS,  QUOTA_LIMIT_EXCEED,  NOT_AUTHORIZED,  FORBIDDEN,  BAD_ACCESS_TOKEN,  BAD_PRIVATE_KEY,  BAD_PUBLIC_KEY,  MISSING_PARAMETER,  INVALID_PARAMETER,  WRONG_PARAMETER_TYPE,  CONFLICT,  RESOURCE_LOCKED,  SERVER_ERROR,  ERROR,  NOT_FOUND,  BAD_REQUEST,  USER_ERROR,  PARTIAL_ERROR,  METHOD_NOT_ALLOWED,  };
@@ -41,18 +44,25 @@ abstract class DataPointFiltersResponseWrapper implements Built<DataPointFilters
 
   DataPointFiltersResponseWrapper._();
 
-  factory DataPointFiltersResponseWrapper([void updates(DataPointFiltersResponseWrapperBuilder b)]) = _$DataPointFiltersResponseWrapper;
+  factory DataPointFiltersResponseWrapper(
+          [void updates(DataPointFiltersResponseWrapperBuilder b)]) =
+      _$DataPointFiltersResponseWrapper;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DataPointFiltersResponseWrapperBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DataPointFiltersResponseWrapper> get serializer => _$DataPointFiltersResponseWrapperSerializer();
+  static Serializer<DataPointFiltersResponseWrapper> get serializer =>
+      _$DataPointFiltersResponseWrapperSerializer();
 }
 
-class _$DataPointFiltersResponseWrapperSerializer implements PrimitiveSerializer<DataPointFiltersResponseWrapper> {
+class _$DataPointFiltersResponseWrapperSerializer
+    implements PrimitiveSerializer<DataPointFiltersResponseWrapper> {
   @override
-  final Iterable<Type> types = const [DataPointFiltersResponseWrapper, _$DataPointFiltersResponseWrapper];
+  final Iterable<Type> types = const [
+    DataPointFiltersResponseWrapper,
+    _$DataPointFiltersResponseWrapper
+  ];
 
   @override
   final String wireName = r'DataPointFiltersResponseWrapper';
@@ -66,7 +76,8 @@ class _$DataPointFiltersResponseWrapperSerializer implements PrimitiveSerializer
       yield r'status';
       yield serializers.serialize(
         object.status,
-        specifiedType: const FullType(DataPointFiltersResponseWrapperStatusEnum),
+        specifiedType:
+            const FullType(DataPointFiltersResponseWrapperStatusEnum),
       );
     }
     if (object.message != null) {
@@ -80,7 +91,8 @@ class _$DataPointFiltersResponseWrapperSerializer implements PrimitiveSerializer
       yield r'errorCode';
       yield serializers.serialize(
         object.errorCode,
-        specifiedType: const FullType(DataPointFiltersResponseWrapperErrorCodeEnum),
+        specifiedType:
+            const FullType(DataPointFiltersResponseWrapperErrorCodeEnum),
       );
     }
     if (object.warnings != null) {
@@ -105,7 +117,9 @@ class _$DataPointFiltersResponseWrapperSerializer implements PrimitiveSerializer
     DataPointFiltersResponseWrapper object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -123,7 +137,8 @@ class _$DataPointFiltersResponseWrapperSerializer implements PrimitiveSerializer
         case r'status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DataPointFiltersResponseWrapperStatusEnum),
+            specifiedType:
+                const FullType(DataPointFiltersResponseWrapperStatusEnum),
           ) as DataPointFiltersResponseWrapperStatusEnum;
           result.status = valueDes;
           break;
@@ -137,7 +152,8 @@ class _$DataPointFiltersResponseWrapperSerializer implements PrimitiveSerializer
         case r'errorCode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DataPointFiltersResponseWrapperErrorCodeEnum),
+            specifiedType:
+                const FullType(DataPointFiltersResponseWrapperErrorCodeEnum),
           ) as DataPointFiltersResponseWrapperErrorCodeEnum;
           result.errorCode = valueDes;
           break;
@@ -185,102 +201,152 @@ class _$DataPointFiltersResponseWrapperSerializer implements PrimitiveSerializer
 }
 
 class DataPointFiltersResponseWrapperStatusEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'SUCCESS')
-  static const DataPointFiltersResponseWrapperStatusEnum SUCCESS = _$dataPointFiltersResponseWrapperStatusEnum_SUCCESS;
+  static const DataPointFiltersResponseWrapperStatusEnum SUCCESS =
+      _$dataPointFiltersResponseWrapperStatusEnum_SUCCESS;
   @BuiltValueEnumConst(wireName: r'QUOTA_LIMIT_EXCEED')
-  static const DataPointFiltersResponseWrapperStatusEnum QUOTA_LIMIT_EXCEED = _$dataPointFiltersResponseWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
+  static const DataPointFiltersResponseWrapperStatusEnum QUOTA_LIMIT_EXCEED =
+      _$dataPointFiltersResponseWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
   @BuiltValueEnumConst(wireName: r'NOT_AUTHORIZED')
-  static const DataPointFiltersResponseWrapperStatusEnum NOT_AUTHORIZED = _$dataPointFiltersResponseWrapperStatusEnum_NOT_AUTHORIZED;
+  static const DataPointFiltersResponseWrapperStatusEnum NOT_AUTHORIZED =
+      _$dataPointFiltersResponseWrapperStatusEnum_NOT_AUTHORIZED;
   @BuiltValueEnumConst(wireName: r'FORBIDDEN')
-  static const DataPointFiltersResponseWrapperStatusEnum FORBIDDEN = _$dataPointFiltersResponseWrapperStatusEnum_FORBIDDEN;
+  static const DataPointFiltersResponseWrapperStatusEnum FORBIDDEN =
+      _$dataPointFiltersResponseWrapperStatusEnum_FORBIDDEN;
   @BuiltValueEnumConst(wireName: r'BAD_ACCESS_TOKEN')
-  static const DataPointFiltersResponseWrapperStatusEnum BAD_ACCESS_TOKEN = _$dataPointFiltersResponseWrapperStatusEnum_BAD_ACCESS_TOKEN;
+  static const DataPointFiltersResponseWrapperStatusEnum BAD_ACCESS_TOKEN =
+      _$dataPointFiltersResponseWrapperStatusEnum_BAD_ACCESS_TOKEN;
   @BuiltValueEnumConst(wireName: r'BAD_PRIVATE_KEY')
-  static const DataPointFiltersResponseWrapperStatusEnum BAD_PRIVATE_KEY = _$dataPointFiltersResponseWrapperStatusEnum_BAD_PRIVATE_KEY;
+  static const DataPointFiltersResponseWrapperStatusEnum BAD_PRIVATE_KEY =
+      _$dataPointFiltersResponseWrapperStatusEnum_BAD_PRIVATE_KEY;
   @BuiltValueEnumConst(wireName: r'BAD_PUBLIC_KEY')
-  static const DataPointFiltersResponseWrapperStatusEnum BAD_PUBLIC_KEY = _$dataPointFiltersResponseWrapperStatusEnum_BAD_PUBLIC_KEY;
+  static const DataPointFiltersResponseWrapperStatusEnum BAD_PUBLIC_KEY =
+      _$dataPointFiltersResponseWrapperStatusEnum_BAD_PUBLIC_KEY;
   @BuiltValueEnumConst(wireName: r'MISSING_PARAMETER')
-  static const DataPointFiltersResponseWrapperStatusEnum MISSING_PARAMETER = _$dataPointFiltersResponseWrapperStatusEnum_MISSING_PARAMETER;
+  static const DataPointFiltersResponseWrapperStatusEnum MISSING_PARAMETER =
+      _$dataPointFiltersResponseWrapperStatusEnum_MISSING_PARAMETER;
   @BuiltValueEnumConst(wireName: r'INVALID_PARAMETER')
-  static const DataPointFiltersResponseWrapperStatusEnum INVALID_PARAMETER = _$dataPointFiltersResponseWrapperStatusEnum_INVALID_PARAMETER;
+  static const DataPointFiltersResponseWrapperStatusEnum INVALID_PARAMETER =
+      _$dataPointFiltersResponseWrapperStatusEnum_INVALID_PARAMETER;
   @BuiltValueEnumConst(wireName: r'WRONG_PARAMETER_TYPE')
-  static const DataPointFiltersResponseWrapperStatusEnum WRONG_PARAMETER_TYPE = _$dataPointFiltersResponseWrapperStatusEnum_WRONG_PARAMETER_TYPE;
+  static const DataPointFiltersResponseWrapperStatusEnum WRONG_PARAMETER_TYPE =
+      _$dataPointFiltersResponseWrapperStatusEnum_WRONG_PARAMETER_TYPE;
   @BuiltValueEnumConst(wireName: r'CONFLICT')
-  static const DataPointFiltersResponseWrapperStatusEnum CONFLICT = _$dataPointFiltersResponseWrapperStatusEnum_CONFLICT;
+  static const DataPointFiltersResponseWrapperStatusEnum CONFLICT =
+      _$dataPointFiltersResponseWrapperStatusEnum_CONFLICT;
   @BuiltValueEnumConst(wireName: r'RESOURCE_LOCKED')
-  static const DataPointFiltersResponseWrapperStatusEnum RESOURCE_LOCKED = _$dataPointFiltersResponseWrapperStatusEnum_RESOURCE_LOCKED;
+  static const DataPointFiltersResponseWrapperStatusEnum RESOURCE_LOCKED =
+      _$dataPointFiltersResponseWrapperStatusEnum_RESOURCE_LOCKED;
   @BuiltValueEnumConst(wireName: r'SERVER_ERROR')
-  static const DataPointFiltersResponseWrapperStatusEnum SERVER_ERROR = _$dataPointFiltersResponseWrapperStatusEnum_SERVER_ERROR;
+  static const DataPointFiltersResponseWrapperStatusEnum SERVER_ERROR =
+      _$dataPointFiltersResponseWrapperStatusEnum_SERVER_ERROR;
   @BuiltValueEnumConst(wireName: r'ERROR')
-  static const DataPointFiltersResponseWrapperStatusEnum ERROR = _$dataPointFiltersResponseWrapperStatusEnum_ERROR;
+  static const DataPointFiltersResponseWrapperStatusEnum ERROR =
+      _$dataPointFiltersResponseWrapperStatusEnum_ERROR;
   @BuiltValueEnumConst(wireName: r'NOT_FOUND')
-  static const DataPointFiltersResponseWrapperStatusEnum NOT_FOUND = _$dataPointFiltersResponseWrapperStatusEnum_NOT_FOUND;
+  static const DataPointFiltersResponseWrapperStatusEnum NOT_FOUND =
+      _$dataPointFiltersResponseWrapperStatusEnum_NOT_FOUND;
   @BuiltValueEnumConst(wireName: r'BAD_REQUEST')
-  static const DataPointFiltersResponseWrapperStatusEnum BAD_REQUEST = _$dataPointFiltersResponseWrapperStatusEnum_BAD_REQUEST;
+  static const DataPointFiltersResponseWrapperStatusEnum BAD_REQUEST =
+      _$dataPointFiltersResponseWrapperStatusEnum_BAD_REQUEST;
   @BuiltValueEnumConst(wireName: r'USER_ERROR')
-  static const DataPointFiltersResponseWrapperStatusEnum USER_ERROR = _$dataPointFiltersResponseWrapperStatusEnum_USER_ERROR;
+  static const DataPointFiltersResponseWrapperStatusEnum USER_ERROR =
+      _$dataPointFiltersResponseWrapperStatusEnum_USER_ERROR;
   @BuiltValueEnumConst(wireName: r'PARTIAL_ERROR')
-  static const DataPointFiltersResponseWrapperStatusEnum PARTIAL_ERROR = _$dataPointFiltersResponseWrapperStatusEnum_PARTIAL_ERROR;
+  static const DataPointFiltersResponseWrapperStatusEnum PARTIAL_ERROR =
+      _$dataPointFiltersResponseWrapperStatusEnum_PARTIAL_ERROR;
   @BuiltValueEnumConst(wireName: r'METHOD_NOT_ALLOWED')
-  static const DataPointFiltersResponseWrapperStatusEnum METHOD_NOT_ALLOWED = _$dataPointFiltersResponseWrapperStatusEnum_METHOD_NOT_ALLOWED;
+  static const DataPointFiltersResponseWrapperStatusEnum METHOD_NOT_ALLOWED =
+      _$dataPointFiltersResponseWrapperStatusEnum_METHOD_NOT_ALLOWED;
 
-  static Serializer<DataPointFiltersResponseWrapperStatusEnum> get serializer => _$dataPointFiltersResponseWrapperStatusEnumSerializer;
+  static Serializer<DataPointFiltersResponseWrapperStatusEnum> get serializer =>
+      _$dataPointFiltersResponseWrapperStatusEnumSerializer;
 
-  const DataPointFiltersResponseWrapperStatusEnum._(String name): super(name);
+  const DataPointFiltersResponseWrapperStatusEnum._(String name) : super(name);
 
-  static BuiltSet<DataPointFiltersResponseWrapperStatusEnum> get values => _$dataPointFiltersResponseWrapperStatusEnumValues;
-  static DataPointFiltersResponseWrapperStatusEnum valueOf(String name) => _$dataPointFiltersResponseWrapperStatusEnumValueOf(name);
+  static BuiltSet<DataPointFiltersResponseWrapperStatusEnum> get values =>
+      _$dataPointFiltersResponseWrapperStatusEnumValues;
+  static DataPointFiltersResponseWrapperStatusEnum valueOf(String name) =>
+      _$dataPointFiltersResponseWrapperStatusEnumValueOf(name);
 }
 
 class DataPointFiltersResponseWrapperErrorCodeEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'NORMALIZATION_FAILED')
-  static const DataPointFiltersResponseWrapperErrorCodeEnum NORMALIZATION_FAILED = _$dataPointFiltersResponseWrapperErrorCodeEnum_NORMALIZATION_FAILED;
+  static const DataPointFiltersResponseWrapperErrorCodeEnum
+      NORMALIZATION_FAILED =
+      _$dataPointFiltersResponseWrapperErrorCodeEnum_NORMALIZATION_FAILED;
   @BuiltValueEnumConst(wireName: r'DATA_CORRUPTED')
-  static const DataPointFiltersResponseWrapperErrorCodeEnum DATA_CORRUPTED = _$dataPointFiltersResponseWrapperErrorCodeEnum_DATA_CORRUPTED;
+  static const DataPointFiltersResponseWrapperErrorCodeEnum DATA_CORRUPTED =
+      _$dataPointFiltersResponseWrapperErrorCodeEnum_DATA_CORRUPTED;
   @BuiltValueEnumConst(wireName: r'INVALID_INPUT')
-  static const DataPointFiltersResponseWrapperErrorCodeEnum INVALID_INPUT = _$dataPointFiltersResponseWrapperErrorCodeEnum_INVALID_INPUT;
+  static const DataPointFiltersResponseWrapperErrorCodeEnum INVALID_INPUT =
+      _$dataPointFiltersResponseWrapperErrorCodeEnum_INVALID_INPUT;
   @BuiltValueEnumConst(wireName: r'NOT_SYNCABLE')
-  static const DataPointFiltersResponseWrapperErrorCodeEnum NOT_SYNCABLE = _$dataPointFiltersResponseWrapperErrorCodeEnum_NOT_SYNCABLE;
+  static const DataPointFiltersResponseWrapperErrorCodeEnum NOT_SYNCABLE =
+      _$dataPointFiltersResponseWrapperErrorCodeEnum_NOT_SYNCABLE;
   @BuiltValueEnumConst(wireName: r'PAYMENT_FAILED')
-  static const DataPointFiltersResponseWrapperErrorCodeEnum PAYMENT_FAILED = _$dataPointFiltersResponseWrapperErrorCodeEnum_PAYMENT_FAILED;
+  static const DataPointFiltersResponseWrapperErrorCodeEnum PAYMENT_FAILED =
+      _$dataPointFiltersResponseWrapperErrorCodeEnum_PAYMENT_FAILED;
   @BuiltValueEnumConst(wireName: r'FREE_TIER_REACHED')
-  static const DataPointFiltersResponseWrapperErrorCodeEnum FREE_TIER_REACHED = _$dataPointFiltersResponseWrapperErrorCodeEnum_FREE_TIER_REACHED;
+  static const DataPointFiltersResponseWrapperErrorCodeEnum FREE_TIER_REACHED =
+      _$dataPointFiltersResponseWrapperErrorCodeEnum_FREE_TIER_REACHED;
   @BuiltValueEnumConst(wireName: r'LIMIT_REACHED')
-  static const DataPointFiltersResponseWrapperErrorCodeEnum LIMIT_REACHED = _$dataPointFiltersResponseWrapperErrorCodeEnum_LIMIT_REACHED;
+  static const DataPointFiltersResponseWrapperErrorCodeEnum LIMIT_REACHED =
+      _$dataPointFiltersResponseWrapperErrorCodeEnum_LIMIT_REACHED;
   @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const DataPointFiltersResponseWrapperErrorCodeEnum INACTIVE = _$dataPointFiltersResponseWrapperErrorCodeEnum_INACTIVE;
+  static const DataPointFiltersResponseWrapperErrorCodeEnum INACTIVE =
+      _$dataPointFiltersResponseWrapperErrorCodeEnum_INACTIVE;
   @BuiltValueEnumConst(wireName: r'UNKNOWN')
-  static const DataPointFiltersResponseWrapperErrorCodeEnum UNKNOWN = _$dataPointFiltersResponseWrapperErrorCodeEnum_UNKNOWN;
+  static const DataPointFiltersResponseWrapperErrorCodeEnum UNKNOWN =
+      _$dataPointFiltersResponseWrapperErrorCodeEnum_UNKNOWN;
   @BuiltValueEnumConst(wireName: r'IDENTIFIER_NOT_UNIQUE')
-  static const DataPointFiltersResponseWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE = _$dataPointFiltersResponseWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
+  static const DataPointFiltersResponseWrapperErrorCodeEnum
+      IDENTIFIER_NOT_UNIQUE =
+      _$dataPointFiltersResponseWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
   @BuiltValueEnumConst(wireName: r'ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT')
-  static const DataPointFiltersResponseWrapperErrorCodeEnum ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT = _$dataPointFiltersResponseWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
+  static const DataPointFiltersResponseWrapperErrorCodeEnum
+      ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT =
+      _$dataPointFiltersResponseWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
   @BuiltValueEnumConst(wireName: r'NO_ACCOUNT_CONNECTED')
-  static const DataPointFiltersResponseWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED = _$dataPointFiltersResponseWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
+  static const DataPointFiltersResponseWrapperErrorCodeEnum
+      NO_ACCOUNT_CONNECTED =
+      _$dataPointFiltersResponseWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
   @BuiltValueEnumConst(wireName: r'NO_PAGE_SELECTED')
-  static const DataPointFiltersResponseWrapperErrorCodeEnum NO_PAGE_SELECTED = _$dataPointFiltersResponseWrapperErrorCodeEnum_NO_PAGE_SELECTED;
+  static const DataPointFiltersResponseWrapperErrorCodeEnum NO_PAGE_SELECTED =
+      _$dataPointFiltersResponseWrapperErrorCodeEnum_NO_PAGE_SELECTED;
   @BuiltValueEnumConst(wireName: r'PAGE_NOT_CREATED')
-  static const DataPointFiltersResponseWrapperErrorCodeEnum PAGE_NOT_CREATED = _$dataPointFiltersResponseWrapperErrorCodeEnum_PAGE_NOT_CREATED;
+  static const DataPointFiltersResponseWrapperErrorCodeEnum PAGE_NOT_CREATED =
+      _$dataPointFiltersResponseWrapperErrorCodeEnum_PAGE_NOT_CREATED;
   @BuiltValueEnumConst(wireName: r'PAGE_IN_REVIEW')
-  static const DataPointFiltersResponseWrapperErrorCodeEnum PAGE_IN_REVIEW = _$dataPointFiltersResponseWrapperErrorCodeEnum_PAGE_IN_REVIEW;
+  static const DataPointFiltersResponseWrapperErrorCodeEnum PAGE_IN_REVIEW =
+      _$dataPointFiltersResponseWrapperErrorCodeEnum_PAGE_IN_REVIEW;
   @BuiltValueEnumConst(wireName: r'PAGE_CLAIMED_BY_OTHERS')
-  static const DataPointFiltersResponseWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS = _$dataPointFiltersResponseWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
+  static const DataPointFiltersResponseWrapperErrorCodeEnum
+      PAGE_CLAIMED_BY_OTHERS =
+      _$dataPointFiltersResponseWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
   @BuiltValueEnumConst(wireName: r'OVERLAPPING_SOCIALPOST')
-  static const DataPointFiltersResponseWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST = _$dataPointFiltersResponseWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
+  static const DataPointFiltersResponseWrapperErrorCodeEnum
+      OVERLAPPING_SOCIALPOST =
+      _$dataPointFiltersResponseWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
   @BuiltValueEnumConst(wireName: r'TOO_MANY_REPLIES')
-  static const DataPointFiltersResponseWrapperErrorCodeEnum TOO_MANY_REPLIES = _$dataPointFiltersResponseWrapperErrorCodeEnum_TOO_MANY_REPLIES;
+  static const DataPointFiltersResponseWrapperErrorCodeEnum TOO_MANY_REPLIES =
+      _$dataPointFiltersResponseWrapperErrorCodeEnum_TOO_MANY_REPLIES;
   @BuiltValueEnumConst(wireName: r'REPLY_TOO_LONG')
-  static const DataPointFiltersResponseWrapperErrorCodeEnum REPLY_TOO_LONG = _$dataPointFiltersResponseWrapperErrorCodeEnum_REPLY_TOO_LONG;
+  static const DataPointFiltersResponseWrapperErrorCodeEnum REPLY_TOO_LONG =
+      _$dataPointFiltersResponseWrapperErrorCodeEnum_REPLY_TOO_LONG;
   @BuiltValueEnumConst(wireName: r'DEPRECATED')
-  static const DataPointFiltersResponseWrapperErrorCodeEnum DEPRECATED = _$dataPointFiltersResponseWrapperErrorCodeEnum_DEPRECATED;
+  static const DataPointFiltersResponseWrapperErrorCodeEnum DEPRECATED =
+      _$dataPointFiltersResponseWrapperErrorCodeEnum_DEPRECATED;
 
-  static Serializer<DataPointFiltersResponseWrapperErrorCodeEnum> get serializer => _$dataPointFiltersResponseWrapperErrorCodeEnumSerializer;
+  static Serializer<DataPointFiltersResponseWrapperErrorCodeEnum>
+      get serializer =>
+          _$dataPointFiltersResponseWrapperErrorCodeEnumSerializer;
 
-  const DataPointFiltersResponseWrapperErrorCodeEnum._(String name): super(name);
+  const DataPointFiltersResponseWrapperErrorCodeEnum._(String name)
+      : super(name);
 
-  static BuiltSet<DataPointFiltersResponseWrapperErrorCodeEnum> get values => _$dataPointFiltersResponseWrapperErrorCodeEnumValues;
-  static DataPointFiltersResponseWrapperErrorCodeEnum valueOf(String name) => _$dataPointFiltersResponseWrapperErrorCodeEnumValueOf(name);
+  static BuiltSet<DataPointFiltersResponseWrapperErrorCodeEnum> get values =>
+      _$dataPointFiltersResponseWrapperErrorCodeEnumValues;
+  static DataPointFiltersResponseWrapperErrorCodeEnum valueOf(String name) =>
+      _$dataPointFiltersResponseWrapperErrorCodeEnumValueOf(name);
 }
-

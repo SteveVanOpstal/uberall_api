@@ -320,7 +320,7 @@ void main() {
       // TODO
     });
 
-    // ID of the business this location is linked to. Mandatory when creating a location. Sending a different ID than the current businessId when updating will lead to changing the business. This is only possible in case all connected accounts (Facebook, Google, …) are compatible. 
+    // ID of the business this location is linked to. Mandatory when creating a location. Sending a different ID than the current businessId when updating will lead to changing the business. This is only possible in case all connected accounts (Facebook, Google, …) are compatible.
     // int businessId
     test('to test the property `businessId`', () async {
       // TODO
@@ -356,7 +356,7 @@ void main() {
       // TODO
     });
 
-    // The location''s timezone 
+    // The location''s timezone
     // String timeZone
     test('to test the property `timeZone`', () async {
       // TODO
@@ -444,8 +444,5 @@ void main() {
     test('to test the property `customFields`', () async {
       // TODO
     });
-
-
   });
-
 }

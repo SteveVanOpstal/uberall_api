@@ -12,24 +12,28 @@ part 'postcodes_response.g.dart';
 /// Response object containing a list of postcodes
 ///
 /// Properties:
-/// * [postcodes] 
+/// * [postcodes]
 @BuiltValue()
-abstract class PostcodesResponse implements Built<PostcodesResponse, PostcodesResponseBuilder> {
+abstract class PostcodesResponse
+    implements Built<PostcodesResponse, PostcodesResponseBuilder> {
   @BuiltValueField(wireName: r'postcodes')
   BuiltList<String>? get postcodes;
 
   PostcodesResponse._();
 
-  factory PostcodesResponse([void updates(PostcodesResponseBuilder b)]) = _$PostcodesResponse;
+  factory PostcodesResponse([void updates(PostcodesResponseBuilder b)]) =
+      _$PostcodesResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PostcodesResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<PostcodesResponse> get serializer => _$PostcodesResponseSerializer();
+  static Serializer<PostcodesResponse> get serializer =>
+      _$PostcodesResponseSerializer();
 }
 
-class _$PostcodesResponseSerializer implements PrimitiveSerializer<PostcodesResponse> {
+class _$PostcodesResponseSerializer
+    implements PrimitiveSerializer<PostcodesResponse> {
   @override
   final Iterable<Type> types = const [PostcodesResponse, _$PostcodesResponse];
 
@@ -56,7 +60,9 @@ class _$PostcodesResponseSerializer implements PrimitiveSerializer<PostcodesResp
     PostcodesResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +112,3 @@ class _$PostcodesResponseSerializer implements PrimitiveSerializer<PostcodesResp
     return result.build();
   }
 }
-

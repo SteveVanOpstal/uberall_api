@@ -13,13 +13,14 @@ part 'directory_brand_wrapper.g.dart';
 /// DirectoryBrandWrapper
 ///
 /// Properties:
-/// * [status] 
+/// * [status]
 /// * [message] - (optional) Holds further information about the response
-/// * [errorCode] 
+/// * [errorCode]
 /// * [warnings] - (optional) Holds further warnings
-/// * [response] 
+/// * [response]
 @BuiltValue()
-abstract class DirectoryBrandWrapper implements Built<DirectoryBrandWrapper, DirectoryBrandWrapperBuilder> {
+abstract class DirectoryBrandWrapper
+    implements Built<DirectoryBrandWrapper, DirectoryBrandWrapperBuilder> {
   @BuiltValueField(wireName: r'status')
   DirectoryBrandWrapperStatusEnum? get status;
   // enum statusEnum {  SUCCESS,  QUOTA_LIMIT_EXCEED,  NOT_AUTHORIZED,  FORBIDDEN,  BAD_ACCESS_TOKEN,  BAD_PRIVATE_KEY,  BAD_PUBLIC_KEY,  MISSING_PARAMETER,  INVALID_PARAMETER,  WRONG_PARAMETER_TYPE,  CONFLICT,  RESOURCE_LOCKED,  SERVER_ERROR,  ERROR,  NOT_FOUND,  BAD_REQUEST,  USER_ERROR,  PARTIAL_ERROR,  METHOD_NOT_ALLOWED,  };
@@ -41,18 +42,24 @@ abstract class DirectoryBrandWrapper implements Built<DirectoryBrandWrapper, Dir
 
   DirectoryBrandWrapper._();
 
-  factory DirectoryBrandWrapper([void updates(DirectoryBrandWrapperBuilder b)]) = _$DirectoryBrandWrapper;
+  factory DirectoryBrandWrapper(
+      [void updates(DirectoryBrandWrapperBuilder b)]) = _$DirectoryBrandWrapper;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DirectoryBrandWrapperBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DirectoryBrandWrapper> get serializer => _$DirectoryBrandWrapperSerializer();
+  static Serializer<DirectoryBrandWrapper> get serializer =>
+      _$DirectoryBrandWrapperSerializer();
 }
 
-class _$DirectoryBrandWrapperSerializer implements PrimitiveSerializer<DirectoryBrandWrapper> {
+class _$DirectoryBrandWrapperSerializer
+    implements PrimitiveSerializer<DirectoryBrandWrapper> {
   @override
-  final Iterable<Type> types = const [DirectoryBrandWrapper, _$DirectoryBrandWrapper];
+  final Iterable<Type> types = const [
+    DirectoryBrandWrapper,
+    _$DirectoryBrandWrapper
+  ];
 
   @override
   final String wireName = r'DirectoryBrandWrapper';
@@ -105,7 +112,9 @@ class _$DirectoryBrandWrapperSerializer implements PrimitiveSerializer<Directory
     DirectoryBrandWrapper object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -185,102 +194,145 @@ class _$DirectoryBrandWrapperSerializer implements PrimitiveSerializer<Directory
 }
 
 class DirectoryBrandWrapperStatusEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'SUCCESS')
-  static const DirectoryBrandWrapperStatusEnum SUCCESS = _$directoryBrandWrapperStatusEnum_SUCCESS;
+  static const DirectoryBrandWrapperStatusEnum SUCCESS =
+      _$directoryBrandWrapperStatusEnum_SUCCESS;
   @BuiltValueEnumConst(wireName: r'QUOTA_LIMIT_EXCEED')
-  static const DirectoryBrandWrapperStatusEnum QUOTA_LIMIT_EXCEED = _$directoryBrandWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
+  static const DirectoryBrandWrapperStatusEnum QUOTA_LIMIT_EXCEED =
+      _$directoryBrandWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
   @BuiltValueEnumConst(wireName: r'NOT_AUTHORIZED')
-  static const DirectoryBrandWrapperStatusEnum NOT_AUTHORIZED = _$directoryBrandWrapperStatusEnum_NOT_AUTHORIZED;
+  static const DirectoryBrandWrapperStatusEnum NOT_AUTHORIZED =
+      _$directoryBrandWrapperStatusEnum_NOT_AUTHORIZED;
   @BuiltValueEnumConst(wireName: r'FORBIDDEN')
-  static const DirectoryBrandWrapperStatusEnum FORBIDDEN = _$directoryBrandWrapperStatusEnum_FORBIDDEN;
+  static const DirectoryBrandWrapperStatusEnum FORBIDDEN =
+      _$directoryBrandWrapperStatusEnum_FORBIDDEN;
   @BuiltValueEnumConst(wireName: r'BAD_ACCESS_TOKEN')
-  static const DirectoryBrandWrapperStatusEnum BAD_ACCESS_TOKEN = _$directoryBrandWrapperStatusEnum_BAD_ACCESS_TOKEN;
+  static const DirectoryBrandWrapperStatusEnum BAD_ACCESS_TOKEN =
+      _$directoryBrandWrapperStatusEnum_BAD_ACCESS_TOKEN;
   @BuiltValueEnumConst(wireName: r'BAD_PRIVATE_KEY')
-  static const DirectoryBrandWrapperStatusEnum BAD_PRIVATE_KEY = _$directoryBrandWrapperStatusEnum_BAD_PRIVATE_KEY;
+  static const DirectoryBrandWrapperStatusEnum BAD_PRIVATE_KEY =
+      _$directoryBrandWrapperStatusEnum_BAD_PRIVATE_KEY;
   @BuiltValueEnumConst(wireName: r'BAD_PUBLIC_KEY')
-  static const DirectoryBrandWrapperStatusEnum BAD_PUBLIC_KEY = _$directoryBrandWrapperStatusEnum_BAD_PUBLIC_KEY;
+  static const DirectoryBrandWrapperStatusEnum BAD_PUBLIC_KEY =
+      _$directoryBrandWrapperStatusEnum_BAD_PUBLIC_KEY;
   @BuiltValueEnumConst(wireName: r'MISSING_PARAMETER')
-  static const DirectoryBrandWrapperStatusEnum MISSING_PARAMETER = _$directoryBrandWrapperStatusEnum_MISSING_PARAMETER;
+  static const DirectoryBrandWrapperStatusEnum MISSING_PARAMETER =
+      _$directoryBrandWrapperStatusEnum_MISSING_PARAMETER;
   @BuiltValueEnumConst(wireName: r'INVALID_PARAMETER')
-  static const DirectoryBrandWrapperStatusEnum INVALID_PARAMETER = _$directoryBrandWrapperStatusEnum_INVALID_PARAMETER;
+  static const DirectoryBrandWrapperStatusEnum INVALID_PARAMETER =
+      _$directoryBrandWrapperStatusEnum_INVALID_PARAMETER;
   @BuiltValueEnumConst(wireName: r'WRONG_PARAMETER_TYPE')
-  static const DirectoryBrandWrapperStatusEnum WRONG_PARAMETER_TYPE = _$directoryBrandWrapperStatusEnum_WRONG_PARAMETER_TYPE;
+  static const DirectoryBrandWrapperStatusEnum WRONG_PARAMETER_TYPE =
+      _$directoryBrandWrapperStatusEnum_WRONG_PARAMETER_TYPE;
   @BuiltValueEnumConst(wireName: r'CONFLICT')
-  static const DirectoryBrandWrapperStatusEnum CONFLICT = _$directoryBrandWrapperStatusEnum_CONFLICT;
+  static const DirectoryBrandWrapperStatusEnum CONFLICT =
+      _$directoryBrandWrapperStatusEnum_CONFLICT;
   @BuiltValueEnumConst(wireName: r'RESOURCE_LOCKED')
-  static const DirectoryBrandWrapperStatusEnum RESOURCE_LOCKED = _$directoryBrandWrapperStatusEnum_RESOURCE_LOCKED;
+  static const DirectoryBrandWrapperStatusEnum RESOURCE_LOCKED =
+      _$directoryBrandWrapperStatusEnum_RESOURCE_LOCKED;
   @BuiltValueEnumConst(wireName: r'SERVER_ERROR')
-  static const DirectoryBrandWrapperStatusEnum SERVER_ERROR = _$directoryBrandWrapperStatusEnum_SERVER_ERROR;
+  static const DirectoryBrandWrapperStatusEnum SERVER_ERROR =
+      _$directoryBrandWrapperStatusEnum_SERVER_ERROR;
   @BuiltValueEnumConst(wireName: r'ERROR')
-  static const DirectoryBrandWrapperStatusEnum ERROR = _$directoryBrandWrapperStatusEnum_ERROR;
+  static const DirectoryBrandWrapperStatusEnum ERROR =
+      _$directoryBrandWrapperStatusEnum_ERROR;
   @BuiltValueEnumConst(wireName: r'NOT_FOUND')
-  static const DirectoryBrandWrapperStatusEnum NOT_FOUND = _$directoryBrandWrapperStatusEnum_NOT_FOUND;
+  static const DirectoryBrandWrapperStatusEnum NOT_FOUND =
+      _$directoryBrandWrapperStatusEnum_NOT_FOUND;
   @BuiltValueEnumConst(wireName: r'BAD_REQUEST')
-  static const DirectoryBrandWrapperStatusEnum BAD_REQUEST = _$directoryBrandWrapperStatusEnum_BAD_REQUEST;
+  static const DirectoryBrandWrapperStatusEnum BAD_REQUEST =
+      _$directoryBrandWrapperStatusEnum_BAD_REQUEST;
   @BuiltValueEnumConst(wireName: r'USER_ERROR')
-  static const DirectoryBrandWrapperStatusEnum USER_ERROR = _$directoryBrandWrapperStatusEnum_USER_ERROR;
+  static const DirectoryBrandWrapperStatusEnum USER_ERROR =
+      _$directoryBrandWrapperStatusEnum_USER_ERROR;
   @BuiltValueEnumConst(wireName: r'PARTIAL_ERROR')
-  static const DirectoryBrandWrapperStatusEnum PARTIAL_ERROR = _$directoryBrandWrapperStatusEnum_PARTIAL_ERROR;
+  static const DirectoryBrandWrapperStatusEnum PARTIAL_ERROR =
+      _$directoryBrandWrapperStatusEnum_PARTIAL_ERROR;
   @BuiltValueEnumConst(wireName: r'METHOD_NOT_ALLOWED')
-  static const DirectoryBrandWrapperStatusEnum METHOD_NOT_ALLOWED = _$directoryBrandWrapperStatusEnum_METHOD_NOT_ALLOWED;
+  static const DirectoryBrandWrapperStatusEnum METHOD_NOT_ALLOWED =
+      _$directoryBrandWrapperStatusEnum_METHOD_NOT_ALLOWED;
 
-  static Serializer<DirectoryBrandWrapperStatusEnum> get serializer => _$directoryBrandWrapperStatusEnumSerializer;
+  static Serializer<DirectoryBrandWrapperStatusEnum> get serializer =>
+      _$directoryBrandWrapperStatusEnumSerializer;
 
-  const DirectoryBrandWrapperStatusEnum._(String name): super(name);
+  const DirectoryBrandWrapperStatusEnum._(String name) : super(name);
 
-  static BuiltSet<DirectoryBrandWrapperStatusEnum> get values => _$directoryBrandWrapperStatusEnumValues;
-  static DirectoryBrandWrapperStatusEnum valueOf(String name) => _$directoryBrandWrapperStatusEnumValueOf(name);
+  static BuiltSet<DirectoryBrandWrapperStatusEnum> get values =>
+      _$directoryBrandWrapperStatusEnumValues;
+  static DirectoryBrandWrapperStatusEnum valueOf(String name) =>
+      _$directoryBrandWrapperStatusEnumValueOf(name);
 }
 
 class DirectoryBrandWrapperErrorCodeEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'NORMALIZATION_FAILED')
-  static const DirectoryBrandWrapperErrorCodeEnum NORMALIZATION_FAILED = _$directoryBrandWrapperErrorCodeEnum_NORMALIZATION_FAILED;
+  static const DirectoryBrandWrapperErrorCodeEnum NORMALIZATION_FAILED =
+      _$directoryBrandWrapperErrorCodeEnum_NORMALIZATION_FAILED;
   @BuiltValueEnumConst(wireName: r'DATA_CORRUPTED')
-  static const DirectoryBrandWrapperErrorCodeEnum DATA_CORRUPTED = _$directoryBrandWrapperErrorCodeEnum_DATA_CORRUPTED;
+  static const DirectoryBrandWrapperErrorCodeEnum DATA_CORRUPTED =
+      _$directoryBrandWrapperErrorCodeEnum_DATA_CORRUPTED;
   @BuiltValueEnumConst(wireName: r'INVALID_INPUT')
-  static const DirectoryBrandWrapperErrorCodeEnum INVALID_INPUT = _$directoryBrandWrapperErrorCodeEnum_INVALID_INPUT;
+  static const DirectoryBrandWrapperErrorCodeEnum INVALID_INPUT =
+      _$directoryBrandWrapperErrorCodeEnum_INVALID_INPUT;
   @BuiltValueEnumConst(wireName: r'NOT_SYNCABLE')
-  static const DirectoryBrandWrapperErrorCodeEnum NOT_SYNCABLE = _$directoryBrandWrapperErrorCodeEnum_NOT_SYNCABLE;
+  static const DirectoryBrandWrapperErrorCodeEnum NOT_SYNCABLE =
+      _$directoryBrandWrapperErrorCodeEnum_NOT_SYNCABLE;
   @BuiltValueEnumConst(wireName: r'PAYMENT_FAILED')
-  static const DirectoryBrandWrapperErrorCodeEnum PAYMENT_FAILED = _$directoryBrandWrapperErrorCodeEnum_PAYMENT_FAILED;
+  static const DirectoryBrandWrapperErrorCodeEnum PAYMENT_FAILED =
+      _$directoryBrandWrapperErrorCodeEnum_PAYMENT_FAILED;
   @BuiltValueEnumConst(wireName: r'FREE_TIER_REACHED')
-  static const DirectoryBrandWrapperErrorCodeEnum FREE_TIER_REACHED = _$directoryBrandWrapperErrorCodeEnum_FREE_TIER_REACHED;
+  static const DirectoryBrandWrapperErrorCodeEnum FREE_TIER_REACHED =
+      _$directoryBrandWrapperErrorCodeEnum_FREE_TIER_REACHED;
   @BuiltValueEnumConst(wireName: r'LIMIT_REACHED')
-  static const DirectoryBrandWrapperErrorCodeEnum LIMIT_REACHED = _$directoryBrandWrapperErrorCodeEnum_LIMIT_REACHED;
+  static const DirectoryBrandWrapperErrorCodeEnum LIMIT_REACHED =
+      _$directoryBrandWrapperErrorCodeEnum_LIMIT_REACHED;
   @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const DirectoryBrandWrapperErrorCodeEnum INACTIVE = _$directoryBrandWrapperErrorCodeEnum_INACTIVE;
+  static const DirectoryBrandWrapperErrorCodeEnum INACTIVE =
+      _$directoryBrandWrapperErrorCodeEnum_INACTIVE;
   @BuiltValueEnumConst(wireName: r'UNKNOWN')
-  static const DirectoryBrandWrapperErrorCodeEnum UNKNOWN = _$directoryBrandWrapperErrorCodeEnum_UNKNOWN;
+  static const DirectoryBrandWrapperErrorCodeEnum UNKNOWN =
+      _$directoryBrandWrapperErrorCodeEnum_UNKNOWN;
   @BuiltValueEnumConst(wireName: r'IDENTIFIER_NOT_UNIQUE')
-  static const DirectoryBrandWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE = _$directoryBrandWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
+  static const DirectoryBrandWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE =
+      _$directoryBrandWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
   @BuiltValueEnumConst(wireName: r'ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT')
-  static const DirectoryBrandWrapperErrorCodeEnum ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT = _$directoryBrandWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
+  static const DirectoryBrandWrapperErrorCodeEnum
+      ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT =
+      _$directoryBrandWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
   @BuiltValueEnumConst(wireName: r'NO_ACCOUNT_CONNECTED')
-  static const DirectoryBrandWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED = _$directoryBrandWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
+  static const DirectoryBrandWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED =
+      _$directoryBrandWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
   @BuiltValueEnumConst(wireName: r'NO_PAGE_SELECTED')
-  static const DirectoryBrandWrapperErrorCodeEnum NO_PAGE_SELECTED = _$directoryBrandWrapperErrorCodeEnum_NO_PAGE_SELECTED;
+  static const DirectoryBrandWrapperErrorCodeEnum NO_PAGE_SELECTED =
+      _$directoryBrandWrapperErrorCodeEnum_NO_PAGE_SELECTED;
   @BuiltValueEnumConst(wireName: r'PAGE_NOT_CREATED')
-  static const DirectoryBrandWrapperErrorCodeEnum PAGE_NOT_CREATED = _$directoryBrandWrapperErrorCodeEnum_PAGE_NOT_CREATED;
+  static const DirectoryBrandWrapperErrorCodeEnum PAGE_NOT_CREATED =
+      _$directoryBrandWrapperErrorCodeEnum_PAGE_NOT_CREATED;
   @BuiltValueEnumConst(wireName: r'PAGE_IN_REVIEW')
-  static const DirectoryBrandWrapperErrorCodeEnum PAGE_IN_REVIEW = _$directoryBrandWrapperErrorCodeEnum_PAGE_IN_REVIEW;
+  static const DirectoryBrandWrapperErrorCodeEnum PAGE_IN_REVIEW =
+      _$directoryBrandWrapperErrorCodeEnum_PAGE_IN_REVIEW;
   @BuiltValueEnumConst(wireName: r'PAGE_CLAIMED_BY_OTHERS')
-  static const DirectoryBrandWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS = _$directoryBrandWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
+  static const DirectoryBrandWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS =
+      _$directoryBrandWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
   @BuiltValueEnumConst(wireName: r'OVERLAPPING_SOCIALPOST')
-  static const DirectoryBrandWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST = _$directoryBrandWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
+  static const DirectoryBrandWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST =
+      _$directoryBrandWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
   @BuiltValueEnumConst(wireName: r'TOO_MANY_REPLIES')
-  static const DirectoryBrandWrapperErrorCodeEnum TOO_MANY_REPLIES = _$directoryBrandWrapperErrorCodeEnum_TOO_MANY_REPLIES;
+  static const DirectoryBrandWrapperErrorCodeEnum TOO_MANY_REPLIES =
+      _$directoryBrandWrapperErrorCodeEnum_TOO_MANY_REPLIES;
   @BuiltValueEnumConst(wireName: r'REPLY_TOO_LONG')
-  static const DirectoryBrandWrapperErrorCodeEnum REPLY_TOO_LONG = _$directoryBrandWrapperErrorCodeEnum_REPLY_TOO_LONG;
+  static const DirectoryBrandWrapperErrorCodeEnum REPLY_TOO_LONG =
+      _$directoryBrandWrapperErrorCodeEnum_REPLY_TOO_LONG;
   @BuiltValueEnumConst(wireName: r'DEPRECATED')
-  static const DirectoryBrandWrapperErrorCodeEnum DEPRECATED = _$directoryBrandWrapperErrorCodeEnum_DEPRECATED;
+  static const DirectoryBrandWrapperErrorCodeEnum DEPRECATED =
+      _$directoryBrandWrapperErrorCodeEnum_DEPRECATED;
 
-  static Serializer<DirectoryBrandWrapperErrorCodeEnum> get serializer => _$directoryBrandWrapperErrorCodeEnumSerializer;
+  static Serializer<DirectoryBrandWrapperErrorCodeEnum> get serializer =>
+      _$directoryBrandWrapperErrorCodeEnumSerializer;
 
-  const DirectoryBrandWrapperErrorCodeEnum._(String name): super(name);
+  const DirectoryBrandWrapperErrorCodeEnum._(String name) : super(name);
 
-  static BuiltSet<DirectoryBrandWrapperErrorCodeEnum> get values => _$directoryBrandWrapperErrorCodeEnumValues;
-  static DirectoryBrandWrapperErrorCodeEnum valueOf(String name) => _$directoryBrandWrapperErrorCodeEnumValueOf(name);
+  static BuiltSet<DirectoryBrandWrapperErrorCodeEnum> get values =>
+      _$directoryBrandWrapperErrorCodeEnumValues;
+  static DirectoryBrandWrapperErrorCodeEnum valueOf(String name) =>
+      _$directoryBrandWrapperErrorCodeEnumValueOf(name);
 }
-

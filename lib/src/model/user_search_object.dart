@@ -16,9 +16,10 @@ part 'user_search_object.g.dart';
 /// * [offset] - The offset for pagination
 /// * [max] - The maximum number of results to return
 /// * [count] - The total count of users
-/// * [users] 
+/// * [users]
 @BuiltValue()
-abstract class UserSearchObject implements Built<UserSearchObject, UserSearchObjectBuilder> {
+abstract class UserSearchObject
+    implements Built<UserSearchObject, UserSearchObjectBuilder> {
   /// The offset for pagination
   @BuiltValueField(wireName: r'offset')
   int? get offset;
@@ -36,16 +37,19 @@ abstract class UserSearchObject implements Built<UserSearchObject, UserSearchObj
 
   UserSearchObject._();
 
-  factory UserSearchObject([void updates(UserSearchObjectBuilder b)]) = _$UserSearchObject;
+  factory UserSearchObject([void updates(UserSearchObjectBuilder b)]) =
+      _$UserSearchObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UserSearchObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<UserSearchObject> get serializer => _$UserSearchObjectSerializer();
+  static Serializer<UserSearchObject> get serializer =>
+      _$UserSearchObjectSerializer();
 }
 
-class _$UserSearchObjectSerializer implements PrimitiveSerializer<UserSearchObject> {
+class _$UserSearchObjectSerializer
+    implements PrimitiveSerializer<UserSearchObject> {
   @override
   final Iterable<Type> types = const [UserSearchObject, _$UserSearchObject];
 
@@ -93,7 +97,9 @@ class _$UserSearchObjectSerializer implements PrimitiveSerializer<UserSearchObje
     UserSearchObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -164,4 +170,3 @@ class _$UserSearchObjectSerializer implements PrimitiveSerializer<UserSearchObje
     return result.build();
   }
 }
-

@@ -13,26 +13,35 @@ part 'lodging_field_response_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [availableLodgingFields] 
+/// * [availableLodgingFields]
 @BuiltValue()
-abstract class LodgingFieldResponseObject implements Built<LodgingFieldResponseObject, LodgingFieldResponseObjectBuilder> {
+abstract class LodgingFieldResponseObject
+    implements
+        Built<LodgingFieldResponseObject, LodgingFieldResponseObjectBuilder> {
   @BuiltValueField(wireName: r'availableLodgingFields')
   BuiltList<LodgingField>? get availableLodgingFields;
 
   LodgingFieldResponseObject._();
 
-  factory LodgingFieldResponseObject([void updates(LodgingFieldResponseObjectBuilder b)]) = _$LodgingFieldResponseObject;
+  factory LodgingFieldResponseObject(
+          [void updates(LodgingFieldResponseObjectBuilder b)]) =
+      _$LodgingFieldResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LodgingFieldResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LodgingFieldResponseObject> get serializer => _$LodgingFieldResponseObjectSerializer();
+  static Serializer<LodgingFieldResponseObject> get serializer =>
+      _$LodgingFieldResponseObjectSerializer();
 }
 
-class _$LodgingFieldResponseObjectSerializer implements PrimitiveSerializer<LodgingFieldResponseObject> {
+class _$LodgingFieldResponseObjectSerializer
+    implements PrimitiveSerializer<LodgingFieldResponseObject> {
   @override
-  final Iterable<Type> types = const [LodgingFieldResponseObject, _$LodgingFieldResponseObject];
+  final Iterable<Type> types = const [
+    LodgingFieldResponseObject,
+    _$LodgingFieldResponseObject
+  ];
 
   @override
   final String wireName = r'LodgingFieldResponseObject';
@@ -57,7 +66,9 @@ class _$LodgingFieldResponseObjectSerializer implements PrimitiveSerializer<Lodg
     LodgingFieldResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -107,4 +118,3 @@ class _$LodgingFieldResponseObjectSerializer implements PrimitiveSerializer<Lodg
     return result.build();
   }
 }
-

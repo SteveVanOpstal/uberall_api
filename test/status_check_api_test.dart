@@ -11,7 +11,6 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for StatusCheckApi
 void main() {
   // final instance = StatusCheckApi();
@@ -43,6 +42,5 @@ void main() {
     test('test postSearch', () async {
       // TODO
     });
-
   });
 }

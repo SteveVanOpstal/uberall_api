@@ -12,26 +12,35 @@ part 'basic_listing_result_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [result] 
+/// * [result]
 @BuiltValue()
-abstract class BasicListingResultObject implements Built<BasicListingResultObject, BasicListingResultObjectBuilder> {
+abstract class BasicListingResultObject
+    implements
+        Built<BasicListingResultObject, BasicListingResultObjectBuilder> {
   @BuiltValueField(wireName: r'result')
   BasicListing? get result;
 
   BasicListingResultObject._();
 
-  factory BasicListingResultObject([void updates(BasicListingResultObjectBuilder b)]) = _$BasicListingResultObject;
+  factory BasicListingResultObject(
+          [void updates(BasicListingResultObjectBuilder b)]) =
+      _$BasicListingResultObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(BasicListingResultObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<BasicListingResultObject> get serializer => _$BasicListingResultObjectSerializer();
+  static Serializer<BasicListingResultObject> get serializer =>
+      _$BasicListingResultObjectSerializer();
 }
 
-class _$BasicListingResultObjectSerializer implements PrimitiveSerializer<BasicListingResultObject> {
+class _$BasicListingResultObjectSerializer
+    implements PrimitiveSerializer<BasicListingResultObject> {
   @override
-  final Iterable<Type> types = const [BasicListingResultObject, _$BasicListingResultObject];
+  final Iterable<Type> types = const [
+    BasicListingResultObject,
+    _$BasicListingResultObject
+  ];
 
   @override
   final String wireName = r'BasicListingResultObject';
@@ -56,7 +65,9 @@ class _$BasicListingResultObjectSerializer implements PrimitiveSerializer<BasicL
     BasicListingResultObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +117,3 @@ class _$BasicListingResultObjectSerializer implements PrimitiveSerializer<BasicL
     return result.build();
   }
 }
-

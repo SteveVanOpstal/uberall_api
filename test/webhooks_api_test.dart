@@ -11,7 +11,6 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for WebhooksApi
 void main() {
   // final instance = WebhooksApi();
@@ -55,12 +54,11 @@ void main() {
 
     // Create a Webhook
     //
-    // Creates a new webhook, consisting of a pushUrl and a event type. For a list of all possible types use the GET /api/sales-partners/subscribable-event-types. 
+    // Creates a new webhook, consisting of a pushUrl and a event type. For a list of all possible types use the GET /api/sales-partners/subscribable-event-types.
     //
     //Future<WebhookWrapper> postSalesPartnersWebhooks(WebhookCommand webhookCommand) async
     test('test postSalesPartnersWebhooks', () async {
       // TODO
     });
-
   });
 }

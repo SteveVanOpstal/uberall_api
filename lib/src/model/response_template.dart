@@ -22,11 +22,12 @@ part 'response_template.g.dart';
 /// * [tags] - The list of tags for the template
 /// * [dateCreated] - The date in which the template was created
 /// * [lastEdited] - The date in which the template was last edited
-/// * [createdBy] 
-/// * [lastEditedBy] 
+/// * [createdBy]
+/// * [lastEditedBy]
 /// * [businesses] - The list of business ids the templated was created for
 @BuiltValue()
-abstract class ResponseTemplate implements Built<ResponseTemplate, ResponseTemplateBuilder> {
+abstract class ResponseTemplate
+    implements Built<ResponseTemplate, ResponseTemplateBuilder> {
   /// The Uberall unique id of the template
   @BuiltValueField(wireName: r'id')
   int? get id;
@@ -71,16 +72,19 @@ abstract class ResponseTemplate implements Built<ResponseTemplate, ResponseTempl
 
   ResponseTemplate._();
 
-  factory ResponseTemplate([void updates(ResponseTemplateBuilder b)]) = _$ResponseTemplate;
+  factory ResponseTemplate([void updates(ResponseTemplateBuilder b)]) =
+      _$ResponseTemplate;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ResponseTemplateBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ResponseTemplate> get serializer => _$ResponseTemplateSerializer();
+  static Serializer<ResponseTemplate> get serializer =>
+      _$ResponseTemplateSerializer();
 }
 
-class _$ResponseTemplateSerializer implements PrimitiveSerializer<ResponseTemplate> {
+class _$ResponseTemplateSerializer
+    implements PrimitiveSerializer<ResponseTemplate> {
   @override
   final Iterable<Type> types = const [ResponseTemplate, _$ResponseTemplate];
 
@@ -177,7 +181,9 @@ class _$ResponseTemplateSerializer implements PrimitiveSerializer<ResponseTempla
     ResponseTemplate object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -265,7 +271,8 @@ class _$ResponseTemplateSerializer implements PrimitiveSerializer<ResponseTempla
         case r'businesses':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(ResponseBusiness)]),
+            specifiedType:
+                const FullType(BuiltList, [FullType(ResponseBusiness)]),
           ) as BuiltList<ResponseBusiness>;
           result.businesses.replace(valueDes);
           break;
@@ -297,4 +304,3 @@ class _$ResponseTemplateSerializer implements PrimitiveSerializer<ResponseTempla
     return result.build();
   }
 }
-

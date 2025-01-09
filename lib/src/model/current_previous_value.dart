@@ -14,7 +14,8 @@ part 'current_previous_value.g.dart';
 /// * [current] - The value for the current period
 /// * [previous] - The value for the previous period
 @BuiltValue()
-abstract class CurrentPreviousValue implements Built<CurrentPreviousValue, CurrentPreviousValueBuilder> {
+abstract class CurrentPreviousValue
+    implements Built<CurrentPreviousValue, CurrentPreviousValueBuilder> {
   /// The value for the current period
   @BuiltValueField(wireName: r'current')
   num? get current;
@@ -25,18 +26,24 @@ abstract class CurrentPreviousValue implements Built<CurrentPreviousValue, Curre
 
   CurrentPreviousValue._();
 
-  factory CurrentPreviousValue([void updates(CurrentPreviousValueBuilder b)]) = _$CurrentPreviousValue;
+  factory CurrentPreviousValue([void updates(CurrentPreviousValueBuilder b)]) =
+      _$CurrentPreviousValue;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CurrentPreviousValueBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<CurrentPreviousValue> get serializer => _$CurrentPreviousValueSerializer();
+  static Serializer<CurrentPreviousValue> get serializer =>
+      _$CurrentPreviousValueSerializer();
 }
 
-class _$CurrentPreviousValueSerializer implements PrimitiveSerializer<CurrentPreviousValue> {
+class _$CurrentPreviousValueSerializer
+    implements PrimitiveSerializer<CurrentPreviousValue> {
   @override
-  final Iterable<Type> types = const [CurrentPreviousValue, _$CurrentPreviousValue];
+  final Iterable<Type> types = const [
+    CurrentPreviousValue,
+    _$CurrentPreviousValue
+  ];
 
   @override
   final String wireName = r'CurrentPreviousValue';
@@ -68,7 +75,9 @@ class _$CurrentPreviousValueSerializer implements PrimitiveSerializer<CurrentPre
     CurrentPreviousValue object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -125,4 +134,3 @@ class _$CurrentPreviousValueSerializer implements PrimitiveSerializer<CurrentPre
     return result.build();
   }
 }
-

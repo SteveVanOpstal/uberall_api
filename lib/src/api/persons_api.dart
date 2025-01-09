@@ -13,10 +13,9 @@ import 'package:openapi/src/api_util.dart';
 import 'package:openapi/src/model/person.dart';
 import 'package:openapi/src/model/person_response_wrapper.dart';
 import 'package:openapi/src/model/person_search_response_wrapper.dart';
-import 'package:openapi/src/model/response.dart';
+import 'package:openapi/src/model/response.dart' as openApi;
 
 class PersonsApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -36,7 +35,7 @@ class PersonsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Response>> deletePersons({ 
+  Future<Response<openApi.Response>> deletePersons({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -65,15 +64,16 @@ class PersonsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Response? _responseData;
+    openApi.Response? _responseData;
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(Response),
-      ) as Response;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(openApi.Response),
+            ) as openApi.Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -84,7 +84,7 @@ class PersonsApi {
       );
     }
 
-    return Response<Response>(
+    return Response<openApi.Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -110,7 +110,7 @@ class PersonsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Response>> deletePersonsId({ 
+  Future<Response<Response>> deletePersonsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -119,7 +119,10 @@ class PersonsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/persons/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/persons/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -132,7 +135,8 @@ class PersonsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -156,11 +160,12 @@ class PersonsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(Response),
-      ) as Response;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(Response),
+            ) as Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -187,7 +192,7 @@ class PersonsApi {
   /// Get all persons the current API user can manage. &lt;br&gt;To specify products with identifier please provide ?identifier&#x3D; in the URL param &lt;br&gt;By default, 50 are returned, you can use up to max&#x3D;10000 URL param
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [body]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -197,7 +202,7 @@ class PersonsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [PersonSearchResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<PersonSearchResponseWrapper>> getPersons({ 
+  Future<Response<PersonSearchResponseWrapper>> getPersons({
     JsonObject? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -219,7 +224,8 @@ class PersonsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -235,10 +241,9 @@ class PersonsApi {
 
     try {
       _bodyData = body;
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -261,11 +266,12 @@ class PersonsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(PersonSearchResponseWrapper),
-      ) as PersonSearchResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(PersonSearchResponseWrapper),
+            ) as PersonSearchResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -302,7 +308,7 @@ class PersonsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [PersonResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<PersonResponseWrapper>> getPersonsId({ 
+  Future<Response<PersonResponseWrapper>> getPersonsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -311,7 +317,10 @@ class PersonsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/persons/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/persons/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -324,7 +333,8 @@ class PersonsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -348,11 +358,12 @@ class PersonsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(PersonResponseWrapper),
-      ) as PersonResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(PersonResponseWrapper),
+            ) as PersonResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -389,7 +400,7 @@ class PersonsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [PersonResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<PersonResponseWrapper>> patchPersons({ 
+  Future<Response<PersonResponseWrapper>> patchPersons({
     required Person person,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -411,7 +422,8 @@ class PersonsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -429,10 +441,9 @@ class PersonsApi {
     try {
       const _type = FullType(Person);
       _bodyData = _serializers.serialize(person, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -455,11 +466,12 @@ class PersonsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(PersonResponseWrapper),
-      ) as PersonResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(PersonResponseWrapper),
+            ) as PersonResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -497,7 +509,7 @@ class PersonsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [PersonResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<PersonResponseWrapper>> patchPersonsId({ 
+  Future<Response<PersonResponseWrapper>> patchPersonsId({
     required String id,
     required Person person,
     CancelToken? cancelToken,
@@ -507,7 +519,10 @@ class PersonsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/persons/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/persons/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -520,7 +535,8 @@ class PersonsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -538,10 +554,9 @@ class PersonsApi {
     try {
       const _type = FullType(Person);
       _bodyData = _serializers.serialize(person, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -564,11 +579,12 @@ class PersonsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(PersonResponseWrapper),
-      ) as PersonResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(PersonResponseWrapper),
+            ) as PersonResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -605,7 +621,7 @@ class PersonsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [PersonResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<PersonResponseWrapper>> postPersons({ 
+  Future<Response<PersonResponseWrapper>> postPersons({
     required Person person,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -627,7 +643,8 @@ class PersonsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -645,10 +662,9 @@ class PersonsApi {
     try {
       const _type = FullType(Person);
       _bodyData = _serializers.serialize(person, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -671,11 +687,12 @@ class PersonsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(PersonResponseWrapper),
-      ) as PersonResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(PersonResponseWrapper),
+            ) as PersonResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -697,5 +714,4 @@ class PersonsApi {
       extra: _response.extra,
     );
   }
-
 }

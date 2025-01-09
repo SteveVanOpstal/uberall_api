@@ -15,18 +15,18 @@ part 'custom_item.g.dart';
 ///
 /// Properties:
 /// * [title] - mandatory, the custom name, e.g. ''Strong Coffee''
-/// * [description] 
-/// * [identifier] 
-/// * [listName] 
+/// * [description]
+/// * [identifier]
+/// * [listName]
 /// * [id] - The uberall unique id for the custom item
 /// * [price] - optional, the price of the custom, e.g. 1500 ( i.e. 15,00 EUR )
 /// * [currency] - optional, indicating the currency for price and priceMax in ISO-4217, e.g. EUR
 /// * [category] - optional, a category name, e.g. ''Coffee''
-/// * [video] 
+/// * [video]
 /// * [unit] - optional, indicating the unit of measure, e.g. ''per kg''
 /// * [url] - optional, a url related to the custom item
 /// * [priceMax] - optional, indicating there is a price range, e.g. 2500 ( i.e. 25,00 EUR )
-/// * [image] 
+/// * [image]
 @BuiltValue()
 abstract class CustomItem implements Built<CustomItem, CustomItemBuilder> {
   /// mandatory, the custom name, e.g. ''Strong Coffee''
@@ -196,7 +196,9 @@ class _$CustomItemSerializer implements PrimitiveSerializer<CustomItem> {
     CustomItem object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -330,4 +332,3 @@ class _$CustomItemSerializer implements PrimitiveSerializer<CustomItem> {
     return result.build();
   }
 }
-

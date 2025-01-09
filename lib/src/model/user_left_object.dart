@@ -12,10 +12,11 @@ part 'user_left_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [user] 
+/// * [user]
 /// * [usersLeft] - The number of users left
 @BuiltValue()
-abstract class UserLeftObject implements Built<UserLeftObject, UserLeftObjectBuilder> {
+abstract class UserLeftObject
+    implements Built<UserLeftObject, UserLeftObjectBuilder> {
   @BuiltValueField(wireName: r'user')
   User? get user;
 
@@ -25,16 +26,19 @@ abstract class UserLeftObject implements Built<UserLeftObject, UserLeftObjectBui
 
   UserLeftObject._();
 
-  factory UserLeftObject([void updates(UserLeftObjectBuilder b)]) = _$UserLeftObject;
+  factory UserLeftObject([void updates(UserLeftObjectBuilder b)]) =
+      _$UserLeftObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UserLeftObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<UserLeftObject> get serializer => _$UserLeftObjectSerializer();
+  static Serializer<UserLeftObject> get serializer =>
+      _$UserLeftObjectSerializer();
 }
 
-class _$UserLeftObjectSerializer implements PrimitiveSerializer<UserLeftObject> {
+class _$UserLeftObjectSerializer
+    implements PrimitiveSerializer<UserLeftObject> {
   @override
   final Iterable<Type> types = const [UserLeftObject, _$UserLeftObject];
 
@@ -68,7 +72,9 @@ class _$UserLeftObjectSerializer implements PrimitiveSerializer<UserLeftObject> 
     UserLeftObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -125,4 +131,3 @@ class _$UserLeftObjectSerializer implements PrimitiveSerializer<UserLeftObject> 
     return result.build();
   }
 }
-

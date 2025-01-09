@@ -14,9 +14,10 @@ part 'response_location.g.dart';
 /// Properties:
 /// * [id] - Location id
 /// * [name] - Location name
-/// * [business] 
+/// * [business]
 @BuiltValue()
-abstract class ResponseLocation implements Built<ResponseLocation, ResponseLocationBuilder> {
+abstract class ResponseLocation
+    implements Built<ResponseLocation, ResponseLocationBuilder> {
   /// Location id
   @BuiltValueField(wireName: r'id')
   int? get id;
@@ -30,16 +31,19 @@ abstract class ResponseLocation implements Built<ResponseLocation, ResponseLocat
 
   ResponseLocation._();
 
-  factory ResponseLocation([void updates(ResponseLocationBuilder b)]) = _$ResponseLocation;
+  factory ResponseLocation([void updates(ResponseLocationBuilder b)]) =
+      _$ResponseLocation;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ResponseLocationBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ResponseLocation> get serializer => _$ResponseLocationSerializer();
+  static Serializer<ResponseLocation> get serializer =>
+      _$ResponseLocationSerializer();
 }
 
-class _$ResponseLocationSerializer implements PrimitiveSerializer<ResponseLocation> {
+class _$ResponseLocationSerializer
+    implements PrimitiveSerializer<ResponseLocation> {
   @override
   final Iterable<Type> types = const [ResponseLocation, _$ResponseLocation];
 
@@ -80,7 +84,9 @@ class _$ResponseLocationSerializer implements PrimitiveSerializer<ResponseLocati
     ResponseLocation object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -144,4 +150,3 @@ class _$ResponseLocationSerializer implements PrimitiveSerializer<ResponseLocati
     return result.build();
   }
 }
-

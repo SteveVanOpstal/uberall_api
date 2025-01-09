@@ -12,8 +12,8 @@ part 'generic_map.g.dart';
 /// GenericMap
 ///
 /// Properties:
-/// * [property1] 
-/// * [property2] 
+/// * [property1]
+/// * [property2]
 @BuiltValue()
 abstract class GenericMap implements Built<GenericMap, GenericMapBuilder> {
   @BuiltValueField(wireName: r'property1')
@@ -67,7 +67,9 @@ class _$GenericMapSerializer implements PrimitiveSerializer<GenericMap> {
     GenericMap object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -124,4 +126,3 @@ class _$GenericMapSerializer implements PrimitiveSerializer<GenericMap> {
     return result.build();
   }
 }
-

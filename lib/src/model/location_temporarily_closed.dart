@@ -14,7 +14,9 @@ part 'location_temporarily_closed.g.dart';
 /// * [temporarilyClosed] - Locations must have either TRUE or FALSE for this field to indicate if they are temporarily closed (TRUE) or not (FALSE).
 /// * [reopenDate] - Set a re-open date for a temporarily closed location (Format: YYYY-MM-DD). The location will re-open at 12:01am local time. Leave null if the re-open date is unknown.
 @BuiltValue()
-abstract class LocationTemporarilyClosed implements Built<LocationTemporarilyClosed, LocationTemporarilyClosedBuilder> {
+abstract class LocationTemporarilyClosed
+    implements
+        Built<LocationTemporarilyClosed, LocationTemporarilyClosedBuilder> {
   /// Locations must have either TRUE or FALSE for this field to indicate if they are temporarily closed (TRUE) or not (FALSE).
   @BuiltValueField(wireName: r'temporarilyClosed')
   bool get temporarilyClosed;
@@ -25,18 +27,25 @@ abstract class LocationTemporarilyClosed implements Built<LocationTemporarilyClo
 
   LocationTemporarilyClosed._();
 
-  factory LocationTemporarilyClosed([void updates(LocationTemporarilyClosedBuilder b)]) = _$LocationTemporarilyClosed;
+  factory LocationTemporarilyClosed(
+          [void updates(LocationTemporarilyClosedBuilder b)]) =
+      _$LocationTemporarilyClosed;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LocationTemporarilyClosedBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LocationTemporarilyClosed> get serializer => _$LocationTemporarilyClosedSerializer();
+  static Serializer<LocationTemporarilyClosed> get serializer =>
+      _$LocationTemporarilyClosedSerializer();
 }
 
-class _$LocationTemporarilyClosedSerializer implements PrimitiveSerializer<LocationTemporarilyClosed> {
+class _$LocationTemporarilyClosedSerializer
+    implements PrimitiveSerializer<LocationTemporarilyClosed> {
   @override
-  final Iterable<Type> types = const [LocationTemporarilyClosed, _$LocationTemporarilyClosed];
+  final Iterable<Type> types = const [
+    LocationTemporarilyClosed,
+    _$LocationTemporarilyClosed
+  ];
 
   @override
   final String wireName = r'LocationTemporarilyClosed';
@@ -66,7 +75,9 @@ class _$LocationTemporarilyClosedSerializer implements PrimitiveSerializer<Locat
     LocationTemporarilyClosed object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -123,4 +134,3 @@ class _$LocationTemporarilyClosedSerializer implements PrimitiveSerializer<Locat
     return result.build();
   }
 }
-

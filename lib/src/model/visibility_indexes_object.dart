@@ -13,26 +13,34 @@ part 'visibility_indexes_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [indexes] 
+/// * [indexes]
 @BuiltValue()
-abstract class VisibilityIndexesObject implements Built<VisibilityIndexesObject, VisibilityIndexesObjectBuilder> {
+abstract class VisibilityIndexesObject
+    implements Built<VisibilityIndexesObject, VisibilityIndexesObjectBuilder> {
   @BuiltValueField(wireName: r'indexes')
   BuiltList<VisibilityIndex>? get indexes;
 
   VisibilityIndexesObject._();
 
-  factory VisibilityIndexesObject([void updates(VisibilityIndexesObjectBuilder b)]) = _$VisibilityIndexesObject;
+  factory VisibilityIndexesObject(
+          [void updates(VisibilityIndexesObjectBuilder b)]) =
+      _$VisibilityIndexesObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(VisibilityIndexesObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<VisibilityIndexesObject> get serializer => _$VisibilityIndexesObjectSerializer();
+  static Serializer<VisibilityIndexesObject> get serializer =>
+      _$VisibilityIndexesObjectSerializer();
 }
 
-class _$VisibilityIndexesObjectSerializer implements PrimitiveSerializer<VisibilityIndexesObject> {
+class _$VisibilityIndexesObjectSerializer
+    implements PrimitiveSerializer<VisibilityIndexesObject> {
   @override
-  final Iterable<Type> types = const [VisibilityIndexesObject, _$VisibilityIndexesObject];
+  final Iterable<Type> types = const [
+    VisibilityIndexesObject,
+    _$VisibilityIndexesObject
+  ];
 
   @override
   final String wireName = r'VisibilityIndexesObject';
@@ -57,7 +65,9 @@ class _$VisibilityIndexesObjectSerializer implements PrimitiveSerializer<Visibil
     VisibilityIndexesObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -75,7 +85,8 @@ class _$VisibilityIndexesObjectSerializer implements PrimitiveSerializer<Visibil
         case r'indexes':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(VisibilityIndex)]),
+            specifiedType:
+                const FullType(BuiltList, [FullType(VisibilityIndex)]),
           ) as BuiltList<VisibilityIndex>;
           result.indexes.replace(valueDes);
           break;
@@ -107,4 +118,3 @@ class _$VisibilityIndexesObjectSerializer implements PrimitiveSerializer<Visibil
     return result.build();
   }
 }
-

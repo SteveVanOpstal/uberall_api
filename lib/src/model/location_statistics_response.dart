@@ -21,7 +21,9 @@ part 'location_statistics_response.g.dart';
 /// * [countSyncNeeded] - Number of locations where sync is needed
 /// * [suggestionsAvailable] - true if any suggetions are available
 @BuiltValue()
-abstract class LocationStatisticsResponse implements Built<LocationStatisticsResponse, LocationStatisticsResponseBuilder> {
+abstract class LocationStatisticsResponse
+    implements
+        Built<LocationStatisticsResponse, LocationStatisticsResponseBuilder> {
   /// Total number of locations
   @BuiltValueField(wireName: r'count')
   int? get count;
@@ -60,18 +62,25 @@ abstract class LocationStatisticsResponse implements Built<LocationStatisticsRes
 
   LocationStatisticsResponse._();
 
-  factory LocationStatisticsResponse([void updates(LocationStatisticsResponseBuilder b)]) = _$LocationStatisticsResponse;
+  factory LocationStatisticsResponse(
+          [void updates(LocationStatisticsResponseBuilder b)]) =
+      _$LocationStatisticsResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LocationStatisticsResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LocationStatisticsResponse> get serializer => _$LocationStatisticsResponseSerializer();
+  static Serializer<LocationStatisticsResponse> get serializer =>
+      _$LocationStatisticsResponseSerializer();
 }
 
-class _$LocationStatisticsResponseSerializer implements PrimitiveSerializer<LocationStatisticsResponse> {
+class _$LocationStatisticsResponseSerializer
+    implements PrimitiveSerializer<LocationStatisticsResponse> {
   @override
-  final Iterable<Type> types = const [LocationStatisticsResponse, _$LocationStatisticsResponse];
+  final Iterable<Type> types = const [
+    LocationStatisticsResponse,
+    _$LocationStatisticsResponse
+  ];
 
   @override
   final String wireName = r'LocationStatisticsResponse';
@@ -152,7 +161,9 @@ class _$LocationStatisticsResponseSerializer implements PrimitiveSerializer<Loca
     LocationStatisticsResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -258,4 +269,3 @@ class _$LocationStatisticsResponseSerializer implements PrimitiveSerializer<Loca
     return result.build();
   }
 }
-

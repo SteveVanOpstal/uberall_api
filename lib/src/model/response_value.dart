@@ -14,7 +14,8 @@ part 'response_value.g.dart';
 /// * [response] - The review response text
 /// * [isOpenAI] - Whether or not the review response was generated with AI
 @BuiltValue()
-abstract class ResponseValue implements Built<ResponseValue, ResponseValueBuilder> {
+abstract class ResponseValue
+    implements Built<ResponseValue, ResponseValueBuilder> {
   /// The review response text
   @BuiltValueField(wireName: r'response')
   String? get response;
@@ -25,13 +26,15 @@ abstract class ResponseValue implements Built<ResponseValue, ResponseValueBuilde
 
   ResponseValue._();
 
-  factory ResponseValue([void updates(ResponseValueBuilder b)]) = _$ResponseValue;
+  factory ResponseValue([void updates(ResponseValueBuilder b)]) =
+      _$ResponseValue;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ResponseValueBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ResponseValue> get serializer => _$ResponseValueSerializer();
+  static Serializer<ResponseValue> get serializer =>
+      _$ResponseValueSerializer();
 }
 
 class _$ResponseValueSerializer implements PrimitiveSerializer<ResponseValue> {
@@ -68,7 +71,9 @@ class _$ResponseValueSerializer implements PrimitiveSerializer<ResponseValue> {
     ResponseValue object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -125,4 +130,3 @@ class _$ResponseValueSerializer implements PrimitiveSerializer<ResponseValue> {
     return result.build();
   }
 }
-

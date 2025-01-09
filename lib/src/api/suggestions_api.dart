@@ -17,7 +17,6 @@ import 'package:openapi/src/model/suggestion_response_wrapper.dart';
 import 'package:openapi/src/model/suggestion_search_response_wrapper.dart';
 
 class SuggestionsApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -31,7 +30,7 @@ class SuggestionsApi {
   /// * [id] - The uberall unique id for the location
   /// * [language] - Filter suggestion attributes by language
   /// * [directoryTypes] - Filter suggestions by directories
-  /// * [body] 
+  /// * [body]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -41,7 +40,7 @@ class SuggestionsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SuggestionResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SuggestionResponseWrapper>> getLocationsIdSuggestions({ 
+  Future<Response<SuggestionResponseWrapper>> getLocationsIdSuggestions({
     required String id,
     String? language,
     String? directoryTypes,
@@ -53,7 +52,10 @@ class SuggestionsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/locations/{id}/suggestions'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/locations/{id}/suggestions'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -66,7 +68,8 @@ class SuggestionsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -79,18 +82,21 @@ class SuggestionsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (language != null) r'language': encodeQueryParameter(_serializers, language, const FullType(String)),
-      if (directoryTypes != null) r'directoryTypes': encodeQueryParameter(_serializers, directoryTypes, const FullType(String)),
+      if (language != null)
+        r'language': encodeQueryParameter(
+            _serializers, language, const FullType(String)),
+      if (directoryTypes != null)
+        r'directoryTypes': encodeQueryParameter(
+            _serializers, directoryTypes, const FullType(String)),
     };
 
     dynamic _bodyData;
 
     try {
       _bodyData = body;
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
           queryParameters: _queryParameters,
@@ -115,11 +121,12 @@ class SuggestionsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SuggestionResponseWrapper),
-      ) as SuggestionResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SuggestionResponseWrapper),
+            ) as SuggestionResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -154,7 +161,7 @@ class SuggestionsApi {
   /// * [offset] - Offset used for pagination. Default: 0
   /// * [businessId] - The ids of the businesses you want suggestions for
   /// * [locationIds] - The ids of the locations you want suggestions for.
-  /// * [body] 
+  /// * [body]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -164,7 +171,7 @@ class SuggestionsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SuggestionSearchResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SuggestionSearchResponseWrapper>> getLocationsSuggestions({ 
+  Future<Response<SuggestionSearchResponseWrapper>> getLocationsSuggestions({
     String? query,
     String? sort,
     String? order,
@@ -195,24 +202,46 @@ class SuggestionsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (query != null) r'query': encodeQueryParameter(_serializers, query, const FullType(String)),
-      if (sort != null) r'sort': encodeQueryParameter(_serializers, sort, const FullType(String)),
-      if (order != null) r'order': encodeQueryParameter(_serializers, order, const FullType(String)),
-      if (max != null) r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
-      if (identifier != null) r'identifier': encodeQueryParameter(_serializers, identifier, const FullType(String)),
-      if (offset != null) r'offset': encodeQueryParameter(_serializers, offset, const FullType(int)),
-      if (businessId != null) r'businessId': encodeCollectionQueryParameter<int>(_serializers, businessId, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (locationIds != null) r'locationIds': encodeCollectionQueryParameter<int>(_serializers, locationIds, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
+      if (query != null)
+        r'query':
+            encodeQueryParameter(_serializers, query, const FullType(String)),
+      if (sort != null)
+        r'sort':
+            encodeQueryParameter(_serializers, sort, const FullType(String)),
+      if (order != null)
+        r'order':
+            encodeQueryParameter(_serializers, order, const FullType(String)),
+      if (max != null)
+        r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
+      if (identifier != null)
+        r'identifier': encodeQueryParameter(
+            _serializers, identifier, const FullType(String)),
+      if (offset != null)
+        r'offset':
+            encodeQueryParameter(_serializers, offset, const FullType(int)),
+      if (businessId != null)
+        r'businessId': encodeCollectionQueryParameter<int>(
+          _serializers,
+          businessId,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
+      if (locationIds != null)
+        r'locationIds': encodeCollectionQueryParameter<int>(
+          _serializers,
+          locationIds,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
     };
 
     dynamic _bodyData;
 
     try {
       _bodyData = body;
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
           queryParameters: _queryParameters,
@@ -237,11 +266,12 @@ class SuggestionsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SuggestionSearchResponseWrapper),
-      ) as SuggestionSearchResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SuggestionSearchResponseWrapper),
+            ) as SuggestionSearchResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -279,7 +309,7 @@ class SuggestionsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SuggestionListWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SuggestionListWrapper>> putLocationsIdSuggestions({ 
+  Future<Response<SuggestionListWrapper>> putLocationsIdSuggestions({
     required String id,
     required BuiltList<Suggestion> suggestion,
     CancelToken? cancelToken,
@@ -289,7 +319,10 @@ class SuggestionsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/locations/{id}/suggestions'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/locations/{id}/suggestions'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -302,7 +335,8 @@ class SuggestionsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -319,10 +353,9 @@ class SuggestionsApi {
     try {
       const _type = FullType(BuiltList, [FullType(Suggestion)]);
       _bodyData = _serializers.serialize(suggestion, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -345,11 +378,12 @@ class SuggestionsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SuggestionListWrapper),
-      ) as SuggestionListWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SuggestionListWrapper),
+            ) as SuggestionListWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -371,5 +405,4 @@ class SuggestionsApi {
       extra: _response.extra,
     );
   }
-
 }

@@ -476,7 +476,7 @@ void main() {
       // TODO
     });
 
-    // Number of ratings 
+    // Number of ratings
     // int numberOfRatings
     test('to test the property `numberOfRatings`', () async {
       // TODO
@@ -655,8 +655,5 @@ void main() {
     test('to test the property `videos`', () async {
       // TODO
     });
-
-
   });
-
 }

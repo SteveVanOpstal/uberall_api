@@ -100,7 +100,9 @@ class _$ImageSerializer implements PrimitiveSerializer<Image> {
     Image object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -180,25 +182,27 @@ class _$ImageSerializer implements PrimitiveSerializer<Image> {
 }
 
 class ImageTypeEnum extends EnumClass {
-
   /// The image type, one of [LOGO, MAIN, IMAGE]
   @BuiltValueEnumConst(wireName: r'LOGO')
   static const ImageTypeEnum LOGO = _$imageTypeEnum_LOGO;
+
   /// The image type, one of [LOGO, MAIN, IMAGE]
   @BuiltValueEnumConst(wireName: r'MAIN')
   static const ImageTypeEnum MAIN = _$imageTypeEnum_MAIN;
+
   /// The image type, one of [LOGO, MAIN, IMAGE]
   @BuiltValueEnumConst(wireName: r'IMAGE')
   static const ImageTypeEnum IMAGE = _$imageTypeEnum_IMAGE;
+
   /// The image type, one of [LOGO, MAIN, IMAGE]
   @BuiltValueEnumConst(wireName: r'LOGO, MAIN, IMAGE')
-  static const ImageTypeEnum lOGOCommaMAINCommaIMAGE = _$imageTypeEnum_lOGOCommaMAINCommaIMAGE;
+  static const ImageTypeEnum lOGOCommaMAINCommaIMAGE =
+      _$imageTypeEnum_lOGOCommaMAINCommaIMAGE;
 
   static Serializer<ImageTypeEnum> get serializer => _$imageTypeEnumSerializer;
 
-  const ImageTypeEnum._(String name): super(name);
+  const ImageTypeEnum._(String name) : super(name);
 
   static BuiltSet<ImageTypeEnum> get values => _$imageTypeEnumValues;
   static ImageTypeEnum valueOf(String name) => _$imageTypeEnumValueOf(name);
 }
-

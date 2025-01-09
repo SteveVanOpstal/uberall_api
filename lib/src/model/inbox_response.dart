@@ -20,7 +20,8 @@ part 'inbox_response.g.dart';
 /// * [status] - Status indicating whether 'Inbox' is active for the current location. One of ACTIVE INACTIVE
 /// * [ignoredLocations] - A list of locations where datapoints are not tracked
 @BuiltValue()
-abstract class InboxResponse implements Built<InboxResponse, InboxResponseBuilder> {
+abstract class InboxResponse
+    implements Built<InboxResponse, InboxResponseBuilder> {
   /// The page number for pagination
   @BuiltValueField(wireName: r'page')
   int? get page;
@@ -48,13 +49,15 @@ abstract class InboxResponse implements Built<InboxResponse, InboxResponseBuilde
 
   InboxResponse._();
 
-  factory InboxResponse([void updates(InboxResponseBuilder b)]) = _$InboxResponse;
+  factory InboxResponse([void updates(InboxResponseBuilder b)]) =
+      _$InboxResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(InboxResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<InboxResponse> get serializer => _$InboxResponseSerializer();
+  static Serializer<InboxResponse> get serializer =>
+      _$InboxResponseSerializer();
 }
 
 class _$InboxResponseSerializer implements PrimitiveSerializer<InboxResponse> {
@@ -119,7 +122,9 @@ class _$InboxResponseSerializer implements PrimitiveSerializer<InboxResponse> {
     InboxResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -206,19 +211,23 @@ class _$InboxResponseSerializer implements PrimitiveSerializer<InboxResponse> {
 }
 
 class InboxResponseStatusEnum extends EnumClass {
-
   /// Status indicating whether 'Inbox' is active for the current location. One of ACTIVE INACTIVE
   @BuiltValueEnumConst(wireName: r'ACTIVE')
-  static const InboxResponseStatusEnum ACTIVE = _$inboxResponseStatusEnum_ACTIVE;
+  static const InboxResponseStatusEnum ACTIVE =
+      _$inboxResponseStatusEnum_ACTIVE;
+
   /// Status indicating whether 'Inbox' is active for the current location. One of ACTIVE INACTIVE
   @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const InboxResponseStatusEnum INACTIVE = _$inboxResponseStatusEnum_INACTIVE;
+  static const InboxResponseStatusEnum INACTIVE =
+      _$inboxResponseStatusEnum_INACTIVE;
 
-  static Serializer<InboxResponseStatusEnum> get serializer => _$inboxResponseStatusEnumSerializer;
+  static Serializer<InboxResponseStatusEnum> get serializer =>
+      _$inboxResponseStatusEnumSerializer;
 
-  const InboxResponseStatusEnum._(String name): super(name);
+  const InboxResponseStatusEnum._(String name) : super(name);
 
-  static BuiltSet<InboxResponseStatusEnum> get values => _$inboxResponseStatusEnumValues;
-  static InboxResponseStatusEnum valueOf(String name) => _$inboxResponseStatusEnumValueOf(name);
+  static BuiltSet<InboxResponseStatusEnum> get values =>
+      _$inboxResponseStatusEnumValues;
+  static InboxResponseStatusEnum valueOf(String name) =>
+      _$inboxResponseStatusEnumValueOf(name);
 }
-

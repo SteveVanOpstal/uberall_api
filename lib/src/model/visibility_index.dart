@@ -22,7 +22,8 @@ part 'visibility_index.g.dart';
 /// * [forDay] - The date the Visibility Index reflects
 /// * [result] - An overview of in sync/not in sync directories
 @BuiltValue()
-abstract class VisibilityIndex implements Built<VisibilityIndex, VisibilityIndexBuilder> {
+abstract class VisibilityIndex
+    implements Built<VisibilityIndex, VisibilityIndexBuilder> {
   /// A score between 0 and 100 for the Visibility Index
   @BuiltValueField(wireName: r'score')
   int? get score;
@@ -57,16 +58,19 @@ abstract class VisibilityIndex implements Built<VisibilityIndex, VisibilityIndex
 
   VisibilityIndex._();
 
-  factory VisibilityIndex([void updates(VisibilityIndexBuilder b)]) = _$VisibilityIndex;
+  factory VisibilityIndex([void updates(VisibilityIndexBuilder b)]) =
+      _$VisibilityIndex;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(VisibilityIndexBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<VisibilityIndex> get serializer => _$VisibilityIndexSerializer();
+  static Serializer<VisibilityIndex> get serializer =>
+      _$VisibilityIndexSerializer();
 }
 
-class _$VisibilityIndexSerializer implements PrimitiveSerializer<VisibilityIndex> {
+class _$VisibilityIndexSerializer
+    implements PrimitiveSerializer<VisibilityIndex> {
   @override
   final Iterable<Type> types = const [VisibilityIndex, _$VisibilityIndex];
 
@@ -103,7 +107,8 @@ class _$VisibilityIndexSerializer implements PrimitiveSerializer<VisibilityIndex
       yield r'summary';
       yield serializers.serialize(
         object.summary,
-        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+        specifiedType:
+            const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
       );
     }
     if (object.reasons != null) {
@@ -142,7 +147,9 @@ class _$VisibilityIndexSerializer implements PrimitiveSerializer<VisibilityIndex
     VisibilityIndex object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -181,7 +188,8 @@ class _$VisibilityIndexSerializer implements PrimitiveSerializer<VisibilityIndex
         case r'summary':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+            specifiedType: const FullType(
+                BuiltMap, [FullType(String), FullType(JsonObject)]),
           ) as BuiltMap<String, JsonObject>;
           result.summary.replace(valueDes);
           break;
@@ -241,4 +249,3 @@ class _$VisibilityIndexSerializer implements PrimitiveSerializer<VisibilityIndex
     return result.build();
   }
 }
-

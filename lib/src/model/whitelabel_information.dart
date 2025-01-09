@@ -25,7 +25,8 @@ part 'whitelabel_information.g.dart';
 /// * [url] - The URL
 /// * [isSendgridVerified] - Indicates if the SendGrid is verified
 @BuiltValue()
-abstract class WhitelabelInformation implements Built<WhitelabelInformation, WhitelabelInformationBuilder> {
+abstract class WhitelabelInformation
+    implements Built<WhitelabelInformation, WhitelabelInformationBuilder> {
   /// id
   @BuiltValueField(wireName: r'id')
   int? get id;
@@ -80,18 +81,24 @@ abstract class WhitelabelInformation implements Built<WhitelabelInformation, Whi
 
   WhitelabelInformation._();
 
-  factory WhitelabelInformation([void updates(WhitelabelInformationBuilder b)]) = _$WhitelabelInformation;
+  factory WhitelabelInformation(
+      [void updates(WhitelabelInformationBuilder b)]) = _$WhitelabelInformation;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(WhitelabelInformationBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<WhitelabelInformation> get serializer => _$WhitelabelInformationSerializer();
+  static Serializer<WhitelabelInformation> get serializer =>
+      _$WhitelabelInformationSerializer();
 }
 
-class _$WhitelabelInformationSerializer implements PrimitiveSerializer<WhitelabelInformation> {
+class _$WhitelabelInformationSerializer
+    implements PrimitiveSerializer<WhitelabelInformation> {
   @override
-  final Iterable<Type> types = const [WhitelabelInformation, _$WhitelabelInformation];
+  final Iterable<Type> types = const [
+    WhitelabelInformation,
+    _$WhitelabelInformation
+  ];
 
   @override
   final String wireName = r'WhitelabelInformation';
@@ -200,7 +207,9 @@ class _$WhitelabelInformationSerializer implements PrimitiveSerializer<Whitelabe
     WhitelabelInformation object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -334,4 +343,3 @@ class _$WhitelabelInformationSerializer implements PrimitiveSerializer<Whitelabe
     return result.build();
   }
 }
-

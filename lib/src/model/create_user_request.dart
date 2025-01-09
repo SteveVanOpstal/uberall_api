@@ -22,7 +22,8 @@ part 'create_user_request.g.dart';
 /// * [newPassword] - User's new password
 /// * [newPasswordRepeat] - Repeat new password
 @BuiltValue()
-abstract class CreateUserRequest implements Built<CreateUserRequest, CreateUserRequestBuilder> {
+abstract class CreateUserRequest
+    implements Built<CreateUserRequest, CreateUserRequestBuilder> {
   /// User's first name
   @BuiltValueField(wireName: r'firstname')
   String get firstname;
@@ -65,16 +66,19 @@ abstract class CreateUserRequest implements Built<CreateUserRequest, CreateUserR
 
   CreateUserRequest._();
 
-  factory CreateUserRequest([void updates(CreateUserRequestBuilder b)]) = _$CreateUserRequest;
+  factory CreateUserRequest([void updates(CreateUserRequestBuilder b)]) =
+      _$CreateUserRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CreateUserRequestBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<CreateUserRequest> get serializer => _$CreateUserRequestSerializer();
+  static Serializer<CreateUserRequest> get serializer =>
+      _$CreateUserRequestSerializer();
 }
 
-class _$CreateUserRequestSerializer implements PrimitiveSerializer<CreateUserRequest> {
+class _$CreateUserRequestSerializer
+    implements PrimitiveSerializer<CreateUserRequest> {
   @override
   final Iterable<Type> types = const [CreateUserRequest, _$CreateUserRequest];
 
@@ -158,7 +162,9 @@ class _$CreateUserRequestSerializer implements PrimitiveSerializer<CreateUserReq
     CreateUserRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -271,4 +277,3 @@ class _$CreateUserRequestSerializer implements PrimitiveSerializer<CreateUserReq
     return result.build();
   }
 }
-

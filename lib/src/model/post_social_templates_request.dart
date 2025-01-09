@@ -15,17 +15,19 @@ part 'post_social_templates_request.g.dart';
 /// PostSocialTemplatesRequest
 ///
 /// Properties:
-/// * [title] 
-/// * [description] 
-/// * [photos] 
-/// * [videos] 
-/// * [directories] 
-/// * [url] 
-/// * [isStoreLocator] 
-/// * [callToActions] 
-/// * [asset] 
+/// * [title]
+/// * [description]
+/// * [photos]
+/// * [videos]
+/// * [directories]
+/// * [url]
+/// * [isStoreLocator]
+/// * [callToActions]
+/// * [asset]
 @BuiltValue()
-abstract class PostSocialTemplatesRequest implements Built<PostSocialTemplatesRequest, PostSocialTemplatesRequestBuilder> {
+abstract class PostSocialTemplatesRequest
+    implements
+        Built<PostSocialTemplatesRequest, PostSocialTemplatesRequestBuilder> {
   @BuiltValueField(wireName: r'title')
   String? get title;
 
@@ -55,18 +57,25 @@ abstract class PostSocialTemplatesRequest implements Built<PostSocialTemplatesRe
 
   PostSocialTemplatesRequest._();
 
-  factory PostSocialTemplatesRequest([void updates(PostSocialTemplatesRequestBuilder b)]) = _$PostSocialTemplatesRequest;
+  factory PostSocialTemplatesRequest(
+          [void updates(PostSocialTemplatesRequestBuilder b)]) =
+      _$PostSocialTemplatesRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PostSocialTemplatesRequestBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<PostSocialTemplatesRequest> get serializer => _$PostSocialTemplatesRequestSerializer();
+  static Serializer<PostSocialTemplatesRequest> get serializer =>
+      _$PostSocialTemplatesRequestSerializer();
 }
 
-class _$PostSocialTemplatesRequestSerializer implements PrimitiveSerializer<PostSocialTemplatesRequest> {
+class _$PostSocialTemplatesRequestSerializer
+    implements PrimitiveSerializer<PostSocialTemplatesRequest> {
   @override
-  final Iterable<Type> types = const [PostSocialTemplatesRequest, _$PostSocialTemplatesRequest];
+  final Iterable<Type> types = const [
+    PostSocialTemplatesRequest,
+    _$PostSocialTemplatesRequest
+  ];
 
   @override
   final String wireName = r'PostSocialTemplatesRequest';
@@ -129,7 +138,8 @@ class _$PostSocialTemplatesRequestSerializer implements PrimitiveSerializer<Post
       yield r'callToActions';
       yield serializers.serialize(
         object.callToActions,
-        specifiedType: const FullType(BuiltList, [FullType(SocialPostTemplateCallToAction)]),
+        specifiedType: const FullType(
+            BuiltList, [FullType(SocialPostTemplateCallToAction)]),
       );
     }
     if (object.asset != null) {
@@ -147,7 +157,9 @@ class _$PostSocialTemplatesRequestSerializer implements PrimitiveSerializer<Post
     PostSocialTemplatesRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -179,7 +191,8 @@ class _$PostSocialTemplatesRequestSerializer implements PrimitiveSerializer<Post
         case r'photos':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(PhotoContainer)]),
+            specifiedType:
+                const FullType(BuiltList, [FullType(PhotoContainer)]),
           ) as BuiltList<PhotoContainer>;
           result.photos.replace(valueDes);
           break;
@@ -214,7 +227,8 @@ class _$PostSocialTemplatesRequestSerializer implements PrimitiveSerializer<Post
         case r'callToActions':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(SocialPostTemplateCallToAction)]),
+            specifiedType: const FullType(
+                BuiltList, [FullType(SocialPostTemplateCallToAction)]),
           ) as BuiltList<SocialPostTemplateCallToAction>;
           result.callToActions.replace(valueDes);
           break;
@@ -253,4 +267,3 @@ class _$PostSocialTemplatesRequestSerializer implements PrimitiveSerializer<Post
     return result.build();
   }
 }
-

@@ -12,11 +12,12 @@ part 'ev_dynamic_data_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [location] 
+/// * [location]
 /// * [uid] - UID
 /// * [status] - Status
 @BuiltValue()
-abstract class EvDynamicDataObject implements Built<EvDynamicDataObject, EvDynamicDataObjectBuilder> {
+abstract class EvDynamicDataObject
+    implements Built<EvDynamicDataObject, EvDynamicDataObjectBuilder> {
   @BuiltValueField(wireName: r'location')
   Location? get location;
 
@@ -30,18 +31,24 @@ abstract class EvDynamicDataObject implements Built<EvDynamicDataObject, EvDynam
 
   EvDynamicDataObject._();
 
-  factory EvDynamicDataObject([void updates(EvDynamicDataObjectBuilder b)]) = _$EvDynamicDataObject;
+  factory EvDynamicDataObject([void updates(EvDynamicDataObjectBuilder b)]) =
+      _$EvDynamicDataObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EvDynamicDataObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<EvDynamicDataObject> get serializer => _$EvDynamicDataObjectSerializer();
+  static Serializer<EvDynamicDataObject> get serializer =>
+      _$EvDynamicDataObjectSerializer();
 }
 
-class _$EvDynamicDataObjectSerializer implements PrimitiveSerializer<EvDynamicDataObject> {
+class _$EvDynamicDataObjectSerializer
+    implements PrimitiveSerializer<EvDynamicDataObject> {
   @override
-  final Iterable<Type> types = const [EvDynamicDataObject, _$EvDynamicDataObject];
+  final Iterable<Type> types = const [
+    EvDynamicDataObject,
+    _$EvDynamicDataObject
+  ];
 
   @override
   final String wireName = r'EvDynamicDataObject';
@@ -80,7 +87,9 @@ class _$EvDynamicDataObjectSerializer implements PrimitiveSerializer<EvDynamicDa
     EvDynamicDataObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -144,4 +153,3 @@ class _$EvDynamicDataObjectSerializer implements PrimitiveSerializer<EvDynamicDa
     return result.build();
   }
 }
-

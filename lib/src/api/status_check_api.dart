@@ -14,7 +14,6 @@ import 'package:openapi/src/model/search_data_list_wrapper.dart';
 import 'package:openapi/src/model/search_data_wrapper.dart';
 
 class StatusCheckApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -36,7 +35,7 @@ class StatusCheckApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SearchDataListWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SearchDataListWrapper>> getSearch({ 
+  Future<Response<SearchDataListWrapper>> getSearch({
     int? max,
     int? offset,
     CancelToken? cancelToken,
@@ -67,8 +66,11 @@ class StatusCheckApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (max != null) r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
-      if (offset != null) r'offset': encodeQueryParameter(_serializers, offset, const FullType(int)),
+      if (max != null)
+        r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
+      if (offset != null)
+        r'offset':
+            encodeQueryParameter(_serializers, offset, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -84,11 +86,12 @@ class StatusCheckApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SearchDataListWrapper),
-      ) as SearchDataListWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SearchDataListWrapper),
+            ) as SearchDataListWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -127,7 +130,7 @@ class StatusCheckApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BasicListingResultWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BasicListingResultWrapper>> getSearchId({ 
+  Future<Response<BasicListingResultWrapper>> getSearchId({
     required String id,
     String? directory,
     String? token,
@@ -138,7 +141,10 @@ class StatusCheckApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/search/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/search/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -159,8 +165,12 @@ class StatusCheckApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (directory != null) r'directory': encodeQueryParameter(_serializers, directory, const FullType(String)),
-      if (token != null) r'token': encodeQueryParameter(_serializers, token, const FullType(String)),
+      if (directory != null)
+        r'directory': encodeQueryParameter(
+            _serializers, directory, const FullType(String)),
+      if (token != null)
+        r'token':
+            encodeQueryParameter(_serializers, token, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -176,11 +186,12 @@ class StatusCheckApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BasicListingResultWrapper),
-      ) as BasicListingResultWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(BasicListingResultWrapper),
+            ) as BasicListingResultWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -210,7 +221,7 @@ class StatusCheckApi {
   /// * [name] - The name of the location
   /// * [street] - The street address of the location
   /// * [country] - The country of the location Country. One of AT, CH, DE, ES, UK, FR, IT, NL
-  /// * [streetNo] - unless already in address field. The location's street number 
+  /// * [streetNo] - unless already in address field. The location's street number
   /// * [zip] - Zip code
   /// * [city] - The city of the location
   /// * [province] - The province of the location
@@ -226,7 +237,7 @@ class StatusCheckApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SearchDataWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SearchDataWrapper>> postSearch({ 
+  Future<Response<SearchDataWrapper>> postSearch({
     required String name,
     required String street,
     required String country,
@@ -266,15 +277,28 @@ class StatusCheckApi {
 
     final _queryParameters = <String, dynamic>{
       r'name': encodeQueryParameter(_serializers, name, const FullType(String)),
-      r'street': encodeQueryParameter(_serializers, street, const FullType(String)),
-      if (streetNo != null) r'streetNo': encodeQueryParameter(_serializers, streetNo, const FullType(int)),
-      if (zip != null) r'zip': encodeQueryParameter(_serializers, zip, const FullType(int)),
-      r'country': encodeQueryParameter(_serializers, country, const FullType(String)),
-      if (city != null) r'city': encodeQueryParameter(_serializers, city, const FullType(String)),
-      if (province != null) r'province': encodeQueryParameter(_serializers, province, const FullType(String)),
-      if (lat != null) r'lat': encodeQueryParameter(_serializers, lat, const FullType(String)),
-      if (lng != null) r'lng': encodeQueryParameter(_serializers, lng, const FullType(String)),
-      if (phone != null) r'phone': encodeQueryParameter(_serializers, phone, const FullType(String)),
+      r'street':
+          encodeQueryParameter(_serializers, street, const FullType(String)),
+      if (streetNo != null)
+        r'streetNo':
+            encodeQueryParameter(_serializers, streetNo, const FullType(int)),
+      if (zip != null)
+        r'zip': encodeQueryParameter(_serializers, zip, const FullType(int)),
+      r'country':
+          encodeQueryParameter(_serializers, country, const FullType(String)),
+      if (city != null)
+        r'city':
+            encodeQueryParameter(_serializers, city, const FullType(String)),
+      if (province != null)
+        r'province': encodeQueryParameter(
+            _serializers, province, const FullType(String)),
+      if (lat != null)
+        r'lat': encodeQueryParameter(_serializers, lat, const FullType(String)),
+      if (lng != null)
+        r'lng': encodeQueryParameter(_serializers, lng, const FullType(String)),
+      if (phone != null)
+        r'phone':
+            encodeQueryParameter(_serializers, phone, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -290,11 +314,12 @@ class StatusCheckApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SearchDataWrapper),
-      ) as SearchDataWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SearchDataWrapper),
+            ) as SearchDataWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -316,5 +341,4 @@ class StatusCheckApi {
       extra: _response.extra,
     );
   }
-
 }

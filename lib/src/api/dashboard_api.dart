@@ -27,7 +27,6 @@ import 'package:openapi/src/model/user_missing_connection_warnings_wrapper.dart'
 import 'package:openapi/src/model/visibility_index_wrapper.dart';
 
 class DashboardApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -53,7 +52,7 @@ class DashboardApi {
   ///
   /// Returns a [Future] containing a [Response] with a [CustomerFeedbackWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CustomerFeedbackWrapper>> getDashboardCustomerFeedback({ 
+  Future<Response<CustomerFeedbackWrapper>> getDashboardCustomerFeedback({
     BuiltList<int>? businessIds,
     BuiltList<int>? locationIds,
     String? textFilter,
@@ -80,7 +79,8 @@ class DashboardApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -93,12 +93,32 @@ class DashboardApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (businessIds != null) r'businessIds': encodeCollectionQueryParameter<int>(_serializers, businessIds, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (locationIds != null) r'locationIds': encodeCollectionQueryParameter<int>(_serializers, locationIds, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (textFilter != null) r'textFilter': encodeQueryParameter(_serializers, textFilter, const FullType(String)),
-      if (type != null) r'type': encodeQueryParameter(_serializers, type, const FullType(String)),
-      if (startDate != null) r'startDate': encodeQueryParameter(_serializers, startDate, const FullType(Date)),
-      if (endDate != null) r'endDate': encodeQueryParameter(_serializers, endDate, const FullType(Date)),
+      if (businessIds != null)
+        r'businessIds': encodeCollectionQueryParameter<int>(
+          _serializers,
+          businessIds,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
+      if (locationIds != null)
+        r'locationIds': encodeCollectionQueryParameter<int>(
+          _serializers,
+          locationIds,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
+      if (textFilter != null)
+        r'textFilter': encodeQueryParameter(
+            _serializers, textFilter, const FullType(String)),
+      if (type != null)
+        r'type':
+            encodeQueryParameter(_serializers, type, const FullType(String)),
+      if (startDate != null)
+        r'startDate':
+            encodeQueryParameter(_serializers, startDate, const FullType(Date)),
+      if (endDate != null)
+        r'endDate':
+            encodeQueryParameter(_serializers, endDate, const FullType(Date)),
     };
 
     final _response = await _dio.request<Object>(
@@ -114,11 +134,12 @@ class DashboardApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(CustomerFeedbackWrapper),
-      ) as CustomerFeedbackWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(CustomerFeedbackWrapper),
+            ) as CustomerFeedbackWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -161,7 +182,8 @@ class DashboardApi {
   ///
   /// Returns a [Future] containing a [Response] with a [CustomerFeedbackByPeriodWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CustomerFeedbackByPeriodWrapper>> getDashboardCustomerFeedbackByPeriod({ 
+  Future<Response<CustomerFeedbackByPeriodWrapper>>
+      getDashboardCustomerFeedbackByPeriod({
     BuiltList<int>? businessIds,
     BuiltList<int>? locationIds,
     String? textFilter,
@@ -189,7 +211,8 @@ class DashboardApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -202,13 +225,35 @@ class DashboardApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (businessIds != null) r'businessIds': encodeCollectionQueryParameter<int>(_serializers, businessIds, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (locationIds != null) r'locationIds': encodeCollectionQueryParameter<int>(_serializers, locationIds, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (textFilter != null) r'textFilter': encodeQueryParameter(_serializers, textFilter, const FullType(String)),
-      if (type != null) r'type': encodeQueryParameter(_serializers, type, const FullType(String)),
-      if (startDate != null) r'startDate': encodeQueryParameter(_serializers, startDate, const FullType(Date)),
-      if (endDate != null) r'endDate': encodeQueryParameter(_serializers, endDate, const FullType(Date)),
-      if (group != null) r'group': encodeQueryParameter(_serializers, group, const FullType(String)),
+      if (businessIds != null)
+        r'businessIds': encodeCollectionQueryParameter<int>(
+          _serializers,
+          businessIds,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
+      if (locationIds != null)
+        r'locationIds': encodeCollectionQueryParameter<int>(
+          _serializers,
+          locationIds,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
+      if (textFilter != null)
+        r'textFilter': encodeQueryParameter(
+            _serializers, textFilter, const FullType(String)),
+      if (type != null)
+        r'type':
+            encodeQueryParameter(_serializers, type, const FullType(String)),
+      if (startDate != null)
+        r'startDate':
+            encodeQueryParameter(_serializers, startDate, const FullType(Date)),
+      if (endDate != null)
+        r'endDate':
+            encodeQueryParameter(_serializers, endDate, const FullType(Date)),
+      if (group != null)
+        r'group':
+            encodeQueryParameter(_serializers, group, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -224,11 +269,12 @@ class DashboardApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(CustomerFeedbackByPeriodWrapper),
-      ) as CustomerFeedbackByPeriodWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(CustomerFeedbackByPeriodWrapper),
+            ) as CustomerFeedbackByPeriodWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -269,7 +315,8 @@ class DashboardApi {
   ///
   /// Returns a [Future] containing a [Response] with a [CustomerFeedbackKeywordsWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CustomerFeedbackKeywordsWrapper>> getDashboardCustomerFeedbackKeywords({ 
+  Future<Response<CustomerFeedbackKeywordsWrapper>>
+      getDashboardCustomerFeedbackKeywords({
     BuiltList<int>? businessIds,
     BuiltList<int>? locationIds,
     String? textFilter,
@@ -295,7 +342,8 @@ class DashboardApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -308,11 +356,29 @@ class DashboardApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (businessIds != null) r'businessIds': encodeCollectionQueryParameter<int>(_serializers, businessIds, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (locationIds != null) r'locationIds': encodeCollectionQueryParameter<int>(_serializers, locationIds, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (textFilter != null) r'textFilter': encodeQueryParameter(_serializers, textFilter, const FullType(String)),
-      if (startDate != null) r'startDate': encodeQueryParameter(_serializers, startDate, const FullType(Date)),
-      if (endDate != null) r'endDate': encodeQueryParameter(_serializers, endDate, const FullType(Date)),
+      if (businessIds != null)
+        r'businessIds': encodeCollectionQueryParameter<int>(
+          _serializers,
+          businessIds,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
+      if (locationIds != null)
+        r'locationIds': encodeCollectionQueryParameter<int>(
+          _serializers,
+          locationIds,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
+      if (textFilter != null)
+        r'textFilter': encodeQueryParameter(
+            _serializers, textFilter, const FullType(String)),
+      if (startDate != null)
+        r'startDate':
+            encodeQueryParameter(_serializers, startDate, const FullType(Date)),
+      if (endDate != null)
+        r'endDate':
+            encodeQueryParameter(_serializers, endDate, const FullType(Date)),
     };
 
     final _response = await _dio.request<Object>(
@@ -328,11 +394,12 @@ class DashboardApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(CustomerFeedbackKeywordsWrapper),
-      ) as CustomerFeedbackKeywordsWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(CustomerFeedbackKeywordsWrapper),
+            ) as CustomerFeedbackKeywordsWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -373,7 +440,7 @@ class DashboardApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Uint8List] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Uint8List>> getDashboardExportInsightsData({ 
+  Future<Response<Uint8List>> getDashboardExportInsightsData({
     BuiltList<int>? businessIds,
     BuiltList<int>? locationIds,
     String? textFilter,
@@ -400,7 +467,8 @@ class DashboardApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -413,11 +481,29 @@ class DashboardApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (businessIds != null) r'businessIds': encodeCollectionQueryParameter<int>(_serializers, businessIds, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (locationIds != null) r'locationIds': encodeCollectionQueryParameter<int>(_serializers, locationIds, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (textFilter != null) r'textFilter': encodeQueryParameter(_serializers, textFilter, const FullType(String)),
-      if (startDate != null) r'startDate': encodeQueryParameter(_serializers, startDate, const FullType(Date)),
-      if (endDate != null) r'endDate': encodeQueryParameter(_serializers, endDate, const FullType(Date)),
+      if (businessIds != null)
+        r'businessIds': encodeCollectionQueryParameter<int>(
+          _serializers,
+          businessIds,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
+      if (locationIds != null)
+        r'locationIds': encodeCollectionQueryParameter<int>(
+          _serializers,
+          locationIds,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
+      if (textFilter != null)
+        r'textFilter': encodeQueryParameter(
+            _serializers, textFilter, const FullType(String)),
+      if (startDate != null)
+        r'startDate':
+            encodeQueryParameter(_serializers, startDate, const FullType(Date)),
+      if (endDate != null)
+        r'endDate':
+            encodeQueryParameter(_serializers, endDate, const FullType(Date)),
     };
 
     final _response = await _dio.request<Object>(
@@ -434,7 +520,6 @@ class DashboardApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as Uint8List;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -475,7 +560,8 @@ class DashboardApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DashboardExportInsightsDataResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DashboardExportInsightsDataResponseWrapper>> getDashboardExportInsightsDataWithThreshold({ 
+  Future<Response<DashboardExportInsightsDataResponseWrapper>>
+      getDashboardExportInsightsDataWithThreshold({
     BuiltList<int>? businessIds,
     BuiltList<int>? locationIds,
     String? textFilter,
@@ -501,7 +587,8 @@ class DashboardApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -514,11 +601,29 @@ class DashboardApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (businessIds != null) r'businessIds': encodeCollectionQueryParameter<int>(_serializers, businessIds, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (locationIds != null) r'locationIds': encodeCollectionQueryParameter<int>(_serializers, locationIds, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (textFilter != null) r'textFilter': encodeQueryParameter(_serializers, textFilter, const FullType(String)),
-      if (startDate != null) r'startDate': encodeQueryParameter(_serializers, startDate, const FullType(Date)),
-      if (endDate != null) r'endDate': encodeQueryParameter(_serializers, endDate, const FullType(Date)),
+      if (businessIds != null)
+        r'businessIds': encodeCollectionQueryParameter<int>(
+          _serializers,
+          businessIds,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
+      if (locationIds != null)
+        r'locationIds': encodeCollectionQueryParameter<int>(
+          _serializers,
+          locationIds,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
+      if (textFilter != null)
+        r'textFilter': encodeQueryParameter(
+            _serializers, textFilter, const FullType(String)),
+      if (startDate != null)
+        r'startDate':
+            encodeQueryParameter(_serializers, startDate, const FullType(Date)),
+      if (endDate != null)
+        r'endDate':
+            encodeQueryParameter(_serializers, endDate, const FullType(Date)),
     };
 
     final _response = await _dio.request<Object>(
@@ -534,11 +639,13 @@ class DashboardApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DashboardExportInsightsDataResponseWrapper),
-      ) as DashboardExportInsightsDataResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType:
+                  const FullType(DashboardExportInsightsDataResponseWrapper),
+            ) as DashboardExportInsightsDataResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -579,7 +686,7 @@ class DashboardApi {
   ///
   /// Returns a [Future] containing a [Response] with a [FeedItemWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<FeedItemWrapper>> getDashboardFeed({ 
+  Future<Response<FeedItemWrapper>> getDashboardFeed({
     BuiltList<int>? businessIds,
     BuiltList<int>? locationIds,
     String? textFilter,
@@ -605,7 +712,8 @@ class DashboardApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -618,11 +726,29 @@ class DashboardApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (businessIds != null) r'businessIds': encodeCollectionQueryParameter<int>(_serializers, businessIds, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (locationIds != null) r'locationIds': encodeCollectionQueryParameter<int>(_serializers, locationIds, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (textFilter != null) r'textFilter': encodeQueryParameter(_serializers, textFilter, const FullType(String)),
-      if (dateOffset != null) r'dateOffset': encodeQueryParameter(_serializers, dateOffset, const FullType(String)),
-      if (maxItems != null) r'maxItems': encodeQueryParameter(_serializers, maxItems, const FullType(int)),
+      if (businessIds != null)
+        r'businessIds': encodeCollectionQueryParameter<int>(
+          _serializers,
+          businessIds,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
+      if (locationIds != null)
+        r'locationIds': encodeCollectionQueryParameter<int>(
+          _serializers,
+          locationIds,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
+      if (textFilter != null)
+        r'textFilter': encodeQueryParameter(
+            _serializers, textFilter, const FullType(String)),
+      if (dateOffset != null)
+        r'dateOffset': encodeQueryParameter(
+            _serializers, dateOffset, const FullType(String)),
+      if (maxItems != null)
+        r'maxItems':
+            encodeQueryParameter(_serializers, maxItems, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -638,11 +764,12 @@ class DashboardApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(FeedItemWrapper),
-      ) as FeedItemWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(FeedItemWrapper),
+            ) as FeedItemWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -686,7 +813,7 @@ class DashboardApi {
   ///
   /// Returns a [Future] containing a [Response] with a [InsightsWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<InsightsWrapper>> getDashboardInsightsData({ 
+  Future<Response<InsightsWrapper>> getDashboardInsightsData({
     required String type,
     BuiltList<int>? businessIds,
     BuiltList<int>? locationIds,
@@ -715,7 +842,8 @@ class DashboardApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -728,14 +856,40 @@ class DashboardApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (businessIds != null) r'businessIds': encodeCollectionQueryParameter<int>(_serializers, businessIds, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (locationIds != null) r'locationIds': encodeCollectionQueryParameter<int>(_serializers, locationIds, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (textFilter != null) r'textFilter': encodeQueryParameter(_serializers, textFilter, const FullType(String)),
+      if (businessIds != null)
+        r'businessIds': encodeCollectionQueryParameter<int>(
+          _serializers,
+          businessIds,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
+      if (locationIds != null)
+        r'locationIds': encodeCollectionQueryParameter<int>(
+          _serializers,
+          locationIds,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
+      if (textFilter != null)
+        r'textFilter': encodeQueryParameter(
+            _serializers, textFilter, const FullType(String)),
       r'type': encodeQueryParameter(_serializers, type, const FullType(String)),
-      if (startDate != null) r'startDate': encodeQueryParameter(_serializers, startDate, const FullType(Date)),
-      if (endDate != null) r'endDate': encodeQueryParameter(_serializers, endDate, const FullType(Date)),
-      if (group != null) r'group': encodeQueryParameter(_serializers, group, const FullType(String)),
-      if (metrics != null) r'metrics': encodeCollectionQueryParameter<String>(_serializers, metrics, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
+      if (startDate != null)
+        r'startDate':
+            encodeQueryParameter(_serializers, startDate, const FullType(Date)),
+      if (endDate != null)
+        r'endDate':
+            encodeQueryParameter(_serializers, endDate, const FullType(Date)),
+      if (group != null)
+        r'group':
+            encodeQueryParameter(_serializers, group, const FullType(String)),
+      if (metrics != null)
+        r'metrics': encodeCollectionQueryParameter<String>(
+          _serializers,
+          metrics,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -751,11 +905,12 @@ class DashboardApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(InsightsWrapper),
-      ) as InsightsWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(InsightsWrapper),
+            ) as InsightsWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -797,7 +952,8 @@ class DashboardApi {
   ///
   /// Returns a [Future] containing a [Response] with a [UserMissingConnectionWarningsWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<UserMissingConnectionWarningsWrapper>> getDashboardInsightsDataWarnings({ 
+  Future<Response<UserMissingConnectionWarningsWrapper>>
+      getDashboardInsightsDataWarnings({
     BuiltList<int>? businessIds,
     BuiltList<int>? locationIds,
     String? textFilter,
@@ -824,7 +980,8 @@ class DashboardApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -837,12 +994,31 @@ class DashboardApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (businessIds != null) r'businessIds': encodeCollectionQueryParameter<int>(_serializers, businessIds, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (locationIds != null) r'locationIds': encodeCollectionQueryParameter<int>(_serializers, locationIds, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (textFilter != null) r'textFilter': encodeQueryParameter(_serializers, textFilter, const FullType(String)),
-      if (type != null) r'type': encodeQueryParameter(_serializers, type, const FullType(String)),
-      if (max != null) r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
-      if (offset != null) r'offset': encodeQueryParameter(_serializers, offset, const FullType(int)),
+      if (businessIds != null)
+        r'businessIds': encodeCollectionQueryParameter<int>(
+          _serializers,
+          businessIds,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
+      if (locationIds != null)
+        r'locationIds': encodeCollectionQueryParameter<int>(
+          _serializers,
+          locationIds,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
+      if (textFilter != null)
+        r'textFilter': encodeQueryParameter(
+            _serializers, textFilter, const FullType(String)),
+      if (type != null)
+        r'type':
+            encodeQueryParameter(_serializers, type, const FullType(String)),
+      if (max != null)
+        r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
+      if (offset != null)
+        r'offset':
+            encodeQueryParameter(_serializers, offset, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -858,11 +1034,13 @@ class DashboardApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(UserMissingConnectionWarningsWrapper),
-      ) as UserMissingConnectionWarningsWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType:
+                  const FullType(UserMissingConnectionWarningsWrapper),
+            ) as UserMissingConnectionWarningsWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -902,7 +1080,7 @@ class DashboardApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ListingHealthWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ListingHealthWrapper>> getDashboardListingHealthId({ 
+  Future<Response<ListingHealthWrapper>> getDashboardListingHealthId({
     required int id,
     BuiltList<int>? locationIds,
     BuiltList<int>? businessIds,
@@ -914,7 +1092,8 @@ class DashboardApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/dashboard/listing-health/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(int)).toString());
+    final _path = r'/dashboard/listing-health/{id}'.replaceAll('{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(int)).toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -927,7 +1106,8 @@ class DashboardApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -940,9 +1120,23 @@ class DashboardApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (locationIds != null) r'locationIds': encodeCollectionQueryParameter<int>(_serializers, locationIds, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (businessIds != null) r'businessIds': encodeCollectionQueryParameter<int>(_serializers, businessIds, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (type != null) r'type': encodeQueryParameter(_serializers, type, const FullType(String)),
+      if (locationIds != null)
+        r'locationIds': encodeCollectionQueryParameter<int>(
+          _serializers,
+          locationIds,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
+      if (businessIds != null)
+        r'businessIds': encodeCollectionQueryParameter<int>(
+          _serializers,
+          businessIds,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
+      if (type != null)
+        r'type':
+            encodeQueryParameter(_serializers, type, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -958,11 +1152,12 @@ class DashboardApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ListingHealthWrapper),
-      ) as ListingHealthWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ListingHealthWrapper),
+            ) as ListingHealthWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -999,7 +1194,7 @@ class DashboardApi {
   ///
   /// Returns a [Future] containing a [Response] with a [LocationManagersCountWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LocationManagersCountWrapper>> getDashboardManagersCountId({ 
+  Future<Response<LocationManagersCountWrapper>> getDashboardManagersCountId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1008,7 +1203,10 @@ class DashboardApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/dashboard/managers-count/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/dashboard/managers-count/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -1021,7 +1219,8 @@ class DashboardApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -1045,11 +1244,12 @@ class DashboardApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LocationManagersCountWrapper),
-      ) as LocationManagersCountWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LocationManagersCountWrapper),
+            ) as LocationManagersCountWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1086,7 +1286,7 @@ class DashboardApi {
   ///
   /// Returns a [Future] containing a [Response] with a [LocationTaskWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LocationTaskWrapper>> getDashboardNextBestActionsId({ 
+  Future<Response<LocationTaskWrapper>> getDashboardNextBestActionsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1095,7 +1295,10 @@ class DashboardApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/dashboard/next-best-actions/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/dashboard/next-best-actions/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -1108,7 +1311,8 @@ class DashboardApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -1132,11 +1336,12 @@ class DashboardApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LocationTaskWrapper),
-      ) as LocationTaskWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LocationTaskWrapper),
+            ) as LocationTaskWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1174,7 +1379,7 @@ class DashboardApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ProfileCompletenessWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ProfileCompletenessWrapper>> getDashboardProfileCompleteness({ 
+  Future<Response<ProfileCompletenessWrapper>> getDashboardProfileCompleteness({
     BuiltList<int>? businessIds,
     BuiltList<int>? locationIds,
     CancelToken? cancelToken,
@@ -1197,7 +1402,8 @@ class DashboardApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -1210,8 +1416,20 @@ class DashboardApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (businessIds != null) r'businessIds': encodeCollectionQueryParameter<int>(_serializers, businessIds, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (locationIds != null) r'locationIds': encodeCollectionQueryParameter<int>(_serializers, locationIds, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
+      if (businessIds != null)
+        r'businessIds': encodeCollectionQueryParameter<int>(
+          _serializers,
+          businessIds,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
+      if (locationIds != null)
+        r'locationIds': encodeCollectionQueryParameter<int>(
+          _serializers,
+          locationIds,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1227,11 +1445,12 @@ class DashboardApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ProfileCompletenessWrapper),
-      ) as ProfileCompletenessWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ProfileCompletenessWrapper),
+            ) as ProfileCompletenessWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1272,7 +1491,8 @@ class DashboardApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SuppressedDuplicatesWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SuppressedDuplicatesWrapper>> getDashboardSuppressedDuplicates({ 
+  Future<Response<SuppressedDuplicatesWrapper>>
+      getDashboardSuppressedDuplicates({
     BuiltList<int>? businessIds,
     BuiltList<int>? locationIds,
     String? type,
@@ -1298,7 +1518,8 @@ class DashboardApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -1311,11 +1532,29 @@ class DashboardApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (businessIds != null) r'businessIds': encodeCollectionQueryParameter<int>(_serializers, businessIds, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (locationIds != null) r'locationIds': encodeCollectionQueryParameter<int>(_serializers, locationIds, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (type != null) r'type': encodeQueryParameter(_serializers, type, const FullType(String)),
-      if (startDate != null) r'startDate': encodeQueryParameter(_serializers, startDate, const FullType(Date)),
-      if (endDate != null) r'endDate': encodeQueryParameter(_serializers, endDate, const FullType(Date)),
+      if (businessIds != null)
+        r'businessIds': encodeCollectionQueryParameter<int>(
+          _serializers,
+          businessIds,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
+      if (locationIds != null)
+        r'locationIds': encodeCollectionQueryParameter<int>(
+          _serializers,
+          locationIds,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
+      if (type != null)
+        r'type':
+            encodeQueryParameter(_serializers, type, const FullType(String)),
+      if (startDate != null)
+        r'startDate':
+            encodeQueryParameter(_serializers, startDate, const FullType(Date)),
+      if (endDate != null)
+        r'endDate':
+            encodeQueryParameter(_serializers, endDate, const FullType(Date)),
     };
 
     final _response = await _dio.request<Object>(
@@ -1331,11 +1570,12 @@ class DashboardApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SuppressedDuplicatesWrapper),
-      ) as SuppressedDuplicatesWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SuppressedDuplicatesWrapper),
+            ) as SuppressedDuplicatesWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1372,7 +1612,7 @@ class DashboardApi {
   ///
   /// Returns a [Future] containing a [Response] with a [VisibilityIndexWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<VisibilityIndexWrapper>> getDashboardVisibilityIndexId({ 
+  Future<Response<VisibilityIndexWrapper>> getDashboardVisibilityIndexId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1381,7 +1621,10 @@ class DashboardApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/dashboard/visibility-index/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/dashboard/visibility-index/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -1394,7 +1637,8 @@ class DashboardApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -1418,11 +1662,12 @@ class DashboardApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(VisibilityIndexWrapper),
-      ) as VisibilityIndexWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(VisibilityIndexWrapper),
+            ) as VisibilityIndexWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1444,5 +1689,4 @@ class DashboardApi {
       extra: _response.extra,
     );
   }
-
 }

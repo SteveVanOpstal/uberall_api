@@ -15,7 +15,8 @@ part 'profile_completeness.g.dart';
 /// * [averageProfileCompleteness] - The average of the profile completeness across the locations managed by the user
 /// * [locationClassificationCounts] - The number of locations in each classification
 @BuiltValue()
-abstract class ProfileCompleteness implements Built<ProfileCompleteness, ProfileCompletenessBuilder> {
+abstract class ProfileCompleteness
+    implements Built<ProfileCompleteness, ProfileCompletenessBuilder> {
   /// The average of the profile completeness across the locations managed by the user
   @BuiltValueField(wireName: r'averageProfileCompleteness')
   int? get averageProfileCompleteness;
@@ -26,18 +27,24 @@ abstract class ProfileCompleteness implements Built<ProfileCompleteness, Profile
 
   ProfileCompleteness._();
 
-  factory ProfileCompleteness([void updates(ProfileCompletenessBuilder b)]) = _$ProfileCompleteness;
+  factory ProfileCompleteness([void updates(ProfileCompletenessBuilder b)]) =
+      _$ProfileCompleteness;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ProfileCompletenessBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ProfileCompleteness> get serializer => _$ProfileCompletenessSerializer();
+  static Serializer<ProfileCompleteness> get serializer =>
+      _$ProfileCompletenessSerializer();
 }
 
-class _$ProfileCompletenessSerializer implements PrimitiveSerializer<ProfileCompleteness> {
+class _$ProfileCompletenessSerializer
+    implements PrimitiveSerializer<ProfileCompleteness> {
   @override
-  final Iterable<Type> types = const [ProfileCompleteness, _$ProfileCompleteness];
+  final Iterable<Type> types = const [
+    ProfileCompleteness,
+    _$ProfileCompleteness
+  ];
 
   @override
   final String wireName = r'ProfileCompleteness';
@@ -58,7 +65,8 @@ class _$ProfileCompletenessSerializer implements PrimitiveSerializer<ProfileComp
       yield r'locationClassificationCounts';
       yield serializers.serialize(
         object.locationClassificationCounts,
-        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(int)]),
+        specifiedType:
+            const FullType(BuiltMap, [FullType(String), FullType(int)]),
       );
     }
   }
@@ -69,7 +77,9 @@ class _$ProfileCompletenessSerializer implements PrimitiveSerializer<ProfileComp
     ProfileCompleteness object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -94,7 +104,8 @@ class _$ProfileCompletenessSerializer implements PrimitiveSerializer<ProfileComp
         case r'locationClassificationCounts':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(int)]),
+            specifiedType:
+                const FullType(BuiltMap, [FullType(String), FullType(int)]),
           ) as BuiltMap<String, int>;
           result.locationClassificationCounts.replace(valueDes);
           break;
@@ -126,4 +137,3 @@ class _$ProfileCompletenessSerializer implements PrimitiveSerializer<ProfileComp
     return result.build();
   }
 }
-

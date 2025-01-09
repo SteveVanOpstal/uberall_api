@@ -14,7 +14,8 @@ part 'location_transaction_link.g.dart';
 /// * [url] - The deep-link to the page where the customer can facilitate the transaction. This should not be a homepage or location page unless the customer can make their request directly on that page. UTM parameters are not recommended and may be stripped by specific directories.
 /// * [isPreferred] - Indicates to Google which one url per transaction link type should be set as the preferred flow for customers. Not required, but it is recommended to always flag one url, even if there is only one, as preferred because Google may pull in urls from third party partners.
 @BuiltValue()
-abstract class LocationTransactionLink implements Built<LocationTransactionLink, LocationTransactionLinkBuilder> {
+abstract class LocationTransactionLink
+    implements Built<LocationTransactionLink, LocationTransactionLinkBuilder> {
   /// The deep-link to the page where the customer can facilitate the transaction. This should not be a homepage or location page unless the customer can make their request directly on that page. UTM parameters are not recommended and may be stripped by specific directories.
   @BuiltValueField(wireName: r'url')
   String get url;
@@ -25,18 +26,25 @@ abstract class LocationTransactionLink implements Built<LocationTransactionLink,
 
   LocationTransactionLink._();
 
-  factory LocationTransactionLink([void updates(LocationTransactionLinkBuilder b)]) = _$LocationTransactionLink;
+  factory LocationTransactionLink(
+          [void updates(LocationTransactionLinkBuilder b)]) =
+      _$LocationTransactionLink;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LocationTransactionLinkBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LocationTransactionLink> get serializer => _$LocationTransactionLinkSerializer();
+  static Serializer<LocationTransactionLink> get serializer =>
+      _$LocationTransactionLinkSerializer();
 }
 
-class _$LocationTransactionLinkSerializer implements PrimitiveSerializer<LocationTransactionLink> {
+class _$LocationTransactionLinkSerializer
+    implements PrimitiveSerializer<LocationTransactionLink> {
   @override
-  final Iterable<Type> types = const [LocationTransactionLink, _$LocationTransactionLink];
+  final Iterable<Type> types = const [
+    LocationTransactionLink,
+    _$LocationTransactionLink
+  ];
 
   @override
   final String wireName = r'LocationTransactionLink';
@@ -66,7 +74,9 @@ class _$LocationTransactionLinkSerializer implements PrimitiveSerializer<Locatio
     LocationTransactionLink object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -123,4 +133,3 @@ class _$LocationTransactionLinkSerializer implements PrimitiveSerializer<Locatio
     return result.build();
   }
 }
-

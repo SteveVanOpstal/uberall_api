@@ -18,7 +18,7 @@ part 'event.g.dart';
 /// * [listName] - Name of the Event
 /// * [timeStart] - The date the event starts
 /// * [timeEnd] - The date the event ends
-/// * [video] 
+/// * [video]
 /// * [url] - The url of the page with more details about the event
 @BuiltValue()
 abstract class Event implements Built<Event, EventBuilder> {
@@ -134,7 +134,9 @@ class _$EventSerializer implements PrimitiveSerializer<Event> {
     Event object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -233,4 +235,3 @@ class _$EventSerializer implements PrimitiveSerializer<Event> {
     return result.build();
   }
 }
-

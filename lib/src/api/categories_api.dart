@@ -18,7 +18,6 @@ import 'package:openapi/src/model/google_services_response_wrapper.dart';
 import 'package:openapi/src/model/more_hours_wrapper.dart';
 
 class CategoriesApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -44,7 +43,7 @@ class CategoriesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [GenericMapResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GenericMapResponseWrapper>> getCategories({ 
+  Future<Response<GenericMapResponseWrapper>> getCategories({
     required String language,
     int? categories,
     String? q,
@@ -71,7 +70,8 @@ class CategoriesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -84,12 +84,21 @@ class CategoriesApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (categories != null) r'categories': encodeQueryParameter(_serializers, categories, const FullType(int)),
-      if (q != null) r'q': encodeQueryParameter(_serializers, q, const FullType(String)),
-      if (roots != null) r'roots': encodeQueryParameter(_serializers, roots, const FullType(bool)),
-      r'language': encodeQueryParameter(_serializers, language, const FullType(String)),
-      if (max != null) r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
-      if (offset != null) r'offset': encodeQueryParameter(_serializers, offset, const FullType(int)),
+      if (categories != null)
+        r'categories':
+            encodeQueryParameter(_serializers, categories, const FullType(int)),
+      if (q != null)
+        r'q': encodeQueryParameter(_serializers, q, const FullType(String)),
+      if (roots != null)
+        r'roots':
+            encodeQueryParameter(_serializers, roots, const FullType(bool)),
+      r'language':
+          encodeQueryParameter(_serializers, language, const FullType(String)),
+      if (max != null)
+        r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
+      if (offset != null)
+        r'offset':
+            encodeQueryParameter(_serializers, offset, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -105,11 +114,12 @@ class CategoriesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(GenericMapResponseWrapper),
-      ) as GenericMapResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(GenericMapResponseWrapper),
+            ) as GenericMapResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -149,7 +159,8 @@ class CategoriesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [AttributeRecommendationsWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AttributeRecommendationsWrapper>> getCategoriesIdAttributeRecommendations({ 
+  Future<Response<AttributeRecommendationsWrapper>>
+      getCategoriesIdAttributeRecommendations({
     required String id,
     required String country,
     BuiltList<String>? keywords,
@@ -161,7 +172,10 @@ class CategoriesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/categories/{id}/attribute-recommendations'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/categories/{id}/attribute-recommendations'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -174,7 +188,8 @@ class CategoriesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -187,9 +202,18 @@ class CategoriesApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (keywords != null) r'keywords': encodeCollectionQueryParameter<String>(_serializers, keywords, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (locationId != null) r'locationId': encodeQueryParameter(_serializers, locationId, const FullType(String)),
-      r'country': encodeQueryParameter(_serializers, country, const FullType(String)),
+      if (keywords != null)
+        r'keywords': encodeCollectionQueryParameter<String>(
+          _serializers,
+          keywords,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (locationId != null)
+        r'locationId': encodeQueryParameter(
+            _serializers, locationId, const FullType(String)),
+      r'country':
+          encodeQueryParameter(_serializers, country, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -205,11 +229,12 @@ class CategoriesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(AttributeRecommendationsWrapper),
-      ) as AttributeRecommendationsWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(AttributeRecommendationsWrapper),
+            ) as AttributeRecommendationsWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -248,7 +273,7 @@ class CategoriesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [AttributesResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AttributesResponseWrapper>> getCategoriesIdAttributes({ 
+  Future<Response<AttributesResponseWrapper>> getCategoriesIdAttributes({
     required String id,
     required String country,
     String? language,
@@ -259,7 +284,10 @@ class CategoriesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/categories/{id}/attributes'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/categories/{id}/attributes'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -272,7 +300,8 @@ class CategoriesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -285,8 +314,11 @@ class CategoriesApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (language != null) r'language': encodeQueryParameter(_serializers, language, const FullType(String)),
-      r'country': encodeQueryParameter(_serializers, country, const FullType(String)),
+      if (language != null)
+        r'language': encodeQueryParameter(
+            _serializers, language, const FullType(String)),
+      r'country':
+          encodeQueryParameter(_serializers, country, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -302,11 +334,12 @@ class CategoriesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(AttributesResponseWrapper),
-      ) as AttributesResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(AttributesResponseWrapper),
+            ) as AttributesResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -344,7 +377,8 @@ class CategoriesApi {
   /// Returns a [Future] containing a [Response] with a [AvailablePhotoTypesResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
   @Deprecated('This operation has been deprecated')
-  Future<Response<AvailablePhotoTypesResponseWrapper>> getCategoriesIdAvailablePhotoTypes({ 
+  Future<Response<AvailablePhotoTypesResponseWrapper>>
+      getCategoriesIdAvailablePhotoTypes({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -353,7 +387,10 @@ class CategoriesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/categories/{id}/available-photo-types'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/categories/{id}/available-photo-types'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -366,7 +403,8 @@ class CategoriesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -390,11 +428,12 @@ class CategoriesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(AvailablePhotoTypesResponseWrapper),
-      ) as AvailablePhotoTypesResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(AvailablePhotoTypesResponseWrapper),
+            ) as AvailablePhotoTypesResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -433,7 +472,8 @@ class CategoriesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [GoogleServicesResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GoogleServicesResponseWrapper>> getCategoriesIdGoogleServices({ 
+  Future<Response<GoogleServicesResponseWrapper>>
+      getCategoriesIdGoogleServices({
     required String id,
     required String country,
     String? language,
@@ -444,7 +484,10 @@ class CategoriesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/categories/{id}/google-services'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/categories/{id}/google-services'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -457,7 +500,8 @@ class CategoriesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -470,8 +514,11 @@ class CategoriesApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (language != null) r'language': encodeQueryParameter(_serializers, language, const FullType(String)),
-      r'country': encodeQueryParameter(_serializers, country, const FullType(String)),
+      if (language != null)
+        r'language': encodeQueryParameter(
+            _serializers, language, const FullType(String)),
+      r'country':
+          encodeQueryParameter(_serializers, country, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -487,11 +534,12 @@ class CategoriesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(GoogleServicesResponseWrapper),
-      ) as GoogleServicesResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(GoogleServicesResponseWrapper),
+            ) as GoogleServicesResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -514,7 +562,7 @@ class CategoriesApi {
     );
   }
 
-  /// Get the supported More Hours types for a specific Category 
+  /// Get the supported More Hours types for a specific Category
   /// Get all supported More Hours types for a specific Category. Optionally specify language, otherwise default sales partner language is returned
   ///
   /// Parameters:
@@ -529,7 +577,7 @@ class CategoriesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [MoreHoursWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<MoreHoursWrapper>> getCategoriesIdMoreHoursTypes({ 
+  Future<Response<MoreHoursWrapper>> getCategoriesIdMoreHoursTypes({
     required String id,
     String? language,
     CancelToken? cancelToken,
@@ -539,7 +587,10 @@ class CategoriesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/categories/{id}/more-hours-types'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/categories/{id}/more-hours-types'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -552,7 +603,8 @@ class CategoriesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -565,7 +617,9 @@ class CategoriesApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (language != null) r'language': encodeQueryParameter(_serializers, language, const FullType(String)),
+      if (language != null)
+        r'language': encodeQueryParameter(
+            _serializers, language, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -581,11 +635,12 @@ class CategoriesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(MoreHoursWrapper),
-      ) as MoreHoursWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(MoreHoursWrapper),
+            ) as MoreHoursWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -607,5 +662,4 @@ class CategoriesApi {
       extra: _response.extra,
     );
   }
-
 }

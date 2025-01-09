@@ -16,9 +16,11 @@ part 'location_import_list_object.g.dart';
 /// * [offset] - Offset for the current page
 /// * [max] - Maximum number of items per page
 /// * [count] - Total count of location imports
-/// * [locations] 
+/// * [locations]
 @BuiltValue()
-abstract class LocationImportListObject implements Built<LocationImportListObject, LocationImportListObjectBuilder> {
+abstract class LocationImportListObject
+    implements
+        Built<LocationImportListObject, LocationImportListObjectBuilder> {
   /// Offset for the current page
   @BuiltValueField(wireName: r'offset')
   int? get offset;
@@ -36,18 +38,25 @@ abstract class LocationImportListObject implements Built<LocationImportListObjec
 
   LocationImportListObject._();
 
-  factory LocationImportListObject([void updates(LocationImportListObjectBuilder b)]) = _$LocationImportListObject;
+  factory LocationImportListObject(
+          [void updates(LocationImportListObjectBuilder b)]) =
+      _$LocationImportListObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LocationImportListObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LocationImportListObject> get serializer => _$LocationImportListObjectSerializer();
+  static Serializer<LocationImportListObject> get serializer =>
+      _$LocationImportListObjectSerializer();
 }
 
-class _$LocationImportListObjectSerializer implements PrimitiveSerializer<LocationImportListObject> {
+class _$LocationImportListObjectSerializer
+    implements PrimitiveSerializer<LocationImportListObject> {
   @override
-  final Iterable<Type> types = const [LocationImportListObject, _$LocationImportListObject];
+  final Iterable<Type> types = const [
+    LocationImportListObject,
+    _$LocationImportListObject
+  ];
 
   @override
   final String wireName = r'LocationImportListObject';
@@ -93,7 +102,9 @@ class _$LocationImportListObjectSerializer implements PrimitiveSerializer<Locati
     LocationImportListObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -164,4 +175,3 @@ class _$LocationImportListObjectSerializer implements PrimitiveSerializer<Locati
     return result.build();
   }
 }
-

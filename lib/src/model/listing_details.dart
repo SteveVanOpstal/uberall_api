@@ -20,12 +20,13 @@ part 'listing_details.g.dart';
 /// * [category] - The category of the directory of this listing
 /// * [mandatoryFieldsMissing] - Mandatory field missing on the location which prevents the data to be submitted to the publisher
 /// * [directorySpecificData] - Directory specific data. e.g. Google publishing states which can be UNVERIFIED, DISABLED, SUSPENDED, DUPLICATE.
-/// * [directoryContactDetails] 
-/// * [directoryConnectInfo] 
+/// * [directoryContactDetails]
+/// * [directoryConnectInfo]
 /// * [status] - Listing Status [SYNCED, SUBMITTED, UPDATING, ACTION_REQUIRED, LINKED]
 /// * [action] - Action Required [CONNECT, VERIFY, CLAIM, ADD_MANDATORY_FIELDS, ACCESS]
 @BuiltValue()
-abstract class ListingDetails implements Built<ListingDetails, ListingDetailsBuilder> {
+abstract class ListingDetails
+    implements Built<ListingDetails, ListingDetailsBuilder> {
   /// Listing type / Publisher name
   @BuiltValueField(wireName: r'typeName')
   String? get typeName;
@@ -64,16 +65,19 @@ abstract class ListingDetails implements Built<ListingDetails, ListingDetailsBui
 
   ListingDetails._();
 
-  factory ListingDetails([void updates(ListingDetailsBuilder b)]) = _$ListingDetails;
+  factory ListingDetails([void updates(ListingDetailsBuilder b)]) =
+      _$ListingDetails;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ListingDetailsBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ListingDetails> get serializer => _$ListingDetailsSerializer();
+  static Serializer<ListingDetails> get serializer =>
+      _$ListingDetailsSerializer();
 }
 
-class _$ListingDetailsSerializer implements PrimitiveSerializer<ListingDetails> {
+class _$ListingDetailsSerializer
+    implements PrimitiveSerializer<ListingDetails> {
   @override
   final Iterable<Type> types = const [ListingDetails, _$ListingDetails];
 
@@ -117,7 +121,8 @@ class _$ListingDetailsSerializer implements PrimitiveSerializer<ListingDetails> 
       yield r'directorySpecificData';
       yield serializers.serialize(
         object.directorySpecificData,
-        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+        specifiedType:
+            const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
       );
     }
     if (object.directoryContactDetails != null) {
@@ -156,7 +161,9 @@ class _$ListingDetailsSerializer implements PrimitiveSerializer<ListingDetails> 
     ListingDetails object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -202,7 +209,8 @@ class _$ListingDetailsSerializer implements PrimitiveSerializer<ListingDetails> 
         case r'directorySpecificData':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+            specifiedType: const FullType(
+                BuiltMap, [FullType(String), FullType(JsonObject)]),
           ) as BuiltMap<String, JsonObject>;
           result.directorySpecificData.replace(valueDes);
           break;
@@ -264,54 +272,75 @@ class _$ListingDetailsSerializer implements PrimitiveSerializer<ListingDetails> 
 }
 
 class ListingDetailsStatusEnum extends EnumClass {
-
   /// Listing Status [SYNCED, SUBMITTED, UPDATING, ACTION_REQUIRED, LINKED]
   @BuiltValueEnumConst(wireName: r'SYNCED')
-  static const ListingDetailsStatusEnum SYNCED = _$listingDetailsStatusEnum_SYNCED;
+  static const ListingDetailsStatusEnum SYNCED =
+      _$listingDetailsStatusEnum_SYNCED;
+
   /// Listing Status [SYNCED, SUBMITTED, UPDATING, ACTION_REQUIRED, LINKED]
   @BuiltValueEnumConst(wireName: r'SUBMITTED')
-  static const ListingDetailsStatusEnum SUBMITTED = _$listingDetailsStatusEnum_SUBMITTED;
+  static const ListingDetailsStatusEnum SUBMITTED =
+      _$listingDetailsStatusEnum_SUBMITTED;
+
   /// Listing Status [SYNCED, SUBMITTED, UPDATING, ACTION_REQUIRED, LINKED]
   @BuiltValueEnumConst(wireName: r'UPDATING')
-  static const ListingDetailsStatusEnum UPDATING = _$listingDetailsStatusEnum_UPDATING;
+  static const ListingDetailsStatusEnum UPDATING =
+      _$listingDetailsStatusEnum_UPDATING;
+
   /// Listing Status [SYNCED, SUBMITTED, UPDATING, ACTION_REQUIRED, LINKED]
   @BuiltValueEnumConst(wireName: r'LINKED')
-  static const ListingDetailsStatusEnum LINKED = _$listingDetailsStatusEnum_LINKED;
+  static const ListingDetailsStatusEnum LINKED =
+      _$listingDetailsStatusEnum_LINKED;
+
   /// Listing Status [SYNCED, SUBMITTED, UPDATING, ACTION_REQUIRED, LINKED]
   @BuiltValueEnumConst(wireName: r'ACTION_REQUIRED')
-  static const ListingDetailsStatusEnum ACTION_REQUIRED = _$listingDetailsStatusEnum_ACTION_REQUIRED;
+  static const ListingDetailsStatusEnum ACTION_REQUIRED =
+      _$listingDetailsStatusEnum_ACTION_REQUIRED;
 
-  static Serializer<ListingDetailsStatusEnum> get serializer => _$listingDetailsStatusEnumSerializer;
+  static Serializer<ListingDetailsStatusEnum> get serializer =>
+      _$listingDetailsStatusEnumSerializer;
 
-  const ListingDetailsStatusEnum._(String name): super(name);
+  const ListingDetailsStatusEnum._(String name) : super(name);
 
-  static BuiltSet<ListingDetailsStatusEnum> get values => _$listingDetailsStatusEnumValues;
-  static ListingDetailsStatusEnum valueOf(String name) => _$listingDetailsStatusEnumValueOf(name);
+  static BuiltSet<ListingDetailsStatusEnum> get values =>
+      _$listingDetailsStatusEnumValues;
+  static ListingDetailsStatusEnum valueOf(String name) =>
+      _$listingDetailsStatusEnumValueOf(name);
 }
 
 class ListingDetailsActionEnum extends EnumClass {
-
   /// Action Required [CONNECT, VERIFY, CLAIM, ADD_MANDATORY_FIELDS, ACCESS]
   @BuiltValueEnumConst(wireName: r'CONNECT')
-  static const ListingDetailsActionEnum CONNECT = _$listingDetailsActionEnum_CONNECT;
+  static const ListingDetailsActionEnum CONNECT =
+      _$listingDetailsActionEnum_CONNECT;
+
   /// Action Required [CONNECT, VERIFY, CLAIM, ADD_MANDATORY_FIELDS, ACCESS]
   @BuiltValueEnumConst(wireName: r'VERIFY')
-  static const ListingDetailsActionEnum VERIFY = _$listingDetailsActionEnum_VERIFY;
+  static const ListingDetailsActionEnum VERIFY =
+      _$listingDetailsActionEnum_VERIFY;
+
   /// Action Required [CONNECT, VERIFY, CLAIM, ADD_MANDATORY_FIELDS, ACCESS]
   @BuiltValueEnumConst(wireName: r'CLAIM')
-  static const ListingDetailsActionEnum CLAIM = _$listingDetailsActionEnum_CLAIM;
+  static const ListingDetailsActionEnum CLAIM =
+      _$listingDetailsActionEnum_CLAIM;
+
   /// Action Required [CONNECT, VERIFY, CLAIM, ADD_MANDATORY_FIELDS, ACCESS]
   @BuiltValueEnumConst(wireName: r'ADD_MANDATORY_FIELDS')
-  static const ListingDetailsActionEnum ADD_MANDATORY_FIELDS = _$listingDetailsActionEnum_ADD_MANDATORY_FIELDS;
+  static const ListingDetailsActionEnum ADD_MANDATORY_FIELDS =
+      _$listingDetailsActionEnum_ADD_MANDATORY_FIELDS;
+
   /// Action Required [CONNECT, VERIFY, CLAIM, ADD_MANDATORY_FIELDS, ACCESS]
   @BuiltValueEnumConst(wireName: r'ACCESS')
-  static const ListingDetailsActionEnum ACCESS = _$listingDetailsActionEnum_ACCESS;
+  static const ListingDetailsActionEnum ACCESS =
+      _$listingDetailsActionEnum_ACCESS;
 
-  static Serializer<ListingDetailsActionEnum> get serializer => _$listingDetailsActionEnumSerializer;
+  static Serializer<ListingDetailsActionEnum> get serializer =>
+      _$listingDetailsActionEnumSerializer;
 
-  const ListingDetailsActionEnum._(String name): super(name);
+  const ListingDetailsActionEnum._(String name) : super(name);
 
-  static BuiltSet<ListingDetailsActionEnum> get values => _$listingDetailsActionEnumValues;
-  static ListingDetailsActionEnum valueOf(String name) => _$listingDetailsActionEnumValueOf(name);
+  static BuiltSet<ListingDetailsActionEnum> get values =>
+      _$listingDetailsActionEnumValues;
+  static ListingDetailsActionEnum valueOf(String name) =>
+      _$listingDetailsActionEnumValueOf(name);
 }
-

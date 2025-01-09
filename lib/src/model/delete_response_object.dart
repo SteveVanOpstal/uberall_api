@@ -14,10 +14,11 @@ part 'delete_response_object.g.dart';
 /// Properties:
 /// * [deletedCount] - Total count of deleted items
 /// * [failedCount] - Total count of failed items
-/// * [deletedIds] 
-/// * [failed] 
+/// * [deletedIds]
+/// * [failed]
 @BuiltValue()
-abstract class DeleteResponseObject implements Built<DeleteResponseObject, DeleteResponseObjectBuilder> {
+abstract class DeleteResponseObject
+    implements Built<DeleteResponseObject, DeleteResponseObjectBuilder> {
   /// Total count of deleted items
   @BuiltValueField(wireName: r'deletedCount')
   int? get deletedCount;
@@ -34,18 +35,24 @@ abstract class DeleteResponseObject implements Built<DeleteResponseObject, Delet
 
   DeleteResponseObject._();
 
-  factory DeleteResponseObject([void updates(DeleteResponseObjectBuilder b)]) = _$DeleteResponseObject;
+  factory DeleteResponseObject([void updates(DeleteResponseObjectBuilder b)]) =
+      _$DeleteResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DeleteResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DeleteResponseObject> get serializer => _$DeleteResponseObjectSerializer();
+  static Serializer<DeleteResponseObject> get serializer =>
+      _$DeleteResponseObjectSerializer();
 }
 
-class _$DeleteResponseObjectSerializer implements PrimitiveSerializer<DeleteResponseObject> {
+class _$DeleteResponseObjectSerializer
+    implements PrimitiveSerializer<DeleteResponseObject> {
   @override
-  final Iterable<Type> types = const [DeleteResponseObject, _$DeleteResponseObject];
+  final Iterable<Type> types = const [
+    DeleteResponseObject,
+    _$DeleteResponseObject
+  ];
 
   @override
   final String wireName = r'DeleteResponseObject';
@@ -91,7 +98,9 @@ class _$DeleteResponseObjectSerializer implements PrimitiveSerializer<DeleteResp
     DeleteResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -162,4 +171,3 @@ class _$DeleteResponseObjectSerializer implements PrimitiveSerializer<DeleteResp
     return result.build();
   }
 }
-

@@ -17,9 +17,10 @@ part 'content_lists_object.g.dart';
 /// * [max] - Maximum number of results per page
 /// * [total] - Total count of results
 /// * [totalLocationsCount] - Total count of locations
-/// * [contentLists] 
+/// * [contentLists]
 @BuiltValue()
-abstract class ContentListsObject implements Built<ContentListsObject, ContentListsObjectBuilder> {
+abstract class ContentListsObject
+    implements Built<ContentListsObject, ContentListsObjectBuilder> {
   /// Offset for pagination
   @BuiltValueField(wireName: r'offset')
   int? get offset;
@@ -41,16 +42,19 @@ abstract class ContentListsObject implements Built<ContentListsObject, ContentLi
 
   ContentListsObject._();
 
-  factory ContentListsObject([void updates(ContentListsObjectBuilder b)]) = _$ContentListsObject;
+  factory ContentListsObject([void updates(ContentListsObjectBuilder b)]) =
+      _$ContentListsObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ContentListsObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ContentListsObject> get serializer => _$ContentListsObjectSerializer();
+  static Serializer<ContentListsObject> get serializer =>
+      _$ContentListsObjectSerializer();
 }
 
-class _$ContentListsObjectSerializer implements PrimitiveSerializer<ContentListsObject> {
+class _$ContentListsObjectSerializer
+    implements PrimitiveSerializer<ContentListsObject> {
   @override
   final Iterable<Type> types = const [ContentListsObject, _$ContentListsObject];
 
@@ -105,7 +109,9 @@ class _$ContentListsObjectSerializer implements PrimitiveSerializer<ContentLists
     ContentListsObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -183,4 +189,3 @@ class _$ContentListsObjectSerializer implements PrimitiveSerializer<ContentLists
     return result.build();
   }
 }
-

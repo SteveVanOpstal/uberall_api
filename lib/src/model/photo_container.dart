@@ -16,7 +16,8 @@ part 'photo_container.g.dart';
 /// * [description] - Description for the social post photo
 /// * [redirectUrl] - The URL that a user is redirected to when clicking the photo
 @BuiltValue()
-abstract class PhotoContainer implements Built<PhotoContainer, PhotoContainerBuilder> {
+abstract class PhotoContainer
+    implements Built<PhotoContainer, PhotoContainerBuilder> {
   /// Placeholder to represent photo for a social post which can either be a base64 encoded string or a S3 link for image
   @BuiltValueField(wireName: r'photo')
   JsonObject? get photo;
@@ -31,16 +32,19 @@ abstract class PhotoContainer implements Built<PhotoContainer, PhotoContainerBui
 
   PhotoContainer._();
 
-  factory PhotoContainer([void updates(PhotoContainerBuilder b)]) = _$PhotoContainer;
+  factory PhotoContainer([void updates(PhotoContainerBuilder b)]) =
+      _$PhotoContainer;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PhotoContainerBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<PhotoContainer> get serializer => _$PhotoContainerSerializer();
+  static Serializer<PhotoContainer> get serializer =>
+      _$PhotoContainerSerializer();
 }
 
-class _$PhotoContainerSerializer implements PrimitiveSerializer<PhotoContainer> {
+class _$PhotoContainerSerializer
+    implements PrimitiveSerializer<PhotoContainer> {
   @override
   final Iterable<Type> types = const [PhotoContainer, _$PhotoContainer];
 
@@ -81,7 +85,9 @@ class _$PhotoContainerSerializer implements PrimitiveSerializer<PhotoContainer> 
     PhotoContainer object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -145,4 +151,3 @@ class _$PhotoContainerSerializer implements PrimitiveSerializer<PhotoContainer> 
     return result.build();
   }
 }
-

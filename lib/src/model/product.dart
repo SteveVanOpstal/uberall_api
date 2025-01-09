@@ -17,16 +17,16 @@ part 'product.g.dart';
 /// * [title] - The name of the product: e.g. Strong Coffee
 /// * [description] - Description of the product: e.g. 'The strongest coffee in the world'
 /// * [identifier] - Unique Identifier for the Product
-/// * [listName] 
+/// * [listName]
 /// * [id] - The uberall unique id for the product
 /// * [price] - Price of the product in cents: e.g. '1500' for 15 €
 /// * [currency] - Currency used for prices in ISO-4217: e.g. EUR, USD, CHF
 /// * [category] - A category the product belongs to: e.g. 'Coffee'
-/// * [video] 
+/// * [video]
 /// * [unit] - A unit of measure, e.g. 'per kg'
 /// * [url] - A valid page url with more details about the product
 /// * [priceMax] - Maximum price if you want to use a price range for the product
-/// * [image] 
+/// * [image]
 @BuiltValue()
 abstract class Product implements Built<Product, ProductBuilder> {
   /// The name of the product: e.g. Strong Coffee
@@ -198,7 +198,9 @@ class _$ProductSerializer implements PrimitiveSerializer<Product> {
     Product object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -332,4 +334,3 @@ class _$ProductSerializer implements PrimitiveSerializer<Product> {
     return result.build();
   }
 }
-

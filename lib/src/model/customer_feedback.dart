@@ -23,7 +23,8 @@ part 'customer_feedback.g.dart';
 /// * [unreadInteractions] - The reviews and photos unread
 /// * [matchedLocationsCount] - The number of locations matching the given textFilter query
 @BuiltValue()
-abstract class CustomerFeedback implements Built<CustomerFeedback, CustomerFeedbackBuilder> {
+abstract class CustomerFeedback
+    implements Built<CustomerFeedback, CustomerFeedbackBuilder> {
   /// Average count by rating
   @BuiltValueField(wireName: r'countByRating')
   BuiltList<BuiltMap<String, JsonObject>>? get countByRating;
@@ -58,16 +59,19 @@ abstract class CustomerFeedback implements Built<CustomerFeedback, CustomerFeedb
 
   CustomerFeedback._();
 
-  factory CustomerFeedback([void updates(CustomerFeedbackBuilder b)]) = _$CustomerFeedback;
+  factory CustomerFeedback([void updates(CustomerFeedbackBuilder b)]) =
+      _$CustomerFeedback;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CustomerFeedbackBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<CustomerFeedback> get serializer => _$CustomerFeedbackSerializer();
+  static Serializer<CustomerFeedback> get serializer =>
+      _$CustomerFeedbackSerializer();
 }
 
-class _$CustomerFeedbackSerializer implements PrimitiveSerializer<CustomerFeedback> {
+class _$CustomerFeedbackSerializer
+    implements PrimitiveSerializer<CustomerFeedback> {
   @override
   final Iterable<Type> types = const [CustomerFeedback, _$CustomerFeedback];
 
@@ -83,7 +87,9 @@ class _$CustomerFeedbackSerializer implements PrimitiveSerializer<CustomerFeedba
       yield r'countByRating';
       yield serializers.serialize(
         object.countByRating,
-        specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType(JsonObject)])]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(BuiltMap, [FullType(String), FullType(JsonObject)])
+        ]),
       );
     }
     if (object.ratingCount != null) {
@@ -143,7 +149,9 @@ class _$CustomerFeedbackSerializer implements PrimitiveSerializer<CustomerFeedba
     CustomerFeedback object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -161,7 +169,9 @@ class _$CustomerFeedbackSerializer implements PrimitiveSerializer<CustomerFeedba
         case r'countByRating':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType(JsonObject)])]),
+            specifiedType: const FullType(BuiltList, [
+              FullType(BuiltMap, [FullType(String), FullType(JsonObject)])
+            ]),
           ) as BuiltList<BuiltMap<String, JsonObject>>;
           result.countByRating.replace(valueDes);
           break;
@@ -242,4 +252,3 @@ class _$CustomerFeedbackSerializer implements PrimitiveSerializer<CustomerFeedba
     return result.build();
   }
 }
-

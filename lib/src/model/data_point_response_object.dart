@@ -12,26 +12,34 @@ part 'data_point_response_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [dataPoint] 
+/// * [dataPoint]
 @BuiltValue()
-abstract class DataPointResponseObject implements Built<DataPointResponseObject, DataPointResponseObjectBuilder> {
+abstract class DataPointResponseObject
+    implements Built<DataPointResponseObject, DataPointResponseObjectBuilder> {
   @BuiltValueField(wireName: r'dataPoint')
   DataPoint? get dataPoint;
 
   DataPointResponseObject._();
 
-  factory DataPointResponseObject([void updates(DataPointResponseObjectBuilder b)]) = _$DataPointResponseObject;
+  factory DataPointResponseObject(
+          [void updates(DataPointResponseObjectBuilder b)]) =
+      _$DataPointResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DataPointResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DataPointResponseObject> get serializer => _$DataPointResponseObjectSerializer();
+  static Serializer<DataPointResponseObject> get serializer =>
+      _$DataPointResponseObjectSerializer();
 }
 
-class _$DataPointResponseObjectSerializer implements PrimitiveSerializer<DataPointResponseObject> {
+class _$DataPointResponseObjectSerializer
+    implements PrimitiveSerializer<DataPointResponseObject> {
   @override
-  final Iterable<Type> types = const [DataPointResponseObject, _$DataPointResponseObject];
+  final Iterable<Type> types = const [
+    DataPointResponseObject,
+    _$DataPointResponseObject
+  ];
 
   @override
   final String wireName = r'DataPointResponseObject';
@@ -56,7 +64,9 @@ class _$DataPointResponseObjectSerializer implements PrimitiveSerializer<DataPoi
     DataPointResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +116,3 @@ class _$DataPointResponseObjectSerializer implements PrimitiveSerializer<DataPoi
     return result.build();
   }
 }
-

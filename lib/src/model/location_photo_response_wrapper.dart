@@ -13,13 +13,16 @@ part 'location_photo_response_wrapper.g.dart';
 /// LocationPhotoResponseWrapper
 ///
 /// Properties:
-/// * [status] 
+/// * [status]
 /// * [message] - (optional) Holds further information about the response
-/// * [errorCode] 
+/// * [errorCode]
 /// * [warnings] - (optional) Holds further warnings
-/// * [response] 
+/// * [response]
 @BuiltValue()
-abstract class LocationPhotoResponseWrapper implements Built<LocationPhotoResponseWrapper, LocationPhotoResponseWrapperBuilder> {
+abstract class LocationPhotoResponseWrapper
+    implements
+        Built<LocationPhotoResponseWrapper,
+            LocationPhotoResponseWrapperBuilder> {
   @BuiltValueField(wireName: r'status')
   LocationPhotoResponseWrapperStatusEnum? get status;
   // enum statusEnum {  SUCCESS,  QUOTA_LIMIT_EXCEED,  NOT_AUTHORIZED,  FORBIDDEN,  BAD_ACCESS_TOKEN,  BAD_PRIVATE_KEY,  BAD_PUBLIC_KEY,  MISSING_PARAMETER,  INVALID_PARAMETER,  WRONG_PARAMETER_TYPE,  CONFLICT,  RESOURCE_LOCKED,  SERVER_ERROR,  ERROR,  NOT_FOUND,  BAD_REQUEST,  USER_ERROR,  PARTIAL_ERROR,  METHOD_NOT_ALLOWED,  };
@@ -41,18 +44,25 @@ abstract class LocationPhotoResponseWrapper implements Built<LocationPhotoRespon
 
   LocationPhotoResponseWrapper._();
 
-  factory LocationPhotoResponseWrapper([void updates(LocationPhotoResponseWrapperBuilder b)]) = _$LocationPhotoResponseWrapper;
+  factory LocationPhotoResponseWrapper(
+          [void updates(LocationPhotoResponseWrapperBuilder b)]) =
+      _$LocationPhotoResponseWrapper;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LocationPhotoResponseWrapperBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LocationPhotoResponseWrapper> get serializer => _$LocationPhotoResponseWrapperSerializer();
+  static Serializer<LocationPhotoResponseWrapper> get serializer =>
+      _$LocationPhotoResponseWrapperSerializer();
 }
 
-class _$LocationPhotoResponseWrapperSerializer implements PrimitiveSerializer<LocationPhotoResponseWrapper> {
+class _$LocationPhotoResponseWrapperSerializer
+    implements PrimitiveSerializer<LocationPhotoResponseWrapper> {
   @override
-  final Iterable<Type> types = const [LocationPhotoResponseWrapper, _$LocationPhotoResponseWrapper];
+  final Iterable<Type> types = const [
+    LocationPhotoResponseWrapper,
+    _$LocationPhotoResponseWrapper
+  ];
 
   @override
   final String wireName = r'LocationPhotoResponseWrapper';
@@ -80,7 +90,8 @@ class _$LocationPhotoResponseWrapperSerializer implements PrimitiveSerializer<Lo
       yield r'errorCode';
       yield serializers.serialize(
         object.errorCode,
-        specifiedType: const FullType(LocationPhotoResponseWrapperErrorCodeEnum),
+        specifiedType:
+            const FullType(LocationPhotoResponseWrapperErrorCodeEnum),
       );
     }
     if (object.warnings != null) {
@@ -105,7 +116,9 @@ class _$LocationPhotoResponseWrapperSerializer implements PrimitiveSerializer<Lo
     LocationPhotoResponseWrapper object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -123,7 +136,8 @@ class _$LocationPhotoResponseWrapperSerializer implements PrimitiveSerializer<Lo
         case r'status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(LocationPhotoResponseWrapperStatusEnum),
+            specifiedType:
+                const FullType(LocationPhotoResponseWrapperStatusEnum),
           ) as LocationPhotoResponseWrapperStatusEnum;
           result.status = valueDes;
           break;
@@ -137,7 +151,8 @@ class _$LocationPhotoResponseWrapperSerializer implements PrimitiveSerializer<Lo
         case r'errorCode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(LocationPhotoResponseWrapperErrorCodeEnum),
+            specifiedType:
+                const FullType(LocationPhotoResponseWrapperErrorCodeEnum),
           ) as LocationPhotoResponseWrapperErrorCodeEnum;
           result.errorCode = valueDes;
           break;
@@ -185,102 +200,147 @@ class _$LocationPhotoResponseWrapperSerializer implements PrimitiveSerializer<Lo
 }
 
 class LocationPhotoResponseWrapperStatusEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'SUCCESS')
-  static const LocationPhotoResponseWrapperStatusEnum SUCCESS = _$locationPhotoResponseWrapperStatusEnum_SUCCESS;
+  static const LocationPhotoResponseWrapperStatusEnum SUCCESS =
+      _$locationPhotoResponseWrapperStatusEnum_SUCCESS;
   @BuiltValueEnumConst(wireName: r'QUOTA_LIMIT_EXCEED')
-  static const LocationPhotoResponseWrapperStatusEnum QUOTA_LIMIT_EXCEED = _$locationPhotoResponseWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
+  static const LocationPhotoResponseWrapperStatusEnum QUOTA_LIMIT_EXCEED =
+      _$locationPhotoResponseWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
   @BuiltValueEnumConst(wireName: r'NOT_AUTHORIZED')
-  static const LocationPhotoResponseWrapperStatusEnum NOT_AUTHORIZED = _$locationPhotoResponseWrapperStatusEnum_NOT_AUTHORIZED;
+  static const LocationPhotoResponseWrapperStatusEnum NOT_AUTHORIZED =
+      _$locationPhotoResponseWrapperStatusEnum_NOT_AUTHORIZED;
   @BuiltValueEnumConst(wireName: r'FORBIDDEN')
-  static const LocationPhotoResponseWrapperStatusEnum FORBIDDEN = _$locationPhotoResponseWrapperStatusEnum_FORBIDDEN;
+  static const LocationPhotoResponseWrapperStatusEnum FORBIDDEN =
+      _$locationPhotoResponseWrapperStatusEnum_FORBIDDEN;
   @BuiltValueEnumConst(wireName: r'BAD_ACCESS_TOKEN')
-  static const LocationPhotoResponseWrapperStatusEnum BAD_ACCESS_TOKEN = _$locationPhotoResponseWrapperStatusEnum_BAD_ACCESS_TOKEN;
+  static const LocationPhotoResponseWrapperStatusEnum BAD_ACCESS_TOKEN =
+      _$locationPhotoResponseWrapperStatusEnum_BAD_ACCESS_TOKEN;
   @BuiltValueEnumConst(wireName: r'BAD_PRIVATE_KEY')
-  static const LocationPhotoResponseWrapperStatusEnum BAD_PRIVATE_KEY = _$locationPhotoResponseWrapperStatusEnum_BAD_PRIVATE_KEY;
+  static const LocationPhotoResponseWrapperStatusEnum BAD_PRIVATE_KEY =
+      _$locationPhotoResponseWrapperStatusEnum_BAD_PRIVATE_KEY;
   @BuiltValueEnumConst(wireName: r'BAD_PUBLIC_KEY')
-  static const LocationPhotoResponseWrapperStatusEnum BAD_PUBLIC_KEY = _$locationPhotoResponseWrapperStatusEnum_BAD_PUBLIC_KEY;
+  static const LocationPhotoResponseWrapperStatusEnum BAD_PUBLIC_KEY =
+      _$locationPhotoResponseWrapperStatusEnum_BAD_PUBLIC_KEY;
   @BuiltValueEnumConst(wireName: r'MISSING_PARAMETER')
-  static const LocationPhotoResponseWrapperStatusEnum MISSING_PARAMETER = _$locationPhotoResponseWrapperStatusEnum_MISSING_PARAMETER;
+  static const LocationPhotoResponseWrapperStatusEnum MISSING_PARAMETER =
+      _$locationPhotoResponseWrapperStatusEnum_MISSING_PARAMETER;
   @BuiltValueEnumConst(wireName: r'INVALID_PARAMETER')
-  static const LocationPhotoResponseWrapperStatusEnum INVALID_PARAMETER = _$locationPhotoResponseWrapperStatusEnum_INVALID_PARAMETER;
+  static const LocationPhotoResponseWrapperStatusEnum INVALID_PARAMETER =
+      _$locationPhotoResponseWrapperStatusEnum_INVALID_PARAMETER;
   @BuiltValueEnumConst(wireName: r'WRONG_PARAMETER_TYPE')
-  static const LocationPhotoResponseWrapperStatusEnum WRONG_PARAMETER_TYPE = _$locationPhotoResponseWrapperStatusEnum_WRONG_PARAMETER_TYPE;
+  static const LocationPhotoResponseWrapperStatusEnum WRONG_PARAMETER_TYPE =
+      _$locationPhotoResponseWrapperStatusEnum_WRONG_PARAMETER_TYPE;
   @BuiltValueEnumConst(wireName: r'CONFLICT')
-  static const LocationPhotoResponseWrapperStatusEnum CONFLICT = _$locationPhotoResponseWrapperStatusEnum_CONFLICT;
+  static const LocationPhotoResponseWrapperStatusEnum CONFLICT =
+      _$locationPhotoResponseWrapperStatusEnum_CONFLICT;
   @BuiltValueEnumConst(wireName: r'RESOURCE_LOCKED')
-  static const LocationPhotoResponseWrapperStatusEnum RESOURCE_LOCKED = _$locationPhotoResponseWrapperStatusEnum_RESOURCE_LOCKED;
+  static const LocationPhotoResponseWrapperStatusEnum RESOURCE_LOCKED =
+      _$locationPhotoResponseWrapperStatusEnum_RESOURCE_LOCKED;
   @BuiltValueEnumConst(wireName: r'SERVER_ERROR')
-  static const LocationPhotoResponseWrapperStatusEnum SERVER_ERROR = _$locationPhotoResponseWrapperStatusEnum_SERVER_ERROR;
+  static const LocationPhotoResponseWrapperStatusEnum SERVER_ERROR =
+      _$locationPhotoResponseWrapperStatusEnum_SERVER_ERROR;
   @BuiltValueEnumConst(wireName: r'ERROR')
-  static const LocationPhotoResponseWrapperStatusEnum ERROR = _$locationPhotoResponseWrapperStatusEnum_ERROR;
+  static const LocationPhotoResponseWrapperStatusEnum ERROR =
+      _$locationPhotoResponseWrapperStatusEnum_ERROR;
   @BuiltValueEnumConst(wireName: r'NOT_FOUND')
-  static const LocationPhotoResponseWrapperStatusEnum NOT_FOUND = _$locationPhotoResponseWrapperStatusEnum_NOT_FOUND;
+  static const LocationPhotoResponseWrapperStatusEnum NOT_FOUND =
+      _$locationPhotoResponseWrapperStatusEnum_NOT_FOUND;
   @BuiltValueEnumConst(wireName: r'BAD_REQUEST')
-  static const LocationPhotoResponseWrapperStatusEnum BAD_REQUEST = _$locationPhotoResponseWrapperStatusEnum_BAD_REQUEST;
+  static const LocationPhotoResponseWrapperStatusEnum BAD_REQUEST =
+      _$locationPhotoResponseWrapperStatusEnum_BAD_REQUEST;
   @BuiltValueEnumConst(wireName: r'USER_ERROR')
-  static const LocationPhotoResponseWrapperStatusEnum USER_ERROR = _$locationPhotoResponseWrapperStatusEnum_USER_ERROR;
+  static const LocationPhotoResponseWrapperStatusEnum USER_ERROR =
+      _$locationPhotoResponseWrapperStatusEnum_USER_ERROR;
   @BuiltValueEnumConst(wireName: r'PARTIAL_ERROR')
-  static const LocationPhotoResponseWrapperStatusEnum PARTIAL_ERROR = _$locationPhotoResponseWrapperStatusEnum_PARTIAL_ERROR;
+  static const LocationPhotoResponseWrapperStatusEnum PARTIAL_ERROR =
+      _$locationPhotoResponseWrapperStatusEnum_PARTIAL_ERROR;
   @BuiltValueEnumConst(wireName: r'METHOD_NOT_ALLOWED')
-  static const LocationPhotoResponseWrapperStatusEnum METHOD_NOT_ALLOWED = _$locationPhotoResponseWrapperStatusEnum_METHOD_NOT_ALLOWED;
+  static const LocationPhotoResponseWrapperStatusEnum METHOD_NOT_ALLOWED =
+      _$locationPhotoResponseWrapperStatusEnum_METHOD_NOT_ALLOWED;
 
-  static Serializer<LocationPhotoResponseWrapperStatusEnum> get serializer => _$locationPhotoResponseWrapperStatusEnumSerializer;
+  static Serializer<LocationPhotoResponseWrapperStatusEnum> get serializer =>
+      _$locationPhotoResponseWrapperStatusEnumSerializer;
 
-  const LocationPhotoResponseWrapperStatusEnum._(String name): super(name);
+  const LocationPhotoResponseWrapperStatusEnum._(String name) : super(name);
 
-  static BuiltSet<LocationPhotoResponseWrapperStatusEnum> get values => _$locationPhotoResponseWrapperStatusEnumValues;
-  static LocationPhotoResponseWrapperStatusEnum valueOf(String name) => _$locationPhotoResponseWrapperStatusEnumValueOf(name);
+  static BuiltSet<LocationPhotoResponseWrapperStatusEnum> get values =>
+      _$locationPhotoResponseWrapperStatusEnumValues;
+  static LocationPhotoResponseWrapperStatusEnum valueOf(String name) =>
+      _$locationPhotoResponseWrapperStatusEnumValueOf(name);
 }
 
 class LocationPhotoResponseWrapperErrorCodeEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'NORMALIZATION_FAILED')
-  static const LocationPhotoResponseWrapperErrorCodeEnum NORMALIZATION_FAILED = _$locationPhotoResponseWrapperErrorCodeEnum_NORMALIZATION_FAILED;
+  static const LocationPhotoResponseWrapperErrorCodeEnum NORMALIZATION_FAILED =
+      _$locationPhotoResponseWrapperErrorCodeEnum_NORMALIZATION_FAILED;
   @BuiltValueEnumConst(wireName: r'DATA_CORRUPTED')
-  static const LocationPhotoResponseWrapperErrorCodeEnum DATA_CORRUPTED = _$locationPhotoResponseWrapperErrorCodeEnum_DATA_CORRUPTED;
+  static const LocationPhotoResponseWrapperErrorCodeEnum DATA_CORRUPTED =
+      _$locationPhotoResponseWrapperErrorCodeEnum_DATA_CORRUPTED;
   @BuiltValueEnumConst(wireName: r'INVALID_INPUT')
-  static const LocationPhotoResponseWrapperErrorCodeEnum INVALID_INPUT = _$locationPhotoResponseWrapperErrorCodeEnum_INVALID_INPUT;
+  static const LocationPhotoResponseWrapperErrorCodeEnum INVALID_INPUT =
+      _$locationPhotoResponseWrapperErrorCodeEnum_INVALID_INPUT;
   @BuiltValueEnumConst(wireName: r'NOT_SYNCABLE')
-  static const LocationPhotoResponseWrapperErrorCodeEnum NOT_SYNCABLE = _$locationPhotoResponseWrapperErrorCodeEnum_NOT_SYNCABLE;
+  static const LocationPhotoResponseWrapperErrorCodeEnum NOT_SYNCABLE =
+      _$locationPhotoResponseWrapperErrorCodeEnum_NOT_SYNCABLE;
   @BuiltValueEnumConst(wireName: r'PAYMENT_FAILED')
-  static const LocationPhotoResponseWrapperErrorCodeEnum PAYMENT_FAILED = _$locationPhotoResponseWrapperErrorCodeEnum_PAYMENT_FAILED;
+  static const LocationPhotoResponseWrapperErrorCodeEnum PAYMENT_FAILED =
+      _$locationPhotoResponseWrapperErrorCodeEnum_PAYMENT_FAILED;
   @BuiltValueEnumConst(wireName: r'FREE_TIER_REACHED')
-  static const LocationPhotoResponseWrapperErrorCodeEnum FREE_TIER_REACHED = _$locationPhotoResponseWrapperErrorCodeEnum_FREE_TIER_REACHED;
+  static const LocationPhotoResponseWrapperErrorCodeEnum FREE_TIER_REACHED =
+      _$locationPhotoResponseWrapperErrorCodeEnum_FREE_TIER_REACHED;
   @BuiltValueEnumConst(wireName: r'LIMIT_REACHED')
-  static const LocationPhotoResponseWrapperErrorCodeEnum LIMIT_REACHED = _$locationPhotoResponseWrapperErrorCodeEnum_LIMIT_REACHED;
+  static const LocationPhotoResponseWrapperErrorCodeEnum LIMIT_REACHED =
+      _$locationPhotoResponseWrapperErrorCodeEnum_LIMIT_REACHED;
   @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const LocationPhotoResponseWrapperErrorCodeEnum INACTIVE = _$locationPhotoResponseWrapperErrorCodeEnum_INACTIVE;
+  static const LocationPhotoResponseWrapperErrorCodeEnum INACTIVE =
+      _$locationPhotoResponseWrapperErrorCodeEnum_INACTIVE;
   @BuiltValueEnumConst(wireName: r'UNKNOWN')
-  static const LocationPhotoResponseWrapperErrorCodeEnum UNKNOWN = _$locationPhotoResponseWrapperErrorCodeEnum_UNKNOWN;
+  static const LocationPhotoResponseWrapperErrorCodeEnum UNKNOWN =
+      _$locationPhotoResponseWrapperErrorCodeEnum_UNKNOWN;
   @BuiltValueEnumConst(wireName: r'IDENTIFIER_NOT_UNIQUE')
-  static const LocationPhotoResponseWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE = _$locationPhotoResponseWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
+  static const LocationPhotoResponseWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE =
+      _$locationPhotoResponseWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
   @BuiltValueEnumConst(wireName: r'ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT')
-  static const LocationPhotoResponseWrapperErrorCodeEnum ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT = _$locationPhotoResponseWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
+  static const LocationPhotoResponseWrapperErrorCodeEnum
+      ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT =
+      _$locationPhotoResponseWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
   @BuiltValueEnumConst(wireName: r'NO_ACCOUNT_CONNECTED')
-  static const LocationPhotoResponseWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED = _$locationPhotoResponseWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
+  static const LocationPhotoResponseWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED =
+      _$locationPhotoResponseWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
   @BuiltValueEnumConst(wireName: r'NO_PAGE_SELECTED')
-  static const LocationPhotoResponseWrapperErrorCodeEnum NO_PAGE_SELECTED = _$locationPhotoResponseWrapperErrorCodeEnum_NO_PAGE_SELECTED;
+  static const LocationPhotoResponseWrapperErrorCodeEnum NO_PAGE_SELECTED =
+      _$locationPhotoResponseWrapperErrorCodeEnum_NO_PAGE_SELECTED;
   @BuiltValueEnumConst(wireName: r'PAGE_NOT_CREATED')
-  static const LocationPhotoResponseWrapperErrorCodeEnum PAGE_NOT_CREATED = _$locationPhotoResponseWrapperErrorCodeEnum_PAGE_NOT_CREATED;
+  static const LocationPhotoResponseWrapperErrorCodeEnum PAGE_NOT_CREATED =
+      _$locationPhotoResponseWrapperErrorCodeEnum_PAGE_NOT_CREATED;
   @BuiltValueEnumConst(wireName: r'PAGE_IN_REVIEW')
-  static const LocationPhotoResponseWrapperErrorCodeEnum PAGE_IN_REVIEW = _$locationPhotoResponseWrapperErrorCodeEnum_PAGE_IN_REVIEW;
+  static const LocationPhotoResponseWrapperErrorCodeEnum PAGE_IN_REVIEW =
+      _$locationPhotoResponseWrapperErrorCodeEnum_PAGE_IN_REVIEW;
   @BuiltValueEnumConst(wireName: r'PAGE_CLAIMED_BY_OTHERS')
-  static const LocationPhotoResponseWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS = _$locationPhotoResponseWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
+  static const LocationPhotoResponseWrapperErrorCodeEnum
+      PAGE_CLAIMED_BY_OTHERS =
+      _$locationPhotoResponseWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
   @BuiltValueEnumConst(wireName: r'OVERLAPPING_SOCIALPOST')
-  static const LocationPhotoResponseWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST = _$locationPhotoResponseWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
+  static const LocationPhotoResponseWrapperErrorCodeEnum
+      OVERLAPPING_SOCIALPOST =
+      _$locationPhotoResponseWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
   @BuiltValueEnumConst(wireName: r'TOO_MANY_REPLIES')
-  static const LocationPhotoResponseWrapperErrorCodeEnum TOO_MANY_REPLIES = _$locationPhotoResponseWrapperErrorCodeEnum_TOO_MANY_REPLIES;
+  static const LocationPhotoResponseWrapperErrorCodeEnum TOO_MANY_REPLIES =
+      _$locationPhotoResponseWrapperErrorCodeEnum_TOO_MANY_REPLIES;
   @BuiltValueEnumConst(wireName: r'REPLY_TOO_LONG')
-  static const LocationPhotoResponseWrapperErrorCodeEnum REPLY_TOO_LONG = _$locationPhotoResponseWrapperErrorCodeEnum_REPLY_TOO_LONG;
+  static const LocationPhotoResponseWrapperErrorCodeEnum REPLY_TOO_LONG =
+      _$locationPhotoResponseWrapperErrorCodeEnum_REPLY_TOO_LONG;
   @BuiltValueEnumConst(wireName: r'DEPRECATED')
-  static const LocationPhotoResponseWrapperErrorCodeEnum DEPRECATED = _$locationPhotoResponseWrapperErrorCodeEnum_DEPRECATED;
+  static const LocationPhotoResponseWrapperErrorCodeEnum DEPRECATED =
+      _$locationPhotoResponseWrapperErrorCodeEnum_DEPRECATED;
 
-  static Serializer<LocationPhotoResponseWrapperErrorCodeEnum> get serializer => _$locationPhotoResponseWrapperErrorCodeEnumSerializer;
+  static Serializer<LocationPhotoResponseWrapperErrorCodeEnum> get serializer =>
+      _$locationPhotoResponseWrapperErrorCodeEnumSerializer;
 
-  const LocationPhotoResponseWrapperErrorCodeEnum._(String name): super(name);
+  const LocationPhotoResponseWrapperErrorCodeEnum._(String name) : super(name);
 
-  static BuiltSet<LocationPhotoResponseWrapperErrorCodeEnum> get values => _$locationPhotoResponseWrapperErrorCodeEnumValues;
-  static LocationPhotoResponseWrapperErrorCodeEnum valueOf(String name) => _$locationPhotoResponseWrapperErrorCodeEnumValueOf(name);
+  static BuiltSet<LocationPhotoResponseWrapperErrorCodeEnum> get values =>
+      _$locationPhotoResponseWrapperErrorCodeEnumValues;
+  static LocationPhotoResponseWrapperErrorCodeEnum valueOf(String name) =>
+      _$locationPhotoResponseWrapperErrorCodeEnumValueOf(name);
 }
-

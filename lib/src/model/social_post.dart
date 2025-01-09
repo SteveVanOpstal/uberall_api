@@ -20,13 +20,13 @@ part 'social_post.g.dart';
 /// * [type] - The type of the Social Post. POST, OFFER, QUESTION_AND_ANSWER, EVENT or ALERT.
 /// * [alertType] - A special type for Google ALERT posts. Possible values are COVID_19.
 /// * [status] - The current status of the Social Post (scheduled, active, inactive, deleted, not_published, published, impossible)
-/// * [dateStart] - The starting date of EVENT and OFFER type Social Posts. It is used to indicate when an EVENT/OFFER will start. For API versions older than 20210804, it is used as publicationDate. 
+/// * [dateStart] - The starting date of EVENT and OFFER type Social Posts. It is used to indicate when an EVENT/OFFER will start. For API versions older than 20210804, it is used as publicationDate.
 /// * [dateEnd] - The ending date of the Social Post (type=OFFER). The post will be removed from the listings at that date. It also determines when a special offer should end.
 /// * [publicationDate] - The date on which the Social Post will be published. It is used to schedule posts in the future. Format: YYYY-MM-dd''T''HH:mm:ssXXXXX  (Example: 2007-12-03T10:15:30+01:00)
 /// * [isStoreLocator] - When enabled, the SocialPost will be visible in StoreLocator.
 /// * [timeZone] - The timezone in which the Social Post should be created
 /// * [labels] - The list of location labels as entered when creating/updating the Social Post.
-/// * [callToActions] 
+/// * [callToActions]
 /// * [firstComment] - The first comment to be posted after a post creation. Only available for INSTAGRAM
 /// * [businessIds] - The list of location group IDs as entered when creating/updating the Social Post.
 /// * [locationIds] - The list of location group IDs as entered when creating/updating the Social Post.
@@ -68,7 +68,7 @@ abstract class SocialPost implements Built<SocialPost, SocialPostBuilder> {
   SocialPostStatusEnum? get status;
   // enum statusEnum {  SCHEDULED,  APPROVAL_NEEDED,  ACTIVE,  INACTIVE,  DELETED,  IMPOSSIBLE,  INCOMPLETE,  ENDED,  REJECTED,  };
 
-  /// The starting date of EVENT and OFFER type Social Posts. It is used to indicate when an EVENT/OFFER will start. For API versions older than 20210804, it is used as publicationDate. 
+  /// The starting date of EVENT and OFFER type Social Posts. It is used to indicate when an EVENT/OFFER will start. For API versions older than 20210804, it is used as publicationDate.
   @BuiltValueField(wireName: r'dateStart')
   DateTime? get dateStart;
 
@@ -250,7 +250,8 @@ class _$SocialPostSerializer implements PrimitiveSerializer<SocialPost> {
       yield r'callToActions';
       yield serializers.serialize(
         object.callToActions,
-        specifiedType: const FullType(BuiltList, [FullType(SocialPostCallToAction)]),
+        specifiedType:
+            const FullType(BuiltList, [FullType(SocialPostCallToAction)]),
       );
     }
     if (object.firstComment != null) {
@@ -343,7 +344,9 @@ class _$SocialPostSerializer implements PrimitiveSerializer<SocialPost> {
     SocialPost object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -445,7 +448,8 @@ class _$SocialPostSerializer implements PrimitiveSerializer<SocialPost> {
         case r'callToActions':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(SocialPostCallToAction)]),
+            specifiedType:
+                const FullType(BuiltList, [FullType(SocialPostCallToAction)]),
           ) as BuiltList<SocialPostCallToAction>;
           result.callToActions.replace(valueDes);
           break;
@@ -501,7 +505,8 @@ class _$SocialPostSerializer implements PrimitiveSerializer<SocialPost> {
         case r'photos':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(PhotoContainer)]),
+            specifiedType:
+                const FullType(BuiltList, [FullType(PhotoContainer)]),
           ) as BuiltList<PhotoContainer>;
           result.photos.replace(valueDes);
           break;
@@ -563,89 +568,114 @@ class _$SocialPostSerializer implements PrimitiveSerializer<SocialPost> {
 }
 
 class SocialPostTypeEnum extends EnumClass {
-
   /// The type of the Social Post. POST, OFFER, QUESTION_AND_ANSWER, EVENT or ALERT.
   @BuiltValueEnumConst(wireName: r'POST')
   static const SocialPostTypeEnum POST = _$socialPostTypeEnum_POST;
+
   /// The type of the Social Post. POST, OFFER, QUESTION_AND_ANSWER, EVENT or ALERT.
   @BuiltValueEnumConst(wireName: r'OFFER')
   static const SocialPostTypeEnum OFFER = _$socialPostTypeEnum_OFFER;
+
   /// The type of the Social Post. POST, OFFER, QUESTION_AND_ANSWER, EVENT or ALERT.
   @BuiltValueEnumConst(wireName: r'ALERT')
   static const SocialPostTypeEnum ALERT = _$socialPostTypeEnum_ALERT;
+
   /// The type of the Social Post. POST, OFFER, QUESTION_AND_ANSWER, EVENT or ALERT.
   @BuiltValueEnumConst(wireName: r'EVENT')
   static const SocialPostTypeEnum EVENT = _$socialPostTypeEnum_EVENT;
+
   /// The type of the Social Post. POST, OFFER, QUESTION_AND_ANSWER, EVENT or ALERT.
   @BuiltValueEnumConst(wireName: r'QUESTION_AND_ANSWER')
-  static const SocialPostTypeEnum QUESTION_AND_ANSWER = _$socialPostTypeEnum_QUESTION_AND_ANSWER;
+  static const SocialPostTypeEnum QUESTION_AND_ANSWER =
+      _$socialPostTypeEnum_QUESTION_AND_ANSWER;
+
   /// The type of the Social Post. POST, OFFER, QUESTION_AND_ANSWER, EVENT or ALERT.
   @BuiltValueEnumConst(wireName: r'REEL')
   static const SocialPostTypeEnum REEL = _$socialPostTypeEnum_REEL;
+
   /// The type of the Social Post. POST, OFFER, QUESTION_AND_ANSWER, EVENT or ALERT.
   @BuiltValueEnumConst(wireName: r'STORY')
   static const SocialPostTypeEnum STORY = _$socialPostTypeEnum_STORY;
+
   /// The type of the Social Post. POST, OFFER, QUESTION_AND_ANSWER, EVENT or ALERT.
   @BuiltValueEnumConst(wireName: r'CAROUSEL')
   static const SocialPostTypeEnum CAROUSEL = _$socialPostTypeEnum_CAROUSEL;
 
-  static Serializer<SocialPostTypeEnum> get serializer => _$socialPostTypeEnumSerializer;
+  static Serializer<SocialPostTypeEnum> get serializer =>
+      _$socialPostTypeEnumSerializer;
 
-  const SocialPostTypeEnum._(String name): super(name);
+  const SocialPostTypeEnum._(String name) : super(name);
 
   static BuiltSet<SocialPostTypeEnum> get values => _$socialPostTypeEnumValues;
-  static SocialPostTypeEnum valueOf(String name) => _$socialPostTypeEnumValueOf(name);
+  static SocialPostTypeEnum valueOf(String name) =>
+      _$socialPostTypeEnumValueOf(name);
 }
 
 class SocialPostAlertTypeEnum extends EnumClass {
-
   /// A special type for Google ALERT posts. Possible values are COVID_19.
   @BuiltValueEnumConst(wireName: r'COVID_19')
-  static const SocialPostAlertTypeEnum cOVID19 = _$socialPostAlertTypeEnum_cOVID19;
+  static const SocialPostAlertTypeEnum cOVID19 =
+      _$socialPostAlertTypeEnum_cOVID19;
 
-  static Serializer<SocialPostAlertTypeEnum> get serializer => _$socialPostAlertTypeEnumSerializer;
+  static Serializer<SocialPostAlertTypeEnum> get serializer =>
+      _$socialPostAlertTypeEnumSerializer;
 
-  const SocialPostAlertTypeEnum._(String name): super(name);
+  const SocialPostAlertTypeEnum._(String name) : super(name);
 
-  static BuiltSet<SocialPostAlertTypeEnum> get values => _$socialPostAlertTypeEnumValues;
-  static SocialPostAlertTypeEnum valueOf(String name) => _$socialPostAlertTypeEnumValueOf(name);
+  static BuiltSet<SocialPostAlertTypeEnum> get values =>
+      _$socialPostAlertTypeEnumValues;
+  static SocialPostAlertTypeEnum valueOf(String name) =>
+      _$socialPostAlertTypeEnumValueOf(name);
 }
 
 class SocialPostStatusEnum extends EnumClass {
-
   /// The current status of the Social Post (scheduled, active, inactive, deleted, not_published, published, impossible)
   @BuiltValueEnumConst(wireName: r'SCHEDULED')
-  static const SocialPostStatusEnum SCHEDULED = _$socialPostStatusEnum_SCHEDULED;
+  static const SocialPostStatusEnum SCHEDULED =
+      _$socialPostStatusEnum_SCHEDULED;
+
   /// The current status of the Social Post (scheduled, active, inactive, deleted, not_published, published, impossible)
   @BuiltValueEnumConst(wireName: r'APPROVAL_NEEDED')
-  static const SocialPostStatusEnum APPROVAL_NEEDED = _$socialPostStatusEnum_APPROVAL_NEEDED;
+  static const SocialPostStatusEnum APPROVAL_NEEDED =
+      _$socialPostStatusEnum_APPROVAL_NEEDED;
+
   /// The current status of the Social Post (scheduled, active, inactive, deleted, not_published, published, impossible)
   @BuiltValueEnumConst(wireName: r'ACTIVE')
   static const SocialPostStatusEnum ACTIVE = _$socialPostStatusEnum_ACTIVE;
+
   /// The current status of the Social Post (scheduled, active, inactive, deleted, not_published, published, impossible)
   @BuiltValueEnumConst(wireName: r'INACTIVE')
   static const SocialPostStatusEnum INACTIVE = _$socialPostStatusEnum_INACTIVE;
+
   /// The current status of the Social Post (scheduled, active, inactive, deleted, not_published, published, impossible)
   @BuiltValueEnumConst(wireName: r'DELETED')
   static const SocialPostStatusEnum DELETED = _$socialPostStatusEnum_DELETED;
+
   /// The current status of the Social Post (scheduled, active, inactive, deleted, not_published, published, impossible)
   @BuiltValueEnumConst(wireName: r'IMPOSSIBLE')
-  static const SocialPostStatusEnum IMPOSSIBLE = _$socialPostStatusEnum_IMPOSSIBLE;
+  static const SocialPostStatusEnum IMPOSSIBLE =
+      _$socialPostStatusEnum_IMPOSSIBLE;
+
   /// The current status of the Social Post (scheduled, active, inactive, deleted, not_published, published, impossible)
   @BuiltValueEnumConst(wireName: r'INCOMPLETE')
-  static const SocialPostStatusEnum INCOMPLETE = _$socialPostStatusEnum_INCOMPLETE;
+  static const SocialPostStatusEnum INCOMPLETE =
+      _$socialPostStatusEnum_INCOMPLETE;
+
   /// The current status of the Social Post (scheduled, active, inactive, deleted, not_published, published, impossible)
   @BuiltValueEnumConst(wireName: r'ENDED')
   static const SocialPostStatusEnum ENDED = _$socialPostStatusEnum_ENDED;
+
   /// The current status of the Social Post (scheduled, active, inactive, deleted, not_published, published, impossible)
   @BuiltValueEnumConst(wireName: r'REJECTED')
   static const SocialPostStatusEnum REJECTED = _$socialPostStatusEnum_REJECTED;
 
-  static Serializer<SocialPostStatusEnum> get serializer => _$socialPostStatusEnumSerializer;
+  static Serializer<SocialPostStatusEnum> get serializer =>
+      _$socialPostStatusEnumSerializer;
 
-  const SocialPostStatusEnum._(String name): super(name);
+  const SocialPostStatusEnum._(String name) : super(name);
 
-  static BuiltSet<SocialPostStatusEnum> get values => _$socialPostStatusEnumValues;
-  static SocialPostStatusEnum valueOf(String name) => _$socialPostStatusEnumValueOf(name);
+  static BuiltSet<SocialPostStatusEnum> get values =>
+      _$socialPostStatusEnumValues;
+  static SocialPostStatusEnum valueOf(String name) =>
+      _$socialPostStatusEnumValueOf(name);
 }
-

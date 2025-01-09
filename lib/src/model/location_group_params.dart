@@ -14,10 +14,11 @@ part 'location_group_params.g.dart';
 /// Properties:
 /// * [name] - The name of the LocationGroup
 /// * [status] - The status of the LocationGroup
-/// * [locations] 
-/// * [users] 
+/// * [locations]
+/// * [users]
 @BuiltValue()
-abstract class LocationGroupParams implements Built<LocationGroupParams, LocationGroupParamsBuilder> {
+abstract class LocationGroupParams
+    implements Built<LocationGroupParams, LocationGroupParamsBuilder> {
   /// The name of the LocationGroup
   @BuiltValueField(wireName: r'name')
   String? get name;
@@ -35,18 +36,24 @@ abstract class LocationGroupParams implements Built<LocationGroupParams, Locatio
 
   LocationGroupParams._();
 
-  factory LocationGroupParams([void updates(LocationGroupParamsBuilder b)]) = _$LocationGroupParams;
+  factory LocationGroupParams([void updates(LocationGroupParamsBuilder b)]) =
+      _$LocationGroupParams;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LocationGroupParamsBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LocationGroupParams> get serializer => _$LocationGroupParamsSerializer();
+  static Serializer<LocationGroupParams> get serializer =>
+      _$LocationGroupParamsSerializer();
 }
 
-class _$LocationGroupParamsSerializer implements PrimitiveSerializer<LocationGroupParams> {
+class _$LocationGroupParamsSerializer
+    implements PrimitiveSerializer<LocationGroupParams> {
   @override
-  final Iterable<Type> types = const [LocationGroupParams, _$LocationGroupParams];
+  final Iterable<Type> types = const [
+    LocationGroupParams,
+    _$LocationGroupParams
+  ];
 
   @override
   final String wireName = r'LocationGroupParams';
@@ -92,7 +99,9 @@ class _$LocationGroupParamsSerializer implements PrimitiveSerializer<LocationGro
     LocationGroupParams object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -165,19 +174,23 @@ class _$LocationGroupParamsSerializer implements PrimitiveSerializer<LocationGro
 }
 
 class LocationGroupParamsStatusEnum extends EnumClass {
-
   /// The status of the LocationGroup
   @BuiltValueEnumConst(wireName: r'ACTIVE')
-  static const LocationGroupParamsStatusEnum ACTIVE = _$locationGroupParamsStatusEnum_ACTIVE;
+  static const LocationGroupParamsStatusEnum ACTIVE =
+      _$locationGroupParamsStatusEnum_ACTIVE;
+
   /// The status of the LocationGroup
   @BuiltValueEnumConst(wireName: r'DELETED')
-  static const LocationGroupParamsStatusEnum DELETED = _$locationGroupParamsStatusEnum_DELETED;
+  static const LocationGroupParamsStatusEnum DELETED =
+      _$locationGroupParamsStatusEnum_DELETED;
 
-  static Serializer<LocationGroupParamsStatusEnum> get serializer => _$locationGroupParamsStatusEnumSerializer;
+  static Serializer<LocationGroupParamsStatusEnum> get serializer =>
+      _$locationGroupParamsStatusEnumSerializer;
 
-  const LocationGroupParamsStatusEnum._(String name): super(name);
+  const LocationGroupParamsStatusEnum._(String name) : super(name);
 
-  static BuiltSet<LocationGroupParamsStatusEnum> get values => _$locationGroupParamsStatusEnumValues;
-  static LocationGroupParamsStatusEnum valueOf(String name) => _$locationGroupParamsStatusEnumValueOf(name);
+  static BuiltSet<LocationGroupParamsStatusEnum> get values =>
+      _$locationGroupParamsStatusEnumValues;
+  static LocationGroupParamsStatusEnum valueOf(String name) =>
+      _$locationGroupParamsStatusEnumValueOf(name);
 }
-

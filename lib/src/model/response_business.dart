@@ -14,7 +14,8 @@ part 'response_business.g.dart';
 /// * [id] - Business id
 /// * [name] - Business name
 @BuiltValue()
-abstract class ResponseBusiness implements Built<ResponseBusiness, ResponseBusinessBuilder> {
+abstract class ResponseBusiness
+    implements Built<ResponseBusiness, ResponseBusinessBuilder> {
   /// Business id
   @BuiltValueField(wireName: r'id')
   int? get id;
@@ -25,16 +26,19 @@ abstract class ResponseBusiness implements Built<ResponseBusiness, ResponseBusin
 
   ResponseBusiness._();
 
-  factory ResponseBusiness([void updates(ResponseBusinessBuilder b)]) = _$ResponseBusiness;
+  factory ResponseBusiness([void updates(ResponseBusinessBuilder b)]) =
+      _$ResponseBusiness;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ResponseBusinessBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ResponseBusiness> get serializer => _$ResponseBusinessSerializer();
+  static Serializer<ResponseBusiness> get serializer =>
+      _$ResponseBusinessSerializer();
 }
 
-class _$ResponseBusinessSerializer implements PrimitiveSerializer<ResponseBusiness> {
+class _$ResponseBusinessSerializer
+    implements PrimitiveSerializer<ResponseBusiness> {
   @override
   final Iterable<Type> types = const [ResponseBusiness, _$ResponseBusiness];
 
@@ -68,7 +72,9 @@ class _$ResponseBusinessSerializer implements PrimitiveSerializer<ResponseBusine
     ResponseBusiness object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -125,4 +131,3 @@ class _$ResponseBusinessSerializer implements PrimitiveSerializer<ResponseBusine
     return result.build();
   }
 }
-

@@ -11,7 +11,6 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for LocationsPhotosApi
 void main() {
   // final instance = LocationsPhotosApi();
@@ -52,6 +51,5 @@ void main() {
     test('test postPhotos', () async {
       // TODO
     });
-
   });
 }

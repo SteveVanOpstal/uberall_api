@@ -15,7 +15,6 @@ import 'package:openapi/src/model/dashboard_export_data_list_wrapper.dart';
 import 'package:openapi/src/model/dashboard_export_data_wrapper.dart';
 
 class DashboardExportsApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -38,7 +37,7 @@ class DashboardExportsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DashboardExportDataListWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DashboardExportDataListWrapper>> getDashboardExports({ 
+  Future<Response<DashboardExportDataListWrapper>> getDashboardExports({
     String? locationIds,
     int? max,
     int? offset,
@@ -62,7 +61,8 @@ class DashboardExportsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -75,9 +75,14 @@ class DashboardExportsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (locationIds != null) r'locationIds': encodeQueryParameter(_serializers, locationIds, const FullType(String)),
-      if (max != null) r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
-      if (offset != null) r'offset': encodeQueryParameter(_serializers, offset, const FullType(int)),
+      if (locationIds != null)
+        r'locationIds': encodeQueryParameter(
+            _serializers, locationIds, const FullType(String)),
+      if (max != null)
+        r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
+      if (offset != null)
+        r'offset':
+            encodeQueryParameter(_serializers, offset, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -93,11 +98,12 @@ class DashboardExportsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DashboardExportDataListWrapper),
-      ) as DashboardExportDataListWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DashboardExportDataListWrapper),
+            ) as DashboardExportDataListWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -134,7 +140,7 @@ class DashboardExportsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DashboardExportDataWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DashboardExportDataWrapper>> getDashboardExportsId({ 
+  Future<Response<DashboardExportDataWrapper>> getDashboardExportsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -143,7 +149,10 @@ class DashboardExportsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/dashboard-exports/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/dashboard-exports/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -156,7 +165,8 @@ class DashboardExportsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -180,11 +190,12 @@ class DashboardExportsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DashboardExportDataWrapper),
-      ) as DashboardExportDataWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DashboardExportDataWrapper),
+            ) as DashboardExportDataWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -221,7 +232,7 @@ class DashboardExportsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Uint8List] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Uint8List>> getDashboardExportsIdDownload({ 
+  Future<Response<Uint8List>> getDashboardExportsIdDownload({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -230,7 +241,10 @@ class DashboardExportsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/dashboard-exports/{id}/download'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/dashboard-exports/{id}/download'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
@@ -244,7 +258,8 @@ class DashboardExportsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -269,7 +284,6 @@ class DashboardExportsApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as Uint8List;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -302,7 +316,7 @@ class DashboardExportsApi {
   /// * [whitelabelIdentifier] - Whitelabel identifier string
   /// * [locationIds] - List of location IDs
   /// * [language] - Language identifier (i.e. 'fr', 'de')
-  /// * [body] 
+  /// * [body]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -312,7 +326,7 @@ class DashboardExportsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DashboardExportDataWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DashboardExportDataWrapper>> postDashboardExports({ 
+  Future<Response<DashboardExportDataWrapper>> postDashboardExports({
     required String start,
     required String end,
     required String group,
@@ -340,7 +354,8 @@ class DashboardExportsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -353,22 +368,26 @@ class DashboardExportsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'start': encodeQueryParameter(_serializers, start, const FullType(String)),
+      r'start':
+          encodeQueryParameter(_serializers, start, const FullType(String)),
       r'end': encodeQueryParameter(_serializers, end, const FullType(String)),
-      r'group': encodeQueryParameter(_serializers, group, const FullType(String)),
-      r'whitelabelIdentifier': encodeQueryParameter(_serializers, whitelabelIdentifier, const FullType(String)),
-      r'locationIds': encodeQueryParameter(_serializers, locationIds, const FullType(String)),
-      r'language': encodeQueryParameter(_serializers, language, const FullType(String)),
+      r'group':
+          encodeQueryParameter(_serializers, group, const FullType(String)),
+      r'whitelabelIdentifier': encodeQueryParameter(
+          _serializers, whitelabelIdentifier, const FullType(String)),
+      r'locationIds': encodeQueryParameter(
+          _serializers, locationIds, const FullType(String)),
+      r'language':
+          encodeQueryParameter(_serializers, language, const FullType(String)),
     };
 
     dynamic _bodyData;
 
     try {
       _bodyData = body;
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
           queryParameters: _queryParameters,
@@ -393,11 +412,12 @@ class DashboardExportsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DashboardExportDataWrapper),
-      ) as DashboardExportDataWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DashboardExportDataWrapper),
+            ) as DashboardExportDataWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -419,5 +439,4 @@ class DashboardExportsApi {
       extra: _response.extra,
     );
   }
-
 }

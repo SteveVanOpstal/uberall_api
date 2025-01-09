@@ -13,13 +13,16 @@ part 'google_services_response_wrapper.g.dart';
 /// GoogleServicesResponseWrapper
 ///
 /// Properties:
-/// * [status] 
+/// * [status]
 /// * [message] - (optional) Holds further information about the response
-/// * [errorCode] 
+/// * [errorCode]
 /// * [warnings] - (optional) Holds further warnings
-/// * [response] 
+/// * [response]
 @BuiltValue()
-abstract class GoogleServicesResponseWrapper implements Built<GoogleServicesResponseWrapper, GoogleServicesResponseWrapperBuilder> {
+abstract class GoogleServicesResponseWrapper
+    implements
+        Built<GoogleServicesResponseWrapper,
+            GoogleServicesResponseWrapperBuilder> {
   @BuiltValueField(wireName: r'status')
   GoogleServicesResponseWrapperStatusEnum? get status;
   // enum statusEnum {  SUCCESS,  QUOTA_LIMIT_EXCEED,  NOT_AUTHORIZED,  FORBIDDEN,  BAD_ACCESS_TOKEN,  BAD_PRIVATE_KEY,  BAD_PUBLIC_KEY,  MISSING_PARAMETER,  INVALID_PARAMETER,  WRONG_PARAMETER_TYPE,  CONFLICT,  RESOURCE_LOCKED,  SERVER_ERROR,  ERROR,  NOT_FOUND,  BAD_REQUEST,  USER_ERROR,  PARTIAL_ERROR,  METHOD_NOT_ALLOWED,  };
@@ -41,18 +44,25 @@ abstract class GoogleServicesResponseWrapper implements Built<GoogleServicesResp
 
   GoogleServicesResponseWrapper._();
 
-  factory GoogleServicesResponseWrapper([void updates(GoogleServicesResponseWrapperBuilder b)]) = _$GoogleServicesResponseWrapper;
+  factory GoogleServicesResponseWrapper(
+          [void updates(GoogleServicesResponseWrapperBuilder b)]) =
+      _$GoogleServicesResponseWrapper;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(GoogleServicesResponseWrapperBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<GoogleServicesResponseWrapper> get serializer => _$GoogleServicesResponseWrapperSerializer();
+  static Serializer<GoogleServicesResponseWrapper> get serializer =>
+      _$GoogleServicesResponseWrapperSerializer();
 }
 
-class _$GoogleServicesResponseWrapperSerializer implements PrimitiveSerializer<GoogleServicesResponseWrapper> {
+class _$GoogleServicesResponseWrapperSerializer
+    implements PrimitiveSerializer<GoogleServicesResponseWrapper> {
   @override
-  final Iterable<Type> types = const [GoogleServicesResponseWrapper, _$GoogleServicesResponseWrapper];
+  final Iterable<Type> types = const [
+    GoogleServicesResponseWrapper,
+    _$GoogleServicesResponseWrapper
+  ];
 
   @override
   final String wireName = r'GoogleServicesResponseWrapper';
@@ -80,7 +90,8 @@ class _$GoogleServicesResponseWrapperSerializer implements PrimitiveSerializer<G
       yield r'errorCode';
       yield serializers.serialize(
         object.errorCode,
-        specifiedType: const FullType(GoogleServicesResponseWrapperErrorCodeEnum),
+        specifiedType:
+            const FullType(GoogleServicesResponseWrapperErrorCodeEnum),
       );
     }
     if (object.warnings != null) {
@@ -105,7 +116,9 @@ class _$GoogleServicesResponseWrapperSerializer implements PrimitiveSerializer<G
     GoogleServicesResponseWrapper object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -123,7 +136,8 @@ class _$GoogleServicesResponseWrapperSerializer implements PrimitiveSerializer<G
         case r'status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(GoogleServicesResponseWrapperStatusEnum),
+            specifiedType:
+                const FullType(GoogleServicesResponseWrapperStatusEnum),
           ) as GoogleServicesResponseWrapperStatusEnum;
           result.status = valueDes;
           break;
@@ -137,7 +151,8 @@ class _$GoogleServicesResponseWrapperSerializer implements PrimitiveSerializer<G
         case r'errorCode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(GoogleServicesResponseWrapperErrorCodeEnum),
+            specifiedType:
+                const FullType(GoogleServicesResponseWrapperErrorCodeEnum),
           ) as GoogleServicesResponseWrapperErrorCodeEnum;
           result.errorCode = valueDes;
           break;
@@ -185,102 +200,148 @@ class _$GoogleServicesResponseWrapperSerializer implements PrimitiveSerializer<G
 }
 
 class GoogleServicesResponseWrapperStatusEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'SUCCESS')
-  static const GoogleServicesResponseWrapperStatusEnum SUCCESS = _$googleServicesResponseWrapperStatusEnum_SUCCESS;
+  static const GoogleServicesResponseWrapperStatusEnum SUCCESS =
+      _$googleServicesResponseWrapperStatusEnum_SUCCESS;
   @BuiltValueEnumConst(wireName: r'QUOTA_LIMIT_EXCEED')
-  static const GoogleServicesResponseWrapperStatusEnum QUOTA_LIMIT_EXCEED = _$googleServicesResponseWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
+  static const GoogleServicesResponseWrapperStatusEnum QUOTA_LIMIT_EXCEED =
+      _$googleServicesResponseWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
   @BuiltValueEnumConst(wireName: r'NOT_AUTHORIZED')
-  static const GoogleServicesResponseWrapperStatusEnum NOT_AUTHORIZED = _$googleServicesResponseWrapperStatusEnum_NOT_AUTHORIZED;
+  static const GoogleServicesResponseWrapperStatusEnum NOT_AUTHORIZED =
+      _$googleServicesResponseWrapperStatusEnum_NOT_AUTHORIZED;
   @BuiltValueEnumConst(wireName: r'FORBIDDEN')
-  static const GoogleServicesResponseWrapperStatusEnum FORBIDDEN = _$googleServicesResponseWrapperStatusEnum_FORBIDDEN;
+  static const GoogleServicesResponseWrapperStatusEnum FORBIDDEN =
+      _$googleServicesResponseWrapperStatusEnum_FORBIDDEN;
   @BuiltValueEnumConst(wireName: r'BAD_ACCESS_TOKEN')
-  static const GoogleServicesResponseWrapperStatusEnum BAD_ACCESS_TOKEN = _$googleServicesResponseWrapperStatusEnum_BAD_ACCESS_TOKEN;
+  static const GoogleServicesResponseWrapperStatusEnum BAD_ACCESS_TOKEN =
+      _$googleServicesResponseWrapperStatusEnum_BAD_ACCESS_TOKEN;
   @BuiltValueEnumConst(wireName: r'BAD_PRIVATE_KEY')
-  static const GoogleServicesResponseWrapperStatusEnum BAD_PRIVATE_KEY = _$googleServicesResponseWrapperStatusEnum_BAD_PRIVATE_KEY;
+  static const GoogleServicesResponseWrapperStatusEnum BAD_PRIVATE_KEY =
+      _$googleServicesResponseWrapperStatusEnum_BAD_PRIVATE_KEY;
   @BuiltValueEnumConst(wireName: r'BAD_PUBLIC_KEY')
-  static const GoogleServicesResponseWrapperStatusEnum BAD_PUBLIC_KEY = _$googleServicesResponseWrapperStatusEnum_BAD_PUBLIC_KEY;
+  static const GoogleServicesResponseWrapperStatusEnum BAD_PUBLIC_KEY =
+      _$googleServicesResponseWrapperStatusEnum_BAD_PUBLIC_KEY;
   @BuiltValueEnumConst(wireName: r'MISSING_PARAMETER')
-  static const GoogleServicesResponseWrapperStatusEnum MISSING_PARAMETER = _$googleServicesResponseWrapperStatusEnum_MISSING_PARAMETER;
+  static const GoogleServicesResponseWrapperStatusEnum MISSING_PARAMETER =
+      _$googleServicesResponseWrapperStatusEnum_MISSING_PARAMETER;
   @BuiltValueEnumConst(wireName: r'INVALID_PARAMETER')
-  static const GoogleServicesResponseWrapperStatusEnum INVALID_PARAMETER = _$googleServicesResponseWrapperStatusEnum_INVALID_PARAMETER;
+  static const GoogleServicesResponseWrapperStatusEnum INVALID_PARAMETER =
+      _$googleServicesResponseWrapperStatusEnum_INVALID_PARAMETER;
   @BuiltValueEnumConst(wireName: r'WRONG_PARAMETER_TYPE')
-  static const GoogleServicesResponseWrapperStatusEnum WRONG_PARAMETER_TYPE = _$googleServicesResponseWrapperStatusEnum_WRONG_PARAMETER_TYPE;
+  static const GoogleServicesResponseWrapperStatusEnum WRONG_PARAMETER_TYPE =
+      _$googleServicesResponseWrapperStatusEnum_WRONG_PARAMETER_TYPE;
   @BuiltValueEnumConst(wireName: r'CONFLICT')
-  static const GoogleServicesResponseWrapperStatusEnum CONFLICT = _$googleServicesResponseWrapperStatusEnum_CONFLICT;
+  static const GoogleServicesResponseWrapperStatusEnum CONFLICT =
+      _$googleServicesResponseWrapperStatusEnum_CONFLICT;
   @BuiltValueEnumConst(wireName: r'RESOURCE_LOCKED')
-  static const GoogleServicesResponseWrapperStatusEnum RESOURCE_LOCKED = _$googleServicesResponseWrapperStatusEnum_RESOURCE_LOCKED;
+  static const GoogleServicesResponseWrapperStatusEnum RESOURCE_LOCKED =
+      _$googleServicesResponseWrapperStatusEnum_RESOURCE_LOCKED;
   @BuiltValueEnumConst(wireName: r'SERVER_ERROR')
-  static const GoogleServicesResponseWrapperStatusEnum SERVER_ERROR = _$googleServicesResponseWrapperStatusEnum_SERVER_ERROR;
+  static const GoogleServicesResponseWrapperStatusEnum SERVER_ERROR =
+      _$googleServicesResponseWrapperStatusEnum_SERVER_ERROR;
   @BuiltValueEnumConst(wireName: r'ERROR')
-  static const GoogleServicesResponseWrapperStatusEnum ERROR = _$googleServicesResponseWrapperStatusEnum_ERROR;
+  static const GoogleServicesResponseWrapperStatusEnum ERROR =
+      _$googleServicesResponseWrapperStatusEnum_ERROR;
   @BuiltValueEnumConst(wireName: r'NOT_FOUND')
-  static const GoogleServicesResponseWrapperStatusEnum NOT_FOUND = _$googleServicesResponseWrapperStatusEnum_NOT_FOUND;
+  static const GoogleServicesResponseWrapperStatusEnum NOT_FOUND =
+      _$googleServicesResponseWrapperStatusEnum_NOT_FOUND;
   @BuiltValueEnumConst(wireName: r'BAD_REQUEST')
-  static const GoogleServicesResponseWrapperStatusEnum BAD_REQUEST = _$googleServicesResponseWrapperStatusEnum_BAD_REQUEST;
+  static const GoogleServicesResponseWrapperStatusEnum BAD_REQUEST =
+      _$googleServicesResponseWrapperStatusEnum_BAD_REQUEST;
   @BuiltValueEnumConst(wireName: r'USER_ERROR')
-  static const GoogleServicesResponseWrapperStatusEnum USER_ERROR = _$googleServicesResponseWrapperStatusEnum_USER_ERROR;
+  static const GoogleServicesResponseWrapperStatusEnum USER_ERROR =
+      _$googleServicesResponseWrapperStatusEnum_USER_ERROR;
   @BuiltValueEnumConst(wireName: r'PARTIAL_ERROR')
-  static const GoogleServicesResponseWrapperStatusEnum PARTIAL_ERROR = _$googleServicesResponseWrapperStatusEnum_PARTIAL_ERROR;
+  static const GoogleServicesResponseWrapperStatusEnum PARTIAL_ERROR =
+      _$googleServicesResponseWrapperStatusEnum_PARTIAL_ERROR;
   @BuiltValueEnumConst(wireName: r'METHOD_NOT_ALLOWED')
-  static const GoogleServicesResponseWrapperStatusEnum METHOD_NOT_ALLOWED = _$googleServicesResponseWrapperStatusEnum_METHOD_NOT_ALLOWED;
+  static const GoogleServicesResponseWrapperStatusEnum METHOD_NOT_ALLOWED =
+      _$googleServicesResponseWrapperStatusEnum_METHOD_NOT_ALLOWED;
 
-  static Serializer<GoogleServicesResponseWrapperStatusEnum> get serializer => _$googleServicesResponseWrapperStatusEnumSerializer;
+  static Serializer<GoogleServicesResponseWrapperStatusEnum> get serializer =>
+      _$googleServicesResponseWrapperStatusEnumSerializer;
 
-  const GoogleServicesResponseWrapperStatusEnum._(String name): super(name);
+  const GoogleServicesResponseWrapperStatusEnum._(String name) : super(name);
 
-  static BuiltSet<GoogleServicesResponseWrapperStatusEnum> get values => _$googleServicesResponseWrapperStatusEnumValues;
-  static GoogleServicesResponseWrapperStatusEnum valueOf(String name) => _$googleServicesResponseWrapperStatusEnumValueOf(name);
+  static BuiltSet<GoogleServicesResponseWrapperStatusEnum> get values =>
+      _$googleServicesResponseWrapperStatusEnumValues;
+  static GoogleServicesResponseWrapperStatusEnum valueOf(String name) =>
+      _$googleServicesResponseWrapperStatusEnumValueOf(name);
 }
 
 class GoogleServicesResponseWrapperErrorCodeEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'NORMALIZATION_FAILED')
-  static const GoogleServicesResponseWrapperErrorCodeEnum NORMALIZATION_FAILED = _$googleServicesResponseWrapperErrorCodeEnum_NORMALIZATION_FAILED;
+  static const GoogleServicesResponseWrapperErrorCodeEnum NORMALIZATION_FAILED =
+      _$googleServicesResponseWrapperErrorCodeEnum_NORMALIZATION_FAILED;
   @BuiltValueEnumConst(wireName: r'DATA_CORRUPTED')
-  static const GoogleServicesResponseWrapperErrorCodeEnum DATA_CORRUPTED = _$googleServicesResponseWrapperErrorCodeEnum_DATA_CORRUPTED;
+  static const GoogleServicesResponseWrapperErrorCodeEnum DATA_CORRUPTED =
+      _$googleServicesResponseWrapperErrorCodeEnum_DATA_CORRUPTED;
   @BuiltValueEnumConst(wireName: r'INVALID_INPUT')
-  static const GoogleServicesResponseWrapperErrorCodeEnum INVALID_INPUT = _$googleServicesResponseWrapperErrorCodeEnum_INVALID_INPUT;
+  static const GoogleServicesResponseWrapperErrorCodeEnum INVALID_INPUT =
+      _$googleServicesResponseWrapperErrorCodeEnum_INVALID_INPUT;
   @BuiltValueEnumConst(wireName: r'NOT_SYNCABLE')
-  static const GoogleServicesResponseWrapperErrorCodeEnum NOT_SYNCABLE = _$googleServicesResponseWrapperErrorCodeEnum_NOT_SYNCABLE;
+  static const GoogleServicesResponseWrapperErrorCodeEnum NOT_SYNCABLE =
+      _$googleServicesResponseWrapperErrorCodeEnum_NOT_SYNCABLE;
   @BuiltValueEnumConst(wireName: r'PAYMENT_FAILED')
-  static const GoogleServicesResponseWrapperErrorCodeEnum PAYMENT_FAILED = _$googleServicesResponseWrapperErrorCodeEnum_PAYMENT_FAILED;
+  static const GoogleServicesResponseWrapperErrorCodeEnum PAYMENT_FAILED =
+      _$googleServicesResponseWrapperErrorCodeEnum_PAYMENT_FAILED;
   @BuiltValueEnumConst(wireName: r'FREE_TIER_REACHED')
-  static const GoogleServicesResponseWrapperErrorCodeEnum FREE_TIER_REACHED = _$googleServicesResponseWrapperErrorCodeEnum_FREE_TIER_REACHED;
+  static const GoogleServicesResponseWrapperErrorCodeEnum FREE_TIER_REACHED =
+      _$googleServicesResponseWrapperErrorCodeEnum_FREE_TIER_REACHED;
   @BuiltValueEnumConst(wireName: r'LIMIT_REACHED')
-  static const GoogleServicesResponseWrapperErrorCodeEnum LIMIT_REACHED = _$googleServicesResponseWrapperErrorCodeEnum_LIMIT_REACHED;
+  static const GoogleServicesResponseWrapperErrorCodeEnum LIMIT_REACHED =
+      _$googleServicesResponseWrapperErrorCodeEnum_LIMIT_REACHED;
   @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const GoogleServicesResponseWrapperErrorCodeEnum INACTIVE = _$googleServicesResponseWrapperErrorCodeEnum_INACTIVE;
+  static const GoogleServicesResponseWrapperErrorCodeEnum INACTIVE =
+      _$googleServicesResponseWrapperErrorCodeEnum_INACTIVE;
   @BuiltValueEnumConst(wireName: r'UNKNOWN')
-  static const GoogleServicesResponseWrapperErrorCodeEnum UNKNOWN = _$googleServicesResponseWrapperErrorCodeEnum_UNKNOWN;
+  static const GoogleServicesResponseWrapperErrorCodeEnum UNKNOWN =
+      _$googleServicesResponseWrapperErrorCodeEnum_UNKNOWN;
   @BuiltValueEnumConst(wireName: r'IDENTIFIER_NOT_UNIQUE')
-  static const GoogleServicesResponseWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE = _$googleServicesResponseWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
+  static const GoogleServicesResponseWrapperErrorCodeEnum
+      IDENTIFIER_NOT_UNIQUE =
+      _$googleServicesResponseWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
   @BuiltValueEnumConst(wireName: r'ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT')
-  static const GoogleServicesResponseWrapperErrorCodeEnum ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT = _$googleServicesResponseWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
+  static const GoogleServicesResponseWrapperErrorCodeEnum
+      ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT =
+      _$googleServicesResponseWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
   @BuiltValueEnumConst(wireName: r'NO_ACCOUNT_CONNECTED')
-  static const GoogleServicesResponseWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED = _$googleServicesResponseWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
+  static const GoogleServicesResponseWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED =
+      _$googleServicesResponseWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
   @BuiltValueEnumConst(wireName: r'NO_PAGE_SELECTED')
-  static const GoogleServicesResponseWrapperErrorCodeEnum NO_PAGE_SELECTED = _$googleServicesResponseWrapperErrorCodeEnum_NO_PAGE_SELECTED;
+  static const GoogleServicesResponseWrapperErrorCodeEnum NO_PAGE_SELECTED =
+      _$googleServicesResponseWrapperErrorCodeEnum_NO_PAGE_SELECTED;
   @BuiltValueEnumConst(wireName: r'PAGE_NOT_CREATED')
-  static const GoogleServicesResponseWrapperErrorCodeEnum PAGE_NOT_CREATED = _$googleServicesResponseWrapperErrorCodeEnum_PAGE_NOT_CREATED;
+  static const GoogleServicesResponseWrapperErrorCodeEnum PAGE_NOT_CREATED =
+      _$googleServicesResponseWrapperErrorCodeEnum_PAGE_NOT_CREATED;
   @BuiltValueEnumConst(wireName: r'PAGE_IN_REVIEW')
-  static const GoogleServicesResponseWrapperErrorCodeEnum PAGE_IN_REVIEW = _$googleServicesResponseWrapperErrorCodeEnum_PAGE_IN_REVIEW;
+  static const GoogleServicesResponseWrapperErrorCodeEnum PAGE_IN_REVIEW =
+      _$googleServicesResponseWrapperErrorCodeEnum_PAGE_IN_REVIEW;
   @BuiltValueEnumConst(wireName: r'PAGE_CLAIMED_BY_OTHERS')
-  static const GoogleServicesResponseWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS = _$googleServicesResponseWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
+  static const GoogleServicesResponseWrapperErrorCodeEnum
+      PAGE_CLAIMED_BY_OTHERS =
+      _$googleServicesResponseWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
   @BuiltValueEnumConst(wireName: r'OVERLAPPING_SOCIALPOST')
-  static const GoogleServicesResponseWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST = _$googleServicesResponseWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
+  static const GoogleServicesResponseWrapperErrorCodeEnum
+      OVERLAPPING_SOCIALPOST =
+      _$googleServicesResponseWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
   @BuiltValueEnumConst(wireName: r'TOO_MANY_REPLIES')
-  static const GoogleServicesResponseWrapperErrorCodeEnum TOO_MANY_REPLIES = _$googleServicesResponseWrapperErrorCodeEnum_TOO_MANY_REPLIES;
+  static const GoogleServicesResponseWrapperErrorCodeEnum TOO_MANY_REPLIES =
+      _$googleServicesResponseWrapperErrorCodeEnum_TOO_MANY_REPLIES;
   @BuiltValueEnumConst(wireName: r'REPLY_TOO_LONG')
-  static const GoogleServicesResponseWrapperErrorCodeEnum REPLY_TOO_LONG = _$googleServicesResponseWrapperErrorCodeEnum_REPLY_TOO_LONG;
+  static const GoogleServicesResponseWrapperErrorCodeEnum REPLY_TOO_LONG =
+      _$googleServicesResponseWrapperErrorCodeEnum_REPLY_TOO_LONG;
   @BuiltValueEnumConst(wireName: r'DEPRECATED')
-  static const GoogleServicesResponseWrapperErrorCodeEnum DEPRECATED = _$googleServicesResponseWrapperErrorCodeEnum_DEPRECATED;
+  static const GoogleServicesResponseWrapperErrorCodeEnum DEPRECATED =
+      _$googleServicesResponseWrapperErrorCodeEnum_DEPRECATED;
 
-  static Serializer<GoogleServicesResponseWrapperErrorCodeEnum> get serializer => _$googleServicesResponseWrapperErrorCodeEnumSerializer;
+  static Serializer<GoogleServicesResponseWrapperErrorCodeEnum>
+      get serializer => _$googleServicesResponseWrapperErrorCodeEnumSerializer;
 
-  const GoogleServicesResponseWrapperErrorCodeEnum._(String name): super(name);
+  const GoogleServicesResponseWrapperErrorCodeEnum._(String name) : super(name);
 
-  static BuiltSet<GoogleServicesResponseWrapperErrorCodeEnum> get values => _$googleServicesResponseWrapperErrorCodeEnumValues;
-  static GoogleServicesResponseWrapperErrorCodeEnum valueOf(String name) => _$googleServicesResponseWrapperErrorCodeEnumValueOf(name);
+  static BuiltSet<GoogleServicesResponseWrapperErrorCodeEnum> get values =>
+      _$googleServicesResponseWrapperErrorCodeEnumValues;
+  static GoogleServicesResponseWrapperErrorCodeEnum valueOf(String name) =>
+      _$googleServicesResponseWrapperErrorCodeEnumValueOf(name);
 }
-

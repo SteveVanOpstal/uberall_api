@@ -16,7 +16,8 @@ part 'business_statistics.g.dart';
 /// * [countWithoutLocations] - Number of businesses without any locations
 /// * [countWithLocations] - Number of businesses with at least one location
 @BuiltValue()
-abstract class BusinessStatistics implements Built<BusinessStatistics, BusinessStatisticsBuilder> {
+abstract class BusinessStatistics
+    implements Built<BusinessStatistics, BusinessStatisticsBuilder> {
   /// Total number of businesses
   @BuiltValueField(wireName: r'count')
   int? get count;
@@ -35,16 +36,19 @@ abstract class BusinessStatistics implements Built<BusinessStatistics, BusinessS
 
   BusinessStatistics._();
 
-  factory BusinessStatistics([void updates(BusinessStatisticsBuilder b)]) = _$BusinessStatistics;
+  factory BusinessStatistics([void updates(BusinessStatisticsBuilder b)]) =
+      _$BusinessStatistics;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(BusinessStatisticsBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<BusinessStatistics> get serializer => _$BusinessStatisticsSerializer();
+  static Serializer<BusinessStatistics> get serializer =>
+      _$BusinessStatisticsSerializer();
 }
 
-class _$BusinessStatisticsSerializer implements PrimitiveSerializer<BusinessStatistics> {
+class _$BusinessStatisticsSerializer
+    implements PrimitiveSerializer<BusinessStatistics> {
   @override
   final Iterable<Type> types = const [BusinessStatistics, _$BusinessStatistics];
 
@@ -92,7 +96,9 @@ class _$BusinessStatisticsSerializer implements PrimitiveSerializer<BusinessStat
     BusinessStatistics object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -163,4 +169,3 @@ class _$BusinessStatisticsSerializer implements PrimitiveSerializer<BusinessStat
     return result.build();
   }
 }
-

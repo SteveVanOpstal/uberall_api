@@ -13,13 +13,14 @@ part 'inbox_response_wrapper.g.dart';
 /// InboxResponseWrapper
 ///
 /// Properties:
-/// * [status] 
+/// * [status]
 /// * [message] - (optional) Holds further information about the response
-/// * [errorCode] 
+/// * [errorCode]
 /// * [warnings] - (optional) Holds further warnings
-/// * [response] 
+/// * [response]
 @BuiltValue()
-abstract class InboxResponseWrapper implements Built<InboxResponseWrapper, InboxResponseWrapperBuilder> {
+abstract class InboxResponseWrapper
+    implements Built<InboxResponseWrapper, InboxResponseWrapperBuilder> {
   @BuiltValueField(wireName: r'status')
   InboxResponseWrapperStatusEnum? get status;
   // enum statusEnum {  SUCCESS,  QUOTA_LIMIT_EXCEED,  NOT_AUTHORIZED,  FORBIDDEN,  BAD_ACCESS_TOKEN,  BAD_PRIVATE_KEY,  BAD_PUBLIC_KEY,  MISSING_PARAMETER,  INVALID_PARAMETER,  WRONG_PARAMETER_TYPE,  CONFLICT,  RESOURCE_LOCKED,  SERVER_ERROR,  ERROR,  NOT_FOUND,  BAD_REQUEST,  USER_ERROR,  PARTIAL_ERROR,  METHOD_NOT_ALLOWED,  };
@@ -41,18 +42,24 @@ abstract class InboxResponseWrapper implements Built<InboxResponseWrapper, Inbox
 
   InboxResponseWrapper._();
 
-  factory InboxResponseWrapper([void updates(InboxResponseWrapperBuilder b)]) = _$InboxResponseWrapper;
+  factory InboxResponseWrapper([void updates(InboxResponseWrapperBuilder b)]) =
+      _$InboxResponseWrapper;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(InboxResponseWrapperBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<InboxResponseWrapper> get serializer => _$InboxResponseWrapperSerializer();
+  static Serializer<InboxResponseWrapper> get serializer =>
+      _$InboxResponseWrapperSerializer();
 }
 
-class _$InboxResponseWrapperSerializer implements PrimitiveSerializer<InboxResponseWrapper> {
+class _$InboxResponseWrapperSerializer
+    implements PrimitiveSerializer<InboxResponseWrapper> {
   @override
-  final Iterable<Type> types = const [InboxResponseWrapper, _$InboxResponseWrapper];
+  final Iterable<Type> types = const [
+    InboxResponseWrapper,
+    _$InboxResponseWrapper
+  ];
 
   @override
   final String wireName = r'InboxResponseWrapper';
@@ -105,7 +112,9 @@ class _$InboxResponseWrapperSerializer implements PrimitiveSerializer<InboxRespo
     InboxResponseWrapper object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -185,102 +194,145 @@ class _$InboxResponseWrapperSerializer implements PrimitiveSerializer<InboxRespo
 }
 
 class InboxResponseWrapperStatusEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'SUCCESS')
-  static const InboxResponseWrapperStatusEnum SUCCESS = _$inboxResponseWrapperStatusEnum_SUCCESS;
+  static const InboxResponseWrapperStatusEnum SUCCESS =
+      _$inboxResponseWrapperStatusEnum_SUCCESS;
   @BuiltValueEnumConst(wireName: r'QUOTA_LIMIT_EXCEED')
-  static const InboxResponseWrapperStatusEnum QUOTA_LIMIT_EXCEED = _$inboxResponseWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
+  static const InboxResponseWrapperStatusEnum QUOTA_LIMIT_EXCEED =
+      _$inboxResponseWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
   @BuiltValueEnumConst(wireName: r'NOT_AUTHORIZED')
-  static const InboxResponseWrapperStatusEnum NOT_AUTHORIZED = _$inboxResponseWrapperStatusEnum_NOT_AUTHORIZED;
+  static const InboxResponseWrapperStatusEnum NOT_AUTHORIZED =
+      _$inboxResponseWrapperStatusEnum_NOT_AUTHORIZED;
   @BuiltValueEnumConst(wireName: r'FORBIDDEN')
-  static const InboxResponseWrapperStatusEnum FORBIDDEN = _$inboxResponseWrapperStatusEnum_FORBIDDEN;
+  static const InboxResponseWrapperStatusEnum FORBIDDEN =
+      _$inboxResponseWrapperStatusEnum_FORBIDDEN;
   @BuiltValueEnumConst(wireName: r'BAD_ACCESS_TOKEN')
-  static const InboxResponseWrapperStatusEnum BAD_ACCESS_TOKEN = _$inboxResponseWrapperStatusEnum_BAD_ACCESS_TOKEN;
+  static const InboxResponseWrapperStatusEnum BAD_ACCESS_TOKEN =
+      _$inboxResponseWrapperStatusEnum_BAD_ACCESS_TOKEN;
   @BuiltValueEnumConst(wireName: r'BAD_PRIVATE_KEY')
-  static const InboxResponseWrapperStatusEnum BAD_PRIVATE_KEY = _$inboxResponseWrapperStatusEnum_BAD_PRIVATE_KEY;
+  static const InboxResponseWrapperStatusEnum BAD_PRIVATE_KEY =
+      _$inboxResponseWrapperStatusEnum_BAD_PRIVATE_KEY;
   @BuiltValueEnumConst(wireName: r'BAD_PUBLIC_KEY')
-  static const InboxResponseWrapperStatusEnum BAD_PUBLIC_KEY = _$inboxResponseWrapperStatusEnum_BAD_PUBLIC_KEY;
+  static const InboxResponseWrapperStatusEnum BAD_PUBLIC_KEY =
+      _$inboxResponseWrapperStatusEnum_BAD_PUBLIC_KEY;
   @BuiltValueEnumConst(wireName: r'MISSING_PARAMETER')
-  static const InboxResponseWrapperStatusEnum MISSING_PARAMETER = _$inboxResponseWrapperStatusEnum_MISSING_PARAMETER;
+  static const InboxResponseWrapperStatusEnum MISSING_PARAMETER =
+      _$inboxResponseWrapperStatusEnum_MISSING_PARAMETER;
   @BuiltValueEnumConst(wireName: r'INVALID_PARAMETER')
-  static const InboxResponseWrapperStatusEnum INVALID_PARAMETER = _$inboxResponseWrapperStatusEnum_INVALID_PARAMETER;
+  static const InboxResponseWrapperStatusEnum INVALID_PARAMETER =
+      _$inboxResponseWrapperStatusEnum_INVALID_PARAMETER;
   @BuiltValueEnumConst(wireName: r'WRONG_PARAMETER_TYPE')
-  static const InboxResponseWrapperStatusEnum WRONG_PARAMETER_TYPE = _$inboxResponseWrapperStatusEnum_WRONG_PARAMETER_TYPE;
+  static const InboxResponseWrapperStatusEnum WRONG_PARAMETER_TYPE =
+      _$inboxResponseWrapperStatusEnum_WRONG_PARAMETER_TYPE;
   @BuiltValueEnumConst(wireName: r'CONFLICT')
-  static const InboxResponseWrapperStatusEnum CONFLICT = _$inboxResponseWrapperStatusEnum_CONFLICT;
+  static const InboxResponseWrapperStatusEnum CONFLICT =
+      _$inboxResponseWrapperStatusEnum_CONFLICT;
   @BuiltValueEnumConst(wireName: r'RESOURCE_LOCKED')
-  static const InboxResponseWrapperStatusEnum RESOURCE_LOCKED = _$inboxResponseWrapperStatusEnum_RESOURCE_LOCKED;
+  static const InboxResponseWrapperStatusEnum RESOURCE_LOCKED =
+      _$inboxResponseWrapperStatusEnum_RESOURCE_LOCKED;
   @BuiltValueEnumConst(wireName: r'SERVER_ERROR')
-  static const InboxResponseWrapperStatusEnum SERVER_ERROR = _$inboxResponseWrapperStatusEnum_SERVER_ERROR;
+  static const InboxResponseWrapperStatusEnum SERVER_ERROR =
+      _$inboxResponseWrapperStatusEnum_SERVER_ERROR;
   @BuiltValueEnumConst(wireName: r'ERROR')
-  static const InboxResponseWrapperStatusEnum ERROR = _$inboxResponseWrapperStatusEnum_ERROR;
+  static const InboxResponseWrapperStatusEnum ERROR =
+      _$inboxResponseWrapperStatusEnum_ERROR;
   @BuiltValueEnumConst(wireName: r'NOT_FOUND')
-  static const InboxResponseWrapperStatusEnum NOT_FOUND = _$inboxResponseWrapperStatusEnum_NOT_FOUND;
+  static const InboxResponseWrapperStatusEnum NOT_FOUND =
+      _$inboxResponseWrapperStatusEnum_NOT_FOUND;
   @BuiltValueEnumConst(wireName: r'BAD_REQUEST')
-  static const InboxResponseWrapperStatusEnum BAD_REQUEST = _$inboxResponseWrapperStatusEnum_BAD_REQUEST;
+  static const InboxResponseWrapperStatusEnum BAD_REQUEST =
+      _$inboxResponseWrapperStatusEnum_BAD_REQUEST;
   @BuiltValueEnumConst(wireName: r'USER_ERROR')
-  static const InboxResponseWrapperStatusEnum USER_ERROR = _$inboxResponseWrapperStatusEnum_USER_ERROR;
+  static const InboxResponseWrapperStatusEnum USER_ERROR =
+      _$inboxResponseWrapperStatusEnum_USER_ERROR;
   @BuiltValueEnumConst(wireName: r'PARTIAL_ERROR')
-  static const InboxResponseWrapperStatusEnum PARTIAL_ERROR = _$inboxResponseWrapperStatusEnum_PARTIAL_ERROR;
+  static const InboxResponseWrapperStatusEnum PARTIAL_ERROR =
+      _$inboxResponseWrapperStatusEnum_PARTIAL_ERROR;
   @BuiltValueEnumConst(wireName: r'METHOD_NOT_ALLOWED')
-  static const InboxResponseWrapperStatusEnum METHOD_NOT_ALLOWED = _$inboxResponseWrapperStatusEnum_METHOD_NOT_ALLOWED;
+  static const InboxResponseWrapperStatusEnum METHOD_NOT_ALLOWED =
+      _$inboxResponseWrapperStatusEnum_METHOD_NOT_ALLOWED;
 
-  static Serializer<InboxResponseWrapperStatusEnum> get serializer => _$inboxResponseWrapperStatusEnumSerializer;
+  static Serializer<InboxResponseWrapperStatusEnum> get serializer =>
+      _$inboxResponseWrapperStatusEnumSerializer;
 
-  const InboxResponseWrapperStatusEnum._(String name): super(name);
+  const InboxResponseWrapperStatusEnum._(String name) : super(name);
 
-  static BuiltSet<InboxResponseWrapperStatusEnum> get values => _$inboxResponseWrapperStatusEnumValues;
-  static InboxResponseWrapperStatusEnum valueOf(String name) => _$inboxResponseWrapperStatusEnumValueOf(name);
+  static BuiltSet<InboxResponseWrapperStatusEnum> get values =>
+      _$inboxResponseWrapperStatusEnumValues;
+  static InboxResponseWrapperStatusEnum valueOf(String name) =>
+      _$inboxResponseWrapperStatusEnumValueOf(name);
 }
 
 class InboxResponseWrapperErrorCodeEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'NORMALIZATION_FAILED')
-  static const InboxResponseWrapperErrorCodeEnum NORMALIZATION_FAILED = _$inboxResponseWrapperErrorCodeEnum_NORMALIZATION_FAILED;
+  static const InboxResponseWrapperErrorCodeEnum NORMALIZATION_FAILED =
+      _$inboxResponseWrapperErrorCodeEnum_NORMALIZATION_FAILED;
   @BuiltValueEnumConst(wireName: r'DATA_CORRUPTED')
-  static const InboxResponseWrapperErrorCodeEnum DATA_CORRUPTED = _$inboxResponseWrapperErrorCodeEnum_DATA_CORRUPTED;
+  static const InboxResponseWrapperErrorCodeEnum DATA_CORRUPTED =
+      _$inboxResponseWrapperErrorCodeEnum_DATA_CORRUPTED;
   @BuiltValueEnumConst(wireName: r'INVALID_INPUT')
-  static const InboxResponseWrapperErrorCodeEnum INVALID_INPUT = _$inboxResponseWrapperErrorCodeEnum_INVALID_INPUT;
+  static const InboxResponseWrapperErrorCodeEnum INVALID_INPUT =
+      _$inboxResponseWrapperErrorCodeEnum_INVALID_INPUT;
   @BuiltValueEnumConst(wireName: r'NOT_SYNCABLE')
-  static const InboxResponseWrapperErrorCodeEnum NOT_SYNCABLE = _$inboxResponseWrapperErrorCodeEnum_NOT_SYNCABLE;
+  static const InboxResponseWrapperErrorCodeEnum NOT_SYNCABLE =
+      _$inboxResponseWrapperErrorCodeEnum_NOT_SYNCABLE;
   @BuiltValueEnumConst(wireName: r'PAYMENT_FAILED')
-  static const InboxResponseWrapperErrorCodeEnum PAYMENT_FAILED = _$inboxResponseWrapperErrorCodeEnum_PAYMENT_FAILED;
+  static const InboxResponseWrapperErrorCodeEnum PAYMENT_FAILED =
+      _$inboxResponseWrapperErrorCodeEnum_PAYMENT_FAILED;
   @BuiltValueEnumConst(wireName: r'FREE_TIER_REACHED')
-  static const InboxResponseWrapperErrorCodeEnum FREE_TIER_REACHED = _$inboxResponseWrapperErrorCodeEnum_FREE_TIER_REACHED;
+  static const InboxResponseWrapperErrorCodeEnum FREE_TIER_REACHED =
+      _$inboxResponseWrapperErrorCodeEnum_FREE_TIER_REACHED;
   @BuiltValueEnumConst(wireName: r'LIMIT_REACHED')
-  static const InboxResponseWrapperErrorCodeEnum LIMIT_REACHED = _$inboxResponseWrapperErrorCodeEnum_LIMIT_REACHED;
+  static const InboxResponseWrapperErrorCodeEnum LIMIT_REACHED =
+      _$inboxResponseWrapperErrorCodeEnum_LIMIT_REACHED;
   @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const InboxResponseWrapperErrorCodeEnum INACTIVE = _$inboxResponseWrapperErrorCodeEnum_INACTIVE;
+  static const InboxResponseWrapperErrorCodeEnum INACTIVE =
+      _$inboxResponseWrapperErrorCodeEnum_INACTIVE;
   @BuiltValueEnumConst(wireName: r'UNKNOWN')
-  static const InboxResponseWrapperErrorCodeEnum UNKNOWN = _$inboxResponseWrapperErrorCodeEnum_UNKNOWN;
+  static const InboxResponseWrapperErrorCodeEnum UNKNOWN =
+      _$inboxResponseWrapperErrorCodeEnum_UNKNOWN;
   @BuiltValueEnumConst(wireName: r'IDENTIFIER_NOT_UNIQUE')
-  static const InboxResponseWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE = _$inboxResponseWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
+  static const InboxResponseWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE =
+      _$inboxResponseWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
   @BuiltValueEnumConst(wireName: r'ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT')
-  static const InboxResponseWrapperErrorCodeEnum ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT = _$inboxResponseWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
+  static const InboxResponseWrapperErrorCodeEnum
+      ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT =
+      _$inboxResponseWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
   @BuiltValueEnumConst(wireName: r'NO_ACCOUNT_CONNECTED')
-  static const InboxResponseWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED = _$inboxResponseWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
+  static const InboxResponseWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED =
+      _$inboxResponseWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
   @BuiltValueEnumConst(wireName: r'NO_PAGE_SELECTED')
-  static const InboxResponseWrapperErrorCodeEnum NO_PAGE_SELECTED = _$inboxResponseWrapperErrorCodeEnum_NO_PAGE_SELECTED;
+  static const InboxResponseWrapperErrorCodeEnum NO_PAGE_SELECTED =
+      _$inboxResponseWrapperErrorCodeEnum_NO_PAGE_SELECTED;
   @BuiltValueEnumConst(wireName: r'PAGE_NOT_CREATED')
-  static const InboxResponseWrapperErrorCodeEnum PAGE_NOT_CREATED = _$inboxResponseWrapperErrorCodeEnum_PAGE_NOT_CREATED;
+  static const InboxResponseWrapperErrorCodeEnum PAGE_NOT_CREATED =
+      _$inboxResponseWrapperErrorCodeEnum_PAGE_NOT_CREATED;
   @BuiltValueEnumConst(wireName: r'PAGE_IN_REVIEW')
-  static const InboxResponseWrapperErrorCodeEnum PAGE_IN_REVIEW = _$inboxResponseWrapperErrorCodeEnum_PAGE_IN_REVIEW;
+  static const InboxResponseWrapperErrorCodeEnum PAGE_IN_REVIEW =
+      _$inboxResponseWrapperErrorCodeEnum_PAGE_IN_REVIEW;
   @BuiltValueEnumConst(wireName: r'PAGE_CLAIMED_BY_OTHERS')
-  static const InboxResponseWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS = _$inboxResponseWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
+  static const InboxResponseWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS =
+      _$inboxResponseWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
   @BuiltValueEnumConst(wireName: r'OVERLAPPING_SOCIALPOST')
-  static const InboxResponseWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST = _$inboxResponseWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
+  static const InboxResponseWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST =
+      _$inboxResponseWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
   @BuiltValueEnumConst(wireName: r'TOO_MANY_REPLIES')
-  static const InboxResponseWrapperErrorCodeEnum TOO_MANY_REPLIES = _$inboxResponseWrapperErrorCodeEnum_TOO_MANY_REPLIES;
+  static const InboxResponseWrapperErrorCodeEnum TOO_MANY_REPLIES =
+      _$inboxResponseWrapperErrorCodeEnum_TOO_MANY_REPLIES;
   @BuiltValueEnumConst(wireName: r'REPLY_TOO_LONG')
-  static const InboxResponseWrapperErrorCodeEnum REPLY_TOO_LONG = _$inboxResponseWrapperErrorCodeEnum_REPLY_TOO_LONG;
+  static const InboxResponseWrapperErrorCodeEnum REPLY_TOO_LONG =
+      _$inboxResponseWrapperErrorCodeEnum_REPLY_TOO_LONG;
   @BuiltValueEnumConst(wireName: r'DEPRECATED')
-  static const InboxResponseWrapperErrorCodeEnum DEPRECATED = _$inboxResponseWrapperErrorCodeEnum_DEPRECATED;
+  static const InboxResponseWrapperErrorCodeEnum DEPRECATED =
+      _$inboxResponseWrapperErrorCodeEnum_DEPRECATED;
 
-  static Serializer<InboxResponseWrapperErrorCodeEnum> get serializer => _$inboxResponseWrapperErrorCodeEnumSerializer;
+  static Serializer<InboxResponseWrapperErrorCodeEnum> get serializer =>
+      _$inboxResponseWrapperErrorCodeEnumSerializer;
 
-  const InboxResponseWrapperErrorCodeEnum._(String name): super(name);
+  const InboxResponseWrapperErrorCodeEnum._(String name) : super(name);
 
-  static BuiltSet<InboxResponseWrapperErrorCodeEnum> get values => _$inboxResponseWrapperErrorCodeEnumValues;
-  static InboxResponseWrapperErrorCodeEnum valueOf(String name) => _$inboxResponseWrapperErrorCodeEnumValueOf(name);
+  static BuiltSet<InboxResponseWrapperErrorCodeEnum> get values =>
+      _$inboxResponseWrapperErrorCodeEnumValues;
+  static InboxResponseWrapperErrorCodeEnum valueOf(String name) =>
+      _$inboxResponseWrapperErrorCodeEnumValueOf(name);
 }
-

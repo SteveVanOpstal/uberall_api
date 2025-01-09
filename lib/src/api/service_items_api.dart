@@ -10,13 +10,12 @@ import 'package:dio/dio.dart';
 
 import 'package:built_value/json_object.dart';
 import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/response.dart';
+import 'package:openapi/src/model/response.dart' as openApi;
 import 'package:openapi/src/model/service_item.dart';
 import 'package:openapi/src/model/service_item_search_wrapper.dart';
 import 'package:openapi/src/model/service_item_wrapper.dart';
 
 class ServiceItemsApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -37,7 +36,7 @@ class ServiceItemsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Response>> deleteServiceItemsId({ 
+  Future<Response<openApi.Response>> deleteServiceItemsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -46,7 +45,10 @@ class ServiceItemsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/service-items/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/service-items/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -59,7 +61,8 @@ class ServiceItemsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -79,15 +82,16 @@ class ServiceItemsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Response? _responseData;
+    openApi.Response? _responseData;
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(Response),
-      ) as Response;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(openApi.Response),
+            ) as openApi.Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -98,7 +102,7 @@ class ServiceItemsApi {
       );
     }
 
-    return Response<Response>(
+    return Response<openApi.Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -114,7 +118,7 @@ class ServiceItemsApi {
   /// Get all service items the current API user can manage. &lt;br&gt;To specify services with identifier please provide ?identifier&#x3D; in the URL param &lt;br&gt;By default, 50 are returned, you can use up to max&#x3D;10000 in the URL param
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [body]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -124,7 +128,7 @@ class ServiceItemsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ServiceItemSearchWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ServiceItemSearchWrapper>> getServiceItems({ 
+  Future<Response<ServiceItemSearchWrapper>> getServiceItems({
     JsonObject? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -146,7 +150,8 @@ class ServiceItemsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -162,10 +167,9 @@ class ServiceItemsApi {
 
     try {
       _bodyData = body;
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -188,11 +192,12 @@ class ServiceItemsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ServiceItemSearchWrapper),
-      ) as ServiceItemSearchWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ServiceItemSearchWrapper),
+            ) as ServiceItemSearchWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -229,7 +234,7 @@ class ServiceItemsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ServiceItemWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ServiceItemWrapper>> getServiceItemsId({ 
+  Future<Response<ServiceItemWrapper>> getServiceItemsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -238,7 +243,10 @@ class ServiceItemsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/service-items/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/service-items/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -251,7 +259,8 @@ class ServiceItemsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -275,11 +284,12 @@ class ServiceItemsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ServiceItemWrapper),
-      ) as ServiceItemWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ServiceItemWrapper),
+            ) as ServiceItemWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -317,7 +327,7 @@ class ServiceItemsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ServiceItemWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ServiceItemWrapper>> patchServiceItemsId({ 
+  Future<Response<ServiceItemWrapper>> patchServiceItemsId({
     required String id,
     required ServiceItem serviceItem,
     CancelToken? cancelToken,
@@ -327,7 +337,10 @@ class ServiceItemsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/service-items/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/service-items/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -340,7 +353,8 @@ class ServiceItemsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -358,10 +372,9 @@ class ServiceItemsApi {
     try {
       const _type = FullType(ServiceItem);
       _bodyData = _serializers.serialize(serviceItem, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -384,11 +397,12 @@ class ServiceItemsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ServiceItemWrapper),
-      ) as ServiceItemWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ServiceItemWrapper),
+            ) as ServiceItemWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -425,7 +439,7 @@ class ServiceItemsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ServiceItemWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ServiceItemWrapper>> postServiceItems({ 
+  Future<Response<ServiceItemWrapper>> postServiceItems({
     required ServiceItem serviceItem,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -447,7 +461,8 @@ class ServiceItemsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -465,10 +480,9 @@ class ServiceItemsApi {
     try {
       const _type = FullType(ServiceItem);
       _bodyData = _serializers.serialize(serviceItem, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -491,11 +505,12 @@ class ServiceItemsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ServiceItemWrapper),
-      ) as ServiceItemWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ServiceItemWrapper),
+            ) as ServiceItemWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -517,5 +532,4 @@ class ServiceItemsApi {
       extra: _response.extra,
     );
   }
-
 }

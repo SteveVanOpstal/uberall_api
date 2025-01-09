@@ -11,7 +11,6 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for ListingsApi
 void main() {
   // final instance = ListingsApi();
@@ -97,6 +96,5 @@ void main() {
     test('test putListingsIdFlag', () async {
       // TODO
     });
-
   });
 }

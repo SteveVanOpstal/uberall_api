@@ -14,7 +14,8 @@ part 'directory_contact_details.g.dart';
 /// * [email] - Email address to be used to release a claim from another provider
 /// * [website] - Contact website address to be used to release a claim from another provider
 @BuiltValue()
-abstract class DirectoryContactDetails implements Built<DirectoryContactDetails, DirectoryContactDetailsBuilder> {
+abstract class DirectoryContactDetails
+    implements Built<DirectoryContactDetails, DirectoryContactDetailsBuilder> {
   /// Email address to be used to release a claim from another provider
   @BuiltValueField(wireName: r'email')
   String? get email;
@@ -25,18 +26,25 @@ abstract class DirectoryContactDetails implements Built<DirectoryContactDetails,
 
   DirectoryContactDetails._();
 
-  factory DirectoryContactDetails([void updates(DirectoryContactDetailsBuilder b)]) = _$DirectoryContactDetails;
+  factory DirectoryContactDetails(
+          [void updates(DirectoryContactDetailsBuilder b)]) =
+      _$DirectoryContactDetails;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DirectoryContactDetailsBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DirectoryContactDetails> get serializer => _$DirectoryContactDetailsSerializer();
+  static Serializer<DirectoryContactDetails> get serializer =>
+      _$DirectoryContactDetailsSerializer();
 }
 
-class _$DirectoryContactDetailsSerializer implements PrimitiveSerializer<DirectoryContactDetails> {
+class _$DirectoryContactDetailsSerializer
+    implements PrimitiveSerializer<DirectoryContactDetails> {
   @override
-  final Iterable<Type> types = const [DirectoryContactDetails, _$DirectoryContactDetails];
+  final Iterable<Type> types = const [
+    DirectoryContactDetails,
+    _$DirectoryContactDetails
+  ];
 
   @override
   final String wireName = r'DirectoryContactDetails';
@@ -68,7 +76,9 @@ class _$DirectoryContactDetailsSerializer implements PrimitiveSerializer<Directo
     DirectoryContactDetails object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -125,4 +135,3 @@ class _$DirectoryContactDetailsSerializer implements PrimitiveSerializer<Directo
     return result.build();
   }
 }
-

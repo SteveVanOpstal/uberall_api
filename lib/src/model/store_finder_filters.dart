@@ -15,23 +15,27 @@ part 'store_finder_filters.g.dart';
 /// Properties:
 /// * [filters] - All filters with their possible values, including services
 @BuiltValue()
-abstract class StoreFinderFilters implements Built<StoreFinderFilters, StoreFinderFiltersBuilder> {
+abstract class StoreFinderFilters
+    implements Built<StoreFinderFilters, StoreFinderFiltersBuilder> {
   /// All filters with their possible values, including services
   @BuiltValueField(wireName: r'filters')
   BuiltMap<String, BuiltSet<StoreFinderFiltersFilter>>? get filters;
 
   StoreFinderFilters._();
 
-  factory StoreFinderFilters([void updates(StoreFinderFiltersBuilder b)]) = _$StoreFinderFilters;
+  factory StoreFinderFilters([void updates(StoreFinderFiltersBuilder b)]) =
+      _$StoreFinderFilters;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StoreFinderFiltersBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<StoreFinderFilters> get serializer => _$StoreFinderFiltersSerializer();
+  static Serializer<StoreFinderFilters> get serializer =>
+      _$StoreFinderFiltersSerializer();
 }
 
-class _$StoreFinderFiltersSerializer implements PrimitiveSerializer<StoreFinderFilters> {
+class _$StoreFinderFiltersSerializer
+    implements PrimitiveSerializer<StoreFinderFilters> {
   @override
   final Iterable<Type> types = const [StoreFinderFilters, _$StoreFinderFilters];
 
@@ -47,7 +51,10 @@ class _$StoreFinderFiltersSerializer implements PrimitiveSerializer<StoreFinderF
       yield r'filters';
       yield serializers.serialize(
         object.filters,
-        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(BuiltSet, [FullType(StoreFinderFiltersFilter)])]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(BuiltSet, [FullType(StoreFinderFiltersFilter)])
+        ]),
       );
     }
   }
@@ -58,7 +65,9 @@ class _$StoreFinderFiltersSerializer implements PrimitiveSerializer<StoreFinderF
     StoreFinderFilters object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -76,7 +85,10 @@ class _$StoreFinderFiltersSerializer implements PrimitiveSerializer<StoreFinderF
         case r'filters':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(BuiltSet, [FullType(StoreFinderFiltersFilter)])]),
+            specifiedType: const FullType(BuiltMap, [
+              FullType(String),
+              FullType(BuiltSet, [FullType(StoreFinderFiltersFilter)])
+            ]),
           ) as BuiltMap<String, BuiltSet<StoreFinderFiltersFilter>>;
           result.filters.replace(valueDes);
           break;
@@ -108,4 +120,3 @@ class _$StoreFinderFiltersSerializer implements PrimitiveSerializer<StoreFinderF
     return result.build();
   }
 }
-

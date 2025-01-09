@@ -12,7 +12,6 @@ import 'package:openapi/src/api_util.dart';
 import 'package:openapi/src/model/brand_data_point_response_wrapper.dart';
 
 class BrandDataPointsApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -33,7 +32,7 @@ class BrandDataPointsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BrandDataPointResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BrandDataPointResponseWrapper>> deleteBrandDataPointsIdLike({ 
+  Future<Response<BrandDataPointResponseWrapper>> deleteBrandDataPointsIdLike({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -42,7 +41,10 @@ class BrandDataPointsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/brand-data-points/{id}/like'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/brand-data-points/{id}/like'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -67,11 +69,12 @@ class BrandDataPointsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BrandDataPointResponseWrapper),
-      ) as BrandDataPointResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(BrandDataPointResponseWrapper),
+            ) as BrandDataPointResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -109,7 +112,8 @@ class BrandDataPointsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BrandDataPointResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BrandDataPointResponseWrapper>> deleteBrandDataPointsIdReplyReplyIdApproval({ 
+  Future<Response<BrandDataPointResponseWrapper>>
+      deleteBrandDataPointsIdReplyReplyIdApproval({
     required String id,
     required String replyId,
     CancelToken? cancelToken,
@@ -119,7 +123,15 @@ class BrandDataPointsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/brand-data-points/{id}/reply/{replyId}/approval'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString()).replaceAll('{' r'replyId' '}', encodeQueryParameter(_serializers, replyId, const FullType(String)).toString());
+    final _path = r'/brand-data-points/{id}/reply/{replyId}/approval'
+        .replaceAll(
+            '{' r'id' '}',
+            encodeQueryParameter(_serializers, id, const FullType(String))
+                .toString())
+        .replaceAll(
+            '{' r'replyId' '}',
+            encodeQueryParameter(_serializers, replyId, const FullType(String))
+                .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -132,7 +144,8 @@ class BrandDataPointsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -156,11 +169,12 @@ class BrandDataPointsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BrandDataPointResponseWrapper),
-      ) as BrandDataPointResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(BrandDataPointResponseWrapper),
+            ) as BrandDataPointResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -198,7 +212,7 @@ class BrandDataPointsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BrandDataPointResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BrandDataPointResponseWrapper>> patchBrandDataPointsIdReply({ 
+  Future<Response<BrandDataPointResponseWrapper>> patchBrandDataPointsIdReply({
     required String id,
     required String reply,
     CancelToken? cancelToken,
@@ -208,7 +222,10 @@ class BrandDataPointsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/brand-data-points/{id}/reply'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/brand-data-points/{id}/reply'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -221,7 +238,8 @@ class BrandDataPointsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -234,7 +252,8 @@ class BrandDataPointsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'reply': encodeQueryParameter(_serializers, reply, const FullType(String)),
+      r'reply':
+          encodeQueryParameter(_serializers, reply, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -250,11 +269,12 @@ class BrandDataPointsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BrandDataPointResponseWrapper),
-      ) as BrandDataPointResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(BrandDataPointResponseWrapper),
+            ) as BrandDataPointResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -291,7 +311,7 @@ class BrandDataPointsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BrandDataPointResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BrandDataPointResponseWrapper>> postBrandDataPointsIdLike({ 
+  Future<Response<BrandDataPointResponseWrapper>> postBrandDataPointsIdLike({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -300,7 +320,10 @@ class BrandDataPointsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/brand-data-points/{id}/like'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/brand-data-points/{id}/like'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -313,7 +336,8 @@ class BrandDataPointsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -337,11 +361,12 @@ class BrandDataPointsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BrandDataPointResponseWrapper),
-      ) as BrandDataPointResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(BrandDataPointResponseWrapper),
+            ) as BrandDataPointResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -379,7 +404,8 @@ class BrandDataPointsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BrandDataPointResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BrandDataPointResponseWrapper>> postBrandDataPointsIdReplyReplyIdApproval({ 
+  Future<Response<BrandDataPointResponseWrapper>>
+      postBrandDataPointsIdReplyReplyIdApproval({
     required String id,
     required String replyId,
     CancelToken? cancelToken,
@@ -389,7 +415,15 @@ class BrandDataPointsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/brand-data-points/{id}/reply/{replyId}/approval'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString()).replaceAll('{' r'replyId' '}', encodeQueryParameter(_serializers, replyId, const FullType(String)).toString());
+    final _path = r'/brand-data-points/{id}/reply/{replyId}/approval'
+        .replaceAll(
+            '{' r'id' '}',
+            encodeQueryParameter(_serializers, id, const FullType(String))
+                .toString())
+        .replaceAll(
+            '{' r'replyId' '}',
+            encodeQueryParameter(_serializers, replyId, const FullType(String))
+                .toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -402,7 +436,8 @@ class BrandDataPointsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -426,11 +461,12 @@ class BrandDataPointsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BrandDataPointResponseWrapper),
-      ) as BrandDataPointResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(BrandDataPointResponseWrapper),
+            ) as BrandDataPointResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -469,7 +505,8 @@ class BrandDataPointsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BrandDataPointResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BrandDataPointResponseWrapper>> putBrandDataPointsIdReplyReplyIdApproval({ 
+  Future<Response<BrandDataPointResponseWrapper>>
+      putBrandDataPointsIdReplyReplyIdApproval({
     required String id,
     required String replyId,
     required String replyText,
@@ -480,7 +517,20 @@ class BrandDataPointsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/brand-data-points/{id}/reply/{replyId}/approval'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString()).replaceAll('{' r'replyId' '}', encodeQueryParameter(_serializers, replyId, const FullType(String)).toString()).replaceAll('{' r'replyText' '}', encodeQueryParameter(_serializers, replyText, const FullType(String)).toString());
+    final _path = r'/brand-data-points/{id}/reply/{replyId}/approval'
+        .replaceAll(
+            '{' r'id' '}',
+            encodeQueryParameter(_serializers, id, const FullType(String))
+                .toString())
+        .replaceAll(
+            '{' r'replyId' '}',
+            encodeQueryParameter(_serializers, replyId, const FullType(String))
+                .toString())
+        .replaceAll(
+            '{' r'replyText' '}',
+            encodeQueryParameter(
+                    _serializers, replyText, const FullType(String))
+                .toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -493,7 +543,8 @@ class BrandDataPointsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -517,11 +568,12 @@ class BrandDataPointsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BrandDataPointResponseWrapper),
-      ) as BrandDataPointResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(BrandDataPointResponseWrapper),
+            ) as BrandDataPointResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -543,5 +595,4 @@ class BrandDataPointsApi {
       extra: _response.extra,
     );
   }
-
 }

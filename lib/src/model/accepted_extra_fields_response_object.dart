@@ -15,7 +15,10 @@ part 'accepted_extra_fields_response_object.g.dart';
 /// * [allergens] - List of accepted allergens
 /// * [dietaryRestrictions] - List of accepted dietary restrictions
 @BuiltValue()
-abstract class AcceptedExtraFieldsResponseObject implements Built<AcceptedExtraFieldsResponseObject, AcceptedExtraFieldsResponseObjectBuilder> {
+abstract class AcceptedExtraFieldsResponseObject
+    implements
+        Built<AcceptedExtraFieldsResponseObject,
+            AcceptedExtraFieldsResponseObjectBuilder> {
   /// List of accepted allergens
   @BuiltValueField(wireName: r'allergens')
   BuiltList<String>? get allergens;
@@ -26,18 +29,25 @@ abstract class AcceptedExtraFieldsResponseObject implements Built<AcceptedExtraF
 
   AcceptedExtraFieldsResponseObject._();
 
-  factory AcceptedExtraFieldsResponseObject([void updates(AcceptedExtraFieldsResponseObjectBuilder b)]) = _$AcceptedExtraFieldsResponseObject;
+  factory AcceptedExtraFieldsResponseObject(
+          [void updates(AcceptedExtraFieldsResponseObjectBuilder b)]) =
+      _$AcceptedExtraFieldsResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AcceptedExtraFieldsResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AcceptedExtraFieldsResponseObject> get serializer => _$AcceptedExtraFieldsResponseObjectSerializer();
+  static Serializer<AcceptedExtraFieldsResponseObject> get serializer =>
+      _$AcceptedExtraFieldsResponseObjectSerializer();
 }
 
-class _$AcceptedExtraFieldsResponseObjectSerializer implements PrimitiveSerializer<AcceptedExtraFieldsResponseObject> {
+class _$AcceptedExtraFieldsResponseObjectSerializer
+    implements PrimitiveSerializer<AcceptedExtraFieldsResponseObject> {
   @override
-  final Iterable<Type> types = const [AcceptedExtraFieldsResponseObject, _$AcceptedExtraFieldsResponseObject];
+  final Iterable<Type> types = const [
+    AcceptedExtraFieldsResponseObject,
+    _$AcceptedExtraFieldsResponseObject
+  ];
 
   @override
   final String wireName = r'AcceptedExtraFieldsResponseObject';
@@ -69,7 +79,9 @@ class _$AcceptedExtraFieldsResponseObjectSerializer implements PrimitiveSerializ
     AcceptedExtraFieldsResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -126,4 +138,3 @@ class _$AcceptedExtraFieldsResponseObjectSerializer implements PrimitiveSerializ
     return result.build();
   }
 }
-

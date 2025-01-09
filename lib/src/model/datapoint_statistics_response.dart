@@ -25,7 +25,9 @@ part 'datapoint_statistics_response.g.dart';
 /// * [averageRating] - Average rating obtained
 /// * [directories] - Breakdown by directory
 @BuiltValue()
-abstract class DatapointStatisticsResponse implements Built<DatapointStatisticsResponse, DatapointStatisticsResponseBuilder> {
+abstract class DatapointStatisticsResponse
+    implements
+        Built<DatapointStatisticsResponse, DatapointStatisticsResponseBuilder> {
   /// Total number of datapoints
   @BuiltValueField(wireName: r'totalCount')
   int? get totalCount;
@@ -72,18 +74,25 @@ abstract class DatapointStatisticsResponse implements Built<DatapointStatisticsR
 
   DatapointStatisticsResponse._();
 
-  factory DatapointStatisticsResponse([void updates(DatapointStatisticsResponseBuilder b)]) = _$DatapointStatisticsResponse;
+  factory DatapointStatisticsResponse(
+          [void updates(DatapointStatisticsResponseBuilder b)]) =
+      _$DatapointStatisticsResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DatapointStatisticsResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DatapointStatisticsResponse> get serializer => _$DatapointStatisticsResponseSerializer();
+  static Serializer<DatapointStatisticsResponse> get serializer =>
+      _$DatapointStatisticsResponseSerializer();
 }
 
-class _$DatapointStatisticsResponseSerializer implements PrimitiveSerializer<DatapointStatisticsResponse> {
+class _$DatapointStatisticsResponseSerializer
+    implements PrimitiveSerializer<DatapointStatisticsResponse> {
   @override
-  final Iterable<Type> types = const [DatapointStatisticsResponse, _$DatapointStatisticsResponse];
+  final Iterable<Type> types = const [
+    DatapointStatisticsResponse,
+    _$DatapointStatisticsResponse
+  ];
 
   @override
   final String wireName = r'DatapointStatisticsResponse';
@@ -167,7 +176,8 @@ class _$DatapointStatisticsResponseSerializer implements PrimitiveSerializer<Dat
       yield r'directories';
       yield serializers.serialize(
         object.directories,
-        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+        specifiedType:
+            const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
       );
     }
   }
@@ -178,7 +188,9 @@ class _$DatapointStatisticsResponseSerializer implements PrimitiveSerializer<Dat
     DatapointStatisticsResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -266,7 +278,8 @@ class _$DatapointStatisticsResponseSerializer implements PrimitiveSerializer<Dat
         case r'directories':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+            specifiedType: const FullType(
+                BuiltMap, [FullType(String), FullType(JsonObject)]),
           ) as BuiltMap<String, JsonObject>;
           result.directories.replace(valueDes);
           break;
@@ -298,4 +311,3 @@ class _$DatapointStatisticsResponseSerializer implements PrimitiveSerializer<Dat
     return result.build();
   }
 }
-

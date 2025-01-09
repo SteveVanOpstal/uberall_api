@@ -12,24 +12,28 @@ part 'provinces_response.g.dart';
 /// Provinces response model
 ///
 /// Properties:
-/// * [provinces] 
+/// * [provinces]
 @BuiltValue()
-abstract class ProvincesResponse implements Built<ProvincesResponse, ProvincesResponseBuilder> {
+abstract class ProvincesResponse
+    implements Built<ProvincesResponse, ProvincesResponseBuilder> {
   @BuiltValueField(wireName: r'provinces')
   BuiltList<String>? get provinces;
 
   ProvincesResponse._();
 
-  factory ProvincesResponse([void updates(ProvincesResponseBuilder b)]) = _$ProvincesResponse;
+  factory ProvincesResponse([void updates(ProvincesResponseBuilder b)]) =
+      _$ProvincesResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ProvincesResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ProvincesResponse> get serializer => _$ProvincesResponseSerializer();
+  static Serializer<ProvincesResponse> get serializer =>
+      _$ProvincesResponseSerializer();
 }
 
-class _$ProvincesResponseSerializer implements PrimitiveSerializer<ProvincesResponse> {
+class _$ProvincesResponseSerializer
+    implements PrimitiveSerializer<ProvincesResponse> {
   @override
   final Iterable<Type> types = const [ProvincesResponse, _$ProvincesResponse];
 
@@ -56,7 +60,9 @@ class _$ProvincesResponseSerializer implements PrimitiveSerializer<ProvincesResp
     ProvincesResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +112,3 @@ class _$ProvincesResponseSerializer implements PrimitiveSerializer<ProvincesResp
     return result.build();
   }
 }
-

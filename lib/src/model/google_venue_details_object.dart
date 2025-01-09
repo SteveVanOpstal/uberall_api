@@ -12,26 +12,35 @@ part 'google_venue_details_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [page] 
+/// * [page]
 @BuiltValue()
-abstract class GoogleVenueDetailsObject implements Built<GoogleVenueDetailsObject, GoogleVenueDetailsObjectBuilder> {
+abstract class GoogleVenueDetailsObject
+    implements
+        Built<GoogleVenueDetailsObject, GoogleVenueDetailsObjectBuilder> {
   @BuiltValueField(wireName: r'page')
   JsonObject? get page;
 
   GoogleVenueDetailsObject._();
 
-  factory GoogleVenueDetailsObject([void updates(GoogleVenueDetailsObjectBuilder b)]) = _$GoogleVenueDetailsObject;
+  factory GoogleVenueDetailsObject(
+          [void updates(GoogleVenueDetailsObjectBuilder b)]) =
+      _$GoogleVenueDetailsObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(GoogleVenueDetailsObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<GoogleVenueDetailsObject> get serializer => _$GoogleVenueDetailsObjectSerializer();
+  static Serializer<GoogleVenueDetailsObject> get serializer =>
+      _$GoogleVenueDetailsObjectSerializer();
 }
 
-class _$GoogleVenueDetailsObjectSerializer implements PrimitiveSerializer<GoogleVenueDetailsObject> {
+class _$GoogleVenueDetailsObjectSerializer
+    implements PrimitiveSerializer<GoogleVenueDetailsObject> {
   @override
-  final Iterable<Type> types = const [GoogleVenueDetailsObject, _$GoogleVenueDetailsObject];
+  final Iterable<Type> types = const [
+    GoogleVenueDetailsObject,
+    _$GoogleVenueDetailsObject
+  ];
 
   @override
   final String wireName = r'GoogleVenueDetailsObject';
@@ -56,7 +65,9 @@ class _$GoogleVenueDetailsObjectSerializer implements PrimitiveSerializer<Google
     GoogleVenueDetailsObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +117,3 @@ class _$GoogleVenueDetailsObjectSerializer implements PrimitiveSerializer<Google
     return result.build();
   }
 }
-

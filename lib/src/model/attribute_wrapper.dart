@@ -20,7 +20,8 @@ part 'attribute_wrapper.g.dart';
 /// * [valueMetadata] - List of possible values.
 /// * [valueType] - The attribute type. e.g. BOOL, URL, ENUM, REPEATED_ENUM
 @BuiltValue()
-abstract class AttributeWrapper implements Built<AttributeWrapper, AttributeWrapperBuilder> {
+abstract class AttributeWrapper
+    implements Built<AttributeWrapper, AttributeWrapperBuilder> {
   /// The google attribute id
   @BuiltValueField(wireName: r'externalId')
   String? get externalId;
@@ -48,16 +49,19 @@ abstract class AttributeWrapper implements Built<AttributeWrapper, AttributeWrap
 
   AttributeWrapper._();
 
-  factory AttributeWrapper([void updates(AttributeWrapperBuilder b)]) = _$AttributeWrapper;
+  factory AttributeWrapper([void updates(AttributeWrapperBuilder b)]) =
+      _$AttributeWrapper;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AttributeWrapperBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AttributeWrapper> get serializer => _$AttributeWrapperSerializer();
+  static Serializer<AttributeWrapper> get serializer =>
+      _$AttributeWrapperSerializer();
 }
 
-class _$AttributeWrapperSerializer implements PrimitiveSerializer<AttributeWrapper> {
+class _$AttributeWrapperSerializer
+    implements PrimitiveSerializer<AttributeWrapper> {
   @override
   final Iterable<Type> types = const [AttributeWrapper, _$AttributeWrapper];
 
@@ -119,7 +123,9 @@ class _$AttributeWrapperSerializer implements PrimitiveSerializer<AttributeWrapp
     AttributeWrapper object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -206,25 +212,33 @@ class _$AttributeWrapperSerializer implements PrimitiveSerializer<AttributeWrapp
 }
 
 class AttributeWrapperValueTypeEnum extends EnumClass {
-
   /// The attribute type. e.g. BOOL, URL, ENUM, REPEATED_ENUM
   @BuiltValueEnumConst(wireName: r'BOOL')
-  static const AttributeWrapperValueTypeEnum BOOL = _$attributeWrapperValueTypeEnum_BOOL;
+  static const AttributeWrapperValueTypeEnum BOOL =
+      _$attributeWrapperValueTypeEnum_BOOL;
+
   /// The attribute type. e.g. BOOL, URL, ENUM, REPEATED_ENUM
   @BuiltValueEnumConst(wireName: r'URL')
-  static const AttributeWrapperValueTypeEnum URL = _$attributeWrapperValueTypeEnum_URL;
+  static const AttributeWrapperValueTypeEnum URL =
+      _$attributeWrapperValueTypeEnum_URL;
+
   /// The attribute type. e.g. BOOL, URL, ENUM, REPEATED_ENUM
   @BuiltValueEnumConst(wireName: r'ENUM')
-  static const AttributeWrapperValueTypeEnum ENUM = _$attributeWrapperValueTypeEnum_ENUM;
+  static const AttributeWrapperValueTypeEnum ENUM =
+      _$attributeWrapperValueTypeEnum_ENUM;
+
   /// The attribute type. e.g. BOOL, URL, ENUM, REPEATED_ENUM
   @BuiltValueEnumConst(wireName: r'REPEATED_ENUM')
-  static const AttributeWrapperValueTypeEnum REPEATED_ENUM = _$attributeWrapperValueTypeEnum_REPEATED_ENUM;
+  static const AttributeWrapperValueTypeEnum REPEATED_ENUM =
+      _$attributeWrapperValueTypeEnum_REPEATED_ENUM;
 
-  static Serializer<AttributeWrapperValueTypeEnum> get serializer => _$attributeWrapperValueTypeEnumSerializer;
+  static Serializer<AttributeWrapperValueTypeEnum> get serializer =>
+      _$attributeWrapperValueTypeEnumSerializer;
 
-  const AttributeWrapperValueTypeEnum._(String name): super(name);
+  const AttributeWrapperValueTypeEnum._(String name) : super(name);
 
-  static BuiltSet<AttributeWrapperValueTypeEnum> get values => _$attributeWrapperValueTypeEnumValues;
-  static AttributeWrapperValueTypeEnum valueOf(String name) => _$attributeWrapperValueTypeEnumValueOf(name);
+  static BuiltSet<AttributeWrapperValueTypeEnum> get values =>
+      _$attributeWrapperValueTypeEnumValues;
+  static AttributeWrapperValueTypeEnum valueOf(String name) =>
+      _$attributeWrapperValueTypeEnumValueOf(name);
 }
-

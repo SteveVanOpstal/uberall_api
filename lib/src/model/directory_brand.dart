@@ -14,12 +14,13 @@ part 'directory_brand.g.dart';
 /// Properties:
 /// * [externalId] - External ID of the directory brand
 /// * [status] - Status of the directory brand
-/// * [names] 
-/// * [id] 
-/// * [country] 
-/// * [categories] 
+/// * [names]
+/// * [id]
+/// * [country]
+/// * [categories]
 @BuiltValue()
-abstract class DirectoryBrand implements Built<DirectoryBrand, DirectoryBrandBuilder> {
+abstract class DirectoryBrand
+    implements Built<DirectoryBrand, DirectoryBrandBuilder> {
   /// External ID of the directory brand
   @BuiltValueField(wireName: r'externalId')
   String? get externalId;
@@ -42,16 +43,19 @@ abstract class DirectoryBrand implements Built<DirectoryBrand, DirectoryBrandBui
 
   DirectoryBrand._();
 
-  factory DirectoryBrand([void updates(DirectoryBrandBuilder b)]) = _$DirectoryBrand;
+  factory DirectoryBrand([void updates(DirectoryBrandBuilder b)]) =
+      _$DirectoryBrand;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DirectoryBrandBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DirectoryBrand> get serializer => _$DirectoryBrandSerializer();
+  static Serializer<DirectoryBrand> get serializer =>
+      _$DirectoryBrandSerializer();
 }
 
-class _$DirectoryBrandSerializer implements PrimitiveSerializer<DirectoryBrand> {
+class _$DirectoryBrandSerializer
+    implements PrimitiveSerializer<DirectoryBrand> {
   @override
   final Iterable<Type> types = const [DirectoryBrand, _$DirectoryBrand];
 
@@ -113,7 +117,9 @@ class _$DirectoryBrandSerializer implements PrimitiveSerializer<DirectoryBrand> 
     DirectoryBrand object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -198,4 +204,3 @@ class _$DirectoryBrandSerializer implements PrimitiveSerializer<DirectoryBrand> 
     return result.build();
   }
 }
-

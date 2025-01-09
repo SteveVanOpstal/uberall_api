@@ -16,7 +16,8 @@ part 'login_command.g.dart';
 /// * [password] - User Password (password or private_key is required)
 /// * [privateKey] - Private key (password or private_key is required)
 @BuiltValue()
-abstract class LoginCommand implements Built<LoginCommand, LoginCommandBuilder> {
+abstract class LoginCommand
+    implements Built<LoginCommand, LoginCommandBuilder> {
   /// UserId (email or userId is required)
   @BuiltValueField(wireName: r'userId')
   int? get userId;
@@ -92,7 +93,9 @@ class _$LoginCommandSerializer implements PrimitiveSerializer<LoginCommand> {
     LoginCommand object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -163,4 +166,3 @@ class _$LoginCommandSerializer implements PrimitiveSerializer<LoginCommand> {
     return result.build();
   }
 }
-

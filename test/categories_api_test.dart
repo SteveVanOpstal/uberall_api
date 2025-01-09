@@ -11,7 +11,6 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for CategoriesApi
 void main() {
   // final instance = CategoriesApi();
@@ -62,7 +61,7 @@ void main() {
       // TODO
     });
 
-    // Get the supported More Hours types for a specific Category 
+    // Get the supported More Hours types for a specific Category
     //
     // Get all supported More Hours types for a specific Category. Optionally specify language, otherwise default sales partner language is returned
     //
@@ -70,6 +69,5 @@ void main() {
     test('test getCategoriesIdMoreHoursTypes', () async {
       // TODO
     });
-
   });
 }

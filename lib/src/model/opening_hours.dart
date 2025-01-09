@@ -16,7 +16,8 @@ part 'opening_hours.g.dart';
 /// * [dayOfWeek] - The weekday of an opening hours, e.g.: 1 for Monday, 2 for Tuesday, ...
 /// * [toX] - An end of a period. One or multiple periods are supported per dayOfWeek, e.g.: \"to1\": \"14:30\", \"to2\": \"17:00\"
 @BuiltValue()
-abstract class OpeningHours implements Built<OpeningHours, OpeningHoursBuilder> {
+abstract class OpeningHours
+    implements Built<OpeningHours, OpeningHoursBuilder> {
   /// Indicates whether a location is closed on a day.
   @BuiltValueField(wireName: r'closed')
   bool? get closed;
@@ -90,7 +91,9 @@ class _$OpeningHoursSerializer implements PrimitiveSerializer<OpeningHours> {
     OpeningHours object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -161,4 +164,3 @@ class _$OpeningHoursSerializer implements PrimitiveSerializer<OpeningHours> {
     return result.build();
   }
 }
-

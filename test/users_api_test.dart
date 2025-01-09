@@ -11,7 +11,6 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for UsersApi
 void main() {
   // final instance = UsersApi();
@@ -106,6 +105,5 @@ void main() {
     test('test postUsersLogout', () async {
       // TODO
     });
-
   });
 }

@@ -17,7 +17,6 @@ import 'package:openapi/src/model/inbox_response_wrapper.dart';
 import 'package:openapi/src/model/success_response_wrapper.dart';
 
 class DataPointsApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -38,7 +37,7 @@ class DataPointsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DataPointResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DataPointResponseWrapper>> deleteDataPointsIdLike({ 
+  Future<Response<DataPointResponseWrapper>> deleteDataPointsIdLike({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -47,7 +46,10 @@ class DataPointsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/data-points/{id}/like'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/data-points/{id}/like'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -60,7 +62,8 @@ class DataPointsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -84,11 +87,12 @@ class DataPointsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DataPointResponseWrapper),
-      ) as DataPointResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DataPointResponseWrapper),
+            ) as DataPointResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -126,7 +130,8 @@ class DataPointsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DataPointResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DataPointResponseWrapper>> deleteDataPointsIdReplyReplyIdApproval({ 
+  Future<Response<DataPointResponseWrapper>>
+      deleteDataPointsIdReplyReplyIdApproval({
     required String id,
     required String replyId,
     CancelToken? cancelToken,
@@ -136,7 +141,15 @@ class DataPointsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/data-points/{id}/reply/{replyId}/approval'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString()).replaceAll('{' r'replyId' '}', encodeQueryParameter(_serializers, replyId, const FullType(String)).toString());
+    final _path = r'/data-points/{id}/reply/{replyId}/approval'
+        .replaceAll(
+            '{' r'id' '}',
+            encodeQueryParameter(_serializers, id, const FullType(String))
+                .toString())
+        .replaceAll(
+            '{' r'replyId' '}',
+            encodeQueryParameter(_serializers, replyId, const FullType(String))
+                .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -149,7 +162,8 @@ class DataPointsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -173,11 +187,12 @@ class DataPointsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DataPointResponseWrapper),
-      ) as DataPointResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DataPointResponseWrapper),
+            ) as DataPointResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -224,7 +239,7 @@ class DataPointsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SuccessResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SuccessResponseWrapper>> deleteDataPointsRead({ 
+  Future<Response<SuccessResponseWrapper>> deleteDataPointsRead({
     required bool selectAll,
     BuiltList<String>? businessIds,
     String? countries,
@@ -256,7 +271,8 @@ class DataPointsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -269,17 +285,61 @@ class DataPointsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (businessIds != null) r'businessIds': encodeCollectionQueryParameter<String>(_serializers, businessIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (countries != null) r'countries': encodeQueryParameter(_serializers, countries, const FullType(String)),
-      if (zip != null) r'zip': encodeQueryParameter(_serializers, zip, const FullType(String)),
-      if (dataPointTypes != null) r'dataPointTypes': encodeCollectionQueryParameter<String>(_serializers, dataPointTypes, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (directoryTypes != null) r'directoryTypes': encodeCollectionQueryParameter<String>(_serializers, directoryTypes, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (ratings != null) r'ratings': encodeCollectionQueryParameter<String>(_serializers, ratings, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (replied != null) r'replied': encodeQueryParameter(_serializers, replied, const FullType(bool)),
-      r'selectAll': encodeQueryParameter(_serializers, selectAll, const FullType(bool)),
-      if (ids != null) r'ids': encodeCollectionQueryParameter<String>(_serializers, ids, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (excludeIds != null) r'excludeIds': encodeCollectionQueryParameter<String>(_serializers, excludeIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (query != null) r'query': encodeQueryParameter(_serializers, query, const FullType(String)),
+      if (businessIds != null)
+        r'businessIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          businessIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (countries != null)
+        r'countries': encodeQueryParameter(
+            _serializers, countries, const FullType(String)),
+      if (zip != null)
+        r'zip': encodeQueryParameter(_serializers, zip, const FullType(String)),
+      if (dataPointTypes != null)
+        r'dataPointTypes': encodeCollectionQueryParameter<String>(
+          _serializers,
+          dataPointTypes,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (directoryTypes != null)
+        r'directoryTypes': encodeCollectionQueryParameter<String>(
+          _serializers,
+          directoryTypes,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (ratings != null)
+        r'ratings': encodeCollectionQueryParameter<String>(
+          _serializers,
+          ratings,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (replied != null)
+        r'replied':
+            encodeQueryParameter(_serializers, replied, const FullType(bool)),
+      r'selectAll':
+          encodeQueryParameter(_serializers, selectAll, const FullType(bool)),
+      if (ids != null)
+        r'ids': encodeCollectionQueryParameter<String>(
+          _serializers,
+          ids,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (excludeIds != null)
+        r'excludeIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          excludeIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (query != null)
+        r'query':
+            encodeQueryParameter(_serializers, query, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -295,11 +355,12 @@ class DataPointsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SuccessResponseWrapper),
-      ) as SuccessResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SuccessResponseWrapper),
+            ) as SuccessResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -354,7 +415,7 @@ class DataPointsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [InboxResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<InboxResponseWrapper>> getDataPoints({ 
+  Future<Response<InboxResponseWrapper>> getDataPoints({
     int? max,
     int? page,
     String? labels,
@@ -394,7 +455,8 @@ class DataPointsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -407,25 +469,74 @@ class DataPointsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (max != null) r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (labels != null) r'labels': encodeQueryParameter(_serializers, labels, const FullType(String)),
-      if (countries != null) r'countries': encodeQueryParameter(_serializers, countries, const FullType(String)),
-      if (businessIds != null) r'businessIds': encodeCollectionQueryParameter<String>(_serializers, businessIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (locationIds != null) r'locationIds': encodeCollectionQueryParameter<String>(_serializers, locationIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (zip != null) r'zip': encodeQueryParameter(_serializers, zip, const FullType(String)),
-      if (dataPointTypes != null) r'dataPointTypes': encodeQueryParameter(_serializers, dataPointTypes, const FullType(String)),
-      if (directoryTypes != null) r'directoryTypes': encodeCollectionQueryParameter<String>(_serializers, directoryTypes, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (ratings != null) r'ratings': encodeCollectionQueryParameter<String>(_serializers, ratings, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (read != null) r'read': encodeQueryParameter(_serializers, read, const FullType(bool)),
-      if (replied != null) r'replied': encodeQueryParameter(_serializers, replied, const FullType(bool)),
-      if (text != null) r'text': encodeQueryParameter(_serializers, text, const FullType(bool)),
-      if (query != null) r'query': encodeQueryParameter(_serializers, query, const FullType(String)),
-      if (minActionDate != null) r'minActionDate': encodeQueryParameter(_serializers, minActionDate, const FullType(String)),
-      if (maxActionDate != null) r'maxActionDate': encodeQueryParameter(_serializers, maxActionDate, const FullType(String)),
-      if (minThreadActionDate != null) r'minThreadActionDate': encodeQueryParameter(_serializers, minThreadActionDate, const FullType(String)),
-      if (maxThreadActionDate != null) r'maxThreadActionDate': encodeQueryParameter(_serializers, maxThreadActionDate, const FullType(String)),
-      if (fieldMask != null) r'fieldMask': encodeQueryParameter(_serializers, fieldMask, const FullType(String)),
+      if (max != null)
+        r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
+      if (page != null)
+        r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
+      if (labels != null)
+        r'labels':
+            encodeQueryParameter(_serializers, labels, const FullType(String)),
+      if (countries != null)
+        r'countries': encodeQueryParameter(
+            _serializers, countries, const FullType(String)),
+      if (businessIds != null)
+        r'businessIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          businessIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (locationIds != null)
+        r'locationIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          locationIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (zip != null)
+        r'zip': encodeQueryParameter(_serializers, zip, const FullType(String)),
+      if (dataPointTypes != null)
+        r'dataPointTypes': encodeQueryParameter(
+            _serializers, dataPointTypes, const FullType(String)),
+      if (directoryTypes != null)
+        r'directoryTypes': encodeCollectionQueryParameter<String>(
+          _serializers,
+          directoryTypes,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (ratings != null)
+        r'ratings': encodeCollectionQueryParameter<String>(
+          _serializers,
+          ratings,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (read != null)
+        r'read': encodeQueryParameter(_serializers, read, const FullType(bool)),
+      if (replied != null)
+        r'replied':
+            encodeQueryParameter(_serializers, replied, const FullType(bool)),
+      if (text != null)
+        r'text': encodeQueryParameter(_serializers, text, const FullType(bool)),
+      if (query != null)
+        r'query':
+            encodeQueryParameter(_serializers, query, const FullType(String)),
+      if (minActionDate != null)
+        r'minActionDate': encodeQueryParameter(
+            _serializers, minActionDate, const FullType(String)),
+      if (maxActionDate != null)
+        r'maxActionDate': encodeQueryParameter(
+            _serializers, maxActionDate, const FullType(String)),
+      if (minThreadActionDate != null)
+        r'minThreadActionDate': encodeQueryParameter(
+            _serializers, minThreadActionDate, const FullType(String)),
+      if (maxThreadActionDate != null)
+        r'maxThreadActionDate': encodeQueryParameter(
+            _serializers, maxThreadActionDate, const FullType(String)),
+      if (fieldMask != null)
+        r'fieldMask': encodeQueryParameter(
+            _serializers, fieldMask, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -441,11 +552,12 @@ class DataPointsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(InboxResponseWrapper),
-      ) as InboxResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(InboxResponseWrapper),
+            ) as InboxResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -482,7 +594,7 @@ class DataPointsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DataPointResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DataPointResponseWrapper>> getDataPointsId({ 
+  Future<Response<DataPointResponseWrapper>> getDataPointsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -491,7 +603,10 @@ class DataPointsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/data-points/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/data-points/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -504,7 +619,8 @@ class DataPointsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -528,11 +644,12 @@ class DataPointsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DataPointResponseWrapper),
-      ) as DataPointResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DataPointResponseWrapper),
+            ) as DataPointResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -581,7 +698,7 @@ class DataPointsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DatapointStatisticsResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DatapointStatisticsResponseWrapper>> getDataPointsStatistics({ 
+  Future<Response<DatapointStatisticsResponseWrapper>> getDataPointsStatistics({
     String? businessIds,
     String? countries,
     String? locationIds,
@@ -615,7 +732,8 @@ class DataPointsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -628,19 +746,48 @@ class DataPointsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (businessIds != null) r'businessIds': encodeQueryParameter(_serializers, businessIds, const FullType(String)),
-      if (countries != null) r'countries': encodeQueryParameter(_serializers, countries, const FullType(String)),
-      if (locationIds != null) r'locationIds': encodeQueryParameter(_serializers, locationIds, const FullType(String)),
-      if (dataPointTypes != null) r'dataPointTypes': encodeQueryParameter(_serializers, dataPointTypes, const FullType(String)),
-      if (directoryTypes != null) r'directoryTypes': encodeQueryParameter(_serializers, directoryTypes, const FullType(String)),
-      if (ratings != null) r'ratings': encodeCollectionQueryParameter<String>(_serializers, ratings, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (minActionDate != null) r'minActionDate': encodeQueryParameter(_serializers, minActionDate, const FullType(String)),
-      if (maxActionDate != null) r'maxActionDate': encodeQueryParameter(_serializers, maxActionDate, const FullType(String)),
-      if (minThreadActionDate != null) r'minThreadActionDate': encodeQueryParameter(_serializers, minThreadActionDate, const FullType(String)),
-      if (maxThreadActionDate != null) r'maxThreadActionDate': encodeQueryParameter(_serializers, maxThreadActionDate, const FullType(String)),
-      if (query != null) r'query': encodeQueryParameter(_serializers, query, const FullType(String)),
-      if (read != null) r'read': encodeQueryParameter(_serializers, read, const FullType(bool)),
-      if (replied != null) r'replied': encodeQueryParameter(_serializers, replied, const FullType(bool)),
+      if (businessIds != null)
+        r'businessIds': encodeQueryParameter(
+            _serializers, businessIds, const FullType(String)),
+      if (countries != null)
+        r'countries': encodeQueryParameter(
+            _serializers, countries, const FullType(String)),
+      if (locationIds != null)
+        r'locationIds': encodeQueryParameter(
+            _serializers, locationIds, const FullType(String)),
+      if (dataPointTypes != null)
+        r'dataPointTypes': encodeQueryParameter(
+            _serializers, dataPointTypes, const FullType(String)),
+      if (directoryTypes != null)
+        r'directoryTypes': encodeQueryParameter(
+            _serializers, directoryTypes, const FullType(String)),
+      if (ratings != null)
+        r'ratings': encodeCollectionQueryParameter<String>(
+          _serializers,
+          ratings,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (minActionDate != null)
+        r'minActionDate': encodeQueryParameter(
+            _serializers, minActionDate, const FullType(String)),
+      if (maxActionDate != null)
+        r'maxActionDate': encodeQueryParameter(
+            _serializers, maxActionDate, const FullType(String)),
+      if (minThreadActionDate != null)
+        r'minThreadActionDate': encodeQueryParameter(
+            _serializers, minThreadActionDate, const FullType(String)),
+      if (maxThreadActionDate != null)
+        r'maxThreadActionDate': encodeQueryParameter(
+            _serializers, maxThreadActionDate, const FullType(String)),
+      if (query != null)
+        r'query':
+            encodeQueryParameter(_serializers, query, const FullType(String)),
+      if (read != null)
+        r'read': encodeQueryParameter(_serializers, read, const FullType(bool)),
+      if (replied != null)
+        r'replied':
+            encodeQueryParameter(_serializers, replied, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(
@@ -656,11 +803,12 @@ class DataPointsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DatapointStatisticsResponseWrapper),
-      ) as DatapointStatisticsResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DatapointStatisticsResponseWrapper),
+            ) as DatapointStatisticsResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -704,7 +852,7 @@ class DataPointsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DataPointTimeSeriesResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DataPointTimeSeriesResponseWrapper>> getDataPointsTimeseries({ 
+  Future<Response<DataPointTimeSeriesResponseWrapper>> getDataPointsTimeseries({
     BuiltList<String>? dataPointTypes,
     BuiltList<String>? directoryTypes,
     BuiltList<String>? businessIds,
@@ -733,7 +881,8 @@ class DataPointsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -746,14 +895,44 @@ class DataPointsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (dataPointTypes != null) r'dataPointTypes': encodeCollectionQueryParameter<String>(_serializers, dataPointTypes, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (directoryTypes != null) r'directoryTypes': encodeCollectionQueryParameter<String>(_serializers, directoryTypes, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (businessIds != null) r'businessIds': encodeCollectionQueryParameter<String>(_serializers, businessIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (zip != null) r'zip': encodeQueryParameter(_serializers, zip, const FullType(String)),
-      if (ratings != null) r'ratings': encodeCollectionQueryParameter<String>(_serializers, ratings, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (read != null) r'read': encodeQueryParameter(_serializers, read, const FullType(bool)),
-      if (replied != null) r'replied': encodeQueryParameter(_serializers, replied, const FullType(bool)),
-      if (countries != null) r'countries': encodeQueryParameter(_serializers, countries, const FullType(String)),
+      if (dataPointTypes != null)
+        r'dataPointTypes': encodeCollectionQueryParameter<String>(
+          _serializers,
+          dataPointTypes,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (directoryTypes != null)
+        r'directoryTypes': encodeCollectionQueryParameter<String>(
+          _serializers,
+          directoryTypes,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (businessIds != null)
+        r'businessIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          businessIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (zip != null)
+        r'zip': encodeQueryParameter(_serializers, zip, const FullType(String)),
+      if (ratings != null)
+        r'ratings': encodeCollectionQueryParameter<String>(
+          _serializers,
+          ratings,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (read != null)
+        r'read': encodeQueryParameter(_serializers, read, const FullType(bool)),
+      if (replied != null)
+        r'replied':
+            encodeQueryParameter(_serializers, replied, const FullType(bool)),
+      if (countries != null)
+        r'countries': encodeQueryParameter(
+            _serializers, countries, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -769,11 +948,12 @@ class DataPointsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DataPointTimeSeriesResponseWrapper),
-      ) as DataPointTimeSeriesResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DataPointTimeSeriesResponseWrapper),
+            ) as DataPointTimeSeriesResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -811,7 +991,7 @@ class DataPointsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DataPointResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DataPointResponseWrapper>> patchDataPointsIdReply({ 
+  Future<Response<DataPointResponseWrapper>> patchDataPointsIdReply({
     required String id,
     required String reply,
     CancelToken? cancelToken,
@@ -821,7 +1001,10 @@ class DataPointsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/data-points/{id}/reply'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/data-points/{id}/reply'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -834,7 +1017,8 @@ class DataPointsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -847,7 +1031,8 @@ class DataPointsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'reply': encodeQueryParameter(_serializers, reply, const FullType(String)),
+      r'reply':
+          encodeQueryParameter(_serializers, reply, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -863,11 +1048,12 @@ class DataPointsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DataPointResponseWrapper),
-      ) as DataPointResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DataPointResponseWrapper),
+            ) as DataPointResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -905,7 +1091,7 @@ class DataPointsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DataPointResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DataPointResponseWrapper>> postDataPointsIdFlag({ 
+  Future<Response<DataPointResponseWrapper>> postDataPointsIdFlag({
     required String id,
     required String flagType,
     CancelToken? cancelToken,
@@ -915,7 +1101,10 @@ class DataPointsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/data-points/{id}/flag'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/data-points/{id}/flag'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -928,7 +1117,8 @@ class DataPointsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -941,7 +1131,8 @@ class DataPointsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'flagType': encodeQueryParameter(_serializers, flagType, const FullType(String)),
+      r'flagType':
+          encodeQueryParameter(_serializers, flagType, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -957,11 +1148,12 @@ class DataPointsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DataPointResponseWrapper),
-      ) as DataPointResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DataPointResponseWrapper),
+            ) as DataPointResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -998,7 +1190,7 @@ class DataPointsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DataPointResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DataPointResponseWrapper>> postDataPointsIdLike({ 
+  Future<Response<DataPointResponseWrapper>> postDataPointsIdLike({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1007,7 +1199,10 @@ class DataPointsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/data-points/{id}/like'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/data-points/{id}/like'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -1020,7 +1215,8 @@ class DataPointsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -1044,11 +1240,12 @@ class DataPointsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DataPointResponseWrapper),
-      ) as DataPointResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DataPointResponseWrapper),
+            ) as DataPointResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1086,7 +1283,7 @@ class DataPointsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DataPointResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DataPointResponseWrapper>> postDataPointsIdModerate({ 
+  Future<Response<DataPointResponseWrapper>> postDataPointsIdModerate({
     required String id,
     required String operation,
     CancelToken? cancelToken,
@@ -1096,7 +1293,10 @@ class DataPointsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/data-points/{id}/moderate'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/data-points/{id}/moderate'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -1109,7 +1309,8 @@ class DataPointsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -1122,7 +1323,8 @@ class DataPointsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'operation': encodeQueryParameter(_serializers, operation, const FullType(String)),
+      r'operation':
+          encodeQueryParameter(_serializers, operation, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -1138,11 +1340,12 @@ class DataPointsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DataPointResponseWrapper),
-      ) as DataPointResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DataPointResponseWrapper),
+            ) as DataPointResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1180,7 +1383,8 @@ class DataPointsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DataPointResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DataPointResponseWrapper>> postDataPointsIdReplyReplyIdApproval({ 
+  Future<Response<DataPointResponseWrapper>>
+      postDataPointsIdReplyReplyIdApproval({
     required String id,
     required String replyId,
     CancelToken? cancelToken,
@@ -1190,7 +1394,15 @@ class DataPointsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/data-points/{id}/reply/{replyId}/approval'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString()).replaceAll('{' r'replyId' '}', encodeQueryParameter(_serializers, replyId, const FullType(String)).toString());
+    final _path = r'/data-points/{id}/reply/{replyId}/approval'
+        .replaceAll(
+            '{' r'id' '}',
+            encodeQueryParameter(_serializers, id, const FullType(String))
+                .toString())
+        .replaceAll(
+            '{' r'replyId' '}',
+            encodeQueryParameter(_serializers, replyId, const FullType(String))
+                .toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -1203,7 +1415,8 @@ class DataPointsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -1227,11 +1440,12 @@ class DataPointsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DataPointResponseWrapper),
-      ) as DataPointResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DataPointResponseWrapper),
+            ) as DataPointResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1278,7 +1492,7 @@ class DataPointsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SuccessResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SuccessResponseWrapper>> postDataPointsRead({ 
+  Future<Response<SuccessResponseWrapper>> postDataPointsRead({
     required bool selectAll,
     BuiltList<String>? businessIds,
     String? countries,
@@ -1310,7 +1524,8 @@ class DataPointsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -1323,17 +1538,61 @@ class DataPointsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (businessIds != null) r'businessIds': encodeCollectionQueryParameter<String>(_serializers, businessIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (countries != null) r'countries': encodeQueryParameter(_serializers, countries, const FullType(String)),
-      if (zip != null) r'zip': encodeQueryParameter(_serializers, zip, const FullType(String)),
-      if (dataPointTypes != null) r'dataPointTypes': encodeCollectionQueryParameter<String>(_serializers, dataPointTypes, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (directoryTypes != null) r'directoryTypes': encodeCollectionQueryParameter<String>(_serializers, directoryTypes, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (ratings != null) r'ratings': encodeCollectionQueryParameter<String>(_serializers, ratings, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (replied != null) r'replied': encodeQueryParameter(_serializers, replied, const FullType(bool)),
-      r'selectAll': encodeQueryParameter(_serializers, selectAll, const FullType(bool)),
-      if (ids != null) r'ids': encodeCollectionQueryParameter<String>(_serializers, ids, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (excludeIds != null) r'excludeIds': encodeCollectionQueryParameter<String>(_serializers, excludeIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (query != null) r'query': encodeQueryParameter(_serializers, query, const FullType(String)),
+      if (businessIds != null)
+        r'businessIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          businessIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (countries != null)
+        r'countries': encodeQueryParameter(
+            _serializers, countries, const FullType(String)),
+      if (zip != null)
+        r'zip': encodeQueryParameter(_serializers, zip, const FullType(String)),
+      if (dataPointTypes != null)
+        r'dataPointTypes': encodeCollectionQueryParameter<String>(
+          _serializers,
+          dataPointTypes,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (directoryTypes != null)
+        r'directoryTypes': encodeCollectionQueryParameter<String>(
+          _serializers,
+          directoryTypes,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (ratings != null)
+        r'ratings': encodeCollectionQueryParameter<String>(
+          _serializers,
+          ratings,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (replied != null)
+        r'replied':
+            encodeQueryParameter(_serializers, replied, const FullType(bool)),
+      r'selectAll':
+          encodeQueryParameter(_serializers, selectAll, const FullType(bool)),
+      if (ids != null)
+        r'ids': encodeCollectionQueryParameter<String>(
+          _serializers,
+          ids,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (excludeIds != null)
+        r'excludeIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          excludeIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (query != null)
+        r'query':
+            encodeQueryParameter(_serializers, query, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -1349,11 +1608,12 @@ class DataPointsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SuccessResponseWrapper),
-      ) as SuccessResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SuccessResponseWrapper),
+            ) as SuccessResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1392,7 +1652,8 @@ class DataPointsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DataPointResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DataPointResponseWrapper>> putDataPointsIdReplyReplyIdApproval({ 
+  Future<Response<DataPointResponseWrapper>>
+      putDataPointsIdReplyReplyIdApproval({
     required String id,
     required String replyId,
     required String replyText,
@@ -1403,7 +1664,20 @@ class DataPointsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/data-points/{id}/reply/{replyId}/approval'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString()).replaceAll('{' r'replyId' '}', encodeQueryParameter(_serializers, replyId, const FullType(String)).toString()).replaceAll('{' r'replyText' '}', encodeQueryParameter(_serializers, replyText, const FullType(String)).toString());
+    final _path = r'/data-points/{id}/reply/{replyId}/approval'
+        .replaceAll(
+            '{' r'id' '}',
+            encodeQueryParameter(_serializers, id, const FullType(String))
+                .toString())
+        .replaceAll(
+            '{' r'replyId' '}',
+            encodeQueryParameter(_serializers, replyId, const FullType(String))
+                .toString())
+        .replaceAll(
+            '{' r'replyText' '}',
+            encodeQueryParameter(
+                    _serializers, replyText, const FullType(String))
+                .toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -1416,7 +1690,8 @@ class DataPointsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -1440,11 +1715,12 @@ class DataPointsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DataPointResponseWrapper),
-      ) as DataPointResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DataPointResponseWrapper),
+            ) as DataPointResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1466,5 +1742,4 @@ class DataPointsApi {
       extra: _response.extra,
     );
   }
-
 }

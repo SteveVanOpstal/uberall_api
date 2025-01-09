@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 
 part 'service_area.g.dart';
 
-/// The areas where this location offers service, e.g. useful for food delivery 
+/// The areas where this location offers service, e.g. useful for food delivery
 ///
 /// Properties:
 /// * [name] - The name of the service area, e.g. Berlin, Deutschland
@@ -64,7 +64,9 @@ class _$ServiceAreaSerializer implements PrimitiveSerializer<ServiceArea> {
     ServiceArea object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -121,4 +123,3 @@ class _$ServiceAreaSerializer implements PrimitiveSerializer<ServiceArea> {
     return result.build();
   }
 }
-

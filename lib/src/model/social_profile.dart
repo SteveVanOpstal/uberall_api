@@ -15,7 +15,8 @@ part 'social_profile.g.dart';
 /// * [url] - Url of the Social Profile
 /// * [type] - Social Profile Type. Values: [FACEBOOK, LINKEDIN, TWITTER, YOUTUBE, XING, INSTAGRAM, FOURSQUARE, PINTEREST]
 @BuiltValue()
-abstract class SocialProfile implements Built<SocialProfile, SocialProfileBuilder> {
+abstract class SocialProfile
+    implements Built<SocialProfile, SocialProfileBuilder> {
   /// Url of the Social Profile
   @BuiltValueField(wireName: r'url')
   String? get url;
@@ -27,13 +28,15 @@ abstract class SocialProfile implements Built<SocialProfile, SocialProfileBuilde
 
   SocialProfile._();
 
-  factory SocialProfile([void updates(SocialProfileBuilder b)]) = _$SocialProfile;
+  factory SocialProfile([void updates(SocialProfileBuilder b)]) =
+      _$SocialProfile;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialProfileBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<SocialProfile> get serializer => _$SocialProfileSerializer();
+  static Serializer<SocialProfile> get serializer =>
+      _$SocialProfileSerializer();
 }
 
 class _$SocialProfileSerializer implements PrimitiveSerializer<SocialProfile> {
@@ -70,7 +73,9 @@ class _$SocialProfileSerializer implements PrimitiveSerializer<SocialProfile> {
     SocialProfile object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -129,43 +134,62 @@ class _$SocialProfileSerializer implements PrimitiveSerializer<SocialProfile> {
 }
 
 class SocialProfileTypeEnum extends EnumClass {
-
   /// Social Profile Type. Values: [FACEBOOK, LINKEDIN, TWITTER, YOUTUBE, XING, INSTAGRAM, FOURSQUARE, PINTEREST]
   @BuiltValueEnumConst(wireName: r'FACEBOOK')
-  static const SocialProfileTypeEnum FACEBOOK = _$socialProfileTypeEnum_FACEBOOK;
+  static const SocialProfileTypeEnum FACEBOOK =
+      _$socialProfileTypeEnum_FACEBOOK;
+
   /// Social Profile Type. Values: [FACEBOOK, LINKEDIN, TWITTER, YOUTUBE, XING, INSTAGRAM, FOURSQUARE, PINTEREST]
   @BuiltValueEnumConst(wireName: r'LINKEDIN')
-  static const SocialProfileTypeEnum LINKEDIN = _$socialProfileTypeEnum_LINKEDIN;
+  static const SocialProfileTypeEnum LINKEDIN =
+      _$socialProfileTypeEnum_LINKEDIN;
+
   /// Social Profile Type. Values: [FACEBOOK, LINKEDIN, TWITTER, YOUTUBE, XING, INSTAGRAM, FOURSQUARE, PINTEREST]
   @BuiltValueEnumConst(wireName: r'TWITTER')
   static const SocialProfileTypeEnum TWITTER = _$socialProfileTypeEnum_TWITTER;
+
   /// Social Profile Type. Values: [FACEBOOK, LINKEDIN, TWITTER, YOUTUBE, XING, INSTAGRAM, FOURSQUARE, PINTEREST]
   @BuiltValueEnumConst(wireName: r'YOUTUBE')
   static const SocialProfileTypeEnum YOUTUBE = _$socialProfileTypeEnum_YOUTUBE;
+
   /// Social Profile Type. Values: [FACEBOOK, LINKEDIN, TWITTER, YOUTUBE, XING, INSTAGRAM, FOURSQUARE, PINTEREST]
   @BuiltValueEnumConst(wireName: r'XING')
   static const SocialProfileTypeEnum XING = _$socialProfileTypeEnum_XING;
+
   /// Social Profile Type. Values: [FACEBOOK, LINKEDIN, TWITTER, YOUTUBE, XING, INSTAGRAM, FOURSQUARE, PINTEREST]
   @BuiltValueEnumConst(wireName: r'INSTAGRAM')
-  static const SocialProfileTypeEnum INSTAGRAM = _$socialProfileTypeEnum_INSTAGRAM;
+  static const SocialProfileTypeEnum INSTAGRAM =
+      _$socialProfileTypeEnum_INSTAGRAM;
+
   /// Social Profile Type. Values: [FACEBOOK, LINKEDIN, TWITTER, YOUTUBE, XING, INSTAGRAM, FOURSQUARE, PINTEREST]
   @BuiltValueEnumConst(wireName: r'FOURSQUARE')
-  static const SocialProfileTypeEnum FOURSQUARE = _$socialProfileTypeEnum_FOURSQUARE;
+  static const SocialProfileTypeEnum FOURSQUARE =
+      _$socialProfileTypeEnum_FOURSQUARE;
+
   /// Social Profile Type. Values: [FACEBOOK, LINKEDIN, TWITTER, YOUTUBE, XING, INSTAGRAM, FOURSQUARE, PINTEREST]
   @BuiltValueEnumConst(wireName: r'PINTEREST')
-  static const SocialProfileTypeEnum PINTEREST = _$socialProfileTypeEnum_PINTEREST;
+  static const SocialProfileTypeEnum PINTEREST =
+      _$socialProfileTypeEnum_PINTEREST;
+
   /// Social Profile Type. Values: [FACEBOOK, LINKEDIN, TWITTER, YOUTUBE, XING, INSTAGRAM, FOURSQUARE, PINTEREST]
   @BuiltValueEnumConst(wireName: r'VIMEO')
   static const SocialProfileTypeEnum VIMEO = _$socialProfileTypeEnum_VIMEO;
+
   /// Social Profile Type. Values: [FACEBOOK, LINKEDIN, TWITTER, YOUTUBE, XING, INSTAGRAM, FOURSQUARE, PINTEREST]
-  @BuiltValueEnumConst(wireName: r'FACEBOOK, LINKEDIN, TWITTER, YOUTUBE, XING, INSTAGRAM, FOURSQUARE, PINTEREST, VIMEO')
-  static const SocialProfileTypeEnum fACEBOOKCommaLINKEDINCommaTWITTERCommaYOUTUBECommaXINGCommaINSTAGRAMCommaFOURSQUARECommaPINTERESTCommaVIMEO = _$socialProfileTypeEnum_fACEBOOKCommaLINKEDINCommaTWITTERCommaYOUTUBECommaXINGCommaINSTAGRAMCommaFOURSQUARECommaPINTERESTCommaVIMEO;
+  @BuiltValueEnumConst(
+      wireName:
+          r'FACEBOOK, LINKEDIN, TWITTER, YOUTUBE, XING, INSTAGRAM, FOURSQUARE, PINTEREST, VIMEO')
+  static const SocialProfileTypeEnum
+      fACEBOOKCommaLINKEDINCommaTWITTERCommaYOUTUBECommaXINGCommaINSTAGRAMCommaFOURSQUARECommaPINTERESTCommaVIMEO =
+      _$socialProfileTypeEnum_fACEBOOKCommaLINKEDINCommaTWITTERCommaYOUTUBECommaXINGCommaINSTAGRAMCommaFOURSQUARECommaPINTERESTCommaVIMEO;
 
-  static Serializer<SocialProfileTypeEnum> get serializer => _$socialProfileTypeEnumSerializer;
+  static Serializer<SocialProfileTypeEnum> get serializer =>
+      _$socialProfileTypeEnumSerializer;
 
-  const SocialProfileTypeEnum._(String name): super(name);
+  const SocialProfileTypeEnum._(String name) : super(name);
 
-  static BuiltSet<SocialProfileTypeEnum> get values => _$socialProfileTypeEnumValues;
-  static SocialProfileTypeEnum valueOf(String name) => _$socialProfileTypeEnumValueOf(name);
+  static BuiltSet<SocialProfileTypeEnum> get values =>
+      _$socialProfileTypeEnumValues;
+  static SocialProfileTypeEnum valueOf(String name) =>
+      _$socialProfileTypeEnumValueOf(name);
 }
-

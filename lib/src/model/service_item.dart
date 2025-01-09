@@ -15,11 +15,11 @@ part 'service_item.g.dart';
 /// * [title] - Name of the service item as represented at the location
 /// * [description] - A description of the service
 /// * [identifier] - Required - A unique identifier for this service
-/// * [listName] 
+/// * [listName]
 /// * [price] - Price of the service item
 /// * [currency] - The currency of the price for this service - required when a price is given
 /// * [category] - Business category the service should be applied to - this is required when applying a Google structured service but not necessary for freeform services.
-/// * [country] - The country where the locations providing this service are located - this is required when applying a Google structured service but not necessary for freeform services. 
+/// * [country] - The country where the locations providing this service are located - this is required when applying a Google structured service but not necessary for freeform services.
 /// * [googleService] - The Google name for a structured service - this is required when applying a Google structured service but not necessary for freeform services.
 @BuiltValue()
 abstract class ServiceItem implements Built<ServiceItem, ServiceItemBuilder> {
@@ -50,7 +50,7 @@ abstract class ServiceItem implements Built<ServiceItem, ServiceItemBuilder> {
   @BuiltValueField(wireName: r'category')
   int? get category;
 
-  /// The country where the locations providing this service are located - this is required when applying a Google structured service but not necessary for freeform services. 
+  /// The country where the locations providing this service are located - this is required when applying a Google structured service but not necessary for freeform services.
   @BuiltValueField(wireName: r'country')
   String? get country;
 
@@ -150,7 +150,9 @@ class _$ServiceItemSerializer implements PrimitiveSerializer<ServiceItem> {
     ServiceItem object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -256,4 +258,3 @@ class _$ServiceItemSerializer implements PrimitiveSerializer<ServiceItem> {
     return result.build();
   }
 }
-

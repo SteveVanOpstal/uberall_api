@@ -13,26 +13,34 @@ part 'external_entities_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [pages] 
+/// * [pages]
 @BuiltValue()
-abstract class ExternalEntitiesObject implements Built<ExternalEntitiesObject, ExternalEntitiesObjectBuilder> {
+abstract class ExternalEntitiesObject
+    implements Built<ExternalEntitiesObject, ExternalEntitiesObjectBuilder> {
   @BuiltValueField(wireName: r'pages')
   BuiltList<JsonObject>? get pages;
 
   ExternalEntitiesObject._();
 
-  factory ExternalEntitiesObject([void updates(ExternalEntitiesObjectBuilder b)]) = _$ExternalEntitiesObject;
+  factory ExternalEntitiesObject(
+          [void updates(ExternalEntitiesObjectBuilder b)]) =
+      _$ExternalEntitiesObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ExternalEntitiesObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ExternalEntitiesObject> get serializer => _$ExternalEntitiesObjectSerializer();
+  static Serializer<ExternalEntitiesObject> get serializer =>
+      _$ExternalEntitiesObjectSerializer();
 }
 
-class _$ExternalEntitiesObjectSerializer implements PrimitiveSerializer<ExternalEntitiesObject> {
+class _$ExternalEntitiesObjectSerializer
+    implements PrimitiveSerializer<ExternalEntitiesObject> {
   @override
-  final Iterable<Type> types = const [ExternalEntitiesObject, _$ExternalEntitiesObject];
+  final Iterable<Type> types = const [
+    ExternalEntitiesObject,
+    _$ExternalEntitiesObject
+  ];
 
   @override
   final String wireName = r'ExternalEntitiesObject';
@@ -57,7 +65,9 @@ class _$ExternalEntitiesObjectSerializer implements PrimitiveSerializer<External
     ExternalEntitiesObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -107,4 +117,3 @@ class _$ExternalEntitiesObjectSerializer implements PrimitiveSerializer<External
     return result.build();
   }
 }
-

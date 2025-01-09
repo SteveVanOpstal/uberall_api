@@ -22,7 +22,8 @@ part 'directory_page.g.dart';
 /// * [dateCreated] - Date the page was created
 /// * [lastUpdated] - Date the page was last updated
 @BuiltValue()
-abstract class DirectoryPage implements Built<DirectoryPage, DirectoryPageBuilder> {
+abstract class DirectoryPage
+    implements Built<DirectoryPage, DirectoryPageBuilder> {
   /// Directory user account associated with the page
   @BuiltValueField(wireName: r'directoryUserAccount')
   JsonObject? get directoryUserAccount;
@@ -59,13 +60,15 @@ abstract class DirectoryPage implements Built<DirectoryPage, DirectoryPageBuilde
 
   DirectoryPage._();
 
-  factory DirectoryPage([void updates(DirectoryPageBuilder b)]) = _$DirectoryPage;
+  factory DirectoryPage([void updates(DirectoryPageBuilder b)]) =
+      _$DirectoryPage;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DirectoryPageBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DirectoryPage> get serializer => _$DirectoryPageSerializer();
+  static Serializer<DirectoryPage> get serializer =>
+      _$DirectoryPageSerializer();
 }
 
 class _$DirectoryPageSerializer implements PrimitiveSerializer<DirectoryPage> {
@@ -144,7 +147,9 @@ class _$DirectoryPageSerializer implements PrimitiveSerializer<DirectoryPage> {
     DirectoryPage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -245,51 +250,67 @@ class _$DirectoryPageSerializer implements PrimitiveSerializer<DirectoryPage> {
 }
 
 class DirectoryPageStatusEnum extends EnumClass {
-
   /// Status of the page
   @BuiltValueEnumConst(wireName: r'VALID')
   static const DirectoryPageStatusEnum VALID = _$directoryPageStatusEnum_VALID;
+
   /// Status of the page
   @BuiltValueEnumConst(wireName: r'INVALID')
-  static const DirectoryPageStatusEnum INVALID = _$directoryPageStatusEnum_INVALID;
+  static const DirectoryPageStatusEnum INVALID =
+      _$directoryPageStatusEnum_INVALID;
+
   /// Status of the page
   @BuiltValueEnumConst(wireName: r'CREATION_NEEDED')
-  static const DirectoryPageStatusEnum CREATION_NEEDED = _$directoryPageStatusEnum_CREATION_NEEDED;
+  static const DirectoryPageStatusEnum CREATION_NEEDED =
+      _$directoryPageStatusEnum_CREATION_NEEDED;
 
-  static Serializer<DirectoryPageStatusEnum> get serializer => _$directoryPageStatusEnumSerializer;
+  static Serializer<DirectoryPageStatusEnum> get serializer =>
+      _$directoryPageStatusEnumSerializer;
 
-  const DirectoryPageStatusEnum._(String name): super(name);
+  const DirectoryPageStatusEnum._(String name) : super(name);
 
-  static BuiltSet<DirectoryPageStatusEnum> get values => _$directoryPageStatusEnumValues;
-  static DirectoryPageStatusEnum valueOf(String name) => _$directoryPageStatusEnumValueOf(name);
+  static BuiltSet<DirectoryPageStatusEnum> get values =>
+      _$directoryPageStatusEnumValues;
+  static DirectoryPageStatusEnum valueOf(String name) =>
+      _$directoryPageStatusEnumValueOf(name);
 }
 
 class DirectoryPageTypeEnum extends EnumClass {
-
   /// Type of the page
   @BuiltValueEnumConst(wireName: r'FACEBOOK')
-  static const DirectoryPageTypeEnum FACEBOOK = _$directoryPageTypeEnum_FACEBOOK;
+  static const DirectoryPageTypeEnum FACEBOOK =
+      _$directoryPageTypeEnum_FACEBOOK;
+
   /// Type of the page
   @BuiltValueEnumConst(wireName: r'INSTAGRAM')
-  static const DirectoryPageTypeEnum INSTAGRAM = _$directoryPageTypeEnum_INSTAGRAM;
+  static const DirectoryPageTypeEnum INSTAGRAM =
+      _$directoryPageTypeEnum_INSTAGRAM;
+
   /// Type of the page
   @BuiltValueEnumConst(wireName: r'GOOGLE')
   static const DirectoryPageTypeEnum GOOGLE = _$directoryPageTypeEnum_GOOGLE;
+
   /// Type of the page
   @BuiltValueEnumConst(wireName: r'TWITTER')
   static const DirectoryPageTypeEnum TWITTER = _$directoryPageTypeEnum_TWITTER;
+
   /// Type of the page
   @BuiltValueEnumConst(wireName: r'APPLE_MAPS')
-  static const DirectoryPageTypeEnum APPLE_MAPS = _$directoryPageTypeEnum_APPLE_MAPS;
+  static const DirectoryPageTypeEnum APPLE_MAPS =
+      _$directoryPageTypeEnum_APPLE_MAPS;
+
   /// Type of the page
   @BuiltValueEnumConst(wireName: r'TRUSTPILOT')
-  static const DirectoryPageTypeEnum TRUSTPILOT = _$directoryPageTypeEnum_TRUSTPILOT;
+  static const DirectoryPageTypeEnum TRUSTPILOT =
+      _$directoryPageTypeEnum_TRUSTPILOT;
 
-  static Serializer<DirectoryPageTypeEnum> get serializer => _$directoryPageTypeEnumSerializer;
+  static Serializer<DirectoryPageTypeEnum> get serializer =>
+      _$directoryPageTypeEnumSerializer;
 
-  const DirectoryPageTypeEnum._(String name): super(name);
+  const DirectoryPageTypeEnum._(String name) : super(name);
 
-  static BuiltSet<DirectoryPageTypeEnum> get values => _$directoryPageTypeEnumValues;
-  static DirectoryPageTypeEnum valueOf(String name) => _$directoryPageTypeEnumValueOf(name);
+  static BuiltSet<DirectoryPageTypeEnum> get values =>
+      _$directoryPageTypeEnumValues;
+  static DirectoryPageTypeEnum valueOf(String name) =>
+      _$directoryPageTypeEnumValueOf(name);
 }
-

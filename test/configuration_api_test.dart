@@ -11,7 +11,6 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for ConfigurationApi
 void main() {
   // final instance = ConfigurationApi();
@@ -31,7 +30,9 @@ void main() {
     // Returns a list of directory brands for the given account and directory
     //
     //Future<DirectoryBrandPageResponseWrapper> getDirectoryBrandSalesPartnerSalesPartnerIdUserAccountAccountIdDirectoryType(String salesPartnerId, String accountId, String directoryType) async
-    test('test getDirectoryBrandSalesPartnerSalesPartnerIdUserAccountAccountIdDirectoryType', () async {
+    test(
+        'test getDirectoryBrandSalesPartnerSalesPartnerIdUserAccountAccountIdDirectoryType',
+        () async {
       // TODO
     });
 
@@ -46,12 +47,13 @@ void main() {
 
     // Create Directory Brand
     //
-    // Create directory brand for the given sales partner id, directory user account and directory type 
+    // Create directory brand for the given sales partner id, directory user account and directory type
     //
     //Future<DirectoryBrandWrapper> postDirectoryBrandSalesPartnerSalesPartnerIdUserAccountAccountIdDirectoryType(String salesPartnerId, String accountId, String directoryType, CreateDirectoryBrandRequest createDirectoryBrandRequest) async
-    test('test postDirectoryBrandSalesPartnerSalesPartnerIdUserAccountAccountIdDirectoryType', () async {
+    test(
+        'test postDirectoryBrandSalesPartnerSalesPartnerIdUserAccountAccountIdDirectoryType',
+        () async {
       // TODO
     });
-
   });
 }

@@ -23,9 +23,12 @@ part 'directory_external_business_response.g.dart';
 /// * [etag] - ETag of the external business
 /// * [state] - status of business on external directory
 /// * [locationsCount] - count of locations under the business
-/// * [photos] 
+/// * [photos]
 @BuiltValue()
-abstract class DirectoryExternalBusinessResponse implements Built<DirectoryExternalBusinessResponse, DirectoryExternalBusinessResponseBuilder> {
+abstract class DirectoryExternalBusinessResponse
+    implements
+        Built<DirectoryExternalBusinessResponse,
+            DirectoryExternalBusinessResponseBuilder> {
   /// id of the business on external directory
   @BuiltValueField(wireName: r'id')
   String? get id;
@@ -63,18 +66,25 @@ abstract class DirectoryExternalBusinessResponse implements Built<DirectoryExter
 
   DirectoryExternalBusinessResponse._();
 
-  factory DirectoryExternalBusinessResponse([void updates(DirectoryExternalBusinessResponseBuilder b)]) = _$DirectoryExternalBusinessResponse;
+  factory DirectoryExternalBusinessResponse(
+          [void updates(DirectoryExternalBusinessResponseBuilder b)]) =
+      _$DirectoryExternalBusinessResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DirectoryExternalBusinessResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DirectoryExternalBusinessResponse> get serializer => _$DirectoryExternalBusinessResponseSerializer();
+  static Serializer<DirectoryExternalBusinessResponse> get serializer =>
+      _$DirectoryExternalBusinessResponseSerializer();
 }
 
-class _$DirectoryExternalBusinessResponseSerializer implements PrimitiveSerializer<DirectoryExternalBusinessResponse> {
+class _$DirectoryExternalBusinessResponseSerializer
+    implements PrimitiveSerializer<DirectoryExternalBusinessResponse> {
   @override
-  final Iterable<Type> types = const [DirectoryExternalBusinessResponse, _$DirectoryExternalBusinessResponse];
+  final Iterable<Type> types = const [
+    DirectoryExternalBusinessResponse,
+    _$DirectoryExternalBusinessResponse
+  ];
 
   @override
   final String wireName = r'DirectoryExternalBusinessResponse';
@@ -155,7 +165,9 @@ class _$DirectoryExternalBusinessResponseSerializer implements PrimitiveSerializ
     DirectoryExternalBusinessResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -194,7 +206,8 @@ class _$DirectoryExternalBusinessResponseSerializer implements PrimitiveSerializ
         case r'categories':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(DirectoryCategory)]),
+            specifiedType:
+                const FullType(BuiltList, [FullType(DirectoryCategory)]),
           ) as BuiltList<DirectoryCategory>;
           result.categories.replace(valueDes);
           break;
@@ -229,7 +242,8 @@ class _$DirectoryExternalBusinessResponseSerializer implements PrimitiveSerializ
         case r'photos':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DirectoryExternalBusinessResponsePhotos),
+            specifiedType:
+                const FullType(DirectoryExternalBusinessResponsePhotos),
           ) as DirectoryExternalBusinessResponsePhotos;
           result.photos.replace(valueDes);
           break;
@@ -261,4 +275,3 @@ class _$DirectoryExternalBusinessResponseSerializer implements PrimitiveSerializ
     return result.build();
   }
 }
-

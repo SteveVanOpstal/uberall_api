@@ -13,13 +13,15 @@ part 'generic_map_response_wrapper.g.dart';
 /// GenericMapResponseWrapper
 ///
 /// Properties:
-/// * [status] 
+/// * [status]
 /// * [message] - (optional) Holds further information about the response
-/// * [errorCode] 
+/// * [errorCode]
 /// * [warnings] - (optional) Holds further warnings
-/// * [response] 
+/// * [response]
 @BuiltValue()
-abstract class GenericMapResponseWrapper implements Built<GenericMapResponseWrapper, GenericMapResponseWrapperBuilder> {
+abstract class GenericMapResponseWrapper
+    implements
+        Built<GenericMapResponseWrapper, GenericMapResponseWrapperBuilder> {
   @BuiltValueField(wireName: r'status')
   GenericMapResponseWrapperStatusEnum? get status;
   // enum statusEnum {  SUCCESS,  QUOTA_LIMIT_EXCEED,  NOT_AUTHORIZED,  FORBIDDEN,  BAD_ACCESS_TOKEN,  BAD_PRIVATE_KEY,  BAD_PUBLIC_KEY,  MISSING_PARAMETER,  INVALID_PARAMETER,  WRONG_PARAMETER_TYPE,  CONFLICT,  RESOURCE_LOCKED,  SERVER_ERROR,  ERROR,  NOT_FOUND,  BAD_REQUEST,  USER_ERROR,  PARTIAL_ERROR,  METHOD_NOT_ALLOWED,  };
@@ -41,18 +43,25 @@ abstract class GenericMapResponseWrapper implements Built<GenericMapResponseWrap
 
   GenericMapResponseWrapper._();
 
-  factory GenericMapResponseWrapper([void updates(GenericMapResponseWrapperBuilder b)]) = _$GenericMapResponseWrapper;
+  factory GenericMapResponseWrapper(
+          [void updates(GenericMapResponseWrapperBuilder b)]) =
+      _$GenericMapResponseWrapper;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(GenericMapResponseWrapperBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<GenericMapResponseWrapper> get serializer => _$GenericMapResponseWrapperSerializer();
+  static Serializer<GenericMapResponseWrapper> get serializer =>
+      _$GenericMapResponseWrapperSerializer();
 }
 
-class _$GenericMapResponseWrapperSerializer implements PrimitiveSerializer<GenericMapResponseWrapper> {
+class _$GenericMapResponseWrapperSerializer
+    implements PrimitiveSerializer<GenericMapResponseWrapper> {
   @override
-  final Iterable<Type> types = const [GenericMapResponseWrapper, _$GenericMapResponseWrapper];
+  final Iterable<Type> types = const [
+    GenericMapResponseWrapper,
+    _$GenericMapResponseWrapper
+  ];
 
   @override
   final String wireName = r'GenericMapResponseWrapper';
@@ -105,7 +114,9 @@ class _$GenericMapResponseWrapperSerializer implements PrimitiveSerializer<Gener
     GenericMapResponseWrapper object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -137,7 +148,8 @@ class _$GenericMapResponseWrapperSerializer implements PrimitiveSerializer<Gener
         case r'errorCode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(GenericMapResponseWrapperErrorCodeEnum),
+            specifiedType:
+                const FullType(GenericMapResponseWrapperErrorCodeEnum),
           ) as GenericMapResponseWrapperErrorCodeEnum;
           result.errorCode = valueDes;
           break;
@@ -185,102 +197,145 @@ class _$GenericMapResponseWrapperSerializer implements PrimitiveSerializer<Gener
 }
 
 class GenericMapResponseWrapperStatusEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'SUCCESS')
-  static const GenericMapResponseWrapperStatusEnum SUCCESS = _$genericMapResponseWrapperStatusEnum_SUCCESS;
+  static const GenericMapResponseWrapperStatusEnum SUCCESS =
+      _$genericMapResponseWrapperStatusEnum_SUCCESS;
   @BuiltValueEnumConst(wireName: r'QUOTA_LIMIT_EXCEED')
-  static const GenericMapResponseWrapperStatusEnum QUOTA_LIMIT_EXCEED = _$genericMapResponseWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
+  static const GenericMapResponseWrapperStatusEnum QUOTA_LIMIT_EXCEED =
+      _$genericMapResponseWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
   @BuiltValueEnumConst(wireName: r'NOT_AUTHORIZED')
-  static const GenericMapResponseWrapperStatusEnum NOT_AUTHORIZED = _$genericMapResponseWrapperStatusEnum_NOT_AUTHORIZED;
+  static const GenericMapResponseWrapperStatusEnum NOT_AUTHORIZED =
+      _$genericMapResponseWrapperStatusEnum_NOT_AUTHORIZED;
   @BuiltValueEnumConst(wireName: r'FORBIDDEN')
-  static const GenericMapResponseWrapperStatusEnum FORBIDDEN = _$genericMapResponseWrapperStatusEnum_FORBIDDEN;
+  static const GenericMapResponseWrapperStatusEnum FORBIDDEN =
+      _$genericMapResponseWrapperStatusEnum_FORBIDDEN;
   @BuiltValueEnumConst(wireName: r'BAD_ACCESS_TOKEN')
-  static const GenericMapResponseWrapperStatusEnum BAD_ACCESS_TOKEN = _$genericMapResponseWrapperStatusEnum_BAD_ACCESS_TOKEN;
+  static const GenericMapResponseWrapperStatusEnum BAD_ACCESS_TOKEN =
+      _$genericMapResponseWrapperStatusEnum_BAD_ACCESS_TOKEN;
   @BuiltValueEnumConst(wireName: r'BAD_PRIVATE_KEY')
-  static const GenericMapResponseWrapperStatusEnum BAD_PRIVATE_KEY = _$genericMapResponseWrapperStatusEnum_BAD_PRIVATE_KEY;
+  static const GenericMapResponseWrapperStatusEnum BAD_PRIVATE_KEY =
+      _$genericMapResponseWrapperStatusEnum_BAD_PRIVATE_KEY;
   @BuiltValueEnumConst(wireName: r'BAD_PUBLIC_KEY')
-  static const GenericMapResponseWrapperStatusEnum BAD_PUBLIC_KEY = _$genericMapResponseWrapperStatusEnum_BAD_PUBLIC_KEY;
+  static const GenericMapResponseWrapperStatusEnum BAD_PUBLIC_KEY =
+      _$genericMapResponseWrapperStatusEnum_BAD_PUBLIC_KEY;
   @BuiltValueEnumConst(wireName: r'MISSING_PARAMETER')
-  static const GenericMapResponseWrapperStatusEnum MISSING_PARAMETER = _$genericMapResponseWrapperStatusEnum_MISSING_PARAMETER;
+  static const GenericMapResponseWrapperStatusEnum MISSING_PARAMETER =
+      _$genericMapResponseWrapperStatusEnum_MISSING_PARAMETER;
   @BuiltValueEnumConst(wireName: r'INVALID_PARAMETER')
-  static const GenericMapResponseWrapperStatusEnum INVALID_PARAMETER = _$genericMapResponseWrapperStatusEnum_INVALID_PARAMETER;
+  static const GenericMapResponseWrapperStatusEnum INVALID_PARAMETER =
+      _$genericMapResponseWrapperStatusEnum_INVALID_PARAMETER;
   @BuiltValueEnumConst(wireName: r'WRONG_PARAMETER_TYPE')
-  static const GenericMapResponseWrapperStatusEnum WRONG_PARAMETER_TYPE = _$genericMapResponseWrapperStatusEnum_WRONG_PARAMETER_TYPE;
+  static const GenericMapResponseWrapperStatusEnum WRONG_PARAMETER_TYPE =
+      _$genericMapResponseWrapperStatusEnum_WRONG_PARAMETER_TYPE;
   @BuiltValueEnumConst(wireName: r'CONFLICT')
-  static const GenericMapResponseWrapperStatusEnum CONFLICT = _$genericMapResponseWrapperStatusEnum_CONFLICT;
+  static const GenericMapResponseWrapperStatusEnum CONFLICT =
+      _$genericMapResponseWrapperStatusEnum_CONFLICT;
   @BuiltValueEnumConst(wireName: r'RESOURCE_LOCKED')
-  static const GenericMapResponseWrapperStatusEnum RESOURCE_LOCKED = _$genericMapResponseWrapperStatusEnum_RESOURCE_LOCKED;
+  static const GenericMapResponseWrapperStatusEnum RESOURCE_LOCKED =
+      _$genericMapResponseWrapperStatusEnum_RESOURCE_LOCKED;
   @BuiltValueEnumConst(wireName: r'SERVER_ERROR')
-  static const GenericMapResponseWrapperStatusEnum SERVER_ERROR = _$genericMapResponseWrapperStatusEnum_SERVER_ERROR;
+  static const GenericMapResponseWrapperStatusEnum SERVER_ERROR =
+      _$genericMapResponseWrapperStatusEnum_SERVER_ERROR;
   @BuiltValueEnumConst(wireName: r'ERROR')
-  static const GenericMapResponseWrapperStatusEnum ERROR = _$genericMapResponseWrapperStatusEnum_ERROR;
+  static const GenericMapResponseWrapperStatusEnum ERROR =
+      _$genericMapResponseWrapperStatusEnum_ERROR;
   @BuiltValueEnumConst(wireName: r'NOT_FOUND')
-  static const GenericMapResponseWrapperStatusEnum NOT_FOUND = _$genericMapResponseWrapperStatusEnum_NOT_FOUND;
+  static const GenericMapResponseWrapperStatusEnum NOT_FOUND =
+      _$genericMapResponseWrapperStatusEnum_NOT_FOUND;
   @BuiltValueEnumConst(wireName: r'BAD_REQUEST')
-  static const GenericMapResponseWrapperStatusEnum BAD_REQUEST = _$genericMapResponseWrapperStatusEnum_BAD_REQUEST;
+  static const GenericMapResponseWrapperStatusEnum BAD_REQUEST =
+      _$genericMapResponseWrapperStatusEnum_BAD_REQUEST;
   @BuiltValueEnumConst(wireName: r'USER_ERROR')
-  static const GenericMapResponseWrapperStatusEnum USER_ERROR = _$genericMapResponseWrapperStatusEnum_USER_ERROR;
+  static const GenericMapResponseWrapperStatusEnum USER_ERROR =
+      _$genericMapResponseWrapperStatusEnum_USER_ERROR;
   @BuiltValueEnumConst(wireName: r'PARTIAL_ERROR')
-  static const GenericMapResponseWrapperStatusEnum PARTIAL_ERROR = _$genericMapResponseWrapperStatusEnum_PARTIAL_ERROR;
+  static const GenericMapResponseWrapperStatusEnum PARTIAL_ERROR =
+      _$genericMapResponseWrapperStatusEnum_PARTIAL_ERROR;
   @BuiltValueEnumConst(wireName: r'METHOD_NOT_ALLOWED')
-  static const GenericMapResponseWrapperStatusEnum METHOD_NOT_ALLOWED = _$genericMapResponseWrapperStatusEnum_METHOD_NOT_ALLOWED;
+  static const GenericMapResponseWrapperStatusEnum METHOD_NOT_ALLOWED =
+      _$genericMapResponseWrapperStatusEnum_METHOD_NOT_ALLOWED;
 
-  static Serializer<GenericMapResponseWrapperStatusEnum> get serializer => _$genericMapResponseWrapperStatusEnumSerializer;
+  static Serializer<GenericMapResponseWrapperStatusEnum> get serializer =>
+      _$genericMapResponseWrapperStatusEnumSerializer;
 
-  const GenericMapResponseWrapperStatusEnum._(String name): super(name);
+  const GenericMapResponseWrapperStatusEnum._(String name) : super(name);
 
-  static BuiltSet<GenericMapResponseWrapperStatusEnum> get values => _$genericMapResponseWrapperStatusEnumValues;
-  static GenericMapResponseWrapperStatusEnum valueOf(String name) => _$genericMapResponseWrapperStatusEnumValueOf(name);
+  static BuiltSet<GenericMapResponseWrapperStatusEnum> get values =>
+      _$genericMapResponseWrapperStatusEnumValues;
+  static GenericMapResponseWrapperStatusEnum valueOf(String name) =>
+      _$genericMapResponseWrapperStatusEnumValueOf(name);
 }
 
 class GenericMapResponseWrapperErrorCodeEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'NORMALIZATION_FAILED')
-  static const GenericMapResponseWrapperErrorCodeEnum NORMALIZATION_FAILED = _$genericMapResponseWrapperErrorCodeEnum_NORMALIZATION_FAILED;
+  static const GenericMapResponseWrapperErrorCodeEnum NORMALIZATION_FAILED =
+      _$genericMapResponseWrapperErrorCodeEnum_NORMALIZATION_FAILED;
   @BuiltValueEnumConst(wireName: r'DATA_CORRUPTED')
-  static const GenericMapResponseWrapperErrorCodeEnum DATA_CORRUPTED = _$genericMapResponseWrapperErrorCodeEnum_DATA_CORRUPTED;
+  static const GenericMapResponseWrapperErrorCodeEnum DATA_CORRUPTED =
+      _$genericMapResponseWrapperErrorCodeEnum_DATA_CORRUPTED;
   @BuiltValueEnumConst(wireName: r'INVALID_INPUT')
-  static const GenericMapResponseWrapperErrorCodeEnum INVALID_INPUT = _$genericMapResponseWrapperErrorCodeEnum_INVALID_INPUT;
+  static const GenericMapResponseWrapperErrorCodeEnum INVALID_INPUT =
+      _$genericMapResponseWrapperErrorCodeEnum_INVALID_INPUT;
   @BuiltValueEnumConst(wireName: r'NOT_SYNCABLE')
-  static const GenericMapResponseWrapperErrorCodeEnum NOT_SYNCABLE = _$genericMapResponseWrapperErrorCodeEnum_NOT_SYNCABLE;
+  static const GenericMapResponseWrapperErrorCodeEnum NOT_SYNCABLE =
+      _$genericMapResponseWrapperErrorCodeEnum_NOT_SYNCABLE;
   @BuiltValueEnumConst(wireName: r'PAYMENT_FAILED')
-  static const GenericMapResponseWrapperErrorCodeEnum PAYMENT_FAILED = _$genericMapResponseWrapperErrorCodeEnum_PAYMENT_FAILED;
+  static const GenericMapResponseWrapperErrorCodeEnum PAYMENT_FAILED =
+      _$genericMapResponseWrapperErrorCodeEnum_PAYMENT_FAILED;
   @BuiltValueEnumConst(wireName: r'FREE_TIER_REACHED')
-  static const GenericMapResponseWrapperErrorCodeEnum FREE_TIER_REACHED = _$genericMapResponseWrapperErrorCodeEnum_FREE_TIER_REACHED;
+  static const GenericMapResponseWrapperErrorCodeEnum FREE_TIER_REACHED =
+      _$genericMapResponseWrapperErrorCodeEnum_FREE_TIER_REACHED;
   @BuiltValueEnumConst(wireName: r'LIMIT_REACHED')
-  static const GenericMapResponseWrapperErrorCodeEnum LIMIT_REACHED = _$genericMapResponseWrapperErrorCodeEnum_LIMIT_REACHED;
+  static const GenericMapResponseWrapperErrorCodeEnum LIMIT_REACHED =
+      _$genericMapResponseWrapperErrorCodeEnum_LIMIT_REACHED;
   @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const GenericMapResponseWrapperErrorCodeEnum INACTIVE = _$genericMapResponseWrapperErrorCodeEnum_INACTIVE;
+  static const GenericMapResponseWrapperErrorCodeEnum INACTIVE =
+      _$genericMapResponseWrapperErrorCodeEnum_INACTIVE;
   @BuiltValueEnumConst(wireName: r'UNKNOWN')
-  static const GenericMapResponseWrapperErrorCodeEnum UNKNOWN = _$genericMapResponseWrapperErrorCodeEnum_UNKNOWN;
+  static const GenericMapResponseWrapperErrorCodeEnum UNKNOWN =
+      _$genericMapResponseWrapperErrorCodeEnum_UNKNOWN;
   @BuiltValueEnumConst(wireName: r'IDENTIFIER_NOT_UNIQUE')
-  static const GenericMapResponseWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE = _$genericMapResponseWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
+  static const GenericMapResponseWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE =
+      _$genericMapResponseWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
   @BuiltValueEnumConst(wireName: r'ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT')
-  static const GenericMapResponseWrapperErrorCodeEnum ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT = _$genericMapResponseWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
+  static const GenericMapResponseWrapperErrorCodeEnum
+      ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT =
+      _$genericMapResponseWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
   @BuiltValueEnumConst(wireName: r'NO_ACCOUNT_CONNECTED')
-  static const GenericMapResponseWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED = _$genericMapResponseWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
+  static const GenericMapResponseWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED =
+      _$genericMapResponseWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
   @BuiltValueEnumConst(wireName: r'NO_PAGE_SELECTED')
-  static const GenericMapResponseWrapperErrorCodeEnum NO_PAGE_SELECTED = _$genericMapResponseWrapperErrorCodeEnum_NO_PAGE_SELECTED;
+  static const GenericMapResponseWrapperErrorCodeEnum NO_PAGE_SELECTED =
+      _$genericMapResponseWrapperErrorCodeEnum_NO_PAGE_SELECTED;
   @BuiltValueEnumConst(wireName: r'PAGE_NOT_CREATED')
-  static const GenericMapResponseWrapperErrorCodeEnum PAGE_NOT_CREATED = _$genericMapResponseWrapperErrorCodeEnum_PAGE_NOT_CREATED;
+  static const GenericMapResponseWrapperErrorCodeEnum PAGE_NOT_CREATED =
+      _$genericMapResponseWrapperErrorCodeEnum_PAGE_NOT_CREATED;
   @BuiltValueEnumConst(wireName: r'PAGE_IN_REVIEW')
-  static const GenericMapResponseWrapperErrorCodeEnum PAGE_IN_REVIEW = _$genericMapResponseWrapperErrorCodeEnum_PAGE_IN_REVIEW;
+  static const GenericMapResponseWrapperErrorCodeEnum PAGE_IN_REVIEW =
+      _$genericMapResponseWrapperErrorCodeEnum_PAGE_IN_REVIEW;
   @BuiltValueEnumConst(wireName: r'PAGE_CLAIMED_BY_OTHERS')
-  static const GenericMapResponseWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS = _$genericMapResponseWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
+  static const GenericMapResponseWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS =
+      _$genericMapResponseWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
   @BuiltValueEnumConst(wireName: r'OVERLAPPING_SOCIALPOST')
-  static const GenericMapResponseWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST = _$genericMapResponseWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
+  static const GenericMapResponseWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST =
+      _$genericMapResponseWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
   @BuiltValueEnumConst(wireName: r'TOO_MANY_REPLIES')
-  static const GenericMapResponseWrapperErrorCodeEnum TOO_MANY_REPLIES = _$genericMapResponseWrapperErrorCodeEnum_TOO_MANY_REPLIES;
+  static const GenericMapResponseWrapperErrorCodeEnum TOO_MANY_REPLIES =
+      _$genericMapResponseWrapperErrorCodeEnum_TOO_MANY_REPLIES;
   @BuiltValueEnumConst(wireName: r'REPLY_TOO_LONG')
-  static const GenericMapResponseWrapperErrorCodeEnum REPLY_TOO_LONG = _$genericMapResponseWrapperErrorCodeEnum_REPLY_TOO_LONG;
+  static const GenericMapResponseWrapperErrorCodeEnum REPLY_TOO_LONG =
+      _$genericMapResponseWrapperErrorCodeEnum_REPLY_TOO_LONG;
   @BuiltValueEnumConst(wireName: r'DEPRECATED')
-  static const GenericMapResponseWrapperErrorCodeEnum DEPRECATED = _$genericMapResponseWrapperErrorCodeEnum_DEPRECATED;
+  static const GenericMapResponseWrapperErrorCodeEnum DEPRECATED =
+      _$genericMapResponseWrapperErrorCodeEnum_DEPRECATED;
 
-  static Serializer<GenericMapResponseWrapperErrorCodeEnum> get serializer => _$genericMapResponseWrapperErrorCodeEnumSerializer;
+  static Serializer<GenericMapResponseWrapperErrorCodeEnum> get serializer =>
+      _$genericMapResponseWrapperErrorCodeEnumSerializer;
 
-  const GenericMapResponseWrapperErrorCodeEnum._(String name): super(name);
+  const GenericMapResponseWrapperErrorCodeEnum._(String name) : super(name);
 
-  static BuiltSet<GenericMapResponseWrapperErrorCodeEnum> get values => _$genericMapResponseWrapperErrorCodeEnumValues;
-  static GenericMapResponseWrapperErrorCodeEnum valueOf(String name) => _$genericMapResponseWrapperErrorCodeEnumValueOf(name);
+  static BuiltSet<GenericMapResponseWrapperErrorCodeEnum> get values =>
+      _$genericMapResponseWrapperErrorCodeEnumValues;
+  static GenericMapResponseWrapperErrorCodeEnum valueOf(String name) =>
+      _$genericMapResponseWrapperErrorCodeEnumValueOf(name);
 }
-

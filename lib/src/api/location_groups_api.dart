@@ -16,7 +16,6 @@ import 'package:openapi/src/model/location_group_params.dart';
 import 'package:openapi/src/model/location_group_wrapper.dart';
 
 class LocationGroupsApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -37,7 +36,7 @@ class LocationGroupsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [LocationGroupWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LocationGroupWrapper>> deleteLocationGroupsId({ 
+  Future<Response<LocationGroupWrapper>> deleteLocationGroupsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -46,7 +45,10 @@ class LocationGroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/location-groups/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/location-groups/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -78,11 +80,12 @@ class LocationGroupsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LocationGroupWrapper),
-      ) as LocationGroupWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LocationGroupWrapper),
+            ) as LocationGroupWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -118,7 +121,7 @@ class LocationGroupsApi {
   /// * [sort] - Used for specify the field
   /// * [order] - Used for specify the sorting direction in which the list entries shall be returned, possible values ['ASC', 'DESC'].
   /// * [hideLocations] - If given true value the endpoint will not return the locations array as part of the response, just the group id and name
-  /// * [body] 
+  /// * [body]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -128,7 +131,7 @@ class LocationGroupsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [LocationGroupListResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LocationGroupListResponseWrapper>> getLocationGroups({ 
+  Future<Response<LocationGroupListResponseWrapper>> getLocationGroups({
     BuiltList<String>? fieldMask,
     BuiltList<int>? locationGroupIds,
     String? query,
@@ -167,25 +170,48 @@ class LocationGroupsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (fieldMask != null) r'fieldMask': encodeCollectionQueryParameter<String>(_serializers, fieldMask, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (locationGroupIds != null) r'locationGroupIds': encodeCollectionQueryParameter<int>(_serializers, locationGroupIds, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (query != null) r'query': encodeQueryParameter(_serializers, query, const FullType(String)),
-      if (max != null) r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
-      if (offset != null) r'offset': encodeQueryParameter(_serializers, offset, const FullType(int)),
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (sort != null) r'sort': encodeQueryParameter(_serializers, sort, const FullType(String)),
-      if (order != null) r'order': encodeQueryParameter(_serializers, order, const FullType(String)),
-      if (hideLocations != null) r'hideLocations': encodeQueryParameter(_serializers, hideLocations, const FullType(bool)),
+      if (fieldMask != null)
+        r'fieldMask': encodeCollectionQueryParameter<String>(
+          _serializers,
+          fieldMask,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (locationGroupIds != null)
+        r'locationGroupIds': encodeCollectionQueryParameter<int>(
+          _serializers,
+          locationGroupIds,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
+      if (query != null)
+        r'query':
+            encodeQueryParameter(_serializers, query, const FullType(String)),
+      if (max != null)
+        r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
+      if (offset != null)
+        r'offset':
+            encodeQueryParameter(_serializers, offset, const FullType(int)),
+      if (page != null)
+        r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
+      if (sort != null)
+        r'sort':
+            encodeQueryParameter(_serializers, sort, const FullType(String)),
+      if (order != null)
+        r'order':
+            encodeQueryParameter(_serializers, order, const FullType(String)),
+      if (hideLocations != null)
+        r'hideLocations': encodeQueryParameter(
+            _serializers, hideLocations, const FullType(bool)),
     };
 
     dynamic _bodyData;
 
     try {
       _bodyData = body;
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
           queryParameters: _queryParameters,
@@ -210,11 +236,12 @@ class LocationGroupsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LocationGroupListResponseWrapper),
-      ) as LocationGroupListResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LocationGroupListResponseWrapper),
+            ) as LocationGroupListResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -251,7 +278,7 @@ class LocationGroupsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [LocationGroupWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LocationGroupWrapper>> getLocationGroupsId({ 
+  Future<Response<LocationGroupWrapper>> getLocationGroupsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -260,7 +287,10 @@ class LocationGroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/location-groups/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/location-groups/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -292,11 +322,12 @@ class LocationGroupsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LocationGroupWrapper),
-      ) as LocationGroupWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LocationGroupWrapper),
+            ) as LocationGroupWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -334,7 +365,7 @@ class LocationGroupsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [LocationGroupWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LocationGroupWrapper>> patchLocationGroupsId({ 
+  Future<Response<LocationGroupWrapper>> patchLocationGroupsId({
     required String id,
     required LocationGroupParams locationGroupParams,
     CancelToken? cancelToken,
@@ -344,7 +375,10 @@ class LocationGroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/location-groups/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/location-groups/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -368,11 +402,11 @@ class LocationGroupsApi {
 
     try {
       const _type = FullType(LocationGroupParams);
-      _bodyData = _serializers.serialize(locationGroupParams, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData =
+          _serializers.serialize(locationGroupParams, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -395,11 +429,12 @@ class LocationGroupsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LocationGroupWrapper),
-      ) as LocationGroupWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LocationGroupWrapper),
+            ) as LocationGroupWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -436,7 +471,7 @@ class LocationGroupsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [LocationGroupWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LocationGroupWrapper>> postLocationGroups({ 
+  Future<Response<LocationGroupWrapper>> postLocationGroups({
     required LocationGroupParams locationGroupParams,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -469,11 +504,11 @@ class LocationGroupsApi {
 
     try {
       const _type = FullType(LocationGroupParams);
-      _bodyData = _serializers.serialize(locationGroupParams, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData =
+          _serializers.serialize(locationGroupParams, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -496,11 +531,12 @@ class LocationGroupsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LocationGroupWrapper),
-      ) as LocationGroupWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LocationGroupWrapper),
+            ) as LocationGroupWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -522,5 +558,4 @@ class LocationGroupsApi {
       extra: _response.extra,
     );
   }
-
 }

@@ -12,26 +12,33 @@ part 'event_response_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [event] 
+/// * [event]
 @BuiltValue()
-abstract class EventResponseObject implements Built<EventResponseObject, EventResponseObjectBuilder> {
+abstract class EventResponseObject
+    implements Built<EventResponseObject, EventResponseObjectBuilder> {
   @BuiltValueField(wireName: r'event')
   Event? get event;
 
   EventResponseObject._();
 
-  factory EventResponseObject([void updates(EventResponseObjectBuilder b)]) = _$EventResponseObject;
+  factory EventResponseObject([void updates(EventResponseObjectBuilder b)]) =
+      _$EventResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EventResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<EventResponseObject> get serializer => _$EventResponseObjectSerializer();
+  static Serializer<EventResponseObject> get serializer =>
+      _$EventResponseObjectSerializer();
 }
 
-class _$EventResponseObjectSerializer implements PrimitiveSerializer<EventResponseObject> {
+class _$EventResponseObjectSerializer
+    implements PrimitiveSerializer<EventResponseObject> {
   @override
-  final Iterable<Type> types = const [EventResponseObject, _$EventResponseObject];
+  final Iterable<Type> types = const [
+    EventResponseObject,
+    _$EventResponseObject
+  ];
 
   @override
   final String wireName = r'EventResponseObject';
@@ -56,7 +63,9 @@ class _$EventResponseObjectSerializer implements PrimitiveSerializer<EventRespon
     EventResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +115,3 @@ class _$EventResponseObjectSerializer implements PrimitiveSerializer<EventRespon
     return result.build();
   }
 }
-

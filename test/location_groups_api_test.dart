@@ -11,7 +11,6 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for LocationGroupsApi
 void main() {
   // final instance = LocationGroupsApi();
@@ -61,6 +60,5 @@ void main() {
     test('test postLocationGroups', () async {
       // TODO
     });
-
   });
 }

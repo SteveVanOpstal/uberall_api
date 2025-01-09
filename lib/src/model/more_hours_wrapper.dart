@@ -13,13 +13,14 @@ part 'more_hours_wrapper.g.dart';
 /// MoreHoursWrapper
 ///
 /// Properties:
-/// * [status] 
+/// * [status]
 /// * [message] - (optional) Holds further information about the response
-/// * [errorCode] 
+/// * [errorCode]
 /// * [warnings] - (optional) Holds further warnings
-/// * [response] 
+/// * [response]
 @BuiltValue()
-abstract class MoreHoursWrapper implements Built<MoreHoursWrapper, MoreHoursWrapperBuilder> {
+abstract class MoreHoursWrapper
+    implements Built<MoreHoursWrapper, MoreHoursWrapperBuilder> {
   @BuiltValueField(wireName: r'status')
   MoreHoursWrapperStatusEnum? get status;
   // enum statusEnum {  SUCCESS,  QUOTA_LIMIT_EXCEED,  NOT_AUTHORIZED,  FORBIDDEN,  BAD_ACCESS_TOKEN,  BAD_PRIVATE_KEY,  BAD_PUBLIC_KEY,  MISSING_PARAMETER,  INVALID_PARAMETER,  WRONG_PARAMETER_TYPE,  CONFLICT,  RESOURCE_LOCKED,  SERVER_ERROR,  ERROR,  NOT_FOUND,  BAD_REQUEST,  USER_ERROR,  PARTIAL_ERROR,  METHOD_NOT_ALLOWED,  };
@@ -41,16 +42,19 @@ abstract class MoreHoursWrapper implements Built<MoreHoursWrapper, MoreHoursWrap
 
   MoreHoursWrapper._();
 
-  factory MoreHoursWrapper([void updates(MoreHoursWrapperBuilder b)]) = _$MoreHoursWrapper;
+  factory MoreHoursWrapper([void updates(MoreHoursWrapperBuilder b)]) =
+      _$MoreHoursWrapper;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(MoreHoursWrapperBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<MoreHoursWrapper> get serializer => _$MoreHoursWrapperSerializer();
+  static Serializer<MoreHoursWrapper> get serializer =>
+      _$MoreHoursWrapperSerializer();
 }
 
-class _$MoreHoursWrapperSerializer implements PrimitiveSerializer<MoreHoursWrapper> {
+class _$MoreHoursWrapperSerializer
+    implements PrimitiveSerializer<MoreHoursWrapper> {
   @override
   final Iterable<Type> types = const [MoreHoursWrapper, _$MoreHoursWrapper];
 
@@ -105,7 +109,9 @@ class _$MoreHoursWrapperSerializer implements PrimitiveSerializer<MoreHoursWrapp
     MoreHoursWrapper object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -185,102 +191,145 @@ class _$MoreHoursWrapperSerializer implements PrimitiveSerializer<MoreHoursWrapp
 }
 
 class MoreHoursWrapperStatusEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'SUCCESS')
-  static const MoreHoursWrapperStatusEnum SUCCESS = _$moreHoursWrapperStatusEnum_SUCCESS;
+  static const MoreHoursWrapperStatusEnum SUCCESS =
+      _$moreHoursWrapperStatusEnum_SUCCESS;
   @BuiltValueEnumConst(wireName: r'QUOTA_LIMIT_EXCEED')
-  static const MoreHoursWrapperStatusEnum QUOTA_LIMIT_EXCEED = _$moreHoursWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
+  static const MoreHoursWrapperStatusEnum QUOTA_LIMIT_EXCEED =
+      _$moreHoursWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
   @BuiltValueEnumConst(wireName: r'NOT_AUTHORIZED')
-  static const MoreHoursWrapperStatusEnum NOT_AUTHORIZED = _$moreHoursWrapperStatusEnum_NOT_AUTHORIZED;
+  static const MoreHoursWrapperStatusEnum NOT_AUTHORIZED =
+      _$moreHoursWrapperStatusEnum_NOT_AUTHORIZED;
   @BuiltValueEnumConst(wireName: r'FORBIDDEN')
-  static const MoreHoursWrapperStatusEnum FORBIDDEN = _$moreHoursWrapperStatusEnum_FORBIDDEN;
+  static const MoreHoursWrapperStatusEnum FORBIDDEN =
+      _$moreHoursWrapperStatusEnum_FORBIDDEN;
   @BuiltValueEnumConst(wireName: r'BAD_ACCESS_TOKEN')
-  static const MoreHoursWrapperStatusEnum BAD_ACCESS_TOKEN = _$moreHoursWrapperStatusEnum_BAD_ACCESS_TOKEN;
+  static const MoreHoursWrapperStatusEnum BAD_ACCESS_TOKEN =
+      _$moreHoursWrapperStatusEnum_BAD_ACCESS_TOKEN;
   @BuiltValueEnumConst(wireName: r'BAD_PRIVATE_KEY')
-  static const MoreHoursWrapperStatusEnum BAD_PRIVATE_KEY = _$moreHoursWrapperStatusEnum_BAD_PRIVATE_KEY;
+  static const MoreHoursWrapperStatusEnum BAD_PRIVATE_KEY =
+      _$moreHoursWrapperStatusEnum_BAD_PRIVATE_KEY;
   @BuiltValueEnumConst(wireName: r'BAD_PUBLIC_KEY')
-  static const MoreHoursWrapperStatusEnum BAD_PUBLIC_KEY = _$moreHoursWrapperStatusEnum_BAD_PUBLIC_KEY;
+  static const MoreHoursWrapperStatusEnum BAD_PUBLIC_KEY =
+      _$moreHoursWrapperStatusEnum_BAD_PUBLIC_KEY;
   @BuiltValueEnumConst(wireName: r'MISSING_PARAMETER')
-  static const MoreHoursWrapperStatusEnum MISSING_PARAMETER = _$moreHoursWrapperStatusEnum_MISSING_PARAMETER;
+  static const MoreHoursWrapperStatusEnum MISSING_PARAMETER =
+      _$moreHoursWrapperStatusEnum_MISSING_PARAMETER;
   @BuiltValueEnumConst(wireName: r'INVALID_PARAMETER')
-  static const MoreHoursWrapperStatusEnum INVALID_PARAMETER = _$moreHoursWrapperStatusEnum_INVALID_PARAMETER;
+  static const MoreHoursWrapperStatusEnum INVALID_PARAMETER =
+      _$moreHoursWrapperStatusEnum_INVALID_PARAMETER;
   @BuiltValueEnumConst(wireName: r'WRONG_PARAMETER_TYPE')
-  static const MoreHoursWrapperStatusEnum WRONG_PARAMETER_TYPE = _$moreHoursWrapperStatusEnum_WRONG_PARAMETER_TYPE;
+  static const MoreHoursWrapperStatusEnum WRONG_PARAMETER_TYPE =
+      _$moreHoursWrapperStatusEnum_WRONG_PARAMETER_TYPE;
   @BuiltValueEnumConst(wireName: r'CONFLICT')
-  static const MoreHoursWrapperStatusEnum CONFLICT = _$moreHoursWrapperStatusEnum_CONFLICT;
+  static const MoreHoursWrapperStatusEnum CONFLICT =
+      _$moreHoursWrapperStatusEnum_CONFLICT;
   @BuiltValueEnumConst(wireName: r'RESOURCE_LOCKED')
-  static const MoreHoursWrapperStatusEnum RESOURCE_LOCKED = _$moreHoursWrapperStatusEnum_RESOURCE_LOCKED;
+  static const MoreHoursWrapperStatusEnum RESOURCE_LOCKED =
+      _$moreHoursWrapperStatusEnum_RESOURCE_LOCKED;
   @BuiltValueEnumConst(wireName: r'SERVER_ERROR')
-  static const MoreHoursWrapperStatusEnum SERVER_ERROR = _$moreHoursWrapperStatusEnum_SERVER_ERROR;
+  static const MoreHoursWrapperStatusEnum SERVER_ERROR =
+      _$moreHoursWrapperStatusEnum_SERVER_ERROR;
   @BuiltValueEnumConst(wireName: r'ERROR')
-  static const MoreHoursWrapperStatusEnum ERROR = _$moreHoursWrapperStatusEnum_ERROR;
+  static const MoreHoursWrapperStatusEnum ERROR =
+      _$moreHoursWrapperStatusEnum_ERROR;
   @BuiltValueEnumConst(wireName: r'NOT_FOUND')
-  static const MoreHoursWrapperStatusEnum NOT_FOUND = _$moreHoursWrapperStatusEnum_NOT_FOUND;
+  static const MoreHoursWrapperStatusEnum NOT_FOUND =
+      _$moreHoursWrapperStatusEnum_NOT_FOUND;
   @BuiltValueEnumConst(wireName: r'BAD_REQUEST')
-  static const MoreHoursWrapperStatusEnum BAD_REQUEST = _$moreHoursWrapperStatusEnum_BAD_REQUEST;
+  static const MoreHoursWrapperStatusEnum BAD_REQUEST =
+      _$moreHoursWrapperStatusEnum_BAD_REQUEST;
   @BuiltValueEnumConst(wireName: r'USER_ERROR')
-  static const MoreHoursWrapperStatusEnum USER_ERROR = _$moreHoursWrapperStatusEnum_USER_ERROR;
+  static const MoreHoursWrapperStatusEnum USER_ERROR =
+      _$moreHoursWrapperStatusEnum_USER_ERROR;
   @BuiltValueEnumConst(wireName: r'PARTIAL_ERROR')
-  static const MoreHoursWrapperStatusEnum PARTIAL_ERROR = _$moreHoursWrapperStatusEnum_PARTIAL_ERROR;
+  static const MoreHoursWrapperStatusEnum PARTIAL_ERROR =
+      _$moreHoursWrapperStatusEnum_PARTIAL_ERROR;
   @BuiltValueEnumConst(wireName: r'METHOD_NOT_ALLOWED')
-  static const MoreHoursWrapperStatusEnum METHOD_NOT_ALLOWED = _$moreHoursWrapperStatusEnum_METHOD_NOT_ALLOWED;
+  static const MoreHoursWrapperStatusEnum METHOD_NOT_ALLOWED =
+      _$moreHoursWrapperStatusEnum_METHOD_NOT_ALLOWED;
 
-  static Serializer<MoreHoursWrapperStatusEnum> get serializer => _$moreHoursWrapperStatusEnumSerializer;
+  static Serializer<MoreHoursWrapperStatusEnum> get serializer =>
+      _$moreHoursWrapperStatusEnumSerializer;
 
-  const MoreHoursWrapperStatusEnum._(String name): super(name);
+  const MoreHoursWrapperStatusEnum._(String name) : super(name);
 
-  static BuiltSet<MoreHoursWrapperStatusEnum> get values => _$moreHoursWrapperStatusEnumValues;
-  static MoreHoursWrapperStatusEnum valueOf(String name) => _$moreHoursWrapperStatusEnumValueOf(name);
+  static BuiltSet<MoreHoursWrapperStatusEnum> get values =>
+      _$moreHoursWrapperStatusEnumValues;
+  static MoreHoursWrapperStatusEnum valueOf(String name) =>
+      _$moreHoursWrapperStatusEnumValueOf(name);
 }
 
 class MoreHoursWrapperErrorCodeEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'NORMALIZATION_FAILED')
-  static const MoreHoursWrapperErrorCodeEnum NORMALIZATION_FAILED = _$moreHoursWrapperErrorCodeEnum_NORMALIZATION_FAILED;
+  static const MoreHoursWrapperErrorCodeEnum NORMALIZATION_FAILED =
+      _$moreHoursWrapperErrorCodeEnum_NORMALIZATION_FAILED;
   @BuiltValueEnumConst(wireName: r'DATA_CORRUPTED')
-  static const MoreHoursWrapperErrorCodeEnum DATA_CORRUPTED = _$moreHoursWrapperErrorCodeEnum_DATA_CORRUPTED;
+  static const MoreHoursWrapperErrorCodeEnum DATA_CORRUPTED =
+      _$moreHoursWrapperErrorCodeEnum_DATA_CORRUPTED;
   @BuiltValueEnumConst(wireName: r'INVALID_INPUT')
-  static const MoreHoursWrapperErrorCodeEnum INVALID_INPUT = _$moreHoursWrapperErrorCodeEnum_INVALID_INPUT;
+  static const MoreHoursWrapperErrorCodeEnum INVALID_INPUT =
+      _$moreHoursWrapperErrorCodeEnum_INVALID_INPUT;
   @BuiltValueEnumConst(wireName: r'NOT_SYNCABLE')
-  static const MoreHoursWrapperErrorCodeEnum NOT_SYNCABLE = _$moreHoursWrapperErrorCodeEnum_NOT_SYNCABLE;
+  static const MoreHoursWrapperErrorCodeEnum NOT_SYNCABLE =
+      _$moreHoursWrapperErrorCodeEnum_NOT_SYNCABLE;
   @BuiltValueEnumConst(wireName: r'PAYMENT_FAILED')
-  static const MoreHoursWrapperErrorCodeEnum PAYMENT_FAILED = _$moreHoursWrapperErrorCodeEnum_PAYMENT_FAILED;
+  static const MoreHoursWrapperErrorCodeEnum PAYMENT_FAILED =
+      _$moreHoursWrapperErrorCodeEnum_PAYMENT_FAILED;
   @BuiltValueEnumConst(wireName: r'FREE_TIER_REACHED')
-  static const MoreHoursWrapperErrorCodeEnum FREE_TIER_REACHED = _$moreHoursWrapperErrorCodeEnum_FREE_TIER_REACHED;
+  static const MoreHoursWrapperErrorCodeEnum FREE_TIER_REACHED =
+      _$moreHoursWrapperErrorCodeEnum_FREE_TIER_REACHED;
   @BuiltValueEnumConst(wireName: r'LIMIT_REACHED')
-  static const MoreHoursWrapperErrorCodeEnum LIMIT_REACHED = _$moreHoursWrapperErrorCodeEnum_LIMIT_REACHED;
+  static const MoreHoursWrapperErrorCodeEnum LIMIT_REACHED =
+      _$moreHoursWrapperErrorCodeEnum_LIMIT_REACHED;
   @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const MoreHoursWrapperErrorCodeEnum INACTIVE = _$moreHoursWrapperErrorCodeEnum_INACTIVE;
+  static const MoreHoursWrapperErrorCodeEnum INACTIVE =
+      _$moreHoursWrapperErrorCodeEnum_INACTIVE;
   @BuiltValueEnumConst(wireName: r'UNKNOWN')
-  static const MoreHoursWrapperErrorCodeEnum UNKNOWN = _$moreHoursWrapperErrorCodeEnum_UNKNOWN;
+  static const MoreHoursWrapperErrorCodeEnum UNKNOWN =
+      _$moreHoursWrapperErrorCodeEnum_UNKNOWN;
   @BuiltValueEnumConst(wireName: r'IDENTIFIER_NOT_UNIQUE')
-  static const MoreHoursWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE = _$moreHoursWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
+  static const MoreHoursWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE =
+      _$moreHoursWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
   @BuiltValueEnumConst(wireName: r'ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT')
-  static const MoreHoursWrapperErrorCodeEnum ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT = _$moreHoursWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
+  static const MoreHoursWrapperErrorCodeEnum
+      ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT =
+      _$moreHoursWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
   @BuiltValueEnumConst(wireName: r'NO_ACCOUNT_CONNECTED')
-  static const MoreHoursWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED = _$moreHoursWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
+  static const MoreHoursWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED =
+      _$moreHoursWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
   @BuiltValueEnumConst(wireName: r'NO_PAGE_SELECTED')
-  static const MoreHoursWrapperErrorCodeEnum NO_PAGE_SELECTED = _$moreHoursWrapperErrorCodeEnum_NO_PAGE_SELECTED;
+  static const MoreHoursWrapperErrorCodeEnum NO_PAGE_SELECTED =
+      _$moreHoursWrapperErrorCodeEnum_NO_PAGE_SELECTED;
   @BuiltValueEnumConst(wireName: r'PAGE_NOT_CREATED')
-  static const MoreHoursWrapperErrorCodeEnum PAGE_NOT_CREATED = _$moreHoursWrapperErrorCodeEnum_PAGE_NOT_CREATED;
+  static const MoreHoursWrapperErrorCodeEnum PAGE_NOT_CREATED =
+      _$moreHoursWrapperErrorCodeEnum_PAGE_NOT_CREATED;
   @BuiltValueEnumConst(wireName: r'PAGE_IN_REVIEW')
-  static const MoreHoursWrapperErrorCodeEnum PAGE_IN_REVIEW = _$moreHoursWrapperErrorCodeEnum_PAGE_IN_REVIEW;
+  static const MoreHoursWrapperErrorCodeEnum PAGE_IN_REVIEW =
+      _$moreHoursWrapperErrorCodeEnum_PAGE_IN_REVIEW;
   @BuiltValueEnumConst(wireName: r'PAGE_CLAIMED_BY_OTHERS')
-  static const MoreHoursWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS = _$moreHoursWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
+  static const MoreHoursWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS =
+      _$moreHoursWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
   @BuiltValueEnumConst(wireName: r'OVERLAPPING_SOCIALPOST')
-  static const MoreHoursWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST = _$moreHoursWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
+  static const MoreHoursWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST =
+      _$moreHoursWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
   @BuiltValueEnumConst(wireName: r'TOO_MANY_REPLIES')
-  static const MoreHoursWrapperErrorCodeEnum TOO_MANY_REPLIES = _$moreHoursWrapperErrorCodeEnum_TOO_MANY_REPLIES;
+  static const MoreHoursWrapperErrorCodeEnum TOO_MANY_REPLIES =
+      _$moreHoursWrapperErrorCodeEnum_TOO_MANY_REPLIES;
   @BuiltValueEnumConst(wireName: r'REPLY_TOO_LONG')
-  static const MoreHoursWrapperErrorCodeEnum REPLY_TOO_LONG = _$moreHoursWrapperErrorCodeEnum_REPLY_TOO_LONG;
+  static const MoreHoursWrapperErrorCodeEnum REPLY_TOO_LONG =
+      _$moreHoursWrapperErrorCodeEnum_REPLY_TOO_LONG;
   @BuiltValueEnumConst(wireName: r'DEPRECATED')
-  static const MoreHoursWrapperErrorCodeEnum DEPRECATED = _$moreHoursWrapperErrorCodeEnum_DEPRECATED;
+  static const MoreHoursWrapperErrorCodeEnum DEPRECATED =
+      _$moreHoursWrapperErrorCodeEnum_DEPRECATED;
 
-  static Serializer<MoreHoursWrapperErrorCodeEnum> get serializer => _$moreHoursWrapperErrorCodeEnumSerializer;
+  static Serializer<MoreHoursWrapperErrorCodeEnum> get serializer =>
+      _$moreHoursWrapperErrorCodeEnumSerializer;
 
-  const MoreHoursWrapperErrorCodeEnum._(String name): super(name);
+  const MoreHoursWrapperErrorCodeEnum._(String name) : super(name);
 
-  static BuiltSet<MoreHoursWrapperErrorCodeEnum> get values => _$moreHoursWrapperErrorCodeEnumValues;
-  static MoreHoursWrapperErrorCodeEnum valueOf(String name) => _$moreHoursWrapperErrorCodeEnumValueOf(name);
+  static BuiltSet<MoreHoursWrapperErrorCodeEnum> get values =>
+      _$moreHoursWrapperErrorCodeEnumValues;
+  static MoreHoursWrapperErrorCodeEnum valueOf(String name) =>
+      _$moreHoursWrapperErrorCodeEnumValueOf(name);
 }
-

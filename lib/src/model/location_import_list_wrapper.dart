@@ -13,13 +13,15 @@ part 'location_import_list_wrapper.g.dart';
 /// LocationImportListWrapper
 ///
 /// Properties:
-/// * [status] 
+/// * [status]
 /// * [message] - (optional) Holds further information about the response
-/// * [errorCode] 
+/// * [errorCode]
 /// * [warnings] - (optional) Holds further warnings
-/// * [response] 
+/// * [response]
 @BuiltValue()
-abstract class LocationImportListWrapper implements Built<LocationImportListWrapper, LocationImportListWrapperBuilder> {
+abstract class LocationImportListWrapper
+    implements
+        Built<LocationImportListWrapper, LocationImportListWrapperBuilder> {
   @BuiltValueField(wireName: r'status')
   LocationImportListWrapperStatusEnum? get status;
   // enum statusEnum {  SUCCESS,  QUOTA_LIMIT_EXCEED,  NOT_AUTHORIZED,  FORBIDDEN,  BAD_ACCESS_TOKEN,  BAD_PRIVATE_KEY,  BAD_PUBLIC_KEY,  MISSING_PARAMETER,  INVALID_PARAMETER,  WRONG_PARAMETER_TYPE,  CONFLICT,  RESOURCE_LOCKED,  SERVER_ERROR,  ERROR,  NOT_FOUND,  BAD_REQUEST,  USER_ERROR,  PARTIAL_ERROR,  METHOD_NOT_ALLOWED,  };
@@ -41,18 +43,25 @@ abstract class LocationImportListWrapper implements Built<LocationImportListWrap
 
   LocationImportListWrapper._();
 
-  factory LocationImportListWrapper([void updates(LocationImportListWrapperBuilder b)]) = _$LocationImportListWrapper;
+  factory LocationImportListWrapper(
+          [void updates(LocationImportListWrapperBuilder b)]) =
+      _$LocationImportListWrapper;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LocationImportListWrapperBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LocationImportListWrapper> get serializer => _$LocationImportListWrapperSerializer();
+  static Serializer<LocationImportListWrapper> get serializer =>
+      _$LocationImportListWrapperSerializer();
 }
 
-class _$LocationImportListWrapperSerializer implements PrimitiveSerializer<LocationImportListWrapper> {
+class _$LocationImportListWrapperSerializer
+    implements PrimitiveSerializer<LocationImportListWrapper> {
   @override
-  final Iterable<Type> types = const [LocationImportListWrapper, _$LocationImportListWrapper];
+  final Iterable<Type> types = const [
+    LocationImportListWrapper,
+    _$LocationImportListWrapper
+  ];
 
   @override
   final String wireName = r'LocationImportListWrapper';
@@ -105,7 +114,9 @@ class _$LocationImportListWrapperSerializer implements PrimitiveSerializer<Locat
     LocationImportListWrapper object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -137,7 +148,8 @@ class _$LocationImportListWrapperSerializer implements PrimitiveSerializer<Locat
         case r'errorCode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(LocationImportListWrapperErrorCodeEnum),
+            specifiedType:
+                const FullType(LocationImportListWrapperErrorCodeEnum),
           ) as LocationImportListWrapperErrorCodeEnum;
           result.errorCode = valueDes;
           break;
@@ -185,102 +197,145 @@ class _$LocationImportListWrapperSerializer implements PrimitiveSerializer<Locat
 }
 
 class LocationImportListWrapperStatusEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'SUCCESS')
-  static const LocationImportListWrapperStatusEnum SUCCESS = _$locationImportListWrapperStatusEnum_SUCCESS;
+  static const LocationImportListWrapperStatusEnum SUCCESS =
+      _$locationImportListWrapperStatusEnum_SUCCESS;
   @BuiltValueEnumConst(wireName: r'QUOTA_LIMIT_EXCEED')
-  static const LocationImportListWrapperStatusEnum QUOTA_LIMIT_EXCEED = _$locationImportListWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
+  static const LocationImportListWrapperStatusEnum QUOTA_LIMIT_EXCEED =
+      _$locationImportListWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
   @BuiltValueEnumConst(wireName: r'NOT_AUTHORIZED')
-  static const LocationImportListWrapperStatusEnum NOT_AUTHORIZED = _$locationImportListWrapperStatusEnum_NOT_AUTHORIZED;
+  static const LocationImportListWrapperStatusEnum NOT_AUTHORIZED =
+      _$locationImportListWrapperStatusEnum_NOT_AUTHORIZED;
   @BuiltValueEnumConst(wireName: r'FORBIDDEN')
-  static const LocationImportListWrapperStatusEnum FORBIDDEN = _$locationImportListWrapperStatusEnum_FORBIDDEN;
+  static const LocationImportListWrapperStatusEnum FORBIDDEN =
+      _$locationImportListWrapperStatusEnum_FORBIDDEN;
   @BuiltValueEnumConst(wireName: r'BAD_ACCESS_TOKEN')
-  static const LocationImportListWrapperStatusEnum BAD_ACCESS_TOKEN = _$locationImportListWrapperStatusEnum_BAD_ACCESS_TOKEN;
+  static const LocationImportListWrapperStatusEnum BAD_ACCESS_TOKEN =
+      _$locationImportListWrapperStatusEnum_BAD_ACCESS_TOKEN;
   @BuiltValueEnumConst(wireName: r'BAD_PRIVATE_KEY')
-  static const LocationImportListWrapperStatusEnum BAD_PRIVATE_KEY = _$locationImportListWrapperStatusEnum_BAD_PRIVATE_KEY;
+  static const LocationImportListWrapperStatusEnum BAD_PRIVATE_KEY =
+      _$locationImportListWrapperStatusEnum_BAD_PRIVATE_KEY;
   @BuiltValueEnumConst(wireName: r'BAD_PUBLIC_KEY')
-  static const LocationImportListWrapperStatusEnum BAD_PUBLIC_KEY = _$locationImportListWrapperStatusEnum_BAD_PUBLIC_KEY;
+  static const LocationImportListWrapperStatusEnum BAD_PUBLIC_KEY =
+      _$locationImportListWrapperStatusEnum_BAD_PUBLIC_KEY;
   @BuiltValueEnumConst(wireName: r'MISSING_PARAMETER')
-  static const LocationImportListWrapperStatusEnum MISSING_PARAMETER = _$locationImportListWrapperStatusEnum_MISSING_PARAMETER;
+  static const LocationImportListWrapperStatusEnum MISSING_PARAMETER =
+      _$locationImportListWrapperStatusEnum_MISSING_PARAMETER;
   @BuiltValueEnumConst(wireName: r'INVALID_PARAMETER')
-  static const LocationImportListWrapperStatusEnum INVALID_PARAMETER = _$locationImportListWrapperStatusEnum_INVALID_PARAMETER;
+  static const LocationImportListWrapperStatusEnum INVALID_PARAMETER =
+      _$locationImportListWrapperStatusEnum_INVALID_PARAMETER;
   @BuiltValueEnumConst(wireName: r'WRONG_PARAMETER_TYPE')
-  static const LocationImportListWrapperStatusEnum WRONG_PARAMETER_TYPE = _$locationImportListWrapperStatusEnum_WRONG_PARAMETER_TYPE;
+  static const LocationImportListWrapperStatusEnum WRONG_PARAMETER_TYPE =
+      _$locationImportListWrapperStatusEnum_WRONG_PARAMETER_TYPE;
   @BuiltValueEnumConst(wireName: r'CONFLICT')
-  static const LocationImportListWrapperStatusEnum CONFLICT = _$locationImportListWrapperStatusEnum_CONFLICT;
+  static const LocationImportListWrapperStatusEnum CONFLICT =
+      _$locationImportListWrapperStatusEnum_CONFLICT;
   @BuiltValueEnumConst(wireName: r'RESOURCE_LOCKED')
-  static const LocationImportListWrapperStatusEnum RESOURCE_LOCKED = _$locationImportListWrapperStatusEnum_RESOURCE_LOCKED;
+  static const LocationImportListWrapperStatusEnum RESOURCE_LOCKED =
+      _$locationImportListWrapperStatusEnum_RESOURCE_LOCKED;
   @BuiltValueEnumConst(wireName: r'SERVER_ERROR')
-  static const LocationImportListWrapperStatusEnum SERVER_ERROR = _$locationImportListWrapperStatusEnum_SERVER_ERROR;
+  static const LocationImportListWrapperStatusEnum SERVER_ERROR =
+      _$locationImportListWrapperStatusEnum_SERVER_ERROR;
   @BuiltValueEnumConst(wireName: r'ERROR')
-  static const LocationImportListWrapperStatusEnum ERROR = _$locationImportListWrapperStatusEnum_ERROR;
+  static const LocationImportListWrapperStatusEnum ERROR =
+      _$locationImportListWrapperStatusEnum_ERROR;
   @BuiltValueEnumConst(wireName: r'NOT_FOUND')
-  static const LocationImportListWrapperStatusEnum NOT_FOUND = _$locationImportListWrapperStatusEnum_NOT_FOUND;
+  static const LocationImportListWrapperStatusEnum NOT_FOUND =
+      _$locationImportListWrapperStatusEnum_NOT_FOUND;
   @BuiltValueEnumConst(wireName: r'BAD_REQUEST')
-  static const LocationImportListWrapperStatusEnum BAD_REQUEST = _$locationImportListWrapperStatusEnum_BAD_REQUEST;
+  static const LocationImportListWrapperStatusEnum BAD_REQUEST =
+      _$locationImportListWrapperStatusEnum_BAD_REQUEST;
   @BuiltValueEnumConst(wireName: r'USER_ERROR')
-  static const LocationImportListWrapperStatusEnum USER_ERROR = _$locationImportListWrapperStatusEnum_USER_ERROR;
+  static const LocationImportListWrapperStatusEnum USER_ERROR =
+      _$locationImportListWrapperStatusEnum_USER_ERROR;
   @BuiltValueEnumConst(wireName: r'PARTIAL_ERROR')
-  static const LocationImportListWrapperStatusEnum PARTIAL_ERROR = _$locationImportListWrapperStatusEnum_PARTIAL_ERROR;
+  static const LocationImportListWrapperStatusEnum PARTIAL_ERROR =
+      _$locationImportListWrapperStatusEnum_PARTIAL_ERROR;
   @BuiltValueEnumConst(wireName: r'METHOD_NOT_ALLOWED')
-  static const LocationImportListWrapperStatusEnum METHOD_NOT_ALLOWED = _$locationImportListWrapperStatusEnum_METHOD_NOT_ALLOWED;
+  static const LocationImportListWrapperStatusEnum METHOD_NOT_ALLOWED =
+      _$locationImportListWrapperStatusEnum_METHOD_NOT_ALLOWED;
 
-  static Serializer<LocationImportListWrapperStatusEnum> get serializer => _$locationImportListWrapperStatusEnumSerializer;
+  static Serializer<LocationImportListWrapperStatusEnum> get serializer =>
+      _$locationImportListWrapperStatusEnumSerializer;
 
-  const LocationImportListWrapperStatusEnum._(String name): super(name);
+  const LocationImportListWrapperStatusEnum._(String name) : super(name);
 
-  static BuiltSet<LocationImportListWrapperStatusEnum> get values => _$locationImportListWrapperStatusEnumValues;
-  static LocationImportListWrapperStatusEnum valueOf(String name) => _$locationImportListWrapperStatusEnumValueOf(name);
+  static BuiltSet<LocationImportListWrapperStatusEnum> get values =>
+      _$locationImportListWrapperStatusEnumValues;
+  static LocationImportListWrapperStatusEnum valueOf(String name) =>
+      _$locationImportListWrapperStatusEnumValueOf(name);
 }
 
 class LocationImportListWrapperErrorCodeEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'NORMALIZATION_FAILED')
-  static const LocationImportListWrapperErrorCodeEnum NORMALIZATION_FAILED = _$locationImportListWrapperErrorCodeEnum_NORMALIZATION_FAILED;
+  static const LocationImportListWrapperErrorCodeEnum NORMALIZATION_FAILED =
+      _$locationImportListWrapperErrorCodeEnum_NORMALIZATION_FAILED;
   @BuiltValueEnumConst(wireName: r'DATA_CORRUPTED')
-  static const LocationImportListWrapperErrorCodeEnum DATA_CORRUPTED = _$locationImportListWrapperErrorCodeEnum_DATA_CORRUPTED;
+  static const LocationImportListWrapperErrorCodeEnum DATA_CORRUPTED =
+      _$locationImportListWrapperErrorCodeEnum_DATA_CORRUPTED;
   @BuiltValueEnumConst(wireName: r'INVALID_INPUT')
-  static const LocationImportListWrapperErrorCodeEnum INVALID_INPUT = _$locationImportListWrapperErrorCodeEnum_INVALID_INPUT;
+  static const LocationImportListWrapperErrorCodeEnum INVALID_INPUT =
+      _$locationImportListWrapperErrorCodeEnum_INVALID_INPUT;
   @BuiltValueEnumConst(wireName: r'NOT_SYNCABLE')
-  static const LocationImportListWrapperErrorCodeEnum NOT_SYNCABLE = _$locationImportListWrapperErrorCodeEnum_NOT_SYNCABLE;
+  static const LocationImportListWrapperErrorCodeEnum NOT_SYNCABLE =
+      _$locationImportListWrapperErrorCodeEnum_NOT_SYNCABLE;
   @BuiltValueEnumConst(wireName: r'PAYMENT_FAILED')
-  static const LocationImportListWrapperErrorCodeEnum PAYMENT_FAILED = _$locationImportListWrapperErrorCodeEnum_PAYMENT_FAILED;
+  static const LocationImportListWrapperErrorCodeEnum PAYMENT_FAILED =
+      _$locationImportListWrapperErrorCodeEnum_PAYMENT_FAILED;
   @BuiltValueEnumConst(wireName: r'FREE_TIER_REACHED')
-  static const LocationImportListWrapperErrorCodeEnum FREE_TIER_REACHED = _$locationImportListWrapperErrorCodeEnum_FREE_TIER_REACHED;
+  static const LocationImportListWrapperErrorCodeEnum FREE_TIER_REACHED =
+      _$locationImportListWrapperErrorCodeEnum_FREE_TIER_REACHED;
   @BuiltValueEnumConst(wireName: r'LIMIT_REACHED')
-  static const LocationImportListWrapperErrorCodeEnum LIMIT_REACHED = _$locationImportListWrapperErrorCodeEnum_LIMIT_REACHED;
+  static const LocationImportListWrapperErrorCodeEnum LIMIT_REACHED =
+      _$locationImportListWrapperErrorCodeEnum_LIMIT_REACHED;
   @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const LocationImportListWrapperErrorCodeEnum INACTIVE = _$locationImportListWrapperErrorCodeEnum_INACTIVE;
+  static const LocationImportListWrapperErrorCodeEnum INACTIVE =
+      _$locationImportListWrapperErrorCodeEnum_INACTIVE;
   @BuiltValueEnumConst(wireName: r'UNKNOWN')
-  static const LocationImportListWrapperErrorCodeEnum UNKNOWN = _$locationImportListWrapperErrorCodeEnum_UNKNOWN;
+  static const LocationImportListWrapperErrorCodeEnum UNKNOWN =
+      _$locationImportListWrapperErrorCodeEnum_UNKNOWN;
   @BuiltValueEnumConst(wireName: r'IDENTIFIER_NOT_UNIQUE')
-  static const LocationImportListWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE = _$locationImportListWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
+  static const LocationImportListWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE =
+      _$locationImportListWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
   @BuiltValueEnumConst(wireName: r'ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT')
-  static const LocationImportListWrapperErrorCodeEnum ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT = _$locationImportListWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
+  static const LocationImportListWrapperErrorCodeEnum
+      ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT =
+      _$locationImportListWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
   @BuiltValueEnumConst(wireName: r'NO_ACCOUNT_CONNECTED')
-  static const LocationImportListWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED = _$locationImportListWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
+  static const LocationImportListWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED =
+      _$locationImportListWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
   @BuiltValueEnumConst(wireName: r'NO_PAGE_SELECTED')
-  static const LocationImportListWrapperErrorCodeEnum NO_PAGE_SELECTED = _$locationImportListWrapperErrorCodeEnum_NO_PAGE_SELECTED;
+  static const LocationImportListWrapperErrorCodeEnum NO_PAGE_SELECTED =
+      _$locationImportListWrapperErrorCodeEnum_NO_PAGE_SELECTED;
   @BuiltValueEnumConst(wireName: r'PAGE_NOT_CREATED')
-  static const LocationImportListWrapperErrorCodeEnum PAGE_NOT_CREATED = _$locationImportListWrapperErrorCodeEnum_PAGE_NOT_CREATED;
+  static const LocationImportListWrapperErrorCodeEnum PAGE_NOT_CREATED =
+      _$locationImportListWrapperErrorCodeEnum_PAGE_NOT_CREATED;
   @BuiltValueEnumConst(wireName: r'PAGE_IN_REVIEW')
-  static const LocationImportListWrapperErrorCodeEnum PAGE_IN_REVIEW = _$locationImportListWrapperErrorCodeEnum_PAGE_IN_REVIEW;
+  static const LocationImportListWrapperErrorCodeEnum PAGE_IN_REVIEW =
+      _$locationImportListWrapperErrorCodeEnum_PAGE_IN_REVIEW;
   @BuiltValueEnumConst(wireName: r'PAGE_CLAIMED_BY_OTHERS')
-  static const LocationImportListWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS = _$locationImportListWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
+  static const LocationImportListWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS =
+      _$locationImportListWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
   @BuiltValueEnumConst(wireName: r'OVERLAPPING_SOCIALPOST')
-  static const LocationImportListWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST = _$locationImportListWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
+  static const LocationImportListWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST =
+      _$locationImportListWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
   @BuiltValueEnumConst(wireName: r'TOO_MANY_REPLIES')
-  static const LocationImportListWrapperErrorCodeEnum TOO_MANY_REPLIES = _$locationImportListWrapperErrorCodeEnum_TOO_MANY_REPLIES;
+  static const LocationImportListWrapperErrorCodeEnum TOO_MANY_REPLIES =
+      _$locationImportListWrapperErrorCodeEnum_TOO_MANY_REPLIES;
   @BuiltValueEnumConst(wireName: r'REPLY_TOO_LONG')
-  static const LocationImportListWrapperErrorCodeEnum REPLY_TOO_LONG = _$locationImportListWrapperErrorCodeEnum_REPLY_TOO_LONG;
+  static const LocationImportListWrapperErrorCodeEnum REPLY_TOO_LONG =
+      _$locationImportListWrapperErrorCodeEnum_REPLY_TOO_LONG;
   @BuiltValueEnumConst(wireName: r'DEPRECATED')
-  static const LocationImportListWrapperErrorCodeEnum DEPRECATED = _$locationImportListWrapperErrorCodeEnum_DEPRECATED;
+  static const LocationImportListWrapperErrorCodeEnum DEPRECATED =
+      _$locationImportListWrapperErrorCodeEnum_DEPRECATED;
 
-  static Serializer<LocationImportListWrapperErrorCodeEnum> get serializer => _$locationImportListWrapperErrorCodeEnumSerializer;
+  static Serializer<LocationImportListWrapperErrorCodeEnum> get serializer =>
+      _$locationImportListWrapperErrorCodeEnumSerializer;
 
-  const LocationImportListWrapperErrorCodeEnum._(String name): super(name);
+  const LocationImportListWrapperErrorCodeEnum._(String name) : super(name);
 
-  static BuiltSet<LocationImportListWrapperErrorCodeEnum> get values => _$locationImportListWrapperErrorCodeEnumValues;
-  static LocationImportListWrapperErrorCodeEnum valueOf(String name) => _$locationImportListWrapperErrorCodeEnumValueOf(name);
+  static BuiltSet<LocationImportListWrapperErrorCodeEnum> get values =>
+      _$locationImportListWrapperErrorCodeEnumValues;
+  static LocationImportListWrapperErrorCodeEnum valueOf(String name) =>
+      _$locationImportListWrapperErrorCodeEnumValueOf(name);
 }
-

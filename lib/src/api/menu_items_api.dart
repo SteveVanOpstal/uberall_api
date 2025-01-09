@@ -17,7 +17,6 @@ import 'package:openapi/src/model/menu_item_response_wrapper.dart';
 import 'package:openapi/src/model/menu_item_search_response_wrapper.dart';
 
 class MenuItemsApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -37,7 +36,7 @@ class MenuItemsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [GenericMapResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GenericMapResponseWrapper>> deleteMenuItems({ 
+  Future<Response<GenericMapResponseWrapper>> deleteMenuItems({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -58,7 +57,8 @@ class MenuItemsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -82,11 +82,12 @@ class MenuItemsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(GenericMapResponseWrapper),
-      ) as GenericMapResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(GenericMapResponseWrapper),
+            ) as GenericMapResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -123,7 +124,7 @@ class MenuItemsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [GenericMapResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GenericMapResponseWrapper>> deleteMenuItemsId({ 
+  Future<Response<GenericMapResponseWrapper>> deleteMenuItemsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -132,7 +133,10 @@ class MenuItemsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/menu-items/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/menu-items/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -145,7 +149,8 @@ class MenuItemsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -169,11 +174,12 @@ class MenuItemsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(GenericMapResponseWrapper),
-      ) as GenericMapResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(GenericMapResponseWrapper),
+            ) as GenericMapResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -200,7 +206,7 @@ class MenuItemsApi {
   /// Get all menu items the current API user can manage. &lt;br&gt;To specify products with identifier please provide ?identifier&#x3D; in the URL param &lt;br&gt;By default, 50 are returned, you can use up to max&#x3D;10000 in the URL param
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [body]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -210,7 +216,7 @@ class MenuItemsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [MenuItemSearchResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<MenuItemSearchResponseWrapper>> getMenuItems({ 
+  Future<Response<MenuItemSearchResponseWrapper>> getMenuItems({
     JsonObject? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -232,7 +238,8 @@ class MenuItemsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -248,10 +255,9 @@ class MenuItemsApi {
 
     try {
       _bodyData = body;
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -274,11 +280,12 @@ class MenuItemsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(MenuItemSearchResponseWrapper),
-      ) as MenuItemSearchResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(MenuItemSearchResponseWrapper),
+            ) as MenuItemSearchResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -314,7 +321,8 @@ class MenuItemsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [AcceptedExtraFieldsResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AcceptedExtraFieldsResponseWrapper>> getMenuItemsAcceptedExtraFields({ 
+  Future<Response<AcceptedExtraFieldsResponseWrapper>>
+      getMenuItemsAcceptedExtraFields({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -335,7 +343,8 @@ class MenuItemsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -359,11 +368,12 @@ class MenuItemsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(AcceptedExtraFieldsResponseWrapper),
-      ) as AcceptedExtraFieldsResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(AcceptedExtraFieldsResponseWrapper),
+            ) as AcceptedExtraFieldsResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -400,7 +410,7 @@ class MenuItemsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [MenuItemResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<MenuItemResponseWrapper>> getMenuItemsId({ 
+  Future<Response<MenuItemResponseWrapper>> getMenuItemsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -409,7 +419,10 @@ class MenuItemsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/menu-items/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/menu-items/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -422,7 +435,8 @@ class MenuItemsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -446,11 +460,12 @@ class MenuItemsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(MenuItemResponseWrapper),
-      ) as MenuItemResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(MenuItemResponseWrapper),
+            ) as MenuItemResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -487,7 +502,7 @@ class MenuItemsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [MenuItemResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<MenuItemResponseWrapper>> patchMenuItems({ 
+  Future<Response<MenuItemResponseWrapper>> patchMenuItems({
     required MenuItem menuItem,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -509,7 +524,8 @@ class MenuItemsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -527,10 +543,9 @@ class MenuItemsApi {
     try {
       const _type = FullType(MenuItem);
       _bodyData = _serializers.serialize(menuItem, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -553,11 +568,12 @@ class MenuItemsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(MenuItemResponseWrapper),
-      ) as MenuItemResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(MenuItemResponseWrapper),
+            ) as MenuItemResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -595,7 +611,7 @@ class MenuItemsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [MenuItemResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<MenuItemResponseWrapper>> patchMenuItemsId({ 
+  Future<Response<MenuItemResponseWrapper>> patchMenuItemsId({
     required String id,
     required MenuItem menuItem,
     CancelToken? cancelToken,
@@ -605,7 +621,10 @@ class MenuItemsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/menu-items/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/menu-items/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -618,7 +637,8 @@ class MenuItemsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -636,10 +656,9 @@ class MenuItemsApi {
     try {
       const _type = FullType(MenuItem);
       _bodyData = _serializers.serialize(menuItem, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -662,11 +681,12 @@ class MenuItemsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(MenuItemResponseWrapper),
-      ) as MenuItemResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(MenuItemResponseWrapper),
+            ) as MenuItemResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -703,7 +723,7 @@ class MenuItemsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [MenuItemResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<MenuItemResponseWrapper>> postMenuItems({ 
+  Future<Response<MenuItemResponseWrapper>> postMenuItems({
     required MenuItem menuItem,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -725,7 +745,8 @@ class MenuItemsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -743,10 +764,9 @@ class MenuItemsApi {
     try {
       const _type = FullType(MenuItem);
       _bodyData = _serializers.serialize(menuItem, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -769,11 +789,12 @@ class MenuItemsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(MenuItemResponseWrapper),
-      ) as MenuItemResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(MenuItemResponseWrapper),
+            ) as MenuItemResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -795,5 +816,4 @@ class MenuItemsApi {
       extra: _response.extra,
     );
   }
-
 }

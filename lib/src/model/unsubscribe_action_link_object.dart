@@ -13,25 +13,34 @@ part 'unsubscribe_action_link_object.g.dart';
 /// Properties:
 /// * [unsubscribeActionLink] - The unsubscribe action link
 @BuiltValue()
-abstract class UnsubscribeActionLinkObject implements Built<UnsubscribeActionLinkObject, UnsubscribeActionLinkObjectBuilder> {
+abstract class UnsubscribeActionLinkObject
+    implements
+        Built<UnsubscribeActionLinkObject, UnsubscribeActionLinkObjectBuilder> {
   /// The unsubscribe action link
   @BuiltValueField(wireName: r'unsubscribeActionLink')
   String? get unsubscribeActionLink;
 
   UnsubscribeActionLinkObject._();
 
-  factory UnsubscribeActionLinkObject([void updates(UnsubscribeActionLinkObjectBuilder b)]) = _$UnsubscribeActionLinkObject;
+  factory UnsubscribeActionLinkObject(
+          [void updates(UnsubscribeActionLinkObjectBuilder b)]) =
+      _$UnsubscribeActionLinkObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UnsubscribeActionLinkObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<UnsubscribeActionLinkObject> get serializer => _$UnsubscribeActionLinkObjectSerializer();
+  static Serializer<UnsubscribeActionLinkObject> get serializer =>
+      _$UnsubscribeActionLinkObjectSerializer();
 }
 
-class _$UnsubscribeActionLinkObjectSerializer implements PrimitiveSerializer<UnsubscribeActionLinkObject> {
+class _$UnsubscribeActionLinkObjectSerializer
+    implements PrimitiveSerializer<UnsubscribeActionLinkObject> {
   @override
-  final Iterable<Type> types = const [UnsubscribeActionLinkObject, _$UnsubscribeActionLinkObject];
+  final Iterable<Type> types = const [
+    UnsubscribeActionLinkObject,
+    _$UnsubscribeActionLinkObject
+  ];
 
   @override
   final String wireName = r'UnsubscribeActionLinkObject';
@@ -56,7 +65,9 @@ class _$UnsubscribeActionLinkObjectSerializer implements PrimitiveSerializer<Uns
     UnsubscribeActionLinkObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +117,3 @@ class _$UnsubscribeActionLinkObjectSerializer implements PrimitiveSerializer<Uns
     return result.build();
   }
 }
-

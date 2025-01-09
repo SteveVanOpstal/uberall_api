@@ -12,24 +12,28 @@ part 'more_hours_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [results] 
+/// * [results]
 @BuiltValue()
-abstract class MoreHoursObject implements Built<MoreHoursObject, MoreHoursObjectBuilder> {
+abstract class MoreHoursObject
+    implements Built<MoreHoursObject, MoreHoursObjectBuilder> {
   @BuiltValueField(wireName: r'results')
   BuiltList<String>? get results;
 
   MoreHoursObject._();
 
-  factory MoreHoursObject([void updates(MoreHoursObjectBuilder b)]) = _$MoreHoursObject;
+  factory MoreHoursObject([void updates(MoreHoursObjectBuilder b)]) =
+      _$MoreHoursObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(MoreHoursObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<MoreHoursObject> get serializer => _$MoreHoursObjectSerializer();
+  static Serializer<MoreHoursObject> get serializer =>
+      _$MoreHoursObjectSerializer();
 }
 
-class _$MoreHoursObjectSerializer implements PrimitiveSerializer<MoreHoursObject> {
+class _$MoreHoursObjectSerializer
+    implements PrimitiveSerializer<MoreHoursObject> {
   @override
   final Iterable<Type> types = const [MoreHoursObject, _$MoreHoursObject];
 
@@ -56,7 +60,9 @@ class _$MoreHoursObjectSerializer implements PrimitiveSerializer<MoreHoursObject
     MoreHoursObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +112,3 @@ class _$MoreHoursObjectSerializer implements PrimitiveSerializer<MoreHoursObject
     return result.build();
   }
 }
-

@@ -11,7 +11,6 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for ContentListApi
 void main() {
   // final instance = ContentListApi();
@@ -61,6 +60,5 @@ void main() {
     test('test postContentLists', () async {
       // TODO
     });
-
   });
 }

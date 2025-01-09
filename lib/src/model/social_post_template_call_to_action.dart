@@ -16,7 +16,10 @@ part 'social_post_template_call_to_action.g.dart';
 /// * [type] - The type of the call to action.
 /// * [directory] - The directory of the call to action.
 @BuiltValue()
-abstract class SocialPostTemplateCallToAction implements Built<SocialPostTemplateCallToAction, SocialPostTemplateCallToActionBuilder> {
+abstract class SocialPostTemplateCallToAction
+    implements
+        Built<SocialPostTemplateCallToAction,
+            SocialPostTemplateCallToActionBuilder> {
   /// The url of the call to action.
   @BuiltValueField(wireName: r'url')
   String? get url;
@@ -33,18 +36,25 @@ abstract class SocialPostTemplateCallToAction implements Built<SocialPostTemplat
 
   SocialPostTemplateCallToAction._();
 
-  factory SocialPostTemplateCallToAction([void updates(SocialPostTemplateCallToActionBuilder b)]) = _$SocialPostTemplateCallToAction;
+  factory SocialPostTemplateCallToAction(
+          [void updates(SocialPostTemplateCallToActionBuilder b)]) =
+      _$SocialPostTemplateCallToAction;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialPostTemplateCallToActionBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<SocialPostTemplateCallToAction> get serializer => _$SocialPostTemplateCallToActionSerializer();
+  static Serializer<SocialPostTemplateCallToAction> get serializer =>
+      _$SocialPostTemplateCallToActionSerializer();
 }
 
-class _$SocialPostTemplateCallToActionSerializer implements PrimitiveSerializer<SocialPostTemplateCallToAction> {
+class _$SocialPostTemplateCallToActionSerializer
+    implements PrimitiveSerializer<SocialPostTemplateCallToAction> {
   @override
-  final Iterable<Type> types = const [SocialPostTemplateCallToAction, _$SocialPostTemplateCallToAction];
+  final Iterable<Type> types = const [
+    SocialPostTemplateCallToAction,
+    _$SocialPostTemplateCallToAction
+  ];
 
   @override
   final String wireName = r'SocialPostTemplateCallToAction';
@@ -72,7 +82,8 @@ class _$SocialPostTemplateCallToActionSerializer implements PrimitiveSerializer<
       yield r'directory';
       yield serializers.serialize(
         object.directory,
-        specifiedType: const FullType(SocialPostTemplateCallToActionDirectoryEnum),
+        specifiedType:
+            const FullType(SocialPostTemplateCallToActionDirectoryEnum),
       );
     }
   }
@@ -83,7 +94,9 @@ class _$SocialPostTemplateCallToActionSerializer implements PrimitiveSerializer<
     SocialPostTemplateCallToAction object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -108,14 +121,16 @@ class _$SocialPostTemplateCallToActionSerializer implements PrimitiveSerializer<
         case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(SocialPostTemplateCallToActionTypeEnum),
+            specifiedType:
+                const FullType(SocialPostTemplateCallToActionTypeEnum),
           ) as SocialPostTemplateCallToActionTypeEnum;
           result.type = valueDes;
           break;
         case r'directory':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(SocialPostTemplateCallToActionDirectoryEnum),
+            specifiedType:
+                const FullType(SocialPostTemplateCallToActionDirectoryEnum),
           ) as SocialPostTemplateCallToActionDirectoryEnum;
           result.directory = valueDes;
           break;
@@ -149,81 +164,121 @@ class _$SocialPostTemplateCallToActionSerializer implements PrimitiveSerializer<
 }
 
 class SocialPostTemplateCallToActionTypeEnum extends EnumClass {
-
   /// The type of the call to action.
   @BuiltValueEnumConst(wireName: r'CALL')
-  static const SocialPostTemplateCallToActionTypeEnum CALL = _$socialPostTemplateCallToActionTypeEnum_CALL;
+  static const SocialPostTemplateCallToActionTypeEnum CALL =
+      _$socialPostTemplateCallToActionTypeEnum_CALL;
+
   /// The type of the call to action.
   @BuiltValueEnumConst(wireName: r'LEARN_MORE')
-  static const SocialPostTemplateCallToActionTypeEnum LEARN_MORE = _$socialPostTemplateCallToActionTypeEnum_LEARN_MORE;
+  static const SocialPostTemplateCallToActionTypeEnum LEARN_MORE =
+      _$socialPostTemplateCallToActionTypeEnum_LEARN_MORE;
+
   /// The type of the call to action.
   @BuiltValueEnumConst(wireName: r'SIGN_UP')
-  static const SocialPostTemplateCallToActionTypeEnum SIGN_UP = _$socialPostTemplateCallToActionTypeEnum_SIGN_UP;
+  static const SocialPostTemplateCallToActionTypeEnum SIGN_UP =
+      _$socialPostTemplateCallToActionTypeEnum_SIGN_UP;
+
   /// The type of the call to action.
   @BuiltValueEnumConst(wireName: r'DIRECTIONS')
-  static const SocialPostTemplateCallToActionTypeEnum DIRECTIONS = _$socialPostTemplateCallToActionTypeEnum_DIRECTIONS;
+  static const SocialPostTemplateCallToActionTypeEnum DIRECTIONS =
+      _$socialPostTemplateCallToActionTypeEnum_DIRECTIONS;
+
   /// The type of the call to action.
   @BuiltValueEnumConst(wireName: r'WEBSITE')
-  static const SocialPostTemplateCallToActionTypeEnum WEBSITE = _$socialPostTemplateCallToActionTypeEnum_WEBSITE;
+  static const SocialPostTemplateCallToActionTypeEnum WEBSITE =
+      _$socialPostTemplateCallToActionTypeEnum_WEBSITE;
+
   /// The type of the call to action.
   @BuiltValueEnumConst(wireName: r'BOOK_TRAVEL')
-  static const SocialPostTemplateCallToActionTypeEnum BOOK_TRAVEL = _$socialPostTemplateCallToActionTypeEnum_BOOK_TRAVEL;
+  static const SocialPostTemplateCallToActionTypeEnum BOOK_TRAVEL =
+      _$socialPostTemplateCallToActionTypeEnum_BOOK_TRAVEL;
+
   /// The type of the call to action.
   @BuiltValueEnumConst(wireName: r'DOWNLOAD')
-  static const SocialPostTemplateCallToActionTypeEnum DOWNLOAD = _$socialPostTemplateCallToActionTypeEnum_DOWNLOAD;
+  static const SocialPostTemplateCallToActionTypeEnum DOWNLOAD =
+      _$socialPostTemplateCallToActionTypeEnum_DOWNLOAD;
+
   /// The type of the call to action.
   @BuiltValueEnumConst(wireName: r'INSTALL_APP')
-  static const SocialPostTemplateCallToActionTypeEnum INSTALL_APP = _$socialPostTemplateCallToActionTypeEnum_INSTALL_APP;
+  static const SocialPostTemplateCallToActionTypeEnum INSTALL_APP =
+      _$socialPostTemplateCallToActionTypeEnum_INSTALL_APP;
+
   /// The type of the call to action.
   @BuiltValueEnumConst(wireName: r'LISTEN_MUSIC')
-  static const SocialPostTemplateCallToActionTypeEnum LISTEN_MUSIC = _$socialPostTemplateCallToActionTypeEnum_LISTEN_MUSIC;
+  static const SocialPostTemplateCallToActionTypeEnum LISTEN_MUSIC =
+      _$socialPostTemplateCallToActionTypeEnum_LISTEN_MUSIC;
+
   /// The type of the call to action.
   @BuiltValueEnumConst(wireName: r'NO_BUTTON')
-  static const SocialPostTemplateCallToActionTypeEnum NO_BUTTON = _$socialPostTemplateCallToActionTypeEnum_NO_BUTTON;
+  static const SocialPostTemplateCallToActionTypeEnum NO_BUTTON =
+      _$socialPostTemplateCallToActionTypeEnum_NO_BUTTON;
+
   /// The type of the call to action.
   @BuiltValueEnumConst(wireName: r'USE_APP')
-  static const SocialPostTemplateCallToActionTypeEnum USE_APP = _$socialPostTemplateCallToActionTypeEnum_USE_APP;
+  static const SocialPostTemplateCallToActionTypeEnum USE_APP =
+      _$socialPostTemplateCallToActionTypeEnum_USE_APP;
+
   /// The type of the call to action.
   @BuiltValueEnumConst(wireName: r'WATCH_MORE')
-  static const SocialPostTemplateCallToActionTypeEnum WATCH_MORE = _$socialPostTemplateCallToActionTypeEnum_WATCH_MORE;
+  static const SocialPostTemplateCallToActionTypeEnum WATCH_MORE =
+      _$socialPostTemplateCallToActionTypeEnum_WATCH_MORE;
+
   /// The type of the call to action.
   @BuiltValueEnumConst(wireName: r'WATCH_VIDEO')
-  static const SocialPostTemplateCallToActionTypeEnum WATCH_VIDEO = _$socialPostTemplateCallToActionTypeEnum_WATCH_VIDEO;
+  static const SocialPostTemplateCallToActionTypeEnum WATCH_VIDEO =
+      _$socialPostTemplateCallToActionTypeEnum_WATCH_VIDEO;
+
   /// The type of the call to action.
   @BuiltValueEnumConst(wireName: r'BOOK')
-  static const SocialPostTemplateCallToActionTypeEnum BOOK = _$socialPostTemplateCallToActionTypeEnum_BOOK;
+  static const SocialPostTemplateCallToActionTypeEnum BOOK =
+      _$socialPostTemplateCallToActionTypeEnum_BOOK;
+
   /// The type of the call to action.
   @BuiltValueEnumConst(wireName: r'ORDER')
-  static const SocialPostTemplateCallToActionTypeEnum ORDER = _$socialPostTemplateCallToActionTypeEnum_ORDER;
+  static const SocialPostTemplateCallToActionTypeEnum ORDER =
+      _$socialPostTemplateCallToActionTypeEnum_ORDER;
+
   /// The type of the call to action.
   @BuiltValueEnumConst(wireName: r'SHOP')
-  static const SocialPostTemplateCallToActionTypeEnum SHOP = _$socialPostTemplateCallToActionTypeEnum_SHOP;
+  static const SocialPostTemplateCallToActionTypeEnum SHOP =
+      _$socialPostTemplateCallToActionTypeEnum_SHOP;
 
-  static Serializer<SocialPostTemplateCallToActionTypeEnum> get serializer => _$socialPostTemplateCallToActionTypeEnumSerializer;
+  static Serializer<SocialPostTemplateCallToActionTypeEnum> get serializer =>
+      _$socialPostTemplateCallToActionTypeEnumSerializer;
 
-  const SocialPostTemplateCallToActionTypeEnum._(String name): super(name);
+  const SocialPostTemplateCallToActionTypeEnum._(String name) : super(name);
 
-  static BuiltSet<SocialPostTemplateCallToActionTypeEnum> get values => _$socialPostTemplateCallToActionTypeEnumValues;
-  static SocialPostTemplateCallToActionTypeEnum valueOf(String name) => _$socialPostTemplateCallToActionTypeEnumValueOf(name);
+  static BuiltSet<SocialPostTemplateCallToActionTypeEnum> get values =>
+      _$socialPostTemplateCallToActionTypeEnumValues;
+  static SocialPostTemplateCallToActionTypeEnum valueOf(String name) =>
+      _$socialPostTemplateCallToActionTypeEnumValueOf(name);
 }
 
 class SocialPostTemplateCallToActionDirectoryEnum extends EnumClass {
-
   /// The directory of the call to action.
   @BuiltValueEnumConst(wireName: r'FACEBOOK')
-  static const SocialPostTemplateCallToActionDirectoryEnum FACEBOOK = _$socialPostTemplateCallToActionDirectoryEnum_FACEBOOK;
+  static const SocialPostTemplateCallToActionDirectoryEnum FACEBOOK =
+      _$socialPostTemplateCallToActionDirectoryEnum_FACEBOOK;
+
   /// The directory of the call to action.
   @BuiltValueEnumConst(wireName: r'GOOGLE')
-  static const SocialPostTemplateCallToActionDirectoryEnum GOOGLE = _$socialPostTemplateCallToActionDirectoryEnum_GOOGLE;
+  static const SocialPostTemplateCallToActionDirectoryEnum GOOGLE =
+      _$socialPostTemplateCallToActionDirectoryEnum_GOOGLE;
+
   /// The directory of the call to action.
   @BuiltValueEnumConst(wireName: r'APPLE_MAPS')
-  static const SocialPostTemplateCallToActionDirectoryEnum APPLE_MAPS = _$socialPostTemplateCallToActionDirectoryEnum_APPLE_MAPS;
+  static const SocialPostTemplateCallToActionDirectoryEnum APPLE_MAPS =
+      _$socialPostTemplateCallToActionDirectoryEnum_APPLE_MAPS;
 
-  static Serializer<SocialPostTemplateCallToActionDirectoryEnum> get serializer => _$socialPostTemplateCallToActionDirectoryEnumSerializer;
+  static Serializer<SocialPostTemplateCallToActionDirectoryEnum>
+      get serializer => _$socialPostTemplateCallToActionDirectoryEnumSerializer;
 
-  const SocialPostTemplateCallToActionDirectoryEnum._(String name): super(name);
+  const SocialPostTemplateCallToActionDirectoryEnum._(String name)
+      : super(name);
 
-  static BuiltSet<SocialPostTemplateCallToActionDirectoryEnum> get values => _$socialPostTemplateCallToActionDirectoryEnumValues;
-  static SocialPostTemplateCallToActionDirectoryEnum valueOf(String name) => _$socialPostTemplateCallToActionDirectoryEnumValueOf(name);
+  static BuiltSet<SocialPostTemplateCallToActionDirectoryEnum> get values =>
+      _$socialPostTemplateCallToActionDirectoryEnumValues;
+  static SocialPostTemplateCallToActionDirectoryEnum valueOf(String name) =>
+      _$socialPostTemplateCallToActionDirectoryEnumValueOf(name);
 }
-

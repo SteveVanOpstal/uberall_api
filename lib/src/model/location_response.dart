@@ -14,11 +14,12 @@ part 'location_response.g.dart';
 /// Location Response Model
 ///
 /// Properties:
-/// * [location] 
+/// * [location]
 /// * [suggestionsForFields] - Map containing fields and the suggested values from different directories.
 /// * [suggestionsForFieldsAvailable] - true if any suggetions are available
 @BuiltValue()
-abstract class LocationResponse implements Built<LocationResponse, LocationResponseBuilder> {
+abstract class LocationResponse
+    implements Built<LocationResponse, LocationResponseBuilder> {
   @BuiltValueField(wireName: r'location')
   Location? get location;
 
@@ -32,16 +33,19 @@ abstract class LocationResponse implements Built<LocationResponse, LocationRespo
 
   LocationResponse._();
 
-  factory LocationResponse([void updates(LocationResponseBuilder b)]) = _$LocationResponse;
+  factory LocationResponse([void updates(LocationResponseBuilder b)]) =
+      _$LocationResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LocationResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LocationResponse> get serializer => _$LocationResponseSerializer();
+  static Serializer<LocationResponse> get serializer =>
+      _$LocationResponseSerializer();
 }
 
-class _$LocationResponseSerializer implements PrimitiveSerializer<LocationResponse> {
+class _$LocationResponseSerializer
+    implements PrimitiveSerializer<LocationResponse> {
   @override
   final Iterable<Type> types = const [LocationResponse, _$LocationResponse];
 
@@ -64,7 +68,9 @@ class _$LocationResponseSerializer implements PrimitiveSerializer<LocationRespon
       yield r'suggestionsForFields';
       yield serializers.serialize(
         object.suggestionsForFields,
-        specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType(JsonObject)])]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(BuiltMap, [FullType(String), FullType(JsonObject)])
+        ]),
       );
     }
     if (object.suggestionsForFieldsAvailable != null) {
@@ -82,7 +88,9 @@ class _$LocationResponseSerializer implements PrimitiveSerializer<LocationRespon
     LocationResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -107,7 +115,9 @@ class _$LocationResponseSerializer implements PrimitiveSerializer<LocationRespon
         case r'suggestionsForFields':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType(JsonObject)])]),
+            specifiedType: const FullType(BuiltList, [
+              FullType(BuiltMap, [FullType(String), FullType(JsonObject)])
+            ]),
           ) as BuiltList<BuiltMap<String, JsonObject>>;
           result.suggestionsForFields.replace(valueDes);
           break;
@@ -146,4 +156,3 @@ class _$LocationResponseSerializer implements PrimitiveSerializer<LocationRespon
     return result.build();
   }
 }
-

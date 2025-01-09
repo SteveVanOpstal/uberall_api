@@ -15,9 +15,10 @@ part 'create_template_request.g.dart';
 /// * [title] - The title of the template
 /// * [message] - The message that will be used in the response
 /// * [tags] - Template tags used for filtering
-/// * [businesses] 
+/// * [businesses]
 @BuiltValue()
-abstract class CreateTemplateRequest implements Built<CreateTemplateRequest, CreateTemplateRequestBuilder> {
+abstract class CreateTemplateRequest
+    implements Built<CreateTemplateRequest, CreateTemplateRequestBuilder> {
   /// The title of the template
   @BuiltValueField(wireName: r'title')
   String get title;
@@ -35,18 +36,24 @@ abstract class CreateTemplateRequest implements Built<CreateTemplateRequest, Cre
 
   CreateTemplateRequest._();
 
-  factory CreateTemplateRequest([void updates(CreateTemplateRequestBuilder b)]) = _$CreateTemplateRequest;
+  factory CreateTemplateRequest(
+      [void updates(CreateTemplateRequestBuilder b)]) = _$CreateTemplateRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CreateTemplateRequestBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<CreateTemplateRequest> get serializer => _$CreateTemplateRequestSerializer();
+  static Serializer<CreateTemplateRequest> get serializer =>
+      _$CreateTemplateRequestSerializer();
 }
 
-class _$CreateTemplateRequestSerializer implements PrimitiveSerializer<CreateTemplateRequest> {
+class _$CreateTemplateRequestSerializer
+    implements PrimitiveSerializer<CreateTemplateRequest> {
   @override
-  final Iterable<Type> types = const [CreateTemplateRequest, _$CreateTemplateRequest];
+  final Iterable<Type> types = const [
+    CreateTemplateRequest,
+    _$CreateTemplateRequest
+  ];
 
   @override
   final String wireName = r'CreateTemplateRequest';
@@ -86,7 +93,9 @@ class _$CreateTemplateRequestSerializer implements PrimitiveSerializer<CreateTem
     CreateTemplateRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -157,4 +166,3 @@ class _$CreateTemplateRequestSerializer implements PrimitiveSerializer<CreateTem
     return result.build();
   }
 }
-

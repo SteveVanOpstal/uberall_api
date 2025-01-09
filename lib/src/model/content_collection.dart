@@ -21,9 +21,10 @@ part 'content_collection.g.dart';
 /// * [locationIds] - Location Ids that should be associated with this collection
 /// * [cuisineType] - Only applicable to Menu content collections - indicates the cuisine the restaurant serves
 /// * [url] - Applicable to Menu collections only - url to the brand webpage menu
-/// * [id] 
+/// * [id]
 @BuiltValue()
-abstract class ContentCollection implements Built<ContentCollection, ContentCollectionBuilder> {
+abstract class ContentCollection
+    implements Built<ContentCollection, ContentCollectionBuilder> {
   /// Mandatory - A unique identifier for the collection
   @BuiltValueField(wireName: r'identifier')
   String get identifier;
@@ -63,16 +64,19 @@ abstract class ContentCollection implements Built<ContentCollection, ContentColl
 
   ContentCollection._();
 
-  factory ContentCollection([void updates(ContentCollectionBuilder b)]) = _$ContentCollection;
+  factory ContentCollection([void updates(ContentCollectionBuilder b)]) =
+      _$ContentCollection;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ContentCollectionBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ContentCollection> get serializer => _$ContentCollectionSerializer();
+  static Serializer<ContentCollection> get serializer =>
+      _$ContentCollectionSerializer();
 }
 
-class _$ContentCollectionSerializer implements PrimitiveSerializer<ContentCollection> {
+class _$ContentCollectionSerializer
+    implements PrimitiveSerializer<ContentCollection> {
   @override
   final Iterable<Type> types = const [ContentCollection, _$ContentCollection];
 
@@ -147,7 +151,9 @@ class _$ContentCollectionSerializer implements PrimitiveSerializer<ContentCollec
     ContentCollection object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -255,138 +261,216 @@ class _$ContentCollectionSerializer implements PrimitiveSerializer<ContentCollec
 }
 
 class ContentCollectionTypeEnum extends EnumClass {
-
   /// Mandatory - the type of content collection. Values can be: MENU, PEOPLE, PRODUCTS, SERVICES, or CUSTOM
   @BuiltValueEnumConst(wireName: r'MENU')
-  static const ContentCollectionTypeEnum MENU = _$contentCollectionTypeEnum_MENU;
+  static const ContentCollectionTypeEnum MENU =
+      _$contentCollectionTypeEnum_MENU;
+
   /// Mandatory - the type of content collection. Values can be: MENU, PEOPLE, PRODUCTS, SERVICES, or CUSTOM
   @BuiltValueEnumConst(wireName: r'PEOPLE')
-  static const ContentCollectionTypeEnum PEOPLE = _$contentCollectionTypeEnum_PEOPLE;
+  static const ContentCollectionTypeEnum PEOPLE =
+      _$contentCollectionTypeEnum_PEOPLE;
+
   /// Mandatory - the type of content collection. Values can be: MENU, PEOPLE, PRODUCTS, SERVICES, or CUSTOM
   @BuiltValueEnumConst(wireName: r'PRODUCTS')
-  static const ContentCollectionTypeEnum PRODUCTS = _$contentCollectionTypeEnum_PRODUCTS;
+  static const ContentCollectionTypeEnum PRODUCTS =
+      _$contentCollectionTypeEnum_PRODUCTS;
+
   /// Mandatory - the type of content collection. Values can be: MENU, PEOPLE, PRODUCTS, SERVICES, or CUSTOM
   @BuiltValueEnumConst(wireName: r'CUSTOM')
-  static const ContentCollectionTypeEnum CUSTOM = _$contentCollectionTypeEnum_CUSTOM;
+  static const ContentCollectionTypeEnum CUSTOM =
+      _$contentCollectionTypeEnum_CUSTOM;
+
   /// Mandatory - the type of content collection. Values can be: MENU, PEOPLE, PRODUCTS, SERVICES, or CUSTOM
   @BuiltValueEnumConst(wireName: r'SERVICES')
-  static const ContentCollectionTypeEnum SERVICES = _$contentCollectionTypeEnum_SERVICES;
+  static const ContentCollectionTypeEnum SERVICES =
+      _$contentCollectionTypeEnum_SERVICES;
+
   /// Mandatory - the type of content collection. Values can be: MENU, PEOPLE, PRODUCTS, SERVICES, or CUSTOM
   @BuiltValueEnumConst(wireName: r'EVENTS')
-  static const ContentCollectionTypeEnum EVENTS = _$contentCollectionTypeEnum_EVENTS;
+  static const ContentCollectionTypeEnum EVENTS =
+      _$contentCollectionTypeEnum_EVENTS;
+
   /// Mandatory - the type of content collection. Values can be: MENU, PEOPLE, PRODUCTS, SERVICES, or CUSTOM
   @BuiltValueEnumConst(wireName: r'MENU, PEOPLE, PRODUCTS, SERVICES, or CUSTOM')
-  static const ContentCollectionTypeEnum mENUCommaPEOPLECommaPRODUCTSCommaSERVICESCommaOrCUSTOM = _$contentCollectionTypeEnum_mENUCommaPEOPLECommaPRODUCTSCommaSERVICESCommaOrCUSTOM;
+  static const ContentCollectionTypeEnum
+      mENUCommaPEOPLECommaPRODUCTSCommaSERVICESCommaOrCUSTOM =
+      _$contentCollectionTypeEnum_mENUCommaPEOPLECommaPRODUCTSCommaSERVICESCommaOrCUSTOM;
 
-  static Serializer<ContentCollectionTypeEnum> get serializer => _$contentCollectionTypeEnumSerializer;
+  static Serializer<ContentCollectionTypeEnum> get serializer =>
+      _$contentCollectionTypeEnumSerializer;
 
-  const ContentCollectionTypeEnum._(String name): super(name);
+  const ContentCollectionTypeEnum._(String name) : super(name);
 
-  static BuiltSet<ContentCollectionTypeEnum> get values => _$contentCollectionTypeEnumValues;
-  static ContentCollectionTypeEnum valueOf(String name) => _$contentCollectionTypeEnumValueOf(name);
+  static BuiltSet<ContentCollectionTypeEnum> get values =>
+      _$contentCollectionTypeEnumValues;
+  static ContentCollectionTypeEnum valueOf(String name) =>
+      _$contentCollectionTypeEnumValueOf(name);
 }
 
 class ContentCollectionCuisineTypeEnum extends EnumClass {
-
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'AMERICAN')
-  static const ContentCollectionCuisineTypeEnum AMERICAN = _$contentCollectionCuisineTypeEnum_AMERICAN;
+  static const ContentCollectionCuisineTypeEnum AMERICAN =
+      _$contentCollectionCuisineTypeEnum_AMERICAN;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'ASIAN')
-  static const ContentCollectionCuisineTypeEnum ASIAN = _$contentCollectionCuisineTypeEnum_ASIAN;
+  static const ContentCollectionCuisineTypeEnum ASIAN =
+      _$contentCollectionCuisineTypeEnum_ASIAN;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'BRAZILIAN')
-  static const ContentCollectionCuisineTypeEnum BRAZILIAN = _$contentCollectionCuisineTypeEnum_BRAZILIAN;
+  static const ContentCollectionCuisineTypeEnum BRAZILIAN =
+      _$contentCollectionCuisineTypeEnum_BRAZILIAN;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'BREAKFAST')
-  static const ContentCollectionCuisineTypeEnum BREAKFAST = _$contentCollectionCuisineTypeEnum_BREAKFAST;
+  static const ContentCollectionCuisineTypeEnum BREAKFAST =
+      _$contentCollectionCuisineTypeEnum_BREAKFAST;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'BRUNCH')
-  static const ContentCollectionCuisineTypeEnum BRUNCH = _$contentCollectionCuisineTypeEnum_BRUNCH;
+  static const ContentCollectionCuisineTypeEnum BRUNCH =
+      _$contentCollectionCuisineTypeEnum_BRUNCH;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'CHICKEN')
-  static const ContentCollectionCuisineTypeEnum CHICKEN = _$contentCollectionCuisineTypeEnum_CHICKEN;
+  static const ContentCollectionCuisineTypeEnum CHICKEN =
+      _$contentCollectionCuisineTypeEnum_CHICKEN;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'CHINESE')
-  static const ContentCollectionCuisineTypeEnum CHINESE = _$contentCollectionCuisineTypeEnum_CHINESE;
+  static const ContentCollectionCuisineTypeEnum CHINESE =
+      _$contentCollectionCuisineTypeEnum_CHINESE;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'FAMILY')
-  static const ContentCollectionCuisineTypeEnum FAMILY = _$contentCollectionCuisineTypeEnum_FAMILY;
+  static const ContentCollectionCuisineTypeEnum FAMILY =
+      _$contentCollectionCuisineTypeEnum_FAMILY;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'FAST_FOOD')
-  static const ContentCollectionCuisineTypeEnum FAST_FOOD = _$contentCollectionCuisineTypeEnum_FAST_FOOD;
+  static const ContentCollectionCuisineTypeEnum FAST_FOOD =
+      _$contentCollectionCuisineTypeEnum_FAST_FOOD;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'FRENCH')
-  static const ContentCollectionCuisineTypeEnum FRENCH = _$contentCollectionCuisineTypeEnum_FRENCH;
+  static const ContentCollectionCuisineTypeEnum FRENCH =
+      _$contentCollectionCuisineTypeEnum_FRENCH;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'GREEK')
-  static const ContentCollectionCuisineTypeEnum GREEK = _$contentCollectionCuisineTypeEnum_GREEK;
+  static const ContentCollectionCuisineTypeEnum GREEK =
+      _$contentCollectionCuisineTypeEnum_GREEK;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'GERMAN')
-  static const ContentCollectionCuisineTypeEnum GERMAN = _$contentCollectionCuisineTypeEnum_GERMAN;
+  static const ContentCollectionCuisineTypeEnum GERMAN =
+      _$contentCollectionCuisineTypeEnum_GERMAN;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'HAMBURGER')
-  static const ContentCollectionCuisineTypeEnum HAMBURGER = _$contentCollectionCuisineTypeEnum_HAMBURGER;
+  static const ContentCollectionCuisineTypeEnum HAMBURGER =
+      _$contentCollectionCuisineTypeEnum_HAMBURGER;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'INDIAN')
-  static const ContentCollectionCuisineTypeEnum INDIAN = _$contentCollectionCuisineTypeEnum_INDIAN;
+  static const ContentCollectionCuisineTypeEnum INDIAN =
+      _$contentCollectionCuisineTypeEnum_INDIAN;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'INDONESIAN')
-  static const ContentCollectionCuisineTypeEnum INDONESIAN = _$contentCollectionCuisineTypeEnum_INDONESIAN;
+  static const ContentCollectionCuisineTypeEnum INDONESIAN =
+      _$contentCollectionCuisineTypeEnum_INDONESIAN;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'ITALIAN')
-  static const ContentCollectionCuisineTypeEnum ITALIAN = _$contentCollectionCuisineTypeEnum_ITALIAN;
+  static const ContentCollectionCuisineTypeEnum ITALIAN =
+      _$contentCollectionCuisineTypeEnum_ITALIAN;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'JAPANESE')
-  static const ContentCollectionCuisineTypeEnum JAPANESE = _$contentCollectionCuisineTypeEnum_JAPANESE;
+  static const ContentCollectionCuisineTypeEnum JAPANESE =
+      _$contentCollectionCuisineTypeEnum_JAPANESE;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'KOREAN')
-  static const ContentCollectionCuisineTypeEnum KOREAN = _$contentCollectionCuisineTypeEnum_KOREAN;
+  static const ContentCollectionCuisineTypeEnum KOREAN =
+      _$contentCollectionCuisineTypeEnum_KOREAN;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'LATIN_AMERICAN')
-  static const ContentCollectionCuisineTypeEnum LATIN_AMERICAN = _$contentCollectionCuisineTypeEnum_LATIN_AMERICAN;
+  static const ContentCollectionCuisineTypeEnum LATIN_AMERICAN =
+      _$contentCollectionCuisineTypeEnum_LATIN_AMERICAN;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'MEDITERRANEAN')
-  static const ContentCollectionCuisineTypeEnum MEDITERRANEAN = _$contentCollectionCuisineTypeEnum_MEDITERRANEAN;
+  static const ContentCollectionCuisineTypeEnum MEDITERRANEAN =
+      _$contentCollectionCuisineTypeEnum_MEDITERRANEAN;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'MEXICAN')
-  static const ContentCollectionCuisineTypeEnum MEXICAN = _$contentCollectionCuisineTypeEnum_MEXICAN;
+  static const ContentCollectionCuisineTypeEnum MEXICAN =
+      _$contentCollectionCuisineTypeEnum_MEXICAN;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'PAKISTANI')
-  static const ContentCollectionCuisineTypeEnum PAKISTANI = _$contentCollectionCuisineTypeEnum_PAKISTANI;
+  static const ContentCollectionCuisineTypeEnum PAKISTANI =
+      _$contentCollectionCuisineTypeEnum_PAKISTANI;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'PIZZA')
-  static const ContentCollectionCuisineTypeEnum PIZZA = _$contentCollectionCuisineTypeEnum_PIZZA;
+  static const ContentCollectionCuisineTypeEnum PIZZA =
+      _$contentCollectionCuisineTypeEnum_PIZZA;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'SEAFOOD')
-  static const ContentCollectionCuisineTypeEnum SEAFOOD = _$contentCollectionCuisineTypeEnum_SEAFOOD;
+  static const ContentCollectionCuisineTypeEnum SEAFOOD =
+      _$contentCollectionCuisineTypeEnum_SEAFOOD;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'SPANISH')
-  static const ContentCollectionCuisineTypeEnum SPANISH = _$contentCollectionCuisineTypeEnum_SPANISH;
+  static const ContentCollectionCuisineTypeEnum SPANISH =
+      _$contentCollectionCuisineTypeEnum_SPANISH;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'SUSHI')
-  static const ContentCollectionCuisineTypeEnum SUSHI = _$contentCollectionCuisineTypeEnum_SUSHI;
+  static const ContentCollectionCuisineTypeEnum SUSHI =
+      _$contentCollectionCuisineTypeEnum_SUSHI;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'THAI')
-  static const ContentCollectionCuisineTypeEnum THAI = _$contentCollectionCuisineTypeEnum_THAI;
+  static const ContentCollectionCuisineTypeEnum THAI =
+      _$contentCollectionCuisineTypeEnum_THAI;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'TURKISH')
-  static const ContentCollectionCuisineTypeEnum TURKISH = _$contentCollectionCuisineTypeEnum_TURKISH;
+  static const ContentCollectionCuisineTypeEnum TURKISH =
+      _$contentCollectionCuisineTypeEnum_TURKISH;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'VEGETARIAN')
-  static const ContentCollectionCuisineTypeEnum VEGETARIAN = _$contentCollectionCuisineTypeEnum_VEGETARIAN;
+  static const ContentCollectionCuisineTypeEnum VEGETARIAN =
+      _$contentCollectionCuisineTypeEnum_VEGETARIAN;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'VIETNAMESE')
-  static const ContentCollectionCuisineTypeEnum VIETNAMESE = _$contentCollectionCuisineTypeEnum_VIETNAMESE;
+  static const ContentCollectionCuisineTypeEnum VIETNAMESE =
+      _$contentCollectionCuisineTypeEnum_VIETNAMESE;
+
   /// Only applicable to Menu content collections - indicates the cuisine the restaurant serves
   @BuiltValueEnumConst(wireName: r'OTHER_CUISINE')
-  static const ContentCollectionCuisineTypeEnum OTHER_CUISINE = _$contentCollectionCuisineTypeEnum_OTHER_CUISINE;
+  static const ContentCollectionCuisineTypeEnum OTHER_CUISINE =
+      _$contentCollectionCuisineTypeEnum_OTHER_CUISINE;
 
-  static Serializer<ContentCollectionCuisineTypeEnum> get serializer => _$contentCollectionCuisineTypeEnumSerializer;
+  static Serializer<ContentCollectionCuisineTypeEnum> get serializer =>
+      _$contentCollectionCuisineTypeEnumSerializer;
 
-  const ContentCollectionCuisineTypeEnum._(String name): super(name);
+  const ContentCollectionCuisineTypeEnum._(String name) : super(name);
 
-  static BuiltSet<ContentCollectionCuisineTypeEnum> get values => _$contentCollectionCuisineTypeEnumValues;
-  static ContentCollectionCuisineTypeEnum valueOf(String name) => _$contentCollectionCuisineTypeEnumValueOf(name);
+  static BuiltSet<ContentCollectionCuisineTypeEnum> get values =>
+      _$contentCollectionCuisineTypeEnumValues;
+  static ContentCollectionCuisineTypeEnum valueOf(String name) =>
+      _$contentCollectionCuisineTypeEnumValueOf(name);
 }
-

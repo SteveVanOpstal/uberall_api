@@ -28,7 +28,7 @@ void main() {
       // TODO
     });
 
-    // Required - Operator of the chargepoints of the location 
+    // Required - Operator of the chargepoints of the location
     // String operator_
     test('to test the property `operator_`', () async {
       // TODO
@@ -63,8 +63,5 @@ void main() {
     test('to test the property `supplyEquipments`', () async {
       // TODO
     });
-
-
   });
-
 }

@@ -12,26 +12,33 @@ part 'visibility_index_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [visibilityIndex] 
+/// * [visibilityIndex]
 @BuiltValue()
-abstract class VisibilityIndexObject implements Built<VisibilityIndexObject, VisibilityIndexObjectBuilder> {
+abstract class VisibilityIndexObject
+    implements Built<VisibilityIndexObject, VisibilityIndexObjectBuilder> {
   @BuiltValueField(wireName: r'visibilityIndex')
   VisibilityIndex? get visibilityIndex;
 
   VisibilityIndexObject._();
 
-  factory VisibilityIndexObject([void updates(VisibilityIndexObjectBuilder b)]) = _$VisibilityIndexObject;
+  factory VisibilityIndexObject(
+      [void updates(VisibilityIndexObjectBuilder b)]) = _$VisibilityIndexObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(VisibilityIndexObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<VisibilityIndexObject> get serializer => _$VisibilityIndexObjectSerializer();
+  static Serializer<VisibilityIndexObject> get serializer =>
+      _$VisibilityIndexObjectSerializer();
 }
 
-class _$VisibilityIndexObjectSerializer implements PrimitiveSerializer<VisibilityIndexObject> {
+class _$VisibilityIndexObjectSerializer
+    implements PrimitiveSerializer<VisibilityIndexObject> {
   @override
-  final Iterable<Type> types = const [VisibilityIndexObject, _$VisibilityIndexObject];
+  final Iterable<Type> types = const [
+    VisibilityIndexObject,
+    _$VisibilityIndexObject
+  ];
 
   @override
   final String wireName = r'VisibilityIndexObject';
@@ -56,7 +63,9 @@ class _$VisibilityIndexObjectSerializer implements PrimitiveSerializer<Visibilit
     VisibilityIndexObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +115,3 @@ class _$VisibilityIndexObjectSerializer implements PrimitiveSerializer<Visibilit
     return result.build();
   }
 }
-

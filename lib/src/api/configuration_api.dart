@@ -16,7 +16,6 @@ import 'package:openapi/src/model/directory_brand_wrapper.dart';
 import 'package:openapi/src/model/features_response_wrapper.dart';
 
 class ConfigurationApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -37,7 +36,8 @@ class ConfigurationApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DirectoriesDetailsCountriesResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DirectoriesDetailsCountriesResponseWrapper>> getDirectoriesDirectoriesDetailsCountries({ 
+  Future<Response<DirectoriesDetailsCountriesResponseWrapper>>
+      getDirectoriesDirectoriesDetailsCountries({
     String? countries,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -67,7 +67,9 @@ class ConfigurationApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (countries != null) r'countries': encodeQueryParameter(_serializers, countries, const FullType(String)),
+      if (countries != null)
+        r'countries': encodeQueryParameter(
+            _serializers, countries, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -83,11 +85,13 @@ class ConfigurationApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DirectoriesDetailsCountriesResponseWrapper),
-      ) as DirectoriesDetailsCountriesResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType:
+                  const FullType(DirectoriesDetailsCountriesResponseWrapper),
+            ) as DirectoriesDetailsCountriesResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -126,7 +130,8 @@ class ConfigurationApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DirectoryBrandPageResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DirectoryBrandPageResponseWrapper>> getDirectoryBrandSalesPartnerSalesPartnerIdUserAccountAccountIdDirectoryType({ 
+  Future<Response<DirectoryBrandPageResponseWrapper>>
+      getDirectoryBrandSalesPartnerSalesPartnerIdUserAccountAccountIdDirectoryType({
     required String salesPartnerId,
     required String accountId,
     required String directoryType,
@@ -137,7 +142,23 @@ class ConfigurationApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/directory-brand/sales-partner/{salesPartnerId}/user-account/{accountId}/{directoryType}'.replaceAll('{' r'salesPartnerId' '}', encodeQueryParameter(_serializers, salesPartnerId, const FullType(String)).toString()).replaceAll('{' r'accountId' '}', encodeQueryParameter(_serializers, accountId, const FullType(String)).toString()).replaceAll('{' r'directoryType' '}', encodeQueryParameter(_serializers, directoryType, const FullType(String)).toString());
+    final _path =
+        r'/directory-brand/sales-partner/{salesPartnerId}/user-account/{accountId}/{directoryType}'
+            .replaceAll(
+                '{' r'salesPartnerId' '}',
+                encodeQueryParameter(
+                        _serializers, salesPartnerId, const FullType(String))
+                    .toString())
+            .replaceAll(
+                '{' r'accountId' '}',
+                encodeQueryParameter(
+                        _serializers, accountId, const FullType(String))
+                    .toString())
+            .replaceAll(
+                '{' r'directoryType' '}',
+                encodeQueryParameter(
+                        _serializers, directoryType, const FullType(String))
+                    .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -150,7 +171,8 @@ class ConfigurationApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -174,11 +196,12 @@ class ConfigurationApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DirectoryBrandPageResponseWrapper),
-      ) as DirectoryBrandPageResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DirectoryBrandPageResponseWrapper),
+            ) as DirectoryBrandPageResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -214,7 +237,7 @@ class ConfigurationApi {
   ///
   /// Returns a [Future] containing a [Response] with a [FeaturesResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<FeaturesResponseWrapper>> getFeatures({ 
+  Future<Response<FeaturesResponseWrapper>> getFeatures({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -235,7 +258,8 @@ class ConfigurationApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -259,11 +283,12 @@ class ConfigurationApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(FeaturesResponseWrapper),
-      ) as FeaturesResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(FeaturesResponseWrapper),
+            ) as FeaturesResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -287,7 +312,7 @@ class ConfigurationApi {
   }
 
   /// Create Directory Brand
-  /// Create directory brand for the given sales partner id, directory user account and directory type 
+  /// Create directory brand for the given sales partner id, directory user account and directory type
   ///
   /// Parameters:
   /// * [salesPartnerId] - Sales Partner ID
@@ -303,7 +328,8 @@ class ConfigurationApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DirectoryBrandWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DirectoryBrandWrapper>> postDirectoryBrandSalesPartnerSalesPartnerIdUserAccountAccountIdDirectoryType({ 
+  Future<Response<DirectoryBrandWrapper>>
+      postDirectoryBrandSalesPartnerSalesPartnerIdUserAccountAccountIdDirectoryType({
     required String salesPartnerId,
     required String accountId,
     required String directoryType,
@@ -315,7 +341,23 @@ class ConfigurationApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/directory-brand/sales-partner/{salesPartnerId}/user-account/{accountId}/{directoryType}'.replaceAll('{' r'salesPartnerId' '}', encodeQueryParameter(_serializers, salesPartnerId, const FullType(String)).toString()).replaceAll('{' r'accountId' '}', encodeQueryParameter(_serializers, accountId, const FullType(String)).toString()).replaceAll('{' r'directoryType' '}', encodeQueryParameter(_serializers, directoryType, const FullType(String)).toString());
+    final _path =
+        r'/directory-brand/sales-partner/{salesPartnerId}/user-account/{accountId}/{directoryType}'
+            .replaceAll(
+                '{' r'salesPartnerId' '}',
+                encodeQueryParameter(
+                        _serializers, salesPartnerId, const FullType(String))
+                    .toString())
+            .replaceAll(
+                '{' r'accountId' '}',
+                encodeQueryParameter(
+                        _serializers, accountId, const FullType(String))
+                    .toString())
+            .replaceAll(
+                '{' r'directoryType' '}',
+                encodeQueryParameter(
+                        _serializers, directoryType, const FullType(String))
+                    .toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -328,7 +370,8 @@ class ConfigurationApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -344,11 +387,11 @@ class ConfigurationApi {
 
     try {
       const _type = FullType(CreateDirectoryBrandRequest);
-      _bodyData = _serializers.serialize(createDirectoryBrandRequest, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData = _serializers.serialize(createDirectoryBrandRequest,
+          specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -371,11 +414,12 @@ class ConfigurationApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DirectoryBrandWrapper),
-      ) as DirectoryBrandWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DirectoryBrandWrapper),
+            ) as DirectoryBrandWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -397,5 +441,4 @@ class ConfigurationApi {
       extra: _response.extra,
     );
   }
-
 }

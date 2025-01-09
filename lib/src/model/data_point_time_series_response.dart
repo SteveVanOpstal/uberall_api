@@ -15,25 +15,34 @@ part 'data_point_time_series_response.g.dart';
 /// Properties:
 /// * [timeseries] - A list of TimeSeriesValues
 @BuiltValue()
-abstract class DataPointTimeSeriesResponse implements Built<DataPointTimeSeriesResponse, DataPointTimeSeriesResponseBuilder> {
+abstract class DataPointTimeSeriesResponse
+    implements
+        Built<DataPointTimeSeriesResponse, DataPointTimeSeriesResponseBuilder> {
   /// A list of TimeSeriesValues
   @BuiltValueField(wireName: r'timeseries')
   BuiltList<DataPointTimeSeriesValue>? get timeseries;
 
   DataPointTimeSeriesResponse._();
 
-  factory DataPointTimeSeriesResponse([void updates(DataPointTimeSeriesResponseBuilder b)]) = _$DataPointTimeSeriesResponse;
+  factory DataPointTimeSeriesResponse(
+          [void updates(DataPointTimeSeriesResponseBuilder b)]) =
+      _$DataPointTimeSeriesResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DataPointTimeSeriesResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DataPointTimeSeriesResponse> get serializer => _$DataPointTimeSeriesResponseSerializer();
+  static Serializer<DataPointTimeSeriesResponse> get serializer =>
+      _$DataPointTimeSeriesResponseSerializer();
 }
 
-class _$DataPointTimeSeriesResponseSerializer implements PrimitiveSerializer<DataPointTimeSeriesResponse> {
+class _$DataPointTimeSeriesResponseSerializer
+    implements PrimitiveSerializer<DataPointTimeSeriesResponse> {
   @override
-  final Iterable<Type> types = const [DataPointTimeSeriesResponse, _$DataPointTimeSeriesResponse];
+  final Iterable<Type> types = const [
+    DataPointTimeSeriesResponse,
+    _$DataPointTimeSeriesResponse
+  ];
 
   @override
   final String wireName = r'DataPointTimeSeriesResponse';
@@ -47,7 +56,8 @@ class _$DataPointTimeSeriesResponseSerializer implements PrimitiveSerializer<Dat
       yield r'timeseries';
       yield serializers.serialize(
         object.timeseries,
-        specifiedType: const FullType(BuiltList, [FullType(DataPointTimeSeriesValue)]),
+        specifiedType:
+            const FullType(BuiltList, [FullType(DataPointTimeSeriesValue)]),
       );
     }
   }
@@ -58,7 +68,9 @@ class _$DataPointTimeSeriesResponseSerializer implements PrimitiveSerializer<Dat
     DataPointTimeSeriesResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -76,7 +88,8 @@ class _$DataPointTimeSeriesResponseSerializer implements PrimitiveSerializer<Dat
         case r'timeseries':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(DataPointTimeSeriesValue)]),
+            specifiedType:
+                const FullType(BuiltList, [FullType(DataPointTimeSeriesValue)]),
           ) as BuiltList<DataPointTimeSeriesValue>;
           result.timeseries.replace(valueDes);
           break;
@@ -108,4 +121,3 @@ class _$DataPointTimeSeriesResponseSerializer implements PrimitiveSerializer<Dat
     return result.build();
   }
 }
-

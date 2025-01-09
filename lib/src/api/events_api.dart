@@ -16,7 +16,6 @@ import 'package:openapi/src/model/event_search_response_wrapper.dart';
 import 'package:openapi/src/model/generic_map_response_wrapper.dart';
 
 class EventsApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -36,7 +35,7 @@ class EventsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [GenericMapResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GenericMapResponseWrapper>> deleteEvents({ 
+  Future<Response<GenericMapResponseWrapper>> deleteEvents({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -57,7 +56,8 @@ class EventsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -81,11 +81,12 @@ class EventsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(GenericMapResponseWrapper),
-      ) as GenericMapResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(GenericMapResponseWrapper),
+            ) as GenericMapResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -122,7 +123,7 @@ class EventsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [GenericMapResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GenericMapResponseWrapper>> deleteEventsId({ 
+  Future<Response<GenericMapResponseWrapper>> deleteEventsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -131,7 +132,10 @@ class EventsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/events/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/events/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -144,7 +148,8 @@ class EventsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -168,11 +173,12 @@ class EventsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(GenericMapResponseWrapper),
-      ) as GenericMapResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(GenericMapResponseWrapper),
+            ) as GenericMapResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -199,7 +205,7 @@ class EventsApi {
   /// Get all events the current API user can manage. &lt;br&gt;To specify events with identifier please provide ?identifier&#x3D; in the URL param &lt;br&gt;By default, 50 are returned, you can use up to max&#x3D;10000 in the URL param
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [body]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -209,7 +215,7 @@ class EventsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [EventSearchResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<EventSearchResponseWrapper>> getEvents({ 
+  Future<Response<EventSearchResponseWrapper>> getEvents({
     JsonObject? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -231,7 +237,8 @@ class EventsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -247,10 +254,9 @@ class EventsApi {
 
     try {
       _bodyData = body;
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -273,11 +279,12 @@ class EventsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(EventSearchResponseWrapper),
-      ) as EventSearchResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(EventSearchResponseWrapper),
+            ) as EventSearchResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -314,7 +321,7 @@ class EventsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [EventResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<EventResponseWrapper>> getEventsId({ 
+  Future<Response<EventResponseWrapper>> getEventsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -323,7 +330,10 @@ class EventsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/events/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/events/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -336,7 +346,8 @@ class EventsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -360,11 +371,12 @@ class EventsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(EventResponseWrapper),
-      ) as EventResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(EventResponseWrapper),
+            ) as EventResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -401,7 +413,7 @@ class EventsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Event] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Event>> patchEvents({ 
+  Future<Response<Event>> patchEvents({
     required EventResponseWrapper eventResponseWrapper,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -423,7 +435,8 @@ class EventsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -439,11 +452,11 @@ class EventsApi {
 
     try {
       const _type = FullType(EventResponseWrapper);
-      _bodyData = _serializers.serialize(eventResponseWrapper, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData =
+          _serializers.serialize(eventResponseWrapper, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -466,11 +479,12 @@ class EventsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(Event),
-      ) as Event;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(Event),
+            ) as Event;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -508,7 +522,7 @@ class EventsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Event] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Event>> patchEventsId({ 
+  Future<Response<Event>> patchEventsId({
     required String id,
     required EventResponseWrapper eventResponseWrapper,
     CancelToken? cancelToken,
@@ -518,7 +532,10 @@ class EventsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/events/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/events/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -531,7 +548,8 @@ class EventsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -547,11 +565,11 @@ class EventsApi {
 
     try {
       const _type = FullType(EventResponseWrapper);
-      _bodyData = _serializers.serialize(eventResponseWrapper, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData =
+          _serializers.serialize(eventResponseWrapper, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -574,11 +592,12 @@ class EventsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(Event),
-      ) as Event;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(Event),
+            ) as Event;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -615,7 +634,7 @@ class EventsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Event] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Event>> postEvents({ 
+  Future<Response<Event>> postEvents({
     required EventResponseWrapper eventResponseWrapper,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -637,7 +656,8 @@ class EventsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -653,11 +673,11 @@ class EventsApi {
 
     try {
       const _type = FullType(EventResponseWrapper);
-      _bodyData = _serializers.serialize(eventResponseWrapper, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData =
+          _serializers.serialize(eventResponseWrapper, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -680,11 +700,12 @@ class EventsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(Event),
-      ) as Event;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(Event),
+            ) as Event;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -706,5 +727,4 @@ class EventsApi {
       extra: _response.extra,
     );
   }
-
 }

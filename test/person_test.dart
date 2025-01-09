@@ -62,8 +62,5 @@ void main() {
     test('to test the property `url`', () async {
       // TODO
     });
-
-
   });
-
 }

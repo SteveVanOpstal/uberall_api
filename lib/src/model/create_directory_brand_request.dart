@@ -17,7 +17,9 @@ part 'create_directory_brand_request.g.dart';
 /// * [url] - Website URL for the directory brand
 /// * [appLink] - AppLink for the directory brand
 @BuiltValue()
-abstract class CreateDirectoryBrandRequest implements Built<CreateDirectoryBrandRequest, CreateDirectoryBrandRequestBuilder> {
+abstract class CreateDirectoryBrandRequest
+    implements
+        Built<CreateDirectoryBrandRequest, CreateDirectoryBrandRequestBuilder> {
   /// Name for the directory brand
   @BuiltValueField(wireName: r'name')
   String get name;
@@ -40,18 +42,25 @@ abstract class CreateDirectoryBrandRequest implements Built<CreateDirectoryBrand
 
   CreateDirectoryBrandRequest._();
 
-  factory CreateDirectoryBrandRequest([void updates(CreateDirectoryBrandRequestBuilder b)]) = _$CreateDirectoryBrandRequest;
+  factory CreateDirectoryBrandRequest(
+          [void updates(CreateDirectoryBrandRequestBuilder b)]) =
+      _$CreateDirectoryBrandRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CreateDirectoryBrandRequestBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<CreateDirectoryBrandRequest> get serializer => _$CreateDirectoryBrandRequestSerializer();
+  static Serializer<CreateDirectoryBrandRequest> get serializer =>
+      _$CreateDirectoryBrandRequestSerializer();
 }
 
-class _$CreateDirectoryBrandRequestSerializer implements PrimitiveSerializer<CreateDirectoryBrandRequest> {
+class _$CreateDirectoryBrandRequestSerializer
+    implements PrimitiveSerializer<CreateDirectoryBrandRequest> {
   @override
-  final Iterable<Type> types = const [CreateDirectoryBrandRequest, _$CreateDirectoryBrandRequest];
+  final Iterable<Type> types = const [
+    CreateDirectoryBrandRequest,
+    _$CreateDirectoryBrandRequest
+  ];
 
   @override
   final String wireName = r'CreateDirectoryBrandRequest';
@@ -96,7 +105,9 @@ class _$CreateDirectoryBrandRequestSerializer implements PrimitiveSerializer<Cre
     CreateDirectoryBrandRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -174,4 +185,3 @@ class _$CreateDirectoryBrandRequestSerializer implements PrimitiveSerializer<Cre
     return result.build();
   }
 }
-

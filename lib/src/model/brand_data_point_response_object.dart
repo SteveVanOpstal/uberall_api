@@ -12,26 +12,36 @@ part 'brand_data_point_response_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [dataPoint] 
+/// * [dataPoint]
 @BuiltValue()
-abstract class BrandDataPointResponseObject implements Built<BrandDataPointResponseObject, BrandDataPointResponseObjectBuilder> {
+abstract class BrandDataPointResponseObject
+    implements
+        Built<BrandDataPointResponseObject,
+            BrandDataPointResponseObjectBuilder> {
   @BuiltValueField(wireName: r'dataPoint')
   BrandDataPoint? get dataPoint;
 
   BrandDataPointResponseObject._();
 
-  factory BrandDataPointResponseObject([void updates(BrandDataPointResponseObjectBuilder b)]) = _$BrandDataPointResponseObject;
+  factory BrandDataPointResponseObject(
+          [void updates(BrandDataPointResponseObjectBuilder b)]) =
+      _$BrandDataPointResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(BrandDataPointResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<BrandDataPointResponseObject> get serializer => _$BrandDataPointResponseObjectSerializer();
+  static Serializer<BrandDataPointResponseObject> get serializer =>
+      _$BrandDataPointResponseObjectSerializer();
 }
 
-class _$BrandDataPointResponseObjectSerializer implements PrimitiveSerializer<BrandDataPointResponseObject> {
+class _$BrandDataPointResponseObjectSerializer
+    implements PrimitiveSerializer<BrandDataPointResponseObject> {
   @override
-  final Iterable<Type> types = const [BrandDataPointResponseObject, _$BrandDataPointResponseObject];
+  final Iterable<Type> types = const [
+    BrandDataPointResponseObject,
+    _$BrandDataPointResponseObject
+  ];
 
   @override
   final String wireName = r'BrandDataPointResponseObject';
@@ -56,7 +66,9 @@ class _$BrandDataPointResponseObjectSerializer implements PrimitiveSerializer<Br
     BrandDataPointResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +118,3 @@ class _$BrandDataPointResponseObjectSerializer implements PrimitiveSerializer<Br
     return result.build();
   }
 }
-

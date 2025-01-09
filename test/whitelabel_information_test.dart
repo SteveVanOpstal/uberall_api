@@ -93,8 +93,5 @@ void main() {
     test('to test the property `isSendgridVerified`', () async {
       // TODO
     });
-
-
   });
-
 }

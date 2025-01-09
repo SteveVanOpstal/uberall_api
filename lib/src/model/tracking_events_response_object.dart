@@ -12,26 +12,36 @@ part 'tracking_events_response_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [events] 
+/// * [events]
 @BuiltValue()
-abstract class TrackingEventsResponseObject implements Built<TrackingEventsResponseObject, TrackingEventsResponseObjectBuilder> {
+abstract class TrackingEventsResponseObject
+    implements
+        Built<TrackingEventsResponseObject,
+            TrackingEventsResponseObjectBuilder> {
   @BuiltValueField(wireName: r'events')
   BuiltList<String>? get events;
 
   TrackingEventsResponseObject._();
 
-  factory TrackingEventsResponseObject([void updates(TrackingEventsResponseObjectBuilder b)]) = _$TrackingEventsResponseObject;
+  factory TrackingEventsResponseObject(
+          [void updates(TrackingEventsResponseObjectBuilder b)]) =
+      _$TrackingEventsResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(TrackingEventsResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<TrackingEventsResponseObject> get serializer => _$TrackingEventsResponseObjectSerializer();
+  static Serializer<TrackingEventsResponseObject> get serializer =>
+      _$TrackingEventsResponseObjectSerializer();
 }
 
-class _$TrackingEventsResponseObjectSerializer implements PrimitiveSerializer<TrackingEventsResponseObject> {
+class _$TrackingEventsResponseObjectSerializer
+    implements PrimitiveSerializer<TrackingEventsResponseObject> {
   @override
-  final Iterable<Type> types = const [TrackingEventsResponseObject, _$TrackingEventsResponseObject];
+  final Iterable<Type> types = const [
+    TrackingEventsResponseObject,
+    _$TrackingEventsResponseObject
+  ];
 
   @override
   final String wireName = r'TrackingEventsResponseObject';
@@ -56,7 +66,9 @@ class _$TrackingEventsResponseObjectSerializer implements PrimitiveSerializer<Tr
     TrackingEventsResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +118,3 @@ class _$TrackingEventsResponseObjectSerializer implements PrimitiveSerializer<Tr
     return result.build();
   }
 }
-

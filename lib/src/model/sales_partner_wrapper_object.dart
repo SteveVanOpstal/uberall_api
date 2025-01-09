@@ -12,26 +12,35 @@ part 'sales_partner_wrapper_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [salesPartner] 
+/// * [salesPartner]
 @BuiltValue()
-abstract class SalesPartnerWrapperObject implements Built<SalesPartnerWrapperObject, SalesPartnerWrapperObjectBuilder> {
+abstract class SalesPartnerWrapperObject
+    implements
+        Built<SalesPartnerWrapperObject, SalesPartnerWrapperObjectBuilder> {
   @BuiltValueField(wireName: r'salesPartner')
   SalesPartner? get salesPartner;
 
   SalesPartnerWrapperObject._();
 
-  factory SalesPartnerWrapperObject([void updates(SalesPartnerWrapperObjectBuilder b)]) = _$SalesPartnerWrapperObject;
+  factory SalesPartnerWrapperObject(
+          [void updates(SalesPartnerWrapperObjectBuilder b)]) =
+      _$SalesPartnerWrapperObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SalesPartnerWrapperObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<SalesPartnerWrapperObject> get serializer => _$SalesPartnerWrapperObjectSerializer();
+  static Serializer<SalesPartnerWrapperObject> get serializer =>
+      _$SalesPartnerWrapperObjectSerializer();
 }
 
-class _$SalesPartnerWrapperObjectSerializer implements PrimitiveSerializer<SalesPartnerWrapperObject> {
+class _$SalesPartnerWrapperObjectSerializer
+    implements PrimitiveSerializer<SalesPartnerWrapperObject> {
   @override
-  final Iterable<Type> types = const [SalesPartnerWrapperObject, _$SalesPartnerWrapperObject];
+  final Iterable<Type> types = const [
+    SalesPartnerWrapperObject,
+    _$SalesPartnerWrapperObject
+  ];
 
   @override
   final String wireName = r'SalesPartnerWrapperObject';
@@ -56,7 +65,9 @@ class _$SalesPartnerWrapperObjectSerializer implements PrimitiveSerializer<Sales
     SalesPartnerWrapperObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +117,3 @@ class _$SalesPartnerWrapperObjectSerializer implements PrimitiveSerializer<Sales
     return result.build();
   }
 }
-

@@ -57,7 +57,7 @@ void main() {
       // TODO
     });
 
-    // The country where the locations providing this service are located - this is required when applying a Google structured service but not necessary for freeform services. 
+    // The country where the locations providing this service are located - this is required when applying a Google structured service but not necessary for freeform services.
     // String country
     test('to test the property `country`', () async {
       // TODO
@@ -68,8 +68,5 @@ void main() {
     test('to test the property `googleService`', () async {
       // TODO
     });
-
-
   });
-
 }

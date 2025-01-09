@@ -19,7 +19,9 @@ part 'customer_feedback_by_period.g.dart';
 /// * [matchedLocationsCount] - The number of locations matching the given textFilter query
 /// * [totalRatingCount] - The total number of reviews with rating in the given time span.
 @BuiltValue()
-abstract class CustomerFeedbackByPeriod implements Built<CustomerFeedbackByPeriod, CustomerFeedbackByPeriodBuilder> {
+abstract class CustomerFeedbackByPeriod
+    implements
+        Built<CustomerFeedbackByPeriod, CustomerFeedbackByPeriodBuilder> {
   /// The number of reviews and photos unread by period
   @BuiltValueField(wireName: r'interactionCountByPeriod')
   BuiltList<BuiltMap<String, JsonObject>>? get interactionCountByPeriod;
@@ -38,18 +40,25 @@ abstract class CustomerFeedbackByPeriod implements Built<CustomerFeedbackByPerio
 
   CustomerFeedbackByPeriod._();
 
-  factory CustomerFeedbackByPeriod([void updates(CustomerFeedbackByPeriodBuilder b)]) = _$CustomerFeedbackByPeriod;
+  factory CustomerFeedbackByPeriod(
+          [void updates(CustomerFeedbackByPeriodBuilder b)]) =
+      _$CustomerFeedbackByPeriod;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CustomerFeedbackByPeriodBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<CustomerFeedbackByPeriod> get serializer => _$CustomerFeedbackByPeriodSerializer();
+  static Serializer<CustomerFeedbackByPeriod> get serializer =>
+      _$CustomerFeedbackByPeriodSerializer();
 }
 
-class _$CustomerFeedbackByPeriodSerializer implements PrimitiveSerializer<CustomerFeedbackByPeriod> {
+class _$CustomerFeedbackByPeriodSerializer
+    implements PrimitiveSerializer<CustomerFeedbackByPeriod> {
   @override
-  final Iterable<Type> types = const [CustomerFeedbackByPeriod, _$CustomerFeedbackByPeriod];
+  final Iterable<Type> types = const [
+    CustomerFeedbackByPeriod,
+    _$CustomerFeedbackByPeriod
+  ];
 
   @override
   final String wireName = r'CustomerFeedbackByPeriod';
@@ -63,7 +72,9 @@ class _$CustomerFeedbackByPeriodSerializer implements PrimitiveSerializer<Custom
       yield r'interactionCountByPeriod';
       yield serializers.serialize(
         object.interactionCountByPeriod,
-        specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType(JsonObject)])]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(BuiltMap, [FullType(String), FullType(JsonObject)])
+        ]),
       );
     }
     if (object.averageRatingByPeriod != null) {
@@ -95,7 +106,9 @@ class _$CustomerFeedbackByPeriodSerializer implements PrimitiveSerializer<Custom
     CustomerFeedbackByPeriod object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -113,14 +126,17 @@ class _$CustomerFeedbackByPeriodSerializer implements PrimitiveSerializer<Custom
         case r'interactionCountByPeriod':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType(JsonObject)])]),
+            specifiedType: const FullType(BuiltList, [
+              FullType(BuiltMap, [FullType(String), FullType(JsonObject)])
+            ]),
           ) as BuiltList<BuiltMap<String, JsonObject>>;
           result.interactionCountByPeriod.replace(valueDes);
           break;
         case r'averageRatingByPeriod':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(TimeSeriesSegment)]),
+            specifiedType:
+                const FullType(BuiltList, [FullType(TimeSeriesSegment)]),
           ) as BuiltList<TimeSeriesSegment>;
           result.averageRatingByPeriod.replace(valueDes);
           break;
@@ -166,4 +182,3 @@ class _$CustomerFeedbackByPeriodSerializer implements PrimitiveSerializer<Custom
     return result.build();
   }
 }
-

@@ -12,26 +12,35 @@ part 'content_list_response_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [contentList] 
+/// * [contentList]
 @BuiltValue()
-abstract class ContentListResponseObject implements Built<ContentListResponseObject, ContentListResponseObjectBuilder> {
+abstract class ContentListResponseObject
+    implements
+        Built<ContentListResponseObject, ContentListResponseObjectBuilder> {
   @BuiltValueField(wireName: r'contentList')
   ContentList? get contentList;
 
   ContentListResponseObject._();
 
-  factory ContentListResponseObject([void updates(ContentListResponseObjectBuilder b)]) = _$ContentListResponseObject;
+  factory ContentListResponseObject(
+          [void updates(ContentListResponseObjectBuilder b)]) =
+      _$ContentListResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ContentListResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ContentListResponseObject> get serializer => _$ContentListResponseObjectSerializer();
+  static Serializer<ContentListResponseObject> get serializer =>
+      _$ContentListResponseObjectSerializer();
 }
 
-class _$ContentListResponseObjectSerializer implements PrimitiveSerializer<ContentListResponseObject> {
+class _$ContentListResponseObjectSerializer
+    implements PrimitiveSerializer<ContentListResponseObject> {
   @override
-  final Iterable<Type> types = const [ContentListResponseObject, _$ContentListResponseObject];
+  final Iterable<Type> types = const [
+    ContentListResponseObject,
+    _$ContentListResponseObject
+  ];
 
   @override
   final String wireName = r'ContentListResponseObject';
@@ -56,7 +65,9 @@ class _$ContentListResponseObjectSerializer implements PrimitiveSerializer<Conte
     ContentListResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +117,3 @@ class _$ContentListResponseObjectSerializer implements PrimitiveSerializer<Conte
     return result.build();
   }
 }
-

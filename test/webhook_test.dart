@@ -28,7 +28,7 @@ void main() {
       // TODO
     });
 
-    // URL where selected webhook event should be sent to 
+    // URL where selected webhook event should be sent to
     // String pushUrl
     test('to test the property `pushUrl`', () async {
       // TODO
@@ -39,8 +39,5 @@ void main() {
     test('to test the property `type`', () async {
       // TODO
     });
-
-
   });
-
 }

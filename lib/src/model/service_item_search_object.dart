@@ -16,9 +16,10 @@ part 'service_item_search_object.g.dart';
 /// * [query] - The search query
 /// * [offset] - The offset for pagination
 /// * [max] - The maximum number of results to return
-/// * [serviceItems] 
+/// * [serviceItems]
 @BuiltValue()
-abstract class ServiceItemSearchObject implements Built<ServiceItemSearchObject, ServiceItemSearchObjectBuilder> {
+abstract class ServiceItemSearchObject
+    implements Built<ServiceItemSearchObject, ServiceItemSearchObjectBuilder> {
   /// The search query
   @BuiltValueField(wireName: r'query')
   String? get query;
@@ -36,18 +37,25 @@ abstract class ServiceItemSearchObject implements Built<ServiceItemSearchObject,
 
   ServiceItemSearchObject._();
 
-  factory ServiceItemSearchObject([void updates(ServiceItemSearchObjectBuilder b)]) = _$ServiceItemSearchObject;
+  factory ServiceItemSearchObject(
+          [void updates(ServiceItemSearchObjectBuilder b)]) =
+      _$ServiceItemSearchObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ServiceItemSearchObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ServiceItemSearchObject> get serializer => _$ServiceItemSearchObjectSerializer();
+  static Serializer<ServiceItemSearchObject> get serializer =>
+      _$ServiceItemSearchObjectSerializer();
 }
 
-class _$ServiceItemSearchObjectSerializer implements PrimitiveSerializer<ServiceItemSearchObject> {
+class _$ServiceItemSearchObjectSerializer
+    implements PrimitiveSerializer<ServiceItemSearchObject> {
   @override
-  final Iterable<Type> types = const [ServiceItemSearchObject, _$ServiceItemSearchObject];
+  final Iterable<Type> types = const [
+    ServiceItemSearchObject,
+    _$ServiceItemSearchObject
+  ];
 
   @override
   final String wireName = r'ServiceItemSearchObject';
@@ -93,7 +101,9 @@ class _$ServiceItemSearchObjectSerializer implements PrimitiveSerializer<Service
     ServiceItemSearchObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -164,4 +174,3 @@ class _$ServiceItemSearchObjectSerializer implements PrimitiveSerializer<Service
     return result.build();
   }
 }
-

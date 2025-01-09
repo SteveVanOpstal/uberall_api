@@ -11,7 +11,6 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for CollectionManagementApi
 void main() {
   // final instance = CollectionManagementApi();
@@ -61,6 +60,5 @@ void main() {
     test('test postCollections', () async {
       // TODO
     });
-
   });
 }

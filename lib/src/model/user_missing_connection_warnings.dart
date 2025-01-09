@@ -20,7 +20,10 @@ part 'user_missing_connection_warnings.g.dart';
 /// * [connectedLocations] - A Map with key as directory types and values the number of connected locations
 /// * [notConnectedLocations] - A Map with key as directory types and values the number of not connected locations
 @BuiltValue()
-abstract class UserMissingConnectionWarnings implements Built<UserMissingConnectionWarnings, UserMissingConnectionWarningsBuilder> {
+abstract class UserMissingConnectionWarnings
+    implements
+        Built<UserMissingConnectionWarnings,
+            UserMissingConnectionWarningsBuilder> {
   /// A Map with keys as missingConnection and missingPermission.  missingConnection is a Map with list of all connections missing connection.  missingPermission is a Map with the list of accounts connected, but missing a required permission for insights.
   @BuiltValueField(wireName: r'warnings')
   BuiltMap<String, JsonObject>? get warnings;
@@ -47,18 +50,25 @@ abstract class UserMissingConnectionWarnings implements Built<UserMissingConnect
 
   UserMissingConnectionWarnings._();
 
-  factory UserMissingConnectionWarnings([void updates(UserMissingConnectionWarningsBuilder b)]) = _$UserMissingConnectionWarnings;
+  factory UserMissingConnectionWarnings(
+          [void updates(UserMissingConnectionWarningsBuilder b)]) =
+      _$UserMissingConnectionWarnings;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UserMissingConnectionWarningsBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<UserMissingConnectionWarnings> get serializer => _$UserMissingConnectionWarningsSerializer();
+  static Serializer<UserMissingConnectionWarnings> get serializer =>
+      _$UserMissingConnectionWarningsSerializer();
 }
 
-class _$UserMissingConnectionWarningsSerializer implements PrimitiveSerializer<UserMissingConnectionWarnings> {
+class _$UserMissingConnectionWarningsSerializer
+    implements PrimitiveSerializer<UserMissingConnectionWarnings> {
   @override
-  final Iterable<Type> types = const [UserMissingConnectionWarnings, _$UserMissingConnectionWarnings];
+  final Iterable<Type> types = const [
+    UserMissingConnectionWarnings,
+    _$UserMissingConnectionWarnings
+  ];
 
   @override
   final String wireName = r'UserMissingConnectionWarnings';
@@ -72,7 +82,8 @@ class _$UserMissingConnectionWarningsSerializer implements PrimitiveSerializer<U
       yield r'warnings';
       yield serializers.serialize(
         object.warnings,
-        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+        specifiedType:
+            const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
       );
     }
     if (object.totalItemsCount != null) {
@@ -100,14 +111,18 @@ class _$UserMissingConnectionWarningsSerializer implements PrimitiveSerializer<U
       yield r'connectedLocations';
       yield serializers.serialize(
         object.connectedLocations,
-        specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType(JsonObject)])]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(BuiltMap, [FullType(String), FullType(JsonObject)])
+        ]),
       );
     }
     if (object.notConnectedLocations != null) {
       yield r'notConnectedLocations';
       yield serializers.serialize(
         object.notConnectedLocations,
-        specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType(JsonObject)])]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(BuiltMap, [FullType(String), FullType(JsonObject)])
+        ]),
       );
     }
   }
@@ -118,7 +133,9 @@ class _$UserMissingConnectionWarningsSerializer implements PrimitiveSerializer<U
     UserMissingConnectionWarnings object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -136,7 +153,8 @@ class _$UserMissingConnectionWarningsSerializer implements PrimitiveSerializer<U
         case r'warnings':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+            specifiedType: const FullType(
+                BuiltMap, [FullType(String), FullType(JsonObject)]),
           ) as BuiltMap<String, JsonObject>;
           result.warnings.replace(valueDes);
           break;
@@ -164,14 +182,18 @@ class _$UserMissingConnectionWarningsSerializer implements PrimitiveSerializer<U
         case r'connectedLocations':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType(JsonObject)])]),
+            specifiedType: const FullType(BuiltList, [
+              FullType(BuiltMap, [FullType(String), FullType(JsonObject)])
+            ]),
           ) as BuiltList<BuiltMap<String, JsonObject>>;
           result.connectedLocations.replace(valueDes);
           break;
         case r'notConnectedLocations':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType(JsonObject)])]),
+            specifiedType: const FullType(BuiltList, [
+              FullType(BuiltMap, [FullType(String), FullType(JsonObject)])
+            ]),
           ) as BuiltList<BuiltMap<String, JsonObject>>;
           result.notConnectedLocations.replace(valueDes);
           break;
@@ -203,4 +225,3 @@ class _$UserMissingConnectionWarningsSerializer implements PrimitiveSerializer<U
     return result.build();
   }
 }
-

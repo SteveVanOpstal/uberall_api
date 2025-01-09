@@ -13,16 +13,19 @@ part 'post_auto_response_rules_request.g.dart';
 /// PostAutoResponseRulesRequest
 ///
 /// Properties:
-/// * [businesses] 
-/// * [locations] 
-/// * [excludedLocations] 
-/// * [name] 
-/// * [status] 
-/// * [triggers] 
-/// * [responses] 
-/// * [ruleResponses] 
+/// * [businesses]
+/// * [locations]
+/// * [excludedLocations]
+/// * [name]
+/// * [status]
+/// * [triggers]
+/// * [responses]
+/// * [ruleResponses]
 @BuiltValue()
-abstract class PostAutoResponseRulesRequest implements Built<PostAutoResponseRulesRequest, PostAutoResponseRulesRequestBuilder> {
+abstract class PostAutoResponseRulesRequest
+    implements
+        Built<PostAutoResponseRulesRequest,
+            PostAutoResponseRulesRequestBuilder> {
   @BuiltValueField(wireName: r'businesses')
   BuiltList<int>? get businesses;
 
@@ -50,18 +53,25 @@ abstract class PostAutoResponseRulesRequest implements Built<PostAutoResponseRul
 
   PostAutoResponseRulesRequest._();
 
-  factory PostAutoResponseRulesRequest([void updates(PostAutoResponseRulesRequestBuilder b)]) = _$PostAutoResponseRulesRequest;
+  factory PostAutoResponseRulesRequest(
+          [void updates(PostAutoResponseRulesRequestBuilder b)]) =
+      _$PostAutoResponseRulesRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PostAutoResponseRulesRequestBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<PostAutoResponseRulesRequest> get serializer => _$PostAutoResponseRulesRequestSerializer();
+  static Serializer<PostAutoResponseRulesRequest> get serializer =>
+      _$PostAutoResponseRulesRequestSerializer();
 }
 
-class _$PostAutoResponseRulesRequestSerializer implements PrimitiveSerializer<PostAutoResponseRulesRequest> {
+class _$PostAutoResponseRulesRequestSerializer
+    implements PrimitiveSerializer<PostAutoResponseRulesRequest> {
   @override
-  final Iterable<Type> types = const [PostAutoResponseRulesRequest, _$PostAutoResponseRulesRequest];
+  final Iterable<Type> types = const [
+    PostAutoResponseRulesRequest,
+    _$PostAutoResponseRulesRequest
+  ];
 
   @override
   final String wireName = r'PostAutoResponseRulesRequest';
@@ -135,7 +145,9 @@ class _$PostAutoResponseRulesRequestSerializer implements PrimitiveSerializer<Po
     PostAutoResponseRulesRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -181,7 +193,8 @@ class _$PostAutoResponseRulesRequestSerializer implements PrimitiveSerializer<Po
         case r'status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(PostAutoResponseRulesRequestStatusEnum),
+            specifiedType:
+                const FullType(PostAutoResponseRulesRequestStatusEnum),
           ) as PostAutoResponseRulesRequestStatusEnum;
           result.status = valueDes;
           break;
@@ -236,19 +249,23 @@ class _$PostAutoResponseRulesRequestSerializer implements PrimitiveSerializer<Po
 }
 
 class PostAutoResponseRulesRequestStatusEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'ACTIVE')
-  static const PostAutoResponseRulesRequestStatusEnum ACTIVE = _$postAutoResponseRulesRequestStatusEnum_ACTIVE;
+  static const PostAutoResponseRulesRequestStatusEnum ACTIVE =
+      _$postAutoResponseRulesRequestStatusEnum_ACTIVE;
   @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const PostAutoResponseRulesRequestStatusEnum INACTIVE = _$postAutoResponseRulesRequestStatusEnum_INACTIVE;
+  static const PostAutoResponseRulesRequestStatusEnum INACTIVE =
+      _$postAutoResponseRulesRequestStatusEnum_INACTIVE;
   @BuiltValueEnumConst(wireName: r'DELETED')
-  static const PostAutoResponseRulesRequestStatusEnum DELETED = _$postAutoResponseRulesRequestStatusEnum_DELETED;
+  static const PostAutoResponseRulesRequestStatusEnum DELETED =
+      _$postAutoResponseRulesRequestStatusEnum_DELETED;
 
-  static Serializer<PostAutoResponseRulesRequestStatusEnum> get serializer => _$postAutoResponseRulesRequestStatusEnumSerializer;
+  static Serializer<PostAutoResponseRulesRequestStatusEnum> get serializer =>
+      _$postAutoResponseRulesRequestStatusEnumSerializer;
 
-  const PostAutoResponseRulesRequestStatusEnum._(String name): super(name);
+  const PostAutoResponseRulesRequestStatusEnum._(String name) : super(name);
 
-  static BuiltSet<PostAutoResponseRulesRequestStatusEnum> get values => _$postAutoResponseRulesRequestStatusEnumValues;
-  static PostAutoResponseRulesRequestStatusEnum valueOf(String name) => _$postAutoResponseRulesRequestStatusEnumValueOf(name);
+  static BuiltSet<PostAutoResponseRulesRequestStatusEnum> get values =>
+      _$postAutoResponseRulesRequestStatusEnumValues;
+  static PostAutoResponseRulesRequestStatusEnum valueOf(String name) =>
+      _$postAutoResponseRulesRequestStatusEnumValueOf(name);
 }
-

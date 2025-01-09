@@ -16,7 +16,9 @@ part 'directories_details_country.g.dart';
 /// * [countryCode] - Code for country that directory supports in ISO 3166 alpha-2 format
 /// * [directoryDetails] - Object that holds details for directory
 @BuiltValue()
-abstract class DirectoriesDetailsCountry implements Built<DirectoriesDetailsCountry, DirectoriesDetailsCountryBuilder> {
+abstract class DirectoriesDetailsCountry
+    implements
+        Built<DirectoriesDetailsCountry, DirectoriesDetailsCountryBuilder> {
   /// Code for country that directory supports in ISO 3166 alpha-2 format
   @BuiltValueField(wireName: r'countryCode')
   String? get countryCode;
@@ -27,18 +29,25 @@ abstract class DirectoriesDetailsCountry implements Built<DirectoriesDetailsCoun
 
   DirectoriesDetailsCountry._();
 
-  factory DirectoriesDetailsCountry([void updates(DirectoriesDetailsCountryBuilder b)]) = _$DirectoriesDetailsCountry;
+  factory DirectoriesDetailsCountry(
+          [void updates(DirectoriesDetailsCountryBuilder b)]) =
+      _$DirectoriesDetailsCountry;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DirectoriesDetailsCountryBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DirectoriesDetailsCountry> get serializer => _$DirectoriesDetailsCountrySerializer();
+  static Serializer<DirectoriesDetailsCountry> get serializer =>
+      _$DirectoriesDetailsCountrySerializer();
 }
 
-class _$DirectoriesDetailsCountrySerializer implements PrimitiveSerializer<DirectoriesDetailsCountry> {
+class _$DirectoriesDetailsCountrySerializer
+    implements PrimitiveSerializer<DirectoriesDetailsCountry> {
   @override
-  final Iterable<Type> types = const [DirectoriesDetailsCountry, _$DirectoriesDetailsCountry];
+  final Iterable<Type> types = const [
+    DirectoriesDetailsCountry,
+    _$DirectoriesDetailsCountry
+  ];
 
   @override
   final String wireName = r'DirectoriesDetailsCountry';
@@ -70,7 +79,9 @@ class _$DirectoriesDetailsCountrySerializer implements PrimitiveSerializer<Direc
     DirectoriesDetailsCountry object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -95,7 +106,8 @@ class _$DirectoriesDetailsCountrySerializer implements PrimitiveSerializer<Direc
         case r'directoryDetails':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(DirectoryDetails)]),
+            specifiedType:
+                const FullType(BuiltList, [FullType(DirectoryDetails)]),
           ) as BuiltList<DirectoryDetails>;
           result.directoryDetails.replace(valueDes);
           break;
@@ -127,4 +139,3 @@ class _$DirectoriesDetailsCountrySerializer implements PrimitiveSerializer<Direc
     return result.build();
   }
 }
-

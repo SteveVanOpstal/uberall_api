@@ -11,10 +11,9 @@ import 'package:dio/dio.dart';
 import 'package:openapi/src/api_util.dart';
 import 'package:openapi/src/model/location_photo.dart';
 import 'package:openapi/src/model/location_photo_response_wrapper.dart';
-import 'package:openapi/src/model/response.dart';
+import 'package:openapi/src/model/response.dart' as openApi;
 
 class LocationsPhotosApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -35,7 +34,7 @@ class LocationsPhotosApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Response>> deletePhotosId({ 
+  Future<Response<openApi.Response>> deletePhotosId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -44,7 +43,10 @@ class LocationsPhotosApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/photos/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/photos/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -57,7 +59,8 @@ class LocationsPhotosApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -77,15 +80,16 @@ class LocationsPhotosApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Response? _responseData;
+    openApi.Response? _responseData;
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(Response),
-      ) as Response;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(openApi.Response),
+            ) as openApi.Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -96,7 +100,7 @@ class LocationsPhotosApi {
       );
     }
 
-    return Response<Response>(
+    return Response<openApi.Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -122,7 +126,7 @@ class LocationsPhotosApi {
   ///
   /// Returns a [Future] containing a [Response] with a [LocationPhotoResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LocationPhotoResponseWrapper>> getPhotosId({ 
+  Future<Response<LocationPhotoResponseWrapper>> getPhotosId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -131,7 +135,10 @@ class LocationsPhotosApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/photos/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/photos/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -144,7 +151,8 @@ class LocationsPhotosApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -168,11 +176,12 @@ class LocationsPhotosApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LocationPhotoResponseWrapper),
-      ) as LocationPhotoResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LocationPhotoResponseWrapper),
+            ) as LocationPhotoResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -210,7 +219,7 @@ class LocationsPhotosApi {
   ///
   /// Returns a [Future] containing a [Response] with a [LocationPhotoResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LocationPhotoResponseWrapper>> patchPhotosId({ 
+  Future<Response<LocationPhotoResponseWrapper>> patchPhotosId({
     required String id,
     required LocationPhoto locationPhoto,
     CancelToken? cancelToken,
@@ -220,7 +229,10 @@ class LocationsPhotosApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/photos/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/photos/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -233,7 +245,8 @@ class LocationsPhotosApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -251,10 +264,9 @@ class LocationsPhotosApi {
     try {
       const _type = FullType(LocationPhoto);
       _bodyData = _serializers.serialize(locationPhoto, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -277,11 +289,12 @@ class LocationsPhotosApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LocationPhotoResponseWrapper),
-      ) as LocationPhotoResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LocationPhotoResponseWrapper),
+            ) as LocationPhotoResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -318,7 +331,7 @@ class LocationsPhotosApi {
   ///
   /// Returns a [Future] containing a [Response] with a [LocationPhotoResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LocationPhotoResponseWrapper>> postPhotos({ 
+  Future<Response<LocationPhotoResponseWrapper>> postPhotos({
     required LocationPhoto locationPhoto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -340,7 +353,8 @@ class LocationsPhotosApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -358,10 +372,9 @@ class LocationsPhotosApi {
     try {
       const _type = FullType(LocationPhoto);
       _bodyData = _serializers.serialize(locationPhoto, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -384,11 +397,12 @@ class LocationsPhotosApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LocationPhotoResponseWrapper),
-      ) as LocationPhotoResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LocationPhotoResponseWrapper),
+            ) as LocationPhotoResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -410,5 +424,4 @@ class LocationsPhotosApi {
       extra: _response.extra,
     );
   }
-
 }

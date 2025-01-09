@@ -12,26 +12,36 @@ part 'attribute_recommendations_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [recommendedAttributeExternalIds] 
+/// * [recommendedAttributeExternalIds]
 @BuiltValue()
-abstract class AttributeRecommendationsObject implements Built<AttributeRecommendationsObject, AttributeRecommendationsObjectBuilder> {
+abstract class AttributeRecommendationsObject
+    implements
+        Built<AttributeRecommendationsObject,
+            AttributeRecommendationsObjectBuilder> {
   @BuiltValueField(wireName: r'recommendedAttributeExternalIds')
   BuiltList<String>? get recommendedAttributeExternalIds;
 
   AttributeRecommendationsObject._();
 
-  factory AttributeRecommendationsObject([void updates(AttributeRecommendationsObjectBuilder b)]) = _$AttributeRecommendationsObject;
+  factory AttributeRecommendationsObject(
+          [void updates(AttributeRecommendationsObjectBuilder b)]) =
+      _$AttributeRecommendationsObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AttributeRecommendationsObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AttributeRecommendationsObject> get serializer => _$AttributeRecommendationsObjectSerializer();
+  static Serializer<AttributeRecommendationsObject> get serializer =>
+      _$AttributeRecommendationsObjectSerializer();
 }
 
-class _$AttributeRecommendationsObjectSerializer implements PrimitiveSerializer<AttributeRecommendationsObject> {
+class _$AttributeRecommendationsObjectSerializer
+    implements PrimitiveSerializer<AttributeRecommendationsObject> {
   @override
-  final Iterable<Type> types = const [AttributeRecommendationsObject, _$AttributeRecommendationsObject];
+  final Iterable<Type> types = const [
+    AttributeRecommendationsObject,
+    _$AttributeRecommendationsObject
+  ];
 
   @override
   final String wireName = r'AttributeRecommendationsObject';
@@ -56,7 +66,9 @@ class _$AttributeRecommendationsObjectSerializer implements PrimitiveSerializer<
     AttributeRecommendationsObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +118,3 @@ class _$AttributeRecommendationsObjectSerializer implements PrimitiveSerializer<
     return result.build();
   }
 }
-

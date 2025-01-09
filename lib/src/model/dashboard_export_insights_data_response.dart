@@ -15,7 +15,10 @@ part 'dashboard_export_insights_data_response.g.dart';
 /// * [fileUrl] - The download link. Only available when status is FINISHED.
 /// * [status] - One out of: EMAIL, FINISHED, FAILED EMAIL means the export will be send to the users email. FINISHED means the export is available at the given fileUrl. FAILED means that something went wrong.
 @BuiltValue()
-abstract class DashboardExportInsightsDataResponse implements Built<DashboardExportInsightsDataResponse, DashboardExportInsightsDataResponseBuilder> {
+abstract class DashboardExportInsightsDataResponse
+    implements
+        Built<DashboardExportInsightsDataResponse,
+            DashboardExportInsightsDataResponseBuilder> {
   /// The download link. Only available when status is FINISHED.
   @BuiltValueField(wireName: r'fileUrl')
   String? get fileUrl;
@@ -27,18 +30,25 @@ abstract class DashboardExportInsightsDataResponse implements Built<DashboardExp
 
   DashboardExportInsightsDataResponse._();
 
-  factory DashboardExportInsightsDataResponse([void updates(DashboardExportInsightsDataResponseBuilder b)]) = _$DashboardExportInsightsDataResponse;
+  factory DashboardExportInsightsDataResponse(
+          [void updates(DashboardExportInsightsDataResponseBuilder b)]) =
+      _$DashboardExportInsightsDataResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DashboardExportInsightsDataResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DashboardExportInsightsDataResponse> get serializer => _$DashboardExportInsightsDataResponseSerializer();
+  static Serializer<DashboardExportInsightsDataResponse> get serializer =>
+      _$DashboardExportInsightsDataResponseSerializer();
 }
 
-class _$DashboardExportInsightsDataResponseSerializer implements PrimitiveSerializer<DashboardExportInsightsDataResponse> {
+class _$DashboardExportInsightsDataResponseSerializer
+    implements PrimitiveSerializer<DashboardExportInsightsDataResponse> {
   @override
-  final Iterable<Type> types = const [DashboardExportInsightsDataResponse, _$DashboardExportInsightsDataResponse];
+  final Iterable<Type> types = const [
+    DashboardExportInsightsDataResponse,
+    _$DashboardExportInsightsDataResponse
+  ];
 
   @override
   final String wireName = r'DashboardExportInsightsDataResponse';
@@ -59,7 +69,8 @@ class _$DashboardExportInsightsDataResponseSerializer implements PrimitiveSerial
       yield r'status';
       yield serializers.serialize(
         object.status,
-        specifiedType: const FullType(DashboardExportInsightsDataResponseStatusEnum),
+        specifiedType:
+            const FullType(DashboardExportInsightsDataResponseStatusEnum),
       );
     }
   }
@@ -70,7 +81,9 @@ class _$DashboardExportInsightsDataResponseSerializer implements PrimitiveSerial
     DashboardExportInsightsDataResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -95,7 +108,8 @@ class _$DashboardExportInsightsDataResponseSerializer implements PrimitiveSerial
         case r'status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DashboardExportInsightsDataResponseStatusEnum),
+            specifiedType:
+                const FullType(DashboardExportInsightsDataResponseStatusEnum),
           ) as DashboardExportInsightsDataResponseStatusEnum;
           result.status = valueDes;
           break;
@@ -129,22 +143,30 @@ class _$DashboardExportInsightsDataResponseSerializer implements PrimitiveSerial
 }
 
 class DashboardExportInsightsDataResponseStatusEnum extends EnumClass {
-
   /// One out of: EMAIL, FINISHED, FAILED EMAIL means the export will be send to the users email. FINISHED means the export is available at the given fileUrl. FAILED means that something went wrong.
   @BuiltValueEnumConst(wireName: r'EMAIL')
-  static const DashboardExportInsightsDataResponseStatusEnum EMAIL = _$dashboardExportInsightsDataResponseStatusEnum_EMAIL;
+  static const DashboardExportInsightsDataResponseStatusEnum EMAIL =
+      _$dashboardExportInsightsDataResponseStatusEnum_EMAIL;
+
   /// One out of: EMAIL, FINISHED, FAILED EMAIL means the export will be send to the users email. FINISHED means the export is available at the given fileUrl. FAILED means that something went wrong.
   @BuiltValueEnumConst(wireName: r'FINISHED')
-  static const DashboardExportInsightsDataResponseStatusEnum FINISHED = _$dashboardExportInsightsDataResponseStatusEnum_FINISHED;
+  static const DashboardExportInsightsDataResponseStatusEnum FINISHED =
+      _$dashboardExportInsightsDataResponseStatusEnum_FINISHED;
+
   /// One out of: EMAIL, FINISHED, FAILED EMAIL means the export will be send to the users email. FINISHED means the export is available at the given fileUrl. FAILED means that something went wrong.
   @BuiltValueEnumConst(wireName: r'FAILED')
-  static const DashboardExportInsightsDataResponseStatusEnum FAILED = _$dashboardExportInsightsDataResponseStatusEnum_FAILED;
+  static const DashboardExportInsightsDataResponseStatusEnum FAILED =
+      _$dashboardExportInsightsDataResponseStatusEnum_FAILED;
 
-  static Serializer<DashboardExportInsightsDataResponseStatusEnum> get serializer => _$dashboardExportInsightsDataResponseStatusEnumSerializer;
+  static Serializer<DashboardExportInsightsDataResponseStatusEnum>
+      get serializer =>
+          _$dashboardExportInsightsDataResponseStatusEnumSerializer;
 
-  const DashboardExportInsightsDataResponseStatusEnum._(String name): super(name);
+  const DashboardExportInsightsDataResponseStatusEnum._(String name)
+      : super(name);
 
-  static BuiltSet<DashboardExportInsightsDataResponseStatusEnum> get values => _$dashboardExportInsightsDataResponseStatusEnumValues;
-  static DashboardExportInsightsDataResponseStatusEnum valueOf(String name) => _$dashboardExportInsightsDataResponseStatusEnumValueOf(name);
+  static BuiltSet<DashboardExportInsightsDataResponseStatusEnum> get values =>
+      _$dashboardExportInsightsDataResponseStatusEnumValues;
+  static DashboardExportInsightsDataResponseStatusEnum valueOf(String name) =>
+      _$dashboardExportInsightsDataResponseStatusEnumValueOf(name);
 }
-

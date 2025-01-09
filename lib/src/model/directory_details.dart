@@ -14,7 +14,8 @@ part 'directory_details.g.dart';
 /// * [directoryName] - Name of the directory
 /// * [isSearchable] - Indicates whether directory has a search API that can be used
 @BuiltValue()
-abstract class DirectoryDetails implements Built<DirectoryDetails, DirectoryDetailsBuilder> {
+abstract class DirectoryDetails
+    implements Built<DirectoryDetails, DirectoryDetailsBuilder> {
   /// Name of the directory
   @BuiltValueField(wireName: r'directoryName')
   String? get directoryName;
@@ -25,16 +26,19 @@ abstract class DirectoryDetails implements Built<DirectoryDetails, DirectoryDeta
 
   DirectoryDetails._();
 
-  factory DirectoryDetails([void updates(DirectoryDetailsBuilder b)]) = _$DirectoryDetails;
+  factory DirectoryDetails([void updates(DirectoryDetailsBuilder b)]) =
+      _$DirectoryDetails;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DirectoryDetailsBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DirectoryDetails> get serializer => _$DirectoryDetailsSerializer();
+  static Serializer<DirectoryDetails> get serializer =>
+      _$DirectoryDetailsSerializer();
 }
 
-class _$DirectoryDetailsSerializer implements PrimitiveSerializer<DirectoryDetails> {
+class _$DirectoryDetailsSerializer
+    implements PrimitiveSerializer<DirectoryDetails> {
   @override
   final Iterable<Type> types = const [DirectoryDetails, _$DirectoryDetails];
 
@@ -68,7 +72,9 @@ class _$DirectoryDetailsSerializer implements PrimitiveSerializer<DirectoryDetai
     DirectoryDetails object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -125,4 +131,3 @@ class _$DirectoryDetailsSerializer implements PrimitiveSerializer<DirectoryDetai
     return result.build();
   }
 }
-

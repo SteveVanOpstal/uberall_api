@@ -16,7 +16,9 @@ part 'data_point_time_series_value.g.dart';
 /// * [date] - The Date
 /// * [datapoints] - A map with the count of datapoints, for each type, for the specific date
 @BuiltValue()
-abstract class DataPointTimeSeriesValue implements Built<DataPointTimeSeriesValue, DataPointTimeSeriesValueBuilder> {
+abstract class DataPointTimeSeriesValue
+    implements
+        Built<DataPointTimeSeriesValue, DataPointTimeSeriesValueBuilder> {
   /// The Date
   @BuiltValueField(wireName: r'date')
   String? get date;
@@ -27,18 +29,25 @@ abstract class DataPointTimeSeriesValue implements Built<DataPointTimeSeriesValu
 
   DataPointTimeSeriesValue._();
 
-  factory DataPointTimeSeriesValue([void updates(DataPointTimeSeriesValueBuilder b)]) = _$DataPointTimeSeriesValue;
+  factory DataPointTimeSeriesValue(
+          [void updates(DataPointTimeSeriesValueBuilder b)]) =
+      _$DataPointTimeSeriesValue;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DataPointTimeSeriesValueBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DataPointTimeSeriesValue> get serializer => _$DataPointTimeSeriesValueSerializer();
+  static Serializer<DataPointTimeSeriesValue> get serializer =>
+      _$DataPointTimeSeriesValueSerializer();
 }
 
-class _$DataPointTimeSeriesValueSerializer implements PrimitiveSerializer<DataPointTimeSeriesValue> {
+class _$DataPointTimeSeriesValueSerializer
+    implements PrimitiveSerializer<DataPointTimeSeriesValue> {
   @override
-  final Iterable<Type> types = const [DataPointTimeSeriesValue, _$DataPointTimeSeriesValue];
+  final Iterable<Type> types = const [
+    DataPointTimeSeriesValue,
+    _$DataPointTimeSeriesValue
+  ];
 
   @override
   final String wireName = r'DataPointTimeSeriesValue';
@@ -59,7 +68,8 @@ class _$DataPointTimeSeriesValueSerializer implements PrimitiveSerializer<DataPo
       yield r'datapoints';
       yield serializers.serialize(
         object.datapoints,
-        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+        specifiedType:
+            const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
       );
     }
   }
@@ -70,7 +80,9 @@ class _$DataPointTimeSeriesValueSerializer implements PrimitiveSerializer<DataPo
     DataPointTimeSeriesValue object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -95,7 +107,8 @@ class _$DataPointTimeSeriesValueSerializer implements PrimitiveSerializer<DataPo
         case r'datapoints':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+            specifiedType: const FullType(
+                BuiltMap, [FullType(String), FullType(JsonObject)]),
           ) as BuiltMap<String, JsonObject>;
           result.datapoints.replace(valueDes);
           break;
@@ -127,4 +140,3 @@ class _$DataPointTimeSeriesValueSerializer implements PrimitiveSerializer<DataPo
     return result.build();
   }
 }
-

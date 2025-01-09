@@ -12,7 +12,7 @@ part 'user_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [user] 
+/// * [user]
 @BuiltValue()
 abstract class UserObject implements Built<UserObject, UserObjectBuilder> {
   @BuiltValueField(wireName: r'user')
@@ -56,7 +56,9 @@ class _$UserObjectSerializer implements PrimitiveSerializer<UserObject> {
     UserObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +108,3 @@ class _$UserObjectSerializer implements PrimitiveSerializer<UserObject> {
     return result.build();
   }
 }
-

@@ -12,26 +12,35 @@ part 'get_templates_authors_request.g.dart';
 /// GetTemplatesAuthorsRequest
 ///
 /// Properties:
-/// * [businesses] 
+/// * [businesses]
 @BuiltValue()
-abstract class GetTemplatesAuthorsRequest implements Built<GetTemplatesAuthorsRequest, GetTemplatesAuthorsRequestBuilder> {
+abstract class GetTemplatesAuthorsRequest
+    implements
+        Built<GetTemplatesAuthorsRequest, GetTemplatesAuthorsRequestBuilder> {
   @BuiltValueField(wireName: r'businesses')
   BuiltList<int>? get businesses;
 
   GetTemplatesAuthorsRequest._();
 
-  factory GetTemplatesAuthorsRequest([void updates(GetTemplatesAuthorsRequestBuilder b)]) = _$GetTemplatesAuthorsRequest;
+  factory GetTemplatesAuthorsRequest(
+          [void updates(GetTemplatesAuthorsRequestBuilder b)]) =
+      _$GetTemplatesAuthorsRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(GetTemplatesAuthorsRequestBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<GetTemplatesAuthorsRequest> get serializer => _$GetTemplatesAuthorsRequestSerializer();
+  static Serializer<GetTemplatesAuthorsRequest> get serializer =>
+      _$GetTemplatesAuthorsRequestSerializer();
 }
 
-class _$GetTemplatesAuthorsRequestSerializer implements PrimitiveSerializer<GetTemplatesAuthorsRequest> {
+class _$GetTemplatesAuthorsRequestSerializer
+    implements PrimitiveSerializer<GetTemplatesAuthorsRequest> {
   @override
-  final Iterable<Type> types = const [GetTemplatesAuthorsRequest, _$GetTemplatesAuthorsRequest];
+  final Iterable<Type> types = const [
+    GetTemplatesAuthorsRequest,
+    _$GetTemplatesAuthorsRequest
+  ];
 
   @override
   final String wireName = r'GetTemplatesAuthorsRequest';
@@ -56,7 +65,9 @@ class _$GetTemplatesAuthorsRequestSerializer implements PrimitiveSerializer<GetT
     GetTemplatesAuthorsRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +117,3 @@ class _$GetTemplatesAuthorsRequestSerializer implements PrimitiveSerializer<GetT
     return result.build();
   }
 }
-

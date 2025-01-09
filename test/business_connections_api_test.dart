@@ -11,7 +11,6 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for BusinessConnectionsApi
 void main() {
   // final instance = BusinessConnectionsApi();
@@ -22,7 +21,9 @@ void main() {
     // Get number of all business connections created under given salesPartner
     //
     //Future<Response> getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdCount(String directoryType, String salesPartnerId, { String status, String name }) async
-    test('test getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdCount', () async {
+    test(
+        'test getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdCount',
+        () async {
       // TODO
     });
 
@@ -31,7 +32,9 @@ void main() {
     // Get detailed list of business connections created under given salesPartner
     //
     //Future<Response> getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdList(String directoryType, String salesPartnerId, String status, { String name, int max, int offset }) async
-    test('test getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdList', () async {
+    test(
+        'test getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdList',
+        () async {
       // TODO
     });
 
@@ -40,7 +43,9 @@ void main() {
     // Get list of all the external entities on directories that correspond to all connected accounts on given salesPartner (e.g. brand pages list for FB of all the accounts that have been authenticated under sp)
     //
     //Future<ExternalEntitiesWrapper> getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdPages(String directoryType, String salesPartnerId, { int max, int offset }) async
-    test('test getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdPages', () async {
+    test(
+        'test getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdPages',
+        () async {
       // TODO
     });
 
@@ -49,7 +54,8 @@ void main() {
     // Creates a business connection between the business and the external entity on directory (e.g. brand page for FB)
     //
     //Future<Response> postBusinessConnectionsDirectoryTypeConnectBusinessId(String directoryType, String businessId, { BusinessConnectionRequest businessConnectionRequest }) async
-    test('test postBusinessConnectionsDirectoryTypeConnectBusinessId', () async {
+    test('test postBusinessConnectionsDirectoryTypeConnectBusinessId',
+        () async {
       // TODO
     });
 
@@ -58,9 +64,9 @@ void main() {
     // Deletes or disconnects the current business connection
     //
     //Future<Response> putBusinessConnectionsDirectoryTypeDisconnectBusinessId(String directoryType, String businessId, { BusinessConnectionRequest businessConnectionRequest }) async
-    test('test putBusinessConnectionsDirectoryTypeDisconnectBusinessId', () async {
+    test('test putBusinessConnectionsDirectoryTypeDisconnectBusinessId',
+        () async {
       // TODO
     });
-
   });
 }

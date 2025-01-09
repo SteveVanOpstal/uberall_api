@@ -135,8 +135,5 @@ void main() {
     test('to test the property `subscriberIds`', () async {
       // TODO
     });
-
-
   });
-
 }

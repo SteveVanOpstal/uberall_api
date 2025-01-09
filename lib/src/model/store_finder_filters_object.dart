@@ -12,26 +12,35 @@ part 'store_finder_filters_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [filters] 
+/// * [filters]
 @BuiltValue()
-abstract class StoreFinderFiltersObject implements Built<StoreFinderFiltersObject, StoreFinderFiltersObjectBuilder> {
+abstract class StoreFinderFiltersObject
+    implements
+        Built<StoreFinderFiltersObject, StoreFinderFiltersObjectBuilder> {
   @BuiltValueField(wireName: r'filters')
   StoreFinderFilters? get filters;
 
   StoreFinderFiltersObject._();
 
-  factory StoreFinderFiltersObject([void updates(StoreFinderFiltersObjectBuilder b)]) = _$StoreFinderFiltersObject;
+  factory StoreFinderFiltersObject(
+          [void updates(StoreFinderFiltersObjectBuilder b)]) =
+      _$StoreFinderFiltersObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StoreFinderFiltersObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<StoreFinderFiltersObject> get serializer => _$StoreFinderFiltersObjectSerializer();
+  static Serializer<StoreFinderFiltersObject> get serializer =>
+      _$StoreFinderFiltersObjectSerializer();
 }
 
-class _$StoreFinderFiltersObjectSerializer implements PrimitiveSerializer<StoreFinderFiltersObject> {
+class _$StoreFinderFiltersObjectSerializer
+    implements PrimitiveSerializer<StoreFinderFiltersObject> {
   @override
-  final Iterable<Type> types = const [StoreFinderFiltersObject, _$StoreFinderFiltersObject];
+  final Iterable<Type> types = const [
+    StoreFinderFiltersObject,
+    _$StoreFinderFiltersObject
+  ];
 
   @override
   final String wireName = r'StoreFinderFiltersObject';
@@ -56,7 +65,9 @@ class _$StoreFinderFiltersObjectSerializer implements PrimitiveSerializer<StoreF
     StoreFinderFiltersObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +117,3 @@ class _$StoreFinderFiltersObjectSerializer implements PrimitiveSerializer<StoreF
     return result.build();
   }
 }
-

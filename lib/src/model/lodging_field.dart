@@ -15,7 +15,8 @@ part 'lodging_field.g.dart';
 /// * [category] - High-level grouping of Lodging Amenity types, such as SERVICES, TRANSPORTATION, FAMILIES, etc
 /// * [displayName] - Amenity name as displayed in the UI, available in DE, EN, FR, ES, JA, and FI
 @BuiltValue()
-abstract class LodgingField implements Built<LodgingField, LodgingFieldBuilder> {
+abstract class LodgingField
+    implements Built<LodgingField, LodgingFieldBuilder> {
   /// The Google external id for each lodging amenity. Examples include: watercraftRental, turndownService, patio
   @BuiltValueField(wireName: r'externalId')
   String get externalId;
@@ -76,7 +77,9 @@ class _$LodgingFieldSerializer implements PrimitiveSerializer<LodgingField> {
     LodgingField object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -140,4 +143,3 @@ class _$LodgingFieldSerializer implements PrimitiveSerializer<LodgingField> {
     return result.build();
   }
 }
-

@@ -12,24 +12,28 @@ part 'cities_response.g.dart';
 /// Cities response model
 ///
 /// Properties:
-/// * [cities] 
+/// * [cities]
 @BuiltValue()
-abstract class CitiesResponse implements Built<CitiesResponse, CitiesResponseBuilder> {
+abstract class CitiesResponse
+    implements Built<CitiesResponse, CitiesResponseBuilder> {
   @BuiltValueField(wireName: r'cities')
   BuiltList<String>? get cities;
 
   CitiesResponse._();
 
-  factory CitiesResponse([void updates(CitiesResponseBuilder b)]) = _$CitiesResponse;
+  factory CitiesResponse([void updates(CitiesResponseBuilder b)]) =
+      _$CitiesResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CitiesResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<CitiesResponse> get serializer => _$CitiesResponseSerializer();
+  static Serializer<CitiesResponse> get serializer =>
+      _$CitiesResponseSerializer();
 }
 
-class _$CitiesResponseSerializer implements PrimitiveSerializer<CitiesResponse> {
+class _$CitiesResponseSerializer
+    implements PrimitiveSerializer<CitiesResponse> {
   @override
   final Iterable<Type> types = const [CitiesResponse, _$CitiesResponse];
 
@@ -56,7 +60,9 @@ class _$CitiesResponseSerializer implements PrimitiveSerializer<CitiesResponse> 
     CitiesResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +112,3 @@ class _$CitiesResponseSerializer implements PrimitiveSerializer<CitiesResponse> 
     return result.build();
   }
 }
-

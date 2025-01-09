@@ -12,26 +12,35 @@ part 'custom_item_response_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [customItem] 
+/// * [customItem]
 @BuiltValue()
-abstract class CustomItemResponseObject implements Built<CustomItemResponseObject, CustomItemResponseObjectBuilder> {
+abstract class CustomItemResponseObject
+    implements
+        Built<CustomItemResponseObject, CustomItemResponseObjectBuilder> {
   @BuiltValueField(wireName: r'customItem')
   CustomItem? get customItem;
 
   CustomItemResponseObject._();
 
-  factory CustomItemResponseObject([void updates(CustomItemResponseObjectBuilder b)]) = _$CustomItemResponseObject;
+  factory CustomItemResponseObject(
+          [void updates(CustomItemResponseObjectBuilder b)]) =
+      _$CustomItemResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CustomItemResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<CustomItemResponseObject> get serializer => _$CustomItemResponseObjectSerializer();
+  static Serializer<CustomItemResponseObject> get serializer =>
+      _$CustomItemResponseObjectSerializer();
 }
 
-class _$CustomItemResponseObjectSerializer implements PrimitiveSerializer<CustomItemResponseObject> {
+class _$CustomItemResponseObjectSerializer
+    implements PrimitiveSerializer<CustomItemResponseObject> {
   @override
-  final Iterable<Type> types = const [CustomItemResponseObject, _$CustomItemResponseObject];
+  final Iterable<Type> types = const [
+    CustomItemResponseObject,
+    _$CustomItemResponseObject
+  ];
 
   @override
   final String wireName = r'CustomItemResponseObject';
@@ -56,7 +65,9 @@ class _$CustomItemResponseObjectSerializer implements PrimitiveSerializer<Custom
     CustomItemResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +117,3 @@ class _$CustomItemResponseObjectSerializer implements PrimitiveSerializer<Custom
     return result.build();
   }
 }
-

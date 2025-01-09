@@ -15,7 +15,9 @@ part 'business_connection_request.g.dart';
 /// * [accountId] - Directory account which will be used for establishing connection
 /// * [deep] - Boolean flag indicating whether disconnect should remove all created connections originated from business connect (only applies for Facebook)
 @BuiltValue()
-abstract class BusinessConnectionRequest implements Built<BusinessConnectionRequest, BusinessConnectionRequestBuilder> {
+abstract class BusinessConnectionRequest
+    implements
+        Built<BusinessConnectionRequest, BusinessConnectionRequestBuilder> {
   /// Connection id that must be passed for directories like Twitter
   @BuiltValueField(wireName: r'connectionId')
   String? get connectionId;
@@ -30,18 +32,25 @@ abstract class BusinessConnectionRequest implements Built<BusinessConnectionRequ
 
   BusinessConnectionRequest._();
 
-  factory BusinessConnectionRequest([void updates(BusinessConnectionRequestBuilder b)]) = _$BusinessConnectionRequest;
+  factory BusinessConnectionRequest(
+          [void updates(BusinessConnectionRequestBuilder b)]) =
+      _$BusinessConnectionRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(BusinessConnectionRequestBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<BusinessConnectionRequest> get serializer => _$BusinessConnectionRequestSerializer();
+  static Serializer<BusinessConnectionRequest> get serializer =>
+      _$BusinessConnectionRequestSerializer();
 }
 
-class _$BusinessConnectionRequestSerializer implements PrimitiveSerializer<BusinessConnectionRequest> {
+class _$BusinessConnectionRequestSerializer
+    implements PrimitiveSerializer<BusinessConnectionRequest> {
   @override
-  final Iterable<Type> types = const [BusinessConnectionRequest, _$BusinessConnectionRequest];
+  final Iterable<Type> types = const [
+    BusinessConnectionRequest,
+    _$BusinessConnectionRequest
+  ];
 
   @override
   final String wireName = r'BusinessConnectionRequest';
@@ -80,7 +89,9 @@ class _$BusinessConnectionRequestSerializer implements PrimitiveSerializer<Busin
     BusinessConnectionRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -144,4 +155,3 @@ class _$BusinessConnectionRequestSerializer implements PrimitiveSerializer<Busin
     return result.build();
   }
 }
-

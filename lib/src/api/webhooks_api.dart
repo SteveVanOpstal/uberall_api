@@ -16,7 +16,6 @@ import 'package:openapi/src/model/webhook_list_wrapper.dart';
 import 'package:openapi/src/model/webhook_wrapper.dart';
 
 class WebhooksApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -37,7 +36,7 @@ class WebhooksApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SuccessResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SuccessResponseWrapper>> deleteSalesPartnersWebhooksId({ 
+  Future<Response<SuccessResponseWrapper>> deleteSalesPartnersWebhooksId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -46,7 +45,10 @@ class WebhooksApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/sales-partners/webhooks/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/sales-partners/webhooks/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -59,7 +61,8 @@ class WebhooksApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -83,11 +86,12 @@ class WebhooksApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SuccessResponseWrapper),
-      ) as SuccessResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SuccessResponseWrapper),
+            ) as SuccessResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -123,7 +127,7 @@ class WebhooksApi {
   ///
   /// Returns a [Future] containing a [Response] with a [WebhookListWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<WebhookListWrapper>> getSalesPartnersWebhooks({ 
+  Future<Response<WebhookListWrapper>> getSalesPartnersWebhooks({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -144,7 +148,8 @@ class WebhooksApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -168,11 +173,12 @@ class WebhooksApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(WebhookListWrapper),
-      ) as WebhookListWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(WebhookListWrapper),
+            ) as WebhookListWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -209,7 +215,7 @@ class WebhooksApi {
   ///
   /// Returns a [Future] containing a [Response] with a [WebhookWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<WebhookWrapper>> getSalesPartnersWebhooksId({ 
+  Future<Response<WebhookWrapper>> getSalesPartnersWebhooksId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -218,7 +224,10 @@ class WebhooksApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/sales-partners/webhooks/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/sales-partners/webhooks/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -231,7 +240,8 @@ class WebhooksApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -255,11 +265,12 @@ class WebhooksApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(WebhookWrapper),
-      ) as WebhookWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(WebhookWrapper),
+            ) as WebhookWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -297,7 +308,7 @@ class WebhooksApi {
   ///
   /// Returns a [Future] containing a [Response] with a [WebhookWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<WebhookWrapper>> patchSalesPartnersWebhooksId({ 
+  Future<Response<WebhookWrapper>> patchSalesPartnersWebhooksId({
     required String id,
     required Webhook webhook,
     CancelToken? cancelToken,
@@ -307,7 +318,10 @@ class WebhooksApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/sales-partners/webhooks/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/sales-partners/webhooks/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -320,7 +334,8 @@ class WebhooksApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -338,10 +353,9 @@ class WebhooksApi {
     try {
       const _type = FullType(Webhook);
       _bodyData = _serializers.serialize(webhook, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -364,11 +378,12 @@ class WebhooksApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(WebhookWrapper),
-      ) as WebhookWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(WebhookWrapper),
+            ) as WebhookWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -392,7 +407,7 @@ class WebhooksApi {
   }
 
   /// Create a Webhook
-  /// Creates a new webhook, consisting of a pushUrl and a event type. For a list of all possible types use the GET /api/sales-partners/subscribable-event-types. 
+  /// Creates a new webhook, consisting of a pushUrl and a event type. For a list of all possible types use the GET /api/sales-partners/subscribable-event-types.
   ///
   /// Parameters:
   /// * [webhookCommand] - Webhook data to be created
@@ -405,7 +420,7 @@ class WebhooksApi {
   ///
   /// Returns a [Future] containing a [Response] with a [WebhookWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<WebhookWrapper>> postSalesPartnersWebhooks({ 
+  Future<Response<WebhookWrapper>> postSalesPartnersWebhooks({
     required WebhookCommand webhookCommand,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -427,7 +442,8 @@ class WebhooksApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -445,10 +461,9 @@ class WebhooksApi {
     try {
       const _type = FullType(WebhookCommand);
       _bodyData = _serializers.serialize(webhookCommand, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -471,11 +486,12 @@ class WebhooksApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(WebhookWrapper),
-      ) as WebhookWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(WebhookWrapper),
+            ) as WebhookWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -497,5 +513,4 @@ class WebhooksApi {
       extra: _response.extra,
     );
   }
-
 }

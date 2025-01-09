@@ -13,24 +13,28 @@ part 'label_list_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [labels] 
+/// * [labels]
 @BuiltValue()
-abstract class LabelListObject implements Built<LabelListObject, LabelListObjectBuilder> {
+abstract class LabelListObject
+    implements Built<LabelListObject, LabelListObjectBuilder> {
   @BuiltValueField(wireName: r'labels')
   BuiltList<Label>? get labels;
 
   LabelListObject._();
 
-  factory LabelListObject([void updates(LabelListObjectBuilder b)]) = _$LabelListObject;
+  factory LabelListObject([void updates(LabelListObjectBuilder b)]) =
+      _$LabelListObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LabelListObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LabelListObject> get serializer => _$LabelListObjectSerializer();
+  static Serializer<LabelListObject> get serializer =>
+      _$LabelListObjectSerializer();
 }
 
-class _$LabelListObjectSerializer implements PrimitiveSerializer<LabelListObject> {
+class _$LabelListObjectSerializer
+    implements PrimitiveSerializer<LabelListObject> {
   @override
   final Iterable<Type> types = const [LabelListObject, _$LabelListObject];
 
@@ -57,7 +61,9 @@ class _$LabelListObjectSerializer implements PrimitiveSerializer<LabelListObject
     LabelListObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -107,4 +113,3 @@ class _$LabelListObjectSerializer implements PrimitiveSerializer<LabelListObject
     return result.build();
   }
 }
-

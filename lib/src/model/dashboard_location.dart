@@ -13,23 +13,27 @@ part 'dashboard_location.g.dart';
 /// Properties:
 /// * [businessName] - Name of the business
 @BuiltValue()
-abstract class DashboardLocation implements Built<DashboardLocation, DashboardLocationBuilder> {
+abstract class DashboardLocation
+    implements Built<DashboardLocation, DashboardLocationBuilder> {
   /// Name of the business
   @BuiltValueField(wireName: r'businessName')
   String? get businessName;
 
   DashboardLocation._();
 
-  factory DashboardLocation([void updates(DashboardLocationBuilder b)]) = _$DashboardLocation;
+  factory DashboardLocation([void updates(DashboardLocationBuilder b)]) =
+      _$DashboardLocation;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DashboardLocationBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DashboardLocation> get serializer => _$DashboardLocationSerializer();
+  static Serializer<DashboardLocation> get serializer =>
+      _$DashboardLocationSerializer();
 }
 
-class _$DashboardLocationSerializer implements PrimitiveSerializer<DashboardLocation> {
+class _$DashboardLocationSerializer
+    implements PrimitiveSerializer<DashboardLocation> {
   @override
   final Iterable<Type> types = const [DashboardLocation, _$DashboardLocation];
 
@@ -56,7 +60,9 @@ class _$DashboardLocationSerializer implements PrimitiveSerializer<DashboardLoca
     DashboardLocation object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +112,3 @@ class _$DashboardLocationSerializer implements PrimitiveSerializer<DashboardLoca
     return result.build();
   }
 }
-

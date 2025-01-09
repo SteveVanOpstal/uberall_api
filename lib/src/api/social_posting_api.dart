@@ -19,7 +19,6 @@ import 'package:openapi/src/model/social_post_wrapper.dart';
 import 'package:openapi/src/model/social_posts_response_wrapper.dart';
 
 class SocialPostingApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -40,7 +39,7 @@ class SocialPostingApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SocialPostResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SocialPostResponseWrapper>> deleteSocialPostsId({ 
+  Future<Response<SocialPostResponseWrapper>> deleteSocialPostsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -49,7 +48,10 @@ class SocialPostingApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/social-posts/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/social-posts/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -74,11 +76,12 @@ class SocialPostingApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SocialPostResponseWrapper),
-      ) as SocialPostResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SocialPostResponseWrapper),
+            ) as SocialPostResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -119,7 +122,7 @@ class SocialPostingApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SocialPostsResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SocialPostsResponseWrapper>> getSocialPosts({ 
+  Future<Response<SocialPostsResponseWrapper>> getSocialPosts({
     int? offset,
     int? max,
     BuiltList<String>? locationIds,
@@ -145,7 +148,8 @@ class SocialPostingApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -158,11 +162,28 @@ class SocialPostingApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (offset != null) r'offset': encodeQueryParameter(_serializers, offset, const FullType(int)),
-      if (max != null) r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
-      if (locationIds != null) r'locationIds': encodeCollectionQueryParameter<String>(_serializers, locationIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (socialPostStatuses != null) r'socialPostStatuses': encodeCollectionQueryParameter<String>(_serializers, socialPostStatuses, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (isStoreLocator != null) r'isStoreLocator': encodeQueryParameter(_serializers, isStoreLocator, const FullType(bool)),
+      if (offset != null)
+        r'offset':
+            encodeQueryParameter(_serializers, offset, const FullType(int)),
+      if (max != null)
+        r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
+      if (locationIds != null)
+        r'locationIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          locationIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (socialPostStatuses != null)
+        r'socialPostStatuses': encodeCollectionQueryParameter<String>(
+          _serializers,
+          socialPostStatuses,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (isStoreLocator != null)
+        r'isStoreLocator': encodeQueryParameter(
+            _serializers, isStoreLocator, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(
@@ -178,11 +199,12 @@ class SocialPostingApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SocialPostsResponseWrapper),
-      ) as SocialPostsResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SocialPostsResponseWrapper),
+            ) as SocialPostsResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -223,7 +245,8 @@ class SocialPostingApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SocialPostDirectoriesResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SocialPostDirectoriesResponseWrapper>> getSocialPostsDirectories({ 
+  Future<Response<SocialPostDirectoriesResponseWrapper>>
+      getSocialPostsDirectories({
     BuiltList<String>? locationIds,
     BuiltList<String>? businessIds,
     BuiltList<String>? locationGroupIds,
@@ -249,7 +272,8 @@ class SocialPostingApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -262,11 +286,41 @@ class SocialPostingApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (locationIds != null) r'locationIds': encodeCollectionQueryParameter<String>(_serializers, locationIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (businessIds != null) r'businessIds': encodeCollectionQueryParameter<String>(_serializers, businessIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (locationGroupIds != null) r'locationGroupIds': encodeCollectionQueryParameter<String>(_serializers, locationGroupIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (labels != null) r'labels': encodeCollectionQueryParameter<String>(_serializers, labels, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (excludedLocationIds != null) r'excludedLocationIds': encodeCollectionQueryParameter<String>(_serializers, excludedLocationIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
+      if (locationIds != null)
+        r'locationIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          locationIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (businessIds != null)
+        r'businessIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          businessIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (locationGroupIds != null)
+        r'locationGroupIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          locationGroupIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (labels != null)
+        r'labels': encodeCollectionQueryParameter<String>(
+          _serializers,
+          labels,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (excludedLocationIds != null)
+        r'excludedLocationIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          excludedLocationIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -282,11 +336,13 @@ class SocialPostingApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SocialPostDirectoriesResponseWrapper),
-      ) as SocialPostDirectoriesResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType:
+                  const FullType(SocialPostDirectoriesResponseWrapper),
+            ) as SocialPostDirectoriesResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -319,7 +375,7 @@ class SocialPostingApi {
   /// * [page] - Used for pagination. Page number we're interested in
   /// * [size] - Used for pagination. It indicates the amount of result to be returned in a single page
   /// * [query] - Filter by page name
-  /// * [body] 
+  /// * [body]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -329,7 +385,8 @@ class SocialPostingApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ListDirectoryPagesResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ListDirectoryPagesResponseWrapper>> getSocialPostsDirectoryPages({ 
+  Future<Response<ListDirectoryPagesResponseWrapper>>
+      getSocialPostsDirectoryPages({
     String? types,
     String? levels,
     BuiltList<String>? locationIds,
@@ -357,7 +414,8 @@ class SocialPostingApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -370,22 +428,35 @@ class SocialPostingApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (types != null) r'types': encodeQueryParameter(_serializers, types, const FullType(String)),
-      if (levels != null) r'levels': encodeQueryParameter(_serializers, levels, const FullType(String)),
-      if (locationIds != null) r'locationIds': encodeCollectionQueryParameter<String>(_serializers, locationIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (size != null) r'size': encodeQueryParameter(_serializers, size, const FullType(int)),
-      if (query != null) r'query': encodeQueryParameter(_serializers, query, const FullType(String)),
+      if (types != null)
+        r'types':
+            encodeQueryParameter(_serializers, types, const FullType(String)),
+      if (levels != null)
+        r'levels':
+            encodeQueryParameter(_serializers, levels, const FullType(String)),
+      if (locationIds != null)
+        r'locationIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          locationIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (page != null)
+        r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
+      if (size != null)
+        r'size': encodeQueryParameter(_serializers, size, const FullType(int)),
+      if (query != null)
+        r'query':
+            encodeQueryParameter(_serializers, query, const FullType(String)),
     };
 
     dynamic _bodyData;
 
     try {
       _bodyData = body;
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
           queryParameters: _queryParameters,
@@ -410,11 +481,12 @@ class SocialPostingApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ListDirectoryPagesResponseWrapper),
-      ) as ListDirectoryPagesResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ListDirectoryPagesResponseWrapper),
+            ) as ListDirectoryPagesResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -451,7 +523,7 @@ class SocialPostingApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SocialPostResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SocialPostResponseWrapper>> getSocialPostsId({ 
+  Future<Response<SocialPostResponseWrapper>> getSocialPostsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -460,7 +532,10 @@ class SocialPostingApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/social-posts/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/social-posts/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -473,7 +548,8 @@ class SocialPostingApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -497,11 +573,12 @@ class SocialPostingApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SocialPostResponseWrapper),
-      ) as SocialPostResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SocialPostResponseWrapper),
+            ) as SocialPostResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -539,7 +616,7 @@ class SocialPostingApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SocialPostResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SocialPostResponseWrapper>> patchSocialPostsId({ 
+  Future<Response<SocialPostResponseWrapper>> patchSocialPostsId({
     required String id,
     required SocialPost socialPost,
     CancelToken? cancelToken,
@@ -549,7 +626,10 @@ class SocialPostingApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/social-posts/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/social-posts/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -562,7 +642,8 @@ class SocialPostingApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -580,10 +661,9 @@ class SocialPostingApi {
     try {
       const _type = FullType(SocialPost);
       _bodyData = _serializers.serialize(socialPost, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -606,11 +686,12 @@ class SocialPostingApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SocialPostResponseWrapper),
-      ) as SocialPostResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SocialPostResponseWrapper),
+            ) as SocialPostResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -647,7 +728,7 @@ class SocialPostingApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SocialPostWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SocialPostWrapper>> postSocialPosts({ 
+  Future<Response<SocialPostWrapper>> postSocialPosts({
     required SocialPost socialPost,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -669,7 +750,8 @@ class SocialPostingApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -687,10 +769,9 @@ class SocialPostingApi {
     try {
       const _type = FullType(SocialPost);
       _bodyData = _serializers.serialize(socialPost, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -713,11 +794,12 @@ class SocialPostingApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SocialPostWrapper),
-      ) as SocialPostWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SocialPostWrapper),
+            ) as SocialPostWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -755,7 +837,7 @@ class SocialPostingApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> postSocialPostsValidateAppleCta({ 
+  Future<Response<void>> postSocialPostsValidateAppleCta({
     required String cta,
     required BuiltList<String> locationIds,
     CancelToken? cancelToken,
@@ -778,7 +860,8 @@ class SocialPostingApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -792,7 +875,12 @@ class SocialPostingApi {
 
     final _queryParameters = <String, dynamic>{
       r'cta': encodeQueryParameter(_serializers, cta, const FullType(String)),
-      r'locationIds': encodeCollectionQueryParameter<String>(_serializers, locationIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
+      r'locationIds': encodeCollectionQueryParameter<String>(
+        _serializers,
+        locationIds,
+        const FullType(BuiltList, [FullType(String)]),
+        format: ListFormat.multi,
+      ),
     };
 
     final _response = await _dio.request<Object>(
@@ -806,5 +894,4 @@ class SocialPostingApi {
 
     return _response;
   }
-
 }

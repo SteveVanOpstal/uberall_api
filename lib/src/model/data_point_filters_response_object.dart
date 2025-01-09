@@ -13,26 +13,36 @@ part 'data_point_filters_response_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [dataPointFilters] 
+/// * [dataPointFilters]
 @BuiltValue()
-abstract class DataPointFiltersResponseObject implements Built<DataPointFiltersResponseObject, DataPointFiltersResponseObjectBuilder> {
+abstract class DataPointFiltersResponseObject
+    implements
+        Built<DataPointFiltersResponseObject,
+            DataPointFiltersResponseObjectBuilder> {
   @BuiltValueField(wireName: r'dataPointFilters')
   BuiltList<DataPointFilter>? get dataPointFilters;
 
   DataPointFiltersResponseObject._();
 
-  factory DataPointFiltersResponseObject([void updates(DataPointFiltersResponseObjectBuilder b)]) = _$DataPointFiltersResponseObject;
+  factory DataPointFiltersResponseObject(
+          [void updates(DataPointFiltersResponseObjectBuilder b)]) =
+      _$DataPointFiltersResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DataPointFiltersResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DataPointFiltersResponseObject> get serializer => _$DataPointFiltersResponseObjectSerializer();
+  static Serializer<DataPointFiltersResponseObject> get serializer =>
+      _$DataPointFiltersResponseObjectSerializer();
 }
 
-class _$DataPointFiltersResponseObjectSerializer implements PrimitiveSerializer<DataPointFiltersResponseObject> {
+class _$DataPointFiltersResponseObjectSerializer
+    implements PrimitiveSerializer<DataPointFiltersResponseObject> {
   @override
-  final Iterable<Type> types = const [DataPointFiltersResponseObject, _$DataPointFiltersResponseObject];
+  final Iterable<Type> types = const [
+    DataPointFiltersResponseObject,
+    _$DataPointFiltersResponseObject
+  ];
 
   @override
   final String wireName = r'DataPointFiltersResponseObject';
@@ -57,7 +67,9 @@ class _$DataPointFiltersResponseObjectSerializer implements PrimitiveSerializer<
     DataPointFiltersResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -75,7 +87,8 @@ class _$DataPointFiltersResponseObjectSerializer implements PrimitiveSerializer<
         case r'dataPointFilters':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(DataPointFilter)]),
+            specifiedType:
+                const FullType(BuiltList, [FullType(DataPointFilter)]),
           ) as BuiltList<DataPointFilter>;
           result.dataPointFilters.replace(valueDes);
           break;
@@ -107,4 +120,3 @@ class _$DataPointFiltersResponseObjectSerializer implements PrimitiveSerializer<
     return result.build();
   }
 }
-

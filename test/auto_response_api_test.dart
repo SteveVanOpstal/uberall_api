@@ -11,7 +11,6 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for AutoResponseApi
 void main() {
   // final instance = AutoResponseApi();
@@ -70,6 +69,5 @@ void main() {
     test('test postAutoResponseRulesCheckConflict', () async {
       // TODO
     });
-
   });
 }

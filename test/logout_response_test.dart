@@ -22,13 +22,10 @@ void main() {
       // TODO
     });
 
-    // The URL that a user is redirected to when logging out 
+    // The URL that a user is redirected to when logging out
     // String redirectUrl
     test('to test the property `redirectUrl`', () async {
       // TODO
     });
-
-
   });
-
 }

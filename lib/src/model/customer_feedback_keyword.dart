@@ -14,12 +14,13 @@ part 'customer_feedback_keyword.g.dart';
 ///
 /// Properties:
 /// * [keyword] - The actual Keyword
-/// * [percentage] 
-/// * [rating] 
-/// * [ratingSum] 
+/// * [percentage]
+/// * [rating]
+/// * [ratingSum]
 /// * [aggregatedWords] - Contains the list of similar words that have been aggregated to this CustomerFeedbackKeyword object
 @BuiltValue()
-abstract class CustomerFeedbackKeyword implements Built<CustomerFeedbackKeyword, CustomerFeedbackKeywordBuilder> {
+abstract class CustomerFeedbackKeyword
+    implements Built<CustomerFeedbackKeyword, CustomerFeedbackKeywordBuilder> {
   /// The actual Keyword
   @BuiltValueField(wireName: r'keyword')
   String? get keyword;
@@ -39,18 +40,25 @@ abstract class CustomerFeedbackKeyword implements Built<CustomerFeedbackKeyword,
 
   CustomerFeedbackKeyword._();
 
-  factory CustomerFeedbackKeyword([void updates(CustomerFeedbackKeywordBuilder b)]) = _$CustomerFeedbackKeyword;
+  factory CustomerFeedbackKeyword(
+          [void updates(CustomerFeedbackKeywordBuilder b)]) =
+      _$CustomerFeedbackKeyword;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CustomerFeedbackKeywordBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<CustomerFeedbackKeyword> get serializer => _$CustomerFeedbackKeywordSerializer();
+  static Serializer<CustomerFeedbackKeyword> get serializer =>
+      _$CustomerFeedbackKeywordSerializer();
 }
 
-class _$CustomerFeedbackKeywordSerializer implements PrimitiveSerializer<CustomerFeedbackKeyword> {
+class _$CustomerFeedbackKeywordSerializer
+    implements PrimitiveSerializer<CustomerFeedbackKeyword> {
   @override
-  final Iterable<Type> types = const [CustomerFeedbackKeyword, _$CustomerFeedbackKeyword];
+  final Iterable<Type> types = const [
+    CustomerFeedbackKeyword,
+    _$CustomerFeedbackKeyword
+  ];
 
   @override
   final String wireName = r'CustomerFeedbackKeyword';
@@ -103,7 +111,9 @@ class _$CustomerFeedbackKeywordSerializer implements PrimitiveSerializer<Custome
     CustomerFeedbackKeyword object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -181,4 +191,3 @@ class _$CustomerFeedbackKeywordSerializer implements PrimitiveSerializer<Custome
     return result.build();
   }
 }
-

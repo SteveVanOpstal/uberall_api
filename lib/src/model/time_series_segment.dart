@@ -14,7 +14,8 @@ part 'time_series_segment.g.dart';
 /// * [period] - The segment of the whole time period this object represents.
 /// * [value] - The value for this segment of the whole period.
 @BuiltValue()
-abstract class TimeSeriesSegment implements Built<TimeSeriesSegment, TimeSeriesSegmentBuilder> {
+abstract class TimeSeriesSegment
+    implements Built<TimeSeriesSegment, TimeSeriesSegmentBuilder> {
   /// The segment of the whole time period this object represents.
   @BuiltValueField(wireName: r'period')
   String? get period;
@@ -25,16 +26,19 @@ abstract class TimeSeriesSegment implements Built<TimeSeriesSegment, TimeSeriesS
 
   TimeSeriesSegment._();
 
-  factory TimeSeriesSegment([void updates(TimeSeriesSegmentBuilder b)]) = _$TimeSeriesSegment;
+  factory TimeSeriesSegment([void updates(TimeSeriesSegmentBuilder b)]) =
+      _$TimeSeriesSegment;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(TimeSeriesSegmentBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<TimeSeriesSegment> get serializer => _$TimeSeriesSegmentSerializer();
+  static Serializer<TimeSeriesSegment> get serializer =>
+      _$TimeSeriesSegmentSerializer();
 }
 
-class _$TimeSeriesSegmentSerializer implements PrimitiveSerializer<TimeSeriesSegment> {
+class _$TimeSeriesSegmentSerializer
+    implements PrimitiveSerializer<TimeSeriesSegment> {
   @override
   final Iterable<Type> types = const [TimeSeriesSegment, _$TimeSeriesSegment];
 
@@ -68,7 +72,9 @@ class _$TimeSeriesSegmentSerializer implements PrimitiveSerializer<TimeSeriesSeg
     TimeSeriesSegment object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -125,4 +131,3 @@ class _$TimeSeriesSegmentSerializer implements PrimitiveSerializer<TimeSeriesSeg
     return result.build();
   }
 }
-

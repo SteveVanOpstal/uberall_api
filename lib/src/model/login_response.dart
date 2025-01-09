@@ -8,25 +8,28 @@ import 'package:built_value/serializer.dart';
 
 part 'login_response.g.dart';
 
-/// User access_token 
+/// User access_token
 ///
 /// Properties:
 /// * [accessToken] - Access Token
 @BuiltValue()
-abstract class LoginResponse implements Built<LoginResponse, LoginResponseBuilder> {
+abstract class LoginResponse
+    implements Built<LoginResponse, LoginResponseBuilder> {
   /// Access Token
   @BuiltValueField(wireName: r'access_token')
   String? get accessToken;
 
   LoginResponse._();
 
-  factory LoginResponse([void updates(LoginResponseBuilder b)]) = _$LoginResponse;
+  factory LoginResponse([void updates(LoginResponseBuilder b)]) =
+      _$LoginResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LoginResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LoginResponse> get serializer => _$LoginResponseSerializer();
+  static Serializer<LoginResponse> get serializer =>
+      _$LoginResponseSerializer();
 }
 
 class _$LoginResponseSerializer implements PrimitiveSerializer<LoginResponse> {
@@ -56,7 +59,9 @@ class _$LoginResponseSerializer implements PrimitiveSerializer<LoginResponse> {
     LoginResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +111,3 @@ class _$LoginResponseSerializer implements PrimitiveSerializer<LoginResponse> {
     return result.build();
   }
 }
-

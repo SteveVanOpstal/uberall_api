@@ -16,9 +16,12 @@ part 'suggestion_search_response_object.g.dart';
 /// * [offset] - Offset for pagination
 /// * [max] - Maximum number of results per page
 /// * [count] - Total count of results
-/// * [locations] 
+/// * [locations]
 @BuiltValue()
-abstract class SuggestionSearchResponseObject implements Built<SuggestionSearchResponseObject, SuggestionSearchResponseObjectBuilder> {
+abstract class SuggestionSearchResponseObject
+    implements
+        Built<SuggestionSearchResponseObject,
+            SuggestionSearchResponseObjectBuilder> {
   /// Offset for pagination
   @BuiltValueField(wireName: r'offset')
   int? get offset;
@@ -36,18 +39,25 @@ abstract class SuggestionSearchResponseObject implements Built<SuggestionSearchR
 
   SuggestionSearchResponseObject._();
 
-  factory SuggestionSearchResponseObject([void updates(SuggestionSearchResponseObjectBuilder b)]) = _$SuggestionSearchResponseObject;
+  factory SuggestionSearchResponseObject(
+          [void updates(SuggestionSearchResponseObjectBuilder b)]) =
+      _$SuggestionSearchResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SuggestionSearchResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<SuggestionSearchResponseObject> get serializer => _$SuggestionSearchResponseObjectSerializer();
+  static Serializer<SuggestionSearchResponseObject> get serializer =>
+      _$SuggestionSearchResponseObjectSerializer();
 }
 
-class _$SuggestionSearchResponseObjectSerializer implements PrimitiveSerializer<SuggestionSearchResponseObject> {
+class _$SuggestionSearchResponseObjectSerializer
+    implements PrimitiveSerializer<SuggestionSearchResponseObject> {
   @override
-  final Iterable<Type> types = const [SuggestionSearchResponseObject, _$SuggestionSearchResponseObject];
+  final Iterable<Type> types = const [
+    SuggestionSearchResponseObject,
+    _$SuggestionSearchResponseObject
+  ];
 
   @override
   final String wireName = r'SuggestionSearchResponseObject';
@@ -82,7 +92,8 @@ class _$SuggestionSearchResponseObjectSerializer implements PrimitiveSerializer<
       yield r'locations';
       yield serializers.serialize(
         object.locations,
-        specifiedType: const FullType(BuiltList, [FullType(SuggestionResponse)]),
+        specifiedType:
+            const FullType(BuiltList, [FullType(SuggestionResponse)]),
       );
     }
   }
@@ -93,7 +104,9 @@ class _$SuggestionSearchResponseObjectSerializer implements PrimitiveSerializer<
     SuggestionSearchResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -132,7 +145,8 @@ class _$SuggestionSearchResponseObjectSerializer implements PrimitiveSerializer<
         case r'locations':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(SuggestionResponse)]),
+            specifiedType:
+                const FullType(BuiltList, [FullType(SuggestionResponse)]),
           ) as BuiltList<SuggestionResponse>;
           result.locations.replace(valueDes);
           break;
@@ -164,4 +178,3 @@ class _$SuggestionSearchResponseObjectSerializer implements PrimitiveSerializer<
     return result.build();
   }
 }
-

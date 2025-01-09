@@ -16,9 +16,12 @@ part 'menu_item_search_response_object.g.dart';
 /// * [offset] - Offset for pagination
 /// * [max] - Maximum number of results per page
 /// * [total] - Total count of results
-/// * [menuItems] 
+/// * [menuItems]
 @BuiltValue()
-abstract class MenuItemSearchResponseObject implements Built<MenuItemSearchResponseObject, MenuItemSearchResponseObjectBuilder> {
+abstract class MenuItemSearchResponseObject
+    implements
+        Built<MenuItemSearchResponseObject,
+            MenuItemSearchResponseObjectBuilder> {
   /// Offset for pagination
   @BuiltValueField(wireName: r'offset')
   int? get offset;
@@ -36,18 +39,25 @@ abstract class MenuItemSearchResponseObject implements Built<MenuItemSearchRespo
 
   MenuItemSearchResponseObject._();
 
-  factory MenuItemSearchResponseObject([void updates(MenuItemSearchResponseObjectBuilder b)]) = _$MenuItemSearchResponseObject;
+  factory MenuItemSearchResponseObject(
+          [void updates(MenuItemSearchResponseObjectBuilder b)]) =
+      _$MenuItemSearchResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(MenuItemSearchResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<MenuItemSearchResponseObject> get serializer => _$MenuItemSearchResponseObjectSerializer();
+  static Serializer<MenuItemSearchResponseObject> get serializer =>
+      _$MenuItemSearchResponseObjectSerializer();
 }
 
-class _$MenuItemSearchResponseObjectSerializer implements PrimitiveSerializer<MenuItemSearchResponseObject> {
+class _$MenuItemSearchResponseObjectSerializer
+    implements PrimitiveSerializer<MenuItemSearchResponseObject> {
   @override
-  final Iterable<Type> types = const [MenuItemSearchResponseObject, _$MenuItemSearchResponseObject];
+  final Iterable<Type> types = const [
+    MenuItemSearchResponseObject,
+    _$MenuItemSearchResponseObject
+  ];
 
   @override
   final String wireName = r'MenuItemSearchResponseObject';
@@ -93,7 +103,9 @@ class _$MenuItemSearchResponseObjectSerializer implements PrimitiveSerializer<Me
     MenuItemSearchResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -164,4 +176,3 @@ class _$MenuItemSearchResponseObjectSerializer implements PrimitiveSerializer<Me
     return result.build();
   }
 }
-

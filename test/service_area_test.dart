@@ -27,8 +27,5 @@ void main() {
     test('to test the property `placeId`', () async {
       // TODO
     });
-
-
   });
-
 }

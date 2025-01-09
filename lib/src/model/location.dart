@@ -76,17 +76,17 @@ part 'location.g.dart';
 /// * [callTrackingNumbers] - Add call tracking numbers for distribution to Google, Facebook, and Bing. The call tracking numbers must be different from the location''s primary phone number
 /// * [utms] - UTM parameter to be appended to the location''s website. Codes can be sent to Google, Facebook, and Bing.
 /// * [transactionLinks] - Links that appear on some directories for specific types of customer actions, such as food ordering, appointment setting, and booking reservations. Only available for specific business categories.
-/// * [temporarilyClosed] 
+/// * [temporarilyClosed]
 /// * [nameDescriptor] - An addition to the location''s name which gives specific info about the location''s address (e.g. Mall level 2 OR Inside Departures). Sent only to FACEBOOK
-/// * [evData] 
+/// * [evData]
 /// * [features] - Output only. List of features available to the location
-/// * [businessId] - ID of the business this location is linked to. Mandatory when creating a location. Sending a different ID than the current businessId when updating will lead to changing the business. This is only possible in case all connected accounts (Facebook, Google, …) are compatible. 
+/// * [businessId] - ID of the business this location is linked to. Mandatory when creating a location. Sending a different ID than the current businessId when updating will lead to changing the business. This is only possible in case all connected accounts (Facebook, Google, …) are compatible.
 /// * [cleansingComment] - Cleansing comment by user, set only when cleansingStatus is INVALID_DATA. Possible Values (ADDRESS_DETAILS_VERIFIED, NAME_ADDRESS_DETAILS_UPDATED, NON_CLOSURE_CONFIRMATION,)
 /// * [cleansingStatus] - Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
 /// * [profileCompleteness] - Output only. Number representing completeness of location data, up to 100
 /// * [publishedListingsCount] - Output only. Number of published listings
 /// * [socialProfiles] - The profiles of the location on social and professional networks (FACEBOOK, FOURSQUARE, INSTAGRAM, LINKEDIN, PINTEREST, TWITTER, VIMEO, XING, YOUTUBE)
-/// * [timeZone] - The location''s timezone 
+/// * [timeZone] - The location''s timezone
 /// * [cleansingInvalidDataReason] - Output only. Invalid Cleansing Reason (eg. INCOMPLETE_ADDRESS,ADDRESS_ IS_PO_BOX,ADDRESS_ DOES_NOT_EXIST, LOCATION_IS_CLOSED, INFORMATION_IS_WRONG, LOCATION_IS_MOVED, NON_LATIN_CHARACTERS_ADDRESS, OTHER). Guide on how to fix invalid data issues - http://ubr.al/fix_invalid_data
 /// * [contentLists] - The content list IDs (EVENTS, PRODUCTS, MENU, PEOPLE) describing the location
 /// * [missingMandatoryFields] - Output only. Compile all the fields that are currently missing but mandatory for some directories. They have to be set in the Location object, so that the Listing can be created / updated on the respective platform. List of Strings, e.g. [NAME, ZIP, PHONE]
@@ -99,7 +99,7 @@ part 'location.g.dart';
 /// * [dataPoints] - Output only. Number of dataPoints (reviews, photos) left by users at this location
 /// * [listingsBeingUpdated] - Output only. Number of listings still being updated
 /// * [listingsInSync] - Output only. The number of listings in sync
-/// * [mainPhoto] 
+/// * [mainPhoto]
 /// * [customFields] - A Map for identifying the value input for a specific custom field name on the location. Custom fields are created at the business level. <pre>   \"customFields\": [     '{'       \"name\": \"foo\",       \"value\": \"bar\"     '}',     '{'       \"name\": \"baz\",       \"value\": \"qux\"     '}'   ] </pre>
 @BuiltValue()
 abstract class Location implements Built<Location, LocationBuilder> {
@@ -310,7 +310,7 @@ abstract class Location implements Built<Location, LocationBuilder> {
   BuiltSet<LocationFeaturesEnum>? get features;
   // enum featuresEnum {  NEW_PHOTO_TYPES,  ADS,  ADS_READ,  ADS_WRITE,  ADVANCED_ANALYTICS,  AI_KNOWLEDGEBASE,  AI_LOCALISATION,  AI_SUGGESTED_REPLIES,  APPLE_POSTING,  APPLE_POSTING_WRITE,  AUTO_RESPONSE,  AUTO_RESPONSE_WRITE,  AUTOMATION,  BASIC,  BASIC_PLUS,  BULK_UPDATES,  INSTAGRAM_POSTING,  INSTAGRAM_POSTING_WRITE,  BUSINESS_LEVEL_CONNECT,  CALL_TRACKING_NUMBERS,  CAN_PAY_INVOICE,  CAN_SEE_HELP_SECTION,  CHATBOT,  CHATBOT_READ,  CHATBOT_WRITE,  CHAT_READ,  CHAT_WRITE,  CLEANSING,  CONTENT_COLLECTION,  DAM,  DASHBOARD,  ENTERPRISE_ONBOARDING,  FACEBOOK_UNOWNED_PAGE_CREATE,  FIRST_PARTY_REVIEW_APPROVAL,  FORMS,  HOMEPAGE,  INBOX,  INBOX_APPROVAL,  INBOX_PREVIEW,  INBOX_TEASER,  INBOX_TWITTER,  INBOX_READ,  INBOX_WRITE,  INBOX_2_0_BETA,  INBOX_2_0_BETA_READ,  INBOX_2_0_BETA_WRITE,  INBOX_FLAG,  LISTINGS,  LIVE_CHAT,  LOCAL_SEO_REPORT,  LOCATION_APPROVAL_REQUESTS,  LOCATION_GROUP,  LOCATION_STATUS_CHANGE,  LOCATION_TRANSLATION,  LOCATION_READ,  LOCATION_WRITE,  LOCAL_INVENTORY,  MANUAL_LISTINGS,  NEAR_ME_CHECK,  PHONE_OPTIONAL,  POSTING,  POSTING_APPROVAL,  POSTING_READ,  POSTING_TONE_ADJUST,  POSTING_WRITE,  POSTING_PREVIEW,  PRICE_INFO,  QR_CODE_GENERATION,  RESPONSE_LIBRARY,  RESPONSE_LIBRARY_READ,  RESPONSE_LIBRARY_WRITE,  REVIEW_GENERATION_EMAIL,  REVIEW_GENERATION_SMS,  REVIEW_GENERATION_CREATE,  REVIEW_GENERATION_SEND,  LOCATION_APPROVAL,  LOCATION_SCHEDULED_UPDATES,  SINGLE_SIGN_ON,  SOCIAL_ADS,  STOREFINDER,  STOREFINDER_TRIAL_MODE,  LOCATOR_PAGES_BUILDER,  STOREFINDER_ANALYTICS,  STOREFINDER_GOOGLE,  STOREFINDER_MAPBOX,  SUPPORT,  SUPPRESSION,  TRACKING,  TRANSACTION_LINKS,  TWITTER_INBOX_READ,  TWITTER_INBOX_WRITE,  TWITTER_POSTING,  TWITTER_POSTING_WRITE,  UPGRADE,  USER_OTHERS_EDIT,  USER_SELF_EDIT,  UTMS,  WEBSITE_WIDGETS,  EXPANDED_REVIEWS_RESTAURANT,  EXPANDED_REVIEWS_FINANCE,  WHATS_APP_MESSAGES,  ACCESS_REQUEST_INVITATIONS,  AI_BULK_REPLIES,  };
 
-  /// ID of the business this location is linked to. Mandatory when creating a location. Sending a different ID than the current businessId when updating will lead to changing the business. This is only possible in case all connected accounts (Facebook, Google, …) are compatible. 
+  /// ID of the business this location is linked to. Mandatory when creating a location. Sending a different ID than the current businessId when updating will lead to changing the business. This is only possible in case all connected accounts (Facebook, Google, …) are compatible.
   @BuiltValueField(wireName: r'businessId')
   int? get businessId;
 
@@ -336,7 +336,7 @@ abstract class Location implements Built<Location, LocationBuilder> {
   @BuiltValueField(wireName: r'socialProfiles')
   BuiltSet<SocialProfile>? get socialProfiles;
 
-  /// The location''s timezone 
+  /// The location''s timezone
   @BuiltValueField(wireName: r'timeZone')
   String? get timeZone;
 
@@ -444,7 +444,8 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
       yield r'specialOpeningHours';
       yield serializers.serialize(
         object.specialOpeningHours,
-        specifiedType: const FullType(BuiltSet, [FullType(SpecialOpeningHours)]),
+        specifiedType:
+            const FullType(BuiltSet, [FullType(SpecialOpeningHours)]),
       );
     }
     yield r'name';
@@ -737,7 +738,8 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
       yield r'transactionLinks';
       yield serializers.serialize(
         object.transactionLinks,
-        specifiedType: const FullType(BuiltSet, [FullType(LocationTransactionLink)]),
+        specifiedType:
+            const FullType(BuiltSet, [FullType(LocationTransactionLink)]),
       );
     }
     if (object.temporarilyClosed != null) {
@@ -765,7 +767,8 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
       yield r'features';
       yield serializers.serialize(
         object.features,
-        specifiedType: const FullType(BuiltSet, [FullType(LocationFeaturesEnum)]),
+        specifiedType:
+            const FullType(BuiltSet, [FullType(LocationFeaturesEnum)]),
       );
     }
     if (object.businessId != null) {
@@ -835,14 +838,17 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
       yield r'missingMandatoryFields';
       yield serializers.serialize(
         object.missingMandatoryFields,
-        specifiedType: const FullType(BuiltSet, [FullType(LocationMissingMandatoryFieldsEnum)]),
+        specifiedType: const FullType(
+            BuiltSet, [FullType(LocationMissingMandatoryFieldsEnum)]),
       );
     }
     if (object.moreHours != null) {
       yield r'moreHours';
       yield serializers.serialize(
         object.moreHours,
-        specifiedType: const FullType(BuiltSet, [FullType(BuiltMap, [FullType(String), FullType(JsonObject)])]),
+        specifiedType: const FullType(BuiltSet, [
+          FullType(BuiltMap, [FullType(String), FullType(JsonObject)])
+        ]),
       );
     }
     if (object.videos != null) {
@@ -923,7 +929,9 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
     Location object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -962,7 +970,8 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
         case r'specialOpeningHours':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltSet, [FullType(SpecialOpeningHours)]),
+            specifiedType:
+                const FullType(BuiltSet, [FullType(SpecialOpeningHours)]),
           ) as BuiltSet<SpecialOpeningHours>;
           result.specialOpeningHours.replace(valueDes);
           break;
@@ -1249,7 +1258,8 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
         case r'callTrackingNumbers':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltSet, [FullType(CallTrackingNumber)]),
+            specifiedType:
+                const FullType(BuiltSet, [FullType(CallTrackingNumber)]),
           ) as BuiltSet<CallTrackingNumber>;
           result.callTrackingNumbers.replace(valueDes);
           break;
@@ -1263,7 +1273,8 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
         case r'transactionLinks':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltSet, [FullType(LocationTransactionLink)]),
+            specifiedType:
+                const FullType(BuiltSet, [FullType(LocationTransactionLink)]),
           ) as BuiltSet<LocationTransactionLink>;
           result.transactionLinks.replace(valueDes);
           break;
@@ -1291,7 +1302,8 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
         case r'features':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltSet, [FullType(LocationFeaturesEnum)]),
+            specifiedType:
+                const FullType(BuiltSet, [FullType(LocationFeaturesEnum)]),
           ) as BuiltSet<LocationFeaturesEnum>;
           result.features.replace(valueDes);
           break;
@@ -1361,14 +1373,17 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
         case r'missingMandatoryFields':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltSet, [FullType(LocationMissingMandatoryFieldsEnum)]),
+            specifiedType: const FullType(
+                BuiltSet, [FullType(LocationMissingMandatoryFieldsEnum)]),
           ) as BuiltSet<LocationMissingMandatoryFieldsEnum>;
           result.missingMandatoryFields.replace(valueDes);
           break;
         case r'moreHours':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltSet, [FullType(BuiltMap, [FullType(String), FullType(JsonObject)])]),
+            specifiedType: const FullType(BuiltSet, [
+              FullType(BuiltMap, [FullType(String), FullType(JsonObject)])
+            ]),
           ) as BuiltSet<BuiltMap<String, JsonObject>>;
           result.moreHours.replace(valueDes);
           break;
@@ -1403,7 +1418,8 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
         case r'attributes':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(AttributeWrapper)]),
+            specifiedType:
+                const FullType(BuiltList, [FullType(AttributeWrapper)]),
           ) as BuiltList<AttributeWrapper>;
           result.attributes.replace(valueDes);
           break;
@@ -1472,956 +1488,1280 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
 }
 
 class LocationStreetTypeEnum extends EnumClass {
-
   /// Required for Spain. One of ALAMEDA, AVENIDA, CALLE, CAMINO, CARRER, CARRETERA, GLORIETA, KALEA, PASAJE, PASEO, PLACA, PLAZA, RAMBLA, RONDA, RUA, SECTOR, TRAVESERA, TRAVESIA, URBANIZACION
   @BuiltValueEnumConst(wireName: r'ALAMEDA')
-  static const LocationStreetTypeEnum ALAMEDA = _$locationStreetTypeEnum_ALAMEDA;
+  static const LocationStreetTypeEnum ALAMEDA =
+      _$locationStreetTypeEnum_ALAMEDA;
+
   /// Required for Spain. One of ALAMEDA, AVENIDA, CALLE, CAMINO, CARRER, CARRETERA, GLORIETA, KALEA, PASAJE, PASEO, PLACA, PLAZA, RAMBLA, RONDA, RUA, SECTOR, TRAVESERA, TRAVESIA, URBANIZACION
   @BuiltValueEnumConst(wireName: r'AVENIDA')
-  static const LocationStreetTypeEnum AVENIDA = _$locationStreetTypeEnum_AVENIDA;
+  static const LocationStreetTypeEnum AVENIDA =
+      _$locationStreetTypeEnum_AVENIDA;
+
   /// Required for Spain. One of ALAMEDA, AVENIDA, CALLE, CAMINO, CARRER, CARRETERA, GLORIETA, KALEA, PASAJE, PASEO, PLACA, PLAZA, RAMBLA, RONDA, RUA, SECTOR, TRAVESERA, TRAVESIA, URBANIZACION
   @BuiltValueEnumConst(wireName: r'CALLE')
   static const LocationStreetTypeEnum CALLE = _$locationStreetTypeEnum_CALLE;
+
   /// Required for Spain. One of ALAMEDA, AVENIDA, CALLE, CAMINO, CARRER, CARRETERA, GLORIETA, KALEA, PASAJE, PASEO, PLACA, PLAZA, RAMBLA, RONDA, RUA, SECTOR, TRAVESERA, TRAVESIA, URBANIZACION
   @BuiltValueEnumConst(wireName: r'CAMINO')
   static const LocationStreetTypeEnum CAMINO = _$locationStreetTypeEnum_CAMINO;
+
   /// Required for Spain. One of ALAMEDA, AVENIDA, CALLE, CAMINO, CARRER, CARRETERA, GLORIETA, KALEA, PASAJE, PASEO, PLACA, PLAZA, RAMBLA, RONDA, RUA, SECTOR, TRAVESERA, TRAVESIA, URBANIZACION
   @BuiltValueEnumConst(wireName: r'CARRER')
   static const LocationStreetTypeEnum CARRER = _$locationStreetTypeEnum_CARRER;
+
   /// Required for Spain. One of ALAMEDA, AVENIDA, CALLE, CAMINO, CARRER, CARRETERA, GLORIETA, KALEA, PASAJE, PASEO, PLACA, PLAZA, RAMBLA, RONDA, RUA, SECTOR, TRAVESERA, TRAVESIA, URBANIZACION
   @BuiltValueEnumConst(wireName: r'CARRETERA')
-  static const LocationStreetTypeEnum CARRETERA = _$locationStreetTypeEnum_CARRETERA;
+  static const LocationStreetTypeEnum CARRETERA =
+      _$locationStreetTypeEnum_CARRETERA;
+
   /// Required for Spain. One of ALAMEDA, AVENIDA, CALLE, CAMINO, CARRER, CARRETERA, GLORIETA, KALEA, PASAJE, PASEO, PLACA, PLAZA, RAMBLA, RONDA, RUA, SECTOR, TRAVESERA, TRAVESIA, URBANIZACION
   @BuiltValueEnumConst(wireName: r'GLORIETA')
-  static const LocationStreetTypeEnum GLORIETA = _$locationStreetTypeEnum_GLORIETA;
+  static const LocationStreetTypeEnum GLORIETA =
+      _$locationStreetTypeEnum_GLORIETA;
+
   /// Required for Spain. One of ALAMEDA, AVENIDA, CALLE, CAMINO, CARRER, CARRETERA, GLORIETA, KALEA, PASAJE, PASEO, PLACA, PLAZA, RAMBLA, RONDA, RUA, SECTOR, TRAVESERA, TRAVESIA, URBANIZACION
   @BuiltValueEnumConst(wireName: r'KALEA')
   static const LocationStreetTypeEnum KALEA = _$locationStreetTypeEnum_KALEA;
+
   /// Required for Spain. One of ALAMEDA, AVENIDA, CALLE, CAMINO, CARRER, CARRETERA, GLORIETA, KALEA, PASAJE, PASEO, PLACA, PLAZA, RAMBLA, RONDA, RUA, SECTOR, TRAVESERA, TRAVESIA, URBANIZACION
   @BuiltValueEnumConst(wireName: r'PASAJE')
   static const LocationStreetTypeEnum PASAJE = _$locationStreetTypeEnum_PASAJE;
+
   /// Required for Spain. One of ALAMEDA, AVENIDA, CALLE, CAMINO, CARRER, CARRETERA, GLORIETA, KALEA, PASAJE, PASEO, PLACA, PLAZA, RAMBLA, RONDA, RUA, SECTOR, TRAVESERA, TRAVESIA, URBANIZACION
   @BuiltValueEnumConst(wireName: r'PASEO')
   static const LocationStreetTypeEnum PASEO = _$locationStreetTypeEnum_PASEO;
+
   /// Required for Spain. One of ALAMEDA, AVENIDA, CALLE, CAMINO, CARRER, CARRETERA, GLORIETA, KALEA, PASAJE, PASEO, PLACA, PLAZA, RAMBLA, RONDA, RUA, SECTOR, TRAVESERA, TRAVESIA, URBANIZACION
   @BuiltValueEnumConst(wireName: r'PLACA')
   static const LocationStreetTypeEnum PLACA = _$locationStreetTypeEnum_PLACA;
+
   /// Required for Spain. One of ALAMEDA, AVENIDA, CALLE, CAMINO, CARRER, CARRETERA, GLORIETA, KALEA, PASAJE, PASEO, PLACA, PLAZA, RAMBLA, RONDA, RUA, SECTOR, TRAVESERA, TRAVESIA, URBANIZACION
   @BuiltValueEnumConst(wireName: r'PLAZA')
   static const LocationStreetTypeEnum PLAZA = _$locationStreetTypeEnum_PLAZA;
+
   /// Required for Spain. One of ALAMEDA, AVENIDA, CALLE, CAMINO, CARRER, CARRETERA, GLORIETA, KALEA, PASAJE, PASEO, PLACA, PLAZA, RAMBLA, RONDA, RUA, SECTOR, TRAVESERA, TRAVESIA, URBANIZACION
   @BuiltValueEnumConst(wireName: r'RAMBLA')
   static const LocationStreetTypeEnum RAMBLA = _$locationStreetTypeEnum_RAMBLA;
+
   /// Required for Spain. One of ALAMEDA, AVENIDA, CALLE, CAMINO, CARRER, CARRETERA, GLORIETA, KALEA, PASAJE, PASEO, PLACA, PLAZA, RAMBLA, RONDA, RUA, SECTOR, TRAVESERA, TRAVESIA, URBANIZACION
   @BuiltValueEnumConst(wireName: r'RONDA')
   static const LocationStreetTypeEnum RONDA = _$locationStreetTypeEnum_RONDA;
+
   /// Required for Spain. One of ALAMEDA, AVENIDA, CALLE, CAMINO, CARRER, CARRETERA, GLORIETA, KALEA, PASAJE, PASEO, PLACA, PLAZA, RAMBLA, RONDA, RUA, SECTOR, TRAVESERA, TRAVESIA, URBANIZACION
   @BuiltValueEnumConst(wireName: r'RUA')
   static const LocationStreetTypeEnum RUA = _$locationStreetTypeEnum_RUA;
+
   /// Required for Spain. One of ALAMEDA, AVENIDA, CALLE, CAMINO, CARRER, CARRETERA, GLORIETA, KALEA, PASAJE, PASEO, PLACA, PLAZA, RAMBLA, RONDA, RUA, SECTOR, TRAVESERA, TRAVESIA, URBANIZACION
   @BuiltValueEnumConst(wireName: r'SECTOR')
   static const LocationStreetTypeEnum SECTOR = _$locationStreetTypeEnum_SECTOR;
+
   /// Required for Spain. One of ALAMEDA, AVENIDA, CALLE, CAMINO, CARRER, CARRETERA, GLORIETA, KALEA, PASAJE, PASEO, PLACA, PLAZA, RAMBLA, RONDA, RUA, SECTOR, TRAVESERA, TRAVESIA, URBANIZACION
   @BuiltValueEnumConst(wireName: r'TRAVESERA')
-  static const LocationStreetTypeEnum TRAVESERA = _$locationStreetTypeEnum_TRAVESERA;
+  static const LocationStreetTypeEnum TRAVESERA =
+      _$locationStreetTypeEnum_TRAVESERA;
+
   /// Required for Spain. One of ALAMEDA, AVENIDA, CALLE, CAMINO, CARRER, CARRETERA, GLORIETA, KALEA, PASAJE, PASEO, PLACA, PLAZA, RAMBLA, RONDA, RUA, SECTOR, TRAVESERA, TRAVESIA, URBANIZACION
   @BuiltValueEnumConst(wireName: r'TRAVESIA')
-  static const LocationStreetTypeEnum TRAVESIA = _$locationStreetTypeEnum_TRAVESIA;
+  static const LocationStreetTypeEnum TRAVESIA =
+      _$locationStreetTypeEnum_TRAVESIA;
+
   /// Required for Spain. One of ALAMEDA, AVENIDA, CALLE, CAMINO, CARRER, CARRETERA, GLORIETA, KALEA, PASAJE, PASEO, PLACA, PLAZA, RAMBLA, RONDA, RUA, SECTOR, TRAVESERA, TRAVESIA, URBANIZACION
   @BuiltValueEnumConst(wireName: r'URBANIZACION')
-  static const LocationStreetTypeEnum URBANIZACION = _$locationStreetTypeEnum_URBANIZACION;
+  static const LocationStreetTypeEnum URBANIZACION =
+      _$locationStreetTypeEnum_URBANIZACION;
+
   /// Required for Spain. One of ALAMEDA, AVENIDA, CALLE, CAMINO, CARRER, CARRETERA, GLORIETA, KALEA, PASAJE, PASEO, PLACA, PLAZA, RAMBLA, RONDA, RUA, SECTOR, TRAVESERA, TRAVESIA, URBANIZACION
-  @BuiltValueEnumConst(wireName: r'ALAMEDA, AVENIDA, CALLE, CAMINO, CARRER, CARRETERA, GLORIETA, KALEA, PASAJE, PASEO, PLACA, PLAZA, RAMBLA, RONDA, RUA, SECTOR, TRAVESERA, TRAVESIA, URBANIZACION')
-  static const LocationStreetTypeEnum aLAMEDACommaAVENIDACommaCALLECommaCAMINOCommaCARRERCommaCARRETERACommaGLORIETACommaKALEACommaPASAJECommaPASEOCommaPLACACommaPLAZACommaRAMBLACommaRONDACommaRUACommaSECTORCommaTRAVESERACommaTRAVESIACommaURBANIZACION = _$locationStreetTypeEnum_aLAMEDACommaAVENIDACommaCALLECommaCAMINOCommaCARRERCommaCARRETERACommaGLORIETACommaKALEACommaPASAJECommaPASEOCommaPLACACommaPLAZACommaRAMBLACommaRONDACommaRUACommaSECTORCommaTRAVESERACommaTRAVESIACommaURBANIZACION;
+  @BuiltValueEnumConst(
+      wireName:
+          r'ALAMEDA, AVENIDA, CALLE, CAMINO, CARRER, CARRETERA, GLORIETA, KALEA, PASAJE, PASEO, PLACA, PLAZA, RAMBLA, RONDA, RUA, SECTOR, TRAVESERA, TRAVESIA, URBANIZACION')
+  static const LocationStreetTypeEnum
+      aLAMEDACommaAVENIDACommaCALLECommaCAMINOCommaCARRERCommaCARRETERACommaGLORIETACommaKALEACommaPASAJECommaPASEOCommaPLACACommaPLAZACommaRAMBLACommaRONDACommaRUACommaSECTORCommaTRAVESERACommaTRAVESIACommaURBANIZACION =
+      _$locationStreetTypeEnum_aLAMEDACommaAVENIDACommaCALLECommaCAMINOCommaCARRERCommaCARRETERACommaGLORIETACommaKALEACommaPASAJECommaPASEOCommaPLACACommaPLAZACommaRAMBLACommaRONDACommaRUACommaSECTORCommaTRAVESERACommaTRAVESIACommaURBANIZACION;
 
-  static Serializer<LocationStreetTypeEnum> get serializer => _$locationStreetTypeEnumSerializer;
+  static Serializer<LocationStreetTypeEnum> get serializer =>
+      _$locationStreetTypeEnumSerializer;
 
-  const LocationStreetTypeEnum._(String name): super(name);
+  const LocationStreetTypeEnum._(String name) : super(name);
 
-  static BuiltSet<LocationStreetTypeEnum> get values => _$locationStreetTypeEnumValues;
-  static LocationStreetTypeEnum valueOf(String name) => _$locationStreetTypeEnumValueOf(name);
+  static BuiltSet<LocationStreetTypeEnum> get values =>
+      _$locationStreetTypeEnumValues;
+  static LocationStreetTypeEnum valueOf(String name) =>
+      _$locationStreetTypeEnumValueOf(name);
 }
 
 class LocationCountryEnum extends EnumClass {
-
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'AF')
   static const LocationCountryEnum AF = _$locationCountryEnum_AF;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'AX')
   static const LocationCountryEnum AX = _$locationCountryEnum_AX;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'AL')
   static const LocationCountryEnum AL = _$locationCountryEnum_AL;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'DZ')
   static const LocationCountryEnum DZ = _$locationCountryEnum_DZ;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'AS')
   static const LocationCountryEnum AS = _$locationCountryEnum_AS;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'AD')
   static const LocationCountryEnum AD = _$locationCountryEnum_AD;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'AO')
   static const LocationCountryEnum AO = _$locationCountryEnum_AO;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'AI')
   static const LocationCountryEnum AI = _$locationCountryEnum_AI;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'AQ')
   static const LocationCountryEnum AQ = _$locationCountryEnum_AQ;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'AG')
   static const LocationCountryEnum AG = _$locationCountryEnum_AG;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'AR')
   static const LocationCountryEnum AR = _$locationCountryEnum_AR;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'AM')
   static const LocationCountryEnum AM = _$locationCountryEnum_AM;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'AW')
   static const LocationCountryEnum AW = _$locationCountryEnum_AW;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'AU')
   static const LocationCountryEnum AU = _$locationCountryEnum_AU;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'AT')
   static const LocationCountryEnum AT = _$locationCountryEnum_AT;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'AZ')
   static const LocationCountryEnum AZ = _$locationCountryEnum_AZ;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'BS')
   static const LocationCountryEnum BS = _$locationCountryEnum_BS;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'BH')
   static const LocationCountryEnum BH = _$locationCountryEnum_BH;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'BD')
   static const LocationCountryEnum BD = _$locationCountryEnum_BD;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'BB')
   static const LocationCountryEnum BB = _$locationCountryEnum_BB;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'BY')
   static const LocationCountryEnum BY = _$locationCountryEnum_BY;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'BE')
   static const LocationCountryEnum BE = _$locationCountryEnum_BE;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'BZ')
   static const LocationCountryEnum BZ = _$locationCountryEnum_BZ;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'BJ')
   static const LocationCountryEnum BJ = _$locationCountryEnum_BJ;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'BM')
   static const LocationCountryEnum BM = _$locationCountryEnum_BM;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'BT')
   static const LocationCountryEnum BT = _$locationCountryEnum_BT;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'BO')
   static const LocationCountryEnum BO = _$locationCountryEnum_BO;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'BQ')
   static const LocationCountryEnum BQ = _$locationCountryEnum_BQ;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'BA')
   static const LocationCountryEnum BA = _$locationCountryEnum_BA;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'BW')
   static const LocationCountryEnum BW = _$locationCountryEnum_BW;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'BV')
   static const LocationCountryEnum BV = _$locationCountryEnum_BV;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'BR')
   static const LocationCountryEnum BR = _$locationCountryEnum_BR;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'IO')
   static const LocationCountryEnum IO = _$locationCountryEnum_IO;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'BN')
   static const LocationCountryEnum BN = _$locationCountryEnum_BN;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'BG')
   static const LocationCountryEnum BG = _$locationCountryEnum_BG;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'BF')
   static const LocationCountryEnum BF = _$locationCountryEnum_BF;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'BI')
   static const LocationCountryEnum BI = _$locationCountryEnum_BI;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'KH')
   static const LocationCountryEnum KH = _$locationCountryEnum_KH;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'CM')
   static const LocationCountryEnum CM = _$locationCountryEnum_CM;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'CA')
   static const LocationCountryEnum CA = _$locationCountryEnum_CA;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'CV')
   static const LocationCountryEnum CV = _$locationCountryEnum_CV;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'KY')
   static const LocationCountryEnum KY = _$locationCountryEnum_KY;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'CF')
   static const LocationCountryEnum CF = _$locationCountryEnum_CF;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'TD')
   static const LocationCountryEnum TD = _$locationCountryEnum_TD;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'CL')
   static const LocationCountryEnum CL = _$locationCountryEnum_CL;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'CN')
   static const LocationCountryEnum CN = _$locationCountryEnum_CN;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'CX')
   static const LocationCountryEnum CX = _$locationCountryEnum_CX;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'CC')
   static const LocationCountryEnum CC = _$locationCountryEnum_CC;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'CO')
   static const LocationCountryEnum CO = _$locationCountryEnum_CO;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'KM')
   static const LocationCountryEnum KM = _$locationCountryEnum_KM;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'CG')
   static const LocationCountryEnum CG = _$locationCountryEnum_CG;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'CD')
   static const LocationCountryEnum CD = _$locationCountryEnum_CD;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'CK')
   static const LocationCountryEnum CK = _$locationCountryEnum_CK;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'CR')
   static const LocationCountryEnum CR = _$locationCountryEnum_CR;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'CI')
   static const LocationCountryEnum CI = _$locationCountryEnum_CI;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'HR')
   static const LocationCountryEnum HR = _$locationCountryEnum_HR;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'CU')
   static const LocationCountryEnum CU = _$locationCountryEnum_CU;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'CW')
   static const LocationCountryEnum CW = _$locationCountryEnum_CW;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'CY')
   static const LocationCountryEnum CY = _$locationCountryEnum_CY;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'CZ')
   static const LocationCountryEnum CZ = _$locationCountryEnum_CZ;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'DK')
   static const LocationCountryEnum DK = _$locationCountryEnum_DK;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'DJ')
   static const LocationCountryEnum DJ = _$locationCountryEnum_DJ;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'DM')
   static const LocationCountryEnum DM = _$locationCountryEnum_DM;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'DO')
   static const LocationCountryEnum DO = _$locationCountryEnum_DO;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'EC')
   static const LocationCountryEnum EC = _$locationCountryEnum_EC;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'EG')
   static const LocationCountryEnum EG = _$locationCountryEnum_EG;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'SV')
   static const LocationCountryEnum SV = _$locationCountryEnum_SV;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'GQ')
   static const LocationCountryEnum GQ = _$locationCountryEnum_GQ;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'ER')
   static const LocationCountryEnum ER = _$locationCountryEnum_ER;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'EE')
   static const LocationCountryEnum EE = _$locationCountryEnum_EE;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'ET')
   static const LocationCountryEnum ET = _$locationCountryEnum_ET;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'FK')
   static const LocationCountryEnum FK = _$locationCountryEnum_FK;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'FO')
   static const LocationCountryEnum FO = _$locationCountryEnum_FO;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'FJ')
   static const LocationCountryEnum FJ = _$locationCountryEnum_FJ;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'FI')
   static const LocationCountryEnum FI = _$locationCountryEnum_FI;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'FR')
   static const LocationCountryEnum FR = _$locationCountryEnum_FR;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'GF')
   static const LocationCountryEnum GF = _$locationCountryEnum_GF;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'PF')
   static const LocationCountryEnum PF = _$locationCountryEnum_PF;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'TF')
   static const LocationCountryEnum TF = _$locationCountryEnum_TF;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'GA')
   static const LocationCountryEnum GA = _$locationCountryEnum_GA;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'GM')
   static const LocationCountryEnum GM = _$locationCountryEnum_GM;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'GE')
   static const LocationCountryEnum GE = _$locationCountryEnum_GE;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'DE')
   static const LocationCountryEnum DE = _$locationCountryEnum_DE;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'GH')
   static const LocationCountryEnum GH = _$locationCountryEnum_GH;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'GI')
   static const LocationCountryEnum GI = _$locationCountryEnum_GI;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'GR')
   static const LocationCountryEnum GR = _$locationCountryEnum_GR;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'GL')
   static const LocationCountryEnum GL = _$locationCountryEnum_GL;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'GD')
   static const LocationCountryEnum GD = _$locationCountryEnum_GD;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'GP')
   static const LocationCountryEnum GP = _$locationCountryEnum_GP;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'GU')
   static const LocationCountryEnum GU = _$locationCountryEnum_GU;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'GT')
   static const LocationCountryEnum GT = _$locationCountryEnum_GT;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'GG')
   static const LocationCountryEnum GG = _$locationCountryEnum_GG;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'GN')
   static const LocationCountryEnum GN = _$locationCountryEnum_GN;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'GW')
   static const LocationCountryEnum GW = _$locationCountryEnum_GW;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'GY')
   static const LocationCountryEnum GY = _$locationCountryEnum_GY;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'HT')
   static const LocationCountryEnum HT = _$locationCountryEnum_HT;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'HM')
   static const LocationCountryEnum HM = _$locationCountryEnum_HM;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'VA')
   static const LocationCountryEnum VA = _$locationCountryEnum_VA;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'HN')
   static const LocationCountryEnum HN = _$locationCountryEnum_HN;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'HK')
   static const LocationCountryEnum HK = _$locationCountryEnum_HK;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'HU')
   static const LocationCountryEnum HU = _$locationCountryEnum_HU;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'IS')
   static const LocationCountryEnum IS = _$locationCountryEnum_IS;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'IN')
   static const LocationCountryEnum IN = _$locationCountryEnum_IN;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'ID')
   static const LocationCountryEnum ID = _$locationCountryEnum_ID;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'IR')
   static const LocationCountryEnum IR = _$locationCountryEnum_IR;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'IQ')
   static const LocationCountryEnum IQ = _$locationCountryEnum_IQ;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'IE')
   static const LocationCountryEnum IE = _$locationCountryEnum_IE;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'IM')
   static const LocationCountryEnum IM = _$locationCountryEnum_IM;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'IL')
   static const LocationCountryEnum IL = _$locationCountryEnum_IL;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'IT')
   static const LocationCountryEnum IT = _$locationCountryEnum_IT;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'JM')
   static const LocationCountryEnum JM = _$locationCountryEnum_JM;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'JP')
   static const LocationCountryEnum JP = _$locationCountryEnum_JP;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'JE')
   static const LocationCountryEnum JE = _$locationCountryEnum_JE;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'JO')
   static const LocationCountryEnum JO = _$locationCountryEnum_JO;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'KZ')
   static const LocationCountryEnum KZ = _$locationCountryEnum_KZ;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'KE')
   static const LocationCountryEnum KE = _$locationCountryEnum_KE;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'KI')
   static const LocationCountryEnum KI = _$locationCountryEnum_KI;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'KP')
   static const LocationCountryEnum KP = _$locationCountryEnum_KP;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'KR')
   static const LocationCountryEnum KR = _$locationCountryEnum_KR;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'XK')
   static const LocationCountryEnum XK = _$locationCountryEnum_XK;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'KW')
   static const LocationCountryEnum KW = _$locationCountryEnum_KW;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'KG')
   static const LocationCountryEnum KG = _$locationCountryEnum_KG;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'LA')
   static const LocationCountryEnum LA = _$locationCountryEnum_LA;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'LV')
   static const LocationCountryEnum LV = _$locationCountryEnum_LV;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'LB')
   static const LocationCountryEnum LB = _$locationCountryEnum_LB;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'LS')
   static const LocationCountryEnum LS = _$locationCountryEnum_LS;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'LR')
   static const LocationCountryEnum LR = _$locationCountryEnum_LR;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'LY')
   static const LocationCountryEnum LY = _$locationCountryEnum_LY;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'LI')
   static const LocationCountryEnum LI = _$locationCountryEnum_LI;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'LT')
   static const LocationCountryEnum LT = _$locationCountryEnum_LT;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'LU')
   static const LocationCountryEnum LU = _$locationCountryEnum_LU;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'MO')
   static const LocationCountryEnum MO = _$locationCountryEnum_MO;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'MK')
   static const LocationCountryEnum MK = _$locationCountryEnum_MK;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'MG')
   static const LocationCountryEnum MG = _$locationCountryEnum_MG;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'MW')
   static const LocationCountryEnum MW = _$locationCountryEnum_MW;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'MY')
   static const LocationCountryEnum MY = _$locationCountryEnum_MY;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'MV')
   static const LocationCountryEnum MV = _$locationCountryEnum_MV;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'ML')
   static const LocationCountryEnum ML = _$locationCountryEnum_ML;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'MT')
   static const LocationCountryEnum MT = _$locationCountryEnum_MT;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'MH')
   static const LocationCountryEnum MH = _$locationCountryEnum_MH;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'MQ')
   static const LocationCountryEnum MQ = _$locationCountryEnum_MQ;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'MR')
   static const LocationCountryEnum MR = _$locationCountryEnum_MR;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'MU')
   static const LocationCountryEnum MU = _$locationCountryEnum_MU;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'YT')
   static const LocationCountryEnum YT = _$locationCountryEnum_YT;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'MX')
   static const LocationCountryEnum MX = _$locationCountryEnum_MX;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'FM')
   static const LocationCountryEnum FM = _$locationCountryEnum_FM;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'MD')
   static const LocationCountryEnum MD = _$locationCountryEnum_MD;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'MC')
   static const LocationCountryEnum MC = _$locationCountryEnum_MC;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'MN')
   static const LocationCountryEnum MN = _$locationCountryEnum_MN;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'ME')
   static const LocationCountryEnum ME = _$locationCountryEnum_ME;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'MS')
   static const LocationCountryEnum MS = _$locationCountryEnum_MS;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'MA')
   static const LocationCountryEnum MA = _$locationCountryEnum_MA;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'MZ')
   static const LocationCountryEnum MZ = _$locationCountryEnum_MZ;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'MM')
   static const LocationCountryEnum MM = _$locationCountryEnum_MM;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'NA')
   static const LocationCountryEnum NA = _$locationCountryEnum_NA;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'NR')
   static const LocationCountryEnum NR = _$locationCountryEnum_NR;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'NP')
   static const LocationCountryEnum NP = _$locationCountryEnum_NP;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'NL')
   static const LocationCountryEnum NL = _$locationCountryEnum_NL;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'NC')
   static const LocationCountryEnum NC = _$locationCountryEnum_NC;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'NZ')
   static const LocationCountryEnum NZ = _$locationCountryEnum_NZ;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'NI')
   static const LocationCountryEnum NI = _$locationCountryEnum_NI;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'NE')
   static const LocationCountryEnum NE = _$locationCountryEnum_NE;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'NG')
   static const LocationCountryEnum NG = _$locationCountryEnum_NG;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'NU')
   static const LocationCountryEnum NU = _$locationCountryEnum_NU;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'NF')
   static const LocationCountryEnum NF = _$locationCountryEnum_NF;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'MP')
   static const LocationCountryEnum MP = _$locationCountryEnum_MP;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'NO')
   static const LocationCountryEnum NO = _$locationCountryEnum_NO;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'OM')
   static const LocationCountryEnum OM = _$locationCountryEnum_OM;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'PK')
   static const LocationCountryEnum PK = _$locationCountryEnum_PK;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'PW')
   static const LocationCountryEnum PW = _$locationCountryEnum_PW;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'PS')
   static const LocationCountryEnum PS = _$locationCountryEnum_PS;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'PA')
   static const LocationCountryEnum PA = _$locationCountryEnum_PA;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'PG')
   static const LocationCountryEnum PG = _$locationCountryEnum_PG;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'PY')
   static const LocationCountryEnum PY = _$locationCountryEnum_PY;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'PE')
   static const LocationCountryEnum PE = _$locationCountryEnum_PE;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'PH')
   static const LocationCountryEnum PH = _$locationCountryEnum_PH;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'PN')
   static const LocationCountryEnum PN = _$locationCountryEnum_PN;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'PL')
   static const LocationCountryEnum PL = _$locationCountryEnum_PL;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'PT')
   static const LocationCountryEnum PT = _$locationCountryEnum_PT;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'PR')
   static const LocationCountryEnum PR = _$locationCountryEnum_PR;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'QA')
   static const LocationCountryEnum QA = _$locationCountryEnum_QA;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'RE')
   static const LocationCountryEnum RE = _$locationCountryEnum_RE;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'RO')
   static const LocationCountryEnum RO = _$locationCountryEnum_RO;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'RU')
   static const LocationCountryEnum RU = _$locationCountryEnum_RU;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'RW')
   static const LocationCountryEnum RW = _$locationCountryEnum_RW;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'BL')
   static const LocationCountryEnum BL = _$locationCountryEnum_BL;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'SH')
   static const LocationCountryEnum SH = _$locationCountryEnum_SH;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'KN')
   static const LocationCountryEnum KN = _$locationCountryEnum_KN;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'LC')
   static const LocationCountryEnum LC = _$locationCountryEnum_LC;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'MF')
   static const LocationCountryEnum MF = _$locationCountryEnum_MF;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'PM')
   static const LocationCountryEnum PM = _$locationCountryEnum_PM;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'VC')
   static const LocationCountryEnum VC = _$locationCountryEnum_VC;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'WS')
   static const LocationCountryEnum WS = _$locationCountryEnum_WS;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'SM')
   static const LocationCountryEnum SM = _$locationCountryEnum_SM;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'ST')
   static const LocationCountryEnum ST = _$locationCountryEnum_ST;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'SA')
   static const LocationCountryEnum SA = _$locationCountryEnum_SA;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'SN')
   static const LocationCountryEnum SN = _$locationCountryEnum_SN;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'RS')
   static const LocationCountryEnum RS = _$locationCountryEnum_RS;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'SC')
   static const LocationCountryEnum SC = _$locationCountryEnum_SC;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'SL')
   static const LocationCountryEnum SL = _$locationCountryEnum_SL;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'SG')
   static const LocationCountryEnum SG = _$locationCountryEnum_SG;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'SX')
   static const LocationCountryEnum SX = _$locationCountryEnum_SX;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'SK')
   static const LocationCountryEnum SK = _$locationCountryEnum_SK;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'SI')
   static const LocationCountryEnum SI = _$locationCountryEnum_SI;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'SB')
   static const LocationCountryEnum SB = _$locationCountryEnum_SB;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'SO')
   static const LocationCountryEnum SO = _$locationCountryEnum_SO;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'ZA')
   static const LocationCountryEnum ZA = _$locationCountryEnum_ZA;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'GS')
   static const LocationCountryEnum GS = _$locationCountryEnum_GS;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'SS')
   static const LocationCountryEnum SS = _$locationCountryEnum_SS;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'ES')
   static const LocationCountryEnum ES = _$locationCountryEnum_ES;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'LK')
   static const LocationCountryEnum LK = _$locationCountryEnum_LK;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'SD')
   static const LocationCountryEnum SD = _$locationCountryEnum_SD;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'SR')
   static const LocationCountryEnum SR = _$locationCountryEnum_SR;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'SJ')
   static const LocationCountryEnum SJ = _$locationCountryEnum_SJ;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'SZ')
   static const LocationCountryEnum SZ = _$locationCountryEnum_SZ;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'SE')
   static const LocationCountryEnum SE = _$locationCountryEnum_SE;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'CH')
   static const LocationCountryEnum CH = _$locationCountryEnum_CH;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'SY')
   static const LocationCountryEnum SY = _$locationCountryEnum_SY;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'TW')
   static const LocationCountryEnum TW = _$locationCountryEnum_TW;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'TJ')
   static const LocationCountryEnum TJ = _$locationCountryEnum_TJ;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'TZ')
   static const LocationCountryEnum TZ = _$locationCountryEnum_TZ;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'TH')
   static const LocationCountryEnum TH = _$locationCountryEnum_TH;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'TL')
   static const LocationCountryEnum TL = _$locationCountryEnum_TL;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'TG')
   static const LocationCountryEnum TG = _$locationCountryEnum_TG;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'TK')
   static const LocationCountryEnum TK = _$locationCountryEnum_TK;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'TO')
   static const LocationCountryEnum TO = _$locationCountryEnum_TO;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'TT')
   static const LocationCountryEnum TT = _$locationCountryEnum_TT;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'TN')
   static const LocationCountryEnum TN = _$locationCountryEnum_TN;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'TR')
   static const LocationCountryEnum TR = _$locationCountryEnum_TR;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'TM')
   static const LocationCountryEnum TM = _$locationCountryEnum_TM;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'TC')
   static const LocationCountryEnum TC = _$locationCountryEnum_TC;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'TV')
   static const LocationCountryEnum TV = _$locationCountryEnum_TV;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'UG')
   static const LocationCountryEnum UG = _$locationCountryEnum_UG;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'UA')
   static const LocationCountryEnum UA = _$locationCountryEnum_UA;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'AE')
   static const LocationCountryEnum AE = _$locationCountryEnum_AE;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'UK')
   static const LocationCountryEnum UK = _$locationCountryEnum_UK;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'US')
   static const LocationCountryEnum US = _$locationCountryEnum_US;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'UM')
   static const LocationCountryEnum UM = _$locationCountryEnum_UM;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'UY')
   static const LocationCountryEnum UY = _$locationCountryEnum_UY;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'UZ')
   static const LocationCountryEnum UZ = _$locationCountryEnum_UZ;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'VU')
   static const LocationCountryEnum VU = _$locationCountryEnum_VU;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'VE')
   static const LocationCountryEnum VE = _$locationCountryEnum_VE;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'VN')
   static const LocationCountryEnum VN = _$locationCountryEnum_VN;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'VG')
   static const LocationCountryEnum VG = _$locationCountryEnum_VG;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'VI')
   static const LocationCountryEnum VI = _$locationCountryEnum_VI;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'WF')
   static const LocationCountryEnum WF = _$locationCountryEnum_WF;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'EH')
   static const LocationCountryEnum EH = _$locationCountryEnum_EH;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'YE')
   static const LocationCountryEnum YE = _$locationCountryEnum_YE;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'ZM')
   static const LocationCountryEnum ZM = _$locationCountryEnum_ZM;
+
   /// Country of the location
   @BuiltValueEnumConst(wireName: r'ZW')
   static const LocationCountryEnum ZW = _$locationCountryEnum_ZW;
 
-  static Serializer<LocationCountryEnum> get serializer => _$locationCountryEnumSerializer;
+  static Serializer<LocationCountryEnum> get serializer =>
+      _$locationCountryEnumSerializer;
 
-  const LocationCountryEnum._(String name): super(name);
+  const LocationCountryEnum._(String name) : super(name);
 
-  static BuiltSet<LocationCountryEnum> get values => _$locationCountryEnumValues;
-  static LocationCountryEnum valueOf(String name) => _$locationCountryEnumValueOf(name);
+  static BuiltSet<LocationCountryEnum> get values =>
+      _$locationCountryEnumValues;
+  static LocationCountryEnum valueOf(String name) =>
+      _$locationCountryEnumValueOf(name);
 }
 
 class LocationEmailVerificationEnum extends EnumClass {
-
   /// The locations verification status
   @BuiltValueEnumConst(wireName: r'UNVERIFIED')
-  static const LocationEmailVerificationEnum UNVERIFIED = _$locationEmailVerificationEnum_UNVERIFIED;
+  static const LocationEmailVerificationEnum UNVERIFIED =
+      _$locationEmailVerificationEnum_UNVERIFIED;
+
   /// The locations verification status
   @BuiltValueEnumConst(wireName: r'VERIFIED')
-  static const LocationEmailVerificationEnum VERIFIED = _$locationEmailVerificationEnum_VERIFIED;
+  static const LocationEmailVerificationEnum VERIFIED =
+      _$locationEmailVerificationEnum_VERIFIED;
 
-  static Serializer<LocationEmailVerificationEnum> get serializer => _$locationEmailVerificationEnumSerializer;
+  static Serializer<LocationEmailVerificationEnum> get serializer =>
+      _$locationEmailVerificationEnumSerializer;
 
-  const LocationEmailVerificationEnum._(String name): super(name);
+  const LocationEmailVerificationEnum._(String name) : super(name);
 
-  static BuiltSet<LocationEmailVerificationEnum> get values => _$locationEmailVerificationEnumValues;
-  static LocationEmailVerificationEnum valueOf(String name) => _$locationEmailVerificationEnumValueOf(name);
+  static BuiltSet<LocationEmailVerificationEnum> get values =>
+      _$locationEmailVerificationEnumValues;
+  static LocationEmailVerificationEnum valueOf(String name) =>
+      _$locationEmailVerificationEnumValueOf(name);
 }
 
 class LocationStatusEnum extends EnumClass {
-
   /// The status of the location. One of: <ul><li>ACTIVE - will be synced and renewed</li> <li>INACTIVE - will not be synced anymore, claims of listings will be released where possible</li> <li>CANCELLED - will be synced, will not be renewed. Once endDate is reached, location will switch to INACTIVE</li> <li>CLOSED - location has shut down, we''ll mark listings as permanently closed or remove listings from the internet where permanently closed status is not supported</li></ul>
   @BuiltValueEnumConst(wireName: r'CREATED')
   static const LocationStatusEnum CREATED = _$locationStatusEnum_CREATED;
+
   /// The status of the location. One of: <ul><li>ACTIVE - will be synced and renewed</li> <li>INACTIVE - will not be synced anymore, claims of listings will be released where possible</li> <li>CANCELLED - will be synced, will not be renewed. Once endDate is reached, location will switch to INACTIVE</li> <li>CLOSED - location has shut down, we''ll mark listings as permanently closed or remove listings from the internet where permanently closed status is not supported</li></ul>
   @BuiltValueEnumConst(wireName: r'ACTIVE')
   static const LocationStatusEnum ACTIVE = _$locationStatusEnum_ACTIVE;
+
   /// The status of the location. One of: <ul><li>ACTIVE - will be synced and renewed</li> <li>INACTIVE - will not be synced anymore, claims of listings will be released where possible</li> <li>CANCELLED - will be synced, will not be renewed. Once endDate is reached, location will switch to INACTIVE</li> <li>CLOSED - location has shut down, we''ll mark listings as permanently closed or remove listings from the internet where permanently closed status is not supported</li></ul>
   @BuiltValueEnumConst(wireName: r'INACTIVE')
   static const LocationStatusEnum INACTIVE = _$locationStatusEnum_INACTIVE;
+
   /// The status of the location. One of: <ul><li>ACTIVE - will be synced and renewed</li> <li>INACTIVE - will not be synced anymore, claims of listings will be released where possible</li> <li>CANCELLED - will be synced, will not be renewed. Once endDate is reached, location will switch to INACTIVE</li> <li>CLOSED - location has shut down, we''ll mark listings as permanently closed or remove listings from the internet where permanently closed status is not supported</li></ul>
   @BuiltValueEnumConst(wireName: r'CANCELLED')
   static const LocationStatusEnum CANCELLED = _$locationStatusEnum_CANCELLED;
+
   /// The status of the location. One of: <ul><li>ACTIVE - will be synced and renewed</li> <li>INACTIVE - will not be synced anymore, claims of listings will be released where possible</li> <li>CANCELLED - will be synced, will not be renewed. Once endDate is reached, location will switch to INACTIVE</li> <li>CLOSED - location has shut down, we''ll mark listings as permanently closed or remove listings from the internet where permanently closed status is not supported</li></ul>
   @BuiltValueEnumConst(wireName: r'DELETED')
   static const LocationStatusEnum DELETED = _$locationStatusEnum_DELETED;
+
   /// The status of the location. One of: <ul><li>ACTIVE - will be synced and renewed</li> <li>INACTIVE - will not be synced anymore, claims of listings will be released where possible</li> <li>CANCELLED - will be synced, will not be renewed. Once endDate is reached, location will switch to INACTIVE</li> <li>CLOSED - location has shut down, we''ll mark listings as permanently closed or remove listings from the internet where permanently closed status is not supported</li></ul>
   @BuiltValueEnumConst(wireName: r'CLOSED')
   static const LocationStatusEnum CLOSED = _$locationStatusEnum_CLOSED;
+
   /// The status of the location. One of: <ul><li>ACTIVE - will be synced and renewed</li> <li>INACTIVE - will not be synced anymore, claims of listings will be released where possible</li> <li>CANCELLED - will be synced, will not be renewed. Once endDate is reached, location will switch to INACTIVE</li> <li>CLOSED - location has shut down, we''ll mark listings as permanently closed or remove listings from the internet where permanently closed status is not supported</li></ul>
   @BuiltValueEnumConst(wireName: r'ACTIVE, INACTIVE, CANCELLED, CLOSED')
-  static const LocationStatusEnum aCTIVECommaINACTIVECommaCANCELLEDCommaCLOSED = _$locationStatusEnum_aCTIVECommaINACTIVECommaCANCELLEDCommaCLOSED;
+  static const LocationStatusEnum aCTIVECommaINACTIVECommaCANCELLEDCommaCLOSED =
+      _$locationStatusEnum_aCTIVECommaINACTIVECommaCANCELLEDCommaCLOSED;
 
-  static Serializer<LocationStatusEnum> get serializer => _$locationStatusEnumSerializer;
+  static Serializer<LocationStatusEnum> get serializer =>
+      _$locationStatusEnumSerializer;
 
-  const LocationStatusEnum._(String name): super(name);
+  const LocationStatusEnum._(String name) : super(name);
 
   static BuiltSet<LocationStatusEnum> get values => _$locationStatusEnumValues;
-  static LocationStatusEnum valueOf(String name) => _$locationStatusEnumValueOf(name);
+  static LocationStatusEnum valueOf(String name) =>
+      _$locationStatusEnumValueOf(name);
 }
 
 class LocationFeaturesEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'NEW_PHOTO_TYPES')
-  static const LocationFeaturesEnum NEW_PHOTO_TYPES = _$locationFeaturesEnum_NEW_PHOTO_TYPES;
+  static const LocationFeaturesEnum NEW_PHOTO_TYPES =
+      _$locationFeaturesEnum_NEW_PHOTO_TYPES;
   @BuiltValueEnumConst(wireName: r'ADS')
   static const LocationFeaturesEnum ADS = _$locationFeaturesEnum_ADS;
   @BuiltValueEnumConst(wireName: r'ADS_READ')
   static const LocationFeaturesEnum ADS_READ = _$locationFeaturesEnum_ADS_READ;
   @BuiltValueEnumConst(wireName: r'ADS_WRITE')
-  static const LocationFeaturesEnum ADS_WRITE = _$locationFeaturesEnum_ADS_WRITE;
+  static const LocationFeaturesEnum ADS_WRITE =
+      _$locationFeaturesEnum_ADS_WRITE;
   @BuiltValueEnumConst(wireName: r'ADVANCED_ANALYTICS')
-  static const LocationFeaturesEnum ADVANCED_ANALYTICS = _$locationFeaturesEnum_ADVANCED_ANALYTICS;
+  static const LocationFeaturesEnum ADVANCED_ANALYTICS =
+      _$locationFeaturesEnum_ADVANCED_ANALYTICS;
   @BuiltValueEnumConst(wireName: r'AI_KNOWLEDGEBASE')
-  static const LocationFeaturesEnum AI_KNOWLEDGEBASE = _$locationFeaturesEnum_AI_KNOWLEDGEBASE;
+  static const LocationFeaturesEnum AI_KNOWLEDGEBASE =
+      _$locationFeaturesEnum_AI_KNOWLEDGEBASE;
   @BuiltValueEnumConst(wireName: r'AI_LOCALISATION')
-  static const LocationFeaturesEnum AI_LOCALISATION = _$locationFeaturesEnum_AI_LOCALISATION;
+  static const LocationFeaturesEnum AI_LOCALISATION =
+      _$locationFeaturesEnum_AI_LOCALISATION;
   @BuiltValueEnumConst(wireName: r'AI_SUGGESTED_REPLIES')
-  static const LocationFeaturesEnum AI_SUGGESTED_REPLIES = _$locationFeaturesEnum_AI_SUGGESTED_REPLIES;
+  static const LocationFeaturesEnum AI_SUGGESTED_REPLIES =
+      _$locationFeaturesEnum_AI_SUGGESTED_REPLIES;
   @BuiltValueEnumConst(wireName: r'APPLE_POSTING')
-  static const LocationFeaturesEnum APPLE_POSTING = _$locationFeaturesEnum_APPLE_POSTING;
+  static const LocationFeaturesEnum APPLE_POSTING =
+      _$locationFeaturesEnum_APPLE_POSTING;
   @BuiltValueEnumConst(wireName: r'APPLE_POSTING_WRITE')
-  static const LocationFeaturesEnum APPLE_POSTING_WRITE = _$locationFeaturesEnum_APPLE_POSTING_WRITE;
+  static const LocationFeaturesEnum APPLE_POSTING_WRITE =
+      _$locationFeaturesEnum_APPLE_POSTING_WRITE;
   @BuiltValueEnumConst(wireName: r'AUTO_RESPONSE')
-  static const LocationFeaturesEnum AUTO_RESPONSE = _$locationFeaturesEnum_AUTO_RESPONSE;
+  static const LocationFeaturesEnum AUTO_RESPONSE =
+      _$locationFeaturesEnum_AUTO_RESPONSE;
   @BuiltValueEnumConst(wireName: r'AUTO_RESPONSE_WRITE')
-  static const LocationFeaturesEnum AUTO_RESPONSE_WRITE = _$locationFeaturesEnum_AUTO_RESPONSE_WRITE;
+  static const LocationFeaturesEnum AUTO_RESPONSE_WRITE =
+      _$locationFeaturesEnum_AUTO_RESPONSE_WRITE;
   @BuiltValueEnumConst(wireName: r'AUTOMATION')
-  static const LocationFeaturesEnum AUTOMATION = _$locationFeaturesEnum_AUTOMATION;
+  static const LocationFeaturesEnum AUTOMATION =
+      _$locationFeaturesEnum_AUTOMATION;
   @BuiltValueEnumConst(wireName: r'BASIC')
   static const LocationFeaturesEnum BASIC = _$locationFeaturesEnum_BASIC;
   @BuiltValueEnumConst(wireName: r'BASIC_PLUS')
-  static const LocationFeaturesEnum BASIC_PLUS = _$locationFeaturesEnum_BASIC_PLUS;
+  static const LocationFeaturesEnum BASIC_PLUS =
+      _$locationFeaturesEnum_BASIC_PLUS;
   @BuiltValueEnumConst(wireName: r'BULK_UPDATES')
-  static const LocationFeaturesEnum BULK_UPDATES = _$locationFeaturesEnum_BULK_UPDATES;
+  static const LocationFeaturesEnum BULK_UPDATES =
+      _$locationFeaturesEnum_BULK_UPDATES;
   @BuiltValueEnumConst(wireName: r'INSTAGRAM_POSTING')
-  static const LocationFeaturesEnum INSTAGRAM_POSTING = _$locationFeaturesEnum_INSTAGRAM_POSTING;
+  static const LocationFeaturesEnum INSTAGRAM_POSTING =
+      _$locationFeaturesEnum_INSTAGRAM_POSTING;
   @BuiltValueEnumConst(wireName: r'INSTAGRAM_POSTING_WRITE')
-  static const LocationFeaturesEnum INSTAGRAM_POSTING_WRITE = _$locationFeaturesEnum_INSTAGRAM_POSTING_WRITE;
+  static const LocationFeaturesEnum INSTAGRAM_POSTING_WRITE =
+      _$locationFeaturesEnum_INSTAGRAM_POSTING_WRITE;
   @BuiltValueEnumConst(wireName: r'BUSINESS_LEVEL_CONNECT')
-  static const LocationFeaturesEnum BUSINESS_LEVEL_CONNECT = _$locationFeaturesEnum_BUSINESS_LEVEL_CONNECT;
+  static const LocationFeaturesEnum BUSINESS_LEVEL_CONNECT =
+      _$locationFeaturesEnum_BUSINESS_LEVEL_CONNECT;
   @BuiltValueEnumConst(wireName: r'CALL_TRACKING_NUMBERS')
-  static const LocationFeaturesEnum CALL_TRACKING_NUMBERS = _$locationFeaturesEnum_CALL_TRACKING_NUMBERS;
+  static const LocationFeaturesEnum CALL_TRACKING_NUMBERS =
+      _$locationFeaturesEnum_CALL_TRACKING_NUMBERS;
   @BuiltValueEnumConst(wireName: r'CAN_PAY_INVOICE')
-  static const LocationFeaturesEnum CAN_PAY_INVOICE = _$locationFeaturesEnum_CAN_PAY_INVOICE;
+  static const LocationFeaturesEnum CAN_PAY_INVOICE =
+      _$locationFeaturesEnum_CAN_PAY_INVOICE;
   @BuiltValueEnumConst(wireName: r'CAN_SEE_HELP_SECTION')
-  static const LocationFeaturesEnum CAN_SEE_HELP_SECTION = _$locationFeaturesEnum_CAN_SEE_HELP_SECTION;
+  static const LocationFeaturesEnum CAN_SEE_HELP_SECTION =
+      _$locationFeaturesEnum_CAN_SEE_HELP_SECTION;
   @BuiltValueEnumConst(wireName: r'CHATBOT')
   static const LocationFeaturesEnum CHATBOT = _$locationFeaturesEnum_CHATBOT;
   @BuiltValueEnumConst(wireName: r'CHATBOT_READ')
-  static const LocationFeaturesEnum CHATBOT_READ = _$locationFeaturesEnum_CHATBOT_READ;
+  static const LocationFeaturesEnum CHATBOT_READ =
+      _$locationFeaturesEnum_CHATBOT_READ;
   @BuiltValueEnumConst(wireName: r'CHATBOT_WRITE')
-  static const LocationFeaturesEnum CHATBOT_WRITE = _$locationFeaturesEnum_CHATBOT_WRITE;
+  static const LocationFeaturesEnum CHATBOT_WRITE =
+      _$locationFeaturesEnum_CHATBOT_WRITE;
   @BuiltValueEnumConst(wireName: r'CHAT_READ')
-  static const LocationFeaturesEnum CHAT_READ = _$locationFeaturesEnum_CHAT_READ;
+  static const LocationFeaturesEnum CHAT_READ =
+      _$locationFeaturesEnum_CHAT_READ;
   @BuiltValueEnumConst(wireName: r'CHAT_WRITE')
-  static const LocationFeaturesEnum CHAT_WRITE = _$locationFeaturesEnum_CHAT_WRITE;
+  static const LocationFeaturesEnum CHAT_WRITE =
+      _$locationFeaturesEnum_CHAT_WRITE;
   @BuiltValueEnumConst(wireName: r'CLEANSING')
-  static const LocationFeaturesEnum CLEANSING = _$locationFeaturesEnum_CLEANSING;
+  static const LocationFeaturesEnum CLEANSING =
+      _$locationFeaturesEnum_CLEANSING;
   @BuiltValueEnumConst(wireName: r'CONTENT_COLLECTION')
-  static const LocationFeaturesEnum CONTENT_COLLECTION = _$locationFeaturesEnum_CONTENT_COLLECTION;
+  static const LocationFeaturesEnum CONTENT_COLLECTION =
+      _$locationFeaturesEnum_CONTENT_COLLECTION;
   @BuiltValueEnumConst(wireName: r'DAM')
   static const LocationFeaturesEnum DAM = _$locationFeaturesEnum_DAM;
   @BuiltValueEnumConst(wireName: r'DASHBOARD')
-  static const LocationFeaturesEnum DASHBOARD = _$locationFeaturesEnum_DASHBOARD;
+  static const LocationFeaturesEnum DASHBOARD =
+      _$locationFeaturesEnum_DASHBOARD;
   @BuiltValueEnumConst(wireName: r'ENTERPRISE_ONBOARDING')
-  static const LocationFeaturesEnum ENTERPRISE_ONBOARDING = _$locationFeaturesEnum_ENTERPRISE_ONBOARDING;
+  static const LocationFeaturesEnum ENTERPRISE_ONBOARDING =
+      _$locationFeaturesEnum_ENTERPRISE_ONBOARDING;
   @BuiltValueEnumConst(wireName: r'FACEBOOK_UNOWNED_PAGE_CREATE')
-  static const LocationFeaturesEnum FACEBOOK_UNOWNED_PAGE_CREATE = _$locationFeaturesEnum_FACEBOOK_UNOWNED_PAGE_CREATE;
+  static const LocationFeaturesEnum FACEBOOK_UNOWNED_PAGE_CREATE =
+      _$locationFeaturesEnum_FACEBOOK_UNOWNED_PAGE_CREATE;
   @BuiltValueEnumConst(wireName: r'FIRST_PARTY_REVIEW_APPROVAL')
-  static const LocationFeaturesEnum FIRST_PARTY_REVIEW_APPROVAL = _$locationFeaturesEnum_FIRST_PARTY_REVIEW_APPROVAL;
+  static const LocationFeaturesEnum FIRST_PARTY_REVIEW_APPROVAL =
+      _$locationFeaturesEnum_FIRST_PARTY_REVIEW_APPROVAL;
   @BuiltValueEnumConst(wireName: r'FORMS')
   static const LocationFeaturesEnum FORMS = _$locationFeaturesEnum_FORMS;
   @BuiltValueEnumConst(wireName: r'HOMEPAGE')
@@ -2429,309 +2769,447 @@ class LocationFeaturesEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'INBOX')
   static const LocationFeaturesEnum INBOX = _$locationFeaturesEnum_INBOX;
   @BuiltValueEnumConst(wireName: r'INBOX_APPROVAL')
-  static const LocationFeaturesEnum INBOX_APPROVAL = _$locationFeaturesEnum_INBOX_APPROVAL;
+  static const LocationFeaturesEnum INBOX_APPROVAL =
+      _$locationFeaturesEnum_INBOX_APPROVAL;
   @BuiltValueEnumConst(wireName: r'INBOX_PREVIEW')
-  static const LocationFeaturesEnum INBOX_PREVIEW = _$locationFeaturesEnum_INBOX_PREVIEW;
+  static const LocationFeaturesEnum INBOX_PREVIEW =
+      _$locationFeaturesEnum_INBOX_PREVIEW;
   @BuiltValueEnumConst(wireName: r'INBOX_TEASER')
-  static const LocationFeaturesEnum INBOX_TEASER = _$locationFeaturesEnum_INBOX_TEASER;
+  static const LocationFeaturesEnum INBOX_TEASER =
+      _$locationFeaturesEnum_INBOX_TEASER;
   @BuiltValueEnumConst(wireName: r'INBOX_TWITTER')
-  static const LocationFeaturesEnum INBOX_TWITTER = _$locationFeaturesEnum_INBOX_TWITTER;
+  static const LocationFeaturesEnum INBOX_TWITTER =
+      _$locationFeaturesEnum_INBOX_TWITTER;
   @BuiltValueEnumConst(wireName: r'INBOX_READ')
-  static const LocationFeaturesEnum INBOX_READ = _$locationFeaturesEnum_INBOX_READ;
+  static const LocationFeaturesEnum INBOX_READ =
+      _$locationFeaturesEnum_INBOX_READ;
   @BuiltValueEnumConst(wireName: r'INBOX_WRITE')
-  static const LocationFeaturesEnum INBOX_WRITE = _$locationFeaturesEnum_INBOX_WRITE;
+  static const LocationFeaturesEnum INBOX_WRITE =
+      _$locationFeaturesEnum_INBOX_WRITE;
   @BuiltValueEnumConst(wireName: r'INBOX_2_0_BETA')
-  static const LocationFeaturesEnum iNBOX20BETA = _$locationFeaturesEnum_iNBOX20BETA;
+  static const LocationFeaturesEnum iNBOX20BETA =
+      _$locationFeaturesEnum_iNBOX20BETA;
   @BuiltValueEnumConst(wireName: r'INBOX_2_0_BETA_READ')
-  static const LocationFeaturesEnum iNBOX20BETAREAD = _$locationFeaturesEnum_iNBOX20BETAREAD;
+  static const LocationFeaturesEnum iNBOX20BETAREAD =
+      _$locationFeaturesEnum_iNBOX20BETAREAD;
   @BuiltValueEnumConst(wireName: r'INBOX_2_0_BETA_WRITE')
-  static const LocationFeaturesEnum iNBOX20BETAWRITE = _$locationFeaturesEnum_iNBOX20BETAWRITE;
+  static const LocationFeaturesEnum iNBOX20BETAWRITE =
+      _$locationFeaturesEnum_iNBOX20BETAWRITE;
   @BuiltValueEnumConst(wireName: r'INBOX_FLAG')
-  static const LocationFeaturesEnum INBOX_FLAG = _$locationFeaturesEnum_INBOX_FLAG;
+  static const LocationFeaturesEnum INBOX_FLAG =
+      _$locationFeaturesEnum_INBOX_FLAG;
   @BuiltValueEnumConst(wireName: r'LISTINGS')
   static const LocationFeaturesEnum LISTINGS = _$locationFeaturesEnum_LISTINGS;
   @BuiltValueEnumConst(wireName: r'LIVE_CHAT')
-  static const LocationFeaturesEnum LIVE_CHAT = _$locationFeaturesEnum_LIVE_CHAT;
+  static const LocationFeaturesEnum LIVE_CHAT =
+      _$locationFeaturesEnum_LIVE_CHAT;
   @BuiltValueEnumConst(wireName: r'LOCAL_SEO_REPORT')
-  static const LocationFeaturesEnum LOCAL_SEO_REPORT = _$locationFeaturesEnum_LOCAL_SEO_REPORT;
+  static const LocationFeaturesEnum LOCAL_SEO_REPORT =
+      _$locationFeaturesEnum_LOCAL_SEO_REPORT;
   @BuiltValueEnumConst(wireName: r'LOCATION_APPROVAL_REQUESTS')
-  static const LocationFeaturesEnum LOCATION_APPROVAL_REQUESTS = _$locationFeaturesEnum_LOCATION_APPROVAL_REQUESTS;
+  static const LocationFeaturesEnum LOCATION_APPROVAL_REQUESTS =
+      _$locationFeaturesEnum_LOCATION_APPROVAL_REQUESTS;
   @BuiltValueEnumConst(wireName: r'LOCATION_GROUP')
-  static const LocationFeaturesEnum LOCATION_GROUP = _$locationFeaturesEnum_LOCATION_GROUP;
+  static const LocationFeaturesEnum LOCATION_GROUP =
+      _$locationFeaturesEnum_LOCATION_GROUP;
   @BuiltValueEnumConst(wireName: r'LOCATION_STATUS_CHANGE')
-  static const LocationFeaturesEnum LOCATION_STATUS_CHANGE = _$locationFeaturesEnum_LOCATION_STATUS_CHANGE;
+  static const LocationFeaturesEnum LOCATION_STATUS_CHANGE =
+      _$locationFeaturesEnum_LOCATION_STATUS_CHANGE;
   @BuiltValueEnumConst(wireName: r'LOCATION_TRANSLATION')
-  static const LocationFeaturesEnum LOCATION_TRANSLATION = _$locationFeaturesEnum_LOCATION_TRANSLATION;
+  static const LocationFeaturesEnum LOCATION_TRANSLATION =
+      _$locationFeaturesEnum_LOCATION_TRANSLATION;
   @BuiltValueEnumConst(wireName: r'LOCATION_READ')
-  static const LocationFeaturesEnum LOCATION_READ = _$locationFeaturesEnum_LOCATION_READ;
+  static const LocationFeaturesEnum LOCATION_READ =
+      _$locationFeaturesEnum_LOCATION_READ;
   @BuiltValueEnumConst(wireName: r'LOCATION_WRITE')
-  static const LocationFeaturesEnum LOCATION_WRITE = _$locationFeaturesEnum_LOCATION_WRITE;
+  static const LocationFeaturesEnum LOCATION_WRITE =
+      _$locationFeaturesEnum_LOCATION_WRITE;
   @BuiltValueEnumConst(wireName: r'LOCAL_INVENTORY')
-  static const LocationFeaturesEnum LOCAL_INVENTORY = _$locationFeaturesEnum_LOCAL_INVENTORY;
+  static const LocationFeaturesEnum LOCAL_INVENTORY =
+      _$locationFeaturesEnum_LOCAL_INVENTORY;
   @BuiltValueEnumConst(wireName: r'MANUAL_LISTINGS')
-  static const LocationFeaturesEnum MANUAL_LISTINGS = _$locationFeaturesEnum_MANUAL_LISTINGS;
+  static const LocationFeaturesEnum MANUAL_LISTINGS =
+      _$locationFeaturesEnum_MANUAL_LISTINGS;
   @BuiltValueEnumConst(wireName: r'NEAR_ME_CHECK')
-  static const LocationFeaturesEnum NEAR_ME_CHECK = _$locationFeaturesEnum_NEAR_ME_CHECK;
+  static const LocationFeaturesEnum NEAR_ME_CHECK =
+      _$locationFeaturesEnum_NEAR_ME_CHECK;
   @BuiltValueEnumConst(wireName: r'PHONE_OPTIONAL')
-  static const LocationFeaturesEnum PHONE_OPTIONAL = _$locationFeaturesEnum_PHONE_OPTIONAL;
+  static const LocationFeaturesEnum PHONE_OPTIONAL =
+      _$locationFeaturesEnum_PHONE_OPTIONAL;
   @BuiltValueEnumConst(wireName: r'POSTING')
   static const LocationFeaturesEnum POSTING = _$locationFeaturesEnum_POSTING;
   @BuiltValueEnumConst(wireName: r'POSTING_APPROVAL')
-  static const LocationFeaturesEnum POSTING_APPROVAL = _$locationFeaturesEnum_POSTING_APPROVAL;
+  static const LocationFeaturesEnum POSTING_APPROVAL =
+      _$locationFeaturesEnum_POSTING_APPROVAL;
   @BuiltValueEnumConst(wireName: r'POSTING_READ')
-  static const LocationFeaturesEnum POSTING_READ = _$locationFeaturesEnum_POSTING_READ;
+  static const LocationFeaturesEnum POSTING_READ =
+      _$locationFeaturesEnum_POSTING_READ;
   @BuiltValueEnumConst(wireName: r'POSTING_TONE_ADJUST')
-  static const LocationFeaturesEnum POSTING_TONE_ADJUST = _$locationFeaturesEnum_POSTING_TONE_ADJUST;
+  static const LocationFeaturesEnum POSTING_TONE_ADJUST =
+      _$locationFeaturesEnum_POSTING_TONE_ADJUST;
   @BuiltValueEnumConst(wireName: r'POSTING_WRITE')
-  static const LocationFeaturesEnum POSTING_WRITE = _$locationFeaturesEnum_POSTING_WRITE;
+  static const LocationFeaturesEnum POSTING_WRITE =
+      _$locationFeaturesEnum_POSTING_WRITE;
   @BuiltValueEnumConst(wireName: r'POSTING_PREVIEW')
-  static const LocationFeaturesEnum POSTING_PREVIEW = _$locationFeaturesEnum_POSTING_PREVIEW;
+  static const LocationFeaturesEnum POSTING_PREVIEW =
+      _$locationFeaturesEnum_POSTING_PREVIEW;
   @BuiltValueEnumConst(wireName: r'PRICE_INFO')
-  static const LocationFeaturesEnum PRICE_INFO = _$locationFeaturesEnum_PRICE_INFO;
+  static const LocationFeaturesEnum PRICE_INFO =
+      _$locationFeaturesEnum_PRICE_INFO;
   @BuiltValueEnumConst(wireName: r'QR_CODE_GENERATION')
-  static const LocationFeaturesEnum QR_CODE_GENERATION = _$locationFeaturesEnum_QR_CODE_GENERATION;
+  static const LocationFeaturesEnum QR_CODE_GENERATION =
+      _$locationFeaturesEnum_QR_CODE_GENERATION;
   @BuiltValueEnumConst(wireName: r'RESPONSE_LIBRARY')
-  static const LocationFeaturesEnum RESPONSE_LIBRARY = _$locationFeaturesEnum_RESPONSE_LIBRARY;
+  static const LocationFeaturesEnum RESPONSE_LIBRARY =
+      _$locationFeaturesEnum_RESPONSE_LIBRARY;
   @BuiltValueEnumConst(wireName: r'RESPONSE_LIBRARY_READ')
-  static const LocationFeaturesEnum RESPONSE_LIBRARY_READ = _$locationFeaturesEnum_RESPONSE_LIBRARY_READ;
+  static const LocationFeaturesEnum RESPONSE_LIBRARY_READ =
+      _$locationFeaturesEnum_RESPONSE_LIBRARY_READ;
   @BuiltValueEnumConst(wireName: r'RESPONSE_LIBRARY_WRITE')
-  static const LocationFeaturesEnum RESPONSE_LIBRARY_WRITE = _$locationFeaturesEnum_RESPONSE_LIBRARY_WRITE;
+  static const LocationFeaturesEnum RESPONSE_LIBRARY_WRITE =
+      _$locationFeaturesEnum_RESPONSE_LIBRARY_WRITE;
   @BuiltValueEnumConst(wireName: r'REVIEW_GENERATION_EMAIL')
-  static const LocationFeaturesEnum REVIEW_GENERATION_EMAIL = _$locationFeaturesEnum_REVIEW_GENERATION_EMAIL;
+  static const LocationFeaturesEnum REVIEW_GENERATION_EMAIL =
+      _$locationFeaturesEnum_REVIEW_GENERATION_EMAIL;
   @BuiltValueEnumConst(wireName: r'REVIEW_GENERATION_SMS')
-  static const LocationFeaturesEnum REVIEW_GENERATION_SMS = _$locationFeaturesEnum_REVIEW_GENERATION_SMS;
+  static const LocationFeaturesEnum REVIEW_GENERATION_SMS =
+      _$locationFeaturesEnum_REVIEW_GENERATION_SMS;
   @BuiltValueEnumConst(wireName: r'REVIEW_GENERATION_CREATE')
-  static const LocationFeaturesEnum REVIEW_GENERATION_CREATE = _$locationFeaturesEnum_REVIEW_GENERATION_CREATE;
+  static const LocationFeaturesEnum REVIEW_GENERATION_CREATE =
+      _$locationFeaturesEnum_REVIEW_GENERATION_CREATE;
   @BuiltValueEnumConst(wireName: r'REVIEW_GENERATION_SEND')
-  static const LocationFeaturesEnum REVIEW_GENERATION_SEND = _$locationFeaturesEnum_REVIEW_GENERATION_SEND;
+  static const LocationFeaturesEnum REVIEW_GENERATION_SEND =
+      _$locationFeaturesEnum_REVIEW_GENERATION_SEND;
   @BuiltValueEnumConst(wireName: r'LOCATION_APPROVAL')
-  static const LocationFeaturesEnum LOCATION_APPROVAL = _$locationFeaturesEnum_LOCATION_APPROVAL;
+  static const LocationFeaturesEnum LOCATION_APPROVAL =
+      _$locationFeaturesEnum_LOCATION_APPROVAL;
   @BuiltValueEnumConst(wireName: r'LOCATION_SCHEDULED_UPDATES')
-  static const LocationFeaturesEnum LOCATION_SCHEDULED_UPDATES = _$locationFeaturesEnum_LOCATION_SCHEDULED_UPDATES;
+  static const LocationFeaturesEnum LOCATION_SCHEDULED_UPDATES =
+      _$locationFeaturesEnum_LOCATION_SCHEDULED_UPDATES;
   @BuiltValueEnumConst(wireName: r'SINGLE_SIGN_ON')
-  static const LocationFeaturesEnum SINGLE_SIGN_ON = _$locationFeaturesEnum_SINGLE_SIGN_ON;
+  static const LocationFeaturesEnum SINGLE_SIGN_ON =
+      _$locationFeaturesEnum_SINGLE_SIGN_ON;
   @BuiltValueEnumConst(wireName: r'SOCIAL_ADS')
-  static const LocationFeaturesEnum SOCIAL_ADS = _$locationFeaturesEnum_SOCIAL_ADS;
+  static const LocationFeaturesEnum SOCIAL_ADS =
+      _$locationFeaturesEnum_SOCIAL_ADS;
   @BuiltValueEnumConst(wireName: r'STOREFINDER')
-  static const LocationFeaturesEnum STOREFINDER = _$locationFeaturesEnum_STOREFINDER;
+  static const LocationFeaturesEnum STOREFINDER =
+      _$locationFeaturesEnum_STOREFINDER;
   @BuiltValueEnumConst(wireName: r'STOREFINDER_TRIAL_MODE')
-  static const LocationFeaturesEnum STOREFINDER_TRIAL_MODE = _$locationFeaturesEnum_STOREFINDER_TRIAL_MODE;
+  static const LocationFeaturesEnum STOREFINDER_TRIAL_MODE =
+      _$locationFeaturesEnum_STOREFINDER_TRIAL_MODE;
   @BuiltValueEnumConst(wireName: r'LOCATOR_PAGES_BUILDER')
-  static const LocationFeaturesEnum LOCATOR_PAGES_BUILDER = _$locationFeaturesEnum_LOCATOR_PAGES_BUILDER;
+  static const LocationFeaturesEnum LOCATOR_PAGES_BUILDER =
+      _$locationFeaturesEnum_LOCATOR_PAGES_BUILDER;
   @BuiltValueEnumConst(wireName: r'STOREFINDER_ANALYTICS')
-  static const LocationFeaturesEnum STOREFINDER_ANALYTICS = _$locationFeaturesEnum_STOREFINDER_ANALYTICS;
+  static const LocationFeaturesEnum STOREFINDER_ANALYTICS =
+      _$locationFeaturesEnum_STOREFINDER_ANALYTICS;
   @BuiltValueEnumConst(wireName: r'STOREFINDER_GOOGLE')
-  static const LocationFeaturesEnum STOREFINDER_GOOGLE = _$locationFeaturesEnum_STOREFINDER_GOOGLE;
+  static const LocationFeaturesEnum STOREFINDER_GOOGLE =
+      _$locationFeaturesEnum_STOREFINDER_GOOGLE;
   @BuiltValueEnumConst(wireName: r'STOREFINDER_MAPBOX')
-  static const LocationFeaturesEnum STOREFINDER_MAPBOX = _$locationFeaturesEnum_STOREFINDER_MAPBOX;
+  static const LocationFeaturesEnum STOREFINDER_MAPBOX =
+      _$locationFeaturesEnum_STOREFINDER_MAPBOX;
   @BuiltValueEnumConst(wireName: r'SUPPORT')
   static const LocationFeaturesEnum SUPPORT = _$locationFeaturesEnum_SUPPORT;
   @BuiltValueEnumConst(wireName: r'SUPPRESSION')
-  static const LocationFeaturesEnum SUPPRESSION = _$locationFeaturesEnum_SUPPRESSION;
+  static const LocationFeaturesEnum SUPPRESSION =
+      _$locationFeaturesEnum_SUPPRESSION;
   @BuiltValueEnumConst(wireName: r'TRACKING')
   static const LocationFeaturesEnum TRACKING = _$locationFeaturesEnum_TRACKING;
   @BuiltValueEnumConst(wireName: r'TRANSACTION_LINKS')
-  static const LocationFeaturesEnum TRANSACTION_LINKS = _$locationFeaturesEnum_TRANSACTION_LINKS;
+  static const LocationFeaturesEnum TRANSACTION_LINKS =
+      _$locationFeaturesEnum_TRANSACTION_LINKS;
   @BuiltValueEnumConst(wireName: r'TWITTER_INBOX_READ')
-  static const LocationFeaturesEnum TWITTER_INBOX_READ = _$locationFeaturesEnum_TWITTER_INBOX_READ;
+  static const LocationFeaturesEnum TWITTER_INBOX_READ =
+      _$locationFeaturesEnum_TWITTER_INBOX_READ;
   @BuiltValueEnumConst(wireName: r'TWITTER_INBOX_WRITE')
-  static const LocationFeaturesEnum TWITTER_INBOX_WRITE = _$locationFeaturesEnum_TWITTER_INBOX_WRITE;
+  static const LocationFeaturesEnum TWITTER_INBOX_WRITE =
+      _$locationFeaturesEnum_TWITTER_INBOX_WRITE;
   @BuiltValueEnumConst(wireName: r'TWITTER_POSTING')
-  static const LocationFeaturesEnum TWITTER_POSTING = _$locationFeaturesEnum_TWITTER_POSTING;
+  static const LocationFeaturesEnum TWITTER_POSTING =
+      _$locationFeaturesEnum_TWITTER_POSTING;
   @BuiltValueEnumConst(wireName: r'TWITTER_POSTING_WRITE')
-  static const LocationFeaturesEnum TWITTER_POSTING_WRITE = _$locationFeaturesEnum_TWITTER_POSTING_WRITE;
+  static const LocationFeaturesEnum TWITTER_POSTING_WRITE =
+      _$locationFeaturesEnum_TWITTER_POSTING_WRITE;
   @BuiltValueEnumConst(wireName: r'UPGRADE')
   static const LocationFeaturesEnum UPGRADE = _$locationFeaturesEnum_UPGRADE;
   @BuiltValueEnumConst(wireName: r'USER_OTHERS_EDIT')
-  static const LocationFeaturesEnum USER_OTHERS_EDIT = _$locationFeaturesEnum_USER_OTHERS_EDIT;
+  static const LocationFeaturesEnum USER_OTHERS_EDIT =
+      _$locationFeaturesEnum_USER_OTHERS_EDIT;
   @BuiltValueEnumConst(wireName: r'USER_SELF_EDIT')
-  static const LocationFeaturesEnum USER_SELF_EDIT = _$locationFeaturesEnum_USER_SELF_EDIT;
+  static const LocationFeaturesEnum USER_SELF_EDIT =
+      _$locationFeaturesEnum_USER_SELF_EDIT;
   @BuiltValueEnumConst(wireName: r'UTMS')
   static const LocationFeaturesEnum UTMS = _$locationFeaturesEnum_UTMS;
   @BuiltValueEnumConst(wireName: r'WEBSITE_WIDGETS')
-  static const LocationFeaturesEnum WEBSITE_WIDGETS = _$locationFeaturesEnum_WEBSITE_WIDGETS;
+  static const LocationFeaturesEnum WEBSITE_WIDGETS =
+      _$locationFeaturesEnum_WEBSITE_WIDGETS;
   @BuiltValueEnumConst(wireName: r'EXPANDED_REVIEWS_RESTAURANT')
-  static const LocationFeaturesEnum EXPANDED_REVIEWS_RESTAURANT = _$locationFeaturesEnum_EXPANDED_REVIEWS_RESTAURANT;
+  static const LocationFeaturesEnum EXPANDED_REVIEWS_RESTAURANT =
+      _$locationFeaturesEnum_EXPANDED_REVIEWS_RESTAURANT;
   @BuiltValueEnumConst(wireName: r'EXPANDED_REVIEWS_FINANCE')
-  static const LocationFeaturesEnum EXPANDED_REVIEWS_FINANCE = _$locationFeaturesEnum_EXPANDED_REVIEWS_FINANCE;
+  static const LocationFeaturesEnum EXPANDED_REVIEWS_FINANCE =
+      _$locationFeaturesEnum_EXPANDED_REVIEWS_FINANCE;
   @BuiltValueEnumConst(wireName: r'WHATS_APP_MESSAGES')
-  static const LocationFeaturesEnum WHATS_APP_MESSAGES = _$locationFeaturesEnum_WHATS_APP_MESSAGES;
+  static const LocationFeaturesEnum WHATS_APP_MESSAGES =
+      _$locationFeaturesEnum_WHATS_APP_MESSAGES;
   @BuiltValueEnumConst(wireName: r'ACCESS_REQUEST_INVITATIONS')
-  static const LocationFeaturesEnum ACCESS_REQUEST_INVITATIONS = _$locationFeaturesEnum_ACCESS_REQUEST_INVITATIONS;
+  static const LocationFeaturesEnum ACCESS_REQUEST_INVITATIONS =
+      _$locationFeaturesEnum_ACCESS_REQUEST_INVITATIONS;
   @BuiltValueEnumConst(wireName: r'AI_BULK_REPLIES')
-  static const LocationFeaturesEnum AI_BULK_REPLIES = _$locationFeaturesEnum_AI_BULK_REPLIES;
+  static const LocationFeaturesEnum AI_BULK_REPLIES =
+      _$locationFeaturesEnum_AI_BULK_REPLIES;
 
-  static Serializer<LocationFeaturesEnum> get serializer => _$locationFeaturesEnumSerializer;
+  static Serializer<LocationFeaturesEnum> get serializer =>
+      _$locationFeaturesEnumSerializer;
 
-  const LocationFeaturesEnum._(String name): super(name);
+  const LocationFeaturesEnum._(String name) : super(name);
 
-  static BuiltSet<LocationFeaturesEnum> get values => _$locationFeaturesEnumValues;
-  static LocationFeaturesEnum valueOf(String name) => _$locationFeaturesEnumValueOf(name);
+  static BuiltSet<LocationFeaturesEnum> get values =>
+      _$locationFeaturesEnumValues;
+  static LocationFeaturesEnum valueOf(String name) =>
+      _$locationFeaturesEnumValueOf(name);
 }
 
 class LocationCleansingCommentEnum extends EnumClass {
-
   /// Cleansing comment by user, set only when cleansingStatus is INVALID_DATA. Possible Values (ADDRESS_DETAILS_VERIFIED, NAME_ADDRESS_DETAILS_UPDATED, NON_CLOSURE_CONFIRMATION,)
   @BuiltValueEnumConst(wireName: r'ADDRESS_DETAILS_VERIFIED')
-  static const LocationCleansingCommentEnum ADDRESS_DETAILS_VERIFIED = _$locationCleansingCommentEnum_ADDRESS_DETAILS_VERIFIED;
+  static const LocationCleansingCommentEnum ADDRESS_DETAILS_VERIFIED =
+      _$locationCleansingCommentEnum_ADDRESS_DETAILS_VERIFIED;
+
   /// Cleansing comment by user, set only when cleansingStatus is INVALID_DATA. Possible Values (ADDRESS_DETAILS_VERIFIED, NAME_ADDRESS_DETAILS_UPDATED, NON_CLOSURE_CONFIRMATION,)
   @BuiltValueEnumConst(wireName: r'NAME_ADDRESS_DETAILS_UPDATED')
-  static const LocationCleansingCommentEnum NAME_ADDRESS_DETAILS_UPDATED = _$locationCleansingCommentEnum_NAME_ADDRESS_DETAILS_UPDATED;
+  static const LocationCleansingCommentEnum NAME_ADDRESS_DETAILS_UPDATED =
+      _$locationCleansingCommentEnum_NAME_ADDRESS_DETAILS_UPDATED;
+
   /// Cleansing comment by user, set only when cleansingStatus is INVALID_DATA. Possible Values (ADDRESS_DETAILS_VERIFIED, NAME_ADDRESS_DETAILS_UPDATED, NON_CLOSURE_CONFIRMATION,)
   @BuiltValueEnumConst(wireName: r'NON_CLOSURE_CONFIRMATION')
-  static const LocationCleansingCommentEnum NON_CLOSURE_CONFIRMATION = _$locationCleansingCommentEnum_NON_CLOSURE_CONFIRMATION;
+  static const LocationCleansingCommentEnum NON_CLOSURE_CONFIRMATION =
+      _$locationCleansingCommentEnum_NON_CLOSURE_CONFIRMATION;
 
-  static Serializer<LocationCleansingCommentEnum> get serializer => _$locationCleansingCommentEnumSerializer;
+  static Serializer<LocationCleansingCommentEnum> get serializer =>
+      _$locationCleansingCommentEnumSerializer;
 
-  const LocationCleansingCommentEnum._(String name): super(name);
+  const LocationCleansingCommentEnum._(String name) : super(name);
 
-  static BuiltSet<LocationCleansingCommentEnum> get values => _$locationCleansingCommentEnumValues;
-  static LocationCleansingCommentEnum valueOf(String name) => _$locationCleansingCommentEnumValueOf(name);
+  static BuiltSet<LocationCleansingCommentEnum> get values =>
+      _$locationCleansingCommentEnumValues;
+  static LocationCleansingCommentEnum valueOf(String name) =>
+      _$locationCleansingCommentEnumValueOf(name);
 }
 
 class LocationCleansingStatusEnum extends EnumClass {
-
   /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
   @BuiltValueEnumConst(wireName: r'UNKNOWN')
-  static const LocationCleansingStatusEnum UNKNOWN = _$locationCleansingStatusEnum_UNKNOWN;
+  static const LocationCleansingStatusEnum UNKNOWN =
+      _$locationCleansingStatusEnum_UNKNOWN;
+
   /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
   @BuiltValueEnumConst(wireName: r'NOT_NEEDED')
-  static const LocationCleansingStatusEnum NOT_NEEDED = _$locationCleansingStatusEnum_NOT_NEEDED;
+  static const LocationCleansingStatusEnum NOT_NEEDED =
+      _$locationCleansingStatusEnum_NOT_NEEDED;
+
   /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
   @BuiltValueEnumConst(wireName: r'SUBMISSION_NEEDED')
-  static const LocationCleansingStatusEnum SUBMISSION_NEEDED = _$locationCleansingStatusEnum_SUBMISSION_NEEDED;
+  static const LocationCleansingStatusEnum SUBMISSION_NEEDED =
+      _$locationCleansingStatusEnum_SUBMISSION_NEEDED;
+
   /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
   @BuiltValueEnumConst(wireName: r'PENDING')
-  static const LocationCleansingStatusEnum PENDING = _$locationCleansingStatusEnum_PENDING;
+  static const LocationCleansingStatusEnum PENDING =
+      _$locationCleansingStatusEnum_PENDING;
+
   /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
   @BuiltValueEnumConst(wireName: r'CLEANSED')
-  static const LocationCleansingStatusEnum CLEANSED = _$locationCleansingStatusEnum_CLEANSED;
+  static const LocationCleansingStatusEnum CLEANSED =
+      _$locationCleansingStatusEnum_CLEANSED;
+
   /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
   @BuiltValueEnumConst(wireName: r'AUTO_CLEANSED')
-  static const LocationCleansingStatusEnum AUTO_CLEANSED = _$locationCleansingStatusEnum_AUTO_CLEANSED;
+  static const LocationCleansingStatusEnum AUTO_CLEANSED =
+      _$locationCleansingStatusEnum_AUTO_CLEANSED;
+
   /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
   @BuiltValueEnumConst(wireName: r'INVALID_DATA')
-  static const LocationCleansingStatusEnum INVALID_DATA = _$locationCleansingStatusEnum_INVALID_DATA;
+  static const LocationCleansingStatusEnum INVALID_DATA =
+      _$locationCleansingStatusEnum_INVALID_DATA;
+
   /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
   @BuiltValueEnumConst(wireName: r'UPDATE_FAILED')
-  static const LocationCleansingStatusEnum UPDATE_FAILED = _$locationCleansingStatusEnum_UPDATE_FAILED;
+  static const LocationCleansingStatusEnum UPDATE_FAILED =
+      _$locationCleansingStatusEnum_UPDATE_FAILED;
 
-  static Serializer<LocationCleansingStatusEnum> get serializer => _$locationCleansingStatusEnumSerializer;
+  static Serializer<LocationCleansingStatusEnum> get serializer =>
+      _$locationCleansingStatusEnumSerializer;
 
-  const LocationCleansingStatusEnum._(String name): super(name);
+  const LocationCleansingStatusEnum._(String name) : super(name);
 
-  static BuiltSet<LocationCleansingStatusEnum> get values => _$locationCleansingStatusEnumValues;
-  static LocationCleansingStatusEnum valueOf(String name) => _$locationCleansingStatusEnumValueOf(name);
+  static BuiltSet<LocationCleansingStatusEnum> get values =>
+      _$locationCleansingStatusEnumValues;
+  static LocationCleansingStatusEnum valueOf(String name) =>
+      _$locationCleansingStatusEnumValueOf(name);
 }
 
 class LocationMissingMandatoryFieldsEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'NAME')
-  static const LocationMissingMandatoryFieldsEnum NAME = _$locationMissingMandatoryFieldsEnum_NAME;
+  static const LocationMissingMandatoryFieldsEnum NAME =
+      _$locationMissingMandatoryFieldsEnum_NAME;
   @BuiltValueEnumConst(wireName: r'NAME_DESCRIPTOR')
-  static const LocationMissingMandatoryFieldsEnum NAME_DESCRIPTOR = _$locationMissingMandatoryFieldsEnum_NAME_DESCRIPTOR;
+  static const LocationMissingMandatoryFieldsEnum NAME_DESCRIPTOR =
+      _$locationMissingMandatoryFieldsEnum_NAME_DESCRIPTOR;
   @BuiltValueEnumConst(wireName: r'STREET_NO')
-  static const LocationMissingMandatoryFieldsEnum STREET_NO = _$locationMissingMandatoryFieldsEnum_STREET_NO;
+  static const LocationMissingMandatoryFieldsEnum STREET_NO =
+      _$locationMissingMandatoryFieldsEnum_STREET_NO;
   @BuiltValueEnumConst(wireName: r'STREET')
-  static const LocationMissingMandatoryFieldsEnum STREET = _$locationMissingMandatoryFieldsEnum_STREET;
+  static const LocationMissingMandatoryFieldsEnum STREET =
+      _$locationMissingMandatoryFieldsEnum_STREET;
   @BuiltValueEnumConst(wireName: r'STREET_TYPE')
-  static const LocationMissingMandatoryFieldsEnum STREET_TYPE = _$locationMissingMandatoryFieldsEnum_STREET_TYPE;
+  static const LocationMissingMandatoryFieldsEnum STREET_TYPE =
+      _$locationMissingMandatoryFieldsEnum_STREET_TYPE;
   @BuiltValueEnumConst(wireName: r'ADDRESS_EXTRA')
-  static const LocationMissingMandatoryFieldsEnum ADDRESS_EXTRA = _$locationMissingMandatoryFieldsEnum_ADDRESS_EXTRA;
+  static const LocationMissingMandatoryFieldsEnum ADDRESS_EXTRA =
+      _$locationMissingMandatoryFieldsEnum_ADDRESS_EXTRA;
   @BuiltValueEnumConst(wireName: r'PROVINCE')
-  static const LocationMissingMandatoryFieldsEnum PROVINCE = _$locationMissingMandatoryFieldsEnum_PROVINCE;
+  static const LocationMissingMandatoryFieldsEnum PROVINCE =
+      _$locationMissingMandatoryFieldsEnum_PROVINCE;
   @BuiltValueEnumConst(wireName: r'ZIP')
-  static const LocationMissingMandatoryFieldsEnum ZIP = _$locationMissingMandatoryFieldsEnum_ZIP;
+  static const LocationMissingMandatoryFieldsEnum ZIP =
+      _$locationMissingMandatoryFieldsEnum_ZIP;
   @BuiltValueEnumConst(wireName: r'CITY')
-  static const LocationMissingMandatoryFieldsEnum CITY = _$locationMissingMandatoryFieldsEnum_CITY;
+  static const LocationMissingMandatoryFieldsEnum CITY =
+      _$locationMissingMandatoryFieldsEnum_CITY;
   @BuiltValueEnumConst(wireName: r'COUNTRY')
-  static const LocationMissingMandatoryFieldsEnum COUNTRY = _$locationMissingMandatoryFieldsEnum_COUNTRY;
+  static const LocationMissingMandatoryFieldsEnum COUNTRY =
+      _$locationMissingMandatoryFieldsEnum_COUNTRY;
   @BuiltValueEnumConst(wireName: r'LATITUDE')
-  static const LocationMissingMandatoryFieldsEnum LATITUDE = _$locationMissingMandatoryFieldsEnum_LATITUDE;
+  static const LocationMissingMandatoryFieldsEnum LATITUDE =
+      _$locationMissingMandatoryFieldsEnum_LATITUDE;
   @BuiltValueEnumConst(wireName: r'LONGITUDE')
-  static const LocationMissingMandatoryFieldsEnum LONGITUDE = _$locationMissingMandatoryFieldsEnum_LONGITUDE;
+  static const LocationMissingMandatoryFieldsEnum LONGITUDE =
+      _$locationMissingMandatoryFieldsEnum_LONGITUDE;
   @BuiltValueEnumConst(wireName: r'ADDRESS_DISPLAY')
-  static const LocationMissingMandatoryFieldsEnum ADDRESS_DISPLAY = _$locationMissingMandatoryFieldsEnum_ADDRESS_DISPLAY;
+  static const LocationMissingMandatoryFieldsEnum ADDRESS_DISPLAY =
+      _$locationMissingMandatoryFieldsEnum_ADDRESS_DISPLAY;
   @BuiltValueEnumConst(wireName: r'SERVICE_AREAS')
-  static const LocationMissingMandatoryFieldsEnum SERVICE_AREAS = _$locationMissingMandatoryFieldsEnum_SERVICE_AREAS;
+  static const LocationMissingMandatoryFieldsEnum SERVICE_AREAS =
+      _$locationMissingMandatoryFieldsEnum_SERVICE_AREAS;
   @BuiltValueEnumConst(wireName: r'CATEGORIES')
-  static const LocationMissingMandatoryFieldsEnum CATEGORIES = _$locationMissingMandatoryFieldsEnum_CATEGORIES;
+  static const LocationMissingMandatoryFieldsEnum CATEGORIES =
+      _$locationMissingMandatoryFieldsEnum_CATEGORIES;
   @BuiltValueEnumConst(wireName: r'OPENING_DATE')
-  static const LocationMissingMandatoryFieldsEnum OPENING_DATE = _$locationMissingMandatoryFieldsEnum_OPENING_DATE;
+  static const LocationMissingMandatoryFieldsEnum OPENING_DATE =
+      _$locationMissingMandatoryFieldsEnum_OPENING_DATE;
   @BuiltValueEnumConst(wireName: r'PHONE')
-  static const LocationMissingMandatoryFieldsEnum PHONE = _$locationMissingMandatoryFieldsEnum_PHONE;
+  static const LocationMissingMandatoryFieldsEnum PHONE =
+      _$locationMissingMandatoryFieldsEnum_PHONE;
   @BuiltValueEnumConst(wireName: r'CELLPHONE')
-  static const LocationMissingMandatoryFieldsEnum CELLPHONE = _$locationMissingMandatoryFieldsEnum_CELLPHONE;
+  static const LocationMissingMandatoryFieldsEnum CELLPHONE =
+      _$locationMissingMandatoryFieldsEnum_CELLPHONE;
   @BuiltValueEnumConst(wireName: r'FAX')
-  static const LocationMissingMandatoryFieldsEnum FAX = _$locationMissingMandatoryFieldsEnum_FAX;
+  static const LocationMissingMandatoryFieldsEnum FAX =
+      _$locationMissingMandatoryFieldsEnum_FAX;
   @BuiltValueEnumConst(wireName: r'WEBSITE')
-  static const LocationMissingMandatoryFieldsEnum WEBSITE = _$locationMissingMandatoryFieldsEnum_WEBSITE;
+  static const LocationMissingMandatoryFieldsEnum WEBSITE =
+      _$locationMissingMandatoryFieldsEnum_WEBSITE;
   @BuiltValueEnumConst(wireName: r'WEBSITE_EXTRA')
-  static const LocationMissingMandatoryFieldsEnum WEBSITE_EXTRA = _$locationMissingMandatoryFieldsEnum_WEBSITE_EXTRA;
+  static const LocationMissingMandatoryFieldsEnum WEBSITE_EXTRA =
+      _$locationMissingMandatoryFieldsEnum_WEBSITE_EXTRA;
   @BuiltValueEnumConst(wireName: r'EMAIL')
-  static const LocationMissingMandatoryFieldsEnum EMAIL = _$locationMissingMandatoryFieldsEnum_EMAIL;
+  static const LocationMissingMandatoryFieldsEnum EMAIL =
+      _$locationMissingMandatoryFieldsEnum_EMAIL;
   @BuiltValueEnumConst(wireName: r'OPENINGHOURS')
-  static const LocationMissingMandatoryFieldsEnum OPENINGHOURS = _$locationMissingMandatoryFieldsEnum_OPENINGHOURS;
+  static const LocationMissingMandatoryFieldsEnum OPENINGHOURS =
+      _$locationMissingMandatoryFieldsEnum_OPENINGHOURS;
   @BuiltValueEnumConst(wireName: r'OPENINGHOURS_NOTES')
-  static const LocationMissingMandatoryFieldsEnum OPENINGHOURS_NOTES = _$locationMissingMandatoryFieldsEnum_OPENINGHOURS_NOTES;
+  static const LocationMissingMandatoryFieldsEnum OPENINGHOURS_NOTES =
+      _$locationMissingMandatoryFieldsEnum_OPENINGHOURS_NOTES;
   @BuiltValueEnumConst(wireName: r'SPECIAL_OPENINGHOURS')
-  static const LocationMissingMandatoryFieldsEnum SPECIAL_OPENINGHOURS = _$locationMissingMandatoryFieldsEnum_SPECIAL_OPENINGHOURS;
+  static const LocationMissingMandatoryFieldsEnum SPECIAL_OPENINGHOURS =
+      _$locationMissingMandatoryFieldsEnum_SPECIAL_OPENINGHOURS;
   @BuiltValueEnumConst(wireName: r'MORE_HOURS')
-  static const LocationMissingMandatoryFieldsEnum MORE_HOURS = _$locationMissingMandatoryFieldsEnum_MORE_HOURS;
+  static const LocationMissingMandatoryFieldsEnum MORE_HOURS =
+      _$locationMissingMandatoryFieldsEnum_MORE_HOURS;
   @BuiltValueEnumConst(wireName: r'KEYWORDS')
-  static const LocationMissingMandatoryFieldsEnum KEYWORDS = _$locationMissingMandatoryFieldsEnum_KEYWORDS;
+  static const LocationMissingMandatoryFieldsEnum KEYWORDS =
+      _$locationMissingMandatoryFieldsEnum_KEYWORDS;
   @BuiltValueEnumConst(wireName: r'DESCRIPTION_SHORT')
-  static const LocationMissingMandatoryFieldsEnum DESCRIPTION_SHORT = _$locationMissingMandatoryFieldsEnum_DESCRIPTION_SHORT;
+  static const LocationMissingMandatoryFieldsEnum DESCRIPTION_SHORT =
+      _$locationMissingMandatoryFieldsEnum_DESCRIPTION_SHORT;
   @BuiltValueEnumConst(wireName: r'DESCRIPTION_LONG')
-  static const LocationMissingMandatoryFieldsEnum DESCRIPTION_LONG = _$locationMissingMandatoryFieldsEnum_DESCRIPTION_LONG;
+  static const LocationMissingMandatoryFieldsEnum DESCRIPTION_LONG =
+      _$locationMissingMandatoryFieldsEnum_DESCRIPTION_LONG;
   @BuiltValueEnumConst(wireName: r'IMPRINT')
-  static const LocationMissingMandatoryFieldsEnum IMPRINT = _$locationMissingMandatoryFieldsEnum_IMPRINT;
+  static const LocationMissingMandatoryFieldsEnum IMPRINT =
+      _$locationMissingMandatoryFieldsEnum_IMPRINT;
   @BuiltValueEnumConst(wireName: r'LEGAL_IDENT')
-  static const LocationMissingMandatoryFieldsEnum LEGAL_IDENT = _$locationMissingMandatoryFieldsEnum_LEGAL_IDENT;
+  static const LocationMissingMandatoryFieldsEnum LEGAL_IDENT =
+      _$locationMissingMandatoryFieldsEnum_LEGAL_IDENT;
   @BuiltValueEnumConst(wireName: r'TAX_NUMBER')
-  static const LocationMissingMandatoryFieldsEnum TAX_NUMBER = _$locationMissingMandatoryFieldsEnum_TAX_NUMBER;
+  static const LocationMissingMandatoryFieldsEnum TAX_NUMBER =
+      _$locationMissingMandatoryFieldsEnum_TAX_NUMBER;
   @BuiltValueEnumConst(wireName: r'ATTRIBUTION')
-  static const LocationMissingMandatoryFieldsEnum ATTRIBUTION = _$locationMissingMandatoryFieldsEnum_ATTRIBUTION;
+  static const LocationMissingMandatoryFieldsEnum ATTRIBUTION =
+      _$locationMissingMandatoryFieldsEnum_ATTRIBUTION;
   @BuiltValueEnumConst(wireName: r'IS_PUBLISHED')
-  static const LocationMissingMandatoryFieldsEnum IS_PUBLISHED = _$locationMissingMandatoryFieldsEnum_IS_PUBLISHED;
+  static const LocationMissingMandatoryFieldsEnum IS_PUBLISHED =
+      _$locationMissingMandatoryFieldsEnum_IS_PUBLISHED;
   @BuiltValueEnumConst(wireName: r'SOCIAL_PROFILES')
-  static const LocationMissingMandatoryFieldsEnum SOCIAL_PROFILES = _$locationMissingMandatoryFieldsEnum_SOCIAL_PROFILES;
+  static const LocationMissingMandatoryFieldsEnum SOCIAL_PROFILES =
+      _$locationMissingMandatoryFieldsEnum_SOCIAL_PROFILES;
   @BuiltValueEnumConst(wireName: r'ATTRIBUTES')
-  static const LocationMissingMandatoryFieldsEnum ATTRIBUTES = _$locationMissingMandatoryFieldsEnum_ATTRIBUTES;
+  static const LocationMissingMandatoryFieldsEnum ATTRIBUTES =
+      _$locationMissingMandatoryFieldsEnum_ATTRIBUTES;
   @BuiltValueEnumConst(wireName: r'PAYMENT_OPTIONS')
-  static const LocationMissingMandatoryFieldsEnum PAYMENT_OPTIONS = _$locationMissingMandatoryFieldsEnum_PAYMENT_OPTIONS;
+  static const LocationMissingMandatoryFieldsEnum PAYMENT_OPTIONS =
+      _$locationMissingMandatoryFieldsEnum_PAYMENT_OPTIONS;
   @BuiltValueEnumConst(wireName: r'BRANDS')
-  static const LocationMissingMandatoryFieldsEnum BRANDS = _$locationMissingMandatoryFieldsEnum_BRANDS;
+  static const LocationMissingMandatoryFieldsEnum BRANDS =
+      _$locationMissingMandatoryFieldsEnum_BRANDS;
   @BuiltValueEnumConst(wireName: r'LANGUAGES')
-  static const LocationMissingMandatoryFieldsEnum LANGUAGES = _$locationMissingMandatoryFieldsEnum_LANGUAGES;
+  static const LocationMissingMandatoryFieldsEnum LANGUAGES =
+      _$locationMissingMandatoryFieldsEnum_LANGUAGES;
   @BuiltValueEnumConst(wireName: r'SERVICES')
-  static const LocationMissingMandatoryFieldsEnum SERVICES = _$locationMissingMandatoryFieldsEnum_SERVICES;
+  static const LocationMissingMandatoryFieldsEnum SERVICES =
+      _$locationMissingMandatoryFieldsEnum_SERVICES;
   @BuiltValueEnumConst(wireName: r'CONTENT_LISTS')
-  static const LocationMissingMandatoryFieldsEnum CONTENT_LISTS = _$locationMissingMandatoryFieldsEnum_CONTENT_LISTS;
+  static const LocationMissingMandatoryFieldsEnum CONTENT_LISTS =
+      _$locationMissingMandatoryFieldsEnum_CONTENT_LISTS;
   @BuiltValueEnumConst(wireName: r'PHOTOS')
-  static const LocationMissingMandatoryFieldsEnum PHOTOS = _$locationMissingMandatoryFieldsEnum_PHOTOS;
+  static const LocationMissingMandatoryFieldsEnum PHOTOS =
+      _$locationMissingMandatoryFieldsEnum_PHOTOS;
   @BuiltValueEnumConst(wireName: r'VIDEOS')
-  static const LocationMissingMandatoryFieldsEnum VIDEOS = _$locationMissingMandatoryFieldsEnum_VIDEOS;
+  static const LocationMissingMandatoryFieldsEnum VIDEOS =
+      _$locationMissingMandatoryFieldsEnum_VIDEOS;
   @BuiltValueEnumConst(wireName: r'SOCIAL_POST')
-  static const LocationMissingMandatoryFieldsEnum SOCIAL_POST = _$locationMissingMandatoryFieldsEnum_SOCIAL_POST;
+  static const LocationMissingMandatoryFieldsEnum SOCIAL_POST =
+      _$locationMissingMandatoryFieldsEnum_SOCIAL_POST;
   @BuiltValueEnumConst(wireName: r'DOCTOR_CATEGORIES')
-  static const LocationMissingMandatoryFieldsEnum DOCTOR_CATEGORIES = _$locationMissingMandatoryFieldsEnum_DOCTOR_CATEGORIES;
+  static const LocationMissingMandatoryFieldsEnum DOCTOR_CATEGORIES =
+      _$locationMissingMandatoryFieldsEnum_DOCTOR_CATEGORIES;
   @BuiltValueEnumConst(wireName: r'NPI')
-  static const LocationMissingMandatoryFieldsEnum NPI = _$locationMissingMandatoryFieldsEnum_NPI;
+  static const LocationMissingMandatoryFieldsEnum NPI =
+      _$locationMissingMandatoryFieldsEnum_NPI;
   @BuiltValueEnumConst(wireName: r'EV_DATA')
-  static const LocationMissingMandatoryFieldsEnum EV_DATA = _$locationMissingMandatoryFieldsEnum_EV_DATA;
+  static const LocationMissingMandatoryFieldsEnum EV_DATA =
+      _$locationMissingMandatoryFieldsEnum_EV_DATA;
   @BuiltValueEnumConst(wireName: r'TRANSACTION_LINKS')
-  static const LocationMissingMandatoryFieldsEnum TRANSACTION_LINKS = _$locationMissingMandatoryFieldsEnum_TRANSACTION_LINKS;
+  static const LocationMissingMandatoryFieldsEnum TRANSACTION_LINKS =
+      _$locationMissingMandatoryFieldsEnum_TRANSACTION_LINKS;
   @BuiltValueEnumConst(wireName: r'SUBLOCALITY')
-  static const LocationMissingMandatoryFieldsEnum SUBLOCALITY = _$locationMissingMandatoryFieldsEnum_SUBLOCALITY;
+  static const LocationMissingMandatoryFieldsEnum SUBLOCALITY =
+      _$locationMissingMandatoryFieldsEnum_SUBLOCALITY;
   @BuiltValueEnumConst(wireName: r'CUSTOM_FIELDS')
-  static const LocationMissingMandatoryFieldsEnum CUSTOM_FIELDS = _$locationMissingMandatoryFieldsEnum_CUSTOM_FIELDS;
+  static const LocationMissingMandatoryFieldsEnum CUSTOM_FIELDS =
+      _$locationMissingMandatoryFieldsEnum_CUSTOM_FIELDS;
 
-  static Serializer<LocationMissingMandatoryFieldsEnum> get serializer => _$locationMissingMandatoryFieldsEnumSerializer;
+  static Serializer<LocationMissingMandatoryFieldsEnum> get serializer =>
+      _$locationMissingMandatoryFieldsEnumSerializer;
 
-  const LocationMissingMandatoryFieldsEnum._(String name): super(name);
+  const LocationMissingMandatoryFieldsEnum._(String name) : super(name);
 
-  static BuiltSet<LocationMissingMandatoryFieldsEnum> get values => _$locationMissingMandatoryFieldsEnumValues;
-  static LocationMissingMandatoryFieldsEnum valueOf(String name) => _$locationMissingMandatoryFieldsEnumValueOf(name);
+  static BuiltSet<LocationMissingMandatoryFieldsEnum> get values =>
+      _$locationMissingMandatoryFieldsEnumValues;
+  static LocationMissingMandatoryFieldsEnum valueOf(String name) =>
+      _$locationMissingMandatoryFieldsEnumValueOf(name);
 }
-

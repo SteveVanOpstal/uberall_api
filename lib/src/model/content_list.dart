@@ -17,7 +17,7 @@ part 'content_list.g.dart';
 /// * [dateCreated] - The date the content list was created
 /// * [lastUpdated] - The date the content list was last updated
 /// * [description] - A description of the content list (section)
-/// * [id] 
+/// * [id]
 @BuiltValue()
 abstract class ContentList implements Built<ContentList, ContentListBuilder> {
   /// The name of the content list: e.g. ''Lunch Menu''
@@ -117,7 +117,9 @@ class _$ContentListSerializer implements PrimitiveSerializer<ContentList> {
     ContentList object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -204,34 +206,43 @@ class _$ContentListSerializer implements PrimitiveSerializer<ContentList> {
 }
 
 class ContentListTypeEnum extends EnumClass {
-
   /// The type of content list. One of SERVICES, PRODUCTS, MENU, PEOPLE or CUSTOM. The type cannot be updated after creation.
   @BuiltValueEnumConst(wireName: r'MENU')
   static const ContentListTypeEnum MENU = _$contentListTypeEnum_MENU;
+
   /// The type of content list. One of SERVICES, PRODUCTS, MENU, PEOPLE or CUSTOM. The type cannot be updated after creation.
   @BuiltValueEnumConst(wireName: r'PEOPLE')
   static const ContentListTypeEnum PEOPLE = _$contentListTypeEnum_PEOPLE;
+
   /// The type of content list. One of SERVICES, PRODUCTS, MENU, PEOPLE or CUSTOM. The type cannot be updated after creation.
   @BuiltValueEnumConst(wireName: r'PRODUCTS')
   static const ContentListTypeEnum PRODUCTS = _$contentListTypeEnum_PRODUCTS;
+
   /// The type of content list. One of SERVICES, PRODUCTS, MENU, PEOPLE or CUSTOM. The type cannot be updated after creation.
   @BuiltValueEnumConst(wireName: r'CUSTOM')
   static const ContentListTypeEnum CUSTOM = _$contentListTypeEnum_CUSTOM;
+
   /// The type of content list. One of SERVICES, PRODUCTS, MENU, PEOPLE or CUSTOM. The type cannot be updated after creation.
   @BuiltValueEnumConst(wireName: r'SERVICES')
   static const ContentListTypeEnum SERVICES = _$contentListTypeEnum_SERVICES;
+
   /// The type of content list. One of SERVICES, PRODUCTS, MENU, PEOPLE or CUSTOM. The type cannot be updated after creation.
   @BuiltValueEnumConst(wireName: r'EVENTS')
   static const ContentListTypeEnum EVENTS = _$contentListTypeEnum_EVENTS;
+
   /// The type of content list. One of SERVICES, PRODUCTS, MENU, PEOPLE or CUSTOM. The type cannot be updated after creation.
   @BuiltValueEnumConst(wireName: r'SERVICES, PRODUCTS, MENU, PEOPLE, CUSTOM')
-  static const ContentListTypeEnum sERVICESCommaPRODUCTSCommaMENUCommaPEOPLECommaCUSTOM = _$contentListTypeEnum_sERVICESCommaPRODUCTSCommaMENUCommaPEOPLECommaCUSTOM;
+  static const ContentListTypeEnum
+      sERVICESCommaPRODUCTSCommaMENUCommaPEOPLECommaCUSTOM =
+      _$contentListTypeEnum_sERVICESCommaPRODUCTSCommaMENUCommaPEOPLECommaCUSTOM;
 
-  static Serializer<ContentListTypeEnum> get serializer => _$contentListTypeEnumSerializer;
+  static Serializer<ContentListTypeEnum> get serializer =>
+      _$contentListTypeEnumSerializer;
 
-  const ContentListTypeEnum._(String name): super(name);
+  const ContentListTypeEnum._(String name) : super(name);
 
-  static BuiltSet<ContentListTypeEnum> get values => _$contentListTypeEnumValues;
-  static ContentListTypeEnum valueOf(String name) => _$contentListTypeEnumValueOf(name);
+  static BuiltSet<ContentListTypeEnum> get values =>
+      _$contentListTypeEnumValues;
+  static ContentListTypeEnum valueOf(String name) =>
+      _$contentListTypeEnumValueOf(name);
 }
-

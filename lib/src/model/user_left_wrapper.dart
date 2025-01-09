@@ -13,13 +13,14 @@ part 'user_left_wrapper.g.dart';
 /// UserLeftWrapper
 ///
 /// Properties:
-/// * [status] 
+/// * [status]
 /// * [message] - (optional) Holds further information about the response
-/// * [errorCode] 
+/// * [errorCode]
 /// * [warnings] - (optional) Holds further warnings
-/// * [response] 
+/// * [response]
 @BuiltValue()
-abstract class UserLeftWrapper implements Built<UserLeftWrapper, UserLeftWrapperBuilder> {
+abstract class UserLeftWrapper
+    implements Built<UserLeftWrapper, UserLeftWrapperBuilder> {
   @BuiltValueField(wireName: r'status')
   UserLeftWrapperStatusEnum? get status;
   // enum statusEnum {  SUCCESS,  QUOTA_LIMIT_EXCEED,  NOT_AUTHORIZED,  FORBIDDEN,  BAD_ACCESS_TOKEN,  BAD_PRIVATE_KEY,  BAD_PUBLIC_KEY,  MISSING_PARAMETER,  INVALID_PARAMETER,  WRONG_PARAMETER_TYPE,  CONFLICT,  RESOURCE_LOCKED,  SERVER_ERROR,  ERROR,  NOT_FOUND,  BAD_REQUEST,  USER_ERROR,  PARTIAL_ERROR,  METHOD_NOT_ALLOWED,  };
@@ -41,16 +42,19 @@ abstract class UserLeftWrapper implements Built<UserLeftWrapper, UserLeftWrapper
 
   UserLeftWrapper._();
 
-  factory UserLeftWrapper([void updates(UserLeftWrapperBuilder b)]) = _$UserLeftWrapper;
+  factory UserLeftWrapper([void updates(UserLeftWrapperBuilder b)]) =
+      _$UserLeftWrapper;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UserLeftWrapperBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<UserLeftWrapper> get serializer => _$UserLeftWrapperSerializer();
+  static Serializer<UserLeftWrapper> get serializer =>
+      _$UserLeftWrapperSerializer();
 }
 
-class _$UserLeftWrapperSerializer implements PrimitiveSerializer<UserLeftWrapper> {
+class _$UserLeftWrapperSerializer
+    implements PrimitiveSerializer<UserLeftWrapper> {
   @override
   final Iterable<Type> types = const [UserLeftWrapper, _$UserLeftWrapper];
 
@@ -105,7 +109,9 @@ class _$UserLeftWrapperSerializer implements PrimitiveSerializer<UserLeftWrapper
     UserLeftWrapper object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -185,102 +191,145 @@ class _$UserLeftWrapperSerializer implements PrimitiveSerializer<UserLeftWrapper
 }
 
 class UserLeftWrapperStatusEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'SUCCESS')
-  static const UserLeftWrapperStatusEnum SUCCESS = _$userLeftWrapperStatusEnum_SUCCESS;
+  static const UserLeftWrapperStatusEnum SUCCESS =
+      _$userLeftWrapperStatusEnum_SUCCESS;
   @BuiltValueEnumConst(wireName: r'QUOTA_LIMIT_EXCEED')
-  static const UserLeftWrapperStatusEnum QUOTA_LIMIT_EXCEED = _$userLeftWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
+  static const UserLeftWrapperStatusEnum QUOTA_LIMIT_EXCEED =
+      _$userLeftWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
   @BuiltValueEnumConst(wireName: r'NOT_AUTHORIZED')
-  static const UserLeftWrapperStatusEnum NOT_AUTHORIZED = _$userLeftWrapperStatusEnum_NOT_AUTHORIZED;
+  static const UserLeftWrapperStatusEnum NOT_AUTHORIZED =
+      _$userLeftWrapperStatusEnum_NOT_AUTHORIZED;
   @BuiltValueEnumConst(wireName: r'FORBIDDEN')
-  static const UserLeftWrapperStatusEnum FORBIDDEN = _$userLeftWrapperStatusEnum_FORBIDDEN;
+  static const UserLeftWrapperStatusEnum FORBIDDEN =
+      _$userLeftWrapperStatusEnum_FORBIDDEN;
   @BuiltValueEnumConst(wireName: r'BAD_ACCESS_TOKEN')
-  static const UserLeftWrapperStatusEnum BAD_ACCESS_TOKEN = _$userLeftWrapperStatusEnum_BAD_ACCESS_TOKEN;
+  static const UserLeftWrapperStatusEnum BAD_ACCESS_TOKEN =
+      _$userLeftWrapperStatusEnum_BAD_ACCESS_TOKEN;
   @BuiltValueEnumConst(wireName: r'BAD_PRIVATE_KEY')
-  static const UserLeftWrapperStatusEnum BAD_PRIVATE_KEY = _$userLeftWrapperStatusEnum_BAD_PRIVATE_KEY;
+  static const UserLeftWrapperStatusEnum BAD_PRIVATE_KEY =
+      _$userLeftWrapperStatusEnum_BAD_PRIVATE_KEY;
   @BuiltValueEnumConst(wireName: r'BAD_PUBLIC_KEY')
-  static const UserLeftWrapperStatusEnum BAD_PUBLIC_KEY = _$userLeftWrapperStatusEnum_BAD_PUBLIC_KEY;
+  static const UserLeftWrapperStatusEnum BAD_PUBLIC_KEY =
+      _$userLeftWrapperStatusEnum_BAD_PUBLIC_KEY;
   @BuiltValueEnumConst(wireName: r'MISSING_PARAMETER')
-  static const UserLeftWrapperStatusEnum MISSING_PARAMETER = _$userLeftWrapperStatusEnum_MISSING_PARAMETER;
+  static const UserLeftWrapperStatusEnum MISSING_PARAMETER =
+      _$userLeftWrapperStatusEnum_MISSING_PARAMETER;
   @BuiltValueEnumConst(wireName: r'INVALID_PARAMETER')
-  static const UserLeftWrapperStatusEnum INVALID_PARAMETER = _$userLeftWrapperStatusEnum_INVALID_PARAMETER;
+  static const UserLeftWrapperStatusEnum INVALID_PARAMETER =
+      _$userLeftWrapperStatusEnum_INVALID_PARAMETER;
   @BuiltValueEnumConst(wireName: r'WRONG_PARAMETER_TYPE')
-  static const UserLeftWrapperStatusEnum WRONG_PARAMETER_TYPE = _$userLeftWrapperStatusEnum_WRONG_PARAMETER_TYPE;
+  static const UserLeftWrapperStatusEnum WRONG_PARAMETER_TYPE =
+      _$userLeftWrapperStatusEnum_WRONG_PARAMETER_TYPE;
   @BuiltValueEnumConst(wireName: r'CONFLICT')
-  static const UserLeftWrapperStatusEnum CONFLICT = _$userLeftWrapperStatusEnum_CONFLICT;
+  static const UserLeftWrapperStatusEnum CONFLICT =
+      _$userLeftWrapperStatusEnum_CONFLICT;
   @BuiltValueEnumConst(wireName: r'RESOURCE_LOCKED')
-  static const UserLeftWrapperStatusEnum RESOURCE_LOCKED = _$userLeftWrapperStatusEnum_RESOURCE_LOCKED;
+  static const UserLeftWrapperStatusEnum RESOURCE_LOCKED =
+      _$userLeftWrapperStatusEnum_RESOURCE_LOCKED;
   @BuiltValueEnumConst(wireName: r'SERVER_ERROR')
-  static const UserLeftWrapperStatusEnum SERVER_ERROR = _$userLeftWrapperStatusEnum_SERVER_ERROR;
+  static const UserLeftWrapperStatusEnum SERVER_ERROR =
+      _$userLeftWrapperStatusEnum_SERVER_ERROR;
   @BuiltValueEnumConst(wireName: r'ERROR')
-  static const UserLeftWrapperStatusEnum ERROR = _$userLeftWrapperStatusEnum_ERROR;
+  static const UserLeftWrapperStatusEnum ERROR =
+      _$userLeftWrapperStatusEnum_ERROR;
   @BuiltValueEnumConst(wireName: r'NOT_FOUND')
-  static const UserLeftWrapperStatusEnum NOT_FOUND = _$userLeftWrapperStatusEnum_NOT_FOUND;
+  static const UserLeftWrapperStatusEnum NOT_FOUND =
+      _$userLeftWrapperStatusEnum_NOT_FOUND;
   @BuiltValueEnumConst(wireName: r'BAD_REQUEST')
-  static const UserLeftWrapperStatusEnum BAD_REQUEST = _$userLeftWrapperStatusEnum_BAD_REQUEST;
+  static const UserLeftWrapperStatusEnum BAD_REQUEST =
+      _$userLeftWrapperStatusEnum_BAD_REQUEST;
   @BuiltValueEnumConst(wireName: r'USER_ERROR')
-  static const UserLeftWrapperStatusEnum USER_ERROR = _$userLeftWrapperStatusEnum_USER_ERROR;
+  static const UserLeftWrapperStatusEnum USER_ERROR =
+      _$userLeftWrapperStatusEnum_USER_ERROR;
   @BuiltValueEnumConst(wireName: r'PARTIAL_ERROR')
-  static const UserLeftWrapperStatusEnum PARTIAL_ERROR = _$userLeftWrapperStatusEnum_PARTIAL_ERROR;
+  static const UserLeftWrapperStatusEnum PARTIAL_ERROR =
+      _$userLeftWrapperStatusEnum_PARTIAL_ERROR;
   @BuiltValueEnumConst(wireName: r'METHOD_NOT_ALLOWED')
-  static const UserLeftWrapperStatusEnum METHOD_NOT_ALLOWED = _$userLeftWrapperStatusEnum_METHOD_NOT_ALLOWED;
+  static const UserLeftWrapperStatusEnum METHOD_NOT_ALLOWED =
+      _$userLeftWrapperStatusEnum_METHOD_NOT_ALLOWED;
 
-  static Serializer<UserLeftWrapperStatusEnum> get serializer => _$userLeftWrapperStatusEnumSerializer;
+  static Serializer<UserLeftWrapperStatusEnum> get serializer =>
+      _$userLeftWrapperStatusEnumSerializer;
 
-  const UserLeftWrapperStatusEnum._(String name): super(name);
+  const UserLeftWrapperStatusEnum._(String name) : super(name);
 
-  static BuiltSet<UserLeftWrapperStatusEnum> get values => _$userLeftWrapperStatusEnumValues;
-  static UserLeftWrapperStatusEnum valueOf(String name) => _$userLeftWrapperStatusEnumValueOf(name);
+  static BuiltSet<UserLeftWrapperStatusEnum> get values =>
+      _$userLeftWrapperStatusEnumValues;
+  static UserLeftWrapperStatusEnum valueOf(String name) =>
+      _$userLeftWrapperStatusEnumValueOf(name);
 }
 
 class UserLeftWrapperErrorCodeEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'NORMALIZATION_FAILED')
-  static const UserLeftWrapperErrorCodeEnum NORMALIZATION_FAILED = _$userLeftWrapperErrorCodeEnum_NORMALIZATION_FAILED;
+  static const UserLeftWrapperErrorCodeEnum NORMALIZATION_FAILED =
+      _$userLeftWrapperErrorCodeEnum_NORMALIZATION_FAILED;
   @BuiltValueEnumConst(wireName: r'DATA_CORRUPTED')
-  static const UserLeftWrapperErrorCodeEnum DATA_CORRUPTED = _$userLeftWrapperErrorCodeEnum_DATA_CORRUPTED;
+  static const UserLeftWrapperErrorCodeEnum DATA_CORRUPTED =
+      _$userLeftWrapperErrorCodeEnum_DATA_CORRUPTED;
   @BuiltValueEnumConst(wireName: r'INVALID_INPUT')
-  static const UserLeftWrapperErrorCodeEnum INVALID_INPUT = _$userLeftWrapperErrorCodeEnum_INVALID_INPUT;
+  static const UserLeftWrapperErrorCodeEnum INVALID_INPUT =
+      _$userLeftWrapperErrorCodeEnum_INVALID_INPUT;
   @BuiltValueEnumConst(wireName: r'NOT_SYNCABLE')
-  static const UserLeftWrapperErrorCodeEnum NOT_SYNCABLE = _$userLeftWrapperErrorCodeEnum_NOT_SYNCABLE;
+  static const UserLeftWrapperErrorCodeEnum NOT_SYNCABLE =
+      _$userLeftWrapperErrorCodeEnum_NOT_SYNCABLE;
   @BuiltValueEnumConst(wireName: r'PAYMENT_FAILED')
-  static const UserLeftWrapperErrorCodeEnum PAYMENT_FAILED = _$userLeftWrapperErrorCodeEnum_PAYMENT_FAILED;
+  static const UserLeftWrapperErrorCodeEnum PAYMENT_FAILED =
+      _$userLeftWrapperErrorCodeEnum_PAYMENT_FAILED;
   @BuiltValueEnumConst(wireName: r'FREE_TIER_REACHED')
-  static const UserLeftWrapperErrorCodeEnum FREE_TIER_REACHED = _$userLeftWrapperErrorCodeEnum_FREE_TIER_REACHED;
+  static const UserLeftWrapperErrorCodeEnum FREE_TIER_REACHED =
+      _$userLeftWrapperErrorCodeEnum_FREE_TIER_REACHED;
   @BuiltValueEnumConst(wireName: r'LIMIT_REACHED')
-  static const UserLeftWrapperErrorCodeEnum LIMIT_REACHED = _$userLeftWrapperErrorCodeEnum_LIMIT_REACHED;
+  static const UserLeftWrapperErrorCodeEnum LIMIT_REACHED =
+      _$userLeftWrapperErrorCodeEnum_LIMIT_REACHED;
   @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const UserLeftWrapperErrorCodeEnum INACTIVE = _$userLeftWrapperErrorCodeEnum_INACTIVE;
+  static const UserLeftWrapperErrorCodeEnum INACTIVE =
+      _$userLeftWrapperErrorCodeEnum_INACTIVE;
   @BuiltValueEnumConst(wireName: r'UNKNOWN')
-  static const UserLeftWrapperErrorCodeEnum UNKNOWN = _$userLeftWrapperErrorCodeEnum_UNKNOWN;
+  static const UserLeftWrapperErrorCodeEnum UNKNOWN =
+      _$userLeftWrapperErrorCodeEnum_UNKNOWN;
   @BuiltValueEnumConst(wireName: r'IDENTIFIER_NOT_UNIQUE')
-  static const UserLeftWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE = _$userLeftWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
+  static const UserLeftWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE =
+      _$userLeftWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
   @BuiltValueEnumConst(wireName: r'ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT')
-  static const UserLeftWrapperErrorCodeEnum ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT = _$userLeftWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
+  static const UserLeftWrapperErrorCodeEnum
+      ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT =
+      _$userLeftWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
   @BuiltValueEnumConst(wireName: r'NO_ACCOUNT_CONNECTED')
-  static const UserLeftWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED = _$userLeftWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
+  static const UserLeftWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED =
+      _$userLeftWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
   @BuiltValueEnumConst(wireName: r'NO_PAGE_SELECTED')
-  static const UserLeftWrapperErrorCodeEnum NO_PAGE_SELECTED = _$userLeftWrapperErrorCodeEnum_NO_PAGE_SELECTED;
+  static const UserLeftWrapperErrorCodeEnum NO_PAGE_SELECTED =
+      _$userLeftWrapperErrorCodeEnum_NO_PAGE_SELECTED;
   @BuiltValueEnumConst(wireName: r'PAGE_NOT_CREATED')
-  static const UserLeftWrapperErrorCodeEnum PAGE_NOT_CREATED = _$userLeftWrapperErrorCodeEnum_PAGE_NOT_CREATED;
+  static const UserLeftWrapperErrorCodeEnum PAGE_NOT_CREATED =
+      _$userLeftWrapperErrorCodeEnum_PAGE_NOT_CREATED;
   @BuiltValueEnumConst(wireName: r'PAGE_IN_REVIEW')
-  static const UserLeftWrapperErrorCodeEnum PAGE_IN_REVIEW = _$userLeftWrapperErrorCodeEnum_PAGE_IN_REVIEW;
+  static const UserLeftWrapperErrorCodeEnum PAGE_IN_REVIEW =
+      _$userLeftWrapperErrorCodeEnum_PAGE_IN_REVIEW;
   @BuiltValueEnumConst(wireName: r'PAGE_CLAIMED_BY_OTHERS')
-  static const UserLeftWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS = _$userLeftWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
+  static const UserLeftWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS =
+      _$userLeftWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
   @BuiltValueEnumConst(wireName: r'OVERLAPPING_SOCIALPOST')
-  static const UserLeftWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST = _$userLeftWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
+  static const UserLeftWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST =
+      _$userLeftWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
   @BuiltValueEnumConst(wireName: r'TOO_MANY_REPLIES')
-  static const UserLeftWrapperErrorCodeEnum TOO_MANY_REPLIES = _$userLeftWrapperErrorCodeEnum_TOO_MANY_REPLIES;
+  static const UserLeftWrapperErrorCodeEnum TOO_MANY_REPLIES =
+      _$userLeftWrapperErrorCodeEnum_TOO_MANY_REPLIES;
   @BuiltValueEnumConst(wireName: r'REPLY_TOO_LONG')
-  static const UserLeftWrapperErrorCodeEnum REPLY_TOO_LONG = _$userLeftWrapperErrorCodeEnum_REPLY_TOO_LONG;
+  static const UserLeftWrapperErrorCodeEnum REPLY_TOO_LONG =
+      _$userLeftWrapperErrorCodeEnum_REPLY_TOO_LONG;
   @BuiltValueEnumConst(wireName: r'DEPRECATED')
-  static const UserLeftWrapperErrorCodeEnum DEPRECATED = _$userLeftWrapperErrorCodeEnum_DEPRECATED;
+  static const UserLeftWrapperErrorCodeEnum DEPRECATED =
+      _$userLeftWrapperErrorCodeEnum_DEPRECATED;
 
-  static Serializer<UserLeftWrapperErrorCodeEnum> get serializer => _$userLeftWrapperErrorCodeEnumSerializer;
+  static Serializer<UserLeftWrapperErrorCodeEnum> get serializer =>
+      _$userLeftWrapperErrorCodeEnumSerializer;
 
-  const UserLeftWrapperErrorCodeEnum._(String name): super(name);
+  const UserLeftWrapperErrorCodeEnum._(String name) : super(name);
 
-  static BuiltSet<UserLeftWrapperErrorCodeEnum> get values => _$userLeftWrapperErrorCodeEnumValues;
-  static UserLeftWrapperErrorCodeEnum valueOf(String name) => _$userLeftWrapperErrorCodeEnumValueOf(name);
+  static BuiltSet<UserLeftWrapperErrorCodeEnum> get values =>
+      _$userLeftWrapperErrorCodeEnumValues;
+  static UserLeftWrapperErrorCodeEnum valueOf(String name) =>
+      _$userLeftWrapperErrorCodeEnumValueOf(name);
 }
-

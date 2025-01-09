@@ -11,7 +11,6 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for SocialPostingTemplatesApi
 void main() {
   // final instance = SocialPostingTemplatesApi();
@@ -61,6 +60,5 @@ void main() {
     test('test postSocialPostsTemplates', () async {
       // TODO
     });
-
   });
 }

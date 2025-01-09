@@ -13,7 +13,7 @@ part 'category.g.dart';
 /// Properties:
 /// * [id] - The uberall unique id for the category
 /// * [name] - The category description
-/// * [parent] 
+/// * [parent]
 /// * [selectable] - Boolean indicating whether the category can be used
 @BuiltValue()
 abstract class Category implements Built<Category, CategoryBuilder> {
@@ -91,7 +91,9 @@ class _$CategorySerializer implements PrimitiveSerializer<Category> {
     Category object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -162,4 +164,3 @@ class _$CategorySerializer implements PrimitiveSerializer<Category> {
     return result.build();
   }
 }
-

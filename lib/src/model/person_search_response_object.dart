@@ -16,9 +16,11 @@ part 'person_search_response_object.g.dart';
 /// * [offset] - Offset for pagination
 /// * [max] - Maximum number of results per page
 /// * [total] - Total count of results
-/// * [persons] 
+/// * [persons]
 @BuiltValue()
-abstract class PersonSearchResponseObject implements Built<PersonSearchResponseObject, PersonSearchResponseObjectBuilder> {
+abstract class PersonSearchResponseObject
+    implements
+        Built<PersonSearchResponseObject, PersonSearchResponseObjectBuilder> {
   /// Offset for pagination
   @BuiltValueField(wireName: r'offset')
   int? get offset;
@@ -36,18 +38,25 @@ abstract class PersonSearchResponseObject implements Built<PersonSearchResponseO
 
   PersonSearchResponseObject._();
 
-  factory PersonSearchResponseObject([void updates(PersonSearchResponseObjectBuilder b)]) = _$PersonSearchResponseObject;
+  factory PersonSearchResponseObject(
+          [void updates(PersonSearchResponseObjectBuilder b)]) =
+      _$PersonSearchResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PersonSearchResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<PersonSearchResponseObject> get serializer => _$PersonSearchResponseObjectSerializer();
+  static Serializer<PersonSearchResponseObject> get serializer =>
+      _$PersonSearchResponseObjectSerializer();
 }
 
-class _$PersonSearchResponseObjectSerializer implements PrimitiveSerializer<PersonSearchResponseObject> {
+class _$PersonSearchResponseObjectSerializer
+    implements PrimitiveSerializer<PersonSearchResponseObject> {
   @override
-  final Iterable<Type> types = const [PersonSearchResponseObject, _$PersonSearchResponseObject];
+  final Iterable<Type> types = const [
+    PersonSearchResponseObject,
+    _$PersonSearchResponseObject
+  ];
 
   @override
   final String wireName = r'PersonSearchResponseObject';
@@ -93,7 +102,9 @@ class _$PersonSearchResponseObjectSerializer implements PrimitiveSerializer<Pers
     PersonSearchResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -164,4 +175,3 @@ class _$PersonSearchResponseObjectSerializer implements PrimitiveSerializer<Pers
     return result.build();
   }
 }
-

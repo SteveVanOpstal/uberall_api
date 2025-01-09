@@ -16,9 +16,11 @@ part 'event_search_response_object.g.dart';
 /// * [offset] - Offset for pagination
 /// * [max] - Maximum number of results per page
 /// * [total] - Total count of results
-/// * [events] 
+/// * [events]
 @BuiltValue()
-abstract class EventSearchResponseObject implements Built<EventSearchResponseObject, EventSearchResponseObjectBuilder> {
+abstract class EventSearchResponseObject
+    implements
+        Built<EventSearchResponseObject, EventSearchResponseObjectBuilder> {
   /// Offset for pagination
   @BuiltValueField(wireName: r'offset')
   int? get offset;
@@ -36,18 +38,25 @@ abstract class EventSearchResponseObject implements Built<EventSearchResponseObj
 
   EventSearchResponseObject._();
 
-  factory EventSearchResponseObject([void updates(EventSearchResponseObjectBuilder b)]) = _$EventSearchResponseObject;
+  factory EventSearchResponseObject(
+          [void updates(EventSearchResponseObjectBuilder b)]) =
+      _$EventSearchResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EventSearchResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<EventSearchResponseObject> get serializer => _$EventSearchResponseObjectSerializer();
+  static Serializer<EventSearchResponseObject> get serializer =>
+      _$EventSearchResponseObjectSerializer();
 }
 
-class _$EventSearchResponseObjectSerializer implements PrimitiveSerializer<EventSearchResponseObject> {
+class _$EventSearchResponseObjectSerializer
+    implements PrimitiveSerializer<EventSearchResponseObject> {
   @override
-  final Iterable<Type> types = const [EventSearchResponseObject, _$EventSearchResponseObject];
+  final Iterable<Type> types = const [
+    EventSearchResponseObject,
+    _$EventSearchResponseObject
+  ];
 
   @override
   final String wireName = r'EventSearchResponseObject';
@@ -93,7 +102,9 @@ class _$EventSearchResponseObjectSerializer implements PrimitiveSerializer<Event
     EventSearchResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -164,4 +175,3 @@ class _$EventSearchResponseObjectSerializer implements PrimitiveSerializer<Event
     return result.build();
   }
 }
-

@@ -21,7 +21,7 @@ part 'social_post_template.g.dart';
 /// * [alertType] - Set to COVID_19 if this Social Post Template is a COVID-19 Google Alert Post
 /// * [shared] - Defines if the Social Post Template is shared or not.
 /// * [isStoreLocator] - When enabled, the SocialPost will be visible in StoreLocator
-/// * [callToActions] 
+/// * [callToActions]
 /// * [userId] - Id of the user that is doing the action
 /// * [directories] - List of videos (currently only supports one element)
 /// * [photos] - The Social Post Template''s photos. It should be a list containing BASE64 converted images or urls of photos from a previous Social Post. It is required if the template has no description.
@@ -29,7 +29,8 @@ part 'social_post_template.g.dart';
 /// * [videos] - List of videos (currently only supports one element)
 /// * [ownerName] - The name of the user that owns the Social Post Template. (Only informational. If included in the request, it will be ignored.)
 @BuiltValue()
-abstract class SocialPostTemplate implements Built<SocialPostTemplate, SocialPostTemplateBuilder> {
+abstract class SocialPostTemplate
+    implements Built<SocialPostTemplate, SocialPostTemplateBuilder> {
   /// The title of the Social Post Template.
   @BuiltValueField(wireName: r'title')
   String? get title;
@@ -89,16 +90,19 @@ abstract class SocialPostTemplate implements Built<SocialPostTemplate, SocialPos
 
   SocialPostTemplate._();
 
-  factory SocialPostTemplate([void updates(SocialPostTemplateBuilder b)]) = _$SocialPostTemplate;
+  factory SocialPostTemplate([void updates(SocialPostTemplateBuilder b)]) =
+      _$SocialPostTemplate;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialPostTemplateBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<SocialPostTemplate> get serializer => _$SocialPostTemplateSerializer();
+  static Serializer<SocialPostTemplate> get serializer =>
+      _$SocialPostTemplateSerializer();
 }
 
-class _$SocialPostTemplateSerializer implements PrimitiveSerializer<SocialPostTemplate> {
+class _$SocialPostTemplateSerializer
+    implements PrimitiveSerializer<SocialPostTemplate> {
   @override
   final Iterable<Type> types = const [SocialPostTemplate, _$SocialPostTemplate];
 
@@ -161,7 +165,8 @@ class _$SocialPostTemplateSerializer implements PrimitiveSerializer<SocialPostTe
       yield r'callToActions';
       yield serializers.serialize(
         object.callToActions,
-        specifiedType: const FullType(BuiltList, [FullType(SocialPostTemplateCallToAction)]),
+        specifiedType: const FullType(
+            BuiltList, [FullType(SocialPostTemplateCallToAction)]),
       );
     }
     yield r'userId';
@@ -210,7 +215,9 @@ class _$SocialPostTemplateSerializer implements PrimitiveSerializer<SocialPostTe
     SocialPostTemplate object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -277,7 +284,8 @@ class _$SocialPostTemplateSerializer implements PrimitiveSerializer<SocialPostTe
         case r'callToActions':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(SocialPostTemplateCallToAction)]),
+            specifiedType: const FullType(
+                BuiltList, [FullType(SocialPostTemplateCallToAction)]),
           ) as BuiltList<SocialPostTemplateCallToAction>;
           result.callToActions.replace(valueDes);
           break;
@@ -298,7 +306,8 @@ class _$SocialPostTemplateSerializer implements PrimitiveSerializer<SocialPostTe
         case r'photos':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(PhotoContainer)]),
+            specifiedType:
+                const FullType(BuiltList, [FullType(PhotoContainer)]),
           ) as BuiltList<PhotoContainer>;
           result.photos.replace(valueDes);
           break;
@@ -353,51 +362,70 @@ class _$SocialPostTemplateSerializer implements PrimitiveSerializer<SocialPostTe
 }
 
 class SocialPostTemplateTypeEnum extends EnumClass {
-
   /// The type of the Social Post Template. POST, OFFER or QUESTION_AND_ANSWER, EVENT or ALERT.
   @BuiltValueEnumConst(wireName: r'POST')
-  static const SocialPostTemplateTypeEnum POST = _$socialPostTemplateTypeEnum_POST;
+  static const SocialPostTemplateTypeEnum POST =
+      _$socialPostTemplateTypeEnum_POST;
+
   /// The type of the Social Post Template. POST, OFFER or QUESTION_AND_ANSWER, EVENT or ALERT.
   @BuiltValueEnumConst(wireName: r'OFFER')
-  static const SocialPostTemplateTypeEnum OFFER = _$socialPostTemplateTypeEnum_OFFER;
+  static const SocialPostTemplateTypeEnum OFFER =
+      _$socialPostTemplateTypeEnum_OFFER;
+
   /// The type of the Social Post Template. POST, OFFER or QUESTION_AND_ANSWER, EVENT or ALERT.
   @BuiltValueEnumConst(wireName: r'ALERT')
-  static const SocialPostTemplateTypeEnum ALERT = _$socialPostTemplateTypeEnum_ALERT;
+  static const SocialPostTemplateTypeEnum ALERT =
+      _$socialPostTemplateTypeEnum_ALERT;
+
   /// The type of the Social Post Template. POST, OFFER or QUESTION_AND_ANSWER, EVENT or ALERT.
   @BuiltValueEnumConst(wireName: r'EVENT')
-  static const SocialPostTemplateTypeEnum EVENT = _$socialPostTemplateTypeEnum_EVENT;
+  static const SocialPostTemplateTypeEnum EVENT =
+      _$socialPostTemplateTypeEnum_EVENT;
+
   /// The type of the Social Post Template. POST, OFFER or QUESTION_AND_ANSWER, EVENT or ALERT.
   @BuiltValueEnumConst(wireName: r'QUESTION_AND_ANSWER')
-  static const SocialPostTemplateTypeEnum QUESTION_AND_ANSWER = _$socialPostTemplateTypeEnum_QUESTION_AND_ANSWER;
+  static const SocialPostTemplateTypeEnum QUESTION_AND_ANSWER =
+      _$socialPostTemplateTypeEnum_QUESTION_AND_ANSWER;
+
   /// The type of the Social Post Template. POST, OFFER or QUESTION_AND_ANSWER, EVENT or ALERT.
   @BuiltValueEnumConst(wireName: r'REEL')
-  static const SocialPostTemplateTypeEnum REEL = _$socialPostTemplateTypeEnum_REEL;
+  static const SocialPostTemplateTypeEnum REEL =
+      _$socialPostTemplateTypeEnum_REEL;
+
   /// The type of the Social Post Template. POST, OFFER or QUESTION_AND_ANSWER, EVENT or ALERT.
   @BuiltValueEnumConst(wireName: r'STORY')
-  static const SocialPostTemplateTypeEnum STORY = _$socialPostTemplateTypeEnum_STORY;
+  static const SocialPostTemplateTypeEnum STORY =
+      _$socialPostTemplateTypeEnum_STORY;
+
   /// The type of the Social Post Template. POST, OFFER or QUESTION_AND_ANSWER, EVENT or ALERT.
   @BuiltValueEnumConst(wireName: r'CAROUSEL')
-  static const SocialPostTemplateTypeEnum CAROUSEL = _$socialPostTemplateTypeEnum_CAROUSEL;
+  static const SocialPostTemplateTypeEnum CAROUSEL =
+      _$socialPostTemplateTypeEnum_CAROUSEL;
 
-  static Serializer<SocialPostTemplateTypeEnum> get serializer => _$socialPostTemplateTypeEnumSerializer;
+  static Serializer<SocialPostTemplateTypeEnum> get serializer =>
+      _$socialPostTemplateTypeEnumSerializer;
 
-  const SocialPostTemplateTypeEnum._(String name): super(name);
+  const SocialPostTemplateTypeEnum._(String name) : super(name);
 
-  static BuiltSet<SocialPostTemplateTypeEnum> get values => _$socialPostTemplateTypeEnumValues;
-  static SocialPostTemplateTypeEnum valueOf(String name) => _$socialPostTemplateTypeEnumValueOf(name);
+  static BuiltSet<SocialPostTemplateTypeEnum> get values =>
+      _$socialPostTemplateTypeEnumValues;
+  static SocialPostTemplateTypeEnum valueOf(String name) =>
+      _$socialPostTemplateTypeEnumValueOf(name);
 }
 
 class SocialPostTemplateAlertTypeEnum extends EnumClass {
-
   /// Set to COVID_19 if this Social Post Template is a COVID-19 Google Alert Post
   @BuiltValueEnumConst(wireName: r'COVID_19')
-  static const SocialPostTemplateAlertTypeEnum cOVID19 = _$socialPostTemplateAlertTypeEnum_cOVID19;
+  static const SocialPostTemplateAlertTypeEnum cOVID19 =
+      _$socialPostTemplateAlertTypeEnum_cOVID19;
 
-  static Serializer<SocialPostTemplateAlertTypeEnum> get serializer => _$socialPostTemplateAlertTypeEnumSerializer;
+  static Serializer<SocialPostTemplateAlertTypeEnum> get serializer =>
+      _$socialPostTemplateAlertTypeEnumSerializer;
 
-  const SocialPostTemplateAlertTypeEnum._(String name): super(name);
+  const SocialPostTemplateAlertTypeEnum._(String name) : super(name);
 
-  static BuiltSet<SocialPostTemplateAlertTypeEnum> get values => _$socialPostTemplateAlertTypeEnumValues;
-  static SocialPostTemplateAlertTypeEnum valueOf(String name) => _$socialPostTemplateAlertTypeEnumValueOf(name);
+  static BuiltSet<SocialPostTemplateAlertTypeEnum> get values =>
+      _$socialPostTemplateAlertTypeEnumValues;
+  static SocialPostTemplateAlertTypeEnum valueOf(String name) =>
+      _$socialPostTemplateAlertTypeEnumValueOf(name);
 }
-

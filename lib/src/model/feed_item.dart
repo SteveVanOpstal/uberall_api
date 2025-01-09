@@ -72,7 +72,8 @@ class _$FeedItemSerializer implements PrimitiveSerializer<FeedItem> {
       yield r'properties';
       yield serializers.serialize(
         object.properties,
-        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+        specifiedType:
+            const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
       );
     }
   }
@@ -83,7 +84,9 @@ class _$FeedItemSerializer implements PrimitiveSerializer<FeedItem> {
     FeedItem object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -115,7 +118,8 @@ class _$FeedItemSerializer implements PrimitiveSerializer<FeedItem> {
         case r'properties':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+            specifiedType: const FullType(
+                BuiltMap, [FullType(String), FullType(JsonObject)]),
           ) as BuiltMap<String, JsonObject>;
           result.properties.replace(valueDes);
           break;
@@ -149,37 +153,48 @@ class _$FeedItemSerializer implements PrimitiveSerializer<FeedItem> {
 }
 
 class FeedItemTypeEnum extends EnumClass {
-
   /// The Feed item type, one of [INTERACTION, TRACKING, LOCATION_EVENT, LISTING_EVENT]
   @BuiltValueEnumConst(wireName: r'INTERACTION')
   static const FeedItemTypeEnum INTERACTION = _$feedItemTypeEnum_INTERACTION;
+
   /// The Feed item type, one of [INTERACTION, TRACKING, LOCATION_EVENT, LISTING_EVENT]
   @BuiltValueEnumConst(wireName: r'TRACKING')
   static const FeedItemTypeEnum TRACKING = _$feedItemTypeEnum_TRACKING;
+
   /// The Feed item type, one of [INTERACTION, TRACKING, LOCATION_EVENT, LISTING_EVENT]
   @BuiltValueEnumConst(wireName: r'LOCATION_EVENT')
-  static const FeedItemTypeEnum LOCATION_EVENT = _$feedItemTypeEnum_LOCATION_EVENT;
+  static const FeedItemTypeEnum LOCATION_EVENT =
+      _$feedItemTypeEnum_LOCATION_EVENT;
+
   /// The Feed item type, one of [INTERACTION, TRACKING, LOCATION_EVENT, LISTING_EVENT]
   @BuiltValueEnumConst(wireName: r'LISTING_EVENT')
-  static const FeedItemTypeEnum LISTING_EVENT = _$feedItemTypeEnum_LISTING_EVENT;
+  static const FeedItemTypeEnum LISTING_EVENT =
+      _$feedItemTypeEnum_LISTING_EVENT;
+
   /// The Feed item type, one of [INTERACTION, TRACKING, LOCATION_EVENT, LISTING_EVENT]
   @BuiltValueEnumConst(wireName: r'INTERACTION')
   static const FeedItemTypeEnum INTERACTION2 = _$feedItemTypeEnum_INTERACTION2;
+
   /// The Feed item type, one of [INTERACTION, TRACKING, LOCATION_EVENT, LISTING_EVENT]
   @BuiltValueEnumConst(wireName: r'TRACKING')
   static const FeedItemTypeEnum TRACKING2 = _$feedItemTypeEnum_TRACKING2;
+
   /// The Feed item type, one of [INTERACTION, TRACKING, LOCATION_EVENT, LISTING_EVENT]
   @BuiltValueEnumConst(wireName: r'LOCATION_EVENT')
-  static const FeedItemTypeEnum LOCATION_EVENT2 = _$feedItemTypeEnum_LOCATION_EVENT2;
+  static const FeedItemTypeEnum LOCATION_EVENT2 =
+      _$feedItemTypeEnum_LOCATION_EVENT2;
+
   /// The Feed item type, one of [INTERACTION, TRACKING, LOCATION_EVENT, LISTING_EVENT]
   @BuiltValueEnumConst(wireName: r'LISTING_EVENT')
-  static const FeedItemTypeEnum LISTING_EVENT2 = _$feedItemTypeEnum_LISTING_EVENT2;
+  static const FeedItemTypeEnum LISTING_EVENT2 =
+      _$feedItemTypeEnum_LISTING_EVENT2;
 
-  static Serializer<FeedItemTypeEnum> get serializer => _$feedItemTypeEnumSerializer;
+  static Serializer<FeedItemTypeEnum> get serializer =>
+      _$feedItemTypeEnumSerializer;
 
-  const FeedItemTypeEnum._(String name): super(name);
+  const FeedItemTypeEnum._(String name) : super(name);
 
   static BuiltSet<FeedItemTypeEnum> get values => _$feedItemTypeEnumValues;
-  static FeedItemTypeEnum valueOf(String name) => _$feedItemTypeEnumValueOf(name);
+  static FeedItemTypeEnum valueOf(String name) =>
+      _$feedItemTypeEnumValueOf(name);
 }
-

@@ -12,10 +12,11 @@ part 'search_data_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [searchData] 
+/// * [searchData]
 /// * [alreadyManaged] - Indicates if the search data is already managed
 @BuiltValue()
-abstract class SearchDataObject implements Built<SearchDataObject, SearchDataObjectBuilder> {
+abstract class SearchDataObject
+    implements Built<SearchDataObject, SearchDataObjectBuilder> {
   @BuiltValueField(wireName: r'searchData')
   SearchData? get searchData;
 
@@ -25,16 +26,19 @@ abstract class SearchDataObject implements Built<SearchDataObject, SearchDataObj
 
   SearchDataObject._();
 
-  factory SearchDataObject([void updates(SearchDataObjectBuilder b)]) = _$SearchDataObject;
+  factory SearchDataObject([void updates(SearchDataObjectBuilder b)]) =
+      _$SearchDataObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SearchDataObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<SearchDataObject> get serializer => _$SearchDataObjectSerializer();
+  static Serializer<SearchDataObject> get serializer =>
+      _$SearchDataObjectSerializer();
 }
 
-class _$SearchDataObjectSerializer implements PrimitiveSerializer<SearchDataObject> {
+class _$SearchDataObjectSerializer
+    implements PrimitiveSerializer<SearchDataObject> {
   @override
   final Iterable<Type> types = const [SearchDataObject, _$SearchDataObject];
 
@@ -68,7 +72,9 @@ class _$SearchDataObjectSerializer implements PrimitiveSerializer<SearchDataObje
     SearchDataObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -125,4 +131,3 @@ class _$SearchDataObjectSerializer implements PrimitiveSerializer<SearchDataObje
     return result.build();
   }
 }
-

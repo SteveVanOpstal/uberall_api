@@ -17,7 +17,7 @@ part 'attribution.g.dart';
 /// * [logoUrl] - URL pointing to the attribution logo
 /// * [width] - Width (in px) of the attribution logo
 /// * [height] - Height (in px) of the attribution logo
-/// * [salesPartnerId] 
+/// * [salesPartnerId]
 @BuiltValue()
 abstract class Attribution implements Built<Attribution, AttributionBuilder> {
   /// Name of the attribution
@@ -110,7 +110,9 @@ class _$AttributionSerializer implements PrimitiveSerializer<Attribution> {
     Attribution object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -195,4 +197,3 @@ class _$AttributionSerializer implements PrimitiveSerializer<Attribution> {
     return result.build();
   }
 }
-

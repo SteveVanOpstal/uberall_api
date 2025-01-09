@@ -14,9 +14,10 @@ part 'directory_connect_info.g.dart';
 ///
 /// Properties:
 /// * [status] - Listing Connect Status [CONNECTED, NOT_CONNECTED, NOT_NEEDED]
-/// * [userDetails] 
+/// * [userDetails]
 @BuiltValue()
-abstract class DirectoryConnectInfo implements Built<DirectoryConnectInfo, DirectoryConnectInfoBuilder> {
+abstract class DirectoryConnectInfo
+    implements Built<DirectoryConnectInfo, DirectoryConnectInfoBuilder> {
   /// Listing Connect Status [CONNECTED, NOT_CONNECTED, NOT_NEEDED]
   @BuiltValueField(wireName: r'status')
   DirectoryConnectInfoStatusEnum? get status;
@@ -27,18 +28,24 @@ abstract class DirectoryConnectInfo implements Built<DirectoryConnectInfo, Direc
 
   DirectoryConnectInfo._();
 
-  factory DirectoryConnectInfo([void updates(DirectoryConnectInfoBuilder b)]) = _$DirectoryConnectInfo;
+  factory DirectoryConnectInfo([void updates(DirectoryConnectInfoBuilder b)]) =
+      _$DirectoryConnectInfo;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DirectoryConnectInfoBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DirectoryConnectInfo> get serializer => _$DirectoryConnectInfoSerializer();
+  static Serializer<DirectoryConnectInfo> get serializer =>
+      _$DirectoryConnectInfoSerializer();
 }
 
-class _$DirectoryConnectInfoSerializer implements PrimitiveSerializer<DirectoryConnectInfo> {
+class _$DirectoryConnectInfoSerializer
+    implements PrimitiveSerializer<DirectoryConnectInfo> {
   @override
-  final Iterable<Type> types = const [DirectoryConnectInfo, _$DirectoryConnectInfo];
+  final Iterable<Type> types = const [
+    DirectoryConnectInfo,
+    _$DirectoryConnectInfo
+  ];
 
   @override
   final String wireName = r'DirectoryConnectInfo';
@@ -70,7 +77,9 @@ class _$DirectoryConnectInfoSerializer implements PrimitiveSerializer<DirectoryC
     DirectoryConnectInfo object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -129,22 +138,28 @@ class _$DirectoryConnectInfoSerializer implements PrimitiveSerializer<DirectoryC
 }
 
 class DirectoryConnectInfoStatusEnum extends EnumClass {
-
   /// Listing Connect Status [CONNECTED, NOT_CONNECTED, NOT_NEEDED]
   @BuiltValueEnumConst(wireName: r'CONNECTED')
-  static const DirectoryConnectInfoStatusEnum CONNECTED = _$directoryConnectInfoStatusEnum_CONNECTED;
+  static const DirectoryConnectInfoStatusEnum CONNECTED =
+      _$directoryConnectInfoStatusEnum_CONNECTED;
+
   /// Listing Connect Status [CONNECTED, NOT_CONNECTED, NOT_NEEDED]
   @BuiltValueEnumConst(wireName: r'NOT_CONNECTED')
-  static const DirectoryConnectInfoStatusEnum NOT_CONNECTED = _$directoryConnectInfoStatusEnum_NOT_CONNECTED;
+  static const DirectoryConnectInfoStatusEnum NOT_CONNECTED =
+      _$directoryConnectInfoStatusEnum_NOT_CONNECTED;
+
   /// Listing Connect Status [CONNECTED, NOT_CONNECTED, NOT_NEEDED]
   @BuiltValueEnumConst(wireName: r'NOT_NEEDED')
-  static const DirectoryConnectInfoStatusEnum NOT_NEEDED = _$directoryConnectInfoStatusEnum_NOT_NEEDED;
+  static const DirectoryConnectInfoStatusEnum NOT_NEEDED =
+      _$directoryConnectInfoStatusEnum_NOT_NEEDED;
 
-  static Serializer<DirectoryConnectInfoStatusEnum> get serializer => _$directoryConnectInfoStatusEnumSerializer;
+  static Serializer<DirectoryConnectInfoStatusEnum> get serializer =>
+      _$directoryConnectInfoStatusEnumSerializer;
 
-  const DirectoryConnectInfoStatusEnum._(String name): super(name);
+  const DirectoryConnectInfoStatusEnum._(String name) : super(name);
 
-  static BuiltSet<DirectoryConnectInfoStatusEnum> get values => _$directoryConnectInfoStatusEnumValues;
-  static DirectoryConnectInfoStatusEnum valueOf(String name) => _$directoryConnectInfoStatusEnumValueOf(name);
+  static BuiltSet<DirectoryConnectInfoStatusEnum> get values =>
+      _$directoryConnectInfoStatusEnumValues;
+  static DirectoryConnectInfoStatusEnum valueOf(String name) =>
+      _$directoryConnectInfoStatusEnumValueOf(name);
 }
-

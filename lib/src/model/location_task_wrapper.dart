@@ -13,13 +13,14 @@ part 'location_task_wrapper.g.dart';
 /// LocationTaskWrapper
 ///
 /// Properties:
-/// * [status] 
+/// * [status]
 /// * [message] - (optional) Holds further information about the response
-/// * [errorCode] 
+/// * [errorCode]
 /// * [warnings] - (optional) Holds further warnings
-/// * [response] 
+/// * [response]
 @BuiltValue()
-abstract class LocationTaskWrapper implements Built<LocationTaskWrapper, LocationTaskWrapperBuilder> {
+abstract class LocationTaskWrapper
+    implements Built<LocationTaskWrapper, LocationTaskWrapperBuilder> {
   @BuiltValueField(wireName: r'status')
   LocationTaskWrapperStatusEnum? get status;
   // enum statusEnum {  SUCCESS,  QUOTA_LIMIT_EXCEED,  NOT_AUTHORIZED,  FORBIDDEN,  BAD_ACCESS_TOKEN,  BAD_PRIVATE_KEY,  BAD_PUBLIC_KEY,  MISSING_PARAMETER,  INVALID_PARAMETER,  WRONG_PARAMETER_TYPE,  CONFLICT,  RESOURCE_LOCKED,  SERVER_ERROR,  ERROR,  NOT_FOUND,  BAD_REQUEST,  USER_ERROR,  PARTIAL_ERROR,  METHOD_NOT_ALLOWED,  };
@@ -41,18 +42,24 @@ abstract class LocationTaskWrapper implements Built<LocationTaskWrapper, Locatio
 
   LocationTaskWrapper._();
 
-  factory LocationTaskWrapper([void updates(LocationTaskWrapperBuilder b)]) = _$LocationTaskWrapper;
+  factory LocationTaskWrapper([void updates(LocationTaskWrapperBuilder b)]) =
+      _$LocationTaskWrapper;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LocationTaskWrapperBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LocationTaskWrapper> get serializer => _$LocationTaskWrapperSerializer();
+  static Serializer<LocationTaskWrapper> get serializer =>
+      _$LocationTaskWrapperSerializer();
 }
 
-class _$LocationTaskWrapperSerializer implements PrimitiveSerializer<LocationTaskWrapper> {
+class _$LocationTaskWrapperSerializer
+    implements PrimitiveSerializer<LocationTaskWrapper> {
   @override
-  final Iterable<Type> types = const [LocationTaskWrapper, _$LocationTaskWrapper];
+  final Iterable<Type> types = const [
+    LocationTaskWrapper,
+    _$LocationTaskWrapper
+  ];
 
   @override
   final String wireName = r'LocationTaskWrapper';
@@ -105,7 +112,9 @@ class _$LocationTaskWrapperSerializer implements PrimitiveSerializer<LocationTas
     LocationTaskWrapper object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -185,102 +194,145 @@ class _$LocationTaskWrapperSerializer implements PrimitiveSerializer<LocationTas
 }
 
 class LocationTaskWrapperStatusEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'SUCCESS')
-  static const LocationTaskWrapperStatusEnum SUCCESS = _$locationTaskWrapperStatusEnum_SUCCESS;
+  static const LocationTaskWrapperStatusEnum SUCCESS =
+      _$locationTaskWrapperStatusEnum_SUCCESS;
   @BuiltValueEnumConst(wireName: r'QUOTA_LIMIT_EXCEED')
-  static const LocationTaskWrapperStatusEnum QUOTA_LIMIT_EXCEED = _$locationTaskWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
+  static const LocationTaskWrapperStatusEnum QUOTA_LIMIT_EXCEED =
+      _$locationTaskWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
   @BuiltValueEnumConst(wireName: r'NOT_AUTHORIZED')
-  static const LocationTaskWrapperStatusEnum NOT_AUTHORIZED = _$locationTaskWrapperStatusEnum_NOT_AUTHORIZED;
+  static const LocationTaskWrapperStatusEnum NOT_AUTHORIZED =
+      _$locationTaskWrapperStatusEnum_NOT_AUTHORIZED;
   @BuiltValueEnumConst(wireName: r'FORBIDDEN')
-  static const LocationTaskWrapperStatusEnum FORBIDDEN = _$locationTaskWrapperStatusEnum_FORBIDDEN;
+  static const LocationTaskWrapperStatusEnum FORBIDDEN =
+      _$locationTaskWrapperStatusEnum_FORBIDDEN;
   @BuiltValueEnumConst(wireName: r'BAD_ACCESS_TOKEN')
-  static const LocationTaskWrapperStatusEnum BAD_ACCESS_TOKEN = _$locationTaskWrapperStatusEnum_BAD_ACCESS_TOKEN;
+  static const LocationTaskWrapperStatusEnum BAD_ACCESS_TOKEN =
+      _$locationTaskWrapperStatusEnum_BAD_ACCESS_TOKEN;
   @BuiltValueEnumConst(wireName: r'BAD_PRIVATE_KEY')
-  static const LocationTaskWrapperStatusEnum BAD_PRIVATE_KEY = _$locationTaskWrapperStatusEnum_BAD_PRIVATE_KEY;
+  static const LocationTaskWrapperStatusEnum BAD_PRIVATE_KEY =
+      _$locationTaskWrapperStatusEnum_BAD_PRIVATE_KEY;
   @BuiltValueEnumConst(wireName: r'BAD_PUBLIC_KEY')
-  static const LocationTaskWrapperStatusEnum BAD_PUBLIC_KEY = _$locationTaskWrapperStatusEnum_BAD_PUBLIC_KEY;
+  static const LocationTaskWrapperStatusEnum BAD_PUBLIC_KEY =
+      _$locationTaskWrapperStatusEnum_BAD_PUBLIC_KEY;
   @BuiltValueEnumConst(wireName: r'MISSING_PARAMETER')
-  static const LocationTaskWrapperStatusEnum MISSING_PARAMETER = _$locationTaskWrapperStatusEnum_MISSING_PARAMETER;
+  static const LocationTaskWrapperStatusEnum MISSING_PARAMETER =
+      _$locationTaskWrapperStatusEnum_MISSING_PARAMETER;
   @BuiltValueEnumConst(wireName: r'INVALID_PARAMETER')
-  static const LocationTaskWrapperStatusEnum INVALID_PARAMETER = _$locationTaskWrapperStatusEnum_INVALID_PARAMETER;
+  static const LocationTaskWrapperStatusEnum INVALID_PARAMETER =
+      _$locationTaskWrapperStatusEnum_INVALID_PARAMETER;
   @BuiltValueEnumConst(wireName: r'WRONG_PARAMETER_TYPE')
-  static const LocationTaskWrapperStatusEnum WRONG_PARAMETER_TYPE = _$locationTaskWrapperStatusEnum_WRONG_PARAMETER_TYPE;
+  static const LocationTaskWrapperStatusEnum WRONG_PARAMETER_TYPE =
+      _$locationTaskWrapperStatusEnum_WRONG_PARAMETER_TYPE;
   @BuiltValueEnumConst(wireName: r'CONFLICT')
-  static const LocationTaskWrapperStatusEnum CONFLICT = _$locationTaskWrapperStatusEnum_CONFLICT;
+  static const LocationTaskWrapperStatusEnum CONFLICT =
+      _$locationTaskWrapperStatusEnum_CONFLICT;
   @BuiltValueEnumConst(wireName: r'RESOURCE_LOCKED')
-  static const LocationTaskWrapperStatusEnum RESOURCE_LOCKED = _$locationTaskWrapperStatusEnum_RESOURCE_LOCKED;
+  static const LocationTaskWrapperStatusEnum RESOURCE_LOCKED =
+      _$locationTaskWrapperStatusEnum_RESOURCE_LOCKED;
   @BuiltValueEnumConst(wireName: r'SERVER_ERROR')
-  static const LocationTaskWrapperStatusEnum SERVER_ERROR = _$locationTaskWrapperStatusEnum_SERVER_ERROR;
+  static const LocationTaskWrapperStatusEnum SERVER_ERROR =
+      _$locationTaskWrapperStatusEnum_SERVER_ERROR;
   @BuiltValueEnumConst(wireName: r'ERROR')
-  static const LocationTaskWrapperStatusEnum ERROR = _$locationTaskWrapperStatusEnum_ERROR;
+  static const LocationTaskWrapperStatusEnum ERROR =
+      _$locationTaskWrapperStatusEnum_ERROR;
   @BuiltValueEnumConst(wireName: r'NOT_FOUND')
-  static const LocationTaskWrapperStatusEnum NOT_FOUND = _$locationTaskWrapperStatusEnum_NOT_FOUND;
+  static const LocationTaskWrapperStatusEnum NOT_FOUND =
+      _$locationTaskWrapperStatusEnum_NOT_FOUND;
   @BuiltValueEnumConst(wireName: r'BAD_REQUEST')
-  static const LocationTaskWrapperStatusEnum BAD_REQUEST = _$locationTaskWrapperStatusEnum_BAD_REQUEST;
+  static const LocationTaskWrapperStatusEnum BAD_REQUEST =
+      _$locationTaskWrapperStatusEnum_BAD_REQUEST;
   @BuiltValueEnumConst(wireName: r'USER_ERROR')
-  static const LocationTaskWrapperStatusEnum USER_ERROR = _$locationTaskWrapperStatusEnum_USER_ERROR;
+  static const LocationTaskWrapperStatusEnum USER_ERROR =
+      _$locationTaskWrapperStatusEnum_USER_ERROR;
   @BuiltValueEnumConst(wireName: r'PARTIAL_ERROR')
-  static const LocationTaskWrapperStatusEnum PARTIAL_ERROR = _$locationTaskWrapperStatusEnum_PARTIAL_ERROR;
+  static const LocationTaskWrapperStatusEnum PARTIAL_ERROR =
+      _$locationTaskWrapperStatusEnum_PARTIAL_ERROR;
   @BuiltValueEnumConst(wireName: r'METHOD_NOT_ALLOWED')
-  static const LocationTaskWrapperStatusEnum METHOD_NOT_ALLOWED = _$locationTaskWrapperStatusEnum_METHOD_NOT_ALLOWED;
+  static const LocationTaskWrapperStatusEnum METHOD_NOT_ALLOWED =
+      _$locationTaskWrapperStatusEnum_METHOD_NOT_ALLOWED;
 
-  static Serializer<LocationTaskWrapperStatusEnum> get serializer => _$locationTaskWrapperStatusEnumSerializer;
+  static Serializer<LocationTaskWrapperStatusEnum> get serializer =>
+      _$locationTaskWrapperStatusEnumSerializer;
 
-  const LocationTaskWrapperStatusEnum._(String name): super(name);
+  const LocationTaskWrapperStatusEnum._(String name) : super(name);
 
-  static BuiltSet<LocationTaskWrapperStatusEnum> get values => _$locationTaskWrapperStatusEnumValues;
-  static LocationTaskWrapperStatusEnum valueOf(String name) => _$locationTaskWrapperStatusEnumValueOf(name);
+  static BuiltSet<LocationTaskWrapperStatusEnum> get values =>
+      _$locationTaskWrapperStatusEnumValues;
+  static LocationTaskWrapperStatusEnum valueOf(String name) =>
+      _$locationTaskWrapperStatusEnumValueOf(name);
 }
 
 class LocationTaskWrapperErrorCodeEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'NORMALIZATION_FAILED')
-  static const LocationTaskWrapperErrorCodeEnum NORMALIZATION_FAILED = _$locationTaskWrapperErrorCodeEnum_NORMALIZATION_FAILED;
+  static const LocationTaskWrapperErrorCodeEnum NORMALIZATION_FAILED =
+      _$locationTaskWrapperErrorCodeEnum_NORMALIZATION_FAILED;
   @BuiltValueEnumConst(wireName: r'DATA_CORRUPTED')
-  static const LocationTaskWrapperErrorCodeEnum DATA_CORRUPTED = _$locationTaskWrapperErrorCodeEnum_DATA_CORRUPTED;
+  static const LocationTaskWrapperErrorCodeEnum DATA_CORRUPTED =
+      _$locationTaskWrapperErrorCodeEnum_DATA_CORRUPTED;
   @BuiltValueEnumConst(wireName: r'INVALID_INPUT')
-  static const LocationTaskWrapperErrorCodeEnum INVALID_INPUT = _$locationTaskWrapperErrorCodeEnum_INVALID_INPUT;
+  static const LocationTaskWrapperErrorCodeEnum INVALID_INPUT =
+      _$locationTaskWrapperErrorCodeEnum_INVALID_INPUT;
   @BuiltValueEnumConst(wireName: r'NOT_SYNCABLE')
-  static const LocationTaskWrapperErrorCodeEnum NOT_SYNCABLE = _$locationTaskWrapperErrorCodeEnum_NOT_SYNCABLE;
+  static const LocationTaskWrapperErrorCodeEnum NOT_SYNCABLE =
+      _$locationTaskWrapperErrorCodeEnum_NOT_SYNCABLE;
   @BuiltValueEnumConst(wireName: r'PAYMENT_FAILED')
-  static const LocationTaskWrapperErrorCodeEnum PAYMENT_FAILED = _$locationTaskWrapperErrorCodeEnum_PAYMENT_FAILED;
+  static const LocationTaskWrapperErrorCodeEnum PAYMENT_FAILED =
+      _$locationTaskWrapperErrorCodeEnum_PAYMENT_FAILED;
   @BuiltValueEnumConst(wireName: r'FREE_TIER_REACHED')
-  static const LocationTaskWrapperErrorCodeEnum FREE_TIER_REACHED = _$locationTaskWrapperErrorCodeEnum_FREE_TIER_REACHED;
+  static const LocationTaskWrapperErrorCodeEnum FREE_TIER_REACHED =
+      _$locationTaskWrapperErrorCodeEnum_FREE_TIER_REACHED;
   @BuiltValueEnumConst(wireName: r'LIMIT_REACHED')
-  static const LocationTaskWrapperErrorCodeEnum LIMIT_REACHED = _$locationTaskWrapperErrorCodeEnum_LIMIT_REACHED;
+  static const LocationTaskWrapperErrorCodeEnum LIMIT_REACHED =
+      _$locationTaskWrapperErrorCodeEnum_LIMIT_REACHED;
   @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const LocationTaskWrapperErrorCodeEnum INACTIVE = _$locationTaskWrapperErrorCodeEnum_INACTIVE;
+  static const LocationTaskWrapperErrorCodeEnum INACTIVE =
+      _$locationTaskWrapperErrorCodeEnum_INACTIVE;
   @BuiltValueEnumConst(wireName: r'UNKNOWN')
-  static const LocationTaskWrapperErrorCodeEnum UNKNOWN = _$locationTaskWrapperErrorCodeEnum_UNKNOWN;
+  static const LocationTaskWrapperErrorCodeEnum UNKNOWN =
+      _$locationTaskWrapperErrorCodeEnum_UNKNOWN;
   @BuiltValueEnumConst(wireName: r'IDENTIFIER_NOT_UNIQUE')
-  static const LocationTaskWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE = _$locationTaskWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
+  static const LocationTaskWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE =
+      _$locationTaskWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
   @BuiltValueEnumConst(wireName: r'ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT')
-  static const LocationTaskWrapperErrorCodeEnum ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT = _$locationTaskWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
+  static const LocationTaskWrapperErrorCodeEnum
+      ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT =
+      _$locationTaskWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
   @BuiltValueEnumConst(wireName: r'NO_ACCOUNT_CONNECTED')
-  static const LocationTaskWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED = _$locationTaskWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
+  static const LocationTaskWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED =
+      _$locationTaskWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
   @BuiltValueEnumConst(wireName: r'NO_PAGE_SELECTED')
-  static const LocationTaskWrapperErrorCodeEnum NO_PAGE_SELECTED = _$locationTaskWrapperErrorCodeEnum_NO_PAGE_SELECTED;
+  static const LocationTaskWrapperErrorCodeEnum NO_PAGE_SELECTED =
+      _$locationTaskWrapperErrorCodeEnum_NO_PAGE_SELECTED;
   @BuiltValueEnumConst(wireName: r'PAGE_NOT_CREATED')
-  static const LocationTaskWrapperErrorCodeEnum PAGE_NOT_CREATED = _$locationTaskWrapperErrorCodeEnum_PAGE_NOT_CREATED;
+  static const LocationTaskWrapperErrorCodeEnum PAGE_NOT_CREATED =
+      _$locationTaskWrapperErrorCodeEnum_PAGE_NOT_CREATED;
   @BuiltValueEnumConst(wireName: r'PAGE_IN_REVIEW')
-  static const LocationTaskWrapperErrorCodeEnum PAGE_IN_REVIEW = _$locationTaskWrapperErrorCodeEnum_PAGE_IN_REVIEW;
+  static const LocationTaskWrapperErrorCodeEnum PAGE_IN_REVIEW =
+      _$locationTaskWrapperErrorCodeEnum_PAGE_IN_REVIEW;
   @BuiltValueEnumConst(wireName: r'PAGE_CLAIMED_BY_OTHERS')
-  static const LocationTaskWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS = _$locationTaskWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
+  static const LocationTaskWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS =
+      _$locationTaskWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
   @BuiltValueEnumConst(wireName: r'OVERLAPPING_SOCIALPOST')
-  static const LocationTaskWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST = _$locationTaskWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
+  static const LocationTaskWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST =
+      _$locationTaskWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
   @BuiltValueEnumConst(wireName: r'TOO_MANY_REPLIES')
-  static const LocationTaskWrapperErrorCodeEnum TOO_MANY_REPLIES = _$locationTaskWrapperErrorCodeEnum_TOO_MANY_REPLIES;
+  static const LocationTaskWrapperErrorCodeEnum TOO_MANY_REPLIES =
+      _$locationTaskWrapperErrorCodeEnum_TOO_MANY_REPLIES;
   @BuiltValueEnumConst(wireName: r'REPLY_TOO_LONG')
-  static const LocationTaskWrapperErrorCodeEnum REPLY_TOO_LONG = _$locationTaskWrapperErrorCodeEnum_REPLY_TOO_LONG;
+  static const LocationTaskWrapperErrorCodeEnum REPLY_TOO_LONG =
+      _$locationTaskWrapperErrorCodeEnum_REPLY_TOO_LONG;
   @BuiltValueEnumConst(wireName: r'DEPRECATED')
-  static const LocationTaskWrapperErrorCodeEnum DEPRECATED = _$locationTaskWrapperErrorCodeEnum_DEPRECATED;
+  static const LocationTaskWrapperErrorCodeEnum DEPRECATED =
+      _$locationTaskWrapperErrorCodeEnum_DEPRECATED;
 
-  static Serializer<LocationTaskWrapperErrorCodeEnum> get serializer => _$locationTaskWrapperErrorCodeEnumSerializer;
+  static Serializer<LocationTaskWrapperErrorCodeEnum> get serializer =>
+      _$locationTaskWrapperErrorCodeEnumSerializer;
 
-  const LocationTaskWrapperErrorCodeEnum._(String name): super(name);
+  const LocationTaskWrapperErrorCodeEnum._(String name) : super(name);
 
-  static BuiltSet<LocationTaskWrapperErrorCodeEnum> get values => _$locationTaskWrapperErrorCodeEnumValues;
-  static LocationTaskWrapperErrorCodeEnum valueOf(String name) => _$locationTaskWrapperErrorCodeEnumValueOf(name);
+  static BuiltSet<LocationTaskWrapperErrorCodeEnum> get values =>
+      _$locationTaskWrapperErrorCodeEnumValues;
+  static LocationTaskWrapperErrorCodeEnum valueOf(String name) =>
+      _$locationTaskWrapperErrorCodeEnumValueOf(name);
 }
-

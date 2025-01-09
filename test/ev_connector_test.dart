@@ -34,7 +34,7 @@ void main() {
       // TODO
     });
 
-    // Required - Connector Power Type. Values can be: AC_1_PHASE, AC_3_PHASE, DC 
+    // Required - Connector Power Type. Values can be: AC_1_PHASE, AC_3_PHASE, DC
     // String powerType
     test('to test the property `powerType`', () async {
       // TODO
@@ -46,7 +46,7 @@ void main() {
       // TODO
     });
 
-    // Required - The maximum amperage of the connector 
+    // Required - The maximum amperage of the connector
     // int amperage
     test('to test the property `amperage`', () async {
       // TODO
@@ -57,8 +57,5 @@ void main() {
     test('to test the property `updateTime`', () async {
       // TODO
     });
-
-
   });
-
 }

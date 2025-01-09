@@ -16,9 +16,12 @@ part 'custom_item_search_response_object.g.dart';
 /// * [offset] - Offset for pagination
 /// * [max] - Maximum number of results per page
 /// * [total] - Total count of results
-/// * [customItems] 
+/// * [customItems]
 @BuiltValue()
-abstract class CustomItemSearchResponseObject implements Built<CustomItemSearchResponseObject, CustomItemSearchResponseObjectBuilder> {
+abstract class CustomItemSearchResponseObject
+    implements
+        Built<CustomItemSearchResponseObject,
+            CustomItemSearchResponseObjectBuilder> {
   /// Offset for pagination
   @BuiltValueField(wireName: r'offset')
   int? get offset;
@@ -36,18 +39,25 @@ abstract class CustomItemSearchResponseObject implements Built<CustomItemSearchR
 
   CustomItemSearchResponseObject._();
 
-  factory CustomItemSearchResponseObject([void updates(CustomItemSearchResponseObjectBuilder b)]) = _$CustomItemSearchResponseObject;
+  factory CustomItemSearchResponseObject(
+          [void updates(CustomItemSearchResponseObjectBuilder b)]) =
+      _$CustomItemSearchResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CustomItemSearchResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<CustomItemSearchResponseObject> get serializer => _$CustomItemSearchResponseObjectSerializer();
+  static Serializer<CustomItemSearchResponseObject> get serializer =>
+      _$CustomItemSearchResponseObjectSerializer();
 }
 
-class _$CustomItemSearchResponseObjectSerializer implements PrimitiveSerializer<CustomItemSearchResponseObject> {
+class _$CustomItemSearchResponseObjectSerializer
+    implements PrimitiveSerializer<CustomItemSearchResponseObject> {
   @override
-  final Iterable<Type> types = const [CustomItemSearchResponseObject, _$CustomItemSearchResponseObject];
+  final Iterable<Type> types = const [
+    CustomItemSearchResponseObject,
+    _$CustomItemSearchResponseObject
+  ];
 
   @override
   final String wireName = r'CustomItemSearchResponseObject';
@@ -93,7 +103,9 @@ class _$CustomItemSearchResponseObjectSerializer implements PrimitiveSerializer<
     CustomItemSearchResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -164,4 +176,3 @@ class _$CustomItemSearchResponseObjectSerializer implements PrimitiveSerializer<
     return result.build();
   }
 }
-

@@ -16,7 +16,9 @@ part 'directory_brand_page_response.g.dart';
 /// * [businesses] - list of all the business ( directory brands) from the external directory
 /// * [nextPageOffset] - offset for the next page from the external directory
 @BuiltValue()
-abstract class DirectoryBrandPageResponse implements Built<DirectoryBrandPageResponse, DirectoryBrandPageResponseBuilder> {
+abstract class DirectoryBrandPageResponse
+    implements
+        Built<DirectoryBrandPageResponse, DirectoryBrandPageResponseBuilder> {
   /// list of all the business ( directory brands) from the external directory
   @BuiltValueField(wireName: r'businesses')
   BuiltList<DirectoryExternalBusinessResponse>? get businesses;
@@ -27,18 +29,25 @@ abstract class DirectoryBrandPageResponse implements Built<DirectoryBrandPageRes
 
   DirectoryBrandPageResponse._();
 
-  factory DirectoryBrandPageResponse([void updates(DirectoryBrandPageResponseBuilder b)]) = _$DirectoryBrandPageResponse;
+  factory DirectoryBrandPageResponse(
+          [void updates(DirectoryBrandPageResponseBuilder b)]) =
+      _$DirectoryBrandPageResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DirectoryBrandPageResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DirectoryBrandPageResponse> get serializer => _$DirectoryBrandPageResponseSerializer();
+  static Serializer<DirectoryBrandPageResponse> get serializer =>
+      _$DirectoryBrandPageResponseSerializer();
 }
 
-class _$DirectoryBrandPageResponseSerializer implements PrimitiveSerializer<DirectoryBrandPageResponse> {
+class _$DirectoryBrandPageResponseSerializer
+    implements PrimitiveSerializer<DirectoryBrandPageResponse> {
   @override
-  final Iterable<Type> types = const [DirectoryBrandPageResponse, _$DirectoryBrandPageResponse];
+  final Iterable<Type> types = const [
+    DirectoryBrandPageResponse,
+    _$DirectoryBrandPageResponse
+  ];
 
   @override
   final String wireName = r'DirectoryBrandPageResponse';
@@ -52,7 +61,8 @@ class _$DirectoryBrandPageResponseSerializer implements PrimitiveSerializer<Dire
       yield r'businesses';
       yield serializers.serialize(
         object.businesses,
-        specifiedType: const FullType(BuiltList, [FullType(DirectoryExternalBusinessResponse)]),
+        specifiedType: const FullType(
+            BuiltList, [FullType(DirectoryExternalBusinessResponse)]),
       );
     }
     if (object.nextPageOffset != null) {
@@ -70,7 +80,9 @@ class _$DirectoryBrandPageResponseSerializer implements PrimitiveSerializer<Dire
     DirectoryBrandPageResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -88,7 +100,8 @@ class _$DirectoryBrandPageResponseSerializer implements PrimitiveSerializer<Dire
         case r'businesses':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(DirectoryExternalBusinessResponse)]),
+            specifiedType: const FullType(
+                BuiltList, [FullType(DirectoryExternalBusinessResponse)]),
           ) as BuiltList<DirectoryExternalBusinessResponse>;
           result.businesses.replace(valueDes);
           break;
@@ -127,4 +140,3 @@ class _$DirectoryBrandPageResponseSerializer implements PrimitiveSerializer<Dire
     return result.build();
   }
 }
-

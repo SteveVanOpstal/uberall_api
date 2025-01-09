@@ -13,12 +13,13 @@ part 'location_search_response.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [offset] 
-/// * [max] 
-/// * [count] 
-/// * [locations] 
+/// * [offset]
+/// * [max]
+/// * [count]
+/// * [locations]
 @BuiltValue()
-abstract class LocationSearchResponse implements Built<LocationSearchResponse, LocationSearchResponseBuilder> {
+abstract class LocationSearchResponse
+    implements Built<LocationSearchResponse, LocationSearchResponseBuilder> {
   @BuiltValueField(wireName: r'offset')
   int? get offset;
 
@@ -33,18 +34,25 @@ abstract class LocationSearchResponse implements Built<LocationSearchResponse, L
 
   LocationSearchResponse._();
 
-  factory LocationSearchResponse([void updates(LocationSearchResponseBuilder b)]) = _$LocationSearchResponse;
+  factory LocationSearchResponse(
+          [void updates(LocationSearchResponseBuilder b)]) =
+      _$LocationSearchResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LocationSearchResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LocationSearchResponse> get serializer => _$LocationSearchResponseSerializer();
+  static Serializer<LocationSearchResponse> get serializer =>
+      _$LocationSearchResponseSerializer();
 }
 
-class _$LocationSearchResponseSerializer implements PrimitiveSerializer<LocationSearchResponse> {
+class _$LocationSearchResponseSerializer
+    implements PrimitiveSerializer<LocationSearchResponse> {
   @override
-  final Iterable<Type> types = const [LocationSearchResponse, _$LocationSearchResponse];
+  final Iterable<Type> types = const [
+    LocationSearchResponse,
+    _$LocationSearchResponse
+  ];
 
   @override
   final String wireName = r'LocationSearchResponse';
@@ -79,7 +87,8 @@ class _$LocationSearchResponseSerializer implements PrimitiveSerializer<Location
       yield r'locations';
       yield serializers.serialize(
         object.locations,
-        specifiedType: const FullType(BuiltList, [FullType(StoreFinderResponse)]),
+        specifiedType:
+            const FullType(BuiltList, [FullType(StoreFinderResponse)]),
       );
     }
   }
@@ -90,7 +99,9 @@ class _$LocationSearchResponseSerializer implements PrimitiveSerializer<Location
     LocationSearchResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -129,7 +140,8 @@ class _$LocationSearchResponseSerializer implements PrimitiveSerializer<Location
         case r'locations':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(StoreFinderResponse)]),
+            specifiedType:
+                const FullType(BuiltList, [FullType(StoreFinderResponse)]),
           ) as BuiltList<StoreFinderResponse>;
           result.locations.replace(valueDes);
           break;
@@ -161,4 +173,3 @@ class _$LocationSearchResponseSerializer implements PrimitiveSerializer<Location
     return result.build();
   }
 }
-

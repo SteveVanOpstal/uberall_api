@@ -11,7 +11,6 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for DigitalAssetManagementApi
 void main() {
   // final instance = DigitalAssetManagementApi();
@@ -34,6 +33,5 @@ void main() {
     test('test postSocialTemplates', () async {
       // TODO
     });
-
   });
 }

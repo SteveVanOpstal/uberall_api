@@ -16,7 +16,6 @@ import 'package:openapi/src/model/custom_item_search_response_wrapper.dart';
 import 'package:openapi/src/model/generic_map_response_wrapper.dart';
 
 class CustomItemsApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -36,7 +35,7 @@ class CustomItemsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [GenericMapResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GenericMapResponseWrapper>> deleteCustomItems({ 
+  Future<Response<GenericMapResponseWrapper>> deleteCustomItems({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -57,7 +56,8 @@ class CustomItemsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -81,11 +81,12 @@ class CustomItemsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(GenericMapResponseWrapper),
-      ) as GenericMapResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(GenericMapResponseWrapper),
+            ) as GenericMapResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -122,7 +123,7 @@ class CustomItemsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [GenericMapResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GenericMapResponseWrapper>> deleteCustomItemsId({ 
+  Future<Response<GenericMapResponseWrapper>> deleteCustomItemsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -131,7 +132,10 @@ class CustomItemsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/custom-items/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/custom-items/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -144,7 +148,8 @@ class CustomItemsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -168,11 +173,12 @@ class CustomItemsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(GenericMapResponseWrapper),
-      ) as GenericMapResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(GenericMapResponseWrapper),
+            ) as GenericMapResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -199,7 +205,7 @@ class CustomItemsApi {
   /// Get all custom items the current API user can manage. &lt;br&gt;To specify products with identifier please provide ?identifier&#x3D; in the url param &lt;br&gt;By default, 50 are returned, you can use up to max&#x3D;10000 param
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [body]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -209,7 +215,7 @@ class CustomItemsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [CustomItemSearchResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CustomItemSearchResponseWrapper>> getCustomItems({ 
+  Future<Response<CustomItemSearchResponseWrapper>> getCustomItems({
     JsonObject? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -231,7 +237,8 @@ class CustomItemsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -247,10 +254,9 @@ class CustomItemsApi {
 
     try {
       _bodyData = body;
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -273,11 +279,12 @@ class CustomItemsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(CustomItemSearchResponseWrapper),
-      ) as CustomItemSearchResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(CustomItemSearchResponseWrapper),
+            ) as CustomItemSearchResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -314,7 +321,7 @@ class CustomItemsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [CustomItemResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CustomItemResponseWrapper>> getCustomItemsId({ 
+  Future<Response<CustomItemResponseWrapper>> getCustomItemsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -323,7 +330,10 @@ class CustomItemsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/custom-items/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/custom-items/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -336,7 +346,8 @@ class CustomItemsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -360,11 +371,12 @@ class CustomItemsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(CustomItemResponseWrapper),
-      ) as CustomItemResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(CustomItemResponseWrapper),
+            ) as CustomItemResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -402,7 +414,7 @@ class CustomItemsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [CustomItemResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CustomItemResponseWrapper>> patchCustomItemsId({ 
+  Future<Response<CustomItemResponseWrapper>> patchCustomItemsId({
     required String id,
     required CustomItem customItem,
     CancelToken? cancelToken,
@@ -412,7 +424,10 @@ class CustomItemsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/custom-items/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/custom-items/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -425,7 +440,8 @@ class CustomItemsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -443,10 +459,9 @@ class CustomItemsApi {
     try {
       const _type = FullType(CustomItem);
       _bodyData = _serializers.serialize(customItem, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -469,11 +484,12 @@ class CustomItemsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(CustomItemResponseWrapper),
-      ) as CustomItemResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(CustomItemResponseWrapper),
+            ) as CustomItemResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -510,7 +526,7 @@ class CustomItemsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [CustomItemResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CustomItemResponseWrapper>> postCustomItems({ 
+  Future<Response<CustomItemResponseWrapper>> postCustomItems({
     required CustomItem customItem,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -532,7 +548,8 @@ class CustomItemsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -550,10 +567,9 @@ class CustomItemsApi {
     try {
       const _type = FullType(CustomItem);
       _bodyData = _serializers.serialize(customItem, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -576,11 +592,12 @@ class CustomItemsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(CustomItemResponseWrapper),
-      ) as CustomItemResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(CustomItemResponseWrapper),
+            ) as CustomItemResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -602,5 +619,4 @@ class CustomItemsApi {
       extra: _response.extra,
     );
   }
-
 }

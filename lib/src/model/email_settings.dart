@@ -15,11 +15,12 @@ part 'email_settings.g.dart';
 /// Properties:
 /// * [frequency] - Frequency of the emailType. The available frequencies by email type are: DIGEST: WEEKLY, MONTHLY or NEVER; ACTIVATION: ALWAYS or NEVER; START_VERIFICATION_GOOGLE: ALWAYS or NEVER; FINISH_VERIFICATION_GOOGLE: ALWAYS or NEVER; UNREAD_REVIEW_NOTIFICATION: ALWAYS or NEVER; PENDING_APPROVAL_REPLY_NOTIFICATION: DAILY, ALWAYS or NEVER.
 /// * [emailType] - Type of email. Currently, the types of email supported are: DIGEST, ACTIVATION, START_VERIFICATION_GOOGLE, FINISH_VERIFICATION_GOOGLE, UNREAD_REVIEW_NOTIFICATION, PENDING_APPROVAL_REPLY_NOTIFICATION, SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION, NEW_CHATS_NOTIFICATION, NEW_CONTACT_FORM_NOTIFICATION
-/// * [userId] 
-/// * [emailTypeId] 
-/// * [frequencyId] 
+/// * [userId]
+/// * [emailTypeId]
+/// * [frequencyId]
 @BuiltValue()
-abstract class EmailSettings implements Built<EmailSettings, EmailSettingsBuilder> {
+abstract class EmailSettings
+    implements Built<EmailSettings, EmailSettingsBuilder> {
   /// Frequency of the emailType. The available frequencies by email type are: DIGEST: WEEKLY, MONTHLY or NEVER; ACTIVATION: ALWAYS or NEVER; START_VERIFICATION_GOOGLE: ALWAYS or NEVER; FINISH_VERIFICATION_GOOGLE: ALWAYS or NEVER; UNREAD_REVIEW_NOTIFICATION: ALWAYS or NEVER; PENDING_APPROVAL_REPLY_NOTIFICATION: DAILY, ALWAYS or NEVER.
   @BuiltValueField(wireName: r'frequency')
   EmailSettingsFrequencyEnum? get frequency;
@@ -41,13 +42,15 @@ abstract class EmailSettings implements Built<EmailSettings, EmailSettingsBuilde
 
   EmailSettings._();
 
-  factory EmailSettings([void updates(EmailSettingsBuilder b)]) = _$EmailSettings;
+  factory EmailSettings([void updates(EmailSettingsBuilder b)]) =
+      _$EmailSettings;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EmailSettingsBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<EmailSettings> get serializer => _$EmailSettingsSerializer();
+  static Serializer<EmailSettings> get serializer =>
+      _$EmailSettingsSerializer();
 }
 
 class _$EmailSettingsSerializer implements PrimitiveSerializer<EmailSettings> {
@@ -105,7 +108,9 @@ class _$EmailSettingsSerializer implements PrimitiveSerializer<EmailSettings> {
     EmailSettings object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -185,102 +190,160 @@ class _$EmailSettingsSerializer implements PrimitiveSerializer<EmailSettings> {
 }
 
 class EmailSettingsFrequencyEnum extends EnumClass {
-
   /// Frequency of the emailType. The available frequencies by email type are: DIGEST: WEEKLY, MONTHLY or NEVER; ACTIVATION: ALWAYS or NEVER; START_VERIFICATION_GOOGLE: ALWAYS or NEVER; FINISH_VERIFICATION_GOOGLE: ALWAYS or NEVER; UNREAD_REVIEW_NOTIFICATION: ALWAYS or NEVER; PENDING_APPROVAL_REPLY_NOTIFICATION: DAILY, ALWAYS or NEVER.
   @BuiltValueEnumConst(wireName: r'ALWAYS')
-  static const EmailSettingsFrequencyEnum ALWAYS = _$emailSettingsFrequencyEnum_ALWAYS;
+  static const EmailSettingsFrequencyEnum ALWAYS =
+      _$emailSettingsFrequencyEnum_ALWAYS;
+
   /// Frequency of the emailType. The available frequencies by email type are: DIGEST: WEEKLY, MONTHLY or NEVER; ACTIVATION: ALWAYS or NEVER; START_VERIFICATION_GOOGLE: ALWAYS or NEVER; FINISH_VERIFICATION_GOOGLE: ALWAYS or NEVER; UNREAD_REVIEW_NOTIFICATION: ALWAYS or NEVER; PENDING_APPROVAL_REPLY_NOTIFICATION: DAILY, ALWAYS or NEVER.
   @BuiltValueEnumConst(wireName: r'DAILY')
-  static const EmailSettingsFrequencyEnum DAILY = _$emailSettingsFrequencyEnum_DAILY;
+  static const EmailSettingsFrequencyEnum DAILY =
+      _$emailSettingsFrequencyEnum_DAILY;
+
   /// Frequency of the emailType. The available frequencies by email type are: DIGEST: WEEKLY, MONTHLY or NEVER; ACTIVATION: ALWAYS or NEVER; START_VERIFICATION_GOOGLE: ALWAYS or NEVER; FINISH_VERIFICATION_GOOGLE: ALWAYS or NEVER; UNREAD_REVIEW_NOTIFICATION: ALWAYS or NEVER; PENDING_APPROVAL_REPLY_NOTIFICATION: DAILY, ALWAYS or NEVER.
   @BuiltValueEnumConst(wireName: r'WEEKLY')
-  static const EmailSettingsFrequencyEnum WEEKLY = _$emailSettingsFrequencyEnum_WEEKLY;
+  static const EmailSettingsFrequencyEnum WEEKLY =
+      _$emailSettingsFrequencyEnum_WEEKLY;
+
   /// Frequency of the emailType. The available frequencies by email type are: DIGEST: WEEKLY, MONTHLY or NEVER; ACTIVATION: ALWAYS or NEVER; START_VERIFICATION_GOOGLE: ALWAYS or NEVER; FINISH_VERIFICATION_GOOGLE: ALWAYS or NEVER; UNREAD_REVIEW_NOTIFICATION: ALWAYS or NEVER; PENDING_APPROVAL_REPLY_NOTIFICATION: DAILY, ALWAYS or NEVER.
   @BuiltValueEnumConst(wireName: r'MONTHLY')
-  static const EmailSettingsFrequencyEnum MONTHLY = _$emailSettingsFrequencyEnum_MONTHLY;
+  static const EmailSettingsFrequencyEnum MONTHLY =
+      _$emailSettingsFrequencyEnum_MONTHLY;
+
   /// Frequency of the emailType. The available frequencies by email type are: DIGEST: WEEKLY, MONTHLY or NEVER; ACTIVATION: ALWAYS or NEVER; START_VERIFICATION_GOOGLE: ALWAYS or NEVER; FINISH_VERIFICATION_GOOGLE: ALWAYS or NEVER; UNREAD_REVIEW_NOTIFICATION: ALWAYS or NEVER; PENDING_APPROVAL_REPLY_NOTIFICATION: DAILY, ALWAYS or NEVER.
   @BuiltValueEnumConst(wireName: r'QUARTERLY')
-  static const EmailSettingsFrequencyEnum QUARTERLY = _$emailSettingsFrequencyEnum_QUARTERLY;
+  static const EmailSettingsFrequencyEnum QUARTERLY =
+      _$emailSettingsFrequencyEnum_QUARTERLY;
+
   /// Frequency of the emailType. The available frequencies by email type are: DIGEST: WEEKLY, MONTHLY or NEVER; ACTIVATION: ALWAYS or NEVER; START_VERIFICATION_GOOGLE: ALWAYS or NEVER; FINISH_VERIFICATION_GOOGLE: ALWAYS or NEVER; UNREAD_REVIEW_NOTIFICATION: ALWAYS or NEVER; PENDING_APPROVAL_REPLY_NOTIFICATION: DAILY, ALWAYS or NEVER.
   @BuiltValueEnumConst(wireName: r'NEVER')
-  static const EmailSettingsFrequencyEnum NEVER = _$emailSettingsFrequencyEnum_NEVER;
+  static const EmailSettingsFrequencyEnum NEVER =
+      _$emailSettingsFrequencyEnum_NEVER;
 
-  static Serializer<EmailSettingsFrequencyEnum> get serializer => _$emailSettingsFrequencyEnumSerializer;
+  static Serializer<EmailSettingsFrequencyEnum> get serializer =>
+      _$emailSettingsFrequencyEnumSerializer;
 
-  const EmailSettingsFrequencyEnum._(String name): super(name);
+  const EmailSettingsFrequencyEnum._(String name) : super(name);
 
-  static BuiltSet<EmailSettingsFrequencyEnum> get values => _$emailSettingsFrequencyEnumValues;
-  static EmailSettingsFrequencyEnum valueOf(String name) => _$emailSettingsFrequencyEnumValueOf(name);
+  static BuiltSet<EmailSettingsFrequencyEnum> get values =>
+      _$emailSettingsFrequencyEnumValues;
+  static EmailSettingsFrequencyEnum valueOf(String name) =>
+      _$emailSettingsFrequencyEnumValueOf(name);
 }
 
 class EmailSettingsEmailTypeEnum extends EnumClass {
-
   /// Type of email. Currently, the types of email supported are: DIGEST, ACTIVATION, START_VERIFICATION_GOOGLE, FINISH_VERIFICATION_GOOGLE, UNREAD_REVIEW_NOTIFICATION, PENDING_APPROVAL_REPLY_NOTIFICATION, SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION, NEW_CHATS_NOTIFICATION, NEW_CONTACT_FORM_NOTIFICATION
   @BuiltValueEnumConst(wireName: r'DIGEST')
-  static const EmailSettingsEmailTypeEnum DIGEST = _$emailSettingsEmailTypeEnum_DIGEST;
+  static const EmailSettingsEmailTypeEnum DIGEST =
+      _$emailSettingsEmailTypeEnum_DIGEST;
+
   /// Type of email. Currently, the types of email supported are: DIGEST, ACTIVATION, START_VERIFICATION_GOOGLE, FINISH_VERIFICATION_GOOGLE, UNREAD_REVIEW_NOTIFICATION, PENDING_APPROVAL_REPLY_NOTIFICATION, SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION, NEW_CHATS_NOTIFICATION, NEW_CONTACT_FORM_NOTIFICATION
   @BuiltValueEnumConst(wireName: r'UNREAD_REVIEW_NOTIFICATION')
-  static const EmailSettingsEmailTypeEnum UNREAD_REVIEW_NOTIFICATION = _$emailSettingsEmailTypeEnum_UNREAD_REVIEW_NOTIFICATION;
+  static const EmailSettingsEmailTypeEnum UNREAD_REVIEW_NOTIFICATION =
+      _$emailSettingsEmailTypeEnum_UNREAD_REVIEW_NOTIFICATION;
+
   /// Type of email. Currently, the types of email supported are: DIGEST, ACTIVATION, START_VERIFICATION_GOOGLE, FINISH_VERIFICATION_GOOGLE, UNREAD_REVIEW_NOTIFICATION, PENDING_APPROVAL_REPLY_NOTIFICATION, SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION, NEW_CHATS_NOTIFICATION, NEW_CONTACT_FORM_NOTIFICATION
   @BuiltValueEnumConst(wireName: r'PENDING_APPROVAL_REPLY_NOTIFICATION')
-  static const EmailSettingsEmailTypeEnum PENDING_APPROVAL_REPLY_NOTIFICATION = _$emailSettingsEmailTypeEnum_PENDING_APPROVAL_REPLY_NOTIFICATION;
+  static const EmailSettingsEmailTypeEnum PENDING_APPROVAL_REPLY_NOTIFICATION =
+      _$emailSettingsEmailTypeEnum_PENDING_APPROVAL_REPLY_NOTIFICATION;
+
   /// Type of email. Currently, the types of email supported are: DIGEST, ACTIVATION, START_VERIFICATION_GOOGLE, FINISH_VERIFICATION_GOOGLE, UNREAD_REVIEW_NOTIFICATION, PENDING_APPROVAL_REPLY_NOTIFICATION, SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION, NEW_CHATS_NOTIFICATION, NEW_CONTACT_FORM_NOTIFICATION
   @BuiltValueEnumConst(wireName: r'ACTIVATION')
-  static const EmailSettingsEmailTypeEnum ACTIVATION = _$emailSettingsEmailTypeEnum_ACTIVATION;
+  static const EmailSettingsEmailTypeEnum ACTIVATION =
+      _$emailSettingsEmailTypeEnum_ACTIVATION;
+
   /// Type of email. Currently, the types of email supported are: DIGEST, ACTIVATION, START_VERIFICATION_GOOGLE, FINISH_VERIFICATION_GOOGLE, UNREAD_REVIEW_NOTIFICATION, PENDING_APPROVAL_REPLY_NOTIFICATION, SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION, NEW_CHATS_NOTIFICATION, NEW_CONTACT_FORM_NOTIFICATION
   @BuiltValueEnumConst(wireName: r'START_VERIFICATION_GOOGLE')
-  static const EmailSettingsEmailTypeEnum START_VERIFICATION_GOOGLE = _$emailSettingsEmailTypeEnum_START_VERIFICATION_GOOGLE;
+  static const EmailSettingsEmailTypeEnum START_VERIFICATION_GOOGLE =
+      _$emailSettingsEmailTypeEnum_START_VERIFICATION_GOOGLE;
+
   /// Type of email. Currently, the types of email supported are: DIGEST, ACTIVATION, START_VERIFICATION_GOOGLE, FINISH_VERIFICATION_GOOGLE, UNREAD_REVIEW_NOTIFICATION, PENDING_APPROVAL_REPLY_NOTIFICATION, SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION, NEW_CHATS_NOTIFICATION, NEW_CONTACT_FORM_NOTIFICATION
   @BuiltValueEnumConst(wireName: r'FINISH_VERIFICATION_GOOGLE')
-  static const EmailSettingsEmailTypeEnum FINISH_VERIFICATION_GOOGLE = _$emailSettingsEmailTypeEnum_FINISH_VERIFICATION_GOOGLE;
+  static const EmailSettingsEmailTypeEnum FINISH_VERIFICATION_GOOGLE =
+      _$emailSettingsEmailTypeEnum_FINISH_VERIFICATION_GOOGLE;
+
   /// Type of email. Currently, the types of email supported are: DIGEST, ACTIVATION, START_VERIFICATION_GOOGLE, FINISH_VERIFICATION_GOOGLE, UNREAD_REVIEW_NOTIFICATION, PENDING_APPROVAL_REPLY_NOTIFICATION, SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION, NEW_CHATS_NOTIFICATION, NEW_CONTACT_FORM_NOTIFICATION
   @BuiltValueEnumConst(wireName: r'NEW_CHATS_NOTIFICATION')
-  static const EmailSettingsEmailTypeEnum NEW_CHATS_NOTIFICATION = _$emailSettingsEmailTypeEnum_NEW_CHATS_NOTIFICATION;
+  static const EmailSettingsEmailTypeEnum NEW_CHATS_NOTIFICATION =
+      _$emailSettingsEmailTypeEnum_NEW_CHATS_NOTIFICATION;
+
   /// Type of email. Currently, the types of email supported are: DIGEST, ACTIVATION, START_VERIFICATION_GOOGLE, FINISH_VERIFICATION_GOOGLE, UNREAD_REVIEW_NOTIFICATION, PENDING_APPROVAL_REPLY_NOTIFICATION, SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION, NEW_CHATS_NOTIFICATION, NEW_CONTACT_FORM_NOTIFICATION
   @BuiltValueEnumConst(wireName: r'NEW_CONTACT_FORM_NOTIFICATION')
-  static const EmailSettingsEmailTypeEnum NEW_CONTACT_FORM_NOTIFICATION = _$emailSettingsEmailTypeEnum_NEW_CONTACT_FORM_NOTIFICATION;
+  static const EmailSettingsEmailTypeEnum NEW_CONTACT_FORM_NOTIFICATION =
+      _$emailSettingsEmailTypeEnum_NEW_CONTACT_FORM_NOTIFICATION;
+
   /// Type of email. Currently, the types of email supported are: DIGEST, ACTIVATION, START_VERIFICATION_GOOGLE, FINISH_VERIFICATION_GOOGLE, UNREAD_REVIEW_NOTIFICATION, PENDING_APPROVAL_REPLY_NOTIFICATION, SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION, NEW_CHATS_NOTIFICATION, NEW_CONTACT_FORM_NOTIFICATION
   @BuiltValueEnumConst(wireName: r'SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION')
-  static const EmailSettingsEmailTypeEnum SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION = _$emailSettingsEmailTypeEnum_SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION;
+  static const EmailSettingsEmailTypeEnum
+      SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION =
+      _$emailSettingsEmailTypeEnum_SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION;
+
   /// Type of email. Currently, the types of email supported are: DIGEST, ACTIVATION, START_VERIFICATION_GOOGLE, FINISH_VERIFICATION_GOOGLE, UNREAD_REVIEW_NOTIFICATION, PENDING_APPROVAL_REPLY_NOTIFICATION, SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION, NEW_CHATS_NOTIFICATION, NEW_CONTACT_FORM_NOTIFICATION
   @BuiltValueEnumConst(wireName: r'DASHBOARD_EXPORT')
-  static const EmailSettingsEmailTypeEnum DASHBOARD_EXPORT = _$emailSettingsEmailTypeEnum_DASHBOARD_EXPORT;
+  static const EmailSettingsEmailTypeEnum DASHBOARD_EXPORT =
+      _$emailSettingsEmailTypeEnum_DASHBOARD_EXPORT;
+
   /// Type of email. Currently, the types of email supported are: DIGEST, ACTIVATION, START_VERIFICATION_GOOGLE, FINISH_VERIFICATION_GOOGLE, UNREAD_REVIEW_NOTIFICATION, PENDING_APPROVAL_REPLY_NOTIFICATION, SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION, NEW_CHATS_NOTIFICATION, NEW_CONTACT_FORM_NOTIFICATION
   @BuiltValueEnumConst(wireName: r'RENEWAL_FAIL')
-  static const EmailSettingsEmailTypeEnum RENEWAL_FAIL = _$emailSettingsEmailTypeEnum_RENEWAL_FAIL;
+  static const EmailSettingsEmailTypeEnum RENEWAL_FAIL =
+      _$emailSettingsEmailTypeEnum_RENEWAL_FAIL;
+
   /// Type of email. Currently, the types of email supported are: DIGEST, ACTIVATION, START_VERIFICATION_GOOGLE, FINISH_VERIFICATION_GOOGLE, UNREAD_REVIEW_NOTIFICATION, PENDING_APPROVAL_REPLY_NOTIFICATION, SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION, NEW_CHATS_NOTIFICATION, NEW_CONTACT_FORM_NOTIFICATION
   @BuiltValueEnumConst(wireName: r'RENEWAL_SUCCESS')
-  static const EmailSettingsEmailTypeEnum RENEWAL_SUCCESS = _$emailSettingsEmailTypeEnum_RENEWAL_SUCCESS;
+  static const EmailSettingsEmailTypeEnum RENEWAL_SUCCESS =
+      _$emailSettingsEmailTypeEnum_RENEWAL_SUCCESS;
+
   /// Type of email. Currently, the types of email supported are: DIGEST, ACTIVATION, START_VERIFICATION_GOOGLE, FINISH_VERIFICATION_GOOGLE, UNREAD_REVIEW_NOTIFICATION, PENDING_APPROVAL_REPLY_NOTIFICATION, SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION, NEW_CHATS_NOTIFICATION, NEW_CONTACT_FORM_NOTIFICATION
   @BuiltValueEnumConst(wireName: r'RESET_PASSWORD_SP')
-  static const EmailSettingsEmailTypeEnum RESET_PASSWORD_SP = _$emailSettingsEmailTypeEnum_RESET_PASSWORD_SP;
+  static const EmailSettingsEmailTypeEnum RESET_PASSWORD_SP =
+      _$emailSettingsEmailTypeEnum_RESET_PASSWORD_SP;
+
   /// Type of email. Currently, the types of email supported are: DIGEST, ACTIVATION, START_VERIFICATION_GOOGLE, FINISH_VERIFICATION_GOOGLE, UNREAD_REVIEW_NOTIFICATION, PENDING_APPROVAL_REPLY_NOTIFICATION, SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION, NEW_CHATS_NOTIFICATION, NEW_CONTACT_FORM_NOTIFICATION
   @BuiltValueEnumConst(wireName: r'SALES_PARTNER_APPROVAL')
-  static const EmailSettingsEmailTypeEnum SALES_PARTNER_APPROVAL = _$emailSettingsEmailTypeEnum_SALES_PARTNER_APPROVAL;
+  static const EmailSettingsEmailTypeEnum SALES_PARTNER_APPROVAL =
+      _$emailSettingsEmailTypeEnum_SALES_PARTNER_APPROVAL;
+
   /// Type of email. Currently, the types of email supported are: DIGEST, ACTIVATION, START_VERIFICATION_GOOGLE, FINISH_VERIFICATION_GOOGLE, UNREAD_REVIEW_NOTIFICATION, PENDING_APPROVAL_REPLY_NOTIFICATION, SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION, NEW_CHATS_NOTIFICATION, NEW_CONTACT_FORM_NOTIFICATION
   @BuiltValueEnumConst(wireName: r'USER_INVITATION')
-  static const EmailSettingsEmailTypeEnum USER_INVITATION = _$emailSettingsEmailTypeEnum_USER_INVITATION;
+  static const EmailSettingsEmailTypeEnum USER_INVITATION =
+      _$emailSettingsEmailTypeEnum_USER_INVITATION;
+
   /// Type of email. Currently, the types of email supported are: DIGEST, ACTIVATION, START_VERIFICATION_GOOGLE, FINISH_VERIFICATION_GOOGLE, UNREAD_REVIEW_NOTIFICATION, PENDING_APPROVAL_REPLY_NOTIFICATION, SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION, NEW_CHATS_NOTIFICATION, NEW_CONTACT_FORM_NOTIFICATION
-  @BuiltValueEnumConst(wireName: r'SALES_PARTNER_ENTERPRISE_ONBOARDING_COMPLETE')
-  static const EmailSettingsEmailTypeEnum SALES_PARTNER_ENTERPRISE_ONBOARDING_COMPLETE = _$emailSettingsEmailTypeEnum_SALES_PARTNER_ENTERPRISE_ONBOARDING_COMPLETE;
+  @BuiltValueEnumConst(
+      wireName: r'SALES_PARTNER_ENTERPRISE_ONBOARDING_COMPLETE')
+  static const EmailSettingsEmailTypeEnum
+      SALES_PARTNER_ENTERPRISE_ONBOARDING_COMPLETE =
+      _$emailSettingsEmailTypeEnum_SALES_PARTNER_ENTERPRISE_ONBOARDING_COMPLETE;
+
   /// Type of email. Currently, the types of email supported are: DIGEST, ACTIVATION, START_VERIFICATION_GOOGLE, FINISH_VERIFICATION_GOOGLE, UNREAD_REVIEW_NOTIFICATION, PENDING_APPROVAL_REPLY_NOTIFICATION, SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION, NEW_CHATS_NOTIFICATION, NEW_CONTACT_FORM_NOTIFICATION
   @BuiltValueEnumConst(wireName: r'NEW_CHAT_NOTIFICATION_LOCATION')
-  static const EmailSettingsEmailTypeEnum NEW_CHAT_NOTIFICATION_LOCATION = _$emailSettingsEmailTypeEnum_NEW_CHAT_NOTIFICATION_LOCATION;
+  static const EmailSettingsEmailTypeEnum NEW_CHAT_NOTIFICATION_LOCATION =
+      _$emailSettingsEmailTypeEnum_NEW_CHAT_NOTIFICATION_LOCATION;
+
   /// Type of email. Currently, the types of email supported are: DIGEST, ACTIVATION, START_VERIFICATION_GOOGLE, FINISH_VERIFICATION_GOOGLE, UNREAD_REVIEW_NOTIFICATION, PENDING_APPROVAL_REPLY_NOTIFICATION, SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION, NEW_CHATS_NOTIFICATION, NEW_CONTACT_FORM_NOTIFICATION
   @BuiltValueEnumConst(wireName: r'NEW_CHAT_NOTIFICATION_BUSINESS')
-  static const EmailSettingsEmailTypeEnum NEW_CHAT_NOTIFICATION_BUSINESS = _$emailSettingsEmailTypeEnum_NEW_CHAT_NOTIFICATION_BUSINESS;
+  static const EmailSettingsEmailTypeEnum NEW_CHAT_NOTIFICATION_BUSINESS =
+      _$emailSettingsEmailTypeEnum_NEW_CHAT_NOTIFICATION_BUSINESS;
+
   /// Type of email. Currently, the types of email supported are: DIGEST, ACTIVATION, START_VERIFICATION_GOOGLE, FINISH_VERIFICATION_GOOGLE, UNREAD_REVIEW_NOTIFICATION, PENDING_APPROVAL_REPLY_NOTIFICATION, SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION, NEW_CHATS_NOTIFICATION, NEW_CONTACT_FORM_NOTIFICATION
   @BuiltValueEnumConst(wireName: r'NEW_CONTACT_FORM_NOTIFICATION_LOCATION')
-  static const EmailSettingsEmailTypeEnum NEW_CONTACT_FORM_NOTIFICATION_LOCATION = _$emailSettingsEmailTypeEnum_NEW_CONTACT_FORM_NOTIFICATION_LOCATION;
+  static const EmailSettingsEmailTypeEnum
+      NEW_CONTACT_FORM_NOTIFICATION_LOCATION =
+      _$emailSettingsEmailTypeEnum_NEW_CONTACT_FORM_NOTIFICATION_LOCATION;
+
   /// Type of email. Currently, the types of email supported are: DIGEST, ACTIVATION, START_VERIFICATION_GOOGLE, FINISH_VERIFICATION_GOOGLE, UNREAD_REVIEW_NOTIFICATION, PENDING_APPROVAL_REPLY_NOTIFICATION, SOCIAL_POST_PENDING_APPROVAL_NOTIFICATION, NEW_CHATS_NOTIFICATION, NEW_CONTACT_FORM_NOTIFICATION
   @BuiltValueEnumConst(wireName: r'NEW_CONTACT_FORM_NOTIFICATION_BUSINESS')
-  static const EmailSettingsEmailTypeEnum NEW_CONTACT_FORM_NOTIFICATION_BUSINESS = _$emailSettingsEmailTypeEnum_NEW_CONTACT_FORM_NOTIFICATION_BUSINESS;
+  static const EmailSettingsEmailTypeEnum
+      NEW_CONTACT_FORM_NOTIFICATION_BUSINESS =
+      _$emailSettingsEmailTypeEnum_NEW_CONTACT_FORM_NOTIFICATION_BUSINESS;
 
-  static Serializer<EmailSettingsEmailTypeEnum> get serializer => _$emailSettingsEmailTypeEnumSerializer;
+  static Serializer<EmailSettingsEmailTypeEnum> get serializer =>
+      _$emailSettingsEmailTypeEnumSerializer;
 
-  const EmailSettingsEmailTypeEnum._(String name): super(name);
+  const EmailSettingsEmailTypeEnum._(String name) : super(name);
 
-  static BuiltSet<EmailSettingsEmailTypeEnum> get values => _$emailSettingsEmailTypeEnumValues;
-  static EmailSettingsEmailTypeEnum valueOf(String name) => _$emailSettingsEmailTypeEnumValueOf(name);
+  static BuiltSet<EmailSettingsEmailTypeEnum> get values =>
+      _$emailSettingsEmailTypeEnumValues;
+  static EmailSettingsEmailTypeEnum valueOf(String name) =>
+      _$emailSettingsEmailTypeEnumValueOf(name);
 }
-

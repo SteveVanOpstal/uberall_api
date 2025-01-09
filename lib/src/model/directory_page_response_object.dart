@@ -12,26 +12,35 @@ part 'directory_page_response_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [page] 
+/// * [page]
 @BuiltValue()
-abstract class DirectoryPageResponseObject implements Built<DirectoryPageResponseObject, DirectoryPageResponseObjectBuilder> {
+abstract class DirectoryPageResponseObject
+    implements
+        Built<DirectoryPageResponseObject, DirectoryPageResponseObjectBuilder> {
   @BuiltValueField(wireName: r'page')
   DirectoryPage? get page;
 
   DirectoryPageResponseObject._();
 
-  factory DirectoryPageResponseObject([void updates(DirectoryPageResponseObjectBuilder b)]) = _$DirectoryPageResponseObject;
+  factory DirectoryPageResponseObject(
+          [void updates(DirectoryPageResponseObjectBuilder b)]) =
+      _$DirectoryPageResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DirectoryPageResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DirectoryPageResponseObject> get serializer => _$DirectoryPageResponseObjectSerializer();
+  static Serializer<DirectoryPageResponseObject> get serializer =>
+      _$DirectoryPageResponseObjectSerializer();
 }
 
-class _$DirectoryPageResponseObjectSerializer implements PrimitiveSerializer<DirectoryPageResponseObject> {
+class _$DirectoryPageResponseObjectSerializer
+    implements PrimitiveSerializer<DirectoryPageResponseObject> {
   @override
-  final Iterable<Type> types = const [DirectoryPageResponseObject, _$DirectoryPageResponseObject];
+  final Iterable<Type> types = const [
+    DirectoryPageResponseObject,
+    _$DirectoryPageResponseObject
+  ];
 
   @override
   final String wireName = r'DirectoryPageResponseObject';
@@ -56,7 +65,9 @@ class _$DirectoryPageResponseObjectSerializer implements PrimitiveSerializer<Dir
     DirectoryPageResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +117,3 @@ class _$DirectoryPageResponseObjectSerializer implements PrimitiveSerializer<Dir
     return result.build();
   }
 }
-

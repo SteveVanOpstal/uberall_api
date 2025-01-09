@@ -18,7 +18,6 @@ import 'package:openapi/src/model/string_list_response_wrapper.dart';
 import 'package:openapi/src/model/success_response_wrapper.dart';
 
 class TemplatesApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -39,7 +38,7 @@ class TemplatesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SuccessResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SuccessResponseWrapper>> deleteTemplatesId({ 
+  Future<Response<SuccessResponseWrapper>> deleteTemplatesId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -48,7 +47,10 @@ class TemplatesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/templates/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/templates/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -61,7 +63,8 @@ class TemplatesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -85,11 +88,12 @@ class TemplatesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SuccessResponseWrapper),
-      ) as SuccessResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SuccessResponseWrapper),
+            ) as SuccessResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -138,7 +142,7 @@ class TemplatesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ResponseTemplatesWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ResponseTemplatesWrapper>> getTemplates({ 
+  Future<Response<ResponseTemplatesWrapper>> getTemplates({
     String? query,
     String? tags,
     String? minLastEdited,
@@ -172,7 +176,8 @@ class TemplatesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -185,19 +190,43 @@ class TemplatesApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (query != null) r'query': encodeQueryParameter(_serializers, query, const FullType(String)),
-      if (tags != null) r'tags': encodeQueryParameter(_serializers, tags, const FullType(String)),
-      if (minLastEdited != null) r'minLastEdited': encodeQueryParameter(_serializers, minLastEdited, const FullType(String)),
-      if (maxLastEdited != null) r'maxLastEdited': encodeQueryParameter(_serializers, maxLastEdited, const FullType(String)),
-      if (minTimesUsed != null) r'minTimesUsed': encodeQueryParameter(_serializers, minTimesUsed, const FullType(int)),
-      if (maxTimesUsed != null) r'maxTimesUsed': encodeQueryParameter(_serializers, maxTimesUsed, const FullType(int)),
-      if (createdBy != null) r'createdBy': encodeQueryParameter(_serializers, createdBy, const FullType(String)),
-      if (businesses != null) r'businesses': encodeQueryParameter(_serializers, businesses, const FullType(String)),
-      if (locations != null) r'locations': encodeQueryParameter(_serializers, locations, const FullType(String)),
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (size != null) r'size': encodeQueryParameter(_serializers, size, const FullType(int)),
-      if (sort != null) r'sort': encodeQueryParameter(_serializers, sort, const FullType(String)),
-      if (direction != null) r'direction': encodeQueryParameter(_serializers, direction, const FullType(String)),
+      if (query != null)
+        r'query':
+            encodeQueryParameter(_serializers, query, const FullType(String)),
+      if (tags != null)
+        r'tags':
+            encodeQueryParameter(_serializers, tags, const FullType(String)),
+      if (minLastEdited != null)
+        r'minLastEdited': encodeQueryParameter(
+            _serializers, minLastEdited, const FullType(String)),
+      if (maxLastEdited != null)
+        r'maxLastEdited': encodeQueryParameter(
+            _serializers, maxLastEdited, const FullType(String)),
+      if (minTimesUsed != null)
+        r'minTimesUsed': encodeQueryParameter(
+            _serializers, minTimesUsed, const FullType(int)),
+      if (maxTimesUsed != null)
+        r'maxTimesUsed': encodeQueryParameter(
+            _serializers, maxTimesUsed, const FullType(int)),
+      if (createdBy != null)
+        r'createdBy': encodeQueryParameter(
+            _serializers, createdBy, const FullType(String)),
+      if (businesses != null)
+        r'businesses': encodeQueryParameter(
+            _serializers, businesses, const FullType(String)),
+      if (locations != null)
+        r'locations': encodeQueryParameter(
+            _serializers, locations, const FullType(String)),
+      if (page != null)
+        r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
+      if (size != null)
+        r'size': encodeQueryParameter(_serializers, size, const FullType(int)),
+      if (sort != null)
+        r'sort':
+            encodeQueryParameter(_serializers, sort, const FullType(String)),
+      if (direction != null)
+        r'direction': encodeQueryParameter(
+            _serializers, direction, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -213,11 +242,12 @@ class TemplatesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ResponseTemplatesWrapper),
-      ) as ResponseTemplatesWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ResponseTemplatesWrapper),
+            ) as ResponseTemplatesWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -254,7 +284,7 @@ class TemplatesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ResponseUsersWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ResponseUsersWrapper>> getTemplatesAuthors({ 
+  Future<Response<ResponseUsersWrapper>> getTemplatesAuthors({
     required GetTemplatesAuthorsRequest getTemplatesAuthorsRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -276,7 +306,8 @@ class TemplatesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -292,11 +323,11 @@ class TemplatesApi {
 
     try {
       const _type = FullType(GetTemplatesAuthorsRequest);
-      _bodyData = _serializers.serialize(getTemplatesAuthorsRequest, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData = _serializers.serialize(getTemplatesAuthorsRequest,
+          specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -319,11 +350,12 @@ class TemplatesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ResponseUsersWrapper),
-      ) as ResponseUsersWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ResponseUsersWrapper),
+            ) as ResponseUsersWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -360,7 +392,7 @@ class TemplatesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ResponseTemplateWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ResponseTemplateWrapper>> getTemplatesId({ 
+  Future<Response<ResponseTemplateWrapper>> getTemplatesId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -369,7 +401,10 @@ class TemplatesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/templates/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/templates/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -382,7 +417,8 @@ class TemplatesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -406,11 +442,12 @@ class TemplatesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ResponseTemplateWrapper),
-      ) as ResponseTemplateWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ResponseTemplateWrapper),
+            ) as ResponseTemplateWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -447,7 +484,7 @@ class TemplatesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [StringListResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<StringListResponseWrapper>> getTemplatesTags({ 
+  Future<Response<StringListResponseWrapper>> getTemplatesTags({
     required GetTemplatesAuthorsRequest getTemplatesAuthorsRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -469,7 +506,8 @@ class TemplatesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -485,11 +523,11 @@ class TemplatesApi {
 
     try {
       const _type = FullType(GetTemplatesAuthorsRequest);
-      _bodyData = _serializers.serialize(getTemplatesAuthorsRequest, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData = _serializers.serialize(getTemplatesAuthorsRequest,
+          specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -512,11 +550,12 @@ class TemplatesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(StringListResponseWrapper),
-      ) as StringListResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(StringListResponseWrapper),
+            ) as StringListResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -554,7 +593,7 @@ class TemplatesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ResponseTemplateWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ResponseTemplateWrapper>> patchTemplatesId({ 
+  Future<Response<ResponseTemplateWrapper>> patchTemplatesId({
     required String id,
     required CreateTemplateRequest createTemplateRequest,
     CancelToken? cancelToken,
@@ -564,7 +603,10 @@ class TemplatesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/templates/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/templates/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -577,7 +619,8 @@ class TemplatesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -593,11 +636,11 @@ class TemplatesApi {
 
     try {
       const _type = FullType(CreateTemplateRequest);
-      _bodyData = _serializers.serialize(createTemplateRequest, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData =
+          _serializers.serialize(createTemplateRequest, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -620,11 +663,12 @@ class TemplatesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ResponseTemplateWrapper),
-      ) as ResponseTemplateWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ResponseTemplateWrapper),
+            ) as ResponseTemplateWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -661,7 +705,7 @@ class TemplatesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ResponseTemplateWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ResponseTemplateWrapper>> postTemplates({ 
+  Future<Response<ResponseTemplateWrapper>> postTemplates({
     required CreateTemplateRequest createTemplateRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -683,7 +727,8 @@ class TemplatesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -699,11 +744,11 @@ class TemplatesApi {
 
     try {
       const _type = FullType(CreateTemplateRequest);
-      _bodyData = _serializers.serialize(createTemplateRequest, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData =
+          _serializers.serialize(createTemplateRequest, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -726,11 +771,12 @@ class TemplatesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ResponseTemplateWrapper),
-      ) as ResponseTemplateWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ResponseTemplateWrapper),
+            ) as ResponseTemplateWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -767,7 +813,7 @@ class TemplatesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ResponseTemplateWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ResponseTemplateWrapper>> postTemplatesIdIncrementUsage({ 
+  Future<Response<ResponseTemplateWrapper>> postTemplatesIdIncrementUsage({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -776,7 +822,10 @@ class TemplatesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/templates/{id}/increment-usage'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/templates/{id}/increment-usage'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -789,7 +838,8 @@ class TemplatesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -813,11 +863,12 @@ class TemplatesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ResponseTemplateWrapper),
-      ) as ResponseTemplateWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ResponseTemplateWrapper),
+            ) as ResponseTemplateWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -839,5 +890,4 @@ class TemplatesApi {
       extra: _response.extra,
     );
   }
-
 }

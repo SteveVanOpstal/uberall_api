@@ -13,13 +13,16 @@ part 'location_managers_count_wrapper.g.dart';
 /// LocationManagersCountWrapper
 ///
 /// Properties:
-/// * [status] 
+/// * [status]
 /// * [message] - (optional) Holds further information about the response
-/// * [errorCode] 
+/// * [errorCode]
 /// * [warnings] - (optional) Holds further warnings
-/// * [response] 
+/// * [response]
 @BuiltValue()
-abstract class LocationManagersCountWrapper implements Built<LocationManagersCountWrapper, LocationManagersCountWrapperBuilder> {
+abstract class LocationManagersCountWrapper
+    implements
+        Built<LocationManagersCountWrapper,
+            LocationManagersCountWrapperBuilder> {
   @BuiltValueField(wireName: r'status')
   LocationManagersCountWrapperStatusEnum? get status;
   // enum statusEnum {  SUCCESS,  QUOTA_LIMIT_EXCEED,  NOT_AUTHORIZED,  FORBIDDEN,  BAD_ACCESS_TOKEN,  BAD_PRIVATE_KEY,  BAD_PUBLIC_KEY,  MISSING_PARAMETER,  INVALID_PARAMETER,  WRONG_PARAMETER_TYPE,  CONFLICT,  RESOURCE_LOCKED,  SERVER_ERROR,  ERROR,  NOT_FOUND,  BAD_REQUEST,  USER_ERROR,  PARTIAL_ERROR,  METHOD_NOT_ALLOWED,  };
@@ -41,18 +44,25 @@ abstract class LocationManagersCountWrapper implements Built<LocationManagersCou
 
   LocationManagersCountWrapper._();
 
-  factory LocationManagersCountWrapper([void updates(LocationManagersCountWrapperBuilder b)]) = _$LocationManagersCountWrapper;
+  factory LocationManagersCountWrapper(
+          [void updates(LocationManagersCountWrapperBuilder b)]) =
+      _$LocationManagersCountWrapper;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LocationManagersCountWrapperBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LocationManagersCountWrapper> get serializer => _$LocationManagersCountWrapperSerializer();
+  static Serializer<LocationManagersCountWrapper> get serializer =>
+      _$LocationManagersCountWrapperSerializer();
 }
 
-class _$LocationManagersCountWrapperSerializer implements PrimitiveSerializer<LocationManagersCountWrapper> {
+class _$LocationManagersCountWrapperSerializer
+    implements PrimitiveSerializer<LocationManagersCountWrapper> {
   @override
-  final Iterable<Type> types = const [LocationManagersCountWrapper, _$LocationManagersCountWrapper];
+  final Iterable<Type> types = const [
+    LocationManagersCountWrapper,
+    _$LocationManagersCountWrapper
+  ];
 
   @override
   final String wireName = r'LocationManagersCountWrapper';
@@ -80,7 +90,8 @@ class _$LocationManagersCountWrapperSerializer implements PrimitiveSerializer<Lo
       yield r'errorCode';
       yield serializers.serialize(
         object.errorCode,
-        specifiedType: const FullType(LocationManagersCountWrapperErrorCodeEnum),
+        specifiedType:
+            const FullType(LocationManagersCountWrapperErrorCodeEnum),
       );
     }
     if (object.warnings != null) {
@@ -105,7 +116,9 @@ class _$LocationManagersCountWrapperSerializer implements PrimitiveSerializer<Lo
     LocationManagersCountWrapper object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -123,7 +136,8 @@ class _$LocationManagersCountWrapperSerializer implements PrimitiveSerializer<Lo
         case r'status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(LocationManagersCountWrapperStatusEnum),
+            specifiedType:
+                const FullType(LocationManagersCountWrapperStatusEnum),
           ) as LocationManagersCountWrapperStatusEnum;
           result.status = valueDes;
           break;
@@ -137,7 +151,8 @@ class _$LocationManagersCountWrapperSerializer implements PrimitiveSerializer<Lo
         case r'errorCode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(LocationManagersCountWrapperErrorCodeEnum),
+            specifiedType:
+                const FullType(LocationManagersCountWrapperErrorCodeEnum),
           ) as LocationManagersCountWrapperErrorCodeEnum;
           result.errorCode = valueDes;
           break;
@@ -185,102 +200,147 @@ class _$LocationManagersCountWrapperSerializer implements PrimitiveSerializer<Lo
 }
 
 class LocationManagersCountWrapperStatusEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'SUCCESS')
-  static const LocationManagersCountWrapperStatusEnum SUCCESS = _$locationManagersCountWrapperStatusEnum_SUCCESS;
+  static const LocationManagersCountWrapperStatusEnum SUCCESS =
+      _$locationManagersCountWrapperStatusEnum_SUCCESS;
   @BuiltValueEnumConst(wireName: r'QUOTA_LIMIT_EXCEED')
-  static const LocationManagersCountWrapperStatusEnum QUOTA_LIMIT_EXCEED = _$locationManagersCountWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
+  static const LocationManagersCountWrapperStatusEnum QUOTA_LIMIT_EXCEED =
+      _$locationManagersCountWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
   @BuiltValueEnumConst(wireName: r'NOT_AUTHORIZED')
-  static const LocationManagersCountWrapperStatusEnum NOT_AUTHORIZED = _$locationManagersCountWrapperStatusEnum_NOT_AUTHORIZED;
+  static const LocationManagersCountWrapperStatusEnum NOT_AUTHORIZED =
+      _$locationManagersCountWrapperStatusEnum_NOT_AUTHORIZED;
   @BuiltValueEnumConst(wireName: r'FORBIDDEN')
-  static const LocationManagersCountWrapperStatusEnum FORBIDDEN = _$locationManagersCountWrapperStatusEnum_FORBIDDEN;
+  static const LocationManagersCountWrapperStatusEnum FORBIDDEN =
+      _$locationManagersCountWrapperStatusEnum_FORBIDDEN;
   @BuiltValueEnumConst(wireName: r'BAD_ACCESS_TOKEN')
-  static const LocationManagersCountWrapperStatusEnum BAD_ACCESS_TOKEN = _$locationManagersCountWrapperStatusEnum_BAD_ACCESS_TOKEN;
+  static const LocationManagersCountWrapperStatusEnum BAD_ACCESS_TOKEN =
+      _$locationManagersCountWrapperStatusEnum_BAD_ACCESS_TOKEN;
   @BuiltValueEnumConst(wireName: r'BAD_PRIVATE_KEY')
-  static const LocationManagersCountWrapperStatusEnum BAD_PRIVATE_KEY = _$locationManagersCountWrapperStatusEnum_BAD_PRIVATE_KEY;
+  static const LocationManagersCountWrapperStatusEnum BAD_PRIVATE_KEY =
+      _$locationManagersCountWrapperStatusEnum_BAD_PRIVATE_KEY;
   @BuiltValueEnumConst(wireName: r'BAD_PUBLIC_KEY')
-  static const LocationManagersCountWrapperStatusEnum BAD_PUBLIC_KEY = _$locationManagersCountWrapperStatusEnum_BAD_PUBLIC_KEY;
+  static const LocationManagersCountWrapperStatusEnum BAD_PUBLIC_KEY =
+      _$locationManagersCountWrapperStatusEnum_BAD_PUBLIC_KEY;
   @BuiltValueEnumConst(wireName: r'MISSING_PARAMETER')
-  static const LocationManagersCountWrapperStatusEnum MISSING_PARAMETER = _$locationManagersCountWrapperStatusEnum_MISSING_PARAMETER;
+  static const LocationManagersCountWrapperStatusEnum MISSING_PARAMETER =
+      _$locationManagersCountWrapperStatusEnum_MISSING_PARAMETER;
   @BuiltValueEnumConst(wireName: r'INVALID_PARAMETER')
-  static const LocationManagersCountWrapperStatusEnum INVALID_PARAMETER = _$locationManagersCountWrapperStatusEnum_INVALID_PARAMETER;
+  static const LocationManagersCountWrapperStatusEnum INVALID_PARAMETER =
+      _$locationManagersCountWrapperStatusEnum_INVALID_PARAMETER;
   @BuiltValueEnumConst(wireName: r'WRONG_PARAMETER_TYPE')
-  static const LocationManagersCountWrapperStatusEnum WRONG_PARAMETER_TYPE = _$locationManagersCountWrapperStatusEnum_WRONG_PARAMETER_TYPE;
+  static const LocationManagersCountWrapperStatusEnum WRONG_PARAMETER_TYPE =
+      _$locationManagersCountWrapperStatusEnum_WRONG_PARAMETER_TYPE;
   @BuiltValueEnumConst(wireName: r'CONFLICT')
-  static const LocationManagersCountWrapperStatusEnum CONFLICT = _$locationManagersCountWrapperStatusEnum_CONFLICT;
+  static const LocationManagersCountWrapperStatusEnum CONFLICT =
+      _$locationManagersCountWrapperStatusEnum_CONFLICT;
   @BuiltValueEnumConst(wireName: r'RESOURCE_LOCKED')
-  static const LocationManagersCountWrapperStatusEnum RESOURCE_LOCKED = _$locationManagersCountWrapperStatusEnum_RESOURCE_LOCKED;
+  static const LocationManagersCountWrapperStatusEnum RESOURCE_LOCKED =
+      _$locationManagersCountWrapperStatusEnum_RESOURCE_LOCKED;
   @BuiltValueEnumConst(wireName: r'SERVER_ERROR')
-  static const LocationManagersCountWrapperStatusEnum SERVER_ERROR = _$locationManagersCountWrapperStatusEnum_SERVER_ERROR;
+  static const LocationManagersCountWrapperStatusEnum SERVER_ERROR =
+      _$locationManagersCountWrapperStatusEnum_SERVER_ERROR;
   @BuiltValueEnumConst(wireName: r'ERROR')
-  static const LocationManagersCountWrapperStatusEnum ERROR = _$locationManagersCountWrapperStatusEnum_ERROR;
+  static const LocationManagersCountWrapperStatusEnum ERROR =
+      _$locationManagersCountWrapperStatusEnum_ERROR;
   @BuiltValueEnumConst(wireName: r'NOT_FOUND')
-  static const LocationManagersCountWrapperStatusEnum NOT_FOUND = _$locationManagersCountWrapperStatusEnum_NOT_FOUND;
+  static const LocationManagersCountWrapperStatusEnum NOT_FOUND =
+      _$locationManagersCountWrapperStatusEnum_NOT_FOUND;
   @BuiltValueEnumConst(wireName: r'BAD_REQUEST')
-  static const LocationManagersCountWrapperStatusEnum BAD_REQUEST = _$locationManagersCountWrapperStatusEnum_BAD_REQUEST;
+  static const LocationManagersCountWrapperStatusEnum BAD_REQUEST =
+      _$locationManagersCountWrapperStatusEnum_BAD_REQUEST;
   @BuiltValueEnumConst(wireName: r'USER_ERROR')
-  static const LocationManagersCountWrapperStatusEnum USER_ERROR = _$locationManagersCountWrapperStatusEnum_USER_ERROR;
+  static const LocationManagersCountWrapperStatusEnum USER_ERROR =
+      _$locationManagersCountWrapperStatusEnum_USER_ERROR;
   @BuiltValueEnumConst(wireName: r'PARTIAL_ERROR')
-  static const LocationManagersCountWrapperStatusEnum PARTIAL_ERROR = _$locationManagersCountWrapperStatusEnum_PARTIAL_ERROR;
+  static const LocationManagersCountWrapperStatusEnum PARTIAL_ERROR =
+      _$locationManagersCountWrapperStatusEnum_PARTIAL_ERROR;
   @BuiltValueEnumConst(wireName: r'METHOD_NOT_ALLOWED')
-  static const LocationManagersCountWrapperStatusEnum METHOD_NOT_ALLOWED = _$locationManagersCountWrapperStatusEnum_METHOD_NOT_ALLOWED;
+  static const LocationManagersCountWrapperStatusEnum METHOD_NOT_ALLOWED =
+      _$locationManagersCountWrapperStatusEnum_METHOD_NOT_ALLOWED;
 
-  static Serializer<LocationManagersCountWrapperStatusEnum> get serializer => _$locationManagersCountWrapperStatusEnumSerializer;
+  static Serializer<LocationManagersCountWrapperStatusEnum> get serializer =>
+      _$locationManagersCountWrapperStatusEnumSerializer;
 
-  const LocationManagersCountWrapperStatusEnum._(String name): super(name);
+  const LocationManagersCountWrapperStatusEnum._(String name) : super(name);
 
-  static BuiltSet<LocationManagersCountWrapperStatusEnum> get values => _$locationManagersCountWrapperStatusEnumValues;
-  static LocationManagersCountWrapperStatusEnum valueOf(String name) => _$locationManagersCountWrapperStatusEnumValueOf(name);
+  static BuiltSet<LocationManagersCountWrapperStatusEnum> get values =>
+      _$locationManagersCountWrapperStatusEnumValues;
+  static LocationManagersCountWrapperStatusEnum valueOf(String name) =>
+      _$locationManagersCountWrapperStatusEnumValueOf(name);
 }
 
 class LocationManagersCountWrapperErrorCodeEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'NORMALIZATION_FAILED')
-  static const LocationManagersCountWrapperErrorCodeEnum NORMALIZATION_FAILED = _$locationManagersCountWrapperErrorCodeEnum_NORMALIZATION_FAILED;
+  static const LocationManagersCountWrapperErrorCodeEnum NORMALIZATION_FAILED =
+      _$locationManagersCountWrapperErrorCodeEnum_NORMALIZATION_FAILED;
   @BuiltValueEnumConst(wireName: r'DATA_CORRUPTED')
-  static const LocationManagersCountWrapperErrorCodeEnum DATA_CORRUPTED = _$locationManagersCountWrapperErrorCodeEnum_DATA_CORRUPTED;
+  static const LocationManagersCountWrapperErrorCodeEnum DATA_CORRUPTED =
+      _$locationManagersCountWrapperErrorCodeEnum_DATA_CORRUPTED;
   @BuiltValueEnumConst(wireName: r'INVALID_INPUT')
-  static const LocationManagersCountWrapperErrorCodeEnum INVALID_INPUT = _$locationManagersCountWrapperErrorCodeEnum_INVALID_INPUT;
+  static const LocationManagersCountWrapperErrorCodeEnum INVALID_INPUT =
+      _$locationManagersCountWrapperErrorCodeEnum_INVALID_INPUT;
   @BuiltValueEnumConst(wireName: r'NOT_SYNCABLE')
-  static const LocationManagersCountWrapperErrorCodeEnum NOT_SYNCABLE = _$locationManagersCountWrapperErrorCodeEnum_NOT_SYNCABLE;
+  static const LocationManagersCountWrapperErrorCodeEnum NOT_SYNCABLE =
+      _$locationManagersCountWrapperErrorCodeEnum_NOT_SYNCABLE;
   @BuiltValueEnumConst(wireName: r'PAYMENT_FAILED')
-  static const LocationManagersCountWrapperErrorCodeEnum PAYMENT_FAILED = _$locationManagersCountWrapperErrorCodeEnum_PAYMENT_FAILED;
+  static const LocationManagersCountWrapperErrorCodeEnum PAYMENT_FAILED =
+      _$locationManagersCountWrapperErrorCodeEnum_PAYMENT_FAILED;
   @BuiltValueEnumConst(wireName: r'FREE_TIER_REACHED')
-  static const LocationManagersCountWrapperErrorCodeEnum FREE_TIER_REACHED = _$locationManagersCountWrapperErrorCodeEnum_FREE_TIER_REACHED;
+  static const LocationManagersCountWrapperErrorCodeEnum FREE_TIER_REACHED =
+      _$locationManagersCountWrapperErrorCodeEnum_FREE_TIER_REACHED;
   @BuiltValueEnumConst(wireName: r'LIMIT_REACHED')
-  static const LocationManagersCountWrapperErrorCodeEnum LIMIT_REACHED = _$locationManagersCountWrapperErrorCodeEnum_LIMIT_REACHED;
+  static const LocationManagersCountWrapperErrorCodeEnum LIMIT_REACHED =
+      _$locationManagersCountWrapperErrorCodeEnum_LIMIT_REACHED;
   @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const LocationManagersCountWrapperErrorCodeEnum INACTIVE = _$locationManagersCountWrapperErrorCodeEnum_INACTIVE;
+  static const LocationManagersCountWrapperErrorCodeEnum INACTIVE =
+      _$locationManagersCountWrapperErrorCodeEnum_INACTIVE;
   @BuiltValueEnumConst(wireName: r'UNKNOWN')
-  static const LocationManagersCountWrapperErrorCodeEnum UNKNOWN = _$locationManagersCountWrapperErrorCodeEnum_UNKNOWN;
+  static const LocationManagersCountWrapperErrorCodeEnum UNKNOWN =
+      _$locationManagersCountWrapperErrorCodeEnum_UNKNOWN;
   @BuiltValueEnumConst(wireName: r'IDENTIFIER_NOT_UNIQUE')
-  static const LocationManagersCountWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE = _$locationManagersCountWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
+  static const LocationManagersCountWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE =
+      _$locationManagersCountWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
   @BuiltValueEnumConst(wireName: r'ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT')
-  static const LocationManagersCountWrapperErrorCodeEnum ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT = _$locationManagersCountWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
+  static const LocationManagersCountWrapperErrorCodeEnum
+      ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT =
+      _$locationManagersCountWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
   @BuiltValueEnumConst(wireName: r'NO_ACCOUNT_CONNECTED')
-  static const LocationManagersCountWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED = _$locationManagersCountWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
+  static const LocationManagersCountWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED =
+      _$locationManagersCountWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
   @BuiltValueEnumConst(wireName: r'NO_PAGE_SELECTED')
-  static const LocationManagersCountWrapperErrorCodeEnum NO_PAGE_SELECTED = _$locationManagersCountWrapperErrorCodeEnum_NO_PAGE_SELECTED;
+  static const LocationManagersCountWrapperErrorCodeEnum NO_PAGE_SELECTED =
+      _$locationManagersCountWrapperErrorCodeEnum_NO_PAGE_SELECTED;
   @BuiltValueEnumConst(wireName: r'PAGE_NOT_CREATED')
-  static const LocationManagersCountWrapperErrorCodeEnum PAGE_NOT_CREATED = _$locationManagersCountWrapperErrorCodeEnum_PAGE_NOT_CREATED;
+  static const LocationManagersCountWrapperErrorCodeEnum PAGE_NOT_CREATED =
+      _$locationManagersCountWrapperErrorCodeEnum_PAGE_NOT_CREATED;
   @BuiltValueEnumConst(wireName: r'PAGE_IN_REVIEW')
-  static const LocationManagersCountWrapperErrorCodeEnum PAGE_IN_REVIEW = _$locationManagersCountWrapperErrorCodeEnum_PAGE_IN_REVIEW;
+  static const LocationManagersCountWrapperErrorCodeEnum PAGE_IN_REVIEW =
+      _$locationManagersCountWrapperErrorCodeEnum_PAGE_IN_REVIEW;
   @BuiltValueEnumConst(wireName: r'PAGE_CLAIMED_BY_OTHERS')
-  static const LocationManagersCountWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS = _$locationManagersCountWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
+  static const LocationManagersCountWrapperErrorCodeEnum
+      PAGE_CLAIMED_BY_OTHERS =
+      _$locationManagersCountWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
   @BuiltValueEnumConst(wireName: r'OVERLAPPING_SOCIALPOST')
-  static const LocationManagersCountWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST = _$locationManagersCountWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
+  static const LocationManagersCountWrapperErrorCodeEnum
+      OVERLAPPING_SOCIALPOST =
+      _$locationManagersCountWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
   @BuiltValueEnumConst(wireName: r'TOO_MANY_REPLIES')
-  static const LocationManagersCountWrapperErrorCodeEnum TOO_MANY_REPLIES = _$locationManagersCountWrapperErrorCodeEnum_TOO_MANY_REPLIES;
+  static const LocationManagersCountWrapperErrorCodeEnum TOO_MANY_REPLIES =
+      _$locationManagersCountWrapperErrorCodeEnum_TOO_MANY_REPLIES;
   @BuiltValueEnumConst(wireName: r'REPLY_TOO_LONG')
-  static const LocationManagersCountWrapperErrorCodeEnum REPLY_TOO_LONG = _$locationManagersCountWrapperErrorCodeEnum_REPLY_TOO_LONG;
+  static const LocationManagersCountWrapperErrorCodeEnum REPLY_TOO_LONG =
+      _$locationManagersCountWrapperErrorCodeEnum_REPLY_TOO_LONG;
   @BuiltValueEnumConst(wireName: r'DEPRECATED')
-  static const LocationManagersCountWrapperErrorCodeEnum DEPRECATED = _$locationManagersCountWrapperErrorCodeEnum_DEPRECATED;
+  static const LocationManagersCountWrapperErrorCodeEnum DEPRECATED =
+      _$locationManagersCountWrapperErrorCodeEnum_DEPRECATED;
 
-  static Serializer<LocationManagersCountWrapperErrorCodeEnum> get serializer => _$locationManagersCountWrapperErrorCodeEnumSerializer;
+  static Serializer<LocationManagersCountWrapperErrorCodeEnum> get serializer =>
+      _$locationManagersCountWrapperErrorCodeEnumSerializer;
 
-  const LocationManagersCountWrapperErrorCodeEnum._(String name): super(name);
+  const LocationManagersCountWrapperErrorCodeEnum._(String name) : super(name);
 
-  static BuiltSet<LocationManagersCountWrapperErrorCodeEnum> get values => _$locationManagersCountWrapperErrorCodeEnumValues;
-  static LocationManagersCountWrapperErrorCodeEnum valueOf(String name) => _$locationManagersCountWrapperErrorCodeEnumValueOf(name);
+  static BuiltSet<LocationManagersCountWrapperErrorCodeEnum> get values =>
+      _$locationManagersCountWrapperErrorCodeEnumValues;
+  static LocationManagersCountWrapperErrorCodeEnum valueOf(String name) =>
+      _$locationManagersCountWrapperErrorCodeEnumValueOf(name);
 }
-

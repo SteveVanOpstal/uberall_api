@@ -12,26 +12,36 @@ part 'social_post_template_response_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [socialPostTemplate] 
+/// * [socialPostTemplate]
 @BuiltValue()
-abstract class SocialPostTemplateResponseObject implements Built<SocialPostTemplateResponseObject, SocialPostTemplateResponseObjectBuilder> {
+abstract class SocialPostTemplateResponseObject
+    implements
+        Built<SocialPostTemplateResponseObject,
+            SocialPostTemplateResponseObjectBuilder> {
   @BuiltValueField(wireName: r'socialPostTemplate')
   SocialPostTemplate? get socialPostTemplate;
 
   SocialPostTemplateResponseObject._();
 
-  factory SocialPostTemplateResponseObject([void updates(SocialPostTemplateResponseObjectBuilder b)]) = _$SocialPostTemplateResponseObject;
+  factory SocialPostTemplateResponseObject(
+          [void updates(SocialPostTemplateResponseObjectBuilder b)]) =
+      _$SocialPostTemplateResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialPostTemplateResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<SocialPostTemplateResponseObject> get serializer => _$SocialPostTemplateResponseObjectSerializer();
+  static Serializer<SocialPostTemplateResponseObject> get serializer =>
+      _$SocialPostTemplateResponseObjectSerializer();
 }
 
-class _$SocialPostTemplateResponseObjectSerializer implements PrimitiveSerializer<SocialPostTemplateResponseObject> {
+class _$SocialPostTemplateResponseObjectSerializer
+    implements PrimitiveSerializer<SocialPostTemplateResponseObject> {
   @override
-  final Iterable<Type> types = const [SocialPostTemplateResponseObject, _$SocialPostTemplateResponseObject];
+  final Iterable<Type> types = const [
+    SocialPostTemplateResponseObject,
+    _$SocialPostTemplateResponseObject
+  ];
 
   @override
   final String wireName = r'SocialPostTemplateResponseObject';
@@ -56,7 +66,9 @@ class _$SocialPostTemplateResponseObjectSerializer implements PrimitiveSerialize
     SocialPostTemplateResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +118,3 @@ class _$SocialPostTemplateResponseObjectSerializer implements PrimitiveSerialize
     return result.build();
   }
 }
-

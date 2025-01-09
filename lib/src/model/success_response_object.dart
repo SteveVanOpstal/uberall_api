@@ -13,25 +13,32 @@ part 'success_response_object.g.dart';
 /// Properties:
 /// * [success] - Success
 @BuiltValue()
-abstract class SuccessResponseObject implements Built<SuccessResponseObject, SuccessResponseObjectBuilder> {
+abstract class SuccessResponseObject
+    implements Built<SuccessResponseObject, SuccessResponseObjectBuilder> {
   /// Success
   @BuiltValueField(wireName: r'success')
   bool? get success;
 
   SuccessResponseObject._();
 
-  factory SuccessResponseObject([void updates(SuccessResponseObjectBuilder b)]) = _$SuccessResponseObject;
+  factory SuccessResponseObject(
+      [void updates(SuccessResponseObjectBuilder b)]) = _$SuccessResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SuccessResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<SuccessResponseObject> get serializer => _$SuccessResponseObjectSerializer();
+  static Serializer<SuccessResponseObject> get serializer =>
+      _$SuccessResponseObjectSerializer();
 }
 
-class _$SuccessResponseObjectSerializer implements PrimitiveSerializer<SuccessResponseObject> {
+class _$SuccessResponseObjectSerializer
+    implements PrimitiveSerializer<SuccessResponseObject> {
   @override
-  final Iterable<Type> types = const [SuccessResponseObject, _$SuccessResponseObject];
+  final Iterable<Type> types = const [
+    SuccessResponseObject,
+    _$SuccessResponseObject
+  ];
 
   @override
   final String wireName = r'SuccessResponseObject';
@@ -56,7 +63,9 @@ class _$SuccessResponseObjectSerializer implements PrimitiveSerializer<SuccessRe
     SuccessResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +115,3 @@ class _$SuccessResponseObjectSerializer implements PrimitiveSerializer<SuccessRe
     return result.build();
   }
 }
-

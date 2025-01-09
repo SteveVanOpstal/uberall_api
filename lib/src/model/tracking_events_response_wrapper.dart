@@ -13,13 +13,16 @@ part 'tracking_events_response_wrapper.g.dart';
 /// TrackingEventsResponseWrapper
 ///
 /// Properties:
-/// * [status] 
+/// * [status]
 /// * [message] - (optional) Holds further information about the response
-/// * [errorCode] 
+/// * [errorCode]
 /// * [warnings] - (optional) Holds further warnings
-/// * [response] 
+/// * [response]
 @BuiltValue()
-abstract class TrackingEventsResponseWrapper implements Built<TrackingEventsResponseWrapper, TrackingEventsResponseWrapperBuilder> {
+abstract class TrackingEventsResponseWrapper
+    implements
+        Built<TrackingEventsResponseWrapper,
+            TrackingEventsResponseWrapperBuilder> {
   @BuiltValueField(wireName: r'status')
   TrackingEventsResponseWrapperStatusEnum? get status;
   // enum statusEnum {  SUCCESS,  QUOTA_LIMIT_EXCEED,  NOT_AUTHORIZED,  FORBIDDEN,  BAD_ACCESS_TOKEN,  BAD_PRIVATE_KEY,  BAD_PUBLIC_KEY,  MISSING_PARAMETER,  INVALID_PARAMETER,  WRONG_PARAMETER_TYPE,  CONFLICT,  RESOURCE_LOCKED,  SERVER_ERROR,  ERROR,  NOT_FOUND,  BAD_REQUEST,  USER_ERROR,  PARTIAL_ERROR,  METHOD_NOT_ALLOWED,  };
@@ -41,18 +44,25 @@ abstract class TrackingEventsResponseWrapper implements Built<TrackingEventsResp
 
   TrackingEventsResponseWrapper._();
 
-  factory TrackingEventsResponseWrapper([void updates(TrackingEventsResponseWrapperBuilder b)]) = _$TrackingEventsResponseWrapper;
+  factory TrackingEventsResponseWrapper(
+          [void updates(TrackingEventsResponseWrapperBuilder b)]) =
+      _$TrackingEventsResponseWrapper;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(TrackingEventsResponseWrapperBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<TrackingEventsResponseWrapper> get serializer => _$TrackingEventsResponseWrapperSerializer();
+  static Serializer<TrackingEventsResponseWrapper> get serializer =>
+      _$TrackingEventsResponseWrapperSerializer();
 }
 
-class _$TrackingEventsResponseWrapperSerializer implements PrimitiveSerializer<TrackingEventsResponseWrapper> {
+class _$TrackingEventsResponseWrapperSerializer
+    implements PrimitiveSerializer<TrackingEventsResponseWrapper> {
   @override
-  final Iterable<Type> types = const [TrackingEventsResponseWrapper, _$TrackingEventsResponseWrapper];
+  final Iterable<Type> types = const [
+    TrackingEventsResponseWrapper,
+    _$TrackingEventsResponseWrapper
+  ];
 
   @override
   final String wireName = r'TrackingEventsResponseWrapper';
@@ -80,7 +90,8 @@ class _$TrackingEventsResponseWrapperSerializer implements PrimitiveSerializer<T
       yield r'errorCode';
       yield serializers.serialize(
         object.errorCode,
-        specifiedType: const FullType(TrackingEventsResponseWrapperErrorCodeEnum),
+        specifiedType:
+            const FullType(TrackingEventsResponseWrapperErrorCodeEnum),
       );
     }
     if (object.warnings != null) {
@@ -105,7 +116,9 @@ class _$TrackingEventsResponseWrapperSerializer implements PrimitiveSerializer<T
     TrackingEventsResponseWrapper object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -123,7 +136,8 @@ class _$TrackingEventsResponseWrapperSerializer implements PrimitiveSerializer<T
         case r'status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(TrackingEventsResponseWrapperStatusEnum),
+            specifiedType:
+                const FullType(TrackingEventsResponseWrapperStatusEnum),
           ) as TrackingEventsResponseWrapperStatusEnum;
           result.status = valueDes;
           break;
@@ -137,7 +151,8 @@ class _$TrackingEventsResponseWrapperSerializer implements PrimitiveSerializer<T
         case r'errorCode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(TrackingEventsResponseWrapperErrorCodeEnum),
+            specifiedType:
+                const FullType(TrackingEventsResponseWrapperErrorCodeEnum),
           ) as TrackingEventsResponseWrapperErrorCodeEnum;
           result.errorCode = valueDes;
           break;
@@ -185,102 +200,148 @@ class _$TrackingEventsResponseWrapperSerializer implements PrimitiveSerializer<T
 }
 
 class TrackingEventsResponseWrapperStatusEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'SUCCESS')
-  static const TrackingEventsResponseWrapperStatusEnum SUCCESS = _$trackingEventsResponseWrapperStatusEnum_SUCCESS;
+  static const TrackingEventsResponseWrapperStatusEnum SUCCESS =
+      _$trackingEventsResponseWrapperStatusEnum_SUCCESS;
   @BuiltValueEnumConst(wireName: r'QUOTA_LIMIT_EXCEED')
-  static const TrackingEventsResponseWrapperStatusEnum QUOTA_LIMIT_EXCEED = _$trackingEventsResponseWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
+  static const TrackingEventsResponseWrapperStatusEnum QUOTA_LIMIT_EXCEED =
+      _$trackingEventsResponseWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
   @BuiltValueEnumConst(wireName: r'NOT_AUTHORIZED')
-  static const TrackingEventsResponseWrapperStatusEnum NOT_AUTHORIZED = _$trackingEventsResponseWrapperStatusEnum_NOT_AUTHORIZED;
+  static const TrackingEventsResponseWrapperStatusEnum NOT_AUTHORIZED =
+      _$trackingEventsResponseWrapperStatusEnum_NOT_AUTHORIZED;
   @BuiltValueEnumConst(wireName: r'FORBIDDEN')
-  static const TrackingEventsResponseWrapperStatusEnum FORBIDDEN = _$trackingEventsResponseWrapperStatusEnum_FORBIDDEN;
+  static const TrackingEventsResponseWrapperStatusEnum FORBIDDEN =
+      _$trackingEventsResponseWrapperStatusEnum_FORBIDDEN;
   @BuiltValueEnumConst(wireName: r'BAD_ACCESS_TOKEN')
-  static const TrackingEventsResponseWrapperStatusEnum BAD_ACCESS_TOKEN = _$trackingEventsResponseWrapperStatusEnum_BAD_ACCESS_TOKEN;
+  static const TrackingEventsResponseWrapperStatusEnum BAD_ACCESS_TOKEN =
+      _$trackingEventsResponseWrapperStatusEnum_BAD_ACCESS_TOKEN;
   @BuiltValueEnumConst(wireName: r'BAD_PRIVATE_KEY')
-  static const TrackingEventsResponseWrapperStatusEnum BAD_PRIVATE_KEY = _$trackingEventsResponseWrapperStatusEnum_BAD_PRIVATE_KEY;
+  static const TrackingEventsResponseWrapperStatusEnum BAD_PRIVATE_KEY =
+      _$trackingEventsResponseWrapperStatusEnum_BAD_PRIVATE_KEY;
   @BuiltValueEnumConst(wireName: r'BAD_PUBLIC_KEY')
-  static const TrackingEventsResponseWrapperStatusEnum BAD_PUBLIC_KEY = _$trackingEventsResponseWrapperStatusEnum_BAD_PUBLIC_KEY;
+  static const TrackingEventsResponseWrapperStatusEnum BAD_PUBLIC_KEY =
+      _$trackingEventsResponseWrapperStatusEnum_BAD_PUBLIC_KEY;
   @BuiltValueEnumConst(wireName: r'MISSING_PARAMETER')
-  static const TrackingEventsResponseWrapperStatusEnum MISSING_PARAMETER = _$trackingEventsResponseWrapperStatusEnum_MISSING_PARAMETER;
+  static const TrackingEventsResponseWrapperStatusEnum MISSING_PARAMETER =
+      _$trackingEventsResponseWrapperStatusEnum_MISSING_PARAMETER;
   @BuiltValueEnumConst(wireName: r'INVALID_PARAMETER')
-  static const TrackingEventsResponseWrapperStatusEnum INVALID_PARAMETER = _$trackingEventsResponseWrapperStatusEnum_INVALID_PARAMETER;
+  static const TrackingEventsResponseWrapperStatusEnum INVALID_PARAMETER =
+      _$trackingEventsResponseWrapperStatusEnum_INVALID_PARAMETER;
   @BuiltValueEnumConst(wireName: r'WRONG_PARAMETER_TYPE')
-  static const TrackingEventsResponseWrapperStatusEnum WRONG_PARAMETER_TYPE = _$trackingEventsResponseWrapperStatusEnum_WRONG_PARAMETER_TYPE;
+  static const TrackingEventsResponseWrapperStatusEnum WRONG_PARAMETER_TYPE =
+      _$trackingEventsResponseWrapperStatusEnum_WRONG_PARAMETER_TYPE;
   @BuiltValueEnumConst(wireName: r'CONFLICT')
-  static const TrackingEventsResponseWrapperStatusEnum CONFLICT = _$trackingEventsResponseWrapperStatusEnum_CONFLICT;
+  static const TrackingEventsResponseWrapperStatusEnum CONFLICT =
+      _$trackingEventsResponseWrapperStatusEnum_CONFLICT;
   @BuiltValueEnumConst(wireName: r'RESOURCE_LOCKED')
-  static const TrackingEventsResponseWrapperStatusEnum RESOURCE_LOCKED = _$trackingEventsResponseWrapperStatusEnum_RESOURCE_LOCKED;
+  static const TrackingEventsResponseWrapperStatusEnum RESOURCE_LOCKED =
+      _$trackingEventsResponseWrapperStatusEnum_RESOURCE_LOCKED;
   @BuiltValueEnumConst(wireName: r'SERVER_ERROR')
-  static const TrackingEventsResponseWrapperStatusEnum SERVER_ERROR = _$trackingEventsResponseWrapperStatusEnum_SERVER_ERROR;
+  static const TrackingEventsResponseWrapperStatusEnum SERVER_ERROR =
+      _$trackingEventsResponseWrapperStatusEnum_SERVER_ERROR;
   @BuiltValueEnumConst(wireName: r'ERROR')
-  static const TrackingEventsResponseWrapperStatusEnum ERROR = _$trackingEventsResponseWrapperStatusEnum_ERROR;
+  static const TrackingEventsResponseWrapperStatusEnum ERROR =
+      _$trackingEventsResponseWrapperStatusEnum_ERROR;
   @BuiltValueEnumConst(wireName: r'NOT_FOUND')
-  static const TrackingEventsResponseWrapperStatusEnum NOT_FOUND = _$trackingEventsResponseWrapperStatusEnum_NOT_FOUND;
+  static const TrackingEventsResponseWrapperStatusEnum NOT_FOUND =
+      _$trackingEventsResponseWrapperStatusEnum_NOT_FOUND;
   @BuiltValueEnumConst(wireName: r'BAD_REQUEST')
-  static const TrackingEventsResponseWrapperStatusEnum BAD_REQUEST = _$trackingEventsResponseWrapperStatusEnum_BAD_REQUEST;
+  static const TrackingEventsResponseWrapperStatusEnum BAD_REQUEST =
+      _$trackingEventsResponseWrapperStatusEnum_BAD_REQUEST;
   @BuiltValueEnumConst(wireName: r'USER_ERROR')
-  static const TrackingEventsResponseWrapperStatusEnum USER_ERROR = _$trackingEventsResponseWrapperStatusEnum_USER_ERROR;
+  static const TrackingEventsResponseWrapperStatusEnum USER_ERROR =
+      _$trackingEventsResponseWrapperStatusEnum_USER_ERROR;
   @BuiltValueEnumConst(wireName: r'PARTIAL_ERROR')
-  static const TrackingEventsResponseWrapperStatusEnum PARTIAL_ERROR = _$trackingEventsResponseWrapperStatusEnum_PARTIAL_ERROR;
+  static const TrackingEventsResponseWrapperStatusEnum PARTIAL_ERROR =
+      _$trackingEventsResponseWrapperStatusEnum_PARTIAL_ERROR;
   @BuiltValueEnumConst(wireName: r'METHOD_NOT_ALLOWED')
-  static const TrackingEventsResponseWrapperStatusEnum METHOD_NOT_ALLOWED = _$trackingEventsResponseWrapperStatusEnum_METHOD_NOT_ALLOWED;
+  static const TrackingEventsResponseWrapperStatusEnum METHOD_NOT_ALLOWED =
+      _$trackingEventsResponseWrapperStatusEnum_METHOD_NOT_ALLOWED;
 
-  static Serializer<TrackingEventsResponseWrapperStatusEnum> get serializer => _$trackingEventsResponseWrapperStatusEnumSerializer;
+  static Serializer<TrackingEventsResponseWrapperStatusEnum> get serializer =>
+      _$trackingEventsResponseWrapperStatusEnumSerializer;
 
-  const TrackingEventsResponseWrapperStatusEnum._(String name): super(name);
+  const TrackingEventsResponseWrapperStatusEnum._(String name) : super(name);
 
-  static BuiltSet<TrackingEventsResponseWrapperStatusEnum> get values => _$trackingEventsResponseWrapperStatusEnumValues;
-  static TrackingEventsResponseWrapperStatusEnum valueOf(String name) => _$trackingEventsResponseWrapperStatusEnumValueOf(name);
+  static BuiltSet<TrackingEventsResponseWrapperStatusEnum> get values =>
+      _$trackingEventsResponseWrapperStatusEnumValues;
+  static TrackingEventsResponseWrapperStatusEnum valueOf(String name) =>
+      _$trackingEventsResponseWrapperStatusEnumValueOf(name);
 }
 
 class TrackingEventsResponseWrapperErrorCodeEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'NORMALIZATION_FAILED')
-  static const TrackingEventsResponseWrapperErrorCodeEnum NORMALIZATION_FAILED = _$trackingEventsResponseWrapperErrorCodeEnum_NORMALIZATION_FAILED;
+  static const TrackingEventsResponseWrapperErrorCodeEnum NORMALIZATION_FAILED =
+      _$trackingEventsResponseWrapperErrorCodeEnum_NORMALIZATION_FAILED;
   @BuiltValueEnumConst(wireName: r'DATA_CORRUPTED')
-  static const TrackingEventsResponseWrapperErrorCodeEnum DATA_CORRUPTED = _$trackingEventsResponseWrapperErrorCodeEnum_DATA_CORRUPTED;
+  static const TrackingEventsResponseWrapperErrorCodeEnum DATA_CORRUPTED =
+      _$trackingEventsResponseWrapperErrorCodeEnum_DATA_CORRUPTED;
   @BuiltValueEnumConst(wireName: r'INVALID_INPUT')
-  static const TrackingEventsResponseWrapperErrorCodeEnum INVALID_INPUT = _$trackingEventsResponseWrapperErrorCodeEnum_INVALID_INPUT;
+  static const TrackingEventsResponseWrapperErrorCodeEnum INVALID_INPUT =
+      _$trackingEventsResponseWrapperErrorCodeEnum_INVALID_INPUT;
   @BuiltValueEnumConst(wireName: r'NOT_SYNCABLE')
-  static const TrackingEventsResponseWrapperErrorCodeEnum NOT_SYNCABLE = _$trackingEventsResponseWrapperErrorCodeEnum_NOT_SYNCABLE;
+  static const TrackingEventsResponseWrapperErrorCodeEnum NOT_SYNCABLE =
+      _$trackingEventsResponseWrapperErrorCodeEnum_NOT_SYNCABLE;
   @BuiltValueEnumConst(wireName: r'PAYMENT_FAILED')
-  static const TrackingEventsResponseWrapperErrorCodeEnum PAYMENT_FAILED = _$trackingEventsResponseWrapperErrorCodeEnum_PAYMENT_FAILED;
+  static const TrackingEventsResponseWrapperErrorCodeEnum PAYMENT_FAILED =
+      _$trackingEventsResponseWrapperErrorCodeEnum_PAYMENT_FAILED;
   @BuiltValueEnumConst(wireName: r'FREE_TIER_REACHED')
-  static const TrackingEventsResponseWrapperErrorCodeEnum FREE_TIER_REACHED = _$trackingEventsResponseWrapperErrorCodeEnum_FREE_TIER_REACHED;
+  static const TrackingEventsResponseWrapperErrorCodeEnum FREE_TIER_REACHED =
+      _$trackingEventsResponseWrapperErrorCodeEnum_FREE_TIER_REACHED;
   @BuiltValueEnumConst(wireName: r'LIMIT_REACHED')
-  static const TrackingEventsResponseWrapperErrorCodeEnum LIMIT_REACHED = _$trackingEventsResponseWrapperErrorCodeEnum_LIMIT_REACHED;
+  static const TrackingEventsResponseWrapperErrorCodeEnum LIMIT_REACHED =
+      _$trackingEventsResponseWrapperErrorCodeEnum_LIMIT_REACHED;
   @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const TrackingEventsResponseWrapperErrorCodeEnum INACTIVE = _$trackingEventsResponseWrapperErrorCodeEnum_INACTIVE;
+  static const TrackingEventsResponseWrapperErrorCodeEnum INACTIVE =
+      _$trackingEventsResponseWrapperErrorCodeEnum_INACTIVE;
   @BuiltValueEnumConst(wireName: r'UNKNOWN')
-  static const TrackingEventsResponseWrapperErrorCodeEnum UNKNOWN = _$trackingEventsResponseWrapperErrorCodeEnum_UNKNOWN;
+  static const TrackingEventsResponseWrapperErrorCodeEnum UNKNOWN =
+      _$trackingEventsResponseWrapperErrorCodeEnum_UNKNOWN;
   @BuiltValueEnumConst(wireName: r'IDENTIFIER_NOT_UNIQUE')
-  static const TrackingEventsResponseWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE = _$trackingEventsResponseWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
+  static const TrackingEventsResponseWrapperErrorCodeEnum
+      IDENTIFIER_NOT_UNIQUE =
+      _$trackingEventsResponseWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
   @BuiltValueEnumConst(wireName: r'ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT')
-  static const TrackingEventsResponseWrapperErrorCodeEnum ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT = _$trackingEventsResponseWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
+  static const TrackingEventsResponseWrapperErrorCodeEnum
+      ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT =
+      _$trackingEventsResponseWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
   @BuiltValueEnumConst(wireName: r'NO_ACCOUNT_CONNECTED')
-  static const TrackingEventsResponseWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED = _$trackingEventsResponseWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
+  static const TrackingEventsResponseWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED =
+      _$trackingEventsResponseWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
   @BuiltValueEnumConst(wireName: r'NO_PAGE_SELECTED')
-  static const TrackingEventsResponseWrapperErrorCodeEnum NO_PAGE_SELECTED = _$trackingEventsResponseWrapperErrorCodeEnum_NO_PAGE_SELECTED;
+  static const TrackingEventsResponseWrapperErrorCodeEnum NO_PAGE_SELECTED =
+      _$trackingEventsResponseWrapperErrorCodeEnum_NO_PAGE_SELECTED;
   @BuiltValueEnumConst(wireName: r'PAGE_NOT_CREATED')
-  static const TrackingEventsResponseWrapperErrorCodeEnum PAGE_NOT_CREATED = _$trackingEventsResponseWrapperErrorCodeEnum_PAGE_NOT_CREATED;
+  static const TrackingEventsResponseWrapperErrorCodeEnum PAGE_NOT_CREATED =
+      _$trackingEventsResponseWrapperErrorCodeEnum_PAGE_NOT_CREATED;
   @BuiltValueEnumConst(wireName: r'PAGE_IN_REVIEW')
-  static const TrackingEventsResponseWrapperErrorCodeEnum PAGE_IN_REVIEW = _$trackingEventsResponseWrapperErrorCodeEnum_PAGE_IN_REVIEW;
+  static const TrackingEventsResponseWrapperErrorCodeEnum PAGE_IN_REVIEW =
+      _$trackingEventsResponseWrapperErrorCodeEnum_PAGE_IN_REVIEW;
   @BuiltValueEnumConst(wireName: r'PAGE_CLAIMED_BY_OTHERS')
-  static const TrackingEventsResponseWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS = _$trackingEventsResponseWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
+  static const TrackingEventsResponseWrapperErrorCodeEnum
+      PAGE_CLAIMED_BY_OTHERS =
+      _$trackingEventsResponseWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
   @BuiltValueEnumConst(wireName: r'OVERLAPPING_SOCIALPOST')
-  static const TrackingEventsResponseWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST = _$trackingEventsResponseWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
+  static const TrackingEventsResponseWrapperErrorCodeEnum
+      OVERLAPPING_SOCIALPOST =
+      _$trackingEventsResponseWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
   @BuiltValueEnumConst(wireName: r'TOO_MANY_REPLIES')
-  static const TrackingEventsResponseWrapperErrorCodeEnum TOO_MANY_REPLIES = _$trackingEventsResponseWrapperErrorCodeEnum_TOO_MANY_REPLIES;
+  static const TrackingEventsResponseWrapperErrorCodeEnum TOO_MANY_REPLIES =
+      _$trackingEventsResponseWrapperErrorCodeEnum_TOO_MANY_REPLIES;
   @BuiltValueEnumConst(wireName: r'REPLY_TOO_LONG')
-  static const TrackingEventsResponseWrapperErrorCodeEnum REPLY_TOO_LONG = _$trackingEventsResponseWrapperErrorCodeEnum_REPLY_TOO_LONG;
+  static const TrackingEventsResponseWrapperErrorCodeEnum REPLY_TOO_LONG =
+      _$trackingEventsResponseWrapperErrorCodeEnum_REPLY_TOO_LONG;
   @BuiltValueEnumConst(wireName: r'DEPRECATED')
-  static const TrackingEventsResponseWrapperErrorCodeEnum DEPRECATED = _$trackingEventsResponseWrapperErrorCodeEnum_DEPRECATED;
+  static const TrackingEventsResponseWrapperErrorCodeEnum DEPRECATED =
+      _$trackingEventsResponseWrapperErrorCodeEnum_DEPRECATED;
 
-  static Serializer<TrackingEventsResponseWrapperErrorCodeEnum> get serializer => _$trackingEventsResponseWrapperErrorCodeEnumSerializer;
+  static Serializer<TrackingEventsResponseWrapperErrorCodeEnum>
+      get serializer => _$trackingEventsResponseWrapperErrorCodeEnumSerializer;
 
-  const TrackingEventsResponseWrapperErrorCodeEnum._(String name): super(name);
+  const TrackingEventsResponseWrapperErrorCodeEnum._(String name) : super(name);
 
-  static BuiltSet<TrackingEventsResponseWrapperErrorCodeEnum> get values => _$trackingEventsResponseWrapperErrorCodeEnumValues;
-  static TrackingEventsResponseWrapperErrorCodeEnum valueOf(String name) => _$trackingEventsResponseWrapperErrorCodeEnumValueOf(name);
+  static BuiltSet<TrackingEventsResponseWrapperErrorCodeEnum> get values =>
+      _$trackingEventsResponseWrapperErrorCodeEnumValues;
+  static TrackingEventsResponseWrapperErrorCodeEnum valueOf(String name) =>
+      _$trackingEventsResponseWrapperErrorCodeEnumValueOf(name);
 }
-

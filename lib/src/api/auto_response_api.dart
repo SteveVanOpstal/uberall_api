@@ -18,7 +18,6 @@ import 'package:openapi/src/model/rules_response_wrapper.dart';
 import 'package:openapi/src/model/success_response_wrapper.dart';
 
 class AutoResponseApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -39,7 +38,7 @@ class AutoResponseApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SuccessResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SuccessResponseWrapper>> deleteAutoResponseRulesId({ 
+  Future<Response<SuccessResponseWrapper>> deleteAutoResponseRulesId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -48,7 +47,10 @@ class AutoResponseApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/auto-response/rules/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/auto-response/rules/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -61,7 +63,8 @@ class AutoResponseApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -85,11 +88,12 @@ class AutoResponseApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SuccessResponseWrapper),
-      ) as SuccessResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SuccessResponseWrapper),
+            ) as SuccessResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -132,7 +136,7 @@ class AutoResponseApi {
   ///
   /// Returns a [Future] containing a [Response] with a [RulesResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<RulesResponseWrapper>> getAutoResponseRules({ 
+  Future<Response<RulesResponseWrapper>> getAutoResponseRules({
     BuiltList<String>? businesses,
     BuiltList<String>? locations,
     BuiltList<String>? excludedLocations,
@@ -160,7 +164,8 @@ class AutoResponseApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -173,13 +178,37 @@ class AutoResponseApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (businesses != null) r'businesses': encodeCollectionQueryParameter<String>(_serializers, businesses, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (locations != null) r'locations': encodeCollectionQueryParameter<String>(_serializers, locations, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (excludedLocations != null) r'excludedLocations': encodeCollectionQueryParameter<String>(_serializers, excludedLocations, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (size != null) r'size': encodeQueryParameter(_serializers, size, const FullType(int)),
-      if (sort != null) r'sort': encodeQueryParameter(_serializers, sort, const FullType(String)),
-      if (direction != null) r'direction': encodeQueryParameter(_serializers, direction, const FullType(String)),
+      if (businesses != null)
+        r'businesses': encodeCollectionQueryParameter<String>(
+          _serializers,
+          businesses,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (locations != null)
+        r'locations': encodeCollectionQueryParameter<String>(
+          _serializers,
+          locations,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (excludedLocations != null)
+        r'excludedLocations': encodeCollectionQueryParameter<String>(
+          _serializers,
+          excludedLocations,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (page != null)
+        r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
+      if (size != null)
+        r'size': encodeQueryParameter(_serializers, size, const FullType(int)),
+      if (sort != null)
+        r'sort':
+            encodeQueryParameter(_serializers, sort, const FullType(String)),
+      if (direction != null)
+        r'direction': encodeQueryParameter(
+            _serializers, direction, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -195,11 +224,12 @@ class AutoResponseApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(RulesResponseWrapper),
-      ) as RulesResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(RulesResponseWrapper),
+            ) as RulesResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -236,7 +266,7 @@ class AutoResponseApi {
   ///
   /// Returns a [Future] containing a [Response] with a [RuleResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<RuleResponseWrapper>> getAutoResponseRulesId({ 
+  Future<Response<RuleResponseWrapper>> getAutoResponseRulesId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -245,7 +275,10 @@ class AutoResponseApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/auto-response/rules/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/auto-response/rules/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -258,7 +291,8 @@ class AutoResponseApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -282,11 +316,12 @@ class AutoResponseApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(RuleResponseWrapper),
-      ) as RuleResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(RuleResponseWrapper),
+            ) as RuleResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -324,7 +359,7 @@ class AutoResponseApi {
   ///
   /// Returns a [Future] containing a [Response] with a [RuleResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<RuleResponseWrapper>> patchAutoResponseRulesId({ 
+  Future<Response<RuleResponseWrapper>> patchAutoResponseRulesId({
     required String id,
     required PostAutoResponseRulesRequest postAutoResponseRulesRequest,
     CancelToken? cancelToken,
@@ -334,7 +369,10 @@ class AutoResponseApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/auto-response/rules/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/auto-response/rules/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -347,7 +385,8 @@ class AutoResponseApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -363,11 +402,11 @@ class AutoResponseApi {
 
     try {
       const _type = FullType(PostAutoResponseRulesRequest);
-      _bodyData = _serializers.serialize(postAutoResponseRulesRequest, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData = _serializers.serialize(postAutoResponseRulesRequest,
+          specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -390,11 +429,12 @@ class AutoResponseApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(RuleResponseWrapper),
-      ) as RuleResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(RuleResponseWrapper),
+            ) as RuleResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -431,7 +471,7 @@ class AutoResponseApi {
   ///
   /// Returns a [Future] containing a [Response] with a [RuleResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<RuleResponseWrapper>> postAutoResponseRules({ 
+  Future<Response<RuleResponseWrapper>> postAutoResponseRules({
     required PostAutoResponseRulesRequest postAutoResponseRulesRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -453,7 +493,8 @@ class AutoResponseApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -469,11 +510,11 @@ class AutoResponseApi {
 
     try {
       const _type = FullType(PostAutoResponseRulesRequest);
-      _bodyData = _serializers.serialize(postAutoResponseRulesRequest, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData = _serializers.serialize(postAutoResponseRulesRequest,
+          specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -496,11 +537,12 @@ class AutoResponseApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(RuleResponseWrapper),
-      ) as RuleResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(RuleResponseWrapper),
+            ) as RuleResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -537,7 +579,8 @@ class AutoResponseApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ConflictingRulesResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ConflictingRulesResponseWrapper>> postAutoResponseRulesCheckConflict({ 
+  Future<Response<ConflictingRulesResponseWrapper>>
+      postAutoResponseRulesCheckConflict({
     required CheckConflictRequest checkConflictRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -559,7 +602,8 @@ class AutoResponseApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -576,11 +620,11 @@ class AutoResponseApi {
 
     try {
       const _type = FullType(CheckConflictRequest);
-      _bodyData = _serializers.serialize(checkConflictRequest, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData =
+          _serializers.serialize(checkConflictRequest, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -603,11 +647,12 @@ class AutoResponseApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ConflictingRulesResponseWrapper),
-      ) as ConflictingRulesResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ConflictingRulesResponseWrapper),
+            ) as ConflictingRulesResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -629,5 +674,4 @@ class AutoResponseApi {
       extra: _response.extra,
     );
   }
-
 }

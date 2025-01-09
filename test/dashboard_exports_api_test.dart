@@ -11,7 +11,6 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for DashboardExportsApi
 void main() {
   // final instance = DashboardExportsApi();
@@ -52,6 +51,5 @@ void main() {
     test('test postDashboardExports', () async {
       // TODO
     });
-
   });
 }

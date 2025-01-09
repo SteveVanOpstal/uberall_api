@@ -11,7 +11,6 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for LabelsApi
 void main() {
   // final instance = LabelsApi();
@@ -25,6 +24,5 @@ void main() {
     test('test getLabels', () async {
       // TODO
     });
-
   });
 }

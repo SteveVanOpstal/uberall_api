@@ -12,26 +12,36 @@ part 'subscribable_event_types_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [subscribableEventTypes] 
+/// * [subscribableEventTypes]
 @BuiltValue()
-abstract class SubscribableEventTypesObject implements Built<SubscribableEventTypesObject, SubscribableEventTypesObjectBuilder> {
+abstract class SubscribableEventTypesObject
+    implements
+        Built<SubscribableEventTypesObject,
+            SubscribableEventTypesObjectBuilder> {
   @BuiltValueField(wireName: r'subscribableEventTypes')
   BuiltList<String>? get subscribableEventTypes;
 
   SubscribableEventTypesObject._();
 
-  factory SubscribableEventTypesObject([void updates(SubscribableEventTypesObjectBuilder b)]) = _$SubscribableEventTypesObject;
+  factory SubscribableEventTypesObject(
+          [void updates(SubscribableEventTypesObjectBuilder b)]) =
+      _$SubscribableEventTypesObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SubscribableEventTypesObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<SubscribableEventTypesObject> get serializer => _$SubscribableEventTypesObjectSerializer();
+  static Serializer<SubscribableEventTypesObject> get serializer =>
+      _$SubscribableEventTypesObjectSerializer();
 }
 
-class _$SubscribableEventTypesObjectSerializer implements PrimitiveSerializer<SubscribableEventTypesObject> {
+class _$SubscribableEventTypesObjectSerializer
+    implements PrimitiveSerializer<SubscribableEventTypesObject> {
   @override
-  final Iterable<Type> types = const [SubscribableEventTypesObject, _$SubscribableEventTypesObject];
+  final Iterable<Type> types = const [
+    SubscribableEventTypesObject,
+    _$SubscribableEventTypesObject
+  ];
 
   @override
   final String wireName = r'SubscribableEventTypesObject';
@@ -56,7 +66,9 @@ class _$SubscribableEventTypesObjectSerializer implements PrimitiveSerializer<Su
     SubscribableEventTypesObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +118,3 @@ class _$SubscribableEventTypesObjectSerializer implements PrimitiveSerializer<Su
     return result.build();
   }
 }
-

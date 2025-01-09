@@ -15,7 +15,8 @@ part 'directories_response.g.dart';
 /// * [count] - The count of directories
 /// * [directories] - List of directory
 @BuiltValue()
-abstract class DirectoriesResponse implements Built<DirectoriesResponse, DirectoriesResponseBuilder> {
+abstract class DirectoriesResponse
+    implements Built<DirectoriesResponse, DirectoriesResponseBuilder> {
   /// The count of directories
   @BuiltValueField(wireName: r'count')
   int? get count;
@@ -26,18 +27,24 @@ abstract class DirectoriesResponse implements Built<DirectoriesResponse, Directo
 
   DirectoriesResponse._();
 
-  factory DirectoriesResponse([void updates(DirectoriesResponseBuilder b)]) = _$DirectoriesResponse;
+  factory DirectoriesResponse([void updates(DirectoriesResponseBuilder b)]) =
+      _$DirectoriesResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DirectoriesResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DirectoriesResponse> get serializer => _$DirectoriesResponseSerializer();
+  static Serializer<DirectoriesResponse> get serializer =>
+      _$DirectoriesResponseSerializer();
 }
 
-class _$DirectoriesResponseSerializer implements PrimitiveSerializer<DirectoriesResponse> {
+class _$DirectoriesResponseSerializer
+    implements PrimitiveSerializer<DirectoriesResponse> {
   @override
-  final Iterable<Type> types = const [DirectoriesResponse, _$DirectoriesResponse];
+  final Iterable<Type> types = const [
+    DirectoriesResponse,
+    _$DirectoriesResponse
+  ];
 
   @override
   final String wireName = r'DirectoriesResponse';
@@ -69,7 +76,9 @@ class _$DirectoriesResponseSerializer implements PrimitiveSerializer<Directories
     DirectoriesResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -126,4 +135,3 @@ class _$DirectoriesResponseSerializer implements PrimitiveSerializer<Directories
     return result.build();
   }
 }
-

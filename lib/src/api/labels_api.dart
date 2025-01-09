@@ -11,7 +11,6 @@ import 'package:dio/dio.dart';
 import 'package:openapi/src/model/label_list_wrapper.dart';
 
 class LabelsApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -31,7 +30,7 @@ class LabelsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [LabelListWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LabelListWrapper>> getLabels({ 
+  Future<Response<LabelListWrapper>> getLabels({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -52,7 +51,8 @@ class LabelsApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -76,11 +76,12 @@ class LabelsApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LabelListWrapper),
-      ) as LabelListWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LabelListWrapper),
+            ) as LabelListWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -102,5 +103,4 @@ class LabelsApi {
       extra: _response.extra,
     );
   }
-
 }

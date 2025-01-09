@@ -12,24 +12,28 @@ part 'location_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [location] 
+/// * [location]
 @BuiltValue()
-abstract class LocationObject implements Built<LocationObject, LocationObjectBuilder> {
+abstract class LocationObject
+    implements Built<LocationObject, LocationObjectBuilder> {
   @BuiltValueField(wireName: r'location')
   Location? get location;
 
   LocationObject._();
 
-  factory LocationObject([void updates(LocationObjectBuilder b)]) = _$LocationObject;
+  factory LocationObject([void updates(LocationObjectBuilder b)]) =
+      _$LocationObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LocationObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LocationObject> get serializer => _$LocationObjectSerializer();
+  static Serializer<LocationObject> get serializer =>
+      _$LocationObjectSerializer();
 }
 
-class _$LocationObjectSerializer implements PrimitiveSerializer<LocationObject> {
+class _$LocationObjectSerializer
+    implements PrimitiveSerializer<LocationObject> {
   @override
   final Iterable<Type> types = const [LocationObject, _$LocationObject];
 
@@ -56,7 +60,9 @@ class _$LocationObjectSerializer implements PrimitiveSerializer<LocationObject> 
     LocationObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +112,3 @@ class _$LocationObjectSerializer implements PrimitiveSerializer<LocationObject> 
     return result.build();
   }
 }
-

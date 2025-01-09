@@ -15,7 +15,7 @@ part 'ev_data.g.dart';
 /// Properties:
 /// * [type] - Type of location of the charging station
 /// * [owner] - Required - Owner of the location
-/// * [operator_] - Required - Operator of the chargepoints of the location 
+/// * [operator_] - Required - Operator of the chargepoints of the location
 /// * [subOperator] - Suboperator of the chargepoints of the location
 /// * [timezone] - The time zone of the location
 /// * [isChargingClosed] - Indicates if the EVSEs can be used for charging outside the opening hours of the location. E.g. when the parking garage closes its barriers overnight, it will indicate if you still can charge till the next morning
@@ -32,7 +32,7 @@ abstract class EvData implements Built<EvData, EvDataBuilder> {
   @BuiltValueField(wireName: r'owner')
   String get owner;
 
-  /// Required - Operator of the chargepoints of the location 
+  /// Required - Operator of the chargepoints of the location
   @BuiltValueField(wireName: r'operator')
   String get operator_;
 
@@ -135,7 +135,9 @@ class _$EvDataSerializer implements PrimitiveSerializer<EvData> {
     EvData object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -202,7 +204,8 @@ class _$EvDataSerializer implements PrimitiveSerializer<EvData> {
         case r'supplyEquipments':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltSet, [FullType(EvSupplyEquipment)]),
+            specifiedType:
+                const FullType(BuiltSet, [FullType(EvSupplyEquipment)]),
           ) as BuiltSet<EvSupplyEquipment>;
           result.supplyEquipments.replace(valueDes);
           break;
@@ -236,37 +239,44 @@ class _$EvDataSerializer implements PrimitiveSerializer<EvData> {
 }
 
 class EvDataTypeEnum extends EnumClass {
-
   /// Type of location of the charging station
   @BuiltValueEnumConst(wireName: r'ON_STREET')
   static const EvDataTypeEnum ON_STREET = _$evDataTypeEnum_ON_STREET;
+
   /// Type of location of the charging station
   @BuiltValueEnumConst(wireName: r'OTHER')
   static const EvDataTypeEnum OTHER = _$evDataTypeEnum_OTHER;
+
   /// Type of location of the charging station
   @BuiltValueEnumConst(wireName: r'PARKING_GARAGE')
   static const EvDataTypeEnum PARKING_GARAGE = _$evDataTypeEnum_PARKING_GARAGE;
+
   /// Type of location of the charging station
   @BuiltValueEnumConst(wireName: r'PARKING_LOT')
   static const EvDataTypeEnum PARKING_LOT = _$evDataTypeEnum_PARKING_LOT;
+
   /// Type of location of the charging station
   @BuiltValueEnumConst(wireName: r'UNDERGROUND_GARAGE')
-  static const EvDataTypeEnum UNDERGROUND_GARAGE = _$evDataTypeEnum_UNDERGROUND_GARAGE;
+  static const EvDataTypeEnum UNDERGROUND_GARAGE =
+      _$evDataTypeEnum_UNDERGROUND_GARAGE;
+
   /// Type of location of the charging station
   @BuiltValueEnumConst(wireName: r'ON_DRIVEWAY')
   static const EvDataTypeEnum ON_DRIVEWAY = _$evDataTypeEnum_ON_DRIVEWAY;
+
   /// Type of location of the charging station
   @BuiltValueEnumConst(wireName: r'ALONG_MOTORWAY')
   static const EvDataTypeEnum ALONG_MOTORWAY = _$evDataTypeEnum_ALONG_MOTORWAY;
+
   /// Type of location of the charging station
   @BuiltValueEnumConst(wireName: r'UNKNOWN')
   static const EvDataTypeEnum UNKNOWN = _$evDataTypeEnum_UNKNOWN;
 
-  static Serializer<EvDataTypeEnum> get serializer => _$evDataTypeEnumSerializer;
+  static Serializer<EvDataTypeEnum> get serializer =>
+      _$evDataTypeEnumSerializer;
 
-  const EvDataTypeEnum._(String name): super(name);
+  const EvDataTypeEnum._(String name) : super(name);
 
   static BuiltSet<EvDataTypeEnum> get values => _$evDataTypeEnumValues;
   static EvDataTypeEnum valueOf(String name) => _$evDataTypeEnumValueOf(name);
 }
-

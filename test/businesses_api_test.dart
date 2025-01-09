@@ -11,7 +11,6 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for BusinessesApi
 void main() {
   // final instance = BusinessesApi();
@@ -49,7 +48,9 @@ void main() {
     // Returns only the Facebook brand pages
     //
     //Future<BrandPagesResponseWrapper> getBusinessesIdBusinessConnectFacebookFacebookAccountIdBrandPageList(String id, String facebookAccountId) async
-    test('test getBusinessesIdBusinessConnectFacebookFacebookAccountIdBrandPageList', () async {
+    test(
+        'test getBusinessesIdBusinessConnectFacebookFacebookAccountIdBrandPageList',
+        () async {
       // TODO
     });
 
@@ -97,6 +98,5 @@ void main() {
     test('test postBusinessesIdMigrate', () async {
       // TODO
     });
-
   });
 }

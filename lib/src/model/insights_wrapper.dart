@@ -13,13 +13,14 @@ part 'insights_wrapper.g.dart';
 /// InsightsWrapper
 ///
 /// Properties:
-/// * [status] 
+/// * [status]
 /// * [message] - (optional) Holds further information about the response
-/// * [errorCode] 
+/// * [errorCode]
 /// * [warnings] - (optional) Holds further warnings
-/// * [response] 
+/// * [response]
 @BuiltValue()
-abstract class InsightsWrapper implements Built<InsightsWrapper, InsightsWrapperBuilder> {
+abstract class InsightsWrapper
+    implements Built<InsightsWrapper, InsightsWrapperBuilder> {
   @BuiltValueField(wireName: r'status')
   InsightsWrapperStatusEnum? get status;
   // enum statusEnum {  SUCCESS,  QUOTA_LIMIT_EXCEED,  NOT_AUTHORIZED,  FORBIDDEN,  BAD_ACCESS_TOKEN,  BAD_PRIVATE_KEY,  BAD_PUBLIC_KEY,  MISSING_PARAMETER,  INVALID_PARAMETER,  WRONG_PARAMETER_TYPE,  CONFLICT,  RESOURCE_LOCKED,  SERVER_ERROR,  ERROR,  NOT_FOUND,  BAD_REQUEST,  USER_ERROR,  PARTIAL_ERROR,  METHOD_NOT_ALLOWED,  };
@@ -41,16 +42,19 @@ abstract class InsightsWrapper implements Built<InsightsWrapper, InsightsWrapper
 
   InsightsWrapper._();
 
-  factory InsightsWrapper([void updates(InsightsWrapperBuilder b)]) = _$InsightsWrapper;
+  factory InsightsWrapper([void updates(InsightsWrapperBuilder b)]) =
+      _$InsightsWrapper;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(InsightsWrapperBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<InsightsWrapper> get serializer => _$InsightsWrapperSerializer();
+  static Serializer<InsightsWrapper> get serializer =>
+      _$InsightsWrapperSerializer();
 }
 
-class _$InsightsWrapperSerializer implements PrimitiveSerializer<InsightsWrapper> {
+class _$InsightsWrapperSerializer
+    implements PrimitiveSerializer<InsightsWrapper> {
   @override
   final Iterable<Type> types = const [InsightsWrapper, _$InsightsWrapper];
 
@@ -105,7 +109,9 @@ class _$InsightsWrapperSerializer implements PrimitiveSerializer<InsightsWrapper
     InsightsWrapper object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -185,102 +191,145 @@ class _$InsightsWrapperSerializer implements PrimitiveSerializer<InsightsWrapper
 }
 
 class InsightsWrapperStatusEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'SUCCESS')
-  static const InsightsWrapperStatusEnum SUCCESS = _$insightsWrapperStatusEnum_SUCCESS;
+  static const InsightsWrapperStatusEnum SUCCESS =
+      _$insightsWrapperStatusEnum_SUCCESS;
   @BuiltValueEnumConst(wireName: r'QUOTA_LIMIT_EXCEED')
-  static const InsightsWrapperStatusEnum QUOTA_LIMIT_EXCEED = _$insightsWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
+  static const InsightsWrapperStatusEnum QUOTA_LIMIT_EXCEED =
+      _$insightsWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
   @BuiltValueEnumConst(wireName: r'NOT_AUTHORIZED')
-  static const InsightsWrapperStatusEnum NOT_AUTHORIZED = _$insightsWrapperStatusEnum_NOT_AUTHORIZED;
+  static const InsightsWrapperStatusEnum NOT_AUTHORIZED =
+      _$insightsWrapperStatusEnum_NOT_AUTHORIZED;
   @BuiltValueEnumConst(wireName: r'FORBIDDEN')
-  static const InsightsWrapperStatusEnum FORBIDDEN = _$insightsWrapperStatusEnum_FORBIDDEN;
+  static const InsightsWrapperStatusEnum FORBIDDEN =
+      _$insightsWrapperStatusEnum_FORBIDDEN;
   @BuiltValueEnumConst(wireName: r'BAD_ACCESS_TOKEN')
-  static const InsightsWrapperStatusEnum BAD_ACCESS_TOKEN = _$insightsWrapperStatusEnum_BAD_ACCESS_TOKEN;
+  static const InsightsWrapperStatusEnum BAD_ACCESS_TOKEN =
+      _$insightsWrapperStatusEnum_BAD_ACCESS_TOKEN;
   @BuiltValueEnumConst(wireName: r'BAD_PRIVATE_KEY')
-  static const InsightsWrapperStatusEnum BAD_PRIVATE_KEY = _$insightsWrapperStatusEnum_BAD_PRIVATE_KEY;
+  static const InsightsWrapperStatusEnum BAD_PRIVATE_KEY =
+      _$insightsWrapperStatusEnum_BAD_PRIVATE_KEY;
   @BuiltValueEnumConst(wireName: r'BAD_PUBLIC_KEY')
-  static const InsightsWrapperStatusEnum BAD_PUBLIC_KEY = _$insightsWrapperStatusEnum_BAD_PUBLIC_KEY;
+  static const InsightsWrapperStatusEnum BAD_PUBLIC_KEY =
+      _$insightsWrapperStatusEnum_BAD_PUBLIC_KEY;
   @BuiltValueEnumConst(wireName: r'MISSING_PARAMETER')
-  static const InsightsWrapperStatusEnum MISSING_PARAMETER = _$insightsWrapperStatusEnum_MISSING_PARAMETER;
+  static const InsightsWrapperStatusEnum MISSING_PARAMETER =
+      _$insightsWrapperStatusEnum_MISSING_PARAMETER;
   @BuiltValueEnumConst(wireName: r'INVALID_PARAMETER')
-  static const InsightsWrapperStatusEnum INVALID_PARAMETER = _$insightsWrapperStatusEnum_INVALID_PARAMETER;
+  static const InsightsWrapperStatusEnum INVALID_PARAMETER =
+      _$insightsWrapperStatusEnum_INVALID_PARAMETER;
   @BuiltValueEnumConst(wireName: r'WRONG_PARAMETER_TYPE')
-  static const InsightsWrapperStatusEnum WRONG_PARAMETER_TYPE = _$insightsWrapperStatusEnum_WRONG_PARAMETER_TYPE;
+  static const InsightsWrapperStatusEnum WRONG_PARAMETER_TYPE =
+      _$insightsWrapperStatusEnum_WRONG_PARAMETER_TYPE;
   @BuiltValueEnumConst(wireName: r'CONFLICT')
-  static const InsightsWrapperStatusEnum CONFLICT = _$insightsWrapperStatusEnum_CONFLICT;
+  static const InsightsWrapperStatusEnum CONFLICT =
+      _$insightsWrapperStatusEnum_CONFLICT;
   @BuiltValueEnumConst(wireName: r'RESOURCE_LOCKED')
-  static const InsightsWrapperStatusEnum RESOURCE_LOCKED = _$insightsWrapperStatusEnum_RESOURCE_LOCKED;
+  static const InsightsWrapperStatusEnum RESOURCE_LOCKED =
+      _$insightsWrapperStatusEnum_RESOURCE_LOCKED;
   @BuiltValueEnumConst(wireName: r'SERVER_ERROR')
-  static const InsightsWrapperStatusEnum SERVER_ERROR = _$insightsWrapperStatusEnum_SERVER_ERROR;
+  static const InsightsWrapperStatusEnum SERVER_ERROR =
+      _$insightsWrapperStatusEnum_SERVER_ERROR;
   @BuiltValueEnumConst(wireName: r'ERROR')
-  static const InsightsWrapperStatusEnum ERROR = _$insightsWrapperStatusEnum_ERROR;
+  static const InsightsWrapperStatusEnum ERROR =
+      _$insightsWrapperStatusEnum_ERROR;
   @BuiltValueEnumConst(wireName: r'NOT_FOUND')
-  static const InsightsWrapperStatusEnum NOT_FOUND = _$insightsWrapperStatusEnum_NOT_FOUND;
+  static const InsightsWrapperStatusEnum NOT_FOUND =
+      _$insightsWrapperStatusEnum_NOT_FOUND;
   @BuiltValueEnumConst(wireName: r'BAD_REQUEST')
-  static const InsightsWrapperStatusEnum BAD_REQUEST = _$insightsWrapperStatusEnum_BAD_REQUEST;
+  static const InsightsWrapperStatusEnum BAD_REQUEST =
+      _$insightsWrapperStatusEnum_BAD_REQUEST;
   @BuiltValueEnumConst(wireName: r'USER_ERROR')
-  static const InsightsWrapperStatusEnum USER_ERROR = _$insightsWrapperStatusEnum_USER_ERROR;
+  static const InsightsWrapperStatusEnum USER_ERROR =
+      _$insightsWrapperStatusEnum_USER_ERROR;
   @BuiltValueEnumConst(wireName: r'PARTIAL_ERROR')
-  static const InsightsWrapperStatusEnum PARTIAL_ERROR = _$insightsWrapperStatusEnum_PARTIAL_ERROR;
+  static const InsightsWrapperStatusEnum PARTIAL_ERROR =
+      _$insightsWrapperStatusEnum_PARTIAL_ERROR;
   @BuiltValueEnumConst(wireName: r'METHOD_NOT_ALLOWED')
-  static const InsightsWrapperStatusEnum METHOD_NOT_ALLOWED = _$insightsWrapperStatusEnum_METHOD_NOT_ALLOWED;
+  static const InsightsWrapperStatusEnum METHOD_NOT_ALLOWED =
+      _$insightsWrapperStatusEnum_METHOD_NOT_ALLOWED;
 
-  static Serializer<InsightsWrapperStatusEnum> get serializer => _$insightsWrapperStatusEnumSerializer;
+  static Serializer<InsightsWrapperStatusEnum> get serializer =>
+      _$insightsWrapperStatusEnumSerializer;
 
-  const InsightsWrapperStatusEnum._(String name): super(name);
+  const InsightsWrapperStatusEnum._(String name) : super(name);
 
-  static BuiltSet<InsightsWrapperStatusEnum> get values => _$insightsWrapperStatusEnumValues;
-  static InsightsWrapperStatusEnum valueOf(String name) => _$insightsWrapperStatusEnumValueOf(name);
+  static BuiltSet<InsightsWrapperStatusEnum> get values =>
+      _$insightsWrapperStatusEnumValues;
+  static InsightsWrapperStatusEnum valueOf(String name) =>
+      _$insightsWrapperStatusEnumValueOf(name);
 }
 
 class InsightsWrapperErrorCodeEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'NORMALIZATION_FAILED')
-  static const InsightsWrapperErrorCodeEnum NORMALIZATION_FAILED = _$insightsWrapperErrorCodeEnum_NORMALIZATION_FAILED;
+  static const InsightsWrapperErrorCodeEnum NORMALIZATION_FAILED =
+      _$insightsWrapperErrorCodeEnum_NORMALIZATION_FAILED;
   @BuiltValueEnumConst(wireName: r'DATA_CORRUPTED')
-  static const InsightsWrapperErrorCodeEnum DATA_CORRUPTED = _$insightsWrapperErrorCodeEnum_DATA_CORRUPTED;
+  static const InsightsWrapperErrorCodeEnum DATA_CORRUPTED =
+      _$insightsWrapperErrorCodeEnum_DATA_CORRUPTED;
   @BuiltValueEnumConst(wireName: r'INVALID_INPUT')
-  static const InsightsWrapperErrorCodeEnum INVALID_INPUT = _$insightsWrapperErrorCodeEnum_INVALID_INPUT;
+  static const InsightsWrapperErrorCodeEnum INVALID_INPUT =
+      _$insightsWrapperErrorCodeEnum_INVALID_INPUT;
   @BuiltValueEnumConst(wireName: r'NOT_SYNCABLE')
-  static const InsightsWrapperErrorCodeEnum NOT_SYNCABLE = _$insightsWrapperErrorCodeEnum_NOT_SYNCABLE;
+  static const InsightsWrapperErrorCodeEnum NOT_SYNCABLE =
+      _$insightsWrapperErrorCodeEnum_NOT_SYNCABLE;
   @BuiltValueEnumConst(wireName: r'PAYMENT_FAILED')
-  static const InsightsWrapperErrorCodeEnum PAYMENT_FAILED = _$insightsWrapperErrorCodeEnum_PAYMENT_FAILED;
+  static const InsightsWrapperErrorCodeEnum PAYMENT_FAILED =
+      _$insightsWrapperErrorCodeEnum_PAYMENT_FAILED;
   @BuiltValueEnumConst(wireName: r'FREE_TIER_REACHED')
-  static const InsightsWrapperErrorCodeEnum FREE_TIER_REACHED = _$insightsWrapperErrorCodeEnum_FREE_TIER_REACHED;
+  static const InsightsWrapperErrorCodeEnum FREE_TIER_REACHED =
+      _$insightsWrapperErrorCodeEnum_FREE_TIER_REACHED;
   @BuiltValueEnumConst(wireName: r'LIMIT_REACHED')
-  static const InsightsWrapperErrorCodeEnum LIMIT_REACHED = _$insightsWrapperErrorCodeEnum_LIMIT_REACHED;
+  static const InsightsWrapperErrorCodeEnum LIMIT_REACHED =
+      _$insightsWrapperErrorCodeEnum_LIMIT_REACHED;
   @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const InsightsWrapperErrorCodeEnum INACTIVE = _$insightsWrapperErrorCodeEnum_INACTIVE;
+  static const InsightsWrapperErrorCodeEnum INACTIVE =
+      _$insightsWrapperErrorCodeEnum_INACTIVE;
   @BuiltValueEnumConst(wireName: r'UNKNOWN')
-  static const InsightsWrapperErrorCodeEnum UNKNOWN = _$insightsWrapperErrorCodeEnum_UNKNOWN;
+  static const InsightsWrapperErrorCodeEnum UNKNOWN =
+      _$insightsWrapperErrorCodeEnum_UNKNOWN;
   @BuiltValueEnumConst(wireName: r'IDENTIFIER_NOT_UNIQUE')
-  static const InsightsWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE = _$insightsWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
+  static const InsightsWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE =
+      _$insightsWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
   @BuiltValueEnumConst(wireName: r'ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT')
-  static const InsightsWrapperErrorCodeEnum ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT = _$insightsWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
+  static const InsightsWrapperErrorCodeEnum
+      ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT =
+      _$insightsWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
   @BuiltValueEnumConst(wireName: r'NO_ACCOUNT_CONNECTED')
-  static const InsightsWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED = _$insightsWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
+  static const InsightsWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED =
+      _$insightsWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
   @BuiltValueEnumConst(wireName: r'NO_PAGE_SELECTED')
-  static const InsightsWrapperErrorCodeEnum NO_PAGE_SELECTED = _$insightsWrapperErrorCodeEnum_NO_PAGE_SELECTED;
+  static const InsightsWrapperErrorCodeEnum NO_PAGE_SELECTED =
+      _$insightsWrapperErrorCodeEnum_NO_PAGE_SELECTED;
   @BuiltValueEnumConst(wireName: r'PAGE_NOT_CREATED')
-  static const InsightsWrapperErrorCodeEnum PAGE_NOT_CREATED = _$insightsWrapperErrorCodeEnum_PAGE_NOT_CREATED;
+  static const InsightsWrapperErrorCodeEnum PAGE_NOT_CREATED =
+      _$insightsWrapperErrorCodeEnum_PAGE_NOT_CREATED;
   @BuiltValueEnumConst(wireName: r'PAGE_IN_REVIEW')
-  static const InsightsWrapperErrorCodeEnum PAGE_IN_REVIEW = _$insightsWrapperErrorCodeEnum_PAGE_IN_REVIEW;
+  static const InsightsWrapperErrorCodeEnum PAGE_IN_REVIEW =
+      _$insightsWrapperErrorCodeEnum_PAGE_IN_REVIEW;
   @BuiltValueEnumConst(wireName: r'PAGE_CLAIMED_BY_OTHERS')
-  static const InsightsWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS = _$insightsWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
+  static const InsightsWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS =
+      _$insightsWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
   @BuiltValueEnumConst(wireName: r'OVERLAPPING_SOCIALPOST')
-  static const InsightsWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST = _$insightsWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
+  static const InsightsWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST =
+      _$insightsWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
   @BuiltValueEnumConst(wireName: r'TOO_MANY_REPLIES')
-  static const InsightsWrapperErrorCodeEnum TOO_MANY_REPLIES = _$insightsWrapperErrorCodeEnum_TOO_MANY_REPLIES;
+  static const InsightsWrapperErrorCodeEnum TOO_MANY_REPLIES =
+      _$insightsWrapperErrorCodeEnum_TOO_MANY_REPLIES;
   @BuiltValueEnumConst(wireName: r'REPLY_TOO_LONG')
-  static const InsightsWrapperErrorCodeEnum REPLY_TOO_LONG = _$insightsWrapperErrorCodeEnum_REPLY_TOO_LONG;
+  static const InsightsWrapperErrorCodeEnum REPLY_TOO_LONG =
+      _$insightsWrapperErrorCodeEnum_REPLY_TOO_LONG;
   @BuiltValueEnumConst(wireName: r'DEPRECATED')
-  static const InsightsWrapperErrorCodeEnum DEPRECATED = _$insightsWrapperErrorCodeEnum_DEPRECATED;
+  static const InsightsWrapperErrorCodeEnum DEPRECATED =
+      _$insightsWrapperErrorCodeEnum_DEPRECATED;
 
-  static Serializer<InsightsWrapperErrorCodeEnum> get serializer => _$insightsWrapperErrorCodeEnumSerializer;
+  static Serializer<InsightsWrapperErrorCodeEnum> get serializer =>
+      _$insightsWrapperErrorCodeEnumSerializer;
 
-  const InsightsWrapperErrorCodeEnum._(String name): super(name);
+  const InsightsWrapperErrorCodeEnum._(String name) : super(name);
 
-  static BuiltSet<InsightsWrapperErrorCodeEnum> get values => _$insightsWrapperErrorCodeEnumValues;
-  static InsightsWrapperErrorCodeEnum valueOf(String name) => _$insightsWrapperErrorCodeEnumValueOf(name);
+  static BuiltSet<InsightsWrapperErrorCodeEnum> get values =>
+      _$insightsWrapperErrorCodeEnumValues;
+  static InsightsWrapperErrorCodeEnum valueOf(String name) =>
+      _$insightsWrapperErrorCodeEnumValueOf(name);
 }
-

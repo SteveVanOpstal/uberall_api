@@ -11,7 +11,6 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for BatchOperationApi
 void main() {
   // final instance = BatchOperationApi();
@@ -34,6 +33,5 @@ void main() {
     test('test getBatchIdErrorReport', () async {
       // TODO
     });
-
   });
 }

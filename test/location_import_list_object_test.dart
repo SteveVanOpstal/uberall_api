@@ -38,8 +38,5 @@ void main() {
     test('to test the property `locations`', () async {
       // TODO
     });
-
-
   });
-
 }

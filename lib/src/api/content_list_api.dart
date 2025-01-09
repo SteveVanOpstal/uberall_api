@@ -13,10 +13,9 @@ import 'package:openapi/src/api_util.dart';
 import 'package:openapi/src/model/content_list.dart';
 import 'package:openapi/src/model/content_list_response_wrapper.dart';
 import 'package:openapi/src/model/content_lists_wrapper.dart';
-import 'package:openapi/src/model/response.dart';
+import 'package:openapi/src/model/response.dart' as openApi;
 
 class ContentListApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -37,7 +36,7 @@ class ContentListApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Response>> deleteContentListsId({ 
+  Future<Response<openApi.Response>> deleteContentListsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -46,7 +45,10 @@ class ContentListApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/content-lists/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/content-lists/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -59,7 +61,8 @@ class ContentListApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -79,15 +82,16 @@ class ContentListApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Response? _responseData;
+    openApi.Response? _responseData;
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(Response),
-      ) as Response;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(openApi.Response),
+            ) as openApi.Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -98,7 +102,7 @@ class ContentListApi {
       );
     }
 
-    return Response<Response>(
+    return Response<openApi.Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -123,7 +127,7 @@ class ContentListApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ContentListsWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ContentListsWrapper>> getContentLists({ 
+  Future<Response<ContentListsWrapper>> getContentLists({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -144,7 +148,8 @@ class ContentListApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -168,11 +173,12 @@ class ContentListApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ContentListsWrapper),
-      ) as ContentListsWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ContentListsWrapper),
+            ) as ContentListsWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -209,7 +215,7 @@ class ContentListApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ContentListResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ContentListResponseWrapper>> getContentListsId({ 
+  Future<Response<ContentListResponseWrapper>> getContentListsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -218,7 +224,10 @@ class ContentListApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/content-lists/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/content-lists/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -231,7 +240,8 @@ class ContentListApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -255,11 +265,12 @@ class ContentListApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ContentListResponseWrapper),
-      ) as ContentListResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ContentListResponseWrapper),
+            ) as ContentListResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -297,7 +308,7 @@ class ContentListApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ContentList] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ContentList>> patchContentListsId({ 
+  Future<Response<ContentList>> patchContentListsId({
     required String id,
     required ContentListResponseWrapper contentListResponseWrapper,
     CancelToken? cancelToken,
@@ -307,7 +318,10 @@ class ContentListApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/content-lists/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/content-lists/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -320,7 +334,8 @@ class ContentListApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -336,11 +351,11 @@ class ContentListApi {
 
     try {
       const _type = FullType(ContentListResponseWrapper);
-      _bodyData = _serializers.serialize(contentListResponseWrapper, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData = _serializers.serialize(contentListResponseWrapper,
+          specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -363,11 +378,12 @@ class ContentListApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ContentList),
-      ) as ContentList;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ContentList),
+            ) as ContentList;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -404,7 +420,7 @@ class ContentListApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ContentListResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ContentListResponseWrapper>> postContentLists({ 
+  Future<Response<ContentListResponseWrapper>> postContentLists({
     required BuiltList<ContentList> contentList,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -426,7 +442,8 @@ class ContentListApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -444,10 +461,9 @@ class ContentListApi {
     try {
       const _type = FullType(BuiltList, [FullType(ContentList)]);
       _bodyData = _serializers.serialize(contentList, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -470,11 +486,12 @@ class ContentListApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ContentListResponseWrapper),
-      ) as ContentListResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ContentListResponseWrapper),
+            ) as ContentListResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -496,5 +513,4 @@ class ContentListApi {
       extra: _response.extra,
     );
   }
-
 }

@@ -15,7 +15,6 @@ import 'package:openapi/src/model/social_post_templates_response_wrapper.dart';
 import 'package:openapi/src/model/success_response_wrapper.dart';
 
 class SocialPostingTemplatesApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -37,7 +36,7 @@ class SocialPostingTemplatesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SuccessResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SuccessResponseWrapper>> deleteSocialPostsTemplatesId({ 
+  Future<Response<SuccessResponseWrapper>> deleteSocialPostsTemplatesId({
     required String id,
     String? userId,
     CancelToken? cancelToken,
@@ -47,7 +46,10 @@ class SocialPostingTemplatesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/social-posts/templates/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/social-posts/templates/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -60,7 +62,8 @@ class SocialPostingTemplatesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -73,7 +76,9 @@ class SocialPostingTemplatesApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (userId != null) r'userId': encodeQueryParameter(_serializers, userId, const FullType(String)),
+      if (userId != null)
+        r'userId':
+            encodeQueryParameter(_serializers, userId, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -89,11 +94,12 @@ class SocialPostingTemplatesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SuccessResponseWrapper),
-      ) as SuccessResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SuccessResponseWrapper),
+            ) as SuccessResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -132,7 +138,7 @@ class SocialPostingTemplatesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SocialPostTemplatesResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SocialPostTemplatesResponseWrapper>> getSocialPostsTemplates({ 
+  Future<Response<SocialPostTemplatesResponseWrapper>> getSocialPostsTemplates({
     String? userId,
     int? max = 10,
     int? offset = 0,
@@ -156,7 +162,8 @@ class SocialPostingTemplatesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -169,9 +176,14 @@ class SocialPostingTemplatesApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (userId != null) r'userId': encodeQueryParameter(_serializers, userId, const FullType(String)),
-      if (max != null) r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
-      if (offset != null) r'offset': encodeQueryParameter(_serializers, offset, const FullType(int)),
+      if (userId != null)
+        r'userId':
+            encodeQueryParameter(_serializers, userId, const FullType(String)),
+      if (max != null)
+        r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
+      if (offset != null)
+        r'offset':
+            encodeQueryParameter(_serializers, offset, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -187,11 +199,12 @@ class SocialPostingTemplatesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SocialPostTemplatesResponseWrapper),
-      ) as SocialPostTemplatesResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SocialPostTemplatesResponseWrapper),
+            ) as SocialPostTemplatesResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -229,7 +242,8 @@ class SocialPostingTemplatesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SocialPostTemplateResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SocialPostTemplateResponseWrapper>> getSocialPostsTemplatesId({ 
+  Future<Response<SocialPostTemplateResponseWrapper>>
+      getSocialPostsTemplatesId({
     required String id,
     String? userId,
     CancelToken? cancelToken,
@@ -239,7 +253,10 @@ class SocialPostingTemplatesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/social-posts/templates/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/social-posts/templates/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -252,7 +269,8 @@ class SocialPostingTemplatesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -265,7 +283,9 @@ class SocialPostingTemplatesApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (userId != null) r'userId': encodeQueryParameter(_serializers, userId, const FullType(String)),
+      if (userId != null)
+        r'userId':
+            encodeQueryParameter(_serializers, userId, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -281,11 +301,12 @@ class SocialPostingTemplatesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SocialPostTemplateResponseWrapper),
-      ) as SocialPostTemplateResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SocialPostTemplateResponseWrapper),
+            ) as SocialPostTemplateResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -323,7 +344,8 @@ class SocialPostingTemplatesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SocialPostTemplateResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SocialPostTemplateResponseWrapper>> patchSocialPostsTemplatesId({ 
+  Future<Response<SocialPostTemplateResponseWrapper>>
+      patchSocialPostsTemplatesId({
     required String id,
     required SocialPostTemplate socialPostTemplate,
     CancelToken? cancelToken,
@@ -333,7 +355,10 @@ class SocialPostingTemplatesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/social-posts/templates/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/social-posts/templates/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -346,7 +371,8 @@ class SocialPostingTemplatesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -362,11 +388,11 @@ class SocialPostingTemplatesApi {
 
     try {
       const _type = FullType(SocialPostTemplate);
-      _bodyData = _serializers.serialize(socialPostTemplate, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData =
+          _serializers.serialize(socialPostTemplate, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -389,11 +415,12 @@ class SocialPostingTemplatesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SocialPostTemplateResponseWrapper),
-      ) as SocialPostTemplateResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SocialPostTemplateResponseWrapper),
+            ) as SocialPostTemplateResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -430,7 +457,7 @@ class SocialPostingTemplatesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SocialPostTemplateResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SocialPostTemplateResponseWrapper>> postSocialPostsTemplates({ 
+  Future<Response<SocialPostTemplateResponseWrapper>> postSocialPostsTemplates({
     required SocialPostTemplate socialPostTemplate,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -452,7 +479,8 @@ class SocialPostingTemplatesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -468,11 +496,11 @@ class SocialPostingTemplatesApi {
 
     try {
       const _type = FullType(SocialPostTemplate);
-      _bodyData = _serializers.serialize(socialPostTemplate, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData =
+          _serializers.serialize(socialPostTemplate, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -495,11 +523,12 @@ class SocialPostingTemplatesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SocialPostTemplateResponseWrapper),
-      ) as SocialPostTemplateResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SocialPostTemplateResponseWrapper),
+            ) as SocialPostTemplateResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -521,5 +550,4 @@ class SocialPostingTemplatesApi {
       extra: _response.extra,
     );
   }
-
 }

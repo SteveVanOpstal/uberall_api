@@ -17,7 +17,7 @@ part 'video.g.dart';
 /// * [url] - Url of the video
 /// * [description] - Text description of the Video
 /// * [type] - Video Platform. Values: [YOUTUBE, VIMEO]
-/// * [typeId] 
+/// * [typeId]
 @BuiltValue()
 abstract class Video implements Built<Video, VideoBuilder> {
   /// Identifier of the video in our system
@@ -106,7 +106,9 @@ class _$VideoSerializer implements PrimitiveSerializer<Video> {
     Video object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -186,25 +188,27 @@ class _$VideoSerializer implements PrimitiveSerializer<Video> {
 }
 
 class VideoTypeEnum extends EnumClass {
-
   /// Video Platform. Values: [YOUTUBE, VIMEO]
   @BuiltValueEnumConst(wireName: r'YOUTUBE')
   static const VideoTypeEnum YOUTUBE = _$videoTypeEnum_YOUTUBE;
+
   /// Video Platform. Values: [YOUTUBE, VIMEO]
   @BuiltValueEnumConst(wireName: r'VIMEO')
   static const VideoTypeEnum VIMEO = _$videoTypeEnum_VIMEO;
+
   /// Video Platform. Values: [YOUTUBE, VIMEO]
   @BuiltValueEnumConst(wireName: r'UBERALL')
   static const VideoTypeEnum UBERALL = _$videoTypeEnum_UBERALL;
+
   /// Video Platform. Values: [YOUTUBE, VIMEO]
   @BuiltValueEnumConst(wireName: r'YOUTUBE, VIMEO')
-  static const VideoTypeEnum yOUTUBECommaVIMEO = _$videoTypeEnum_yOUTUBECommaVIMEO;
+  static const VideoTypeEnum yOUTUBECommaVIMEO =
+      _$videoTypeEnum_yOUTUBECommaVIMEO;
 
   static Serializer<VideoTypeEnum> get serializer => _$videoTypeEnumSerializer;
 
-  const VideoTypeEnum._(String name): super(name);
+  const VideoTypeEnum._(String name) : super(name);
 
   static BuiltSet<VideoTypeEnum> get values => _$videoTypeEnumValues;
   static VideoTypeEnum valueOf(String name) => _$videoTypeEnumValueOf(name);
 }
-

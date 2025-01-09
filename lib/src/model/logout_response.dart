@@ -12,29 +12,33 @@ part 'logout_response.g.dart';
 ///
 /// Properties:
 /// * [success] - True if logout was successful
-/// * [redirectUrl] - The URL that a user is redirected to when logging out 
+/// * [redirectUrl] - The URL that a user is redirected to when logging out
 @BuiltValue()
-abstract class LogoutResponse implements Built<LogoutResponse, LogoutResponseBuilder> {
+abstract class LogoutResponse
+    implements Built<LogoutResponse, LogoutResponseBuilder> {
   /// True if logout was successful
   @BuiltValueField(wireName: r'success')
   bool? get success;
 
-  /// The URL that a user is redirected to when logging out 
+  /// The URL that a user is redirected to when logging out
   @BuiltValueField(wireName: r'redirectUrl')
   String? get redirectUrl;
 
   LogoutResponse._();
 
-  factory LogoutResponse([void updates(LogoutResponseBuilder b)]) = _$LogoutResponse;
+  factory LogoutResponse([void updates(LogoutResponseBuilder b)]) =
+      _$LogoutResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LogoutResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LogoutResponse> get serializer => _$LogoutResponseSerializer();
+  static Serializer<LogoutResponse> get serializer =>
+      _$LogoutResponseSerializer();
 }
 
-class _$LogoutResponseSerializer implements PrimitiveSerializer<LogoutResponse> {
+class _$LogoutResponseSerializer
+    implements PrimitiveSerializer<LogoutResponse> {
   @override
   final Iterable<Type> types = const [LogoutResponse, _$LogoutResponse];
 
@@ -68,7 +72,9 @@ class _$LogoutResponseSerializer implements PrimitiveSerializer<LogoutResponse> 
     LogoutResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -125,4 +131,3 @@ class _$LogoutResponseSerializer implements PrimitiveSerializer<LogoutResponse> 
     return result.build();
   }
 }
-

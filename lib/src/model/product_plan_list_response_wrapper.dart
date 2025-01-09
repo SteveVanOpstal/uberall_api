@@ -13,13 +13,16 @@ part 'product_plan_list_response_wrapper.g.dart';
 /// ProductPlanListResponseWrapper
 ///
 /// Properties:
-/// * [status] 
+/// * [status]
 /// * [message] - (optional) Holds further information about the response
-/// * [errorCode] 
+/// * [errorCode]
 /// * [warnings] - (optional) Holds further warnings
-/// * [response] 
+/// * [response]
 @BuiltValue()
-abstract class ProductPlanListResponseWrapper implements Built<ProductPlanListResponseWrapper, ProductPlanListResponseWrapperBuilder> {
+abstract class ProductPlanListResponseWrapper
+    implements
+        Built<ProductPlanListResponseWrapper,
+            ProductPlanListResponseWrapperBuilder> {
   @BuiltValueField(wireName: r'status')
   ProductPlanListResponseWrapperStatusEnum? get status;
   // enum statusEnum {  SUCCESS,  QUOTA_LIMIT_EXCEED,  NOT_AUTHORIZED,  FORBIDDEN,  BAD_ACCESS_TOKEN,  BAD_PRIVATE_KEY,  BAD_PUBLIC_KEY,  MISSING_PARAMETER,  INVALID_PARAMETER,  WRONG_PARAMETER_TYPE,  CONFLICT,  RESOURCE_LOCKED,  SERVER_ERROR,  ERROR,  NOT_FOUND,  BAD_REQUEST,  USER_ERROR,  PARTIAL_ERROR,  METHOD_NOT_ALLOWED,  };
@@ -41,18 +44,25 @@ abstract class ProductPlanListResponseWrapper implements Built<ProductPlanListRe
 
   ProductPlanListResponseWrapper._();
 
-  factory ProductPlanListResponseWrapper([void updates(ProductPlanListResponseWrapperBuilder b)]) = _$ProductPlanListResponseWrapper;
+  factory ProductPlanListResponseWrapper(
+          [void updates(ProductPlanListResponseWrapperBuilder b)]) =
+      _$ProductPlanListResponseWrapper;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ProductPlanListResponseWrapperBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ProductPlanListResponseWrapper> get serializer => _$ProductPlanListResponseWrapperSerializer();
+  static Serializer<ProductPlanListResponseWrapper> get serializer =>
+      _$ProductPlanListResponseWrapperSerializer();
 }
 
-class _$ProductPlanListResponseWrapperSerializer implements PrimitiveSerializer<ProductPlanListResponseWrapper> {
+class _$ProductPlanListResponseWrapperSerializer
+    implements PrimitiveSerializer<ProductPlanListResponseWrapper> {
   @override
-  final Iterable<Type> types = const [ProductPlanListResponseWrapper, _$ProductPlanListResponseWrapper];
+  final Iterable<Type> types = const [
+    ProductPlanListResponseWrapper,
+    _$ProductPlanListResponseWrapper
+  ];
 
   @override
   final String wireName = r'ProductPlanListResponseWrapper';
@@ -80,7 +90,8 @@ class _$ProductPlanListResponseWrapperSerializer implements PrimitiveSerializer<
       yield r'errorCode';
       yield serializers.serialize(
         object.errorCode,
-        specifiedType: const FullType(ProductPlanListResponseWrapperErrorCodeEnum),
+        specifiedType:
+            const FullType(ProductPlanListResponseWrapperErrorCodeEnum),
       );
     }
     if (object.warnings != null) {
@@ -105,7 +116,9 @@ class _$ProductPlanListResponseWrapperSerializer implements PrimitiveSerializer<
     ProductPlanListResponseWrapper object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -123,7 +136,8 @@ class _$ProductPlanListResponseWrapperSerializer implements PrimitiveSerializer<
         case r'status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ProductPlanListResponseWrapperStatusEnum),
+            specifiedType:
+                const FullType(ProductPlanListResponseWrapperStatusEnum),
           ) as ProductPlanListResponseWrapperStatusEnum;
           result.status = valueDes;
           break;
@@ -137,7 +151,8 @@ class _$ProductPlanListResponseWrapperSerializer implements PrimitiveSerializer<
         case r'errorCode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ProductPlanListResponseWrapperErrorCodeEnum),
+            specifiedType:
+                const FullType(ProductPlanListResponseWrapperErrorCodeEnum),
           ) as ProductPlanListResponseWrapperErrorCodeEnum;
           result.errorCode = valueDes;
           break;
@@ -185,102 +200,151 @@ class _$ProductPlanListResponseWrapperSerializer implements PrimitiveSerializer<
 }
 
 class ProductPlanListResponseWrapperStatusEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'SUCCESS')
-  static const ProductPlanListResponseWrapperStatusEnum SUCCESS = _$productPlanListResponseWrapperStatusEnum_SUCCESS;
+  static const ProductPlanListResponseWrapperStatusEnum SUCCESS =
+      _$productPlanListResponseWrapperStatusEnum_SUCCESS;
   @BuiltValueEnumConst(wireName: r'QUOTA_LIMIT_EXCEED')
-  static const ProductPlanListResponseWrapperStatusEnum QUOTA_LIMIT_EXCEED = _$productPlanListResponseWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
+  static const ProductPlanListResponseWrapperStatusEnum QUOTA_LIMIT_EXCEED =
+      _$productPlanListResponseWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
   @BuiltValueEnumConst(wireName: r'NOT_AUTHORIZED')
-  static const ProductPlanListResponseWrapperStatusEnum NOT_AUTHORIZED = _$productPlanListResponseWrapperStatusEnum_NOT_AUTHORIZED;
+  static const ProductPlanListResponseWrapperStatusEnum NOT_AUTHORIZED =
+      _$productPlanListResponseWrapperStatusEnum_NOT_AUTHORIZED;
   @BuiltValueEnumConst(wireName: r'FORBIDDEN')
-  static const ProductPlanListResponseWrapperStatusEnum FORBIDDEN = _$productPlanListResponseWrapperStatusEnum_FORBIDDEN;
+  static const ProductPlanListResponseWrapperStatusEnum FORBIDDEN =
+      _$productPlanListResponseWrapperStatusEnum_FORBIDDEN;
   @BuiltValueEnumConst(wireName: r'BAD_ACCESS_TOKEN')
-  static const ProductPlanListResponseWrapperStatusEnum BAD_ACCESS_TOKEN = _$productPlanListResponseWrapperStatusEnum_BAD_ACCESS_TOKEN;
+  static const ProductPlanListResponseWrapperStatusEnum BAD_ACCESS_TOKEN =
+      _$productPlanListResponseWrapperStatusEnum_BAD_ACCESS_TOKEN;
   @BuiltValueEnumConst(wireName: r'BAD_PRIVATE_KEY')
-  static const ProductPlanListResponseWrapperStatusEnum BAD_PRIVATE_KEY = _$productPlanListResponseWrapperStatusEnum_BAD_PRIVATE_KEY;
+  static const ProductPlanListResponseWrapperStatusEnum BAD_PRIVATE_KEY =
+      _$productPlanListResponseWrapperStatusEnum_BAD_PRIVATE_KEY;
   @BuiltValueEnumConst(wireName: r'BAD_PUBLIC_KEY')
-  static const ProductPlanListResponseWrapperStatusEnum BAD_PUBLIC_KEY = _$productPlanListResponseWrapperStatusEnum_BAD_PUBLIC_KEY;
+  static const ProductPlanListResponseWrapperStatusEnum BAD_PUBLIC_KEY =
+      _$productPlanListResponseWrapperStatusEnum_BAD_PUBLIC_KEY;
   @BuiltValueEnumConst(wireName: r'MISSING_PARAMETER')
-  static const ProductPlanListResponseWrapperStatusEnum MISSING_PARAMETER = _$productPlanListResponseWrapperStatusEnum_MISSING_PARAMETER;
+  static const ProductPlanListResponseWrapperStatusEnum MISSING_PARAMETER =
+      _$productPlanListResponseWrapperStatusEnum_MISSING_PARAMETER;
   @BuiltValueEnumConst(wireName: r'INVALID_PARAMETER')
-  static const ProductPlanListResponseWrapperStatusEnum INVALID_PARAMETER = _$productPlanListResponseWrapperStatusEnum_INVALID_PARAMETER;
+  static const ProductPlanListResponseWrapperStatusEnum INVALID_PARAMETER =
+      _$productPlanListResponseWrapperStatusEnum_INVALID_PARAMETER;
   @BuiltValueEnumConst(wireName: r'WRONG_PARAMETER_TYPE')
-  static const ProductPlanListResponseWrapperStatusEnum WRONG_PARAMETER_TYPE = _$productPlanListResponseWrapperStatusEnum_WRONG_PARAMETER_TYPE;
+  static const ProductPlanListResponseWrapperStatusEnum WRONG_PARAMETER_TYPE =
+      _$productPlanListResponseWrapperStatusEnum_WRONG_PARAMETER_TYPE;
   @BuiltValueEnumConst(wireName: r'CONFLICT')
-  static const ProductPlanListResponseWrapperStatusEnum CONFLICT = _$productPlanListResponseWrapperStatusEnum_CONFLICT;
+  static const ProductPlanListResponseWrapperStatusEnum CONFLICT =
+      _$productPlanListResponseWrapperStatusEnum_CONFLICT;
   @BuiltValueEnumConst(wireName: r'RESOURCE_LOCKED')
-  static const ProductPlanListResponseWrapperStatusEnum RESOURCE_LOCKED = _$productPlanListResponseWrapperStatusEnum_RESOURCE_LOCKED;
+  static const ProductPlanListResponseWrapperStatusEnum RESOURCE_LOCKED =
+      _$productPlanListResponseWrapperStatusEnum_RESOURCE_LOCKED;
   @BuiltValueEnumConst(wireName: r'SERVER_ERROR')
-  static const ProductPlanListResponseWrapperStatusEnum SERVER_ERROR = _$productPlanListResponseWrapperStatusEnum_SERVER_ERROR;
+  static const ProductPlanListResponseWrapperStatusEnum SERVER_ERROR =
+      _$productPlanListResponseWrapperStatusEnum_SERVER_ERROR;
   @BuiltValueEnumConst(wireName: r'ERROR')
-  static const ProductPlanListResponseWrapperStatusEnum ERROR = _$productPlanListResponseWrapperStatusEnum_ERROR;
+  static const ProductPlanListResponseWrapperStatusEnum ERROR =
+      _$productPlanListResponseWrapperStatusEnum_ERROR;
   @BuiltValueEnumConst(wireName: r'NOT_FOUND')
-  static const ProductPlanListResponseWrapperStatusEnum NOT_FOUND = _$productPlanListResponseWrapperStatusEnum_NOT_FOUND;
+  static const ProductPlanListResponseWrapperStatusEnum NOT_FOUND =
+      _$productPlanListResponseWrapperStatusEnum_NOT_FOUND;
   @BuiltValueEnumConst(wireName: r'BAD_REQUEST')
-  static const ProductPlanListResponseWrapperStatusEnum BAD_REQUEST = _$productPlanListResponseWrapperStatusEnum_BAD_REQUEST;
+  static const ProductPlanListResponseWrapperStatusEnum BAD_REQUEST =
+      _$productPlanListResponseWrapperStatusEnum_BAD_REQUEST;
   @BuiltValueEnumConst(wireName: r'USER_ERROR')
-  static const ProductPlanListResponseWrapperStatusEnum USER_ERROR = _$productPlanListResponseWrapperStatusEnum_USER_ERROR;
+  static const ProductPlanListResponseWrapperStatusEnum USER_ERROR =
+      _$productPlanListResponseWrapperStatusEnum_USER_ERROR;
   @BuiltValueEnumConst(wireName: r'PARTIAL_ERROR')
-  static const ProductPlanListResponseWrapperStatusEnum PARTIAL_ERROR = _$productPlanListResponseWrapperStatusEnum_PARTIAL_ERROR;
+  static const ProductPlanListResponseWrapperStatusEnum PARTIAL_ERROR =
+      _$productPlanListResponseWrapperStatusEnum_PARTIAL_ERROR;
   @BuiltValueEnumConst(wireName: r'METHOD_NOT_ALLOWED')
-  static const ProductPlanListResponseWrapperStatusEnum METHOD_NOT_ALLOWED = _$productPlanListResponseWrapperStatusEnum_METHOD_NOT_ALLOWED;
+  static const ProductPlanListResponseWrapperStatusEnum METHOD_NOT_ALLOWED =
+      _$productPlanListResponseWrapperStatusEnum_METHOD_NOT_ALLOWED;
 
-  static Serializer<ProductPlanListResponseWrapperStatusEnum> get serializer => _$productPlanListResponseWrapperStatusEnumSerializer;
+  static Serializer<ProductPlanListResponseWrapperStatusEnum> get serializer =>
+      _$productPlanListResponseWrapperStatusEnumSerializer;
 
-  const ProductPlanListResponseWrapperStatusEnum._(String name): super(name);
+  const ProductPlanListResponseWrapperStatusEnum._(String name) : super(name);
 
-  static BuiltSet<ProductPlanListResponseWrapperStatusEnum> get values => _$productPlanListResponseWrapperStatusEnumValues;
-  static ProductPlanListResponseWrapperStatusEnum valueOf(String name) => _$productPlanListResponseWrapperStatusEnumValueOf(name);
+  static BuiltSet<ProductPlanListResponseWrapperStatusEnum> get values =>
+      _$productPlanListResponseWrapperStatusEnumValues;
+  static ProductPlanListResponseWrapperStatusEnum valueOf(String name) =>
+      _$productPlanListResponseWrapperStatusEnumValueOf(name);
 }
 
 class ProductPlanListResponseWrapperErrorCodeEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'NORMALIZATION_FAILED')
-  static const ProductPlanListResponseWrapperErrorCodeEnum NORMALIZATION_FAILED = _$productPlanListResponseWrapperErrorCodeEnum_NORMALIZATION_FAILED;
+  static const ProductPlanListResponseWrapperErrorCodeEnum
+      NORMALIZATION_FAILED =
+      _$productPlanListResponseWrapperErrorCodeEnum_NORMALIZATION_FAILED;
   @BuiltValueEnumConst(wireName: r'DATA_CORRUPTED')
-  static const ProductPlanListResponseWrapperErrorCodeEnum DATA_CORRUPTED = _$productPlanListResponseWrapperErrorCodeEnum_DATA_CORRUPTED;
+  static const ProductPlanListResponseWrapperErrorCodeEnum DATA_CORRUPTED =
+      _$productPlanListResponseWrapperErrorCodeEnum_DATA_CORRUPTED;
   @BuiltValueEnumConst(wireName: r'INVALID_INPUT')
-  static const ProductPlanListResponseWrapperErrorCodeEnum INVALID_INPUT = _$productPlanListResponseWrapperErrorCodeEnum_INVALID_INPUT;
+  static const ProductPlanListResponseWrapperErrorCodeEnum INVALID_INPUT =
+      _$productPlanListResponseWrapperErrorCodeEnum_INVALID_INPUT;
   @BuiltValueEnumConst(wireName: r'NOT_SYNCABLE')
-  static const ProductPlanListResponseWrapperErrorCodeEnum NOT_SYNCABLE = _$productPlanListResponseWrapperErrorCodeEnum_NOT_SYNCABLE;
+  static const ProductPlanListResponseWrapperErrorCodeEnum NOT_SYNCABLE =
+      _$productPlanListResponseWrapperErrorCodeEnum_NOT_SYNCABLE;
   @BuiltValueEnumConst(wireName: r'PAYMENT_FAILED')
-  static const ProductPlanListResponseWrapperErrorCodeEnum PAYMENT_FAILED = _$productPlanListResponseWrapperErrorCodeEnum_PAYMENT_FAILED;
+  static const ProductPlanListResponseWrapperErrorCodeEnum PAYMENT_FAILED =
+      _$productPlanListResponseWrapperErrorCodeEnum_PAYMENT_FAILED;
   @BuiltValueEnumConst(wireName: r'FREE_TIER_REACHED')
-  static const ProductPlanListResponseWrapperErrorCodeEnum FREE_TIER_REACHED = _$productPlanListResponseWrapperErrorCodeEnum_FREE_TIER_REACHED;
+  static const ProductPlanListResponseWrapperErrorCodeEnum FREE_TIER_REACHED =
+      _$productPlanListResponseWrapperErrorCodeEnum_FREE_TIER_REACHED;
   @BuiltValueEnumConst(wireName: r'LIMIT_REACHED')
-  static const ProductPlanListResponseWrapperErrorCodeEnum LIMIT_REACHED = _$productPlanListResponseWrapperErrorCodeEnum_LIMIT_REACHED;
+  static const ProductPlanListResponseWrapperErrorCodeEnum LIMIT_REACHED =
+      _$productPlanListResponseWrapperErrorCodeEnum_LIMIT_REACHED;
   @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const ProductPlanListResponseWrapperErrorCodeEnum INACTIVE = _$productPlanListResponseWrapperErrorCodeEnum_INACTIVE;
+  static const ProductPlanListResponseWrapperErrorCodeEnum INACTIVE =
+      _$productPlanListResponseWrapperErrorCodeEnum_INACTIVE;
   @BuiltValueEnumConst(wireName: r'UNKNOWN')
-  static const ProductPlanListResponseWrapperErrorCodeEnum UNKNOWN = _$productPlanListResponseWrapperErrorCodeEnum_UNKNOWN;
+  static const ProductPlanListResponseWrapperErrorCodeEnum UNKNOWN =
+      _$productPlanListResponseWrapperErrorCodeEnum_UNKNOWN;
   @BuiltValueEnumConst(wireName: r'IDENTIFIER_NOT_UNIQUE')
-  static const ProductPlanListResponseWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE = _$productPlanListResponseWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
+  static const ProductPlanListResponseWrapperErrorCodeEnum
+      IDENTIFIER_NOT_UNIQUE =
+      _$productPlanListResponseWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
   @BuiltValueEnumConst(wireName: r'ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT')
-  static const ProductPlanListResponseWrapperErrorCodeEnum ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT = _$productPlanListResponseWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
+  static const ProductPlanListResponseWrapperErrorCodeEnum
+      ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT =
+      _$productPlanListResponseWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
   @BuiltValueEnumConst(wireName: r'NO_ACCOUNT_CONNECTED')
-  static const ProductPlanListResponseWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED = _$productPlanListResponseWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
+  static const ProductPlanListResponseWrapperErrorCodeEnum
+      NO_ACCOUNT_CONNECTED =
+      _$productPlanListResponseWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
   @BuiltValueEnumConst(wireName: r'NO_PAGE_SELECTED')
-  static const ProductPlanListResponseWrapperErrorCodeEnum NO_PAGE_SELECTED = _$productPlanListResponseWrapperErrorCodeEnum_NO_PAGE_SELECTED;
+  static const ProductPlanListResponseWrapperErrorCodeEnum NO_PAGE_SELECTED =
+      _$productPlanListResponseWrapperErrorCodeEnum_NO_PAGE_SELECTED;
   @BuiltValueEnumConst(wireName: r'PAGE_NOT_CREATED')
-  static const ProductPlanListResponseWrapperErrorCodeEnum PAGE_NOT_CREATED = _$productPlanListResponseWrapperErrorCodeEnum_PAGE_NOT_CREATED;
+  static const ProductPlanListResponseWrapperErrorCodeEnum PAGE_NOT_CREATED =
+      _$productPlanListResponseWrapperErrorCodeEnum_PAGE_NOT_CREATED;
   @BuiltValueEnumConst(wireName: r'PAGE_IN_REVIEW')
-  static const ProductPlanListResponseWrapperErrorCodeEnum PAGE_IN_REVIEW = _$productPlanListResponseWrapperErrorCodeEnum_PAGE_IN_REVIEW;
+  static const ProductPlanListResponseWrapperErrorCodeEnum PAGE_IN_REVIEW =
+      _$productPlanListResponseWrapperErrorCodeEnum_PAGE_IN_REVIEW;
   @BuiltValueEnumConst(wireName: r'PAGE_CLAIMED_BY_OTHERS')
-  static const ProductPlanListResponseWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS = _$productPlanListResponseWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
+  static const ProductPlanListResponseWrapperErrorCodeEnum
+      PAGE_CLAIMED_BY_OTHERS =
+      _$productPlanListResponseWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
   @BuiltValueEnumConst(wireName: r'OVERLAPPING_SOCIALPOST')
-  static const ProductPlanListResponseWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST = _$productPlanListResponseWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
+  static const ProductPlanListResponseWrapperErrorCodeEnum
+      OVERLAPPING_SOCIALPOST =
+      _$productPlanListResponseWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
   @BuiltValueEnumConst(wireName: r'TOO_MANY_REPLIES')
-  static const ProductPlanListResponseWrapperErrorCodeEnum TOO_MANY_REPLIES = _$productPlanListResponseWrapperErrorCodeEnum_TOO_MANY_REPLIES;
+  static const ProductPlanListResponseWrapperErrorCodeEnum TOO_MANY_REPLIES =
+      _$productPlanListResponseWrapperErrorCodeEnum_TOO_MANY_REPLIES;
   @BuiltValueEnumConst(wireName: r'REPLY_TOO_LONG')
-  static const ProductPlanListResponseWrapperErrorCodeEnum REPLY_TOO_LONG = _$productPlanListResponseWrapperErrorCodeEnum_REPLY_TOO_LONG;
+  static const ProductPlanListResponseWrapperErrorCodeEnum REPLY_TOO_LONG =
+      _$productPlanListResponseWrapperErrorCodeEnum_REPLY_TOO_LONG;
   @BuiltValueEnumConst(wireName: r'DEPRECATED')
-  static const ProductPlanListResponseWrapperErrorCodeEnum DEPRECATED = _$productPlanListResponseWrapperErrorCodeEnum_DEPRECATED;
+  static const ProductPlanListResponseWrapperErrorCodeEnum DEPRECATED =
+      _$productPlanListResponseWrapperErrorCodeEnum_DEPRECATED;
 
-  static Serializer<ProductPlanListResponseWrapperErrorCodeEnum> get serializer => _$productPlanListResponseWrapperErrorCodeEnumSerializer;
+  static Serializer<ProductPlanListResponseWrapperErrorCodeEnum>
+      get serializer => _$productPlanListResponseWrapperErrorCodeEnumSerializer;
 
-  const ProductPlanListResponseWrapperErrorCodeEnum._(String name): super(name);
+  const ProductPlanListResponseWrapperErrorCodeEnum._(String name)
+      : super(name);
 
-  static BuiltSet<ProductPlanListResponseWrapperErrorCodeEnum> get values => _$productPlanListResponseWrapperErrorCodeEnumValues;
-  static ProductPlanListResponseWrapperErrorCodeEnum valueOf(String name) => _$productPlanListResponseWrapperErrorCodeEnumValueOf(name);
+  static BuiltSet<ProductPlanListResponseWrapperErrorCodeEnum> get values =>
+      _$productPlanListResponseWrapperErrorCodeEnumValues;
+  static ProductPlanListResponseWrapperErrorCodeEnum valueOf(String name) =>
+      _$productPlanListResponseWrapperErrorCodeEnumValueOf(name);
 }
-

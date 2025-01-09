@@ -12,13 +12,14 @@ part 'check_conflict_request.g.dart';
 /// Check Conflict Request
 ///
 /// Properties:
-/// * [businesses] 
-/// * [locations] 
-/// * [excludedLocations] 
-/// * [triggers] 
+/// * [businesses]
+/// * [locations]
+/// * [excludedLocations]
+/// * [triggers]
 /// * [ignoreRule] - When editing an Auto Response Rule, send the id from the rule being edited in this field
 @BuiltValue()
-abstract class CheckConflictRequest implements Built<CheckConflictRequest, CheckConflictRequestBuilder> {
+abstract class CheckConflictRequest
+    implements Built<CheckConflictRequest, CheckConflictRequestBuilder> {
   @BuiltValueField(wireName: r'businesses')
   BuiltList<int> get businesses;
 
@@ -37,18 +38,24 @@ abstract class CheckConflictRequest implements Built<CheckConflictRequest, Check
 
   CheckConflictRequest._();
 
-  factory CheckConflictRequest([void updates(CheckConflictRequestBuilder b)]) = _$CheckConflictRequest;
+  factory CheckConflictRequest([void updates(CheckConflictRequestBuilder b)]) =
+      _$CheckConflictRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CheckConflictRequestBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<CheckConflictRequest> get serializer => _$CheckConflictRequestSerializer();
+  static Serializer<CheckConflictRequest> get serializer =>
+      _$CheckConflictRequestSerializer();
 }
 
-class _$CheckConflictRequestSerializer implements PrimitiveSerializer<CheckConflictRequest> {
+class _$CheckConflictRequestSerializer
+    implements PrimitiveSerializer<CheckConflictRequest> {
   @override
-  final Iterable<Type> types = const [CheckConflictRequest, _$CheckConflictRequest];
+  final Iterable<Type> types = const [
+    CheckConflictRequest,
+    _$CheckConflictRequest
+  ];
 
   @override
   final String wireName = r'CheckConflictRequest';
@@ -95,7 +102,9 @@ class _$CheckConflictRequestSerializer implements PrimitiveSerializer<CheckConfl
     CheckConflictRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -173,4 +182,3 @@ class _$CheckConflictRequestSerializer implements PrimitiveSerializer<CheckConfl
     return result.build();
   }
 }
-

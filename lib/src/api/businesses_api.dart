@@ -19,7 +19,6 @@ import 'package:openapi/src/model/business_statistics_wrapper.dart';
 import 'package:openapi/src/model/success_response_wrapper.dart';
 
 class BusinessesApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -40,7 +39,7 @@ class BusinessesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SuccessResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SuccessResponseWrapper>> deleteBusinessesId({ 
+  Future<Response<SuccessResponseWrapper>> deleteBusinessesId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -49,7 +48,10 @@ class BusinessesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/businesses/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/businesses/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -62,7 +64,8 @@ class BusinessesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -86,11 +89,12 @@ class BusinessesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SuccessResponseWrapper),
-      ) as SuccessResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SuccessResponseWrapper),
+            ) as SuccessResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -129,8 +133,8 @@ class BusinessesApi {
   /// * [sort] - The business property to sort by (ascending). One of name, streetAndNo, city, zip, phone
   /// * [max] - Used for pagination. Maximum number of results per page. Default: 10
   /// * [offset] - Offset used for pagination. Default: 0
-  /// * [fieldMask] - Possible fieldMask options ('id', 'identifier', 'name', 'type', 'streetAndNo', 'addressLine2',                             'province', 'zip', 'city','phone', 'country', 'status', 'canSync', 'dateCreated', 'defaultPrice','defaultOriginalPrice', 'defaultPriceSetup',                             'productPlan', 'nextProductPlan', 'numOfLocations') 
-  /// * [body] 
+  /// * [fieldMask] - Possible fieldMask options ('id', 'identifier', 'name', 'type', 'streetAndNo', 'addressLine2',                             'province', 'zip', 'city','phone', 'country', 'status', 'canSync', 'dateCreated', 'defaultPrice','defaultOriginalPrice', 'defaultPriceSetup',                             'productPlan', 'nextProductPlan', 'numOfLocations')
+  /// * [body]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -140,7 +144,7 @@ class BusinessesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BusinessPageResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BusinessPageResponseWrapper>> getBusinesses({ 
+  Future<Response<BusinessPageResponseWrapper>> getBusinesses({
     String? query,
     BuiltList<String>? queryFields,
     String? identifier,
@@ -175,7 +179,8 @@ class BusinessesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -188,29 +193,57 @@ class BusinessesApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (query != null) r'query': encodeQueryParameter(_serializers, query, const FullType(String)),
-      if (queryFields != null) r'queryFields': encodeCollectionQueryParameter<String>(_serializers, queryFields, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (identifier != null) r'identifier': encodeQueryParameter(_serializers, identifier, const FullType(String)),
-      if (businessIds != null) r'businessIds': encodeQueryParameter(_serializers, businessIds, const FullType(String)),
-      if (status != null) r'status': encodeQueryParameter(_serializers, status, const FullType(String)),
-      if (minLocations != null) r'minLocations': encodeQueryParameter(_serializers, minLocations, const FullType(String)),
-      if (maxLocations != null) r'maxLocations': encodeQueryParameter(_serializers, maxLocations, const FullType(String)),
-      if (productPlan != null) r'productPlan': encodeQueryParameter(_serializers, productPlan, const FullType(String)),
-      if (productPlanId != null) r'productPlanId': encodeQueryParameter(_serializers, productPlanId, const FullType(String)),
-      if (sort != null) r'sort': encodeQueryParameter(_serializers, sort, const FullType(String)),
-      if (max != null) r'max': encodeQueryParameter(_serializers, max, const FullType(String)),
-      if (offset != null) r'offset': encodeQueryParameter(_serializers, offset, const FullType(String)),
-      if (fieldMask != null) r'fieldMask': encodeQueryParameter(_serializers, fieldMask, const FullType(String)),
+      if (query != null)
+        r'query':
+            encodeQueryParameter(_serializers, query, const FullType(String)),
+      if (queryFields != null)
+        r'queryFields': encodeCollectionQueryParameter<String>(
+          _serializers,
+          queryFields,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (identifier != null)
+        r'identifier': encodeQueryParameter(
+            _serializers, identifier, const FullType(String)),
+      if (businessIds != null)
+        r'businessIds': encodeQueryParameter(
+            _serializers, businessIds, const FullType(String)),
+      if (status != null)
+        r'status':
+            encodeQueryParameter(_serializers, status, const FullType(String)),
+      if (minLocations != null)
+        r'minLocations': encodeQueryParameter(
+            _serializers, minLocations, const FullType(String)),
+      if (maxLocations != null)
+        r'maxLocations': encodeQueryParameter(
+            _serializers, maxLocations, const FullType(String)),
+      if (productPlan != null)
+        r'productPlan': encodeQueryParameter(
+            _serializers, productPlan, const FullType(String)),
+      if (productPlanId != null)
+        r'productPlanId': encodeQueryParameter(
+            _serializers, productPlanId, const FullType(String)),
+      if (sort != null)
+        r'sort':
+            encodeQueryParameter(_serializers, sort, const FullType(String)),
+      if (max != null)
+        r'max': encodeQueryParameter(_serializers, max, const FullType(String)),
+      if (offset != null)
+        r'offset':
+            encodeQueryParameter(_serializers, offset, const FullType(String)),
+      if (fieldMask != null)
+        r'fieldMask': encodeQueryParameter(
+            _serializers, fieldMask, const FullType(String)),
     };
 
     dynamic _bodyData;
 
     try {
       _bodyData = body;
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
           queryParameters: _queryParameters,
@@ -235,11 +268,12 @@ class BusinessesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BusinessPageResponseWrapper),
-      ) as BusinessPageResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(BusinessPageResponseWrapper),
+            ) as BusinessPageResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -276,7 +310,7 @@ class BusinessesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BusinessResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BusinessResponseWrapper>> getBusinessesId({ 
+  Future<Response<BusinessResponseWrapper>> getBusinessesId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -285,7 +319,10 @@ class BusinessesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/businesses/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/businesses/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -298,7 +335,8 @@ class BusinessesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -322,11 +360,12 @@ class BusinessesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BusinessResponseWrapper),
-      ) as BusinessResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(BusinessResponseWrapper),
+            ) as BusinessResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -364,7 +403,8 @@ class BusinessesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BrandPagesResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BrandPagesResponseWrapper>> getBusinessesIdBusinessConnectFacebookFacebookAccountIdBrandPageList({ 
+  Future<Response<BrandPagesResponseWrapper>>
+      getBusinessesIdBusinessConnectFacebookFacebookAccountIdBrandPageList({
     required String id,
     required String facebookAccountId,
     CancelToken? cancelToken,
@@ -374,7 +414,17 @@ class BusinessesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/businesses/{id}/business-connect/facebook/{facebookAccountId}/brand-page-list'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString()).replaceAll('{' r'facebookAccountId' '}', encodeQueryParameter(_serializers, facebookAccountId, const FullType(String)).toString());
+    final _path =
+        r'/businesses/{id}/business-connect/facebook/{facebookAccountId}/brand-page-list'
+            .replaceAll(
+                '{' r'id' '}',
+                encodeQueryParameter(_serializers, id, const FullType(String))
+                    .toString())
+            .replaceAll(
+                '{' r'facebookAccountId' '}',
+                encodeQueryParameter(
+                        _serializers, facebookAccountId, const FullType(String))
+                    .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -387,7 +437,8 @@ class BusinessesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -411,11 +462,12 @@ class BusinessesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BrandPagesResponseWrapper),
-      ) as BrandPagesResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(BrandPagesResponseWrapper),
+            ) as BrandPagesResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -451,7 +503,7 @@ class BusinessesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BusinessStatisticsWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BusinessStatisticsWrapper>> getBusinessesStatistics({ 
+  Future<Response<BusinessStatisticsWrapper>> getBusinessesStatistics({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -472,7 +524,8 @@ class BusinessesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -496,11 +549,12 @@ class BusinessesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BusinessStatisticsWrapper),
-      ) as BusinessStatisticsWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(BusinessStatisticsWrapper),
+            ) as BusinessStatisticsWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -538,7 +592,7 @@ class BusinessesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BusinessResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BusinessResponseWrapper>> patchBusinessesId({ 
+  Future<Response<BusinessResponseWrapper>> patchBusinessesId({
     required String id,
     required Business business,
     CancelToken? cancelToken,
@@ -548,7 +602,10 @@ class BusinessesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/businesses/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/businesses/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -561,7 +618,8 @@ class BusinessesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -579,10 +637,9 @@ class BusinessesApi {
     try {
       const _type = FullType(Business);
       _bodyData = _serializers.serialize(business, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -605,11 +662,12 @@ class BusinessesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BusinessResponseWrapper),
-      ) as BusinessResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(BusinessResponseWrapper),
+            ) as BusinessResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -646,7 +704,7 @@ class BusinessesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BusinessResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BusinessResponseWrapper>> postBusinesses({ 
+  Future<Response<BusinessResponseWrapper>> postBusinesses({
     required Business business,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -668,7 +726,8 @@ class BusinessesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -686,10 +745,9 @@ class BusinessesApi {
     try {
       const _type = FullType(Business);
       _bodyData = _serializers.serialize(business, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -712,11 +770,12 @@ class BusinessesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BusinessResponseWrapper),
-      ) as BusinessResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(BusinessResponseWrapper),
+            ) as BusinessResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -753,7 +812,8 @@ class BusinessesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BusinessResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BusinessResponseWrapper>> postBusinessesBusinessIdLocationsSync({ 
+  Future<Response<BusinessResponseWrapper>>
+      postBusinessesBusinessIdLocationsSync({
     required String businessId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -762,7 +822,10 @@ class BusinessesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/businesses/{businessId}/locations/sync'.replaceAll('{' r'businessId' '}', encodeQueryParameter(_serializers, businessId, const FullType(String)).toString());
+    final _path = r'/businesses/{businessId}/locations/sync'.replaceAll(
+        '{' r'businessId' '}',
+        encodeQueryParameter(_serializers, businessId, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -775,7 +838,8 @@ class BusinessesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -799,11 +863,12 @@ class BusinessesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BusinessResponseWrapper),
-      ) as BusinessResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(BusinessResponseWrapper),
+            ) as BusinessResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -842,7 +907,7 @@ class BusinessesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BusinessResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BusinessResponseWrapper>> postBusinessesIdMigrate({ 
+  Future<Response<BusinessResponseWrapper>> postBusinessesIdMigrate({
     required String id,
     required String targetSalesPartnerId,
     String? targetWhiteLabelIdentifier,
@@ -853,7 +918,10 @@ class BusinessesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/businesses/{id}/migrate'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/businesses/{id}/migrate'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -866,7 +934,8 @@ class BusinessesApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -879,8 +948,11 @@ class BusinessesApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'targetSalesPartnerId': encodeQueryParameter(_serializers, targetSalesPartnerId, const FullType(String)),
-      if (targetWhiteLabelIdentifier != null) r'targetWhiteLabelIdentifier': encodeQueryParameter(_serializers, targetWhiteLabelIdentifier, const FullType(String)),
+      r'targetSalesPartnerId': encodeQueryParameter(
+          _serializers, targetSalesPartnerId, const FullType(String)),
+      if (targetWhiteLabelIdentifier != null)
+        r'targetWhiteLabelIdentifier': encodeQueryParameter(
+            _serializers, targetWhiteLabelIdentifier, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -896,11 +968,12 @@ class BusinessesApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BusinessResponseWrapper),
-      ) as BusinessResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(BusinessResponseWrapper),
+            ) as BusinessResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -922,5 +995,4 @@ class BusinessesApi {
       extra: _response.extra,
     );
   }
-
 }

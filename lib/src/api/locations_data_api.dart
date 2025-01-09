@@ -30,14 +30,13 @@ import 'package:openapi/src/model/location_wrapper.dart';
 import 'package:openapi/src/model/lodging_field_response_wrapper.dart';
 import 'package:openapi/src/model/postcodes_response_wrapper.dart';
 import 'package:openapi/src/model/provinces_response_wrapper.dart';
-import 'package:openapi/src/model/response.dart';
+import 'package:openapi/src/model/response.dart' as openApi;
 import 'package:openapi/src/model/tracking_events_response_wrapper.dart';
 import 'package:openapi/src/model/update_response_wrapper.dart';
 import 'package:openapi/src/model/visibility_index_wrapper.dart';
 import 'package:openapi/src/model/visibility_indexes_wrapper.dart';
 
 class LocationsDataApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -58,7 +57,7 @@ class LocationsDataApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DeleteResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DeleteResponseWrapper>> deleteLocations({ 
+  Future<Response<DeleteResponseWrapper>> deleteLocations({
     required BuiltList<String> locations,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -80,7 +79,8 @@ class LocationsDataApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -93,7 +93,12 @@ class LocationsDataApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'locations': encodeCollectionQueryParameter<String>(_serializers, locations, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
+      r'locations': encodeCollectionQueryParameter<String>(
+        _serializers,
+        locations,
+        const FullType(BuiltList, [FullType(String)]),
+        format: ListFormat.multi,
+      ),
     };
 
     final _response = await _dio.request<Object>(
@@ -109,11 +114,12 @@ class LocationsDataApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DeleteResponseWrapper),
-      ) as DeleteResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DeleteResponseWrapper),
+            ) as DeleteResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -171,7 +177,7 @@ class LocationsDataApi {
   /// * [syncNeeded] - If set to true, filter locations that have been updated but did not start a sync yet
   /// * [syncStarted] - If set to true, filter locations that started a sync. If set to false, filter locations that never synced
   /// * [temporarilyClosed] - Filter for locations that are currently set to temporarily closed (True) or are not temporarily closed (False)
-  /// * [body] 
+  /// * [body]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -181,7 +187,7 @@ class LocationsDataApi {
   ///
   /// Returns a [Future] containing a [Response] with a [LocationSearchResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LocationSearchResponseWrapper>> getLocations({ 
+  Future<Response<LocationSearchResponseWrapper>> getLocations({
     String? businessId,
     BuiltList<String>? businessIds,
     BuiltList<String>? cities,
@@ -234,7 +240,8 @@ class LocationsDataApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -247,47 +254,155 @@ class LocationsDataApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (businessId != null) r'businessId': encodeQueryParameter(_serializers, businessId, const FullType(String)),
-      if (businessIds != null) r'businessIds': encodeCollectionQueryParameter<String>(_serializers, businessIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (cities != null) r'cities': encodeCollectionQueryParameter<String>(_serializers, cities, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (classification != null) r'classification': encodeQueryParameter(_serializers, classification, const FullType(String)),
-      if (countries != null) r'countries': encodeCollectionQueryParameter<String>(_serializers, countries, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (endDateMax != null) r'endDateMax': encodeQueryParameter(_serializers, endDateMax, const FullType(DateTime)),
-      if (endDateMin != null) r'endDateMin': encodeQueryParameter(_serializers, endDateMin, const FullType(DateTime)),
-      if (excludedLocationIds != null) r'excludedLocationIds': encodeCollectionQueryParameter<String>(_serializers, excludedLocationIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (facebookStatus != null) r'facebookStatus': encodeQueryParameter(_serializers, facebookStatus, const FullType(String)),
-      if (fieldMask != null) r'fieldMask': encodeQueryParameter(_serializers, fieldMask, const FullType(String)),
-      if (googleStatus != null) r'googleStatus': encodeQueryParameter(_serializers, googleStatus, const FullType(String)),
-      if (groupIds != null) r'groupIds': encodeCollectionQueryParameter<String>(_serializers, groupIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (groups != null) r'groups': encodeCollectionQueryParameter<String>(_serializers, groups, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (identifier != null) r'identifier': encodeQueryParameter(_serializers, identifier, const FullType(String)),
-      if (labels != null) r'labels': encodeCollectionQueryParameter<String>(_serializers, labels, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (locationIds != null) r'locationIds': encodeCollectionQueryParameter<String>(_serializers, locationIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (max != null) r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
-      if (missingDirectoryField != null) r'missingDirectoryField': encodeCollectionQueryParameter<String>(_serializers, missingDirectoryField, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (needsReview != null) r'needsReview': encodeQueryParameter(_serializers, needsReview, const FullType(bool)),
-      if (offset != null) r'offset': encodeQueryParameter(_serializers, offset, const FullType(int)),
-      if (order != null) r'order': encodeQueryParameter(_serializers, order, const FullType(String)),
-      if (postcodes != null) r'postcodes': encodeCollectionQueryParameter<String>(_serializers, postcodes, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (provinces != null) r'provinces': encodeCollectionQueryParameter<String>(_serializers, provinces, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (query != null) r'query': encodeQueryParameter(_serializers, query, const FullType(String)),
-      if (queryFields != null) r'queryFields': encodeCollectionQueryParameter<String>(_serializers, queryFields, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (selectAll != null) r'selectAll': encodeQueryParameter(_serializers, selectAll, const FullType(bool)),
-      if (sort != null) r'sort': encodeQueryParameter(_serializers, sort, const FullType(String)),
-      if (status != null) r'status': encodeQueryParameter(_serializers, status, const FullType(String)),
-      if (syncNeeded != null) r'syncNeeded': encodeQueryParameter(_serializers, syncNeeded, const FullType(bool)),
-      if (syncStarted != null) r'syncStarted': encodeQueryParameter(_serializers, syncStarted, const FullType(bool)),
-      if (temporarilyClosed != null) r'temporarilyClosed': encodeQueryParameter(_serializers, temporarilyClosed, const FullType(bool)),
+      if (businessId != null)
+        r'businessId': encodeQueryParameter(
+            _serializers, businessId, const FullType(String)),
+      if (businessIds != null)
+        r'businessIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          businessIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (cities != null)
+        r'cities': encodeCollectionQueryParameter<String>(
+          _serializers,
+          cities,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (classification != null)
+        r'classification': encodeQueryParameter(
+            _serializers, classification, const FullType(String)),
+      if (countries != null)
+        r'countries': encodeCollectionQueryParameter<String>(
+          _serializers,
+          countries,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (endDateMax != null)
+        r'endDateMax': encodeQueryParameter(
+            _serializers, endDateMax, const FullType(DateTime)),
+      if (endDateMin != null)
+        r'endDateMin': encodeQueryParameter(
+            _serializers, endDateMin, const FullType(DateTime)),
+      if (excludedLocationIds != null)
+        r'excludedLocationIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          excludedLocationIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (facebookStatus != null)
+        r'facebookStatus': encodeQueryParameter(
+            _serializers, facebookStatus, const FullType(String)),
+      if (fieldMask != null)
+        r'fieldMask': encodeQueryParameter(
+            _serializers, fieldMask, const FullType(String)),
+      if (googleStatus != null)
+        r'googleStatus': encodeQueryParameter(
+            _serializers, googleStatus, const FullType(String)),
+      if (groupIds != null)
+        r'groupIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          groupIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (groups != null)
+        r'groups': encodeCollectionQueryParameter<String>(
+          _serializers,
+          groups,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (identifier != null)
+        r'identifier': encodeQueryParameter(
+            _serializers, identifier, const FullType(String)),
+      if (labels != null)
+        r'labels': encodeCollectionQueryParameter<String>(
+          _serializers,
+          labels,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (locationIds != null)
+        r'locationIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          locationIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (max != null)
+        r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
+      if (missingDirectoryField != null)
+        r'missingDirectoryField': encodeCollectionQueryParameter<String>(
+          _serializers,
+          missingDirectoryField,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (needsReview != null)
+        r'needsReview': encodeQueryParameter(
+            _serializers, needsReview, const FullType(bool)),
+      if (offset != null)
+        r'offset':
+            encodeQueryParameter(_serializers, offset, const FullType(int)),
+      if (order != null)
+        r'order':
+            encodeQueryParameter(_serializers, order, const FullType(String)),
+      if (postcodes != null)
+        r'postcodes': encodeCollectionQueryParameter<String>(
+          _serializers,
+          postcodes,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (provinces != null)
+        r'provinces': encodeCollectionQueryParameter<String>(
+          _serializers,
+          provinces,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (query != null)
+        r'query':
+            encodeQueryParameter(_serializers, query, const FullType(String)),
+      if (queryFields != null)
+        r'queryFields': encodeCollectionQueryParameter<String>(
+          _serializers,
+          queryFields,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (selectAll != null)
+        r'selectAll':
+            encodeQueryParameter(_serializers, selectAll, const FullType(bool)),
+      if (sort != null)
+        r'sort':
+            encodeQueryParameter(_serializers, sort, const FullType(String)),
+      if (status != null)
+        r'status':
+            encodeQueryParameter(_serializers, status, const FullType(String)),
+      if (syncNeeded != null)
+        r'syncNeeded': encodeQueryParameter(
+            _serializers, syncNeeded, const FullType(bool)),
+      if (syncStarted != null)
+        r'syncStarted': encodeQueryParameter(
+            _serializers, syncStarted, const FullType(bool)),
+      if (temporarilyClosed != null)
+        r'temporarilyClosed': encodeQueryParameter(
+            _serializers, temporarilyClosed, const FullType(bool)),
     };
 
     dynamic _bodyData;
 
     try {
       _bodyData = body;
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
           queryParameters: _queryParameters,
@@ -312,11 +427,12 @@ class LocationsDataApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LocationSearchResponseWrapper),
-      ) as LocationSearchResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LocationSearchResponseWrapper),
+            ) as LocationSearchResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -352,7 +468,8 @@ class LocationsDataApi {
   ///
   /// Returns a [Future] containing a [Response] with a [LodgingFieldResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LodgingFieldResponseWrapper>> getLocationsAvailableLodgingFields({ 
+  Future<Response<LodgingFieldResponseWrapper>>
+      getLocationsAvailableLodgingFields({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -373,7 +490,8 @@ class LocationsDataApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -397,11 +515,12 @@ class LocationsDataApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LodgingFieldResponseWrapper),
-      ) as LodgingFieldResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LodgingFieldResponseWrapper),
+            ) as LodgingFieldResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -445,7 +564,7 @@ class LocationsDataApi {
   ///
   /// Returns a [Future] containing a [Response] with a [CitiesResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CitiesResponseWrapper>> getLocationsCities({ 
+  Future<Response<CitiesResponseWrapper>> getLocationsCities({
     BuiltList<String>? locationIds,
     BuiltList<String>? businessIds,
     BuiltList<String>? postcodes,
@@ -474,7 +593,8 @@ class LocationsDataApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -487,14 +607,49 @@ class LocationsDataApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (locationIds != null) r'locationIds': encodeCollectionQueryParameter<String>(_serializers, locationIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (businessIds != null) r'businessIds': encodeCollectionQueryParameter<String>(_serializers, businessIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (postcodes != null) r'postcodes': encodeCollectionQueryParameter<String>(_serializers, postcodes, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (countries != null) r'countries': encodeCollectionQueryParameter<String>(_serializers, countries, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (provinces != null) r'provinces': encodeCollectionQueryParameter<String>(_serializers, provinces, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (query != null) r'query': encodeQueryParameter(_serializers, query, const FullType(String)),
-      if (max != null) r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
-      if (offset != null) r'offset': encodeQueryParameter(_serializers, offset, const FullType(int)),
+      if (locationIds != null)
+        r'locationIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          locationIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (businessIds != null)
+        r'businessIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          businessIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (postcodes != null)
+        r'postcodes': encodeCollectionQueryParameter<String>(
+          _serializers,
+          postcodes,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (countries != null)
+        r'countries': encodeCollectionQueryParameter<String>(
+          _serializers,
+          countries,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (provinces != null)
+        r'provinces': encodeCollectionQueryParameter<String>(
+          _serializers,
+          provinces,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (query != null)
+        r'query':
+            encodeQueryParameter(_serializers, query, const FullType(String)),
+      if (max != null)
+        r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
+      if (offset != null)
+        r'offset':
+            encodeQueryParameter(_serializers, offset, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -510,11 +665,12 @@ class LocationsDataApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(CitiesResponseWrapper),
-      ) as CitiesResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(CitiesResponseWrapper),
+            ) as CitiesResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -553,7 +709,7 @@ class LocationsDataApi {
   ///
   /// Returns a [Future] containing a [Response] with a [CountriesResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CountriesResponseWrapper>> getLocationsCountries({ 
+  Future<Response<CountriesResponseWrapper>> getLocationsCountries({
     required String businessIds,
     int? max,
     int? offset,
@@ -577,7 +733,8 @@ class LocationsDataApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -590,9 +747,13 @@ class LocationsDataApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'businessIds': encodeQueryParameter(_serializers, businessIds, const FullType(String)),
-      if (max != null) r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
-      if (offset != null) r'offset': encodeQueryParameter(_serializers, offset, const FullType(int)),
+      r'businessIds': encodeQueryParameter(
+          _serializers, businessIds, const FullType(String)),
+      if (max != null)
+        r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
+      if (offset != null)
+        r'offset':
+            encodeQueryParameter(_serializers, offset, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -608,11 +769,12 @@ class LocationsDataApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(CountriesResponseWrapper),
-      ) as CountriesResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(CountriesResponseWrapper),
+            ) as CountriesResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -648,7 +810,7 @@ class LocationsDataApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DirectoriesResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DirectoriesResponseWrapper>> getLocationsDirectories({ 
+  Future<Response<DirectoriesResponseWrapper>> getLocationsDirectories({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -669,7 +831,8 @@ class LocationsDataApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -693,11 +856,12 @@ class LocationsDataApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DirectoriesResponseWrapper),
-      ) as DirectoriesResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DirectoriesResponseWrapper),
+            ) as DirectoriesResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -734,7 +898,7 @@ class LocationsDataApi {
   ///
   /// Returns a [Future] containing a [Response] with a [LocationResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LocationResponseWrapper>> getLocationsId({ 
+  Future<Response<LocationResponseWrapper>> getLocationsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -743,7 +907,10 @@ class LocationsDataApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/locations/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/locations/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -756,7 +923,8 @@ class LocationsDataApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -780,11 +948,12 @@ class LocationsDataApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LocationResponseWrapper),
-      ) as LocationResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LocationResponseWrapper),
+            ) as LocationResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -822,7 +991,7 @@ class LocationsDataApi {
   /// Returns a [Future] containing a [Response] with a [LocationDashboardResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
   @Deprecated('This operation has been deprecated')
-  Future<Response<LocationDashboardResponseWrapper>> getLocationsIdDashboard({ 
+  Future<Response<LocationDashboardResponseWrapper>> getLocationsIdDashboard({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -831,7 +1000,10 @@ class LocationsDataApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/locations/{id}/dashboard'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/locations/{id}/dashboard'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -844,7 +1016,8 @@ class LocationsDataApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -868,11 +1041,12 @@ class LocationsDataApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LocationDashboardResponseWrapper),
-      ) as LocationDashboardResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LocationDashboardResponseWrapper),
+            ) as LocationDashboardResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -910,7 +1084,7 @@ class LocationsDataApi {
   /// Returns a [Future] containing a [Response] with a [InboxResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
   @Deprecated('This operation has been deprecated')
-  Future<Response<InboxResponseWrapper>> getLocationsIdDatapoints({ 
+  Future<Response<InboxResponseWrapper>> getLocationsIdDatapoints({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -919,7 +1093,10 @@ class LocationsDataApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/locations/{id}/datapoints'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/locations/{id}/datapoints'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -932,7 +1109,8 @@ class LocationsDataApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -956,11 +1134,12 @@ class LocationsDataApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(InboxResponseWrapper),
-      ) as InboxResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(InboxResponseWrapper),
+            ) as InboxResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1005,7 +1184,8 @@ class LocationsDataApi {
   /// Returns a [Future] containing a [Response] with a [DatapointStatisticsResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
   @Deprecated('This operation has been deprecated')
-  Future<Response<DatapointStatisticsResponseWrapper>> getLocationsIdDatapointsStatistics({ 
+  Future<Response<DatapointStatisticsResponseWrapper>>
+      getLocationsIdDatapointsStatistics({
     required String id,
     String? dataPointTypes,
     String? directoryTypes,
@@ -1021,7 +1201,10 @@ class LocationsDataApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/locations/{id}/datapoints/statistics'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/locations/{id}/datapoints/statistics'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -1034,7 +1217,8 @@ class LocationsDataApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -1047,13 +1231,31 @@ class LocationsDataApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (dataPointTypes != null) r'dataPointTypes': encodeQueryParameter(_serializers, dataPointTypes, const FullType(String)),
-      if (directoryTypes != null) r'directoryTypes': encodeQueryParameter(_serializers, directoryTypes, const FullType(String)),
-      if (ratings != null) r'ratings': encodeCollectionQueryParameter<String>(_serializers, ratings, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (minActionDate != null) r'minActionDate': encodeQueryParameter(_serializers, minActionDate, const FullType(String)),
-      if (maxActionDate != null) r'maxActionDate': encodeQueryParameter(_serializers, maxActionDate, const FullType(String)),
-      if (minThreadActionDate != null) r'minThreadActionDate': encodeQueryParameter(_serializers, minThreadActionDate, const FullType(String)),
-      if (maxThreadActionDate != null) r'maxThreadActionDate': encodeQueryParameter(_serializers, maxThreadActionDate, const FullType(String)),
+      if (dataPointTypes != null)
+        r'dataPointTypes': encodeQueryParameter(
+            _serializers, dataPointTypes, const FullType(String)),
+      if (directoryTypes != null)
+        r'directoryTypes': encodeQueryParameter(
+            _serializers, directoryTypes, const FullType(String)),
+      if (ratings != null)
+        r'ratings': encodeCollectionQueryParameter<String>(
+          _serializers,
+          ratings,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (minActionDate != null)
+        r'minActionDate': encodeQueryParameter(
+            _serializers, minActionDate, const FullType(String)),
+      if (maxActionDate != null)
+        r'maxActionDate': encodeQueryParameter(
+            _serializers, maxActionDate, const FullType(String)),
+      if (minThreadActionDate != null)
+        r'minThreadActionDate': encodeQueryParameter(
+            _serializers, minThreadActionDate, const FullType(String)),
+      if (maxThreadActionDate != null)
+        r'maxThreadActionDate': encodeQueryParameter(
+            _serializers, maxThreadActionDate, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -1069,11 +1271,12 @@ class LocationsDataApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DatapointStatisticsResponseWrapper),
-      ) as DatapointStatisticsResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DatapointStatisticsResponseWrapper),
+            ) as DatapointStatisticsResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1111,7 +1314,7 @@ class LocationsDataApi {
   ///
   /// Returns a [Future] containing a [Response] with a [VisibilityIndexWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<VisibilityIndexWrapper>> getLocationsIdVisibilityIndexes({ 
+  Future<Response<VisibilityIndexWrapper>> getLocationsIdVisibilityIndexes({
     required String id,
     String? days,
     CancelToken? cancelToken,
@@ -1121,7 +1324,10 @@ class LocationsDataApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/locations/{id}/visibility-indexes'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/locations/{id}/visibility-indexes'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -1134,7 +1340,8 @@ class LocationsDataApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -1147,7 +1354,9 @@ class LocationsDataApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (days != null) r'days': encodeQueryParameter(_serializers, days, const FullType(String)),
+      if (days != null)
+        r'days':
+            encodeQueryParameter(_serializers, days, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -1163,11 +1372,12 @@ class LocationsDataApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(VisibilityIndexWrapper),
-      ) as VisibilityIndexWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(VisibilityIndexWrapper),
+            ) as VisibilityIndexWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1206,7 +1416,8 @@ class LocationsDataApi {
   ///
   /// Returns a [Future] containing a [Response] with a [VisibilityIndexesWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<VisibilityIndexesWrapper>> getLocationsIdVisibilityIndexesInteresting({ 
+  Future<Response<VisibilityIndexesWrapper>>
+      getLocationsIdVisibilityIndexesInteresting({
     required String id,
     Date? startDate,
     Date? endDate,
@@ -1217,7 +1428,10 @@ class LocationsDataApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/locations/{id}/visibility-indexes/interesting'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/locations/{id}/visibility-indexes/interesting'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -1230,7 +1444,8 @@ class LocationsDataApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -1243,8 +1458,12 @@ class LocationsDataApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (startDate != null) r'startDate': encodeQueryParameter(_serializers, startDate, const FullType(Date)),
-      if (endDate != null) r'endDate': encodeQueryParameter(_serializers, endDate, const FullType(Date)),
+      if (startDate != null)
+        r'startDate':
+            encodeQueryParameter(_serializers, startDate, const FullType(Date)),
+      if (endDate != null)
+        r'endDate':
+            encodeQueryParameter(_serializers, endDate, const FullType(Date)),
     };
 
     final _response = await _dio.request<Object>(
@@ -1260,11 +1479,12 @@ class LocationsDataApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(VisibilityIndexesWrapper),
-      ) as VisibilityIndexesWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(VisibilityIndexesWrapper),
+            ) as VisibilityIndexesWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1303,7 +1523,7 @@ class LocationsDataApi {
   ///
   /// Returns a [Future] containing a [Response] with a [KeywordsWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<KeywordsWrapper>> getLocationsKeywords({ 
+  Future<Response<KeywordsWrapper>> getLocationsKeywords({
     BuiltList<String>? locationIds,
     BuiltList<String>? businessIds,
     BuiltList<String>? excludedLocationIds,
@@ -1327,7 +1547,8 @@ class LocationsDataApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -1340,9 +1561,27 @@ class LocationsDataApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (locationIds != null) r'locationIds': encodeCollectionQueryParameter<String>(_serializers, locationIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (businessIds != null) r'businessIds': encodeCollectionQueryParameter<String>(_serializers, businessIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (excludedLocationIds != null) r'excludedLocationIds': encodeCollectionQueryParameter<String>(_serializers, excludedLocationIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
+      if (locationIds != null)
+        r'locationIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          locationIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (businessIds != null)
+        r'businessIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          businessIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (excludedLocationIds != null)
+        r'excludedLocationIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          excludedLocationIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1358,11 +1597,12 @@ class LocationsDataApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(KeywordsWrapper),
-      ) as KeywordsWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(KeywordsWrapper),
+            ) as KeywordsWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1398,7 +1638,7 @@ class LocationsDataApi {
   ///
   /// Returns a [Future] containing a [Response] with a [LabelsResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LabelsResponseWrapper>> getLocationsLabels({ 
+  Future<Response<LabelsResponseWrapper>> getLocationsLabels({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1419,7 +1659,8 @@ class LocationsDataApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -1443,11 +1684,12 @@ class LocationsDataApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LabelsResponseWrapper),
-      ) as LabelsResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LabelsResponseWrapper),
+            ) as LabelsResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1491,7 +1733,7 @@ class LocationsDataApi {
   ///
   /// Returns a [Future] containing a [Response] with a [PostcodesResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<PostcodesResponseWrapper>> getLocationsPostcodes({ 
+  Future<Response<PostcodesResponseWrapper>> getLocationsPostcodes({
     BuiltList<String>? locationIds,
     BuiltList<String>? businessIds,
     BuiltList<String>? countries,
@@ -1520,7 +1762,8 @@ class LocationsDataApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -1533,14 +1776,49 @@ class LocationsDataApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (locationIds != null) r'locationIds': encodeCollectionQueryParameter<String>(_serializers, locationIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (businessIds != null) r'businessIds': encodeCollectionQueryParameter<String>(_serializers, businessIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (countries != null) r'countries': encodeCollectionQueryParameter<String>(_serializers, countries, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (provinces != null) r'provinces': encodeCollectionQueryParameter<String>(_serializers, provinces, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (cities != null) r'cities': encodeCollectionQueryParameter<String>(_serializers, cities, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (query != null) r'query': encodeQueryParameter(_serializers, query, const FullType(String)),
-      if (max != null) r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
-      if (offset != null) r'offset': encodeQueryParameter(_serializers, offset, const FullType(int)),
+      if (locationIds != null)
+        r'locationIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          locationIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (businessIds != null)
+        r'businessIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          businessIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (countries != null)
+        r'countries': encodeCollectionQueryParameter<String>(
+          _serializers,
+          countries,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (provinces != null)
+        r'provinces': encodeCollectionQueryParameter<String>(
+          _serializers,
+          provinces,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (cities != null)
+        r'cities': encodeCollectionQueryParameter<String>(
+          _serializers,
+          cities,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (query != null)
+        r'query':
+            encodeQueryParameter(_serializers, query, const FullType(String)),
+      if (max != null)
+        r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
+      if (offset != null)
+        r'offset':
+            encodeQueryParameter(_serializers, offset, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -1556,11 +1834,12 @@ class LocationsDataApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(PostcodesResponseWrapper),
-      ) as PostcodesResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(PostcodesResponseWrapper),
+            ) as PostcodesResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1601,7 +1880,7 @@ class LocationsDataApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ProvincesResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ProvincesResponseWrapper>> getLocationsProvinces({ 
+  Future<Response<ProvincesResponseWrapper>> getLocationsProvinces({
     BuiltList<String>? businessIds,
     BuiltList<String>? countries,
     String? query,
@@ -1627,7 +1906,8 @@ class LocationsDataApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -1640,11 +1920,28 @@ class LocationsDataApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (businessIds != null) r'businessIds': encodeCollectionQueryParameter<String>(_serializers, businessIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (countries != null) r'countries': encodeCollectionQueryParameter<String>(_serializers, countries, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (query != null) r'query': encodeQueryParameter(_serializers, query, const FullType(String)),
-      if (max != null) r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
-      if (offset != null) r'offset': encodeQueryParameter(_serializers, offset, const FullType(int)),
+      if (businessIds != null)
+        r'businessIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          businessIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (countries != null)
+        r'countries': encodeCollectionQueryParameter<String>(
+          _serializers,
+          countries,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (query != null)
+        r'query':
+            encodeQueryParameter(_serializers, query, const FullType(String)),
+      if (max != null)
+        r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
+      if (offset != null)
+        r'offset':
+            encodeQueryParameter(_serializers, offset, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -1660,11 +1957,12 @@ class LocationsDataApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ProvincesResponseWrapper),
-      ) as ProvincesResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ProvincesResponseWrapper),
+            ) as ProvincesResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1700,7 +1998,7 @@ class LocationsDataApi {
   ///
   /// Returns a [Future] containing a [Response] with a [LocationStatisticsResponse] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LocationStatisticsResponse>> getLocationsStatistics({ 
+  Future<Response<LocationStatisticsResponse>> getLocationsStatistics({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1721,7 +2019,8 @@ class LocationsDataApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -1745,11 +2044,12 @@ class LocationsDataApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LocationStatisticsResponse),
-      ) as LocationStatisticsResponse;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LocationStatisticsResponse),
+            ) as LocationStatisticsResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1787,7 +2087,7 @@ class LocationsDataApi {
   ///
   /// Returns a [Future] containing a [Response] with a [TrackingEventsResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<TrackingEventsResponseWrapper>> getLocationsTrackingEvents({ 
+  Future<Response<TrackingEventsResponseWrapper>> getLocationsTrackingEvents({
     int? max,
     int? offset,
     CancelToken? cancelToken,
@@ -1810,7 +2110,8 @@ class LocationsDataApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -1823,8 +2124,11 @@ class LocationsDataApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (max != null) r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
-      if (offset != null) r'offset': encodeQueryParameter(_serializers, offset, const FullType(int)),
+      if (max != null)
+        r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
+      if (offset != null)
+        r'offset':
+            encodeQueryParameter(_serializers, offset, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -1840,11 +2144,12 @@ class LocationsDataApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(TrackingEventsResponseWrapper),
-      ) as TrackingEventsResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(TrackingEventsResponseWrapper),
+            ) as TrackingEventsResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1881,7 +2186,7 @@ class LocationsDataApi {
   ///
   /// Returns a [Future] containing a [Response] with a [UpdateResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<UpdateResponseWrapper>> patchLocations({ 
+  Future<Response<UpdateResponseWrapper>> patchLocations({
     required BuiltList<Location> location,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1903,7 +2208,8 @@ class LocationsDataApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -1920,10 +2226,9 @@ class LocationsDataApi {
     try {
       const _type = FullType(BuiltList, [FullType(Location)]);
       _bodyData = _serializers.serialize(location, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -1946,11 +2251,12 @@ class LocationsDataApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(UpdateResponseWrapper),
-      ) as UpdateResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(UpdateResponseWrapper),
+            ) as UpdateResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1988,7 +2294,7 @@ class LocationsDataApi {
   ///
   /// Returns a [Future] containing a [Response] with a [LocationWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LocationWrapper>> patchLocationsId({ 
+  Future<Response<LocationWrapper>> patchLocationsId({
     required String id,
     required Location location,
     CancelToken? cancelToken,
@@ -1998,7 +2304,10 @@ class LocationsDataApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/locations/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/locations/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -2011,7 +2320,8 @@ class LocationsDataApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -2029,10 +2339,9 @@ class LocationsDataApi {
     try {
       const _type = FullType(Location);
       _bodyData = _serializers.serialize(location, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -2055,11 +2364,12 @@ class LocationsDataApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LocationWrapper),
-      ) as LocationWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LocationWrapper),
+            ) as LocationWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2099,7 +2409,7 @@ class LocationsDataApi {
   ///
   /// Returns a [Future] containing a [Response] with a [EvDynamicDataWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<EvDynamicDataWrapper>> patchLocationsIdEvDataUid({ 
+  Future<Response<EvDynamicDataWrapper>> patchLocationsIdEvDataUid({
     required String id,
     required String uid,
     required String status,
@@ -2111,7 +2421,15 @@ class LocationsDataApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/locations/{id}/ev-data/{uid}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString()).replaceAll('{' r'uid' '}', encodeQueryParameter(_serializers, uid, const FullType(String)).toString());
+    final _path = r'/locations/{id}/ev-data/{uid}'
+        .replaceAll(
+            '{' r'id' '}',
+            encodeQueryParameter(_serializers, id, const FullType(String))
+                .toString())
+        .replaceAll(
+            '{' r'uid' '}',
+            encodeQueryParameter(_serializers, uid, const FullType(String))
+                .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -2124,7 +2442,8 @@ class LocationsDataApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -2137,17 +2456,17 @@ class LocationsDataApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'status': encodeQueryParameter(_serializers, status, const FullType(String)),
+      r'status':
+          encodeQueryParameter(_serializers, status, const FullType(String)),
     };
 
     dynamic _bodyData;
 
     try {
       _bodyData = body;
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
           queryParameters: _queryParameters,
@@ -2172,11 +2491,12 @@ class LocationsDataApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(EvDynamicDataWrapper),
-      ) as EvDynamicDataWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(EvDynamicDataWrapper),
+            ) as EvDynamicDataWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2213,7 +2533,7 @@ class LocationsDataApi {
   ///
   /// Returns a [Future] containing a [Response] with a [LocationWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LocationWrapper>> postLocations({ 
+  Future<Response<LocationWrapper>> postLocations({
     required Location location,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -2235,7 +2555,8 @@ class LocationsDataApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -2253,10 +2574,9 @@ class LocationsDataApi {
     try {
       const _type = FullType(Location);
       _bodyData = _serializers.serialize(location, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -2279,11 +2599,12 @@ class LocationsDataApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LocationWrapper),
-      ) as LocationWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LocationWrapper),
+            ) as LocationWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2320,7 +2641,7 @@ class LocationsDataApi {
   ///
   /// Returns a [Future] containing a [Response] with a [LocationWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LocationWrapper>> postLocationsIdSync({ 
+  Future<Response<LocationWrapper>> postLocationsIdSync({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -2329,7 +2650,10 @@ class LocationsDataApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/locations/{id}/sync'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/locations/{id}/sync'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -2342,7 +2666,8 @@ class LocationsDataApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -2366,11 +2691,12 @@ class LocationsDataApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LocationWrapper),
-      ) as LocationWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LocationWrapper),
+            ) as LocationWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2407,7 +2733,7 @@ class LocationsDataApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Response>> postLocationsSync({ 
+  Future<Response<openApi.Response>> postLocationsSync({
     required BuiltList<String> locationIds,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -2429,7 +2755,8 @@ class LocationsDataApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -2442,7 +2769,12 @@ class LocationsDataApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'locationIds': encodeCollectionQueryParameter<String>(_serializers, locationIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
+      r'locationIds': encodeCollectionQueryParameter<String>(
+        _serializers,
+        locationIds,
+        const FullType(BuiltList, [FullType(String)]),
+        format: ListFormat.multi,
+      ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2454,15 +2786,16 @@ class LocationsDataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Response? _responseData;
+    openApi.Response? _responseData;
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(Response),
-      ) as Response;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(openApi.Response),
+            ) as openApi.Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2473,7 +2806,7 @@ class LocationsDataApi {
       );
     }
 
-    return Response<Response>(
+    return Response<openApi.Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -2484,5 +2817,4 @@ class LocationsDataApi {
       extra: _response.extra,
     );
   }
-
 }

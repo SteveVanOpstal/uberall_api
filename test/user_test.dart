@@ -147,8 +147,5 @@ void main() {
     test('to test the property `whitelabelInformationIdentifier`', () async {
       // TODO
     });
-
-
   });
-
 }

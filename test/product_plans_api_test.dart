@@ -11,7 +11,6 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for ProductPlansApi
 void main() {
   // final instance = ProductPlansApi();
@@ -43,6 +42,5 @@ void main() {
     test('test postProductPlans', () async {
       // TODO
     });
-
   });
 }

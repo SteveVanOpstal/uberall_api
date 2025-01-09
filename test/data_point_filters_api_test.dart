@@ -11,7 +11,6 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for DataPointFiltersApi
 void main() {
   // final instance = DataPointFiltersApi();
@@ -88,6 +87,5 @@ void main() {
     test('test postDataPointsFiltersIdSubscription', () async {
       // TODO
     });
-
   });
 }

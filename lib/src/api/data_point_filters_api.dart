@@ -16,7 +16,6 @@ import 'package:openapi/src/model/filters_response_wrapper.dart';
 import 'package:openapi/src/model/success_response_wrapper.dart';
 
 class DataPointFiltersApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -38,7 +37,7 @@ class DataPointFiltersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SuccessResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SuccessResponseWrapper>> deleteDataPointsFiltersId({ 
+  Future<Response<SuccessResponseWrapper>> deleteDataPointsFiltersId({
     required String id,
     int? userId,
     CancelToken? cancelToken,
@@ -48,7 +47,10 @@ class DataPointFiltersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/data-points/filters/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/data-points/filters/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -61,7 +63,8 @@ class DataPointFiltersApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -74,7 +77,9 @@ class DataPointFiltersApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (userId != null) r'userId': encodeQueryParameter(_serializers, userId, const FullType(int)),
+      if (userId != null)
+        r'userId':
+            encodeQueryParameter(_serializers, userId, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -90,11 +95,12 @@ class DataPointFiltersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SuccessResponseWrapper),
-      ) as SuccessResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SuccessResponseWrapper),
+            ) as SuccessResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -132,7 +138,8 @@ class DataPointFiltersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DataPointFilterResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DataPointFilterResponseWrapper>> deleteDataPointsFiltersIdSubscription({ 
+  Future<Response<DataPointFilterResponseWrapper>>
+      deleteDataPointsFiltersIdSubscription({
     required String id,
     required int userId,
     CancelToken? cancelToken,
@@ -142,7 +149,10 @@ class DataPointFiltersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/data-points/filters/{id}/subscription'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/data-points/filters/{id}/subscription'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -155,7 +165,8 @@ class DataPointFiltersApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -168,7 +179,8 @@ class DataPointFiltersApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'userId': encodeQueryParameter(_serializers, userId, const FullType(int)),
+      r'userId':
+          encodeQueryParameter(_serializers, userId, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -184,11 +196,12 @@ class DataPointFiltersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DataPointFilterResponseWrapper),
-      ) as DataPointFilterResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DataPointFilterResponseWrapper),
+            ) as DataPointFilterResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -226,7 +239,7 @@ class DataPointFiltersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [FiltersResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<FiltersResponseWrapper>> getDataPointsFilters({ 
+  Future<Response<FiltersResponseWrapper>> getDataPointsFilters({
     String? locationIds,
     String? userId,
     CancelToken? cancelToken,
@@ -249,7 +262,8 @@ class DataPointFiltersApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -262,8 +276,12 @@ class DataPointFiltersApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (locationIds != null) r'locationIds': encodeQueryParameter(_serializers, locationIds, const FullType(String)),
-      if (userId != null) r'userId': encodeQueryParameter(_serializers, userId, const FullType(String)),
+      if (locationIds != null)
+        r'locationIds': encodeQueryParameter(
+            _serializers, locationIds, const FullType(String)),
+      if (userId != null)
+        r'userId':
+            encodeQueryParameter(_serializers, userId, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -279,11 +297,12 @@ class DataPointFiltersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(FiltersResponseWrapper),
-      ) as FiltersResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(FiltersResponseWrapper),
+            ) as FiltersResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -320,7 +339,7 @@ class DataPointFiltersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DataPointFilterResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DataPointFilterResponseWrapper>> getDataPointsFiltersId({ 
+  Future<Response<DataPointFilterResponseWrapper>> getDataPointsFiltersId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -329,7 +348,10 @@ class DataPointFiltersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/data-points/filters/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/data-points/filters/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -342,7 +364,8 @@ class DataPointFiltersApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -366,11 +389,12 @@ class DataPointFiltersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DataPointFilterResponseWrapper),
-      ) as DataPointFilterResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DataPointFilterResponseWrapper),
+            ) as DataPointFilterResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -407,7 +431,7 @@ class DataPointFiltersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DataPointFiltersResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DataPointFiltersResponseWrapper>> getDataPointsFiltersList({ 
+  Future<Response<DataPointFiltersResponseWrapper>> getDataPointsFiltersList({
     String? userId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -429,7 +453,8 @@ class DataPointFiltersApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -442,7 +467,9 @@ class DataPointFiltersApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (userId != null) r'userId': encodeQueryParameter(_serializers, userId, const FullType(String)),
+      if (userId != null)
+        r'userId':
+            encodeQueryParameter(_serializers, userId, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -458,11 +485,12 @@ class DataPointFiltersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DataPointFiltersResponseWrapper),
-      ) as DataPointFiltersResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DataPointFiltersResponseWrapper),
+            ) as DataPointFiltersResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -500,7 +528,7 @@ class DataPointFiltersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DataPointFilterResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DataPointFilterResponseWrapper>> patchDataPointsFiltersId({ 
+  Future<Response<DataPointFilterResponseWrapper>> patchDataPointsFiltersId({
     required String id,
     required DataPointFilter dataPointFilter,
     CancelToken? cancelToken,
@@ -510,7 +538,10 @@ class DataPointFiltersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/data-points/filters/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/data-points/filters/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -523,7 +554,8 @@ class DataPointFiltersApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -541,10 +573,9 @@ class DataPointFiltersApi {
     try {
       const _type = FullType(DataPointFilter);
       _bodyData = _serializers.serialize(dataPointFilter, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -567,11 +598,12 @@ class DataPointFiltersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DataPointFilterResponseWrapper),
-      ) as DataPointFilterResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DataPointFilterResponseWrapper),
+            ) as DataPointFilterResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -608,7 +640,7 @@ class DataPointFiltersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DataPointFilterResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DataPointFilterResponseWrapper>> postDataPointsFilters({ 
+  Future<Response<DataPointFilterResponseWrapper>> postDataPointsFilters({
     required DataPointFilter dataPointFilter,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -630,7 +662,8 @@ class DataPointFiltersApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -648,10 +681,9 @@ class DataPointFiltersApi {
     try {
       const _type = FullType(DataPointFilter);
       _bodyData = _serializers.serialize(dataPointFilter, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -674,11 +706,12 @@ class DataPointFiltersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DataPointFilterResponseWrapper),
-      ) as DataPointFilterResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DataPointFilterResponseWrapper),
+            ) as DataPointFilterResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -716,7 +749,8 @@ class DataPointFiltersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DataPointFilterResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DataPointFilterResponseWrapper>> postDataPointsFiltersIdSubscription({ 
+  Future<Response<DataPointFilterResponseWrapper>>
+      postDataPointsFiltersIdSubscription({
     required String id,
     required int userId,
     CancelToken? cancelToken,
@@ -726,7 +760,10 @@ class DataPointFiltersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/data-points/filters/{id}/subscription'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/data-points/filters/{id}/subscription'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -739,7 +776,8 @@ class DataPointFiltersApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -752,7 +790,8 @@ class DataPointFiltersApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'userId': encodeQueryParameter(_serializers, userId, const FullType(int)),
+      r'userId':
+          encodeQueryParameter(_serializers, userId, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -768,11 +807,12 @@ class DataPointFiltersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DataPointFilterResponseWrapper),
-      ) as DataPointFilterResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(DataPointFilterResponseWrapper),
+            ) as DataPointFilterResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -794,5 +834,4 @@ class DataPointFiltersApi {
       extra: _response.extra,
     );
   }
-
 }

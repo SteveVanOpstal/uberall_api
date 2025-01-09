@@ -37,8 +37,5 @@ void main() {
     test('to test the property `users`', () async {
       // TODO
     });
-
-
   });
-
 }

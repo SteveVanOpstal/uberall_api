@@ -13,9 +13,9 @@ part 'response.g.dart';
 /// Formatted Uberall Response
 ///
 /// Properties:
-/// * [status] 
+/// * [status]
 /// * [message] - (optional) Holds further information about the response
-/// * [errorCode] 
+/// * [errorCode]
 /// * [warnings] - (optional) Holds further warnings
 /// * [response] - The actual response object of the response, optional for non 200 responses
 @BuiltValue()
@@ -106,7 +106,9 @@ class _$ResponseSerializer implements PrimitiveSerializer<Response> {
     Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -186,102 +188,136 @@ class _$ResponseSerializer implements PrimitiveSerializer<Response> {
 }
 
 class ResponseStatusEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'SUCCESS')
   static const ResponseStatusEnum SUCCESS = _$responseStatusEnum_SUCCESS;
   @BuiltValueEnumConst(wireName: r'QUOTA_LIMIT_EXCEED')
-  static const ResponseStatusEnum QUOTA_LIMIT_EXCEED = _$responseStatusEnum_QUOTA_LIMIT_EXCEED;
+  static const ResponseStatusEnum QUOTA_LIMIT_EXCEED =
+      _$responseStatusEnum_QUOTA_LIMIT_EXCEED;
   @BuiltValueEnumConst(wireName: r'NOT_AUTHORIZED')
-  static const ResponseStatusEnum NOT_AUTHORIZED = _$responseStatusEnum_NOT_AUTHORIZED;
+  static const ResponseStatusEnum NOT_AUTHORIZED =
+      _$responseStatusEnum_NOT_AUTHORIZED;
   @BuiltValueEnumConst(wireName: r'FORBIDDEN')
   static const ResponseStatusEnum FORBIDDEN = _$responseStatusEnum_FORBIDDEN;
   @BuiltValueEnumConst(wireName: r'BAD_ACCESS_TOKEN')
-  static const ResponseStatusEnum BAD_ACCESS_TOKEN = _$responseStatusEnum_BAD_ACCESS_TOKEN;
+  static const ResponseStatusEnum BAD_ACCESS_TOKEN =
+      _$responseStatusEnum_BAD_ACCESS_TOKEN;
   @BuiltValueEnumConst(wireName: r'BAD_PRIVATE_KEY')
-  static const ResponseStatusEnum BAD_PRIVATE_KEY = _$responseStatusEnum_BAD_PRIVATE_KEY;
+  static const ResponseStatusEnum BAD_PRIVATE_KEY =
+      _$responseStatusEnum_BAD_PRIVATE_KEY;
   @BuiltValueEnumConst(wireName: r'BAD_PUBLIC_KEY')
-  static const ResponseStatusEnum BAD_PUBLIC_KEY = _$responseStatusEnum_BAD_PUBLIC_KEY;
+  static const ResponseStatusEnum BAD_PUBLIC_KEY =
+      _$responseStatusEnum_BAD_PUBLIC_KEY;
   @BuiltValueEnumConst(wireName: r'MISSING_PARAMETER')
-  static const ResponseStatusEnum MISSING_PARAMETER = _$responseStatusEnum_MISSING_PARAMETER;
+  static const ResponseStatusEnum MISSING_PARAMETER =
+      _$responseStatusEnum_MISSING_PARAMETER;
   @BuiltValueEnumConst(wireName: r'INVALID_PARAMETER')
-  static const ResponseStatusEnum INVALID_PARAMETER = _$responseStatusEnum_INVALID_PARAMETER;
+  static const ResponseStatusEnum INVALID_PARAMETER =
+      _$responseStatusEnum_INVALID_PARAMETER;
   @BuiltValueEnumConst(wireName: r'WRONG_PARAMETER_TYPE')
-  static const ResponseStatusEnum WRONG_PARAMETER_TYPE = _$responseStatusEnum_WRONG_PARAMETER_TYPE;
+  static const ResponseStatusEnum WRONG_PARAMETER_TYPE =
+      _$responseStatusEnum_WRONG_PARAMETER_TYPE;
   @BuiltValueEnumConst(wireName: r'CONFLICT')
   static const ResponseStatusEnum CONFLICT = _$responseStatusEnum_CONFLICT;
   @BuiltValueEnumConst(wireName: r'RESOURCE_LOCKED')
-  static const ResponseStatusEnum RESOURCE_LOCKED = _$responseStatusEnum_RESOURCE_LOCKED;
+  static const ResponseStatusEnum RESOURCE_LOCKED =
+      _$responseStatusEnum_RESOURCE_LOCKED;
   @BuiltValueEnumConst(wireName: r'SERVER_ERROR')
-  static const ResponseStatusEnum SERVER_ERROR = _$responseStatusEnum_SERVER_ERROR;
+  static const ResponseStatusEnum SERVER_ERROR =
+      _$responseStatusEnum_SERVER_ERROR;
   @BuiltValueEnumConst(wireName: r'ERROR')
   static const ResponseStatusEnum ERROR = _$responseStatusEnum_ERROR;
   @BuiltValueEnumConst(wireName: r'NOT_FOUND')
   static const ResponseStatusEnum NOT_FOUND = _$responseStatusEnum_NOT_FOUND;
   @BuiltValueEnumConst(wireName: r'BAD_REQUEST')
-  static const ResponseStatusEnum BAD_REQUEST = _$responseStatusEnum_BAD_REQUEST;
+  static const ResponseStatusEnum BAD_REQUEST =
+      _$responseStatusEnum_BAD_REQUEST;
   @BuiltValueEnumConst(wireName: r'USER_ERROR')
   static const ResponseStatusEnum USER_ERROR = _$responseStatusEnum_USER_ERROR;
   @BuiltValueEnumConst(wireName: r'PARTIAL_ERROR')
-  static const ResponseStatusEnum PARTIAL_ERROR = _$responseStatusEnum_PARTIAL_ERROR;
+  static const ResponseStatusEnum PARTIAL_ERROR =
+      _$responseStatusEnum_PARTIAL_ERROR;
   @BuiltValueEnumConst(wireName: r'METHOD_NOT_ALLOWED')
-  static const ResponseStatusEnum METHOD_NOT_ALLOWED = _$responseStatusEnum_METHOD_NOT_ALLOWED;
+  static const ResponseStatusEnum METHOD_NOT_ALLOWED =
+      _$responseStatusEnum_METHOD_NOT_ALLOWED;
 
-  static Serializer<ResponseStatusEnum> get serializer => _$responseStatusEnumSerializer;
+  static Serializer<ResponseStatusEnum> get serializer =>
+      _$responseStatusEnumSerializer;
 
-  const ResponseStatusEnum._(String name): super(name);
+  const ResponseStatusEnum._(String name) : super(name);
 
   static BuiltSet<ResponseStatusEnum> get values => _$responseStatusEnumValues;
-  static ResponseStatusEnum valueOf(String name) => _$responseStatusEnumValueOf(name);
+  static ResponseStatusEnum valueOf(String name) =>
+      _$responseStatusEnumValueOf(name);
 }
 
 class ResponseErrorCodeEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'NORMALIZATION_FAILED')
-  static const ResponseErrorCodeEnum NORMALIZATION_FAILED = _$responseErrorCodeEnum_NORMALIZATION_FAILED;
+  static const ResponseErrorCodeEnum NORMALIZATION_FAILED =
+      _$responseErrorCodeEnum_NORMALIZATION_FAILED;
   @BuiltValueEnumConst(wireName: r'DATA_CORRUPTED')
-  static const ResponseErrorCodeEnum DATA_CORRUPTED = _$responseErrorCodeEnum_DATA_CORRUPTED;
+  static const ResponseErrorCodeEnum DATA_CORRUPTED =
+      _$responseErrorCodeEnum_DATA_CORRUPTED;
   @BuiltValueEnumConst(wireName: r'INVALID_INPUT')
-  static const ResponseErrorCodeEnum INVALID_INPUT = _$responseErrorCodeEnum_INVALID_INPUT;
+  static const ResponseErrorCodeEnum INVALID_INPUT =
+      _$responseErrorCodeEnum_INVALID_INPUT;
   @BuiltValueEnumConst(wireName: r'NOT_SYNCABLE')
-  static const ResponseErrorCodeEnum NOT_SYNCABLE = _$responseErrorCodeEnum_NOT_SYNCABLE;
+  static const ResponseErrorCodeEnum NOT_SYNCABLE =
+      _$responseErrorCodeEnum_NOT_SYNCABLE;
   @BuiltValueEnumConst(wireName: r'PAYMENT_FAILED')
-  static const ResponseErrorCodeEnum PAYMENT_FAILED = _$responseErrorCodeEnum_PAYMENT_FAILED;
+  static const ResponseErrorCodeEnum PAYMENT_FAILED =
+      _$responseErrorCodeEnum_PAYMENT_FAILED;
   @BuiltValueEnumConst(wireName: r'FREE_TIER_REACHED')
-  static const ResponseErrorCodeEnum FREE_TIER_REACHED = _$responseErrorCodeEnum_FREE_TIER_REACHED;
+  static const ResponseErrorCodeEnum FREE_TIER_REACHED =
+      _$responseErrorCodeEnum_FREE_TIER_REACHED;
   @BuiltValueEnumConst(wireName: r'LIMIT_REACHED')
-  static const ResponseErrorCodeEnum LIMIT_REACHED = _$responseErrorCodeEnum_LIMIT_REACHED;
+  static const ResponseErrorCodeEnum LIMIT_REACHED =
+      _$responseErrorCodeEnum_LIMIT_REACHED;
   @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const ResponseErrorCodeEnum INACTIVE = _$responseErrorCodeEnum_INACTIVE;
+  static const ResponseErrorCodeEnum INACTIVE =
+      _$responseErrorCodeEnum_INACTIVE;
   @BuiltValueEnumConst(wireName: r'UNKNOWN')
   static const ResponseErrorCodeEnum UNKNOWN = _$responseErrorCodeEnum_UNKNOWN;
   @BuiltValueEnumConst(wireName: r'IDENTIFIER_NOT_UNIQUE')
-  static const ResponseErrorCodeEnum IDENTIFIER_NOT_UNIQUE = _$responseErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
+  static const ResponseErrorCodeEnum IDENTIFIER_NOT_UNIQUE =
+      _$responseErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
   @BuiltValueEnumConst(wireName: r'ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT')
-  static const ResponseErrorCodeEnum ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT = _$responseErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
+  static const ResponseErrorCodeEnum ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT =
+      _$responseErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
   @BuiltValueEnumConst(wireName: r'NO_ACCOUNT_CONNECTED')
-  static const ResponseErrorCodeEnum NO_ACCOUNT_CONNECTED = _$responseErrorCodeEnum_NO_ACCOUNT_CONNECTED;
+  static const ResponseErrorCodeEnum NO_ACCOUNT_CONNECTED =
+      _$responseErrorCodeEnum_NO_ACCOUNT_CONNECTED;
   @BuiltValueEnumConst(wireName: r'NO_PAGE_SELECTED')
-  static const ResponseErrorCodeEnum NO_PAGE_SELECTED = _$responseErrorCodeEnum_NO_PAGE_SELECTED;
+  static const ResponseErrorCodeEnum NO_PAGE_SELECTED =
+      _$responseErrorCodeEnum_NO_PAGE_SELECTED;
   @BuiltValueEnumConst(wireName: r'PAGE_NOT_CREATED')
-  static const ResponseErrorCodeEnum PAGE_NOT_CREATED = _$responseErrorCodeEnum_PAGE_NOT_CREATED;
+  static const ResponseErrorCodeEnum PAGE_NOT_CREATED =
+      _$responseErrorCodeEnum_PAGE_NOT_CREATED;
   @BuiltValueEnumConst(wireName: r'PAGE_IN_REVIEW')
-  static const ResponseErrorCodeEnum PAGE_IN_REVIEW = _$responseErrorCodeEnum_PAGE_IN_REVIEW;
+  static const ResponseErrorCodeEnum PAGE_IN_REVIEW =
+      _$responseErrorCodeEnum_PAGE_IN_REVIEW;
   @BuiltValueEnumConst(wireName: r'PAGE_CLAIMED_BY_OTHERS')
-  static const ResponseErrorCodeEnum PAGE_CLAIMED_BY_OTHERS = _$responseErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
+  static const ResponseErrorCodeEnum PAGE_CLAIMED_BY_OTHERS =
+      _$responseErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
   @BuiltValueEnumConst(wireName: r'OVERLAPPING_SOCIALPOST')
-  static const ResponseErrorCodeEnum OVERLAPPING_SOCIALPOST = _$responseErrorCodeEnum_OVERLAPPING_SOCIALPOST;
+  static const ResponseErrorCodeEnum OVERLAPPING_SOCIALPOST =
+      _$responseErrorCodeEnum_OVERLAPPING_SOCIALPOST;
   @BuiltValueEnumConst(wireName: r'TOO_MANY_REPLIES')
-  static const ResponseErrorCodeEnum TOO_MANY_REPLIES = _$responseErrorCodeEnum_TOO_MANY_REPLIES;
+  static const ResponseErrorCodeEnum TOO_MANY_REPLIES =
+      _$responseErrorCodeEnum_TOO_MANY_REPLIES;
   @BuiltValueEnumConst(wireName: r'REPLY_TOO_LONG')
-  static const ResponseErrorCodeEnum REPLY_TOO_LONG = _$responseErrorCodeEnum_REPLY_TOO_LONG;
+  static const ResponseErrorCodeEnum REPLY_TOO_LONG =
+      _$responseErrorCodeEnum_REPLY_TOO_LONG;
   @BuiltValueEnumConst(wireName: r'DEPRECATED')
-  static const ResponseErrorCodeEnum DEPRECATED = _$responseErrorCodeEnum_DEPRECATED;
+  static const ResponseErrorCodeEnum DEPRECATED =
+      _$responseErrorCodeEnum_DEPRECATED;
 
-  static Serializer<ResponseErrorCodeEnum> get serializer => _$responseErrorCodeEnumSerializer;
+  static Serializer<ResponseErrorCodeEnum> get serializer =>
+      _$responseErrorCodeEnumSerializer;
 
-  const ResponseErrorCodeEnum._(String name): super(name);
+  const ResponseErrorCodeEnum._(String name) : super(name);
 
-  static BuiltSet<ResponseErrorCodeEnum> get values => _$responseErrorCodeEnumValues;
-  static ResponseErrorCodeEnum valueOf(String name) => _$responseErrorCodeEnumValueOf(name);
+  static BuiltSet<ResponseErrorCodeEnum> get values =>
+      _$responseErrorCodeEnumValues;
+  static ResponseErrorCodeEnum valueOf(String name) =>
+      _$responseErrorCodeEnumValueOf(name);
 }
-

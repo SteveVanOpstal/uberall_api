@@ -16,9 +16,10 @@ part 'product_search_object.g.dart';
 /// * [total] - The total number of results
 /// * [offset] - The offset for pagination
 /// * [max] - The maximum number of results to return
-/// * [products] 
+/// * [products]
 @BuiltValue()
-abstract class ProductSearchObject implements Built<ProductSearchObject, ProductSearchObjectBuilder> {
+abstract class ProductSearchObject
+    implements Built<ProductSearchObject, ProductSearchObjectBuilder> {
   /// The total number of results
   @BuiltValueField(wireName: r'total')
   int? get total;
@@ -36,18 +37,24 @@ abstract class ProductSearchObject implements Built<ProductSearchObject, Product
 
   ProductSearchObject._();
 
-  factory ProductSearchObject([void updates(ProductSearchObjectBuilder b)]) = _$ProductSearchObject;
+  factory ProductSearchObject([void updates(ProductSearchObjectBuilder b)]) =
+      _$ProductSearchObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ProductSearchObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ProductSearchObject> get serializer => _$ProductSearchObjectSerializer();
+  static Serializer<ProductSearchObject> get serializer =>
+      _$ProductSearchObjectSerializer();
 }
 
-class _$ProductSearchObjectSerializer implements PrimitiveSerializer<ProductSearchObject> {
+class _$ProductSearchObjectSerializer
+    implements PrimitiveSerializer<ProductSearchObject> {
   @override
-  final Iterable<Type> types = const [ProductSearchObject, _$ProductSearchObject];
+  final Iterable<Type> types = const [
+    ProductSearchObject,
+    _$ProductSearchObject
+  ];
 
   @override
   final String wireName = r'ProductSearchObject';
@@ -93,7 +100,9 @@ class _$ProductSearchObjectSerializer implements PrimitiveSerializer<ProductSear
     ProductSearchObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -164,4 +173,3 @@ class _$ProductSearchObjectSerializer implements PrimitiveSerializer<ProductSear
     return result.build();
   }
 }
-

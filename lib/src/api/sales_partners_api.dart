@@ -10,14 +10,13 @@ import 'package:dio/dio.dart';
 
 import 'package:built_value/json_object.dart';
 import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/response.dart';
+import 'package:openapi/src/model/response.dart' as openApi;
 import 'package:openapi/src/model/sales_partner.dart';
 import 'package:openapi/src/model/sales_partner_list_response_wrapper.dart';
 import 'package:openapi/src/model/sales_partner_wrapper.dart';
 import 'package:openapi/src/model/subscribable_event_types_wrapper.dart';
 
 class SalesPartnersApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -35,7 +34,7 @@ class SalesPartnersApi {
   /// * [order] - Order used for pagination. Default: 'asc'
   /// * [max] - Used for pagination. Maximum number of results per page. Default: 1000
   /// * [offset] - Offset used for pagination. Default: 0
-  /// * [body] 
+  /// * [body]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -45,7 +44,7 @@ class SalesPartnersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SalesPartnerListResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SalesPartnerListResponseWrapper>> getSalesPartners({ 
+  Future<Response<SalesPartnerListResponseWrapper>> getSalesPartners({
     String? id,
     String? query,
     String? status,
@@ -74,7 +73,8 @@ class SalesPartnersApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -87,23 +87,34 @@ class SalesPartnersApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(String)),
-      if (query != null) r'query': encodeQueryParameter(_serializers, query, const FullType(String)),
-      if (status != null) r'status': encodeQueryParameter(_serializers, status, const FullType(String)),
-      if (sort != null) r'sort': encodeQueryParameter(_serializers, sort, const FullType(String)),
-      if (order != null) r'order': encodeQueryParameter(_serializers, order, const FullType(String)),
-      if (max != null) r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
-      if (offset != null) r'offset': encodeQueryParameter(_serializers, offset, const FullType(int)),
+      if (id != null)
+        r'id': encodeQueryParameter(_serializers, id, const FullType(String)),
+      if (query != null)
+        r'query':
+            encodeQueryParameter(_serializers, query, const FullType(String)),
+      if (status != null)
+        r'status':
+            encodeQueryParameter(_serializers, status, const FullType(String)),
+      if (sort != null)
+        r'sort':
+            encodeQueryParameter(_serializers, sort, const FullType(String)),
+      if (order != null)
+        r'order':
+            encodeQueryParameter(_serializers, order, const FullType(String)),
+      if (max != null)
+        r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
+      if (offset != null)
+        r'offset':
+            encodeQueryParameter(_serializers, offset, const FullType(int)),
     };
 
     dynamic _bodyData;
 
     try {
       _bodyData = body;
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
           queryParameters: _queryParameters,
@@ -128,11 +139,12 @@ class SalesPartnersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SalesPartnerListResponseWrapper),
-      ) as SalesPartnerListResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SalesPartnerListResponseWrapper),
+            ) as SalesPartnerListResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -169,7 +181,7 @@ class SalesPartnersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SalesPartnerWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SalesPartnerWrapper>> getSalesPartnersId({ 
+  Future<Response<SalesPartnerWrapper>> getSalesPartnersId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -178,7 +190,10 @@ class SalesPartnersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/sales-partners/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/sales-partners/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -191,7 +206,8 @@ class SalesPartnersApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -215,11 +231,12 @@ class SalesPartnersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SalesPartnerWrapper),
-      ) as SalesPartnerWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SalesPartnerWrapper),
+            ) as SalesPartnerWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -255,7 +272,8 @@ class SalesPartnersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SubscribableEventTypesWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SubscribableEventTypesWrapper>> getSalesPartnersSubscribableEventTypes({ 
+  Future<Response<SubscribableEventTypesWrapper>>
+      getSalesPartnersSubscribableEventTypes({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -276,7 +294,8 @@ class SalesPartnersApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -300,11 +319,12 @@ class SalesPartnersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SubscribableEventTypesWrapper),
-      ) as SubscribableEventTypesWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SubscribableEventTypesWrapper),
+            ) as SubscribableEventTypesWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -341,7 +361,7 @@ class SalesPartnersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SalesPartnerWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SalesPartnerWrapper>> patchSalesPartnersIdSsoSettings({ 
+  Future<Response<SalesPartnerWrapper>> patchSalesPartnersIdSsoSettings({
     bool? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -363,7 +383,8 @@ class SalesPartnersApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -379,10 +400,9 @@ class SalesPartnersApi {
 
     try {
       _bodyData = body;
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -405,11 +425,12 @@ class SalesPartnersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SalesPartnerWrapper),
-      ) as SalesPartnerWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SalesPartnerWrapper),
+            ) as SalesPartnerWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -446,7 +467,7 @@ class SalesPartnersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SalesPartnerWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SalesPartnerWrapper>> postSalesPartners({ 
+  Future<Response<SalesPartnerWrapper>> postSalesPartners({
     required SalesPartner salesPartner,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -468,7 +489,8 @@ class SalesPartnersApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -486,10 +508,9 @@ class SalesPartnersApi {
     try {
       const _type = FullType(SalesPartner);
       _bodyData = _serializers.serialize(salesPartner, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -512,11 +533,12 @@ class SalesPartnersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SalesPartnerWrapper),
-      ) as SalesPartnerWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SalesPartnerWrapper),
+            ) as SalesPartnerWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -554,7 +576,7 @@ class SalesPartnersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Response>> postSalesPartnersIdUserAccountsAccountIdAppleMaps({ 
+  Future<Response<Response>> postSalesPartnersIdUserAccountsAccountIdAppleMaps({
     required String id,
     required String accountId,
     CancelToken? cancelToken,
@@ -564,7 +586,16 @@ class SalesPartnersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/sales-partners/{id}/user-accounts/{accountId}/apple_maps'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString()).replaceAll('{' r'accountId' '}', encodeQueryParameter(_serializers, accountId, const FullType(String)).toString());
+    final _path = r'/sales-partners/{id}/user-accounts/{accountId}/apple_maps'
+        .replaceAll(
+            '{' r'id' '}',
+            encodeQueryParameter(_serializers, id, const FullType(String))
+                .toString())
+        .replaceAll(
+            '{' r'accountId' '}',
+            encodeQueryParameter(
+                    _serializers, accountId, const FullType(String))
+                .toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -577,7 +608,8 @@ class SalesPartnersApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -601,11 +633,12 @@ class SalesPartnersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(Response),
-      ) as Response;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(Response),
+            ) as Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -643,7 +676,7 @@ class SalesPartnersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SalesPartnerWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SalesPartnerWrapper>> putSalesPartnersId({ 
+  Future<Response<SalesPartnerWrapper>> putSalesPartnersId({
     required String id,
     required SalesPartner salesPartner,
     CancelToken? cancelToken,
@@ -653,7 +686,10 @@ class SalesPartnersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/sales-partners/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/sales-partners/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -666,7 +702,8 @@ class SalesPartnersApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -684,10 +721,9 @@ class SalesPartnersApi {
     try {
       const _type = FullType(SalesPartner);
       _bodyData = _serializers.serialize(salesPartner, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -710,11 +746,12 @@ class SalesPartnersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SalesPartnerWrapper),
-      ) as SalesPartnerWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SalesPartnerWrapper),
+            ) as SalesPartnerWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -736,5 +773,4 @@ class SalesPartnersApi {
       extra: _response.extra,
     );
   }
-
 }

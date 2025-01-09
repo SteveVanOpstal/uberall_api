@@ -16,9 +16,12 @@ part 'social_post_templates_response_object.g.dart';
 /// * [offset] - Offset for pagination
 /// * [max] - Maximum number of results per page
 /// * [count] - Count of social post templates
-/// * [socialPostTemplates] 
+/// * [socialPostTemplates]
 @BuiltValue()
-abstract class SocialPostTemplatesResponseObject implements Built<SocialPostTemplatesResponseObject, SocialPostTemplatesResponseObjectBuilder> {
+abstract class SocialPostTemplatesResponseObject
+    implements
+        Built<SocialPostTemplatesResponseObject,
+            SocialPostTemplatesResponseObjectBuilder> {
   /// Offset for pagination
   @BuiltValueField(wireName: r'offset')
   int? get offset;
@@ -36,18 +39,25 @@ abstract class SocialPostTemplatesResponseObject implements Built<SocialPostTemp
 
   SocialPostTemplatesResponseObject._();
 
-  factory SocialPostTemplatesResponseObject([void updates(SocialPostTemplatesResponseObjectBuilder b)]) = _$SocialPostTemplatesResponseObject;
+  factory SocialPostTemplatesResponseObject(
+          [void updates(SocialPostTemplatesResponseObjectBuilder b)]) =
+      _$SocialPostTemplatesResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialPostTemplatesResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<SocialPostTemplatesResponseObject> get serializer => _$SocialPostTemplatesResponseObjectSerializer();
+  static Serializer<SocialPostTemplatesResponseObject> get serializer =>
+      _$SocialPostTemplatesResponseObjectSerializer();
 }
 
-class _$SocialPostTemplatesResponseObjectSerializer implements PrimitiveSerializer<SocialPostTemplatesResponseObject> {
+class _$SocialPostTemplatesResponseObjectSerializer
+    implements PrimitiveSerializer<SocialPostTemplatesResponseObject> {
   @override
-  final Iterable<Type> types = const [SocialPostTemplatesResponseObject, _$SocialPostTemplatesResponseObject];
+  final Iterable<Type> types = const [
+    SocialPostTemplatesResponseObject,
+    _$SocialPostTemplatesResponseObject
+  ];
 
   @override
   final String wireName = r'SocialPostTemplatesResponseObject';
@@ -82,7 +92,8 @@ class _$SocialPostTemplatesResponseObjectSerializer implements PrimitiveSerializ
       yield r'socialPostTemplates';
       yield serializers.serialize(
         object.socialPostTemplates,
-        specifiedType: const FullType(BuiltList, [FullType(SocialPostTemplate)]),
+        specifiedType:
+            const FullType(BuiltList, [FullType(SocialPostTemplate)]),
       );
     }
   }
@@ -93,7 +104,9 @@ class _$SocialPostTemplatesResponseObjectSerializer implements PrimitiveSerializ
     SocialPostTemplatesResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -132,7 +145,8 @@ class _$SocialPostTemplatesResponseObjectSerializer implements PrimitiveSerializ
         case r'socialPostTemplates':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(SocialPostTemplate)]),
+            specifiedType:
+                const FullType(BuiltList, [FullType(SocialPostTemplate)]),
           ) as BuiltList<SocialPostTemplate>;
           result.socialPostTemplates.replace(valueDes);
           break;
@@ -164,4 +178,3 @@ class _$SocialPostTemplatesResponseObjectSerializer implements PrimitiveSerializ
     return result.build();
   }
 }
-

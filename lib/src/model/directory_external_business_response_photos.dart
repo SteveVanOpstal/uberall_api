@@ -19,7 +19,10 @@ part 'directory_external_business_response_photos.g.dart';
 /// * [cropWidth] - Width of the 16:9 cropped area [LANDSCAPE photo only]
 /// * [cropHeight] - Height of the 16:9 cropped area [LANDSCAPE photo only]
 @BuiltValue()
-abstract class DirectoryExternalBusinessResponsePhotos implements Built<DirectoryExternalBusinessResponsePhotos, DirectoryExternalBusinessResponsePhotosBuilder> {
+abstract class DirectoryExternalBusinessResponsePhotos
+    implements
+        Built<DirectoryExternalBusinessResponsePhotos,
+            DirectoryExternalBusinessResponsePhotosBuilder> {
   /// A description for the photo - max 255 chars
   @BuiltValueField(wireName: r'description')
   String? get description;
@@ -50,18 +53,25 @@ abstract class DirectoryExternalBusinessResponsePhotos implements Built<Director
 
   DirectoryExternalBusinessResponsePhotos._();
 
-  factory DirectoryExternalBusinessResponsePhotos([void updates(DirectoryExternalBusinessResponsePhotosBuilder b)]) = _$DirectoryExternalBusinessResponsePhotos;
+  factory DirectoryExternalBusinessResponsePhotos(
+          [void updates(DirectoryExternalBusinessResponsePhotosBuilder b)]) =
+      _$DirectoryExternalBusinessResponsePhotos;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DirectoryExternalBusinessResponsePhotosBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DirectoryExternalBusinessResponsePhotos> get serializer => _$DirectoryExternalBusinessResponsePhotosSerializer();
+  static Serializer<DirectoryExternalBusinessResponsePhotos> get serializer =>
+      _$DirectoryExternalBusinessResponsePhotosSerializer();
 }
 
-class _$DirectoryExternalBusinessResponsePhotosSerializer implements PrimitiveSerializer<DirectoryExternalBusinessResponsePhotos> {
+class _$DirectoryExternalBusinessResponsePhotosSerializer
+    implements PrimitiveSerializer<DirectoryExternalBusinessResponsePhotos> {
   @override
-  final Iterable<Type> types = const [DirectoryExternalBusinessResponsePhotos, _$DirectoryExternalBusinessResponsePhotos];
+  final Iterable<Type> types = const [
+    DirectoryExternalBusinessResponsePhotos,
+    _$DirectoryExternalBusinessResponsePhotos
+  ];
 
   @override
   final String wireName = r'DirectoryExternalBusinessResponsePhotos';
@@ -128,7 +138,9 @@ class _$DirectoryExternalBusinessResponsePhotosSerializer implements PrimitiveSe
     DirectoryExternalBusinessResponsePhotos object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -220,4 +232,3 @@ class _$DirectoryExternalBusinessResponsePhotosSerializer implements PrimitiveSe
     return result.build();
   }
 }
-

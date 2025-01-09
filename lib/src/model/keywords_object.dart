@@ -12,24 +12,28 @@ part 'keywords_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [keywords] 
+/// * [keywords]
 @BuiltValue()
-abstract class KeywordsObject implements Built<KeywordsObject, KeywordsObjectBuilder> {
+abstract class KeywordsObject
+    implements Built<KeywordsObject, KeywordsObjectBuilder> {
   @BuiltValueField(wireName: r'keywords')
   BuiltList<String>? get keywords;
 
   KeywordsObject._();
 
-  factory KeywordsObject([void updates(KeywordsObjectBuilder b)]) = _$KeywordsObject;
+  factory KeywordsObject([void updates(KeywordsObjectBuilder b)]) =
+      _$KeywordsObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(KeywordsObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<KeywordsObject> get serializer => _$KeywordsObjectSerializer();
+  static Serializer<KeywordsObject> get serializer =>
+      _$KeywordsObjectSerializer();
 }
 
-class _$KeywordsObjectSerializer implements PrimitiveSerializer<KeywordsObject> {
+class _$KeywordsObjectSerializer
+    implements PrimitiveSerializer<KeywordsObject> {
   @override
   final Iterable<Type> types = const [KeywordsObject, _$KeywordsObject];
 
@@ -56,7 +60,9 @@ class _$KeywordsObjectSerializer implements PrimitiveSerializer<KeywordsObject> 
     KeywordsObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +112,3 @@ class _$KeywordsObjectSerializer implements PrimitiveSerializer<KeywordsObject> 
     return result.build();
   }
 }
-

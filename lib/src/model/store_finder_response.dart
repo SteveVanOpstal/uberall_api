@@ -50,7 +50,7 @@ part 'store_finder_response.g.dart';
 /// * [lng] - The longitude coordinate of the location.
 /// * [menus] - Menu items offered by this location
 /// * [name] - The location''s name.
-/// * [nextOpen] 
+/// * [nextOpen]
 /// * [openingHours] - The location''s opening hours.
 /// * [openingHoursNotes] - Additional information about the location''s opening hours.
 /// * [specialOpeningHours] - The location''s special opening hours
@@ -76,7 +76,8 @@ part 'store_finder_response.g.dart';
 /// * [street] - The location''s street address
 /// * [streetNo] - The location''s street number
 @BuiltValue()
-abstract class StoreFinderResponse implements Built<StoreFinderResponse, StoreFinderResponseBuilder> {
+abstract class StoreFinderResponse
+    implements Built<StoreFinderResponse, StoreFinderResponseBuilder> {
   /// Additional address information, e.g. building, floor, etc.
   @BuiltValueField(wireName: r'addressExtra')
   String? get addressExtra;
@@ -283,18 +284,24 @@ abstract class StoreFinderResponse implements Built<StoreFinderResponse, StoreFi
 
   StoreFinderResponse._();
 
-  factory StoreFinderResponse([void updates(StoreFinderResponseBuilder b)]) = _$StoreFinderResponse;
+  factory StoreFinderResponse([void updates(StoreFinderResponseBuilder b)]) =
+      _$StoreFinderResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StoreFinderResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<StoreFinderResponse> get serializer => _$StoreFinderResponseSerializer();
+  static Serializer<StoreFinderResponse> get serializer =>
+      _$StoreFinderResponseSerializer();
 }
 
-class _$StoreFinderResponseSerializer implements PrimitiveSerializer<StoreFinderResponse> {
+class _$StoreFinderResponseSerializer
+    implements PrimitiveSerializer<StoreFinderResponse> {
   @override
-  final Iterable<Type> types = const [StoreFinderResponse, _$StoreFinderResponse];
+  final Iterable<Type> types = const [
+    StoreFinderResponse,
+    _$StoreFinderResponse
+  ];
 
   @override
   final String wireName = r'StoreFinderResponse';
@@ -357,7 +364,9 @@ class _$StoreFinderResponseSerializer implements PrimitiveSerializer<StoreFinder
       yield r'categories';
       yield serializers.serialize(
         object.categories,
-        specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType(JsonObject)])]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(BuiltMap, [FullType(String), FullType(JsonObject)])
+        ]),
       );
     }
     if (object.cellphone != null) {
@@ -511,7 +520,8 @@ class _$StoreFinderResponseSerializer implements PrimitiveSerializer<StoreFinder
       yield r'specialOpeningHours';
       yield serializers.serialize(
         object.specialOpeningHours,
-        specifiedType: const FullType(BuiltSet, [FullType(SpecialOpeningHours)]),
+        specifiedType:
+            const FullType(BuiltSet, [FullType(SpecialOpeningHours)]),
       );
     }
     if (object.openNow != null) {
@@ -669,7 +679,9 @@ class _$StoreFinderResponseSerializer implements PrimitiveSerializer<StoreFinder
     StoreFinderResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -736,7 +748,9 @@ class _$StoreFinderResponseSerializer implements PrimitiveSerializer<StoreFinder
         case r'categories':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType(JsonObject)])]),
+            specifiedType: const FullType(BuiltList, [
+              FullType(BuiltMap, [FullType(String), FullType(JsonObject)])
+            ]),
           ) as BuiltList<BuiltMap<String, JsonObject>>;
           result.categories.replace(valueDes);
           break;
@@ -890,7 +904,8 @@ class _$StoreFinderResponseSerializer implements PrimitiveSerializer<StoreFinder
         case r'specialOpeningHours':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltSet, [FullType(SpecialOpeningHours)]),
+            specifiedType:
+                const FullType(BuiltSet, [FullType(SpecialOpeningHours)]),
           ) as BuiltSet<SpecialOpeningHours>;
           result.specialOpeningHours.replace(valueDes);
           break;
@@ -1071,763 +1086,1263 @@ class _$StoreFinderResponseSerializer implements PrimitiveSerializer<StoreFinder
 }
 
 class StoreFinderResponseCountryEnum extends EnumClass {
-
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'AF')
-  static const StoreFinderResponseCountryEnum AF = _$storeFinderResponseCountryEnum_AF;
+  static const StoreFinderResponseCountryEnum AF =
+      _$storeFinderResponseCountryEnum_AF;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'AX')
-  static const StoreFinderResponseCountryEnum AX = _$storeFinderResponseCountryEnum_AX;
+  static const StoreFinderResponseCountryEnum AX =
+      _$storeFinderResponseCountryEnum_AX;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'AL')
-  static const StoreFinderResponseCountryEnum AL = _$storeFinderResponseCountryEnum_AL;
+  static const StoreFinderResponseCountryEnum AL =
+      _$storeFinderResponseCountryEnum_AL;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'DZ')
-  static const StoreFinderResponseCountryEnum DZ = _$storeFinderResponseCountryEnum_DZ;
+  static const StoreFinderResponseCountryEnum DZ =
+      _$storeFinderResponseCountryEnum_DZ;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'AS')
-  static const StoreFinderResponseCountryEnum AS = _$storeFinderResponseCountryEnum_AS;
+  static const StoreFinderResponseCountryEnum AS =
+      _$storeFinderResponseCountryEnum_AS;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'AD')
-  static const StoreFinderResponseCountryEnum AD = _$storeFinderResponseCountryEnum_AD;
+  static const StoreFinderResponseCountryEnum AD =
+      _$storeFinderResponseCountryEnum_AD;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'AO')
-  static const StoreFinderResponseCountryEnum AO = _$storeFinderResponseCountryEnum_AO;
+  static const StoreFinderResponseCountryEnum AO =
+      _$storeFinderResponseCountryEnum_AO;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'AI')
-  static const StoreFinderResponseCountryEnum AI = _$storeFinderResponseCountryEnum_AI;
+  static const StoreFinderResponseCountryEnum AI =
+      _$storeFinderResponseCountryEnum_AI;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'AQ')
-  static const StoreFinderResponseCountryEnum AQ = _$storeFinderResponseCountryEnum_AQ;
+  static const StoreFinderResponseCountryEnum AQ =
+      _$storeFinderResponseCountryEnum_AQ;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'AG')
-  static const StoreFinderResponseCountryEnum AG = _$storeFinderResponseCountryEnum_AG;
+  static const StoreFinderResponseCountryEnum AG =
+      _$storeFinderResponseCountryEnum_AG;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'AR')
-  static const StoreFinderResponseCountryEnum AR = _$storeFinderResponseCountryEnum_AR;
+  static const StoreFinderResponseCountryEnum AR =
+      _$storeFinderResponseCountryEnum_AR;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'AM')
-  static const StoreFinderResponseCountryEnum AM = _$storeFinderResponseCountryEnum_AM;
+  static const StoreFinderResponseCountryEnum AM =
+      _$storeFinderResponseCountryEnum_AM;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'AW')
-  static const StoreFinderResponseCountryEnum AW = _$storeFinderResponseCountryEnum_AW;
+  static const StoreFinderResponseCountryEnum AW =
+      _$storeFinderResponseCountryEnum_AW;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'AU')
-  static const StoreFinderResponseCountryEnum AU = _$storeFinderResponseCountryEnum_AU;
+  static const StoreFinderResponseCountryEnum AU =
+      _$storeFinderResponseCountryEnum_AU;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'AT')
-  static const StoreFinderResponseCountryEnum AT = _$storeFinderResponseCountryEnum_AT;
+  static const StoreFinderResponseCountryEnum AT =
+      _$storeFinderResponseCountryEnum_AT;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'AZ')
-  static const StoreFinderResponseCountryEnum AZ = _$storeFinderResponseCountryEnum_AZ;
+  static const StoreFinderResponseCountryEnum AZ =
+      _$storeFinderResponseCountryEnum_AZ;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'BS')
-  static const StoreFinderResponseCountryEnum BS = _$storeFinderResponseCountryEnum_BS;
+  static const StoreFinderResponseCountryEnum BS =
+      _$storeFinderResponseCountryEnum_BS;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'BH')
-  static const StoreFinderResponseCountryEnum BH = _$storeFinderResponseCountryEnum_BH;
+  static const StoreFinderResponseCountryEnum BH =
+      _$storeFinderResponseCountryEnum_BH;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'BD')
-  static const StoreFinderResponseCountryEnum BD = _$storeFinderResponseCountryEnum_BD;
+  static const StoreFinderResponseCountryEnum BD =
+      _$storeFinderResponseCountryEnum_BD;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'BB')
-  static const StoreFinderResponseCountryEnum BB = _$storeFinderResponseCountryEnum_BB;
+  static const StoreFinderResponseCountryEnum BB =
+      _$storeFinderResponseCountryEnum_BB;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'BY')
-  static const StoreFinderResponseCountryEnum BY = _$storeFinderResponseCountryEnum_BY;
+  static const StoreFinderResponseCountryEnum BY =
+      _$storeFinderResponseCountryEnum_BY;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'BE')
-  static const StoreFinderResponseCountryEnum BE = _$storeFinderResponseCountryEnum_BE;
+  static const StoreFinderResponseCountryEnum BE =
+      _$storeFinderResponseCountryEnum_BE;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'BZ')
-  static const StoreFinderResponseCountryEnum BZ = _$storeFinderResponseCountryEnum_BZ;
+  static const StoreFinderResponseCountryEnum BZ =
+      _$storeFinderResponseCountryEnum_BZ;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'BJ')
-  static const StoreFinderResponseCountryEnum BJ = _$storeFinderResponseCountryEnum_BJ;
+  static const StoreFinderResponseCountryEnum BJ =
+      _$storeFinderResponseCountryEnum_BJ;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'BM')
-  static const StoreFinderResponseCountryEnum BM = _$storeFinderResponseCountryEnum_BM;
+  static const StoreFinderResponseCountryEnum BM =
+      _$storeFinderResponseCountryEnum_BM;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'BT')
-  static const StoreFinderResponseCountryEnum BT = _$storeFinderResponseCountryEnum_BT;
+  static const StoreFinderResponseCountryEnum BT =
+      _$storeFinderResponseCountryEnum_BT;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'BO')
-  static const StoreFinderResponseCountryEnum BO = _$storeFinderResponseCountryEnum_BO;
+  static const StoreFinderResponseCountryEnum BO =
+      _$storeFinderResponseCountryEnum_BO;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'BQ')
-  static const StoreFinderResponseCountryEnum BQ = _$storeFinderResponseCountryEnum_BQ;
+  static const StoreFinderResponseCountryEnum BQ =
+      _$storeFinderResponseCountryEnum_BQ;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'BA')
-  static const StoreFinderResponseCountryEnum BA = _$storeFinderResponseCountryEnum_BA;
+  static const StoreFinderResponseCountryEnum BA =
+      _$storeFinderResponseCountryEnum_BA;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'BW')
-  static const StoreFinderResponseCountryEnum BW = _$storeFinderResponseCountryEnum_BW;
+  static const StoreFinderResponseCountryEnum BW =
+      _$storeFinderResponseCountryEnum_BW;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'BV')
-  static const StoreFinderResponseCountryEnum BV = _$storeFinderResponseCountryEnum_BV;
+  static const StoreFinderResponseCountryEnum BV =
+      _$storeFinderResponseCountryEnum_BV;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'BR')
-  static const StoreFinderResponseCountryEnum BR = _$storeFinderResponseCountryEnum_BR;
+  static const StoreFinderResponseCountryEnum BR =
+      _$storeFinderResponseCountryEnum_BR;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'IO')
-  static const StoreFinderResponseCountryEnum IO = _$storeFinderResponseCountryEnum_IO;
+  static const StoreFinderResponseCountryEnum IO =
+      _$storeFinderResponseCountryEnum_IO;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'BN')
-  static const StoreFinderResponseCountryEnum BN = _$storeFinderResponseCountryEnum_BN;
+  static const StoreFinderResponseCountryEnum BN =
+      _$storeFinderResponseCountryEnum_BN;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'BG')
-  static const StoreFinderResponseCountryEnum BG = _$storeFinderResponseCountryEnum_BG;
+  static const StoreFinderResponseCountryEnum BG =
+      _$storeFinderResponseCountryEnum_BG;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'BF')
-  static const StoreFinderResponseCountryEnum BF = _$storeFinderResponseCountryEnum_BF;
+  static const StoreFinderResponseCountryEnum BF =
+      _$storeFinderResponseCountryEnum_BF;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'BI')
-  static const StoreFinderResponseCountryEnum BI = _$storeFinderResponseCountryEnum_BI;
+  static const StoreFinderResponseCountryEnum BI =
+      _$storeFinderResponseCountryEnum_BI;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'KH')
-  static const StoreFinderResponseCountryEnum KH = _$storeFinderResponseCountryEnum_KH;
+  static const StoreFinderResponseCountryEnum KH =
+      _$storeFinderResponseCountryEnum_KH;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'CM')
-  static const StoreFinderResponseCountryEnum CM = _$storeFinderResponseCountryEnum_CM;
+  static const StoreFinderResponseCountryEnum CM =
+      _$storeFinderResponseCountryEnum_CM;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'CA')
-  static const StoreFinderResponseCountryEnum CA = _$storeFinderResponseCountryEnum_CA;
+  static const StoreFinderResponseCountryEnum CA =
+      _$storeFinderResponseCountryEnum_CA;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'CV')
-  static const StoreFinderResponseCountryEnum CV = _$storeFinderResponseCountryEnum_CV;
+  static const StoreFinderResponseCountryEnum CV =
+      _$storeFinderResponseCountryEnum_CV;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'KY')
-  static const StoreFinderResponseCountryEnum KY = _$storeFinderResponseCountryEnum_KY;
+  static const StoreFinderResponseCountryEnum KY =
+      _$storeFinderResponseCountryEnum_KY;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'CF')
-  static const StoreFinderResponseCountryEnum CF = _$storeFinderResponseCountryEnum_CF;
+  static const StoreFinderResponseCountryEnum CF =
+      _$storeFinderResponseCountryEnum_CF;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'TD')
-  static const StoreFinderResponseCountryEnum TD = _$storeFinderResponseCountryEnum_TD;
+  static const StoreFinderResponseCountryEnum TD =
+      _$storeFinderResponseCountryEnum_TD;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'CL')
-  static const StoreFinderResponseCountryEnum CL = _$storeFinderResponseCountryEnum_CL;
+  static const StoreFinderResponseCountryEnum CL =
+      _$storeFinderResponseCountryEnum_CL;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'CN')
-  static const StoreFinderResponseCountryEnum CN = _$storeFinderResponseCountryEnum_CN;
+  static const StoreFinderResponseCountryEnum CN =
+      _$storeFinderResponseCountryEnum_CN;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'CX')
-  static const StoreFinderResponseCountryEnum CX = _$storeFinderResponseCountryEnum_CX;
+  static const StoreFinderResponseCountryEnum CX =
+      _$storeFinderResponseCountryEnum_CX;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'CC')
-  static const StoreFinderResponseCountryEnum CC = _$storeFinderResponseCountryEnum_CC;
+  static const StoreFinderResponseCountryEnum CC =
+      _$storeFinderResponseCountryEnum_CC;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'CO')
-  static const StoreFinderResponseCountryEnum CO = _$storeFinderResponseCountryEnum_CO;
+  static const StoreFinderResponseCountryEnum CO =
+      _$storeFinderResponseCountryEnum_CO;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'KM')
-  static const StoreFinderResponseCountryEnum KM = _$storeFinderResponseCountryEnum_KM;
+  static const StoreFinderResponseCountryEnum KM =
+      _$storeFinderResponseCountryEnum_KM;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'CG')
-  static const StoreFinderResponseCountryEnum CG = _$storeFinderResponseCountryEnum_CG;
+  static const StoreFinderResponseCountryEnum CG =
+      _$storeFinderResponseCountryEnum_CG;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'CD')
-  static const StoreFinderResponseCountryEnum CD = _$storeFinderResponseCountryEnum_CD;
+  static const StoreFinderResponseCountryEnum CD =
+      _$storeFinderResponseCountryEnum_CD;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'CK')
-  static const StoreFinderResponseCountryEnum CK = _$storeFinderResponseCountryEnum_CK;
+  static const StoreFinderResponseCountryEnum CK =
+      _$storeFinderResponseCountryEnum_CK;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'CR')
-  static const StoreFinderResponseCountryEnum CR = _$storeFinderResponseCountryEnum_CR;
+  static const StoreFinderResponseCountryEnum CR =
+      _$storeFinderResponseCountryEnum_CR;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'CI')
-  static const StoreFinderResponseCountryEnum CI = _$storeFinderResponseCountryEnum_CI;
+  static const StoreFinderResponseCountryEnum CI =
+      _$storeFinderResponseCountryEnum_CI;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'HR')
-  static const StoreFinderResponseCountryEnum HR = _$storeFinderResponseCountryEnum_HR;
+  static const StoreFinderResponseCountryEnum HR =
+      _$storeFinderResponseCountryEnum_HR;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'CU')
-  static const StoreFinderResponseCountryEnum CU = _$storeFinderResponseCountryEnum_CU;
+  static const StoreFinderResponseCountryEnum CU =
+      _$storeFinderResponseCountryEnum_CU;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'CW')
-  static const StoreFinderResponseCountryEnum CW = _$storeFinderResponseCountryEnum_CW;
+  static const StoreFinderResponseCountryEnum CW =
+      _$storeFinderResponseCountryEnum_CW;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'CY')
-  static const StoreFinderResponseCountryEnum CY = _$storeFinderResponseCountryEnum_CY;
+  static const StoreFinderResponseCountryEnum CY =
+      _$storeFinderResponseCountryEnum_CY;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'CZ')
-  static const StoreFinderResponseCountryEnum CZ = _$storeFinderResponseCountryEnum_CZ;
+  static const StoreFinderResponseCountryEnum CZ =
+      _$storeFinderResponseCountryEnum_CZ;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'DK')
-  static const StoreFinderResponseCountryEnum DK = _$storeFinderResponseCountryEnum_DK;
+  static const StoreFinderResponseCountryEnum DK =
+      _$storeFinderResponseCountryEnum_DK;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'DJ')
-  static const StoreFinderResponseCountryEnum DJ = _$storeFinderResponseCountryEnum_DJ;
+  static const StoreFinderResponseCountryEnum DJ =
+      _$storeFinderResponseCountryEnum_DJ;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'DM')
-  static const StoreFinderResponseCountryEnum DM = _$storeFinderResponseCountryEnum_DM;
+  static const StoreFinderResponseCountryEnum DM =
+      _$storeFinderResponseCountryEnum_DM;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'DO')
-  static const StoreFinderResponseCountryEnum DO = _$storeFinderResponseCountryEnum_DO;
+  static const StoreFinderResponseCountryEnum DO =
+      _$storeFinderResponseCountryEnum_DO;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'EC')
-  static const StoreFinderResponseCountryEnum EC = _$storeFinderResponseCountryEnum_EC;
+  static const StoreFinderResponseCountryEnum EC =
+      _$storeFinderResponseCountryEnum_EC;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'EG')
-  static const StoreFinderResponseCountryEnum EG = _$storeFinderResponseCountryEnum_EG;
+  static const StoreFinderResponseCountryEnum EG =
+      _$storeFinderResponseCountryEnum_EG;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'SV')
-  static const StoreFinderResponseCountryEnum SV = _$storeFinderResponseCountryEnum_SV;
+  static const StoreFinderResponseCountryEnum SV =
+      _$storeFinderResponseCountryEnum_SV;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'GQ')
-  static const StoreFinderResponseCountryEnum GQ = _$storeFinderResponseCountryEnum_GQ;
+  static const StoreFinderResponseCountryEnum GQ =
+      _$storeFinderResponseCountryEnum_GQ;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'ER')
-  static const StoreFinderResponseCountryEnum ER = _$storeFinderResponseCountryEnum_ER;
+  static const StoreFinderResponseCountryEnum ER =
+      _$storeFinderResponseCountryEnum_ER;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'EE')
-  static const StoreFinderResponseCountryEnum EE = _$storeFinderResponseCountryEnum_EE;
+  static const StoreFinderResponseCountryEnum EE =
+      _$storeFinderResponseCountryEnum_EE;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'ET')
-  static const StoreFinderResponseCountryEnum ET = _$storeFinderResponseCountryEnum_ET;
+  static const StoreFinderResponseCountryEnum ET =
+      _$storeFinderResponseCountryEnum_ET;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'FK')
-  static const StoreFinderResponseCountryEnum FK = _$storeFinderResponseCountryEnum_FK;
+  static const StoreFinderResponseCountryEnum FK =
+      _$storeFinderResponseCountryEnum_FK;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'FO')
-  static const StoreFinderResponseCountryEnum FO = _$storeFinderResponseCountryEnum_FO;
+  static const StoreFinderResponseCountryEnum FO =
+      _$storeFinderResponseCountryEnum_FO;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'FJ')
-  static const StoreFinderResponseCountryEnum FJ = _$storeFinderResponseCountryEnum_FJ;
+  static const StoreFinderResponseCountryEnum FJ =
+      _$storeFinderResponseCountryEnum_FJ;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'FI')
-  static const StoreFinderResponseCountryEnum FI = _$storeFinderResponseCountryEnum_FI;
+  static const StoreFinderResponseCountryEnum FI =
+      _$storeFinderResponseCountryEnum_FI;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'FR')
-  static const StoreFinderResponseCountryEnum FR = _$storeFinderResponseCountryEnum_FR;
+  static const StoreFinderResponseCountryEnum FR =
+      _$storeFinderResponseCountryEnum_FR;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'GF')
-  static const StoreFinderResponseCountryEnum GF = _$storeFinderResponseCountryEnum_GF;
+  static const StoreFinderResponseCountryEnum GF =
+      _$storeFinderResponseCountryEnum_GF;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'PF')
-  static const StoreFinderResponseCountryEnum PF = _$storeFinderResponseCountryEnum_PF;
+  static const StoreFinderResponseCountryEnum PF =
+      _$storeFinderResponseCountryEnum_PF;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'TF')
-  static const StoreFinderResponseCountryEnum TF = _$storeFinderResponseCountryEnum_TF;
+  static const StoreFinderResponseCountryEnum TF =
+      _$storeFinderResponseCountryEnum_TF;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'GA')
-  static const StoreFinderResponseCountryEnum GA = _$storeFinderResponseCountryEnum_GA;
+  static const StoreFinderResponseCountryEnum GA =
+      _$storeFinderResponseCountryEnum_GA;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'GM')
-  static const StoreFinderResponseCountryEnum GM = _$storeFinderResponseCountryEnum_GM;
+  static const StoreFinderResponseCountryEnum GM =
+      _$storeFinderResponseCountryEnum_GM;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'GE')
-  static const StoreFinderResponseCountryEnum GE = _$storeFinderResponseCountryEnum_GE;
+  static const StoreFinderResponseCountryEnum GE =
+      _$storeFinderResponseCountryEnum_GE;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'DE')
-  static const StoreFinderResponseCountryEnum DE = _$storeFinderResponseCountryEnum_DE;
+  static const StoreFinderResponseCountryEnum DE =
+      _$storeFinderResponseCountryEnum_DE;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'GH')
-  static const StoreFinderResponseCountryEnum GH = _$storeFinderResponseCountryEnum_GH;
+  static const StoreFinderResponseCountryEnum GH =
+      _$storeFinderResponseCountryEnum_GH;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'GI')
-  static const StoreFinderResponseCountryEnum GI = _$storeFinderResponseCountryEnum_GI;
+  static const StoreFinderResponseCountryEnum GI =
+      _$storeFinderResponseCountryEnum_GI;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'GR')
-  static const StoreFinderResponseCountryEnum GR = _$storeFinderResponseCountryEnum_GR;
+  static const StoreFinderResponseCountryEnum GR =
+      _$storeFinderResponseCountryEnum_GR;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'GL')
-  static const StoreFinderResponseCountryEnum GL = _$storeFinderResponseCountryEnum_GL;
+  static const StoreFinderResponseCountryEnum GL =
+      _$storeFinderResponseCountryEnum_GL;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'GD')
-  static const StoreFinderResponseCountryEnum GD = _$storeFinderResponseCountryEnum_GD;
+  static const StoreFinderResponseCountryEnum GD =
+      _$storeFinderResponseCountryEnum_GD;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'GP')
-  static const StoreFinderResponseCountryEnum GP = _$storeFinderResponseCountryEnum_GP;
+  static const StoreFinderResponseCountryEnum GP =
+      _$storeFinderResponseCountryEnum_GP;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'GU')
-  static const StoreFinderResponseCountryEnum GU = _$storeFinderResponseCountryEnum_GU;
+  static const StoreFinderResponseCountryEnum GU =
+      _$storeFinderResponseCountryEnum_GU;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'GT')
-  static const StoreFinderResponseCountryEnum GT = _$storeFinderResponseCountryEnum_GT;
+  static const StoreFinderResponseCountryEnum GT =
+      _$storeFinderResponseCountryEnum_GT;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'GG')
-  static const StoreFinderResponseCountryEnum GG = _$storeFinderResponseCountryEnum_GG;
+  static const StoreFinderResponseCountryEnum GG =
+      _$storeFinderResponseCountryEnum_GG;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'GN')
-  static const StoreFinderResponseCountryEnum GN = _$storeFinderResponseCountryEnum_GN;
+  static const StoreFinderResponseCountryEnum GN =
+      _$storeFinderResponseCountryEnum_GN;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'GW')
-  static const StoreFinderResponseCountryEnum GW = _$storeFinderResponseCountryEnum_GW;
+  static const StoreFinderResponseCountryEnum GW =
+      _$storeFinderResponseCountryEnum_GW;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'GY')
-  static const StoreFinderResponseCountryEnum GY = _$storeFinderResponseCountryEnum_GY;
+  static const StoreFinderResponseCountryEnum GY =
+      _$storeFinderResponseCountryEnum_GY;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'HT')
-  static const StoreFinderResponseCountryEnum HT = _$storeFinderResponseCountryEnum_HT;
+  static const StoreFinderResponseCountryEnum HT =
+      _$storeFinderResponseCountryEnum_HT;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'HM')
-  static const StoreFinderResponseCountryEnum HM = _$storeFinderResponseCountryEnum_HM;
+  static const StoreFinderResponseCountryEnum HM =
+      _$storeFinderResponseCountryEnum_HM;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'VA')
-  static const StoreFinderResponseCountryEnum VA = _$storeFinderResponseCountryEnum_VA;
+  static const StoreFinderResponseCountryEnum VA =
+      _$storeFinderResponseCountryEnum_VA;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'HN')
-  static const StoreFinderResponseCountryEnum HN = _$storeFinderResponseCountryEnum_HN;
+  static const StoreFinderResponseCountryEnum HN =
+      _$storeFinderResponseCountryEnum_HN;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'HK')
-  static const StoreFinderResponseCountryEnum HK = _$storeFinderResponseCountryEnum_HK;
+  static const StoreFinderResponseCountryEnum HK =
+      _$storeFinderResponseCountryEnum_HK;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'HU')
-  static const StoreFinderResponseCountryEnum HU = _$storeFinderResponseCountryEnum_HU;
+  static const StoreFinderResponseCountryEnum HU =
+      _$storeFinderResponseCountryEnum_HU;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'IS')
-  static const StoreFinderResponseCountryEnum IS = _$storeFinderResponseCountryEnum_IS;
+  static const StoreFinderResponseCountryEnum IS =
+      _$storeFinderResponseCountryEnum_IS;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'IN')
-  static const StoreFinderResponseCountryEnum IN = _$storeFinderResponseCountryEnum_IN;
+  static const StoreFinderResponseCountryEnum IN =
+      _$storeFinderResponseCountryEnum_IN;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'ID')
-  static const StoreFinderResponseCountryEnum ID = _$storeFinderResponseCountryEnum_ID;
+  static const StoreFinderResponseCountryEnum ID =
+      _$storeFinderResponseCountryEnum_ID;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'IR')
-  static const StoreFinderResponseCountryEnum IR = _$storeFinderResponseCountryEnum_IR;
+  static const StoreFinderResponseCountryEnum IR =
+      _$storeFinderResponseCountryEnum_IR;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'IQ')
-  static const StoreFinderResponseCountryEnum IQ = _$storeFinderResponseCountryEnum_IQ;
+  static const StoreFinderResponseCountryEnum IQ =
+      _$storeFinderResponseCountryEnum_IQ;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'IE')
-  static const StoreFinderResponseCountryEnum IE = _$storeFinderResponseCountryEnum_IE;
+  static const StoreFinderResponseCountryEnum IE =
+      _$storeFinderResponseCountryEnum_IE;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'IM')
-  static const StoreFinderResponseCountryEnum IM = _$storeFinderResponseCountryEnum_IM;
+  static const StoreFinderResponseCountryEnum IM =
+      _$storeFinderResponseCountryEnum_IM;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'IL')
-  static const StoreFinderResponseCountryEnum IL = _$storeFinderResponseCountryEnum_IL;
+  static const StoreFinderResponseCountryEnum IL =
+      _$storeFinderResponseCountryEnum_IL;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'IT')
-  static const StoreFinderResponseCountryEnum IT = _$storeFinderResponseCountryEnum_IT;
+  static const StoreFinderResponseCountryEnum IT =
+      _$storeFinderResponseCountryEnum_IT;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'JM')
-  static const StoreFinderResponseCountryEnum JM = _$storeFinderResponseCountryEnum_JM;
+  static const StoreFinderResponseCountryEnum JM =
+      _$storeFinderResponseCountryEnum_JM;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'JP')
-  static const StoreFinderResponseCountryEnum JP = _$storeFinderResponseCountryEnum_JP;
+  static const StoreFinderResponseCountryEnum JP =
+      _$storeFinderResponseCountryEnum_JP;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'JE')
-  static const StoreFinderResponseCountryEnum JE = _$storeFinderResponseCountryEnum_JE;
+  static const StoreFinderResponseCountryEnum JE =
+      _$storeFinderResponseCountryEnum_JE;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'JO')
-  static const StoreFinderResponseCountryEnum JO = _$storeFinderResponseCountryEnum_JO;
+  static const StoreFinderResponseCountryEnum JO =
+      _$storeFinderResponseCountryEnum_JO;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'KZ')
-  static const StoreFinderResponseCountryEnum KZ = _$storeFinderResponseCountryEnum_KZ;
+  static const StoreFinderResponseCountryEnum KZ =
+      _$storeFinderResponseCountryEnum_KZ;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'KE')
-  static const StoreFinderResponseCountryEnum KE = _$storeFinderResponseCountryEnum_KE;
+  static const StoreFinderResponseCountryEnum KE =
+      _$storeFinderResponseCountryEnum_KE;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'KI')
-  static const StoreFinderResponseCountryEnum KI = _$storeFinderResponseCountryEnum_KI;
+  static const StoreFinderResponseCountryEnum KI =
+      _$storeFinderResponseCountryEnum_KI;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'KP')
-  static const StoreFinderResponseCountryEnum KP = _$storeFinderResponseCountryEnum_KP;
+  static const StoreFinderResponseCountryEnum KP =
+      _$storeFinderResponseCountryEnum_KP;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'KR')
-  static const StoreFinderResponseCountryEnum KR = _$storeFinderResponseCountryEnum_KR;
+  static const StoreFinderResponseCountryEnum KR =
+      _$storeFinderResponseCountryEnum_KR;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'XK')
-  static const StoreFinderResponseCountryEnum XK = _$storeFinderResponseCountryEnum_XK;
+  static const StoreFinderResponseCountryEnum XK =
+      _$storeFinderResponseCountryEnum_XK;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'KW')
-  static const StoreFinderResponseCountryEnum KW = _$storeFinderResponseCountryEnum_KW;
+  static const StoreFinderResponseCountryEnum KW =
+      _$storeFinderResponseCountryEnum_KW;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'KG')
-  static const StoreFinderResponseCountryEnum KG = _$storeFinderResponseCountryEnum_KG;
+  static const StoreFinderResponseCountryEnum KG =
+      _$storeFinderResponseCountryEnum_KG;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'LA')
-  static const StoreFinderResponseCountryEnum LA = _$storeFinderResponseCountryEnum_LA;
+  static const StoreFinderResponseCountryEnum LA =
+      _$storeFinderResponseCountryEnum_LA;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'LV')
-  static const StoreFinderResponseCountryEnum LV = _$storeFinderResponseCountryEnum_LV;
+  static const StoreFinderResponseCountryEnum LV =
+      _$storeFinderResponseCountryEnum_LV;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'LB')
-  static const StoreFinderResponseCountryEnum LB = _$storeFinderResponseCountryEnum_LB;
+  static const StoreFinderResponseCountryEnum LB =
+      _$storeFinderResponseCountryEnum_LB;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'LS')
-  static const StoreFinderResponseCountryEnum LS = _$storeFinderResponseCountryEnum_LS;
+  static const StoreFinderResponseCountryEnum LS =
+      _$storeFinderResponseCountryEnum_LS;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'LR')
-  static const StoreFinderResponseCountryEnum LR = _$storeFinderResponseCountryEnum_LR;
+  static const StoreFinderResponseCountryEnum LR =
+      _$storeFinderResponseCountryEnum_LR;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'LY')
-  static const StoreFinderResponseCountryEnum LY = _$storeFinderResponseCountryEnum_LY;
+  static const StoreFinderResponseCountryEnum LY =
+      _$storeFinderResponseCountryEnum_LY;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'LI')
-  static const StoreFinderResponseCountryEnum LI = _$storeFinderResponseCountryEnum_LI;
+  static const StoreFinderResponseCountryEnum LI =
+      _$storeFinderResponseCountryEnum_LI;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'LT')
-  static const StoreFinderResponseCountryEnum LT = _$storeFinderResponseCountryEnum_LT;
+  static const StoreFinderResponseCountryEnum LT =
+      _$storeFinderResponseCountryEnum_LT;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'LU')
-  static const StoreFinderResponseCountryEnum LU = _$storeFinderResponseCountryEnum_LU;
+  static const StoreFinderResponseCountryEnum LU =
+      _$storeFinderResponseCountryEnum_LU;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'MO')
-  static const StoreFinderResponseCountryEnum MO = _$storeFinderResponseCountryEnum_MO;
+  static const StoreFinderResponseCountryEnum MO =
+      _$storeFinderResponseCountryEnum_MO;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'MK')
-  static const StoreFinderResponseCountryEnum MK = _$storeFinderResponseCountryEnum_MK;
+  static const StoreFinderResponseCountryEnum MK =
+      _$storeFinderResponseCountryEnum_MK;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'MG')
-  static const StoreFinderResponseCountryEnum MG = _$storeFinderResponseCountryEnum_MG;
+  static const StoreFinderResponseCountryEnum MG =
+      _$storeFinderResponseCountryEnum_MG;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'MW')
-  static const StoreFinderResponseCountryEnum MW = _$storeFinderResponseCountryEnum_MW;
+  static const StoreFinderResponseCountryEnum MW =
+      _$storeFinderResponseCountryEnum_MW;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'MY')
-  static const StoreFinderResponseCountryEnum MY = _$storeFinderResponseCountryEnum_MY;
+  static const StoreFinderResponseCountryEnum MY =
+      _$storeFinderResponseCountryEnum_MY;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'MV')
-  static const StoreFinderResponseCountryEnum MV = _$storeFinderResponseCountryEnum_MV;
+  static const StoreFinderResponseCountryEnum MV =
+      _$storeFinderResponseCountryEnum_MV;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'ML')
-  static const StoreFinderResponseCountryEnum ML = _$storeFinderResponseCountryEnum_ML;
+  static const StoreFinderResponseCountryEnum ML =
+      _$storeFinderResponseCountryEnum_ML;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'MT')
-  static const StoreFinderResponseCountryEnum MT = _$storeFinderResponseCountryEnum_MT;
+  static const StoreFinderResponseCountryEnum MT =
+      _$storeFinderResponseCountryEnum_MT;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'MH')
-  static const StoreFinderResponseCountryEnum MH = _$storeFinderResponseCountryEnum_MH;
+  static const StoreFinderResponseCountryEnum MH =
+      _$storeFinderResponseCountryEnum_MH;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'MQ')
-  static const StoreFinderResponseCountryEnum MQ = _$storeFinderResponseCountryEnum_MQ;
+  static const StoreFinderResponseCountryEnum MQ =
+      _$storeFinderResponseCountryEnum_MQ;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'MR')
-  static const StoreFinderResponseCountryEnum MR = _$storeFinderResponseCountryEnum_MR;
+  static const StoreFinderResponseCountryEnum MR =
+      _$storeFinderResponseCountryEnum_MR;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'MU')
-  static const StoreFinderResponseCountryEnum MU = _$storeFinderResponseCountryEnum_MU;
+  static const StoreFinderResponseCountryEnum MU =
+      _$storeFinderResponseCountryEnum_MU;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'YT')
-  static const StoreFinderResponseCountryEnum YT = _$storeFinderResponseCountryEnum_YT;
+  static const StoreFinderResponseCountryEnum YT =
+      _$storeFinderResponseCountryEnum_YT;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'MX')
-  static const StoreFinderResponseCountryEnum MX = _$storeFinderResponseCountryEnum_MX;
+  static const StoreFinderResponseCountryEnum MX =
+      _$storeFinderResponseCountryEnum_MX;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'FM')
-  static const StoreFinderResponseCountryEnum FM = _$storeFinderResponseCountryEnum_FM;
+  static const StoreFinderResponseCountryEnum FM =
+      _$storeFinderResponseCountryEnum_FM;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'MD')
-  static const StoreFinderResponseCountryEnum MD = _$storeFinderResponseCountryEnum_MD;
+  static const StoreFinderResponseCountryEnum MD =
+      _$storeFinderResponseCountryEnum_MD;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'MC')
-  static const StoreFinderResponseCountryEnum MC = _$storeFinderResponseCountryEnum_MC;
+  static const StoreFinderResponseCountryEnum MC =
+      _$storeFinderResponseCountryEnum_MC;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'MN')
-  static const StoreFinderResponseCountryEnum MN = _$storeFinderResponseCountryEnum_MN;
+  static const StoreFinderResponseCountryEnum MN =
+      _$storeFinderResponseCountryEnum_MN;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'ME')
-  static const StoreFinderResponseCountryEnum ME = _$storeFinderResponseCountryEnum_ME;
+  static const StoreFinderResponseCountryEnum ME =
+      _$storeFinderResponseCountryEnum_ME;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'MS')
-  static const StoreFinderResponseCountryEnum MS = _$storeFinderResponseCountryEnum_MS;
+  static const StoreFinderResponseCountryEnum MS =
+      _$storeFinderResponseCountryEnum_MS;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'MA')
-  static const StoreFinderResponseCountryEnum MA = _$storeFinderResponseCountryEnum_MA;
+  static const StoreFinderResponseCountryEnum MA =
+      _$storeFinderResponseCountryEnum_MA;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'MZ')
-  static const StoreFinderResponseCountryEnum MZ = _$storeFinderResponseCountryEnum_MZ;
+  static const StoreFinderResponseCountryEnum MZ =
+      _$storeFinderResponseCountryEnum_MZ;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'MM')
-  static const StoreFinderResponseCountryEnum MM = _$storeFinderResponseCountryEnum_MM;
+  static const StoreFinderResponseCountryEnum MM =
+      _$storeFinderResponseCountryEnum_MM;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'NA')
-  static const StoreFinderResponseCountryEnum NA = _$storeFinderResponseCountryEnum_NA;
+  static const StoreFinderResponseCountryEnum NA =
+      _$storeFinderResponseCountryEnum_NA;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'NR')
-  static const StoreFinderResponseCountryEnum NR = _$storeFinderResponseCountryEnum_NR;
+  static const StoreFinderResponseCountryEnum NR =
+      _$storeFinderResponseCountryEnum_NR;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'NP')
-  static const StoreFinderResponseCountryEnum NP = _$storeFinderResponseCountryEnum_NP;
+  static const StoreFinderResponseCountryEnum NP =
+      _$storeFinderResponseCountryEnum_NP;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'NL')
-  static const StoreFinderResponseCountryEnum NL = _$storeFinderResponseCountryEnum_NL;
+  static const StoreFinderResponseCountryEnum NL =
+      _$storeFinderResponseCountryEnum_NL;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'NC')
-  static const StoreFinderResponseCountryEnum NC = _$storeFinderResponseCountryEnum_NC;
+  static const StoreFinderResponseCountryEnum NC =
+      _$storeFinderResponseCountryEnum_NC;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'NZ')
-  static const StoreFinderResponseCountryEnum NZ = _$storeFinderResponseCountryEnum_NZ;
+  static const StoreFinderResponseCountryEnum NZ =
+      _$storeFinderResponseCountryEnum_NZ;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'NI')
-  static const StoreFinderResponseCountryEnum NI = _$storeFinderResponseCountryEnum_NI;
+  static const StoreFinderResponseCountryEnum NI =
+      _$storeFinderResponseCountryEnum_NI;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'NE')
-  static const StoreFinderResponseCountryEnum NE = _$storeFinderResponseCountryEnum_NE;
+  static const StoreFinderResponseCountryEnum NE =
+      _$storeFinderResponseCountryEnum_NE;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'NG')
-  static const StoreFinderResponseCountryEnum NG = _$storeFinderResponseCountryEnum_NG;
+  static const StoreFinderResponseCountryEnum NG =
+      _$storeFinderResponseCountryEnum_NG;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'NU')
-  static const StoreFinderResponseCountryEnum NU = _$storeFinderResponseCountryEnum_NU;
+  static const StoreFinderResponseCountryEnum NU =
+      _$storeFinderResponseCountryEnum_NU;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'NF')
-  static const StoreFinderResponseCountryEnum NF = _$storeFinderResponseCountryEnum_NF;
+  static const StoreFinderResponseCountryEnum NF =
+      _$storeFinderResponseCountryEnum_NF;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'MP')
-  static const StoreFinderResponseCountryEnum MP = _$storeFinderResponseCountryEnum_MP;
+  static const StoreFinderResponseCountryEnum MP =
+      _$storeFinderResponseCountryEnum_MP;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'NO')
-  static const StoreFinderResponseCountryEnum NO = _$storeFinderResponseCountryEnum_NO;
+  static const StoreFinderResponseCountryEnum NO =
+      _$storeFinderResponseCountryEnum_NO;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'OM')
-  static const StoreFinderResponseCountryEnum OM = _$storeFinderResponseCountryEnum_OM;
+  static const StoreFinderResponseCountryEnum OM =
+      _$storeFinderResponseCountryEnum_OM;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'PK')
-  static const StoreFinderResponseCountryEnum PK = _$storeFinderResponseCountryEnum_PK;
+  static const StoreFinderResponseCountryEnum PK =
+      _$storeFinderResponseCountryEnum_PK;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'PW')
-  static const StoreFinderResponseCountryEnum PW = _$storeFinderResponseCountryEnum_PW;
+  static const StoreFinderResponseCountryEnum PW =
+      _$storeFinderResponseCountryEnum_PW;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'PS')
-  static const StoreFinderResponseCountryEnum PS = _$storeFinderResponseCountryEnum_PS;
+  static const StoreFinderResponseCountryEnum PS =
+      _$storeFinderResponseCountryEnum_PS;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'PA')
-  static const StoreFinderResponseCountryEnum PA = _$storeFinderResponseCountryEnum_PA;
+  static const StoreFinderResponseCountryEnum PA =
+      _$storeFinderResponseCountryEnum_PA;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'PG')
-  static const StoreFinderResponseCountryEnum PG = _$storeFinderResponseCountryEnum_PG;
+  static const StoreFinderResponseCountryEnum PG =
+      _$storeFinderResponseCountryEnum_PG;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'PY')
-  static const StoreFinderResponseCountryEnum PY = _$storeFinderResponseCountryEnum_PY;
+  static const StoreFinderResponseCountryEnum PY =
+      _$storeFinderResponseCountryEnum_PY;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'PE')
-  static const StoreFinderResponseCountryEnum PE = _$storeFinderResponseCountryEnum_PE;
+  static const StoreFinderResponseCountryEnum PE =
+      _$storeFinderResponseCountryEnum_PE;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'PH')
-  static const StoreFinderResponseCountryEnum PH = _$storeFinderResponseCountryEnum_PH;
+  static const StoreFinderResponseCountryEnum PH =
+      _$storeFinderResponseCountryEnum_PH;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'PN')
-  static const StoreFinderResponseCountryEnum PN = _$storeFinderResponseCountryEnum_PN;
+  static const StoreFinderResponseCountryEnum PN =
+      _$storeFinderResponseCountryEnum_PN;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'PL')
-  static const StoreFinderResponseCountryEnum PL = _$storeFinderResponseCountryEnum_PL;
+  static const StoreFinderResponseCountryEnum PL =
+      _$storeFinderResponseCountryEnum_PL;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'PT')
-  static const StoreFinderResponseCountryEnum PT = _$storeFinderResponseCountryEnum_PT;
+  static const StoreFinderResponseCountryEnum PT =
+      _$storeFinderResponseCountryEnum_PT;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'PR')
-  static const StoreFinderResponseCountryEnum PR = _$storeFinderResponseCountryEnum_PR;
+  static const StoreFinderResponseCountryEnum PR =
+      _$storeFinderResponseCountryEnum_PR;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'QA')
-  static const StoreFinderResponseCountryEnum QA = _$storeFinderResponseCountryEnum_QA;
+  static const StoreFinderResponseCountryEnum QA =
+      _$storeFinderResponseCountryEnum_QA;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'RE')
-  static const StoreFinderResponseCountryEnum RE = _$storeFinderResponseCountryEnum_RE;
+  static const StoreFinderResponseCountryEnum RE =
+      _$storeFinderResponseCountryEnum_RE;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'RO')
-  static const StoreFinderResponseCountryEnum RO = _$storeFinderResponseCountryEnum_RO;
+  static const StoreFinderResponseCountryEnum RO =
+      _$storeFinderResponseCountryEnum_RO;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'RU')
-  static const StoreFinderResponseCountryEnum RU = _$storeFinderResponseCountryEnum_RU;
+  static const StoreFinderResponseCountryEnum RU =
+      _$storeFinderResponseCountryEnum_RU;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'RW')
-  static const StoreFinderResponseCountryEnum RW = _$storeFinderResponseCountryEnum_RW;
+  static const StoreFinderResponseCountryEnum RW =
+      _$storeFinderResponseCountryEnum_RW;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'BL')
-  static const StoreFinderResponseCountryEnum BL = _$storeFinderResponseCountryEnum_BL;
+  static const StoreFinderResponseCountryEnum BL =
+      _$storeFinderResponseCountryEnum_BL;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'SH')
-  static const StoreFinderResponseCountryEnum SH = _$storeFinderResponseCountryEnum_SH;
+  static const StoreFinderResponseCountryEnum SH =
+      _$storeFinderResponseCountryEnum_SH;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'KN')
-  static const StoreFinderResponseCountryEnum KN = _$storeFinderResponseCountryEnum_KN;
+  static const StoreFinderResponseCountryEnum KN =
+      _$storeFinderResponseCountryEnum_KN;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'LC')
-  static const StoreFinderResponseCountryEnum LC = _$storeFinderResponseCountryEnum_LC;
+  static const StoreFinderResponseCountryEnum LC =
+      _$storeFinderResponseCountryEnum_LC;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'MF')
-  static const StoreFinderResponseCountryEnum MF = _$storeFinderResponseCountryEnum_MF;
+  static const StoreFinderResponseCountryEnum MF =
+      _$storeFinderResponseCountryEnum_MF;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'PM')
-  static const StoreFinderResponseCountryEnum PM = _$storeFinderResponseCountryEnum_PM;
+  static const StoreFinderResponseCountryEnum PM =
+      _$storeFinderResponseCountryEnum_PM;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'VC')
-  static const StoreFinderResponseCountryEnum VC = _$storeFinderResponseCountryEnum_VC;
+  static const StoreFinderResponseCountryEnum VC =
+      _$storeFinderResponseCountryEnum_VC;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'WS')
-  static const StoreFinderResponseCountryEnum WS = _$storeFinderResponseCountryEnum_WS;
+  static const StoreFinderResponseCountryEnum WS =
+      _$storeFinderResponseCountryEnum_WS;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'SM')
-  static const StoreFinderResponseCountryEnum SM = _$storeFinderResponseCountryEnum_SM;
+  static const StoreFinderResponseCountryEnum SM =
+      _$storeFinderResponseCountryEnum_SM;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'ST')
-  static const StoreFinderResponseCountryEnum ST = _$storeFinderResponseCountryEnum_ST;
+  static const StoreFinderResponseCountryEnum ST =
+      _$storeFinderResponseCountryEnum_ST;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'SA')
-  static const StoreFinderResponseCountryEnum SA = _$storeFinderResponseCountryEnum_SA;
+  static const StoreFinderResponseCountryEnum SA =
+      _$storeFinderResponseCountryEnum_SA;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'SN')
-  static const StoreFinderResponseCountryEnum SN = _$storeFinderResponseCountryEnum_SN;
+  static const StoreFinderResponseCountryEnum SN =
+      _$storeFinderResponseCountryEnum_SN;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'RS')
-  static const StoreFinderResponseCountryEnum RS = _$storeFinderResponseCountryEnum_RS;
+  static const StoreFinderResponseCountryEnum RS =
+      _$storeFinderResponseCountryEnum_RS;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'SC')
-  static const StoreFinderResponseCountryEnum SC = _$storeFinderResponseCountryEnum_SC;
+  static const StoreFinderResponseCountryEnum SC =
+      _$storeFinderResponseCountryEnum_SC;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'SL')
-  static const StoreFinderResponseCountryEnum SL = _$storeFinderResponseCountryEnum_SL;
+  static const StoreFinderResponseCountryEnum SL =
+      _$storeFinderResponseCountryEnum_SL;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'SG')
-  static const StoreFinderResponseCountryEnum SG = _$storeFinderResponseCountryEnum_SG;
+  static const StoreFinderResponseCountryEnum SG =
+      _$storeFinderResponseCountryEnum_SG;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'SX')
-  static const StoreFinderResponseCountryEnum SX = _$storeFinderResponseCountryEnum_SX;
+  static const StoreFinderResponseCountryEnum SX =
+      _$storeFinderResponseCountryEnum_SX;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'SK')
-  static const StoreFinderResponseCountryEnum SK = _$storeFinderResponseCountryEnum_SK;
+  static const StoreFinderResponseCountryEnum SK =
+      _$storeFinderResponseCountryEnum_SK;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'SI')
-  static const StoreFinderResponseCountryEnum SI = _$storeFinderResponseCountryEnum_SI;
+  static const StoreFinderResponseCountryEnum SI =
+      _$storeFinderResponseCountryEnum_SI;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'SB')
-  static const StoreFinderResponseCountryEnum SB = _$storeFinderResponseCountryEnum_SB;
+  static const StoreFinderResponseCountryEnum SB =
+      _$storeFinderResponseCountryEnum_SB;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'SO')
-  static const StoreFinderResponseCountryEnum SO = _$storeFinderResponseCountryEnum_SO;
+  static const StoreFinderResponseCountryEnum SO =
+      _$storeFinderResponseCountryEnum_SO;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'ZA')
-  static const StoreFinderResponseCountryEnum ZA = _$storeFinderResponseCountryEnum_ZA;
+  static const StoreFinderResponseCountryEnum ZA =
+      _$storeFinderResponseCountryEnum_ZA;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'GS')
-  static const StoreFinderResponseCountryEnum GS = _$storeFinderResponseCountryEnum_GS;
+  static const StoreFinderResponseCountryEnum GS =
+      _$storeFinderResponseCountryEnum_GS;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'SS')
-  static const StoreFinderResponseCountryEnum SS = _$storeFinderResponseCountryEnum_SS;
+  static const StoreFinderResponseCountryEnum SS =
+      _$storeFinderResponseCountryEnum_SS;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'ES')
-  static const StoreFinderResponseCountryEnum ES = _$storeFinderResponseCountryEnum_ES;
+  static const StoreFinderResponseCountryEnum ES =
+      _$storeFinderResponseCountryEnum_ES;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'LK')
-  static const StoreFinderResponseCountryEnum LK = _$storeFinderResponseCountryEnum_LK;
+  static const StoreFinderResponseCountryEnum LK =
+      _$storeFinderResponseCountryEnum_LK;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'SD')
-  static const StoreFinderResponseCountryEnum SD = _$storeFinderResponseCountryEnum_SD;
+  static const StoreFinderResponseCountryEnum SD =
+      _$storeFinderResponseCountryEnum_SD;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'SR')
-  static const StoreFinderResponseCountryEnum SR = _$storeFinderResponseCountryEnum_SR;
+  static const StoreFinderResponseCountryEnum SR =
+      _$storeFinderResponseCountryEnum_SR;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'SJ')
-  static const StoreFinderResponseCountryEnum SJ = _$storeFinderResponseCountryEnum_SJ;
+  static const StoreFinderResponseCountryEnum SJ =
+      _$storeFinderResponseCountryEnum_SJ;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'SZ')
-  static const StoreFinderResponseCountryEnum SZ = _$storeFinderResponseCountryEnum_SZ;
+  static const StoreFinderResponseCountryEnum SZ =
+      _$storeFinderResponseCountryEnum_SZ;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'SE')
-  static const StoreFinderResponseCountryEnum SE = _$storeFinderResponseCountryEnum_SE;
+  static const StoreFinderResponseCountryEnum SE =
+      _$storeFinderResponseCountryEnum_SE;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'CH')
-  static const StoreFinderResponseCountryEnum CH = _$storeFinderResponseCountryEnum_CH;
+  static const StoreFinderResponseCountryEnum CH =
+      _$storeFinderResponseCountryEnum_CH;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'SY')
-  static const StoreFinderResponseCountryEnum SY = _$storeFinderResponseCountryEnum_SY;
+  static const StoreFinderResponseCountryEnum SY =
+      _$storeFinderResponseCountryEnum_SY;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'TW')
-  static const StoreFinderResponseCountryEnum TW = _$storeFinderResponseCountryEnum_TW;
+  static const StoreFinderResponseCountryEnum TW =
+      _$storeFinderResponseCountryEnum_TW;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'TJ')
-  static const StoreFinderResponseCountryEnum TJ = _$storeFinderResponseCountryEnum_TJ;
+  static const StoreFinderResponseCountryEnum TJ =
+      _$storeFinderResponseCountryEnum_TJ;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'TZ')
-  static const StoreFinderResponseCountryEnum TZ = _$storeFinderResponseCountryEnum_TZ;
+  static const StoreFinderResponseCountryEnum TZ =
+      _$storeFinderResponseCountryEnum_TZ;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'TH')
-  static const StoreFinderResponseCountryEnum TH = _$storeFinderResponseCountryEnum_TH;
+  static const StoreFinderResponseCountryEnum TH =
+      _$storeFinderResponseCountryEnum_TH;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'TL')
-  static const StoreFinderResponseCountryEnum TL = _$storeFinderResponseCountryEnum_TL;
+  static const StoreFinderResponseCountryEnum TL =
+      _$storeFinderResponseCountryEnum_TL;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'TG')
-  static const StoreFinderResponseCountryEnum TG = _$storeFinderResponseCountryEnum_TG;
+  static const StoreFinderResponseCountryEnum TG =
+      _$storeFinderResponseCountryEnum_TG;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'TK')
-  static const StoreFinderResponseCountryEnum TK = _$storeFinderResponseCountryEnum_TK;
+  static const StoreFinderResponseCountryEnum TK =
+      _$storeFinderResponseCountryEnum_TK;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'TO')
-  static const StoreFinderResponseCountryEnum TO = _$storeFinderResponseCountryEnum_TO;
+  static const StoreFinderResponseCountryEnum TO =
+      _$storeFinderResponseCountryEnum_TO;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'TT')
-  static const StoreFinderResponseCountryEnum TT = _$storeFinderResponseCountryEnum_TT;
+  static const StoreFinderResponseCountryEnum TT =
+      _$storeFinderResponseCountryEnum_TT;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'TN')
-  static const StoreFinderResponseCountryEnum TN = _$storeFinderResponseCountryEnum_TN;
+  static const StoreFinderResponseCountryEnum TN =
+      _$storeFinderResponseCountryEnum_TN;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'TR')
-  static const StoreFinderResponseCountryEnum TR = _$storeFinderResponseCountryEnum_TR;
+  static const StoreFinderResponseCountryEnum TR =
+      _$storeFinderResponseCountryEnum_TR;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'TM')
-  static const StoreFinderResponseCountryEnum TM = _$storeFinderResponseCountryEnum_TM;
+  static const StoreFinderResponseCountryEnum TM =
+      _$storeFinderResponseCountryEnum_TM;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'TC')
-  static const StoreFinderResponseCountryEnum TC = _$storeFinderResponseCountryEnum_TC;
+  static const StoreFinderResponseCountryEnum TC =
+      _$storeFinderResponseCountryEnum_TC;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'TV')
-  static const StoreFinderResponseCountryEnum TV = _$storeFinderResponseCountryEnum_TV;
+  static const StoreFinderResponseCountryEnum TV =
+      _$storeFinderResponseCountryEnum_TV;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'UG')
-  static const StoreFinderResponseCountryEnum UG = _$storeFinderResponseCountryEnum_UG;
+  static const StoreFinderResponseCountryEnum UG =
+      _$storeFinderResponseCountryEnum_UG;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'UA')
-  static const StoreFinderResponseCountryEnum UA = _$storeFinderResponseCountryEnum_UA;
+  static const StoreFinderResponseCountryEnum UA =
+      _$storeFinderResponseCountryEnum_UA;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'AE')
-  static const StoreFinderResponseCountryEnum AE = _$storeFinderResponseCountryEnum_AE;
+  static const StoreFinderResponseCountryEnum AE =
+      _$storeFinderResponseCountryEnum_AE;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'UK')
-  static const StoreFinderResponseCountryEnum UK = _$storeFinderResponseCountryEnum_UK;
+  static const StoreFinderResponseCountryEnum UK =
+      _$storeFinderResponseCountryEnum_UK;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'US')
-  static const StoreFinderResponseCountryEnum US = _$storeFinderResponseCountryEnum_US;
+  static const StoreFinderResponseCountryEnum US =
+      _$storeFinderResponseCountryEnum_US;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'UM')
-  static const StoreFinderResponseCountryEnum UM = _$storeFinderResponseCountryEnum_UM;
+  static const StoreFinderResponseCountryEnum UM =
+      _$storeFinderResponseCountryEnum_UM;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'UY')
-  static const StoreFinderResponseCountryEnum UY = _$storeFinderResponseCountryEnum_UY;
+  static const StoreFinderResponseCountryEnum UY =
+      _$storeFinderResponseCountryEnum_UY;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'UZ')
-  static const StoreFinderResponseCountryEnum UZ = _$storeFinderResponseCountryEnum_UZ;
+  static const StoreFinderResponseCountryEnum UZ =
+      _$storeFinderResponseCountryEnum_UZ;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'VU')
-  static const StoreFinderResponseCountryEnum VU = _$storeFinderResponseCountryEnum_VU;
+  static const StoreFinderResponseCountryEnum VU =
+      _$storeFinderResponseCountryEnum_VU;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'VE')
-  static const StoreFinderResponseCountryEnum VE = _$storeFinderResponseCountryEnum_VE;
+  static const StoreFinderResponseCountryEnum VE =
+      _$storeFinderResponseCountryEnum_VE;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'VN')
-  static const StoreFinderResponseCountryEnum VN = _$storeFinderResponseCountryEnum_VN;
+  static const StoreFinderResponseCountryEnum VN =
+      _$storeFinderResponseCountryEnum_VN;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'VG')
-  static const StoreFinderResponseCountryEnum VG = _$storeFinderResponseCountryEnum_VG;
+  static const StoreFinderResponseCountryEnum VG =
+      _$storeFinderResponseCountryEnum_VG;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'VI')
-  static const StoreFinderResponseCountryEnum VI = _$storeFinderResponseCountryEnum_VI;
+  static const StoreFinderResponseCountryEnum VI =
+      _$storeFinderResponseCountryEnum_VI;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'WF')
-  static const StoreFinderResponseCountryEnum WF = _$storeFinderResponseCountryEnum_WF;
+  static const StoreFinderResponseCountryEnum WF =
+      _$storeFinderResponseCountryEnum_WF;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'EH')
-  static const StoreFinderResponseCountryEnum EH = _$storeFinderResponseCountryEnum_EH;
+  static const StoreFinderResponseCountryEnum EH =
+      _$storeFinderResponseCountryEnum_EH;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'YE')
-  static const StoreFinderResponseCountryEnum YE = _$storeFinderResponseCountryEnum_YE;
+  static const StoreFinderResponseCountryEnum YE =
+      _$storeFinderResponseCountryEnum_YE;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'ZM')
-  static const StoreFinderResponseCountryEnum ZM = _$storeFinderResponseCountryEnum_ZM;
+  static const StoreFinderResponseCountryEnum ZM =
+      _$storeFinderResponseCountryEnum_ZM;
+
   /// The country the location is residing in.
   @BuiltValueEnumConst(wireName: r'ZW')
-  static const StoreFinderResponseCountryEnum ZW = _$storeFinderResponseCountryEnum_ZW;
+  static const StoreFinderResponseCountryEnum ZW =
+      _$storeFinderResponseCountryEnum_ZW;
 
-  static Serializer<StoreFinderResponseCountryEnum> get serializer => _$storeFinderResponseCountryEnumSerializer;
+  static Serializer<StoreFinderResponseCountryEnum> get serializer =>
+      _$storeFinderResponseCountryEnumSerializer;
 
-  const StoreFinderResponseCountryEnum._(String name): super(name);
+  const StoreFinderResponseCountryEnum._(String name) : super(name);
 
-  static BuiltSet<StoreFinderResponseCountryEnum> get values => _$storeFinderResponseCountryEnumValues;
-  static StoreFinderResponseCountryEnum valueOf(String name) => _$storeFinderResponseCountryEnumValueOf(name);
+  static BuiltSet<StoreFinderResponseCountryEnum> get values =>
+      _$storeFinderResponseCountryEnumValues;
+  static StoreFinderResponseCountryEnum valueOf(String name) =>
+      _$storeFinderResponseCountryEnumValueOf(name);
 }
-

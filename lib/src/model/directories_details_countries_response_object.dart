@@ -13,13 +13,16 @@ part 'directories_details_countries_response_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [items] 
+/// * [items]
 /// * [count] - Total count of countries
 /// * [max] - Maximum number of results per page
 /// * [offset] - Offset for pagination
 /// * [nextOffset] - Next offset for pagination
 @BuiltValue()
-abstract class DirectoriesDetailsCountriesResponseObject implements Built<DirectoriesDetailsCountriesResponseObject, DirectoriesDetailsCountriesResponseObjectBuilder> {
+abstract class DirectoriesDetailsCountriesResponseObject
+    implements
+        Built<DirectoriesDetailsCountriesResponseObject,
+            DirectoriesDetailsCountriesResponseObjectBuilder> {
   @BuiltValueField(wireName: r'items')
   BuiltList<DirectoriesDetailsCountry>? get items;
 
@@ -41,18 +44,26 @@ abstract class DirectoriesDetailsCountriesResponseObject implements Built<Direct
 
   DirectoriesDetailsCountriesResponseObject._();
 
-  factory DirectoriesDetailsCountriesResponseObject([void updates(DirectoriesDetailsCountriesResponseObjectBuilder b)]) = _$DirectoriesDetailsCountriesResponseObject;
+  factory DirectoriesDetailsCountriesResponseObject(
+          [void updates(DirectoriesDetailsCountriesResponseObjectBuilder b)]) =
+      _$DirectoriesDetailsCountriesResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(DirectoriesDetailsCountriesResponseObjectBuilder b) => b;
+  static void _defaults(DirectoriesDetailsCountriesResponseObjectBuilder b) =>
+      b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DirectoriesDetailsCountriesResponseObject> get serializer => _$DirectoriesDetailsCountriesResponseObjectSerializer();
+  static Serializer<DirectoriesDetailsCountriesResponseObject> get serializer =>
+      _$DirectoriesDetailsCountriesResponseObjectSerializer();
 }
 
-class _$DirectoriesDetailsCountriesResponseObjectSerializer implements PrimitiveSerializer<DirectoriesDetailsCountriesResponseObject> {
+class _$DirectoriesDetailsCountriesResponseObjectSerializer
+    implements PrimitiveSerializer<DirectoriesDetailsCountriesResponseObject> {
   @override
-  final Iterable<Type> types = const [DirectoriesDetailsCountriesResponseObject, _$DirectoriesDetailsCountriesResponseObject];
+  final Iterable<Type> types = const [
+    DirectoriesDetailsCountriesResponseObject,
+    _$DirectoriesDetailsCountriesResponseObject
+  ];
 
   @override
   final String wireName = r'DirectoriesDetailsCountriesResponseObject';
@@ -66,7 +77,8 @@ class _$DirectoriesDetailsCountriesResponseObjectSerializer implements Primitive
       yield r'items';
       yield serializers.serialize(
         object.items,
-        specifiedType: const FullType(BuiltList, [FullType(DirectoriesDetailsCountry)]),
+        specifiedType:
+            const FullType(BuiltList, [FullType(DirectoriesDetailsCountry)]),
       );
     }
     if (object.count != null) {
@@ -105,7 +117,9 @@ class _$DirectoriesDetailsCountriesResponseObjectSerializer implements Primitive
     DirectoriesDetailsCountriesResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -123,7 +137,8 @@ class _$DirectoriesDetailsCountriesResponseObjectSerializer implements Primitive
         case r'items':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(DirectoriesDetailsCountry)]),
+            specifiedType: const FullType(
+                BuiltList, [FullType(DirectoriesDetailsCountry)]),
           ) as BuiltList<DirectoriesDetailsCountry>;
           result.items.replace(valueDes);
           break;
@@ -183,4 +198,3 @@ class _$DirectoriesDetailsCountriesResponseObjectSerializer implements Primitive
     return result.build();
   }
 }
-

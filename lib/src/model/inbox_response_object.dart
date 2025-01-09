@@ -12,26 +12,33 @@ part 'inbox_response_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [inbox] 
+/// * [inbox]
 @BuiltValue()
-abstract class InboxResponseObject implements Built<InboxResponseObject, InboxResponseObjectBuilder> {
+abstract class InboxResponseObject
+    implements Built<InboxResponseObject, InboxResponseObjectBuilder> {
   @BuiltValueField(wireName: r'inbox')
   InboxResponse? get inbox;
 
   InboxResponseObject._();
 
-  factory InboxResponseObject([void updates(InboxResponseObjectBuilder b)]) = _$InboxResponseObject;
+  factory InboxResponseObject([void updates(InboxResponseObjectBuilder b)]) =
+      _$InboxResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(InboxResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<InboxResponseObject> get serializer => _$InboxResponseObjectSerializer();
+  static Serializer<InboxResponseObject> get serializer =>
+      _$InboxResponseObjectSerializer();
 }
 
-class _$InboxResponseObjectSerializer implements PrimitiveSerializer<InboxResponseObject> {
+class _$InboxResponseObjectSerializer
+    implements PrimitiveSerializer<InboxResponseObject> {
   @override
-  final Iterable<Type> types = const [InboxResponseObject, _$InboxResponseObject];
+  final Iterable<Type> types = const [
+    InboxResponseObject,
+    _$InboxResponseObject
+  ];
 
   @override
   final String wireName = r'InboxResponseObject';
@@ -56,7 +63,9 @@ class _$InboxResponseObjectSerializer implements PrimitiveSerializer<InboxRespon
     InboxResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +115,3 @@ class _$InboxResponseObjectSerializer implements PrimitiveSerializer<InboxRespon
     return result.build();
   }
 }
-

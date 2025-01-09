@@ -28,7 +28,8 @@ part 'rule_response.g.dart';
 /// * [canEdit] - The current user can edit this rule when they have access to all businesses and locations that identify this rule
 /// * [locationCount] - Count of locations to which this rule applies
 @BuiltValue()
-abstract class RuleResponse implements Built<RuleResponse, RuleResponseBuilder> {
+abstract class RuleResponse
+    implements Built<RuleResponse, RuleResponseBuilder> {
   /// Uniquely identifies this Auto Response Rule
   @BuiltValueField(wireName: r'id')
   String? get id;
@@ -193,7 +194,9 @@ class _$RuleResponseSerializer implements PrimitiveSerializer<RuleResponse> {
     RuleResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -218,21 +221,24 @@ class _$RuleResponseSerializer implements PrimitiveSerializer<RuleResponse> {
         case r'businesses':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(ResponseBusiness)]),
+            specifiedType:
+                const FullType(BuiltList, [FullType(ResponseBusiness)]),
           ) as BuiltList<ResponseBusiness>;
           result.businesses.replace(valueDes);
           break;
         case r'locations':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(ResponseLocation)]),
+            specifiedType:
+                const FullType(BuiltList, [FullType(ResponseLocation)]),
           ) as BuiltList<ResponseLocation>;
           result.locations.replace(valueDes);
           break;
         case r'excludedLocations':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(ResponseLocation)]),
+            specifiedType:
+                const FullType(BuiltList, [FullType(ResponseLocation)]),
           ) as BuiltList<ResponseLocation>;
           result.excludedLocations.replace(valueDes);
           break;
@@ -322,22 +328,27 @@ class _$RuleResponseSerializer implements PrimitiveSerializer<RuleResponse> {
 }
 
 class RuleResponseStatusEnum extends EnumClass {
-
   /// Status of this Auto Response Rule, either ACTIVE or INACTIVE
   @BuiltValueEnumConst(wireName: r'ACTIVE')
   static const RuleResponseStatusEnum ACTIVE = _$ruleResponseStatusEnum_ACTIVE;
+
   /// Status of this Auto Response Rule, either ACTIVE or INACTIVE
   @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const RuleResponseStatusEnum INACTIVE = _$ruleResponseStatusEnum_INACTIVE;
+  static const RuleResponseStatusEnum INACTIVE =
+      _$ruleResponseStatusEnum_INACTIVE;
+
   /// Status of this Auto Response Rule, either ACTIVE or INACTIVE
   @BuiltValueEnumConst(wireName: r'DELETED')
-  static const RuleResponseStatusEnum DELETED = _$ruleResponseStatusEnum_DELETED;
+  static const RuleResponseStatusEnum DELETED =
+      _$ruleResponseStatusEnum_DELETED;
 
-  static Serializer<RuleResponseStatusEnum> get serializer => _$ruleResponseStatusEnumSerializer;
+  static Serializer<RuleResponseStatusEnum> get serializer =>
+      _$ruleResponseStatusEnumSerializer;
 
-  const RuleResponseStatusEnum._(String name): super(name);
+  const RuleResponseStatusEnum._(String name) : super(name);
 
-  static BuiltSet<RuleResponseStatusEnum> get values => _$ruleResponseStatusEnumValues;
-  static RuleResponseStatusEnum valueOf(String name) => _$ruleResponseStatusEnumValueOf(name);
+  static BuiltSet<RuleResponseStatusEnum> get values =>
+      _$ruleResponseStatusEnumValues;
+  static RuleResponseStatusEnum valueOf(String name) =>
+      _$ruleResponseStatusEnumValueOf(name);
 }
-

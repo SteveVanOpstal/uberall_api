@@ -16,7 +16,6 @@ import 'package:openapi/src/model/store_finder_response_list_wrapper.dart';
 import 'package:openapi/src/model/store_finder_response_wrapper.dart';
 
 class StoreFinderApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -40,7 +39,7 @@ class StoreFinderApi {
   ///
   /// Returns a [Future] containing a [Response] with a [StoreFinderFiltersWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<StoreFinderFiltersWrapper>> getStoreFindersStoreKeyFilters({ 
+  Future<Response<StoreFinderFiltersWrapper>> getStoreFindersStoreKeyFilters({
     required String storeKey,
     String? language,
     BuiltList<String>? country,
@@ -52,7 +51,10 @@ class StoreFinderApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/store-finders/{storeKey}/filters'.replaceAll('{' r'storeKey' '}', encodeQueryParameter(_serializers, storeKey, const FullType(String)).toString());
+    final _path = r'/store-finders/{storeKey}/filters'.replaceAll(
+        '{' r'storeKey' '}',
+        encodeQueryParameter(_serializers, storeKey, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -65,7 +67,8 @@ class StoreFinderApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -78,9 +81,23 @@ class StoreFinderApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (language != null) r'language': encodeQueryParameter(_serializers, language, const FullType(String)),
-      if (country != null) r'country': encodeCollectionQueryParameter<String>(_serializers, country, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (filters != null) r'filters': encodeCollectionQueryParameter<String>(_serializers, filters, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
+      if (language != null)
+        r'language': encodeQueryParameter(
+            _serializers, language, const FullType(String)),
+      if (country != null)
+        r'country': encodeCollectionQueryParameter<String>(
+          _serializers,
+          country,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (filters != null)
+        r'filters': encodeCollectionQueryParameter<String>(
+          _serializers,
+          filters,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -96,11 +113,12 @@ class StoreFinderApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(StoreFinderFiltersWrapper),
-      ) as StoreFinderFiltersWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(StoreFinderFiltersWrapper),
+            ) as StoreFinderFiltersWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -153,7 +171,8 @@ class StoreFinderApi {
   ///
   /// Returns a [Future] containing a [Response] with a [LocationSearchResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LocationSearchResponseWrapper>> getStoreFindersStoreKeyLocations({ 
+  Future<Response<LocationSearchResponseWrapper>>
+      getStoreFindersStoreKeyLocations({
     required String storeKey,
     BuiltList<String>? leftCurlyBracketFilterRightCurlyBracket,
     BuiltList<String>? cities,
@@ -178,7 +197,10 @@ class StoreFinderApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/store-finders/{storeKey}/locations'.replaceAll('{' r'storeKey' '}', encodeQueryParameter(_serializers, storeKey, const FullType(String)).toString());
+    final _path = r'/store-finders/{storeKey}/locations'.replaceAll(
+        '{' r'storeKey' '}',
+        encodeQueryParameter(_serializers, storeKey, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -191,7 +213,8 @@ class StoreFinderApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -204,22 +227,86 @@ class StoreFinderApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (leftCurlyBracketFilterRightCurlyBracket != null) r'{filter}': encodeCollectionQueryParameter<String>(_serializers, leftCurlyBracketFilterRightCurlyBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (cities != null) r'cities': encodeCollectionQueryParameter<String>(_serializers, cities, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (coordinates != null) r'coordinates': encodeCollectionQueryParameter<String>(_serializers, coordinates, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (countries != null) r'countries': encodeCollectionQueryParameter<String>(_serializers, countries, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (fieldMask != null) r'fieldMask': encodeCollectionQueryParameter<String>(_serializers, fieldMask, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (geo != null) r'geo': encodeQueryParameter(_serializers, geo, const FullType(bool)),
-      if (lat != null) r'lat': encodeQueryParameter(_serializers, lat, const FullType(String)),
-      if (lng != null) r'lng': encodeQueryParameter(_serializers, lng, const FullType(String)),
-      if (locationIds != null) r'locationIds': encodeCollectionQueryParameter<String>(_serializers, locationIds, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (max != null) r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
-      if (offset != null) r'offset': encodeQueryParameter(_serializers, offset, const FullType(int)),
-      if (openNow != null) r'openNow': encodeQueryParameter(_serializers, openNow, const FullType(String)),
-      if (provinces != null) r'provinces': encodeCollectionQueryParameter<String>(_serializers, provinces, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (queryFields != null) r'queryFields': encodeCollectionQueryParameter<String>(_serializers, queryFields, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (radius != null) r'radius': encodeQueryParameter(_serializers, radius, const FullType(String)),
-      if (zips != null) r'zips': encodeCollectionQueryParameter<String>(_serializers, zips, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
+      if (leftCurlyBracketFilterRightCurlyBracket != null)
+        r'{filter}': encodeCollectionQueryParameter<String>(
+          _serializers,
+          leftCurlyBracketFilterRightCurlyBracket,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (cities != null)
+        r'cities': encodeCollectionQueryParameter<String>(
+          _serializers,
+          cities,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (coordinates != null)
+        r'coordinates': encodeCollectionQueryParameter<String>(
+          _serializers,
+          coordinates,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (countries != null)
+        r'countries': encodeCollectionQueryParameter<String>(
+          _serializers,
+          countries,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (fieldMask != null)
+        r'fieldMask': encodeCollectionQueryParameter<String>(
+          _serializers,
+          fieldMask,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (geo != null)
+        r'geo': encodeQueryParameter(_serializers, geo, const FullType(bool)),
+      if (lat != null)
+        r'lat': encodeQueryParameter(_serializers, lat, const FullType(String)),
+      if (lng != null)
+        r'lng': encodeQueryParameter(_serializers, lng, const FullType(String)),
+      if (locationIds != null)
+        r'locationIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          locationIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (max != null)
+        r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
+      if (offset != null)
+        r'offset':
+            encodeQueryParameter(_serializers, offset, const FullType(int)),
+      if (openNow != null)
+        r'openNow':
+            encodeQueryParameter(_serializers, openNow, const FullType(String)),
+      if (provinces != null)
+        r'provinces': encodeCollectionQueryParameter<String>(
+          _serializers,
+          provinces,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (queryFields != null)
+        r'queryFields': encodeCollectionQueryParameter<String>(
+          _serializers,
+          queryFields,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (radius != null)
+        r'radius':
+            encodeQueryParameter(_serializers, radius, const FullType(String)),
+      if (zips != null)
+        r'zips': encodeCollectionQueryParameter<String>(
+          _serializers,
+          zips,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -235,11 +322,12 @@ class StoreFinderApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LocationSearchResponseWrapper),
-      ) as LocationSearchResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LocationSearchResponseWrapper),
+            ) as LocationSearchResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -279,7 +367,8 @@ class StoreFinderApi {
   ///
   /// Returns a [Future] containing a [Response] with a [StoreFinderResponseListWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<StoreFinderResponseListWrapper>> getStoreFindersStoreKeyLocationsAll({ 
+  Future<Response<StoreFinderResponseListWrapper>>
+      getStoreFindersStoreKeyLocationsAll({
     required String storeKey,
     BuiltList<String>? country,
     BuiltList<String>? fieldMask,
@@ -291,7 +380,10 @@ class StoreFinderApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/store-finders/{storeKey}/locations/all'.replaceAll('{' r'storeKey' '}', encodeQueryParameter(_serializers, storeKey, const FullType(String)).toString());
+    final _path = r'/store-finders/{storeKey}/locations/all'.replaceAll(
+        '{' r'storeKey' '}',
+        encodeQueryParameter(_serializers, storeKey, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -304,7 +396,8 @@ class StoreFinderApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -317,9 +410,23 @@ class StoreFinderApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (country != null) r'country': encodeCollectionQueryParameter<String>(_serializers, country, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (fieldMask != null) r'fieldMask': encodeCollectionQueryParameter<String>(_serializers, fieldMask, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (siqMode != null) r'siqMode': encodeQueryParameter(_serializers, siqMode, const FullType(bool)),
+      if (country != null)
+        r'country': encodeCollectionQueryParameter<String>(
+          _serializers,
+          country,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (fieldMask != null)
+        r'fieldMask': encodeCollectionQueryParameter<String>(
+          _serializers,
+          fieldMask,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (siqMode != null)
+        r'siqMode':
+            encodeQueryParameter(_serializers, siqMode, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(
@@ -335,11 +442,12 @@ class StoreFinderApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(StoreFinderResponseListWrapper),
-      ) as StoreFinderResponseListWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(StoreFinderResponseListWrapper),
+            ) as StoreFinderResponseListWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -384,7 +492,8 @@ class StoreFinderApi {
   ///
   /// Returns a [Future] containing a [Response] with a [StoreFinderResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<StoreFinderResponseWrapper>> getStoreFindersStoreKeyLocationsId({ 
+  Future<Response<StoreFinderResponseWrapper>>
+      getStoreFindersStoreKeyLocationsId({
     required String storeKey,
     required String id,
     BuiltList<String>? country,
@@ -401,7 +510,15 @@ class StoreFinderApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/store-finders/{storeKey}/locations/{id}**'.replaceAll('{' r'storeKey' '}', encodeQueryParameter(_serializers, storeKey, const FullType(String)).toString()).replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/store-finders/{storeKey}/locations/{id}**'
+        .replaceAll(
+            '{' r'storeKey' '}',
+            encodeQueryParameter(_serializers, storeKey, const FullType(String))
+                .toString())
+        .replaceAll(
+            '{' r'id' '}',
+            encodeQueryParameter(_serializers, id, const FullType(String))
+                .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -414,7 +531,8 @@ class StoreFinderApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -427,13 +545,34 @@ class StoreFinderApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (country != null) r'country': encodeCollectionQueryParameter<String>(_serializers, country, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (customFields != null) r'customFields': encodeQueryParameter(_serializers, customFields, const FullType(bool)),
-      if (full != null) r'full': encodeQueryParameter(_serializers, full, const FullType(bool)),
-      if (identifier != null) r'identifier': encodeQueryParameter(_serializers, identifier, const FullType(bool)),
-      if (reviewRatings != null) r'reviewRatings': encodeCollectionQueryParameter<String>(_serializers, reviewRatings, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (siqMode != null) r'siqMode': encodeQueryParameter(_serializers, siqMode, const FullType(bool)),
-      if (slug != null) r'slug': encodeQueryParameter(_serializers, slug, const FullType(String)),
+      if (country != null)
+        r'country': encodeCollectionQueryParameter<String>(
+          _serializers,
+          country,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (customFields != null)
+        r'customFields': encodeQueryParameter(
+            _serializers, customFields, const FullType(bool)),
+      if (full != null)
+        r'full': encodeQueryParameter(_serializers, full, const FullType(bool)),
+      if (identifier != null)
+        r'identifier': encodeQueryParameter(
+            _serializers, identifier, const FullType(bool)),
+      if (reviewRatings != null)
+        r'reviewRatings': encodeCollectionQueryParameter<String>(
+          _serializers,
+          reviewRatings,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (siqMode != null)
+        r'siqMode':
+            encodeQueryParameter(_serializers, siqMode, const FullType(bool)),
+      if (slug != null)
+        r'slug':
+            encodeQueryParameter(_serializers, slug, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -449,11 +588,12 @@ class StoreFinderApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(StoreFinderResponseWrapper),
-      ) as StoreFinderResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(StoreFinderResponseWrapper),
+            ) as StoreFinderResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -475,5 +615,4 @@ class StoreFinderApi {
       extra: _response.extra,
     );
   }
-
 }

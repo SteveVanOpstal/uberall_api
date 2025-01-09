@@ -17,9 +17,12 @@ part 'sales_partner_list_response_object.g.dart';
 /// * [pageCount] - The number of children on the current page
 /// * [max] - The maximum number of results to return
 /// * [offset] - The offset for pagination
-/// * [children] 
+/// * [children]
 @BuiltValue()
-abstract class SalesPartnerListResponseObject implements Built<SalesPartnerListResponseObject, SalesPartnerListResponseObjectBuilder> {
+abstract class SalesPartnerListResponseObject
+    implements
+        Built<SalesPartnerListResponseObject,
+            SalesPartnerListResponseObjectBuilder> {
   /// The total count of found children
   @BuiltValueField(wireName: r'count')
   int? get count;
@@ -41,18 +44,25 @@ abstract class SalesPartnerListResponseObject implements Built<SalesPartnerListR
 
   SalesPartnerListResponseObject._();
 
-  factory SalesPartnerListResponseObject([void updates(SalesPartnerListResponseObjectBuilder b)]) = _$SalesPartnerListResponseObject;
+  factory SalesPartnerListResponseObject(
+          [void updates(SalesPartnerListResponseObjectBuilder b)]) =
+      _$SalesPartnerListResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SalesPartnerListResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<SalesPartnerListResponseObject> get serializer => _$SalesPartnerListResponseObjectSerializer();
+  static Serializer<SalesPartnerListResponseObject> get serializer =>
+      _$SalesPartnerListResponseObjectSerializer();
 }
 
-class _$SalesPartnerListResponseObjectSerializer implements PrimitiveSerializer<SalesPartnerListResponseObject> {
+class _$SalesPartnerListResponseObjectSerializer
+    implements PrimitiveSerializer<SalesPartnerListResponseObject> {
   @override
-  final Iterable<Type> types = const [SalesPartnerListResponseObject, _$SalesPartnerListResponseObject];
+  final Iterable<Type> types = const [
+    SalesPartnerListResponseObject,
+    _$SalesPartnerListResponseObject
+  ];
 
   @override
   final String wireName = r'SalesPartnerListResponseObject';
@@ -105,7 +115,9 @@ class _$SalesPartnerListResponseObjectSerializer implements PrimitiveSerializer<
     SalesPartnerListResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -183,4 +195,3 @@ class _$SalesPartnerListResponseObjectSerializer implements PrimitiveSerializer<
     return result.build();
   }
 }
-

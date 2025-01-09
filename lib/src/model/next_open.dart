@@ -107,7 +107,9 @@ class _$NextOpenSerializer implements PrimitiveSerializer<NextOpen> {
     NextOpen object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -187,34 +189,44 @@ class _$NextOpenSerializer implements PrimitiveSerializer<NextOpen> {
 }
 
 class NextOpenDayOfWeekEnum extends EnumClass {
-
   /// day of week when the location will be opened; format like OpeningHours: 1 for Monday, 2 for Tuesday, etc (this parameter is used only if closedNow true and neverOpens false)
   @BuiltValueEnumConst(wireName: r'MONDAY')
   static const NextOpenDayOfWeekEnum MONDAY = _$nextOpenDayOfWeekEnum_MONDAY;
+
   /// day of week when the location will be opened; format like OpeningHours: 1 for Monday, 2 for Tuesday, etc (this parameter is used only if closedNow true and neverOpens false)
   @BuiltValueEnumConst(wireName: r'TUESDAY')
   static const NextOpenDayOfWeekEnum TUESDAY = _$nextOpenDayOfWeekEnum_TUESDAY;
+
   /// day of week when the location will be opened; format like OpeningHours: 1 for Monday, 2 for Tuesday, etc (this parameter is used only if closedNow true and neverOpens false)
   @BuiltValueEnumConst(wireName: r'WEDNESDAY')
-  static const NextOpenDayOfWeekEnum WEDNESDAY = _$nextOpenDayOfWeekEnum_WEDNESDAY;
+  static const NextOpenDayOfWeekEnum WEDNESDAY =
+      _$nextOpenDayOfWeekEnum_WEDNESDAY;
+
   /// day of week when the location will be opened; format like OpeningHours: 1 for Monday, 2 for Tuesday, etc (this parameter is used only if closedNow true and neverOpens false)
   @BuiltValueEnumConst(wireName: r'THURSDAY')
-  static const NextOpenDayOfWeekEnum THURSDAY = _$nextOpenDayOfWeekEnum_THURSDAY;
+  static const NextOpenDayOfWeekEnum THURSDAY =
+      _$nextOpenDayOfWeekEnum_THURSDAY;
+
   /// day of week when the location will be opened; format like OpeningHours: 1 for Monday, 2 for Tuesday, etc (this parameter is used only if closedNow true and neverOpens false)
   @BuiltValueEnumConst(wireName: r'FRIDAY')
   static const NextOpenDayOfWeekEnum FRIDAY = _$nextOpenDayOfWeekEnum_FRIDAY;
+
   /// day of week when the location will be opened; format like OpeningHours: 1 for Monday, 2 for Tuesday, etc (this parameter is used only if closedNow true and neverOpens false)
   @BuiltValueEnumConst(wireName: r'SATURDAY')
-  static const NextOpenDayOfWeekEnum SATURDAY = _$nextOpenDayOfWeekEnum_SATURDAY;
+  static const NextOpenDayOfWeekEnum SATURDAY =
+      _$nextOpenDayOfWeekEnum_SATURDAY;
+
   /// day of week when the location will be opened; format like OpeningHours: 1 for Monday, 2 for Tuesday, etc (this parameter is used only if closedNow true and neverOpens false)
   @BuiltValueEnumConst(wireName: r'SUNDAY')
   static const NextOpenDayOfWeekEnum SUNDAY = _$nextOpenDayOfWeekEnum_SUNDAY;
 
-  static Serializer<NextOpenDayOfWeekEnum> get serializer => _$nextOpenDayOfWeekEnumSerializer;
+  static Serializer<NextOpenDayOfWeekEnum> get serializer =>
+      _$nextOpenDayOfWeekEnumSerializer;
 
-  const NextOpenDayOfWeekEnum._(String name): super(name);
+  const NextOpenDayOfWeekEnum._(String name) : super(name);
 
-  static BuiltSet<NextOpenDayOfWeekEnum> get values => _$nextOpenDayOfWeekEnumValues;
-  static NextOpenDayOfWeekEnum valueOf(String name) => _$nextOpenDayOfWeekEnumValueOf(name);
+  static BuiltSet<NextOpenDayOfWeekEnum> get values =>
+      _$nextOpenDayOfWeekEnumValues;
+  static NextOpenDayOfWeekEnum valueOf(String name) =>
+      _$nextOpenDayOfWeekEnumValueOf(name);
 }
-

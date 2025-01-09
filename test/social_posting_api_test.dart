@@ -11,7 +11,6 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for SocialPostingApi
 void main() {
   // final instance = SocialPostingApi();
@@ -88,6 +87,5 @@ void main() {
     test('test postSocialPostsValidateAppleCta', () async {
       // TODO
     });
-
   });
 }

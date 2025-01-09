@@ -21,7 +21,6 @@ import 'package:openapi/src/model/user_wrapper.dart';
 import 'package:openapi/src/model/whitelabel_information_wrapper.dart';
 
 class UsersApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -42,7 +41,7 @@ class UsersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SuccessResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SuccessResponseWrapper>> deleteUsersId({ 
+  Future<Response<SuccessResponseWrapper>> deleteUsersId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -51,7 +50,10 @@ class UsersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/users/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/users/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -64,7 +66,8 @@ class UsersApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -88,11 +91,12 @@ class UsersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SuccessResponseWrapper),
-      ) as SuccessResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SuccessResponseWrapper),
+            ) as SuccessResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -129,7 +133,7 @@ class UsersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [LogoutResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LogoutResponseWrapper>> deleteUsersIdAllSessions({ 
+  Future<Response<LogoutResponseWrapper>> deleteUsersIdAllSessions({
     required int id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -138,7 +142,8 @@ class UsersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/users/{id}/all-sessions'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(int)).toString());
+    final _path = r'/users/{id}/all-sessions'.replaceAll('{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(int)).toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -151,7 +156,8 @@ class UsersApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -175,11 +181,12 @@ class UsersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LogoutResponseWrapper),
-      ) as LogoutResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LogoutResponseWrapper),
+            ) as LogoutResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -222,7 +229,7 @@ class UsersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [UserSearchWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<UserSearchWrapper>> getUsers({ 
+  Future<Response<UserSearchWrapper>> getUsers({
     String? query,
     int? max,
     int? offset,
@@ -250,7 +257,8 @@ class UsersApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -263,13 +271,26 @@ class UsersApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (query != null) r'query': encodeQueryParameter(_serializers, query, const FullType(String)),
-      if (max != null) r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
-      if (offset != null) r'offset': encodeQueryParameter(_serializers, offset, const FullType(int)),
-      if (sort != null) r'sort': encodeQueryParameter(_serializers, sort, const FullType(String)),
-      if (order != null) r'order': encodeQueryParameter(_serializers, order, const FullType(String)),
-      if (locationId != null) r'locationId': encodeQueryParameter(_serializers, locationId, const FullType(int)),
-      if (identifier != null) r'identifier': encodeQueryParameter(_serializers, identifier, const FullType(String)),
+      if (query != null)
+        r'query':
+            encodeQueryParameter(_serializers, query, const FullType(String)),
+      if (max != null)
+        r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
+      if (offset != null)
+        r'offset':
+            encodeQueryParameter(_serializers, offset, const FullType(int)),
+      if (sort != null)
+        r'sort':
+            encodeQueryParameter(_serializers, sort, const FullType(String)),
+      if (order != null)
+        r'order':
+            encodeQueryParameter(_serializers, order, const FullType(String)),
+      if (locationId != null)
+        r'locationId':
+            encodeQueryParameter(_serializers, locationId, const FullType(int)),
+      if (identifier != null)
+        r'identifier': encodeQueryParameter(
+            _serializers, identifier, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -285,11 +306,12 @@ class UsersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(UserSearchWrapper),
-      ) as UserSearchWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(UserSearchWrapper),
+            ) as UserSearchWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -327,7 +349,7 @@ class UsersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [UnsubscribeActionLinkWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<UnsubscribeActionLinkWrapper>> getUsersEmailUnsubscribeLink({ 
+  Future<Response<UnsubscribeActionLinkWrapper>> getUsersEmailUnsubscribeLink({
     required int userId,
     required String emailType,
     CancelToken? cancelToken,
@@ -350,7 +372,8 @@ class UsersApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -363,8 +386,10 @@ class UsersApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'userId': encodeQueryParameter(_serializers, userId, const FullType(int)),
-      r'emailType': encodeQueryParameter(_serializers, emailType, const FullType(String)),
+      r'userId':
+          encodeQueryParameter(_serializers, userId, const FullType(int)),
+      r'emailType':
+          encodeQueryParameter(_serializers, emailType, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -380,11 +405,12 @@ class UsersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(UnsubscribeActionLinkWrapper),
-      ) as UnsubscribeActionLinkWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(UnsubscribeActionLinkWrapper),
+            ) as UnsubscribeActionLinkWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -421,7 +447,7 @@ class UsersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [UserWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<UserWrapper>> getUsersId({ 
+  Future<Response<UserWrapper>> getUsersId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -430,7 +456,10 @@ class UsersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/users/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/users/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -443,7 +472,8 @@ class UsersApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -467,11 +497,12 @@ class UsersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(UserWrapper),
-      ) as UserWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(UserWrapper),
+            ) as UserWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -507,7 +538,7 @@ class UsersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [WhitelabelInformationWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<WhitelabelInformationWrapper>> getUsersWhitelabelInformation({ 
+  Future<Response<WhitelabelInformationWrapper>> getUsersWhitelabelInformation({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -528,7 +559,8 @@ class UsersApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -552,11 +584,12 @@ class UsersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(WhitelabelInformationWrapper),
-      ) as WhitelabelInformationWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(WhitelabelInformationWrapper),
+            ) as WhitelabelInformationWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -593,7 +626,7 @@ class UsersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [UserWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<UserWrapper>> patchUsersId({ 
+  Future<Response<UserWrapper>> patchUsersId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -602,7 +635,10 @@ class UsersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/users/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/users/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -615,7 +651,8 @@ class UsersApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -639,11 +676,12 @@ class UsersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(UserWrapper),
-      ) as UserWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(UserWrapper),
+            ) as UserWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -680,7 +718,7 @@ class UsersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [UserLeftWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<UserLeftWrapper>> postUsers({ 
+  Future<Response<UserLeftWrapper>> postUsers({
     CreateUserRequest? createUserRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -702,7 +740,8 @@ class UsersApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -719,11 +758,12 @@ class UsersApi {
 
     try {
       const _type = FullType(CreateUserRequest);
-      _bodyData = createUserRequest == null ? null : _serializers.serialize(createUserRequest, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData = createUserRequest == null
+          ? null
+          : _serializers.serialize(createUserRequest, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -746,11 +786,12 @@ class UsersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(UserLeftWrapper),
-      ) as UserLeftWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(UserLeftWrapper),
+            ) as UserLeftWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -787,7 +828,7 @@ class UsersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [LoginResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LoginResponseWrapper>> postUsersLogin({ 
+  Future<Response<LoginResponseWrapper>> postUsersLogin({
     required LoginCommand loginCommand,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -815,10 +856,9 @@ class UsersApi {
     try {
       const _type = FullType(LoginCommand);
       _bodyData = _serializers.serialize(loginCommand, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -841,11 +881,12 @@ class UsersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LoginResponseWrapper),
-      ) as LoginResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LoginResponseWrapper),
+            ) as LoginResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -881,7 +922,7 @@ class UsersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [LogoutResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LogoutResponseWrapper>> postUsersLogout({ 
+  Future<Response<LogoutResponseWrapper>> postUsersLogout({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -902,7 +943,8 @@ class UsersApi {
             'name': 'privateKey',
             'keyName': 'privateKey',
             'where': 'header',
-          },{
+          },
+          {
             'type': 'apiKey',
             'name': 'accessToken',
             'keyName': 'accessToken',
@@ -926,11 +968,12 @@ class UsersApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LogoutResponseWrapper),
-      ) as LogoutResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LogoutResponseWrapper),
+            ) as LogoutResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -952,5 +995,4 @@ class UsersApi {
       extra: _response.extra,
     );
   }
-
 }

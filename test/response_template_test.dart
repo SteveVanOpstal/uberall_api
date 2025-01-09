@@ -79,8 +79,5 @@ void main() {
     test('to test the property `businesses`', () async {
       // TODO
     });
-
-
   });
-
 }

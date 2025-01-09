@@ -12,26 +12,34 @@ part 'menu_item_response_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [menuItem] 
+/// * [menuItem]
 @BuiltValue()
-abstract class MenuItemResponseObject implements Built<MenuItemResponseObject, MenuItemResponseObjectBuilder> {
+abstract class MenuItemResponseObject
+    implements Built<MenuItemResponseObject, MenuItemResponseObjectBuilder> {
   @BuiltValueField(wireName: r'menuItem')
   MenuItem? get menuItem;
 
   MenuItemResponseObject._();
 
-  factory MenuItemResponseObject([void updates(MenuItemResponseObjectBuilder b)]) = _$MenuItemResponseObject;
+  factory MenuItemResponseObject(
+          [void updates(MenuItemResponseObjectBuilder b)]) =
+      _$MenuItemResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(MenuItemResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<MenuItemResponseObject> get serializer => _$MenuItemResponseObjectSerializer();
+  static Serializer<MenuItemResponseObject> get serializer =>
+      _$MenuItemResponseObjectSerializer();
 }
 
-class _$MenuItemResponseObjectSerializer implements PrimitiveSerializer<MenuItemResponseObject> {
+class _$MenuItemResponseObjectSerializer
+    implements PrimitiveSerializer<MenuItemResponseObject> {
   @override
-  final Iterable<Type> types = const [MenuItemResponseObject, _$MenuItemResponseObject];
+  final Iterable<Type> types = const [
+    MenuItemResponseObject,
+    _$MenuItemResponseObject
+  ];
 
   @override
   final String wireName = r'MenuItemResponseObject';
@@ -56,7 +64,9 @@ class _$MenuItemResponseObjectSerializer implements PrimitiveSerializer<MenuItem
     MenuItemResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +116,3 @@ class _$MenuItemResponseObjectSerializer implements PrimitiveSerializer<MenuItem
     return result.build();
   }
 }
-

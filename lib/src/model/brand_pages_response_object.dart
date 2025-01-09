@@ -12,26 +12,35 @@ part 'brand_pages_response_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [brandPages] 
+/// * [brandPages]
 @BuiltValue()
-abstract class BrandPagesResponseObject implements Built<BrandPagesResponseObject, BrandPagesResponseObjectBuilder> {
+abstract class BrandPagesResponseObject
+    implements
+        Built<BrandPagesResponseObject, BrandPagesResponseObjectBuilder> {
   @BuiltValueField(wireName: r'brandPages')
   BuiltList<String>? get brandPages;
 
   BrandPagesResponseObject._();
 
-  factory BrandPagesResponseObject([void updates(BrandPagesResponseObjectBuilder b)]) = _$BrandPagesResponseObject;
+  factory BrandPagesResponseObject(
+          [void updates(BrandPagesResponseObjectBuilder b)]) =
+      _$BrandPagesResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(BrandPagesResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<BrandPagesResponseObject> get serializer => _$BrandPagesResponseObjectSerializer();
+  static Serializer<BrandPagesResponseObject> get serializer =>
+      _$BrandPagesResponseObjectSerializer();
 }
 
-class _$BrandPagesResponseObjectSerializer implements PrimitiveSerializer<BrandPagesResponseObject> {
+class _$BrandPagesResponseObjectSerializer
+    implements PrimitiveSerializer<BrandPagesResponseObject> {
   @override
-  final Iterable<Type> types = const [BrandPagesResponseObject, _$BrandPagesResponseObject];
+  final Iterable<Type> types = const [
+    BrandPagesResponseObject,
+    _$BrandPagesResponseObject
+  ];
 
   @override
   final String wireName = r'BrandPagesResponseObject';
@@ -56,7 +65,9 @@ class _$BrandPagesResponseObjectSerializer implements PrimitiveSerializer<BrandP
     BrandPagesResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +117,3 @@ class _$BrandPagesResponseObjectSerializer implements PrimitiveSerializer<BrandP
     return result.build();
   }
 }
-

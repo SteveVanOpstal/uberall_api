@@ -16,9 +16,11 @@ part 'list_directory_pages_response.g.dart';
 /// * [page] - The page number
 /// * [size] - The number of elements in the page
 /// * [totalSize] - The total number of elements
-/// * [directoryPages] 
+/// * [directoryPages]
 @BuiltValue()
-abstract class ListDirectoryPagesResponse implements Built<ListDirectoryPagesResponse, ListDirectoryPagesResponseBuilder> {
+abstract class ListDirectoryPagesResponse
+    implements
+        Built<ListDirectoryPagesResponse, ListDirectoryPagesResponseBuilder> {
   /// The page number
   @BuiltValueField(wireName: r'page')
   int? get page;
@@ -36,18 +38,25 @@ abstract class ListDirectoryPagesResponse implements Built<ListDirectoryPagesRes
 
   ListDirectoryPagesResponse._();
 
-  factory ListDirectoryPagesResponse([void updates(ListDirectoryPagesResponseBuilder b)]) = _$ListDirectoryPagesResponse;
+  factory ListDirectoryPagesResponse(
+          [void updates(ListDirectoryPagesResponseBuilder b)]) =
+      _$ListDirectoryPagesResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ListDirectoryPagesResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ListDirectoryPagesResponse> get serializer => _$ListDirectoryPagesResponseSerializer();
+  static Serializer<ListDirectoryPagesResponse> get serializer =>
+      _$ListDirectoryPagesResponseSerializer();
 }
 
-class _$ListDirectoryPagesResponseSerializer implements PrimitiveSerializer<ListDirectoryPagesResponse> {
+class _$ListDirectoryPagesResponseSerializer
+    implements PrimitiveSerializer<ListDirectoryPagesResponse> {
   @override
-  final Iterable<Type> types = const [ListDirectoryPagesResponse, _$ListDirectoryPagesResponse];
+  final Iterable<Type> types = const [
+    ListDirectoryPagesResponse,
+    _$ListDirectoryPagesResponse
+  ];
 
   @override
   final String wireName = r'ListDirectoryPagesResponse';
@@ -82,7 +91,8 @@ class _$ListDirectoryPagesResponseSerializer implements PrimitiveSerializer<List
       yield r'directoryPages';
       yield serializers.serialize(
         object.directoryPages,
-        specifiedType: const FullType(BuiltList, [FullType(DirectoryPageResponse)]),
+        specifiedType:
+            const FullType(BuiltList, [FullType(DirectoryPageResponse)]),
       );
     }
   }
@@ -93,7 +103,9 @@ class _$ListDirectoryPagesResponseSerializer implements PrimitiveSerializer<List
     ListDirectoryPagesResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -132,7 +144,8 @@ class _$ListDirectoryPagesResponseSerializer implements PrimitiveSerializer<List
         case r'directoryPages':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(DirectoryPageResponse)]),
+            specifiedType:
+                const FullType(BuiltList, [FullType(DirectoryPageResponse)]),
           ) as BuiltList<DirectoryPageResponse>;
           result.directoryPages.replace(valueDes);
           break;
@@ -164,4 +177,3 @@ class _$ListDirectoryPagesResponseSerializer implements PrimitiveSerializer<List
     return result.build();
   }
 }
-

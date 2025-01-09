@@ -13,26 +13,36 @@ part 'store_finder_response_list_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [locations] 
+/// * [locations]
 @BuiltValue()
-abstract class StoreFinderResponseListObject implements Built<StoreFinderResponseListObject, StoreFinderResponseListObjectBuilder> {
+abstract class StoreFinderResponseListObject
+    implements
+        Built<StoreFinderResponseListObject,
+            StoreFinderResponseListObjectBuilder> {
   @BuiltValueField(wireName: r'locations')
   BuiltList<StoreFinderResponse>? get locations;
 
   StoreFinderResponseListObject._();
 
-  factory StoreFinderResponseListObject([void updates(StoreFinderResponseListObjectBuilder b)]) = _$StoreFinderResponseListObject;
+  factory StoreFinderResponseListObject(
+          [void updates(StoreFinderResponseListObjectBuilder b)]) =
+      _$StoreFinderResponseListObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StoreFinderResponseListObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<StoreFinderResponseListObject> get serializer => _$StoreFinderResponseListObjectSerializer();
+  static Serializer<StoreFinderResponseListObject> get serializer =>
+      _$StoreFinderResponseListObjectSerializer();
 }
 
-class _$StoreFinderResponseListObjectSerializer implements PrimitiveSerializer<StoreFinderResponseListObject> {
+class _$StoreFinderResponseListObjectSerializer
+    implements PrimitiveSerializer<StoreFinderResponseListObject> {
   @override
-  final Iterable<Type> types = const [StoreFinderResponseListObject, _$StoreFinderResponseListObject];
+  final Iterable<Type> types = const [
+    StoreFinderResponseListObject,
+    _$StoreFinderResponseListObject
+  ];
 
   @override
   final String wireName = r'StoreFinderResponseListObject';
@@ -46,7 +56,8 @@ class _$StoreFinderResponseListObjectSerializer implements PrimitiveSerializer<S
       yield r'locations';
       yield serializers.serialize(
         object.locations,
-        specifiedType: const FullType(BuiltList, [FullType(StoreFinderResponse)]),
+        specifiedType:
+            const FullType(BuiltList, [FullType(StoreFinderResponse)]),
       );
     }
   }
@@ -57,7 +68,9 @@ class _$StoreFinderResponseListObjectSerializer implements PrimitiveSerializer<S
     StoreFinderResponseListObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -75,7 +88,8 @@ class _$StoreFinderResponseListObjectSerializer implements PrimitiveSerializer<S
         case r'locations':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(StoreFinderResponse)]),
+            specifiedType:
+                const FullType(BuiltList, [FullType(StoreFinderResponse)]),
           ) as BuiltList<StoreFinderResponse>;
           result.locations.replace(valueDes);
           break;
@@ -107,4 +121,3 @@ class _$StoreFinderResponseListObjectSerializer implements PrimitiveSerializer<S
     return result.build();
   }
 }
-

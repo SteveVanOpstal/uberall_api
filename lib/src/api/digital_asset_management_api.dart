@@ -14,7 +14,6 @@ import 'package:openapi/src/model/social_post_template.dart';
 import 'package:openapi/src/model/social_post_template_response_wrapper.dart';
 
 class DigitalAssetManagementApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -36,7 +35,7 @@ class DigitalAssetManagementApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SocialPostTemplateResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SocialPostTemplateResponseWrapper>> patchSocialTemplatesId({ 
+  Future<Response<SocialPostTemplateResponseWrapper>> patchSocialTemplatesId({
     required String id,
     required SocialPostTemplate socialPostTemplate,
     CancelToken? cancelToken,
@@ -46,7 +45,10 @@ class DigitalAssetManagementApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/social-templates/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/social-templates/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -63,11 +65,11 @@ class DigitalAssetManagementApi {
 
     try {
       const _type = FullType(SocialPostTemplate);
-      _bodyData = _serializers.serialize(socialPostTemplate, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData =
+          _serializers.serialize(socialPostTemplate, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -90,11 +92,12 @@ class DigitalAssetManagementApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SocialPostTemplateResponseWrapper),
-      ) as SocialPostTemplateResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SocialPostTemplateResponseWrapper),
+            ) as SocialPostTemplateResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -131,7 +134,7 @@ class DigitalAssetManagementApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SocialPostTemplateResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SocialPostTemplateResponseWrapper>> postSocialTemplates({ 
+  Future<Response<SocialPostTemplateResponseWrapper>> postSocialTemplates({
     required PostSocialTemplatesRequest postSocialTemplatesRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -157,11 +160,11 @@ class DigitalAssetManagementApi {
 
     try {
       const _type = FullType(PostSocialTemplatesRequest);
-      _bodyData = _serializers.serialize(postSocialTemplatesRequest, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData = _serializers.serialize(postSocialTemplatesRequest,
+          specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -184,11 +187,12 @@ class DigitalAssetManagementApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SocialPostTemplateResponseWrapper),
-      ) as SocialPostTemplateResponseWrapper;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(SocialPostTemplateResponseWrapper),
+            ) as SocialPostTemplateResponseWrapper;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -210,5 +214,4 @@ class DigitalAssetManagementApi {
       extra: _response.extra,
     );
   }
-
 }

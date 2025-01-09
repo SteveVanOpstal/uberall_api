@@ -13,13 +13,16 @@ part 'directory_page_response_wrapper.g.dart';
 /// DirectoryPageResponseWrapper
 ///
 /// Properties:
-/// * [status] 
+/// * [status]
 /// * [message] - (optional) Holds further information about the response
-/// * [errorCode] 
+/// * [errorCode]
 /// * [warnings] - (optional) Holds further warnings
-/// * [response] 
+/// * [response]
 @BuiltValue()
-abstract class DirectoryPageResponseWrapper implements Built<DirectoryPageResponseWrapper, DirectoryPageResponseWrapperBuilder> {
+abstract class DirectoryPageResponseWrapper
+    implements
+        Built<DirectoryPageResponseWrapper,
+            DirectoryPageResponseWrapperBuilder> {
   @BuiltValueField(wireName: r'status')
   DirectoryPageResponseWrapperStatusEnum? get status;
   // enum statusEnum {  SUCCESS,  QUOTA_LIMIT_EXCEED,  NOT_AUTHORIZED,  FORBIDDEN,  BAD_ACCESS_TOKEN,  BAD_PRIVATE_KEY,  BAD_PUBLIC_KEY,  MISSING_PARAMETER,  INVALID_PARAMETER,  WRONG_PARAMETER_TYPE,  CONFLICT,  RESOURCE_LOCKED,  SERVER_ERROR,  ERROR,  NOT_FOUND,  BAD_REQUEST,  USER_ERROR,  PARTIAL_ERROR,  METHOD_NOT_ALLOWED,  };
@@ -41,18 +44,25 @@ abstract class DirectoryPageResponseWrapper implements Built<DirectoryPageRespon
 
   DirectoryPageResponseWrapper._();
 
-  factory DirectoryPageResponseWrapper([void updates(DirectoryPageResponseWrapperBuilder b)]) = _$DirectoryPageResponseWrapper;
+  factory DirectoryPageResponseWrapper(
+          [void updates(DirectoryPageResponseWrapperBuilder b)]) =
+      _$DirectoryPageResponseWrapper;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DirectoryPageResponseWrapperBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DirectoryPageResponseWrapper> get serializer => _$DirectoryPageResponseWrapperSerializer();
+  static Serializer<DirectoryPageResponseWrapper> get serializer =>
+      _$DirectoryPageResponseWrapperSerializer();
 }
 
-class _$DirectoryPageResponseWrapperSerializer implements PrimitiveSerializer<DirectoryPageResponseWrapper> {
+class _$DirectoryPageResponseWrapperSerializer
+    implements PrimitiveSerializer<DirectoryPageResponseWrapper> {
   @override
-  final Iterable<Type> types = const [DirectoryPageResponseWrapper, _$DirectoryPageResponseWrapper];
+  final Iterable<Type> types = const [
+    DirectoryPageResponseWrapper,
+    _$DirectoryPageResponseWrapper
+  ];
 
   @override
   final String wireName = r'DirectoryPageResponseWrapper';
@@ -80,7 +90,8 @@ class _$DirectoryPageResponseWrapperSerializer implements PrimitiveSerializer<Di
       yield r'errorCode';
       yield serializers.serialize(
         object.errorCode,
-        specifiedType: const FullType(DirectoryPageResponseWrapperErrorCodeEnum),
+        specifiedType:
+            const FullType(DirectoryPageResponseWrapperErrorCodeEnum),
       );
     }
     if (object.warnings != null) {
@@ -105,7 +116,9 @@ class _$DirectoryPageResponseWrapperSerializer implements PrimitiveSerializer<Di
     DirectoryPageResponseWrapper object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -123,7 +136,8 @@ class _$DirectoryPageResponseWrapperSerializer implements PrimitiveSerializer<Di
         case r'status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DirectoryPageResponseWrapperStatusEnum),
+            specifiedType:
+                const FullType(DirectoryPageResponseWrapperStatusEnum),
           ) as DirectoryPageResponseWrapperStatusEnum;
           result.status = valueDes;
           break;
@@ -137,7 +151,8 @@ class _$DirectoryPageResponseWrapperSerializer implements PrimitiveSerializer<Di
         case r'errorCode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DirectoryPageResponseWrapperErrorCodeEnum),
+            specifiedType:
+                const FullType(DirectoryPageResponseWrapperErrorCodeEnum),
           ) as DirectoryPageResponseWrapperErrorCodeEnum;
           result.errorCode = valueDes;
           break;
@@ -185,102 +200,147 @@ class _$DirectoryPageResponseWrapperSerializer implements PrimitiveSerializer<Di
 }
 
 class DirectoryPageResponseWrapperStatusEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'SUCCESS')
-  static const DirectoryPageResponseWrapperStatusEnum SUCCESS = _$directoryPageResponseWrapperStatusEnum_SUCCESS;
+  static const DirectoryPageResponseWrapperStatusEnum SUCCESS =
+      _$directoryPageResponseWrapperStatusEnum_SUCCESS;
   @BuiltValueEnumConst(wireName: r'QUOTA_LIMIT_EXCEED')
-  static const DirectoryPageResponseWrapperStatusEnum QUOTA_LIMIT_EXCEED = _$directoryPageResponseWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
+  static const DirectoryPageResponseWrapperStatusEnum QUOTA_LIMIT_EXCEED =
+      _$directoryPageResponseWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
   @BuiltValueEnumConst(wireName: r'NOT_AUTHORIZED')
-  static const DirectoryPageResponseWrapperStatusEnum NOT_AUTHORIZED = _$directoryPageResponseWrapperStatusEnum_NOT_AUTHORIZED;
+  static const DirectoryPageResponseWrapperStatusEnum NOT_AUTHORIZED =
+      _$directoryPageResponseWrapperStatusEnum_NOT_AUTHORIZED;
   @BuiltValueEnumConst(wireName: r'FORBIDDEN')
-  static const DirectoryPageResponseWrapperStatusEnum FORBIDDEN = _$directoryPageResponseWrapperStatusEnum_FORBIDDEN;
+  static const DirectoryPageResponseWrapperStatusEnum FORBIDDEN =
+      _$directoryPageResponseWrapperStatusEnum_FORBIDDEN;
   @BuiltValueEnumConst(wireName: r'BAD_ACCESS_TOKEN')
-  static const DirectoryPageResponseWrapperStatusEnum BAD_ACCESS_TOKEN = _$directoryPageResponseWrapperStatusEnum_BAD_ACCESS_TOKEN;
+  static const DirectoryPageResponseWrapperStatusEnum BAD_ACCESS_TOKEN =
+      _$directoryPageResponseWrapperStatusEnum_BAD_ACCESS_TOKEN;
   @BuiltValueEnumConst(wireName: r'BAD_PRIVATE_KEY')
-  static const DirectoryPageResponseWrapperStatusEnum BAD_PRIVATE_KEY = _$directoryPageResponseWrapperStatusEnum_BAD_PRIVATE_KEY;
+  static const DirectoryPageResponseWrapperStatusEnum BAD_PRIVATE_KEY =
+      _$directoryPageResponseWrapperStatusEnum_BAD_PRIVATE_KEY;
   @BuiltValueEnumConst(wireName: r'BAD_PUBLIC_KEY')
-  static const DirectoryPageResponseWrapperStatusEnum BAD_PUBLIC_KEY = _$directoryPageResponseWrapperStatusEnum_BAD_PUBLIC_KEY;
+  static const DirectoryPageResponseWrapperStatusEnum BAD_PUBLIC_KEY =
+      _$directoryPageResponseWrapperStatusEnum_BAD_PUBLIC_KEY;
   @BuiltValueEnumConst(wireName: r'MISSING_PARAMETER')
-  static const DirectoryPageResponseWrapperStatusEnum MISSING_PARAMETER = _$directoryPageResponseWrapperStatusEnum_MISSING_PARAMETER;
+  static const DirectoryPageResponseWrapperStatusEnum MISSING_PARAMETER =
+      _$directoryPageResponseWrapperStatusEnum_MISSING_PARAMETER;
   @BuiltValueEnumConst(wireName: r'INVALID_PARAMETER')
-  static const DirectoryPageResponseWrapperStatusEnum INVALID_PARAMETER = _$directoryPageResponseWrapperStatusEnum_INVALID_PARAMETER;
+  static const DirectoryPageResponseWrapperStatusEnum INVALID_PARAMETER =
+      _$directoryPageResponseWrapperStatusEnum_INVALID_PARAMETER;
   @BuiltValueEnumConst(wireName: r'WRONG_PARAMETER_TYPE')
-  static const DirectoryPageResponseWrapperStatusEnum WRONG_PARAMETER_TYPE = _$directoryPageResponseWrapperStatusEnum_WRONG_PARAMETER_TYPE;
+  static const DirectoryPageResponseWrapperStatusEnum WRONG_PARAMETER_TYPE =
+      _$directoryPageResponseWrapperStatusEnum_WRONG_PARAMETER_TYPE;
   @BuiltValueEnumConst(wireName: r'CONFLICT')
-  static const DirectoryPageResponseWrapperStatusEnum CONFLICT = _$directoryPageResponseWrapperStatusEnum_CONFLICT;
+  static const DirectoryPageResponseWrapperStatusEnum CONFLICT =
+      _$directoryPageResponseWrapperStatusEnum_CONFLICT;
   @BuiltValueEnumConst(wireName: r'RESOURCE_LOCKED')
-  static const DirectoryPageResponseWrapperStatusEnum RESOURCE_LOCKED = _$directoryPageResponseWrapperStatusEnum_RESOURCE_LOCKED;
+  static const DirectoryPageResponseWrapperStatusEnum RESOURCE_LOCKED =
+      _$directoryPageResponseWrapperStatusEnum_RESOURCE_LOCKED;
   @BuiltValueEnumConst(wireName: r'SERVER_ERROR')
-  static const DirectoryPageResponseWrapperStatusEnum SERVER_ERROR = _$directoryPageResponseWrapperStatusEnum_SERVER_ERROR;
+  static const DirectoryPageResponseWrapperStatusEnum SERVER_ERROR =
+      _$directoryPageResponseWrapperStatusEnum_SERVER_ERROR;
   @BuiltValueEnumConst(wireName: r'ERROR')
-  static const DirectoryPageResponseWrapperStatusEnum ERROR = _$directoryPageResponseWrapperStatusEnum_ERROR;
+  static const DirectoryPageResponseWrapperStatusEnum ERROR =
+      _$directoryPageResponseWrapperStatusEnum_ERROR;
   @BuiltValueEnumConst(wireName: r'NOT_FOUND')
-  static const DirectoryPageResponseWrapperStatusEnum NOT_FOUND = _$directoryPageResponseWrapperStatusEnum_NOT_FOUND;
+  static const DirectoryPageResponseWrapperStatusEnum NOT_FOUND =
+      _$directoryPageResponseWrapperStatusEnum_NOT_FOUND;
   @BuiltValueEnumConst(wireName: r'BAD_REQUEST')
-  static const DirectoryPageResponseWrapperStatusEnum BAD_REQUEST = _$directoryPageResponseWrapperStatusEnum_BAD_REQUEST;
+  static const DirectoryPageResponseWrapperStatusEnum BAD_REQUEST =
+      _$directoryPageResponseWrapperStatusEnum_BAD_REQUEST;
   @BuiltValueEnumConst(wireName: r'USER_ERROR')
-  static const DirectoryPageResponseWrapperStatusEnum USER_ERROR = _$directoryPageResponseWrapperStatusEnum_USER_ERROR;
+  static const DirectoryPageResponseWrapperStatusEnum USER_ERROR =
+      _$directoryPageResponseWrapperStatusEnum_USER_ERROR;
   @BuiltValueEnumConst(wireName: r'PARTIAL_ERROR')
-  static const DirectoryPageResponseWrapperStatusEnum PARTIAL_ERROR = _$directoryPageResponseWrapperStatusEnum_PARTIAL_ERROR;
+  static const DirectoryPageResponseWrapperStatusEnum PARTIAL_ERROR =
+      _$directoryPageResponseWrapperStatusEnum_PARTIAL_ERROR;
   @BuiltValueEnumConst(wireName: r'METHOD_NOT_ALLOWED')
-  static const DirectoryPageResponseWrapperStatusEnum METHOD_NOT_ALLOWED = _$directoryPageResponseWrapperStatusEnum_METHOD_NOT_ALLOWED;
+  static const DirectoryPageResponseWrapperStatusEnum METHOD_NOT_ALLOWED =
+      _$directoryPageResponseWrapperStatusEnum_METHOD_NOT_ALLOWED;
 
-  static Serializer<DirectoryPageResponseWrapperStatusEnum> get serializer => _$directoryPageResponseWrapperStatusEnumSerializer;
+  static Serializer<DirectoryPageResponseWrapperStatusEnum> get serializer =>
+      _$directoryPageResponseWrapperStatusEnumSerializer;
 
-  const DirectoryPageResponseWrapperStatusEnum._(String name): super(name);
+  const DirectoryPageResponseWrapperStatusEnum._(String name) : super(name);
 
-  static BuiltSet<DirectoryPageResponseWrapperStatusEnum> get values => _$directoryPageResponseWrapperStatusEnumValues;
-  static DirectoryPageResponseWrapperStatusEnum valueOf(String name) => _$directoryPageResponseWrapperStatusEnumValueOf(name);
+  static BuiltSet<DirectoryPageResponseWrapperStatusEnum> get values =>
+      _$directoryPageResponseWrapperStatusEnumValues;
+  static DirectoryPageResponseWrapperStatusEnum valueOf(String name) =>
+      _$directoryPageResponseWrapperStatusEnumValueOf(name);
 }
 
 class DirectoryPageResponseWrapperErrorCodeEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'NORMALIZATION_FAILED')
-  static const DirectoryPageResponseWrapperErrorCodeEnum NORMALIZATION_FAILED = _$directoryPageResponseWrapperErrorCodeEnum_NORMALIZATION_FAILED;
+  static const DirectoryPageResponseWrapperErrorCodeEnum NORMALIZATION_FAILED =
+      _$directoryPageResponseWrapperErrorCodeEnum_NORMALIZATION_FAILED;
   @BuiltValueEnumConst(wireName: r'DATA_CORRUPTED')
-  static const DirectoryPageResponseWrapperErrorCodeEnum DATA_CORRUPTED = _$directoryPageResponseWrapperErrorCodeEnum_DATA_CORRUPTED;
+  static const DirectoryPageResponseWrapperErrorCodeEnum DATA_CORRUPTED =
+      _$directoryPageResponseWrapperErrorCodeEnum_DATA_CORRUPTED;
   @BuiltValueEnumConst(wireName: r'INVALID_INPUT')
-  static const DirectoryPageResponseWrapperErrorCodeEnum INVALID_INPUT = _$directoryPageResponseWrapperErrorCodeEnum_INVALID_INPUT;
+  static const DirectoryPageResponseWrapperErrorCodeEnum INVALID_INPUT =
+      _$directoryPageResponseWrapperErrorCodeEnum_INVALID_INPUT;
   @BuiltValueEnumConst(wireName: r'NOT_SYNCABLE')
-  static const DirectoryPageResponseWrapperErrorCodeEnum NOT_SYNCABLE = _$directoryPageResponseWrapperErrorCodeEnum_NOT_SYNCABLE;
+  static const DirectoryPageResponseWrapperErrorCodeEnum NOT_SYNCABLE =
+      _$directoryPageResponseWrapperErrorCodeEnum_NOT_SYNCABLE;
   @BuiltValueEnumConst(wireName: r'PAYMENT_FAILED')
-  static const DirectoryPageResponseWrapperErrorCodeEnum PAYMENT_FAILED = _$directoryPageResponseWrapperErrorCodeEnum_PAYMENT_FAILED;
+  static const DirectoryPageResponseWrapperErrorCodeEnum PAYMENT_FAILED =
+      _$directoryPageResponseWrapperErrorCodeEnum_PAYMENT_FAILED;
   @BuiltValueEnumConst(wireName: r'FREE_TIER_REACHED')
-  static const DirectoryPageResponseWrapperErrorCodeEnum FREE_TIER_REACHED = _$directoryPageResponseWrapperErrorCodeEnum_FREE_TIER_REACHED;
+  static const DirectoryPageResponseWrapperErrorCodeEnum FREE_TIER_REACHED =
+      _$directoryPageResponseWrapperErrorCodeEnum_FREE_TIER_REACHED;
   @BuiltValueEnumConst(wireName: r'LIMIT_REACHED')
-  static const DirectoryPageResponseWrapperErrorCodeEnum LIMIT_REACHED = _$directoryPageResponseWrapperErrorCodeEnum_LIMIT_REACHED;
+  static const DirectoryPageResponseWrapperErrorCodeEnum LIMIT_REACHED =
+      _$directoryPageResponseWrapperErrorCodeEnum_LIMIT_REACHED;
   @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const DirectoryPageResponseWrapperErrorCodeEnum INACTIVE = _$directoryPageResponseWrapperErrorCodeEnum_INACTIVE;
+  static const DirectoryPageResponseWrapperErrorCodeEnum INACTIVE =
+      _$directoryPageResponseWrapperErrorCodeEnum_INACTIVE;
   @BuiltValueEnumConst(wireName: r'UNKNOWN')
-  static const DirectoryPageResponseWrapperErrorCodeEnum UNKNOWN = _$directoryPageResponseWrapperErrorCodeEnum_UNKNOWN;
+  static const DirectoryPageResponseWrapperErrorCodeEnum UNKNOWN =
+      _$directoryPageResponseWrapperErrorCodeEnum_UNKNOWN;
   @BuiltValueEnumConst(wireName: r'IDENTIFIER_NOT_UNIQUE')
-  static const DirectoryPageResponseWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE = _$directoryPageResponseWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
+  static const DirectoryPageResponseWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE =
+      _$directoryPageResponseWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
   @BuiltValueEnumConst(wireName: r'ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT')
-  static const DirectoryPageResponseWrapperErrorCodeEnum ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT = _$directoryPageResponseWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
+  static const DirectoryPageResponseWrapperErrorCodeEnum
+      ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT =
+      _$directoryPageResponseWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
   @BuiltValueEnumConst(wireName: r'NO_ACCOUNT_CONNECTED')
-  static const DirectoryPageResponseWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED = _$directoryPageResponseWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
+  static const DirectoryPageResponseWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED =
+      _$directoryPageResponseWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
   @BuiltValueEnumConst(wireName: r'NO_PAGE_SELECTED')
-  static const DirectoryPageResponseWrapperErrorCodeEnum NO_PAGE_SELECTED = _$directoryPageResponseWrapperErrorCodeEnum_NO_PAGE_SELECTED;
+  static const DirectoryPageResponseWrapperErrorCodeEnum NO_PAGE_SELECTED =
+      _$directoryPageResponseWrapperErrorCodeEnum_NO_PAGE_SELECTED;
   @BuiltValueEnumConst(wireName: r'PAGE_NOT_CREATED')
-  static const DirectoryPageResponseWrapperErrorCodeEnum PAGE_NOT_CREATED = _$directoryPageResponseWrapperErrorCodeEnum_PAGE_NOT_CREATED;
+  static const DirectoryPageResponseWrapperErrorCodeEnum PAGE_NOT_CREATED =
+      _$directoryPageResponseWrapperErrorCodeEnum_PAGE_NOT_CREATED;
   @BuiltValueEnumConst(wireName: r'PAGE_IN_REVIEW')
-  static const DirectoryPageResponseWrapperErrorCodeEnum PAGE_IN_REVIEW = _$directoryPageResponseWrapperErrorCodeEnum_PAGE_IN_REVIEW;
+  static const DirectoryPageResponseWrapperErrorCodeEnum PAGE_IN_REVIEW =
+      _$directoryPageResponseWrapperErrorCodeEnum_PAGE_IN_REVIEW;
   @BuiltValueEnumConst(wireName: r'PAGE_CLAIMED_BY_OTHERS')
-  static const DirectoryPageResponseWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS = _$directoryPageResponseWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
+  static const DirectoryPageResponseWrapperErrorCodeEnum
+      PAGE_CLAIMED_BY_OTHERS =
+      _$directoryPageResponseWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
   @BuiltValueEnumConst(wireName: r'OVERLAPPING_SOCIALPOST')
-  static const DirectoryPageResponseWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST = _$directoryPageResponseWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
+  static const DirectoryPageResponseWrapperErrorCodeEnum
+      OVERLAPPING_SOCIALPOST =
+      _$directoryPageResponseWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
   @BuiltValueEnumConst(wireName: r'TOO_MANY_REPLIES')
-  static const DirectoryPageResponseWrapperErrorCodeEnum TOO_MANY_REPLIES = _$directoryPageResponseWrapperErrorCodeEnum_TOO_MANY_REPLIES;
+  static const DirectoryPageResponseWrapperErrorCodeEnum TOO_MANY_REPLIES =
+      _$directoryPageResponseWrapperErrorCodeEnum_TOO_MANY_REPLIES;
   @BuiltValueEnumConst(wireName: r'REPLY_TOO_LONG')
-  static const DirectoryPageResponseWrapperErrorCodeEnum REPLY_TOO_LONG = _$directoryPageResponseWrapperErrorCodeEnum_REPLY_TOO_LONG;
+  static const DirectoryPageResponseWrapperErrorCodeEnum REPLY_TOO_LONG =
+      _$directoryPageResponseWrapperErrorCodeEnum_REPLY_TOO_LONG;
   @BuiltValueEnumConst(wireName: r'DEPRECATED')
-  static const DirectoryPageResponseWrapperErrorCodeEnum DEPRECATED = _$directoryPageResponseWrapperErrorCodeEnum_DEPRECATED;
+  static const DirectoryPageResponseWrapperErrorCodeEnum DEPRECATED =
+      _$directoryPageResponseWrapperErrorCodeEnum_DEPRECATED;
 
-  static Serializer<DirectoryPageResponseWrapperErrorCodeEnum> get serializer => _$directoryPageResponseWrapperErrorCodeEnumSerializer;
+  static Serializer<DirectoryPageResponseWrapperErrorCodeEnum> get serializer =>
+      _$directoryPageResponseWrapperErrorCodeEnumSerializer;
 
-  const DirectoryPageResponseWrapperErrorCodeEnum._(String name): super(name);
+  const DirectoryPageResponseWrapperErrorCodeEnum._(String name) : super(name);
 
-  static BuiltSet<DirectoryPageResponseWrapperErrorCodeEnum> get values => _$directoryPageResponseWrapperErrorCodeEnumValues;
-  static DirectoryPageResponseWrapperErrorCodeEnum valueOf(String name) => _$directoryPageResponseWrapperErrorCodeEnumValueOf(name);
+  static BuiltSet<DirectoryPageResponseWrapperErrorCodeEnum> get values =>
+      _$directoryPageResponseWrapperErrorCodeEnumValues;
+  static DirectoryPageResponseWrapperErrorCodeEnum valueOf(String name) =>
+      _$directoryPageResponseWrapperErrorCodeEnumValueOf(name);
 }
-

@@ -22,7 +22,8 @@ part 'dashboard_export_data.g.dart';
 /// * [whitelabelIdentifier] - Whitelabel identifier which will be used in the outline of the PDF report
 /// * [salesPartnerCountry] - Country of the SalesPartner
 @BuiltValue()
-abstract class DashboardExportData implements Built<DashboardExportData, DashboardExportDataBuilder> {
+abstract class DashboardExportData
+    implements Built<DashboardExportData, DashboardExportDataBuilder> {
   /// Start date of export
   @BuiltValueField(wireName: r'start')
   DateTime? get start;
@@ -63,18 +64,24 @@ abstract class DashboardExportData implements Built<DashboardExportData, Dashboa
 
   DashboardExportData._();
 
-  factory DashboardExportData([void updates(DashboardExportDataBuilder b)]) = _$DashboardExportData;
+  factory DashboardExportData([void updates(DashboardExportDataBuilder b)]) =
+      _$DashboardExportData;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DashboardExportDataBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DashboardExportData> get serializer => _$DashboardExportDataSerializer();
+  static Serializer<DashboardExportData> get serializer =>
+      _$DashboardExportDataSerializer();
 }
 
-class _$DashboardExportDataSerializer implements PrimitiveSerializer<DashboardExportData> {
+class _$DashboardExportDataSerializer
+    implements PrimitiveSerializer<DashboardExportData> {
   @override
-  final Iterable<Type> types = const [DashboardExportData, _$DashboardExportData];
+  final Iterable<Type> types = const [
+    DashboardExportData,
+    _$DashboardExportData
+  ];
 
   @override
   final String wireName = r'DashboardExportData';
@@ -155,7 +162,9 @@ class _$DashboardExportDataSerializer implements PrimitiveSerializer<DashboardEx
     DashboardExportData object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -263,54 +272,76 @@ class _$DashboardExportDataSerializer implements PrimitiveSerializer<DashboardEx
 }
 
 class DashboardExportDataGroupEnum extends EnumClass {
-
   /// A time grouping parameter among HOUR, DAY, WEEK, MONTH, YEAR
   @BuiltValueEnumConst(wireName: r'HOUR')
-  static const DashboardExportDataGroupEnum HOUR = _$dashboardExportDataGroupEnum_HOUR;
+  static const DashboardExportDataGroupEnum HOUR =
+      _$dashboardExportDataGroupEnum_HOUR;
+
   /// A time grouping parameter among HOUR, DAY, WEEK, MONTH, YEAR
   @BuiltValueEnumConst(wireName: r'DAY')
-  static const DashboardExportDataGroupEnum DAY = _$dashboardExportDataGroupEnum_DAY;
+  static const DashboardExportDataGroupEnum DAY =
+      _$dashboardExportDataGroupEnum_DAY;
+
   /// A time grouping parameter among HOUR, DAY, WEEK, MONTH, YEAR
   @BuiltValueEnumConst(wireName: r'WEEK')
-  static const DashboardExportDataGroupEnum WEEK = _$dashboardExportDataGroupEnum_WEEK;
+  static const DashboardExportDataGroupEnum WEEK =
+      _$dashboardExportDataGroupEnum_WEEK;
+
   /// A time grouping parameter among HOUR, DAY, WEEK, MONTH, YEAR
   @BuiltValueEnumConst(wireName: r'MONTH')
-  static const DashboardExportDataGroupEnum MONTH = _$dashboardExportDataGroupEnum_MONTH;
+  static const DashboardExportDataGroupEnum MONTH =
+      _$dashboardExportDataGroupEnum_MONTH;
+
   /// A time grouping parameter among HOUR, DAY, WEEK, MONTH, YEAR
   @BuiltValueEnumConst(wireName: r'YEAR')
-  static const DashboardExportDataGroupEnum YEAR = _$dashboardExportDataGroupEnum_YEAR;
+  static const DashboardExportDataGroupEnum YEAR =
+      _$dashboardExportDataGroupEnum_YEAR;
+
   /// A time grouping parameter among HOUR, DAY, WEEK, MONTH, YEAR
   @BuiltValueEnumConst(wireName: r'HOUR, DAY, WEEK, MONTH, YEAR')
-  static const DashboardExportDataGroupEnum hOURCommaDAYCommaWEEKCommaMONTHCommaYEAR = _$dashboardExportDataGroupEnum_hOURCommaDAYCommaWEEKCommaMONTHCommaYEAR;
+  static const DashboardExportDataGroupEnum
+      hOURCommaDAYCommaWEEKCommaMONTHCommaYEAR =
+      _$dashboardExportDataGroupEnum_hOURCommaDAYCommaWEEKCommaMONTHCommaYEAR;
 
-  static Serializer<DashboardExportDataGroupEnum> get serializer => _$dashboardExportDataGroupEnumSerializer;
+  static Serializer<DashboardExportDataGroupEnum> get serializer =>
+      _$dashboardExportDataGroupEnumSerializer;
 
-  const DashboardExportDataGroupEnum._(String name): super(name);
+  const DashboardExportDataGroupEnum._(String name) : super(name);
 
-  static BuiltSet<DashboardExportDataGroupEnum> get values => _$dashboardExportDataGroupEnumValues;
-  static DashboardExportDataGroupEnum valueOf(String name) => _$dashboardExportDataGroupEnumValueOf(name);
+  static BuiltSet<DashboardExportDataGroupEnum> get values =>
+      _$dashboardExportDataGroupEnumValues;
+  static DashboardExportDataGroupEnum valueOf(String name) =>
+      _$dashboardExportDataGroupEnumValueOf(name);
 }
 
 class DashboardExportDataStatusEnum extends EnumClass {
-
   /// Current status of the export process (e.g. ''FINISHED'', ''SCHEDULED'', ''FAILED'')
   @BuiltValueEnumConst(wireName: r'CREATED')
-  static const DashboardExportDataStatusEnum CREATED = _$dashboardExportDataStatusEnum_CREATED;
+  static const DashboardExportDataStatusEnum CREATED =
+      _$dashboardExportDataStatusEnum_CREATED;
+
   /// Current status of the export process (e.g. ''FINISHED'', ''SCHEDULED'', ''FAILED'')
   @BuiltValueEnumConst(wireName: r'SCHEDULED')
-  static const DashboardExportDataStatusEnum SCHEDULED = _$dashboardExportDataStatusEnum_SCHEDULED;
+  static const DashboardExportDataStatusEnum SCHEDULED =
+      _$dashboardExportDataStatusEnum_SCHEDULED;
+
   /// Current status of the export process (e.g. ''FINISHED'', ''SCHEDULED'', ''FAILED'')
   @BuiltValueEnumConst(wireName: r'FAILED')
-  static const DashboardExportDataStatusEnum FAILED = _$dashboardExportDataStatusEnum_FAILED;
+  static const DashboardExportDataStatusEnum FAILED =
+      _$dashboardExportDataStatusEnum_FAILED;
+
   /// Current status of the export process (e.g. ''FINISHED'', ''SCHEDULED'', ''FAILED'')
   @BuiltValueEnumConst(wireName: r'FINISHED')
-  static const DashboardExportDataStatusEnum FINISHED = _$dashboardExportDataStatusEnum_FINISHED;
+  static const DashboardExportDataStatusEnum FINISHED =
+      _$dashboardExportDataStatusEnum_FINISHED;
 
-  static Serializer<DashboardExportDataStatusEnum> get serializer => _$dashboardExportDataStatusEnumSerializer;
+  static Serializer<DashboardExportDataStatusEnum> get serializer =>
+      _$dashboardExportDataStatusEnumSerializer;
 
-  const DashboardExportDataStatusEnum._(String name): super(name);
+  const DashboardExportDataStatusEnum._(String name) : super(name);
 
-  static BuiltSet<DashboardExportDataStatusEnum> get values => _$dashboardExportDataStatusEnumValues;
-  static DashboardExportDataStatusEnum valueOf(String name) => _$dashboardExportDataStatusEnumValueOf(name);
+  static BuiltSet<DashboardExportDataStatusEnum> get values =>
+      _$dashboardExportDataStatusEnumValues;
+  static DashboardExportDataStatusEnum valueOf(String name) =>
+      _$dashboardExportDataStatusEnumValueOf(name);
 }
-

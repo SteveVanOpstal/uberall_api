@@ -103,8 +103,5 @@ void main() {
     test('to test the property `dietaryRestrictions`', () async {
       // TODO
     });
-
-
   });
-
 }

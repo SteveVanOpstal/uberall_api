@@ -16,7 +16,8 @@ part 'special_opening_hours.g.dart';
 /// * [toX] - An end of a period. Up to two periods are supported per date, e.g.: \"to1\": \"09:00\", \"to2\": \"15:00\"
 /// * [date] - The date of a special opening hour, e.g.: 2017-06-30
 @BuiltValue()
-abstract class SpecialOpeningHours implements Built<SpecialOpeningHours, SpecialOpeningHoursBuilder> {
+abstract class SpecialOpeningHours
+    implements Built<SpecialOpeningHours, SpecialOpeningHoursBuilder> {
   /// Indicates whether a location is closed on a date.
   @BuiltValueField(wireName: r'closed')
   bool? get closed;
@@ -35,18 +36,24 @@ abstract class SpecialOpeningHours implements Built<SpecialOpeningHours, Special
 
   SpecialOpeningHours._();
 
-  factory SpecialOpeningHours([void updates(SpecialOpeningHoursBuilder b)]) = _$SpecialOpeningHours;
+  factory SpecialOpeningHours([void updates(SpecialOpeningHoursBuilder b)]) =
+      _$SpecialOpeningHours;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SpecialOpeningHoursBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<SpecialOpeningHours> get serializer => _$SpecialOpeningHoursSerializer();
+  static Serializer<SpecialOpeningHours> get serializer =>
+      _$SpecialOpeningHoursSerializer();
 }
 
-class _$SpecialOpeningHoursSerializer implements PrimitiveSerializer<SpecialOpeningHours> {
+class _$SpecialOpeningHoursSerializer
+    implements PrimitiveSerializer<SpecialOpeningHours> {
   @override
-  final Iterable<Type> types = const [SpecialOpeningHours, _$SpecialOpeningHours];
+  final Iterable<Type> types = const [
+    SpecialOpeningHours,
+    _$SpecialOpeningHours
+  ];
 
   @override
   final String wireName = r'SpecialOpeningHours';
@@ -90,7 +97,9 @@ class _$SpecialOpeningHoursSerializer implements PrimitiveSerializer<SpecialOpen
     SpecialOpeningHours object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -161,4 +170,3 @@ class _$SpecialOpeningHoursSerializer implements PrimitiveSerializer<SpecialOpen
     return result.build();
   }
 }
-

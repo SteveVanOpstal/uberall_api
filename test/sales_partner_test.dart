@@ -186,8 +186,5 @@ void main() {
     test('to test the property `usersLeft`', () async {
       // TODO
     });
-
-
   });
-
 }

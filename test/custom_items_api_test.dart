@@ -11,7 +11,6 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for CustomItemsApi
 void main() {
   // final instance = CustomItemsApi();
@@ -70,6 +69,5 @@ void main() {
     test('test postCustomItems', () async {
       // TODO
     });
-
   });
 }

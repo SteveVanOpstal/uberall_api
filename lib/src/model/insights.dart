@@ -52,7 +52,13 @@ class _$InsightsSerializer implements PrimitiveSerializer<Insights> {
       yield r'metrics';
       yield serializers.serialize(
         object.metrics,
-        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(BuiltMap, [FullType(String), FullType(BuiltList, [FullType(JsonObject)])])]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(BuiltMap, [
+            FullType(String),
+            FullType(BuiltList, [FullType(JsonObject)])
+          ])
+        ]),
       );
     }
     if (object.matchedLocationsCount != null) {
@@ -70,7 +76,9 @@ class _$InsightsSerializer implements PrimitiveSerializer<Insights> {
     Insights object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -88,7 +96,13 @@ class _$InsightsSerializer implements PrimitiveSerializer<Insights> {
         case r'metrics':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(BuiltMap, [FullType(String), FullType(BuiltList, [FullType(JsonObject)])])]),
+            specifiedType: const FullType(BuiltMap, [
+              FullType(String),
+              FullType(BuiltMap, [
+                FullType(String),
+                FullType(BuiltList, [FullType(JsonObject)])
+              ])
+            ]),
           ) as BuiltMap<String, BuiltMap<String, BuiltList<JsonObject>>>;
           result.metrics.replace(valueDes);
           break;
@@ -127,4 +141,3 @@ class _$InsightsSerializer implements PrimitiveSerializer<Insights> {
     return result.build();
   }
 }
-

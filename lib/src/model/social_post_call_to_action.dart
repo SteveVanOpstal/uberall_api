@@ -12,10 +12,11 @@ part 'social_post_call_to_action.g.dart';
 ///
 /// Properties:
 /// * [url] - The url of the call to action.
-/// * [directory] 
-/// * [type] 
+/// * [directory]
+/// * [type]
 @BuiltValue()
-abstract class SocialPostCallToAction implements Built<SocialPostCallToAction, SocialPostCallToActionBuilder> {
+abstract class SocialPostCallToAction
+    implements Built<SocialPostCallToAction, SocialPostCallToActionBuilder> {
   /// The url of the call to action.
   @BuiltValueField(wireName: r'url')
   String? get url;
@@ -28,18 +29,25 @@ abstract class SocialPostCallToAction implements Built<SocialPostCallToAction, S
 
   SocialPostCallToAction._();
 
-  factory SocialPostCallToAction([void updates(SocialPostCallToActionBuilder b)]) = _$SocialPostCallToAction;
+  factory SocialPostCallToAction(
+          [void updates(SocialPostCallToActionBuilder b)]) =
+      _$SocialPostCallToAction;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialPostCallToActionBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<SocialPostCallToAction> get serializer => _$SocialPostCallToActionSerializer();
+  static Serializer<SocialPostCallToAction> get serializer =>
+      _$SocialPostCallToActionSerializer();
 }
 
-class _$SocialPostCallToActionSerializer implements PrimitiveSerializer<SocialPostCallToAction> {
+class _$SocialPostCallToActionSerializer
+    implements PrimitiveSerializer<SocialPostCallToAction> {
   @override
-  final Iterable<Type> types = const [SocialPostCallToAction, _$SocialPostCallToAction];
+  final Iterable<Type> types = const [
+    SocialPostCallToAction,
+    _$SocialPostCallToAction
+  ];
 
   @override
   final String wireName = r'SocialPostCallToAction';
@@ -78,7 +86,9 @@ class _$SocialPostCallToActionSerializer implements PrimitiveSerializer<SocialPo
     SocialPostCallToAction object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -142,4 +152,3 @@ class _$SocialPostCallToActionSerializer implements PrimitiveSerializer<SocialPo
     return result.build();
   }
 }
-

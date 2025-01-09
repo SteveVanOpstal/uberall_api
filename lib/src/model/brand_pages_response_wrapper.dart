@@ -13,13 +13,15 @@ part 'brand_pages_response_wrapper.g.dart';
 /// BrandPagesResponseWrapper
 ///
 /// Properties:
-/// * [status] 
+/// * [status]
 /// * [message] - (optional) Holds further information about the response
-/// * [errorCode] 
+/// * [errorCode]
 /// * [warnings] - (optional) Holds further warnings
-/// * [response] 
+/// * [response]
 @BuiltValue()
-abstract class BrandPagesResponseWrapper implements Built<BrandPagesResponseWrapper, BrandPagesResponseWrapperBuilder> {
+abstract class BrandPagesResponseWrapper
+    implements
+        Built<BrandPagesResponseWrapper, BrandPagesResponseWrapperBuilder> {
   @BuiltValueField(wireName: r'status')
   BrandPagesResponseWrapperStatusEnum? get status;
   // enum statusEnum {  SUCCESS,  QUOTA_LIMIT_EXCEED,  NOT_AUTHORIZED,  FORBIDDEN,  BAD_ACCESS_TOKEN,  BAD_PRIVATE_KEY,  BAD_PUBLIC_KEY,  MISSING_PARAMETER,  INVALID_PARAMETER,  WRONG_PARAMETER_TYPE,  CONFLICT,  RESOURCE_LOCKED,  SERVER_ERROR,  ERROR,  NOT_FOUND,  BAD_REQUEST,  USER_ERROR,  PARTIAL_ERROR,  METHOD_NOT_ALLOWED,  };
@@ -41,18 +43,25 @@ abstract class BrandPagesResponseWrapper implements Built<BrandPagesResponseWrap
 
   BrandPagesResponseWrapper._();
 
-  factory BrandPagesResponseWrapper([void updates(BrandPagesResponseWrapperBuilder b)]) = _$BrandPagesResponseWrapper;
+  factory BrandPagesResponseWrapper(
+          [void updates(BrandPagesResponseWrapperBuilder b)]) =
+      _$BrandPagesResponseWrapper;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(BrandPagesResponseWrapperBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<BrandPagesResponseWrapper> get serializer => _$BrandPagesResponseWrapperSerializer();
+  static Serializer<BrandPagesResponseWrapper> get serializer =>
+      _$BrandPagesResponseWrapperSerializer();
 }
 
-class _$BrandPagesResponseWrapperSerializer implements PrimitiveSerializer<BrandPagesResponseWrapper> {
+class _$BrandPagesResponseWrapperSerializer
+    implements PrimitiveSerializer<BrandPagesResponseWrapper> {
   @override
-  final Iterable<Type> types = const [BrandPagesResponseWrapper, _$BrandPagesResponseWrapper];
+  final Iterable<Type> types = const [
+    BrandPagesResponseWrapper,
+    _$BrandPagesResponseWrapper
+  ];
 
   @override
   final String wireName = r'BrandPagesResponseWrapper';
@@ -105,7 +114,9 @@ class _$BrandPagesResponseWrapperSerializer implements PrimitiveSerializer<Brand
     BrandPagesResponseWrapper object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -137,7 +148,8 @@ class _$BrandPagesResponseWrapperSerializer implements PrimitiveSerializer<Brand
         case r'errorCode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BrandPagesResponseWrapperErrorCodeEnum),
+            specifiedType:
+                const FullType(BrandPagesResponseWrapperErrorCodeEnum),
           ) as BrandPagesResponseWrapperErrorCodeEnum;
           result.errorCode = valueDes;
           break;
@@ -185,102 +197,145 @@ class _$BrandPagesResponseWrapperSerializer implements PrimitiveSerializer<Brand
 }
 
 class BrandPagesResponseWrapperStatusEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'SUCCESS')
-  static const BrandPagesResponseWrapperStatusEnum SUCCESS = _$brandPagesResponseWrapperStatusEnum_SUCCESS;
+  static const BrandPagesResponseWrapperStatusEnum SUCCESS =
+      _$brandPagesResponseWrapperStatusEnum_SUCCESS;
   @BuiltValueEnumConst(wireName: r'QUOTA_LIMIT_EXCEED')
-  static const BrandPagesResponseWrapperStatusEnum QUOTA_LIMIT_EXCEED = _$brandPagesResponseWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
+  static const BrandPagesResponseWrapperStatusEnum QUOTA_LIMIT_EXCEED =
+      _$brandPagesResponseWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
   @BuiltValueEnumConst(wireName: r'NOT_AUTHORIZED')
-  static const BrandPagesResponseWrapperStatusEnum NOT_AUTHORIZED = _$brandPagesResponseWrapperStatusEnum_NOT_AUTHORIZED;
+  static const BrandPagesResponseWrapperStatusEnum NOT_AUTHORIZED =
+      _$brandPagesResponseWrapperStatusEnum_NOT_AUTHORIZED;
   @BuiltValueEnumConst(wireName: r'FORBIDDEN')
-  static const BrandPagesResponseWrapperStatusEnum FORBIDDEN = _$brandPagesResponseWrapperStatusEnum_FORBIDDEN;
+  static const BrandPagesResponseWrapperStatusEnum FORBIDDEN =
+      _$brandPagesResponseWrapperStatusEnum_FORBIDDEN;
   @BuiltValueEnumConst(wireName: r'BAD_ACCESS_TOKEN')
-  static const BrandPagesResponseWrapperStatusEnum BAD_ACCESS_TOKEN = _$brandPagesResponseWrapperStatusEnum_BAD_ACCESS_TOKEN;
+  static const BrandPagesResponseWrapperStatusEnum BAD_ACCESS_TOKEN =
+      _$brandPagesResponseWrapperStatusEnum_BAD_ACCESS_TOKEN;
   @BuiltValueEnumConst(wireName: r'BAD_PRIVATE_KEY')
-  static const BrandPagesResponseWrapperStatusEnum BAD_PRIVATE_KEY = _$brandPagesResponseWrapperStatusEnum_BAD_PRIVATE_KEY;
+  static const BrandPagesResponseWrapperStatusEnum BAD_PRIVATE_KEY =
+      _$brandPagesResponseWrapperStatusEnum_BAD_PRIVATE_KEY;
   @BuiltValueEnumConst(wireName: r'BAD_PUBLIC_KEY')
-  static const BrandPagesResponseWrapperStatusEnum BAD_PUBLIC_KEY = _$brandPagesResponseWrapperStatusEnum_BAD_PUBLIC_KEY;
+  static const BrandPagesResponseWrapperStatusEnum BAD_PUBLIC_KEY =
+      _$brandPagesResponseWrapperStatusEnum_BAD_PUBLIC_KEY;
   @BuiltValueEnumConst(wireName: r'MISSING_PARAMETER')
-  static const BrandPagesResponseWrapperStatusEnum MISSING_PARAMETER = _$brandPagesResponseWrapperStatusEnum_MISSING_PARAMETER;
+  static const BrandPagesResponseWrapperStatusEnum MISSING_PARAMETER =
+      _$brandPagesResponseWrapperStatusEnum_MISSING_PARAMETER;
   @BuiltValueEnumConst(wireName: r'INVALID_PARAMETER')
-  static const BrandPagesResponseWrapperStatusEnum INVALID_PARAMETER = _$brandPagesResponseWrapperStatusEnum_INVALID_PARAMETER;
+  static const BrandPagesResponseWrapperStatusEnum INVALID_PARAMETER =
+      _$brandPagesResponseWrapperStatusEnum_INVALID_PARAMETER;
   @BuiltValueEnumConst(wireName: r'WRONG_PARAMETER_TYPE')
-  static const BrandPagesResponseWrapperStatusEnum WRONG_PARAMETER_TYPE = _$brandPagesResponseWrapperStatusEnum_WRONG_PARAMETER_TYPE;
+  static const BrandPagesResponseWrapperStatusEnum WRONG_PARAMETER_TYPE =
+      _$brandPagesResponseWrapperStatusEnum_WRONG_PARAMETER_TYPE;
   @BuiltValueEnumConst(wireName: r'CONFLICT')
-  static const BrandPagesResponseWrapperStatusEnum CONFLICT = _$brandPagesResponseWrapperStatusEnum_CONFLICT;
+  static const BrandPagesResponseWrapperStatusEnum CONFLICT =
+      _$brandPagesResponseWrapperStatusEnum_CONFLICT;
   @BuiltValueEnumConst(wireName: r'RESOURCE_LOCKED')
-  static const BrandPagesResponseWrapperStatusEnum RESOURCE_LOCKED = _$brandPagesResponseWrapperStatusEnum_RESOURCE_LOCKED;
+  static const BrandPagesResponseWrapperStatusEnum RESOURCE_LOCKED =
+      _$brandPagesResponseWrapperStatusEnum_RESOURCE_LOCKED;
   @BuiltValueEnumConst(wireName: r'SERVER_ERROR')
-  static const BrandPagesResponseWrapperStatusEnum SERVER_ERROR = _$brandPagesResponseWrapperStatusEnum_SERVER_ERROR;
+  static const BrandPagesResponseWrapperStatusEnum SERVER_ERROR =
+      _$brandPagesResponseWrapperStatusEnum_SERVER_ERROR;
   @BuiltValueEnumConst(wireName: r'ERROR')
-  static const BrandPagesResponseWrapperStatusEnum ERROR = _$brandPagesResponseWrapperStatusEnum_ERROR;
+  static const BrandPagesResponseWrapperStatusEnum ERROR =
+      _$brandPagesResponseWrapperStatusEnum_ERROR;
   @BuiltValueEnumConst(wireName: r'NOT_FOUND')
-  static const BrandPagesResponseWrapperStatusEnum NOT_FOUND = _$brandPagesResponseWrapperStatusEnum_NOT_FOUND;
+  static const BrandPagesResponseWrapperStatusEnum NOT_FOUND =
+      _$brandPagesResponseWrapperStatusEnum_NOT_FOUND;
   @BuiltValueEnumConst(wireName: r'BAD_REQUEST')
-  static const BrandPagesResponseWrapperStatusEnum BAD_REQUEST = _$brandPagesResponseWrapperStatusEnum_BAD_REQUEST;
+  static const BrandPagesResponseWrapperStatusEnum BAD_REQUEST =
+      _$brandPagesResponseWrapperStatusEnum_BAD_REQUEST;
   @BuiltValueEnumConst(wireName: r'USER_ERROR')
-  static const BrandPagesResponseWrapperStatusEnum USER_ERROR = _$brandPagesResponseWrapperStatusEnum_USER_ERROR;
+  static const BrandPagesResponseWrapperStatusEnum USER_ERROR =
+      _$brandPagesResponseWrapperStatusEnum_USER_ERROR;
   @BuiltValueEnumConst(wireName: r'PARTIAL_ERROR')
-  static const BrandPagesResponseWrapperStatusEnum PARTIAL_ERROR = _$brandPagesResponseWrapperStatusEnum_PARTIAL_ERROR;
+  static const BrandPagesResponseWrapperStatusEnum PARTIAL_ERROR =
+      _$brandPagesResponseWrapperStatusEnum_PARTIAL_ERROR;
   @BuiltValueEnumConst(wireName: r'METHOD_NOT_ALLOWED')
-  static const BrandPagesResponseWrapperStatusEnum METHOD_NOT_ALLOWED = _$brandPagesResponseWrapperStatusEnum_METHOD_NOT_ALLOWED;
+  static const BrandPagesResponseWrapperStatusEnum METHOD_NOT_ALLOWED =
+      _$brandPagesResponseWrapperStatusEnum_METHOD_NOT_ALLOWED;
 
-  static Serializer<BrandPagesResponseWrapperStatusEnum> get serializer => _$brandPagesResponseWrapperStatusEnumSerializer;
+  static Serializer<BrandPagesResponseWrapperStatusEnum> get serializer =>
+      _$brandPagesResponseWrapperStatusEnumSerializer;
 
-  const BrandPagesResponseWrapperStatusEnum._(String name): super(name);
+  const BrandPagesResponseWrapperStatusEnum._(String name) : super(name);
 
-  static BuiltSet<BrandPagesResponseWrapperStatusEnum> get values => _$brandPagesResponseWrapperStatusEnumValues;
-  static BrandPagesResponseWrapperStatusEnum valueOf(String name) => _$brandPagesResponseWrapperStatusEnumValueOf(name);
+  static BuiltSet<BrandPagesResponseWrapperStatusEnum> get values =>
+      _$brandPagesResponseWrapperStatusEnumValues;
+  static BrandPagesResponseWrapperStatusEnum valueOf(String name) =>
+      _$brandPagesResponseWrapperStatusEnumValueOf(name);
 }
 
 class BrandPagesResponseWrapperErrorCodeEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'NORMALIZATION_FAILED')
-  static const BrandPagesResponseWrapperErrorCodeEnum NORMALIZATION_FAILED = _$brandPagesResponseWrapperErrorCodeEnum_NORMALIZATION_FAILED;
+  static const BrandPagesResponseWrapperErrorCodeEnum NORMALIZATION_FAILED =
+      _$brandPagesResponseWrapperErrorCodeEnum_NORMALIZATION_FAILED;
   @BuiltValueEnumConst(wireName: r'DATA_CORRUPTED')
-  static const BrandPagesResponseWrapperErrorCodeEnum DATA_CORRUPTED = _$brandPagesResponseWrapperErrorCodeEnum_DATA_CORRUPTED;
+  static const BrandPagesResponseWrapperErrorCodeEnum DATA_CORRUPTED =
+      _$brandPagesResponseWrapperErrorCodeEnum_DATA_CORRUPTED;
   @BuiltValueEnumConst(wireName: r'INVALID_INPUT')
-  static const BrandPagesResponseWrapperErrorCodeEnum INVALID_INPUT = _$brandPagesResponseWrapperErrorCodeEnum_INVALID_INPUT;
+  static const BrandPagesResponseWrapperErrorCodeEnum INVALID_INPUT =
+      _$brandPagesResponseWrapperErrorCodeEnum_INVALID_INPUT;
   @BuiltValueEnumConst(wireName: r'NOT_SYNCABLE')
-  static const BrandPagesResponseWrapperErrorCodeEnum NOT_SYNCABLE = _$brandPagesResponseWrapperErrorCodeEnum_NOT_SYNCABLE;
+  static const BrandPagesResponseWrapperErrorCodeEnum NOT_SYNCABLE =
+      _$brandPagesResponseWrapperErrorCodeEnum_NOT_SYNCABLE;
   @BuiltValueEnumConst(wireName: r'PAYMENT_FAILED')
-  static const BrandPagesResponseWrapperErrorCodeEnum PAYMENT_FAILED = _$brandPagesResponseWrapperErrorCodeEnum_PAYMENT_FAILED;
+  static const BrandPagesResponseWrapperErrorCodeEnum PAYMENT_FAILED =
+      _$brandPagesResponseWrapperErrorCodeEnum_PAYMENT_FAILED;
   @BuiltValueEnumConst(wireName: r'FREE_TIER_REACHED')
-  static const BrandPagesResponseWrapperErrorCodeEnum FREE_TIER_REACHED = _$brandPagesResponseWrapperErrorCodeEnum_FREE_TIER_REACHED;
+  static const BrandPagesResponseWrapperErrorCodeEnum FREE_TIER_REACHED =
+      _$brandPagesResponseWrapperErrorCodeEnum_FREE_TIER_REACHED;
   @BuiltValueEnumConst(wireName: r'LIMIT_REACHED')
-  static const BrandPagesResponseWrapperErrorCodeEnum LIMIT_REACHED = _$brandPagesResponseWrapperErrorCodeEnum_LIMIT_REACHED;
+  static const BrandPagesResponseWrapperErrorCodeEnum LIMIT_REACHED =
+      _$brandPagesResponseWrapperErrorCodeEnum_LIMIT_REACHED;
   @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const BrandPagesResponseWrapperErrorCodeEnum INACTIVE = _$brandPagesResponseWrapperErrorCodeEnum_INACTIVE;
+  static const BrandPagesResponseWrapperErrorCodeEnum INACTIVE =
+      _$brandPagesResponseWrapperErrorCodeEnum_INACTIVE;
   @BuiltValueEnumConst(wireName: r'UNKNOWN')
-  static const BrandPagesResponseWrapperErrorCodeEnum UNKNOWN = _$brandPagesResponseWrapperErrorCodeEnum_UNKNOWN;
+  static const BrandPagesResponseWrapperErrorCodeEnum UNKNOWN =
+      _$brandPagesResponseWrapperErrorCodeEnum_UNKNOWN;
   @BuiltValueEnumConst(wireName: r'IDENTIFIER_NOT_UNIQUE')
-  static const BrandPagesResponseWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE = _$brandPagesResponseWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
+  static const BrandPagesResponseWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE =
+      _$brandPagesResponseWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
   @BuiltValueEnumConst(wireName: r'ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT')
-  static const BrandPagesResponseWrapperErrorCodeEnum ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT = _$brandPagesResponseWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
+  static const BrandPagesResponseWrapperErrorCodeEnum
+      ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT =
+      _$brandPagesResponseWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
   @BuiltValueEnumConst(wireName: r'NO_ACCOUNT_CONNECTED')
-  static const BrandPagesResponseWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED = _$brandPagesResponseWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
+  static const BrandPagesResponseWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED =
+      _$brandPagesResponseWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
   @BuiltValueEnumConst(wireName: r'NO_PAGE_SELECTED')
-  static const BrandPagesResponseWrapperErrorCodeEnum NO_PAGE_SELECTED = _$brandPagesResponseWrapperErrorCodeEnum_NO_PAGE_SELECTED;
+  static const BrandPagesResponseWrapperErrorCodeEnum NO_PAGE_SELECTED =
+      _$brandPagesResponseWrapperErrorCodeEnum_NO_PAGE_SELECTED;
   @BuiltValueEnumConst(wireName: r'PAGE_NOT_CREATED')
-  static const BrandPagesResponseWrapperErrorCodeEnum PAGE_NOT_CREATED = _$brandPagesResponseWrapperErrorCodeEnum_PAGE_NOT_CREATED;
+  static const BrandPagesResponseWrapperErrorCodeEnum PAGE_NOT_CREATED =
+      _$brandPagesResponseWrapperErrorCodeEnum_PAGE_NOT_CREATED;
   @BuiltValueEnumConst(wireName: r'PAGE_IN_REVIEW')
-  static const BrandPagesResponseWrapperErrorCodeEnum PAGE_IN_REVIEW = _$brandPagesResponseWrapperErrorCodeEnum_PAGE_IN_REVIEW;
+  static const BrandPagesResponseWrapperErrorCodeEnum PAGE_IN_REVIEW =
+      _$brandPagesResponseWrapperErrorCodeEnum_PAGE_IN_REVIEW;
   @BuiltValueEnumConst(wireName: r'PAGE_CLAIMED_BY_OTHERS')
-  static const BrandPagesResponseWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS = _$brandPagesResponseWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
+  static const BrandPagesResponseWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS =
+      _$brandPagesResponseWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
   @BuiltValueEnumConst(wireName: r'OVERLAPPING_SOCIALPOST')
-  static const BrandPagesResponseWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST = _$brandPagesResponseWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
+  static const BrandPagesResponseWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST =
+      _$brandPagesResponseWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
   @BuiltValueEnumConst(wireName: r'TOO_MANY_REPLIES')
-  static const BrandPagesResponseWrapperErrorCodeEnum TOO_MANY_REPLIES = _$brandPagesResponseWrapperErrorCodeEnum_TOO_MANY_REPLIES;
+  static const BrandPagesResponseWrapperErrorCodeEnum TOO_MANY_REPLIES =
+      _$brandPagesResponseWrapperErrorCodeEnum_TOO_MANY_REPLIES;
   @BuiltValueEnumConst(wireName: r'REPLY_TOO_LONG')
-  static const BrandPagesResponseWrapperErrorCodeEnum REPLY_TOO_LONG = _$brandPagesResponseWrapperErrorCodeEnum_REPLY_TOO_LONG;
+  static const BrandPagesResponseWrapperErrorCodeEnum REPLY_TOO_LONG =
+      _$brandPagesResponseWrapperErrorCodeEnum_REPLY_TOO_LONG;
   @BuiltValueEnumConst(wireName: r'DEPRECATED')
-  static const BrandPagesResponseWrapperErrorCodeEnum DEPRECATED = _$brandPagesResponseWrapperErrorCodeEnum_DEPRECATED;
+  static const BrandPagesResponseWrapperErrorCodeEnum DEPRECATED =
+      _$brandPagesResponseWrapperErrorCodeEnum_DEPRECATED;
 
-  static Serializer<BrandPagesResponseWrapperErrorCodeEnum> get serializer => _$brandPagesResponseWrapperErrorCodeEnumSerializer;
+  static Serializer<BrandPagesResponseWrapperErrorCodeEnum> get serializer =>
+      _$brandPagesResponseWrapperErrorCodeEnumSerializer;
 
-  const BrandPagesResponseWrapperErrorCodeEnum._(String name): super(name);
+  const BrandPagesResponseWrapperErrorCodeEnum._(String name) : super(name);
 
-  static BuiltSet<BrandPagesResponseWrapperErrorCodeEnum> get values => _$brandPagesResponseWrapperErrorCodeEnumValues;
-  static BrandPagesResponseWrapperErrorCodeEnum valueOf(String name) => _$brandPagesResponseWrapperErrorCodeEnumValueOf(name);
+  static BuiltSet<BrandPagesResponseWrapperErrorCodeEnum> get values =>
+      _$brandPagesResponseWrapperErrorCodeEnumValues;
+  static BrandPagesResponseWrapperErrorCodeEnum valueOf(String name) =>
+      _$brandPagesResponseWrapperErrorCodeEnumValueOf(name);
 }
-

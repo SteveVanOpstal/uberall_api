@@ -13,13 +13,16 @@ part 'menu_item_search_response_wrapper.g.dart';
 /// MenuItemSearchResponseWrapper
 ///
 /// Properties:
-/// * [status] 
+/// * [status]
 /// * [message] - (optional) Holds further information about the response
-/// * [errorCode] 
+/// * [errorCode]
 /// * [warnings] - (optional) Holds further warnings
-/// * [response] 
+/// * [response]
 @BuiltValue()
-abstract class MenuItemSearchResponseWrapper implements Built<MenuItemSearchResponseWrapper, MenuItemSearchResponseWrapperBuilder> {
+abstract class MenuItemSearchResponseWrapper
+    implements
+        Built<MenuItemSearchResponseWrapper,
+            MenuItemSearchResponseWrapperBuilder> {
   @BuiltValueField(wireName: r'status')
   MenuItemSearchResponseWrapperStatusEnum? get status;
   // enum statusEnum {  SUCCESS,  QUOTA_LIMIT_EXCEED,  NOT_AUTHORIZED,  FORBIDDEN,  BAD_ACCESS_TOKEN,  BAD_PRIVATE_KEY,  BAD_PUBLIC_KEY,  MISSING_PARAMETER,  INVALID_PARAMETER,  WRONG_PARAMETER_TYPE,  CONFLICT,  RESOURCE_LOCKED,  SERVER_ERROR,  ERROR,  NOT_FOUND,  BAD_REQUEST,  USER_ERROR,  PARTIAL_ERROR,  METHOD_NOT_ALLOWED,  };
@@ -41,18 +44,25 @@ abstract class MenuItemSearchResponseWrapper implements Built<MenuItemSearchResp
 
   MenuItemSearchResponseWrapper._();
 
-  factory MenuItemSearchResponseWrapper([void updates(MenuItemSearchResponseWrapperBuilder b)]) = _$MenuItemSearchResponseWrapper;
+  factory MenuItemSearchResponseWrapper(
+          [void updates(MenuItemSearchResponseWrapperBuilder b)]) =
+      _$MenuItemSearchResponseWrapper;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(MenuItemSearchResponseWrapperBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<MenuItemSearchResponseWrapper> get serializer => _$MenuItemSearchResponseWrapperSerializer();
+  static Serializer<MenuItemSearchResponseWrapper> get serializer =>
+      _$MenuItemSearchResponseWrapperSerializer();
 }
 
-class _$MenuItemSearchResponseWrapperSerializer implements PrimitiveSerializer<MenuItemSearchResponseWrapper> {
+class _$MenuItemSearchResponseWrapperSerializer
+    implements PrimitiveSerializer<MenuItemSearchResponseWrapper> {
   @override
-  final Iterable<Type> types = const [MenuItemSearchResponseWrapper, _$MenuItemSearchResponseWrapper];
+  final Iterable<Type> types = const [
+    MenuItemSearchResponseWrapper,
+    _$MenuItemSearchResponseWrapper
+  ];
 
   @override
   final String wireName = r'MenuItemSearchResponseWrapper';
@@ -80,7 +90,8 @@ class _$MenuItemSearchResponseWrapperSerializer implements PrimitiveSerializer<M
       yield r'errorCode';
       yield serializers.serialize(
         object.errorCode,
-        specifiedType: const FullType(MenuItemSearchResponseWrapperErrorCodeEnum),
+        specifiedType:
+            const FullType(MenuItemSearchResponseWrapperErrorCodeEnum),
       );
     }
     if (object.warnings != null) {
@@ -105,7 +116,9 @@ class _$MenuItemSearchResponseWrapperSerializer implements PrimitiveSerializer<M
     MenuItemSearchResponseWrapper object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -123,7 +136,8 @@ class _$MenuItemSearchResponseWrapperSerializer implements PrimitiveSerializer<M
         case r'status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(MenuItemSearchResponseWrapperStatusEnum),
+            specifiedType:
+                const FullType(MenuItemSearchResponseWrapperStatusEnum),
           ) as MenuItemSearchResponseWrapperStatusEnum;
           result.status = valueDes;
           break;
@@ -137,7 +151,8 @@ class _$MenuItemSearchResponseWrapperSerializer implements PrimitiveSerializer<M
         case r'errorCode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(MenuItemSearchResponseWrapperErrorCodeEnum),
+            specifiedType:
+                const FullType(MenuItemSearchResponseWrapperErrorCodeEnum),
           ) as MenuItemSearchResponseWrapperErrorCodeEnum;
           result.errorCode = valueDes;
           break;
@@ -185,102 +200,148 @@ class _$MenuItemSearchResponseWrapperSerializer implements PrimitiveSerializer<M
 }
 
 class MenuItemSearchResponseWrapperStatusEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'SUCCESS')
-  static const MenuItemSearchResponseWrapperStatusEnum SUCCESS = _$menuItemSearchResponseWrapperStatusEnum_SUCCESS;
+  static const MenuItemSearchResponseWrapperStatusEnum SUCCESS =
+      _$menuItemSearchResponseWrapperStatusEnum_SUCCESS;
   @BuiltValueEnumConst(wireName: r'QUOTA_LIMIT_EXCEED')
-  static const MenuItemSearchResponseWrapperStatusEnum QUOTA_LIMIT_EXCEED = _$menuItemSearchResponseWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
+  static const MenuItemSearchResponseWrapperStatusEnum QUOTA_LIMIT_EXCEED =
+      _$menuItemSearchResponseWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
   @BuiltValueEnumConst(wireName: r'NOT_AUTHORIZED')
-  static const MenuItemSearchResponseWrapperStatusEnum NOT_AUTHORIZED = _$menuItemSearchResponseWrapperStatusEnum_NOT_AUTHORIZED;
+  static const MenuItemSearchResponseWrapperStatusEnum NOT_AUTHORIZED =
+      _$menuItemSearchResponseWrapperStatusEnum_NOT_AUTHORIZED;
   @BuiltValueEnumConst(wireName: r'FORBIDDEN')
-  static const MenuItemSearchResponseWrapperStatusEnum FORBIDDEN = _$menuItemSearchResponseWrapperStatusEnum_FORBIDDEN;
+  static const MenuItemSearchResponseWrapperStatusEnum FORBIDDEN =
+      _$menuItemSearchResponseWrapperStatusEnum_FORBIDDEN;
   @BuiltValueEnumConst(wireName: r'BAD_ACCESS_TOKEN')
-  static const MenuItemSearchResponseWrapperStatusEnum BAD_ACCESS_TOKEN = _$menuItemSearchResponseWrapperStatusEnum_BAD_ACCESS_TOKEN;
+  static const MenuItemSearchResponseWrapperStatusEnum BAD_ACCESS_TOKEN =
+      _$menuItemSearchResponseWrapperStatusEnum_BAD_ACCESS_TOKEN;
   @BuiltValueEnumConst(wireName: r'BAD_PRIVATE_KEY')
-  static const MenuItemSearchResponseWrapperStatusEnum BAD_PRIVATE_KEY = _$menuItemSearchResponseWrapperStatusEnum_BAD_PRIVATE_KEY;
+  static const MenuItemSearchResponseWrapperStatusEnum BAD_PRIVATE_KEY =
+      _$menuItemSearchResponseWrapperStatusEnum_BAD_PRIVATE_KEY;
   @BuiltValueEnumConst(wireName: r'BAD_PUBLIC_KEY')
-  static const MenuItemSearchResponseWrapperStatusEnum BAD_PUBLIC_KEY = _$menuItemSearchResponseWrapperStatusEnum_BAD_PUBLIC_KEY;
+  static const MenuItemSearchResponseWrapperStatusEnum BAD_PUBLIC_KEY =
+      _$menuItemSearchResponseWrapperStatusEnum_BAD_PUBLIC_KEY;
   @BuiltValueEnumConst(wireName: r'MISSING_PARAMETER')
-  static const MenuItemSearchResponseWrapperStatusEnum MISSING_PARAMETER = _$menuItemSearchResponseWrapperStatusEnum_MISSING_PARAMETER;
+  static const MenuItemSearchResponseWrapperStatusEnum MISSING_PARAMETER =
+      _$menuItemSearchResponseWrapperStatusEnum_MISSING_PARAMETER;
   @BuiltValueEnumConst(wireName: r'INVALID_PARAMETER')
-  static const MenuItemSearchResponseWrapperStatusEnum INVALID_PARAMETER = _$menuItemSearchResponseWrapperStatusEnum_INVALID_PARAMETER;
+  static const MenuItemSearchResponseWrapperStatusEnum INVALID_PARAMETER =
+      _$menuItemSearchResponseWrapperStatusEnum_INVALID_PARAMETER;
   @BuiltValueEnumConst(wireName: r'WRONG_PARAMETER_TYPE')
-  static const MenuItemSearchResponseWrapperStatusEnum WRONG_PARAMETER_TYPE = _$menuItemSearchResponseWrapperStatusEnum_WRONG_PARAMETER_TYPE;
+  static const MenuItemSearchResponseWrapperStatusEnum WRONG_PARAMETER_TYPE =
+      _$menuItemSearchResponseWrapperStatusEnum_WRONG_PARAMETER_TYPE;
   @BuiltValueEnumConst(wireName: r'CONFLICT')
-  static const MenuItemSearchResponseWrapperStatusEnum CONFLICT = _$menuItemSearchResponseWrapperStatusEnum_CONFLICT;
+  static const MenuItemSearchResponseWrapperStatusEnum CONFLICT =
+      _$menuItemSearchResponseWrapperStatusEnum_CONFLICT;
   @BuiltValueEnumConst(wireName: r'RESOURCE_LOCKED')
-  static const MenuItemSearchResponseWrapperStatusEnum RESOURCE_LOCKED = _$menuItemSearchResponseWrapperStatusEnum_RESOURCE_LOCKED;
+  static const MenuItemSearchResponseWrapperStatusEnum RESOURCE_LOCKED =
+      _$menuItemSearchResponseWrapperStatusEnum_RESOURCE_LOCKED;
   @BuiltValueEnumConst(wireName: r'SERVER_ERROR')
-  static const MenuItemSearchResponseWrapperStatusEnum SERVER_ERROR = _$menuItemSearchResponseWrapperStatusEnum_SERVER_ERROR;
+  static const MenuItemSearchResponseWrapperStatusEnum SERVER_ERROR =
+      _$menuItemSearchResponseWrapperStatusEnum_SERVER_ERROR;
   @BuiltValueEnumConst(wireName: r'ERROR')
-  static const MenuItemSearchResponseWrapperStatusEnum ERROR = _$menuItemSearchResponseWrapperStatusEnum_ERROR;
+  static const MenuItemSearchResponseWrapperStatusEnum ERROR =
+      _$menuItemSearchResponseWrapperStatusEnum_ERROR;
   @BuiltValueEnumConst(wireName: r'NOT_FOUND')
-  static const MenuItemSearchResponseWrapperStatusEnum NOT_FOUND = _$menuItemSearchResponseWrapperStatusEnum_NOT_FOUND;
+  static const MenuItemSearchResponseWrapperStatusEnum NOT_FOUND =
+      _$menuItemSearchResponseWrapperStatusEnum_NOT_FOUND;
   @BuiltValueEnumConst(wireName: r'BAD_REQUEST')
-  static const MenuItemSearchResponseWrapperStatusEnum BAD_REQUEST = _$menuItemSearchResponseWrapperStatusEnum_BAD_REQUEST;
+  static const MenuItemSearchResponseWrapperStatusEnum BAD_REQUEST =
+      _$menuItemSearchResponseWrapperStatusEnum_BAD_REQUEST;
   @BuiltValueEnumConst(wireName: r'USER_ERROR')
-  static const MenuItemSearchResponseWrapperStatusEnum USER_ERROR = _$menuItemSearchResponseWrapperStatusEnum_USER_ERROR;
+  static const MenuItemSearchResponseWrapperStatusEnum USER_ERROR =
+      _$menuItemSearchResponseWrapperStatusEnum_USER_ERROR;
   @BuiltValueEnumConst(wireName: r'PARTIAL_ERROR')
-  static const MenuItemSearchResponseWrapperStatusEnum PARTIAL_ERROR = _$menuItemSearchResponseWrapperStatusEnum_PARTIAL_ERROR;
+  static const MenuItemSearchResponseWrapperStatusEnum PARTIAL_ERROR =
+      _$menuItemSearchResponseWrapperStatusEnum_PARTIAL_ERROR;
   @BuiltValueEnumConst(wireName: r'METHOD_NOT_ALLOWED')
-  static const MenuItemSearchResponseWrapperStatusEnum METHOD_NOT_ALLOWED = _$menuItemSearchResponseWrapperStatusEnum_METHOD_NOT_ALLOWED;
+  static const MenuItemSearchResponseWrapperStatusEnum METHOD_NOT_ALLOWED =
+      _$menuItemSearchResponseWrapperStatusEnum_METHOD_NOT_ALLOWED;
 
-  static Serializer<MenuItemSearchResponseWrapperStatusEnum> get serializer => _$menuItemSearchResponseWrapperStatusEnumSerializer;
+  static Serializer<MenuItemSearchResponseWrapperStatusEnum> get serializer =>
+      _$menuItemSearchResponseWrapperStatusEnumSerializer;
 
-  const MenuItemSearchResponseWrapperStatusEnum._(String name): super(name);
+  const MenuItemSearchResponseWrapperStatusEnum._(String name) : super(name);
 
-  static BuiltSet<MenuItemSearchResponseWrapperStatusEnum> get values => _$menuItemSearchResponseWrapperStatusEnumValues;
-  static MenuItemSearchResponseWrapperStatusEnum valueOf(String name) => _$menuItemSearchResponseWrapperStatusEnumValueOf(name);
+  static BuiltSet<MenuItemSearchResponseWrapperStatusEnum> get values =>
+      _$menuItemSearchResponseWrapperStatusEnumValues;
+  static MenuItemSearchResponseWrapperStatusEnum valueOf(String name) =>
+      _$menuItemSearchResponseWrapperStatusEnumValueOf(name);
 }
 
 class MenuItemSearchResponseWrapperErrorCodeEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'NORMALIZATION_FAILED')
-  static const MenuItemSearchResponseWrapperErrorCodeEnum NORMALIZATION_FAILED = _$menuItemSearchResponseWrapperErrorCodeEnum_NORMALIZATION_FAILED;
+  static const MenuItemSearchResponseWrapperErrorCodeEnum NORMALIZATION_FAILED =
+      _$menuItemSearchResponseWrapperErrorCodeEnum_NORMALIZATION_FAILED;
   @BuiltValueEnumConst(wireName: r'DATA_CORRUPTED')
-  static const MenuItemSearchResponseWrapperErrorCodeEnum DATA_CORRUPTED = _$menuItemSearchResponseWrapperErrorCodeEnum_DATA_CORRUPTED;
+  static const MenuItemSearchResponseWrapperErrorCodeEnum DATA_CORRUPTED =
+      _$menuItemSearchResponseWrapperErrorCodeEnum_DATA_CORRUPTED;
   @BuiltValueEnumConst(wireName: r'INVALID_INPUT')
-  static const MenuItemSearchResponseWrapperErrorCodeEnum INVALID_INPUT = _$menuItemSearchResponseWrapperErrorCodeEnum_INVALID_INPUT;
+  static const MenuItemSearchResponseWrapperErrorCodeEnum INVALID_INPUT =
+      _$menuItemSearchResponseWrapperErrorCodeEnum_INVALID_INPUT;
   @BuiltValueEnumConst(wireName: r'NOT_SYNCABLE')
-  static const MenuItemSearchResponseWrapperErrorCodeEnum NOT_SYNCABLE = _$menuItemSearchResponseWrapperErrorCodeEnum_NOT_SYNCABLE;
+  static const MenuItemSearchResponseWrapperErrorCodeEnum NOT_SYNCABLE =
+      _$menuItemSearchResponseWrapperErrorCodeEnum_NOT_SYNCABLE;
   @BuiltValueEnumConst(wireName: r'PAYMENT_FAILED')
-  static const MenuItemSearchResponseWrapperErrorCodeEnum PAYMENT_FAILED = _$menuItemSearchResponseWrapperErrorCodeEnum_PAYMENT_FAILED;
+  static const MenuItemSearchResponseWrapperErrorCodeEnum PAYMENT_FAILED =
+      _$menuItemSearchResponseWrapperErrorCodeEnum_PAYMENT_FAILED;
   @BuiltValueEnumConst(wireName: r'FREE_TIER_REACHED')
-  static const MenuItemSearchResponseWrapperErrorCodeEnum FREE_TIER_REACHED = _$menuItemSearchResponseWrapperErrorCodeEnum_FREE_TIER_REACHED;
+  static const MenuItemSearchResponseWrapperErrorCodeEnum FREE_TIER_REACHED =
+      _$menuItemSearchResponseWrapperErrorCodeEnum_FREE_TIER_REACHED;
   @BuiltValueEnumConst(wireName: r'LIMIT_REACHED')
-  static const MenuItemSearchResponseWrapperErrorCodeEnum LIMIT_REACHED = _$menuItemSearchResponseWrapperErrorCodeEnum_LIMIT_REACHED;
+  static const MenuItemSearchResponseWrapperErrorCodeEnum LIMIT_REACHED =
+      _$menuItemSearchResponseWrapperErrorCodeEnum_LIMIT_REACHED;
   @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const MenuItemSearchResponseWrapperErrorCodeEnum INACTIVE = _$menuItemSearchResponseWrapperErrorCodeEnum_INACTIVE;
+  static const MenuItemSearchResponseWrapperErrorCodeEnum INACTIVE =
+      _$menuItemSearchResponseWrapperErrorCodeEnum_INACTIVE;
   @BuiltValueEnumConst(wireName: r'UNKNOWN')
-  static const MenuItemSearchResponseWrapperErrorCodeEnum UNKNOWN = _$menuItemSearchResponseWrapperErrorCodeEnum_UNKNOWN;
+  static const MenuItemSearchResponseWrapperErrorCodeEnum UNKNOWN =
+      _$menuItemSearchResponseWrapperErrorCodeEnum_UNKNOWN;
   @BuiltValueEnumConst(wireName: r'IDENTIFIER_NOT_UNIQUE')
-  static const MenuItemSearchResponseWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE = _$menuItemSearchResponseWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
+  static const MenuItemSearchResponseWrapperErrorCodeEnum
+      IDENTIFIER_NOT_UNIQUE =
+      _$menuItemSearchResponseWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
   @BuiltValueEnumConst(wireName: r'ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT')
-  static const MenuItemSearchResponseWrapperErrorCodeEnum ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT = _$menuItemSearchResponseWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
+  static const MenuItemSearchResponseWrapperErrorCodeEnum
+      ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT =
+      _$menuItemSearchResponseWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
   @BuiltValueEnumConst(wireName: r'NO_ACCOUNT_CONNECTED')
-  static const MenuItemSearchResponseWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED = _$menuItemSearchResponseWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
+  static const MenuItemSearchResponseWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED =
+      _$menuItemSearchResponseWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
   @BuiltValueEnumConst(wireName: r'NO_PAGE_SELECTED')
-  static const MenuItemSearchResponseWrapperErrorCodeEnum NO_PAGE_SELECTED = _$menuItemSearchResponseWrapperErrorCodeEnum_NO_PAGE_SELECTED;
+  static const MenuItemSearchResponseWrapperErrorCodeEnum NO_PAGE_SELECTED =
+      _$menuItemSearchResponseWrapperErrorCodeEnum_NO_PAGE_SELECTED;
   @BuiltValueEnumConst(wireName: r'PAGE_NOT_CREATED')
-  static const MenuItemSearchResponseWrapperErrorCodeEnum PAGE_NOT_CREATED = _$menuItemSearchResponseWrapperErrorCodeEnum_PAGE_NOT_CREATED;
+  static const MenuItemSearchResponseWrapperErrorCodeEnum PAGE_NOT_CREATED =
+      _$menuItemSearchResponseWrapperErrorCodeEnum_PAGE_NOT_CREATED;
   @BuiltValueEnumConst(wireName: r'PAGE_IN_REVIEW')
-  static const MenuItemSearchResponseWrapperErrorCodeEnum PAGE_IN_REVIEW = _$menuItemSearchResponseWrapperErrorCodeEnum_PAGE_IN_REVIEW;
+  static const MenuItemSearchResponseWrapperErrorCodeEnum PAGE_IN_REVIEW =
+      _$menuItemSearchResponseWrapperErrorCodeEnum_PAGE_IN_REVIEW;
   @BuiltValueEnumConst(wireName: r'PAGE_CLAIMED_BY_OTHERS')
-  static const MenuItemSearchResponseWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS = _$menuItemSearchResponseWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
+  static const MenuItemSearchResponseWrapperErrorCodeEnum
+      PAGE_CLAIMED_BY_OTHERS =
+      _$menuItemSearchResponseWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
   @BuiltValueEnumConst(wireName: r'OVERLAPPING_SOCIALPOST')
-  static const MenuItemSearchResponseWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST = _$menuItemSearchResponseWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
+  static const MenuItemSearchResponseWrapperErrorCodeEnum
+      OVERLAPPING_SOCIALPOST =
+      _$menuItemSearchResponseWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
   @BuiltValueEnumConst(wireName: r'TOO_MANY_REPLIES')
-  static const MenuItemSearchResponseWrapperErrorCodeEnum TOO_MANY_REPLIES = _$menuItemSearchResponseWrapperErrorCodeEnum_TOO_MANY_REPLIES;
+  static const MenuItemSearchResponseWrapperErrorCodeEnum TOO_MANY_REPLIES =
+      _$menuItemSearchResponseWrapperErrorCodeEnum_TOO_MANY_REPLIES;
   @BuiltValueEnumConst(wireName: r'REPLY_TOO_LONG')
-  static const MenuItemSearchResponseWrapperErrorCodeEnum REPLY_TOO_LONG = _$menuItemSearchResponseWrapperErrorCodeEnum_REPLY_TOO_LONG;
+  static const MenuItemSearchResponseWrapperErrorCodeEnum REPLY_TOO_LONG =
+      _$menuItemSearchResponseWrapperErrorCodeEnum_REPLY_TOO_LONG;
   @BuiltValueEnumConst(wireName: r'DEPRECATED')
-  static const MenuItemSearchResponseWrapperErrorCodeEnum DEPRECATED = _$menuItemSearchResponseWrapperErrorCodeEnum_DEPRECATED;
+  static const MenuItemSearchResponseWrapperErrorCodeEnum DEPRECATED =
+      _$menuItemSearchResponseWrapperErrorCodeEnum_DEPRECATED;
 
-  static Serializer<MenuItemSearchResponseWrapperErrorCodeEnum> get serializer => _$menuItemSearchResponseWrapperErrorCodeEnumSerializer;
+  static Serializer<MenuItemSearchResponseWrapperErrorCodeEnum>
+      get serializer => _$menuItemSearchResponseWrapperErrorCodeEnumSerializer;
 
-  const MenuItemSearchResponseWrapperErrorCodeEnum._(String name): super(name);
+  const MenuItemSearchResponseWrapperErrorCodeEnum._(String name) : super(name);
 
-  static BuiltSet<MenuItemSearchResponseWrapperErrorCodeEnum> get values => _$menuItemSearchResponseWrapperErrorCodeEnumValues;
-  static MenuItemSearchResponseWrapperErrorCodeEnum valueOf(String name) => _$menuItemSearchResponseWrapperErrorCodeEnumValueOf(name);
+  static BuiltSet<MenuItemSearchResponseWrapperErrorCodeEnum> get values =>
+      _$menuItemSearchResponseWrapperErrorCodeEnumValues;
+  static MenuItemSearchResponseWrapperErrorCodeEnum valueOf(String name) =>
+      _$menuItemSearchResponseWrapperErrorCodeEnumValueOf(name);
 }
-

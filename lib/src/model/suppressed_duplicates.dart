@@ -16,7 +16,8 @@ part 'suppressed_duplicates.g.dart';
 /// * [countByDirectory] - A Map with the number of suppressed duplicates divided by DirectoryType
 /// * [totalCount] - The total number of suppressed duplicates
 @BuiltValue()
-abstract class SuppressedDuplicates implements Built<SuppressedDuplicates, SuppressedDuplicatesBuilder> {
+abstract class SuppressedDuplicates
+    implements Built<SuppressedDuplicates, SuppressedDuplicatesBuilder> {
   /// A Map with the number of suppressed duplicates divided by DirectoryType
   @BuiltValueField(wireName: r'countByDirectory')
   BuiltList<BuiltMap<String, JsonObject>>? get countByDirectory;
@@ -27,18 +28,24 @@ abstract class SuppressedDuplicates implements Built<SuppressedDuplicates, Suppr
 
   SuppressedDuplicates._();
 
-  factory SuppressedDuplicates([void updates(SuppressedDuplicatesBuilder b)]) = _$SuppressedDuplicates;
+  factory SuppressedDuplicates([void updates(SuppressedDuplicatesBuilder b)]) =
+      _$SuppressedDuplicates;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SuppressedDuplicatesBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<SuppressedDuplicates> get serializer => _$SuppressedDuplicatesSerializer();
+  static Serializer<SuppressedDuplicates> get serializer =>
+      _$SuppressedDuplicatesSerializer();
 }
 
-class _$SuppressedDuplicatesSerializer implements PrimitiveSerializer<SuppressedDuplicates> {
+class _$SuppressedDuplicatesSerializer
+    implements PrimitiveSerializer<SuppressedDuplicates> {
   @override
-  final Iterable<Type> types = const [SuppressedDuplicates, _$SuppressedDuplicates];
+  final Iterable<Type> types = const [
+    SuppressedDuplicates,
+    _$SuppressedDuplicates
+  ];
 
   @override
   final String wireName = r'SuppressedDuplicates';
@@ -52,7 +59,9 @@ class _$SuppressedDuplicatesSerializer implements PrimitiveSerializer<Suppressed
       yield r'countByDirectory';
       yield serializers.serialize(
         object.countByDirectory,
-        specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType(JsonObject)])]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(BuiltMap, [FullType(String), FullType(JsonObject)])
+        ]),
       );
     }
     if (object.totalCount != null) {
@@ -70,7 +79,9 @@ class _$SuppressedDuplicatesSerializer implements PrimitiveSerializer<Suppressed
     SuppressedDuplicates object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -88,7 +99,9 @@ class _$SuppressedDuplicatesSerializer implements PrimitiveSerializer<Suppressed
         case r'countByDirectory':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType(JsonObject)])]),
+            specifiedType: const FullType(BuiltList, [
+              FullType(BuiltMap, [FullType(String), FullType(JsonObject)])
+            ]),
           ) as BuiltList<BuiltMap<String, JsonObject>>;
           result.countByDirectory.replace(valueDes);
           break;
@@ -127,4 +140,3 @@ class _$SuppressedDuplicatesSerializer implements PrimitiveSerializer<Suppressed
     return result.build();
   }
 }
-

@@ -52,7 +52,7 @@ void main() {
       // TODO
     });
 
-    // The starting date of EVENT and OFFER type Social Posts. It is used to indicate when an EVENT/OFFER will start. For API versions older than 20210804, it is used as publicationDate. 
+    // The starting date of EVENT and OFFER type Social Posts. It is used to indicate when an EVENT/OFFER will start. For API versions older than 20210804, it is used as publicationDate.
     // DateTime dateStart
     test('to test the property `dateStart`', () async {
       // TODO
@@ -164,8 +164,5 @@ void main() {
     test('to test the property `termsAndConditions`', () async {
       // TODO
     });
-
-
   });
-
 }

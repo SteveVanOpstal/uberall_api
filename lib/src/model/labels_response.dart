@@ -12,24 +12,28 @@ part 'labels_response.g.dart';
 /// Labels response model
 ///
 /// Properties:
-/// * [labels] 
+/// * [labels]
 @BuiltValue()
-abstract class LabelsResponse implements Built<LabelsResponse, LabelsResponseBuilder> {
+abstract class LabelsResponse
+    implements Built<LabelsResponse, LabelsResponseBuilder> {
   @BuiltValueField(wireName: r'labels')
   BuiltList<String>? get labels;
 
   LabelsResponse._();
 
-  factory LabelsResponse([void updates(LabelsResponseBuilder b)]) = _$LabelsResponse;
+  factory LabelsResponse([void updates(LabelsResponseBuilder b)]) =
+      _$LabelsResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LabelsResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LabelsResponse> get serializer => _$LabelsResponseSerializer();
+  static Serializer<LabelsResponse> get serializer =>
+      _$LabelsResponseSerializer();
 }
 
-class _$LabelsResponseSerializer implements PrimitiveSerializer<LabelsResponse> {
+class _$LabelsResponseSerializer
+    implements PrimitiveSerializer<LabelsResponse> {
   @override
   final Iterable<Type> types = const [LabelsResponse, _$LabelsResponse];
 
@@ -56,7 +60,9 @@ class _$LabelsResponseSerializer implements PrimitiveSerializer<LabelsResponse> 
     LabelsResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -106,4 +112,3 @@ class _$LabelsResponseSerializer implements PrimitiveSerializer<LabelsResponse> 
     return result.build();
   }
 }
-

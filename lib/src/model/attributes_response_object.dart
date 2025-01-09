@@ -13,26 +13,35 @@ part 'attributes_response_object.g.dart';
 /// The actual response object of the response, optional for non 200 responses
 ///
 /// Properties:
-/// * [attributes] 
+/// * [attributes]
 @BuiltValue()
-abstract class AttributesResponseObject implements Built<AttributesResponseObject, AttributesResponseObjectBuilder> {
+abstract class AttributesResponseObject
+    implements
+        Built<AttributesResponseObject, AttributesResponseObjectBuilder> {
   @BuiltValueField(wireName: r'attributes')
   BuiltList<AttributeWrapper>? get attributes;
 
   AttributesResponseObject._();
 
-  factory AttributesResponseObject([void updates(AttributesResponseObjectBuilder b)]) = _$AttributesResponseObject;
+  factory AttributesResponseObject(
+          [void updates(AttributesResponseObjectBuilder b)]) =
+      _$AttributesResponseObject;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AttributesResponseObjectBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AttributesResponseObject> get serializer => _$AttributesResponseObjectSerializer();
+  static Serializer<AttributesResponseObject> get serializer =>
+      _$AttributesResponseObjectSerializer();
 }
 
-class _$AttributesResponseObjectSerializer implements PrimitiveSerializer<AttributesResponseObject> {
+class _$AttributesResponseObjectSerializer
+    implements PrimitiveSerializer<AttributesResponseObject> {
   @override
-  final Iterable<Type> types = const [AttributesResponseObject, _$AttributesResponseObject];
+  final Iterable<Type> types = const [
+    AttributesResponseObject,
+    _$AttributesResponseObject
+  ];
 
   @override
   final String wireName = r'AttributesResponseObject';
@@ -57,7 +66,9 @@ class _$AttributesResponseObjectSerializer implements PrimitiveSerializer<Attrib
     AttributesResponseObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -75,7 +86,8 @@ class _$AttributesResponseObjectSerializer implements PrimitiveSerializer<Attrib
         case r'attributes':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(AttributeWrapper)]),
+            specifiedType:
+                const FullType(BuiltList, [FullType(AttributeWrapper)]),
           ) as BuiltList<AttributeWrapper>;
           result.attributes.replace(valueDes);
           break;
@@ -107,4 +119,3 @@ class _$AttributesResponseObjectSerializer implements PrimitiveSerializer<Attrib
     return result.build();
   }
 }
-

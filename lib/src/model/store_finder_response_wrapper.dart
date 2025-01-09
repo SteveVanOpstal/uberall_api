@@ -13,13 +13,15 @@ part 'store_finder_response_wrapper.g.dart';
 /// StoreFinderResponseWrapper
 ///
 /// Properties:
-/// * [status] 
+/// * [status]
 /// * [message] - (optional) Holds further information about the response
-/// * [errorCode] 
+/// * [errorCode]
 /// * [warnings] - (optional) Holds further warnings
-/// * [response] 
+/// * [response]
 @BuiltValue()
-abstract class StoreFinderResponseWrapper implements Built<StoreFinderResponseWrapper, StoreFinderResponseWrapperBuilder> {
+abstract class StoreFinderResponseWrapper
+    implements
+        Built<StoreFinderResponseWrapper, StoreFinderResponseWrapperBuilder> {
   @BuiltValueField(wireName: r'status')
   StoreFinderResponseWrapperStatusEnum? get status;
   // enum statusEnum {  SUCCESS,  QUOTA_LIMIT_EXCEED,  NOT_AUTHORIZED,  FORBIDDEN,  BAD_ACCESS_TOKEN,  BAD_PRIVATE_KEY,  BAD_PUBLIC_KEY,  MISSING_PARAMETER,  INVALID_PARAMETER,  WRONG_PARAMETER_TYPE,  CONFLICT,  RESOURCE_LOCKED,  SERVER_ERROR,  ERROR,  NOT_FOUND,  BAD_REQUEST,  USER_ERROR,  PARTIAL_ERROR,  METHOD_NOT_ALLOWED,  };
@@ -41,18 +43,25 @@ abstract class StoreFinderResponseWrapper implements Built<StoreFinderResponseWr
 
   StoreFinderResponseWrapper._();
 
-  factory StoreFinderResponseWrapper([void updates(StoreFinderResponseWrapperBuilder b)]) = _$StoreFinderResponseWrapper;
+  factory StoreFinderResponseWrapper(
+          [void updates(StoreFinderResponseWrapperBuilder b)]) =
+      _$StoreFinderResponseWrapper;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StoreFinderResponseWrapperBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<StoreFinderResponseWrapper> get serializer => _$StoreFinderResponseWrapperSerializer();
+  static Serializer<StoreFinderResponseWrapper> get serializer =>
+      _$StoreFinderResponseWrapperSerializer();
 }
 
-class _$StoreFinderResponseWrapperSerializer implements PrimitiveSerializer<StoreFinderResponseWrapper> {
+class _$StoreFinderResponseWrapperSerializer
+    implements PrimitiveSerializer<StoreFinderResponseWrapper> {
   @override
-  final Iterable<Type> types = const [StoreFinderResponseWrapper, _$StoreFinderResponseWrapper];
+  final Iterable<Type> types = const [
+    StoreFinderResponseWrapper,
+    _$StoreFinderResponseWrapper
+  ];
 
   @override
   final String wireName = r'StoreFinderResponseWrapper';
@@ -105,7 +114,9 @@ class _$StoreFinderResponseWrapperSerializer implements PrimitiveSerializer<Stor
     StoreFinderResponseWrapper object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -137,7 +148,8 @@ class _$StoreFinderResponseWrapperSerializer implements PrimitiveSerializer<Stor
         case r'errorCode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(StoreFinderResponseWrapperErrorCodeEnum),
+            specifiedType:
+                const FullType(StoreFinderResponseWrapperErrorCodeEnum),
           ) as StoreFinderResponseWrapperErrorCodeEnum;
           result.errorCode = valueDes;
           break;
@@ -185,102 +197,145 @@ class _$StoreFinderResponseWrapperSerializer implements PrimitiveSerializer<Stor
 }
 
 class StoreFinderResponseWrapperStatusEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'SUCCESS')
-  static const StoreFinderResponseWrapperStatusEnum SUCCESS = _$storeFinderResponseWrapperStatusEnum_SUCCESS;
+  static const StoreFinderResponseWrapperStatusEnum SUCCESS =
+      _$storeFinderResponseWrapperStatusEnum_SUCCESS;
   @BuiltValueEnumConst(wireName: r'QUOTA_LIMIT_EXCEED')
-  static const StoreFinderResponseWrapperStatusEnum QUOTA_LIMIT_EXCEED = _$storeFinderResponseWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
+  static const StoreFinderResponseWrapperStatusEnum QUOTA_LIMIT_EXCEED =
+      _$storeFinderResponseWrapperStatusEnum_QUOTA_LIMIT_EXCEED;
   @BuiltValueEnumConst(wireName: r'NOT_AUTHORIZED')
-  static const StoreFinderResponseWrapperStatusEnum NOT_AUTHORIZED = _$storeFinderResponseWrapperStatusEnum_NOT_AUTHORIZED;
+  static const StoreFinderResponseWrapperStatusEnum NOT_AUTHORIZED =
+      _$storeFinderResponseWrapperStatusEnum_NOT_AUTHORIZED;
   @BuiltValueEnumConst(wireName: r'FORBIDDEN')
-  static const StoreFinderResponseWrapperStatusEnum FORBIDDEN = _$storeFinderResponseWrapperStatusEnum_FORBIDDEN;
+  static const StoreFinderResponseWrapperStatusEnum FORBIDDEN =
+      _$storeFinderResponseWrapperStatusEnum_FORBIDDEN;
   @BuiltValueEnumConst(wireName: r'BAD_ACCESS_TOKEN')
-  static const StoreFinderResponseWrapperStatusEnum BAD_ACCESS_TOKEN = _$storeFinderResponseWrapperStatusEnum_BAD_ACCESS_TOKEN;
+  static const StoreFinderResponseWrapperStatusEnum BAD_ACCESS_TOKEN =
+      _$storeFinderResponseWrapperStatusEnum_BAD_ACCESS_TOKEN;
   @BuiltValueEnumConst(wireName: r'BAD_PRIVATE_KEY')
-  static const StoreFinderResponseWrapperStatusEnum BAD_PRIVATE_KEY = _$storeFinderResponseWrapperStatusEnum_BAD_PRIVATE_KEY;
+  static const StoreFinderResponseWrapperStatusEnum BAD_PRIVATE_KEY =
+      _$storeFinderResponseWrapperStatusEnum_BAD_PRIVATE_KEY;
   @BuiltValueEnumConst(wireName: r'BAD_PUBLIC_KEY')
-  static const StoreFinderResponseWrapperStatusEnum BAD_PUBLIC_KEY = _$storeFinderResponseWrapperStatusEnum_BAD_PUBLIC_KEY;
+  static const StoreFinderResponseWrapperStatusEnum BAD_PUBLIC_KEY =
+      _$storeFinderResponseWrapperStatusEnum_BAD_PUBLIC_KEY;
   @BuiltValueEnumConst(wireName: r'MISSING_PARAMETER')
-  static const StoreFinderResponseWrapperStatusEnum MISSING_PARAMETER = _$storeFinderResponseWrapperStatusEnum_MISSING_PARAMETER;
+  static const StoreFinderResponseWrapperStatusEnum MISSING_PARAMETER =
+      _$storeFinderResponseWrapperStatusEnum_MISSING_PARAMETER;
   @BuiltValueEnumConst(wireName: r'INVALID_PARAMETER')
-  static const StoreFinderResponseWrapperStatusEnum INVALID_PARAMETER = _$storeFinderResponseWrapperStatusEnum_INVALID_PARAMETER;
+  static const StoreFinderResponseWrapperStatusEnum INVALID_PARAMETER =
+      _$storeFinderResponseWrapperStatusEnum_INVALID_PARAMETER;
   @BuiltValueEnumConst(wireName: r'WRONG_PARAMETER_TYPE')
-  static const StoreFinderResponseWrapperStatusEnum WRONG_PARAMETER_TYPE = _$storeFinderResponseWrapperStatusEnum_WRONG_PARAMETER_TYPE;
+  static const StoreFinderResponseWrapperStatusEnum WRONG_PARAMETER_TYPE =
+      _$storeFinderResponseWrapperStatusEnum_WRONG_PARAMETER_TYPE;
   @BuiltValueEnumConst(wireName: r'CONFLICT')
-  static const StoreFinderResponseWrapperStatusEnum CONFLICT = _$storeFinderResponseWrapperStatusEnum_CONFLICT;
+  static const StoreFinderResponseWrapperStatusEnum CONFLICT =
+      _$storeFinderResponseWrapperStatusEnum_CONFLICT;
   @BuiltValueEnumConst(wireName: r'RESOURCE_LOCKED')
-  static const StoreFinderResponseWrapperStatusEnum RESOURCE_LOCKED = _$storeFinderResponseWrapperStatusEnum_RESOURCE_LOCKED;
+  static const StoreFinderResponseWrapperStatusEnum RESOURCE_LOCKED =
+      _$storeFinderResponseWrapperStatusEnum_RESOURCE_LOCKED;
   @BuiltValueEnumConst(wireName: r'SERVER_ERROR')
-  static const StoreFinderResponseWrapperStatusEnum SERVER_ERROR = _$storeFinderResponseWrapperStatusEnum_SERVER_ERROR;
+  static const StoreFinderResponseWrapperStatusEnum SERVER_ERROR =
+      _$storeFinderResponseWrapperStatusEnum_SERVER_ERROR;
   @BuiltValueEnumConst(wireName: r'ERROR')
-  static const StoreFinderResponseWrapperStatusEnum ERROR = _$storeFinderResponseWrapperStatusEnum_ERROR;
+  static const StoreFinderResponseWrapperStatusEnum ERROR =
+      _$storeFinderResponseWrapperStatusEnum_ERROR;
   @BuiltValueEnumConst(wireName: r'NOT_FOUND')
-  static const StoreFinderResponseWrapperStatusEnum NOT_FOUND = _$storeFinderResponseWrapperStatusEnum_NOT_FOUND;
+  static const StoreFinderResponseWrapperStatusEnum NOT_FOUND =
+      _$storeFinderResponseWrapperStatusEnum_NOT_FOUND;
   @BuiltValueEnumConst(wireName: r'BAD_REQUEST')
-  static const StoreFinderResponseWrapperStatusEnum BAD_REQUEST = _$storeFinderResponseWrapperStatusEnum_BAD_REQUEST;
+  static const StoreFinderResponseWrapperStatusEnum BAD_REQUEST =
+      _$storeFinderResponseWrapperStatusEnum_BAD_REQUEST;
   @BuiltValueEnumConst(wireName: r'USER_ERROR')
-  static const StoreFinderResponseWrapperStatusEnum USER_ERROR = _$storeFinderResponseWrapperStatusEnum_USER_ERROR;
+  static const StoreFinderResponseWrapperStatusEnum USER_ERROR =
+      _$storeFinderResponseWrapperStatusEnum_USER_ERROR;
   @BuiltValueEnumConst(wireName: r'PARTIAL_ERROR')
-  static const StoreFinderResponseWrapperStatusEnum PARTIAL_ERROR = _$storeFinderResponseWrapperStatusEnum_PARTIAL_ERROR;
+  static const StoreFinderResponseWrapperStatusEnum PARTIAL_ERROR =
+      _$storeFinderResponseWrapperStatusEnum_PARTIAL_ERROR;
   @BuiltValueEnumConst(wireName: r'METHOD_NOT_ALLOWED')
-  static const StoreFinderResponseWrapperStatusEnum METHOD_NOT_ALLOWED = _$storeFinderResponseWrapperStatusEnum_METHOD_NOT_ALLOWED;
+  static const StoreFinderResponseWrapperStatusEnum METHOD_NOT_ALLOWED =
+      _$storeFinderResponseWrapperStatusEnum_METHOD_NOT_ALLOWED;
 
-  static Serializer<StoreFinderResponseWrapperStatusEnum> get serializer => _$storeFinderResponseWrapperStatusEnumSerializer;
+  static Serializer<StoreFinderResponseWrapperStatusEnum> get serializer =>
+      _$storeFinderResponseWrapperStatusEnumSerializer;
 
-  const StoreFinderResponseWrapperStatusEnum._(String name): super(name);
+  const StoreFinderResponseWrapperStatusEnum._(String name) : super(name);
 
-  static BuiltSet<StoreFinderResponseWrapperStatusEnum> get values => _$storeFinderResponseWrapperStatusEnumValues;
-  static StoreFinderResponseWrapperStatusEnum valueOf(String name) => _$storeFinderResponseWrapperStatusEnumValueOf(name);
+  static BuiltSet<StoreFinderResponseWrapperStatusEnum> get values =>
+      _$storeFinderResponseWrapperStatusEnumValues;
+  static StoreFinderResponseWrapperStatusEnum valueOf(String name) =>
+      _$storeFinderResponseWrapperStatusEnumValueOf(name);
 }
 
 class StoreFinderResponseWrapperErrorCodeEnum extends EnumClass {
-
   @BuiltValueEnumConst(wireName: r'NORMALIZATION_FAILED')
-  static const StoreFinderResponseWrapperErrorCodeEnum NORMALIZATION_FAILED = _$storeFinderResponseWrapperErrorCodeEnum_NORMALIZATION_FAILED;
+  static const StoreFinderResponseWrapperErrorCodeEnum NORMALIZATION_FAILED =
+      _$storeFinderResponseWrapperErrorCodeEnum_NORMALIZATION_FAILED;
   @BuiltValueEnumConst(wireName: r'DATA_CORRUPTED')
-  static const StoreFinderResponseWrapperErrorCodeEnum DATA_CORRUPTED = _$storeFinderResponseWrapperErrorCodeEnum_DATA_CORRUPTED;
+  static const StoreFinderResponseWrapperErrorCodeEnum DATA_CORRUPTED =
+      _$storeFinderResponseWrapperErrorCodeEnum_DATA_CORRUPTED;
   @BuiltValueEnumConst(wireName: r'INVALID_INPUT')
-  static const StoreFinderResponseWrapperErrorCodeEnum INVALID_INPUT = _$storeFinderResponseWrapperErrorCodeEnum_INVALID_INPUT;
+  static const StoreFinderResponseWrapperErrorCodeEnum INVALID_INPUT =
+      _$storeFinderResponseWrapperErrorCodeEnum_INVALID_INPUT;
   @BuiltValueEnumConst(wireName: r'NOT_SYNCABLE')
-  static const StoreFinderResponseWrapperErrorCodeEnum NOT_SYNCABLE = _$storeFinderResponseWrapperErrorCodeEnum_NOT_SYNCABLE;
+  static const StoreFinderResponseWrapperErrorCodeEnum NOT_SYNCABLE =
+      _$storeFinderResponseWrapperErrorCodeEnum_NOT_SYNCABLE;
   @BuiltValueEnumConst(wireName: r'PAYMENT_FAILED')
-  static const StoreFinderResponseWrapperErrorCodeEnum PAYMENT_FAILED = _$storeFinderResponseWrapperErrorCodeEnum_PAYMENT_FAILED;
+  static const StoreFinderResponseWrapperErrorCodeEnum PAYMENT_FAILED =
+      _$storeFinderResponseWrapperErrorCodeEnum_PAYMENT_FAILED;
   @BuiltValueEnumConst(wireName: r'FREE_TIER_REACHED')
-  static const StoreFinderResponseWrapperErrorCodeEnum FREE_TIER_REACHED = _$storeFinderResponseWrapperErrorCodeEnum_FREE_TIER_REACHED;
+  static const StoreFinderResponseWrapperErrorCodeEnum FREE_TIER_REACHED =
+      _$storeFinderResponseWrapperErrorCodeEnum_FREE_TIER_REACHED;
   @BuiltValueEnumConst(wireName: r'LIMIT_REACHED')
-  static const StoreFinderResponseWrapperErrorCodeEnum LIMIT_REACHED = _$storeFinderResponseWrapperErrorCodeEnum_LIMIT_REACHED;
+  static const StoreFinderResponseWrapperErrorCodeEnum LIMIT_REACHED =
+      _$storeFinderResponseWrapperErrorCodeEnum_LIMIT_REACHED;
   @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const StoreFinderResponseWrapperErrorCodeEnum INACTIVE = _$storeFinderResponseWrapperErrorCodeEnum_INACTIVE;
+  static const StoreFinderResponseWrapperErrorCodeEnum INACTIVE =
+      _$storeFinderResponseWrapperErrorCodeEnum_INACTIVE;
   @BuiltValueEnumConst(wireName: r'UNKNOWN')
-  static const StoreFinderResponseWrapperErrorCodeEnum UNKNOWN = _$storeFinderResponseWrapperErrorCodeEnum_UNKNOWN;
+  static const StoreFinderResponseWrapperErrorCodeEnum UNKNOWN =
+      _$storeFinderResponseWrapperErrorCodeEnum_UNKNOWN;
   @BuiltValueEnumConst(wireName: r'IDENTIFIER_NOT_UNIQUE')
-  static const StoreFinderResponseWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE = _$storeFinderResponseWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
+  static const StoreFinderResponseWrapperErrorCodeEnum IDENTIFIER_NOT_UNIQUE =
+      _$storeFinderResponseWrapperErrorCodeEnum_IDENTIFIER_NOT_UNIQUE;
   @BuiltValueEnumConst(wireName: r'ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT')
-  static const StoreFinderResponseWrapperErrorCodeEnum ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT = _$storeFinderResponseWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
+  static const StoreFinderResponseWrapperErrorCodeEnum
+      ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT =
+      _$storeFinderResponseWrapperErrorCodeEnum_ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT;
   @BuiltValueEnumConst(wireName: r'NO_ACCOUNT_CONNECTED')
-  static const StoreFinderResponseWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED = _$storeFinderResponseWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
+  static const StoreFinderResponseWrapperErrorCodeEnum NO_ACCOUNT_CONNECTED =
+      _$storeFinderResponseWrapperErrorCodeEnum_NO_ACCOUNT_CONNECTED;
   @BuiltValueEnumConst(wireName: r'NO_PAGE_SELECTED')
-  static const StoreFinderResponseWrapperErrorCodeEnum NO_PAGE_SELECTED = _$storeFinderResponseWrapperErrorCodeEnum_NO_PAGE_SELECTED;
+  static const StoreFinderResponseWrapperErrorCodeEnum NO_PAGE_SELECTED =
+      _$storeFinderResponseWrapperErrorCodeEnum_NO_PAGE_SELECTED;
   @BuiltValueEnumConst(wireName: r'PAGE_NOT_CREATED')
-  static const StoreFinderResponseWrapperErrorCodeEnum PAGE_NOT_CREATED = _$storeFinderResponseWrapperErrorCodeEnum_PAGE_NOT_CREATED;
+  static const StoreFinderResponseWrapperErrorCodeEnum PAGE_NOT_CREATED =
+      _$storeFinderResponseWrapperErrorCodeEnum_PAGE_NOT_CREATED;
   @BuiltValueEnumConst(wireName: r'PAGE_IN_REVIEW')
-  static const StoreFinderResponseWrapperErrorCodeEnum PAGE_IN_REVIEW = _$storeFinderResponseWrapperErrorCodeEnum_PAGE_IN_REVIEW;
+  static const StoreFinderResponseWrapperErrorCodeEnum PAGE_IN_REVIEW =
+      _$storeFinderResponseWrapperErrorCodeEnum_PAGE_IN_REVIEW;
   @BuiltValueEnumConst(wireName: r'PAGE_CLAIMED_BY_OTHERS')
-  static const StoreFinderResponseWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS = _$storeFinderResponseWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
+  static const StoreFinderResponseWrapperErrorCodeEnum PAGE_CLAIMED_BY_OTHERS =
+      _$storeFinderResponseWrapperErrorCodeEnum_PAGE_CLAIMED_BY_OTHERS;
   @BuiltValueEnumConst(wireName: r'OVERLAPPING_SOCIALPOST')
-  static const StoreFinderResponseWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST = _$storeFinderResponseWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
+  static const StoreFinderResponseWrapperErrorCodeEnum OVERLAPPING_SOCIALPOST =
+      _$storeFinderResponseWrapperErrorCodeEnum_OVERLAPPING_SOCIALPOST;
   @BuiltValueEnumConst(wireName: r'TOO_MANY_REPLIES')
-  static const StoreFinderResponseWrapperErrorCodeEnum TOO_MANY_REPLIES = _$storeFinderResponseWrapperErrorCodeEnum_TOO_MANY_REPLIES;
+  static const StoreFinderResponseWrapperErrorCodeEnum TOO_MANY_REPLIES =
+      _$storeFinderResponseWrapperErrorCodeEnum_TOO_MANY_REPLIES;
   @BuiltValueEnumConst(wireName: r'REPLY_TOO_LONG')
-  static const StoreFinderResponseWrapperErrorCodeEnum REPLY_TOO_LONG = _$storeFinderResponseWrapperErrorCodeEnum_REPLY_TOO_LONG;
+  static const StoreFinderResponseWrapperErrorCodeEnum REPLY_TOO_LONG =
+      _$storeFinderResponseWrapperErrorCodeEnum_REPLY_TOO_LONG;
   @BuiltValueEnumConst(wireName: r'DEPRECATED')
-  static const StoreFinderResponseWrapperErrorCodeEnum DEPRECATED = _$storeFinderResponseWrapperErrorCodeEnum_DEPRECATED;
+  static const StoreFinderResponseWrapperErrorCodeEnum DEPRECATED =
+      _$storeFinderResponseWrapperErrorCodeEnum_DEPRECATED;
 
-  static Serializer<StoreFinderResponseWrapperErrorCodeEnum> get serializer => _$storeFinderResponseWrapperErrorCodeEnumSerializer;
+  static Serializer<StoreFinderResponseWrapperErrorCodeEnum> get serializer =>
+      _$storeFinderResponseWrapperErrorCodeEnumSerializer;
 
-  const StoreFinderResponseWrapperErrorCodeEnum._(String name): super(name);
+  const StoreFinderResponseWrapperErrorCodeEnum._(String name) : super(name);
 
-  static BuiltSet<StoreFinderResponseWrapperErrorCodeEnum> get values => _$storeFinderResponseWrapperErrorCodeEnumValues;
-  static StoreFinderResponseWrapperErrorCodeEnum valueOf(String name) => _$storeFinderResponseWrapperErrorCodeEnumValueOf(name);
+  static BuiltSet<StoreFinderResponseWrapperErrorCodeEnum> get values =>
+      _$storeFinderResponseWrapperErrorCodeEnumValues;
+  static StoreFinderResponseWrapperErrorCodeEnum valueOf(String name) =>
+      _$storeFinderResponseWrapperErrorCodeEnumValueOf(name);
 }
-

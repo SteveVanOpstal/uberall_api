@@ -22,7 +22,7 @@ void main() {
       // TODO
     });
 
-    // Required - Unique id for the outside world. Compliant with “eMI3standard version V1.0” 
+    // Required - Unique id for the outside world. Compliant with “eMI3standard version V1.0”
     // String evseId
     test('to test the property `evseId`', () async {
       // TODO
@@ -51,8 +51,5 @@ void main() {
     test('to test the property `parkingRestrictions`', () async {
       // TODO
     });
-
-
   });
-
 }
