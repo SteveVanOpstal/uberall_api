@@ -1,0 +1,21 @@
+#
+# AUTO-GENERATED FILE, DO NOT MODIFY!
+#
+
+name: 'openapi'
+version: '1.0.0'
+description: 'OpenAPI API client'
+homepage: 'homepage'
+environment:
+  sdk: '>=2.12.0 <4.0.0'
+dependencies:
+  collection: '>=1.17.0 <2.0.0'
+  http: '>=0.13.0 <2.0.0'
+  intl: any
+  meta: '>=1.1.8 <2.0.0'
+dev_dependencies:
+  test: '>=1.21.6 <1.22.0'
+scripts:
+  install: wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.9.0/openapi-generator-cli-7.9.0.jar -O openapi-generator-cli.jar
+  get_json: wget https://uberall.com/en/developers/swagger -O openapi.json
+  generate: java -jar openapi-generator-cli.jar  generate -g dart -i openapi.json -o . --skip-validate-spec

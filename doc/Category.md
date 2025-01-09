@@ -1,0 +1,18 @@
+# openapi.model.Category
+
+## Load the model package
+```dart
+import 'package:openapi/api.dart';
+```
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **int** | The uberall unique id for the category | [optional] 
+**name** | **String** | The category description | [optional] 
+**parent** | [**Category**](Category.md) |  | [optional] 
+**selectable** | **bool** | Boolean indicating whether the category can be used | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
