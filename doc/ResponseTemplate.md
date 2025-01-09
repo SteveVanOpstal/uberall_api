@@ -13,12 +13,12 @@ Name | Type | Description | Notes
 **message** | **String** | The reply''s text of the template | [optional] 
 **usageCount** | **int** | Number of times a template has been used | [optional] 
 **status** | **String** | The status of the template | [optional] 
-**tags** | **List<String>** | The list of tags for the template | [optional] [default to const []]
+**tags** | **BuiltList&lt;String&gt;** | The list of tags for the template | [optional] 
 **dateCreated** | [**DateTime**](DateTime.md) | The date in which the template was created | [optional] 
 **lastEdited** | [**DateTime**](DateTime.md) | The date in which the template was last edited | [optional] 
 **createdBy** | [**ResponseUser**](ResponseUser.md) |  | [optional] 
 **lastEditedBy** | [**ResponseUser**](ResponseUser.md) |  | [optional] 
-**businesses** | [**List<ResponseBusiness>**](ResponseBusiness.md) | The list of business ids the templated was created for | [optional] [default to const []]
+**businesses** | [**BuiltList&lt;ResponseBusiness&gt;**](ResponseBusiness.md) | The list of business ids the templated was created for | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

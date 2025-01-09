@@ -34,13 +34,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsPhotosApi();
-final id = id_example; // String | The uberall unique id of the photo
+final api = Openapi().getLocationsPhotosApi();
+final String id = id_example; // String | The uberall unique id of the photo
 
 try {
-    final result = api_instance.deletePhotosId(id);
-    print(result);
-} catch (e) {
+    final response = api.deletePhotosId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsPhotosApi->deletePhotosId: $e\n');
 }
 ```
@@ -85,13 +85,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsPhotosApi();
-final id = id_example; // String | The uberall unique id of the photo
+final api = Openapi().getLocationsPhotosApi();
+final String id = id_example; // String | The uberall unique id of the photo
 
 try {
-    final result = api_instance.getPhotosId(id);
-    print(result);
-} catch (e) {
+    final response = api.getPhotosId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsPhotosApi->getPhotosId: $e\n');
 }
 ```
@@ -136,14 +136,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsPhotosApi();
-final id = id_example; // String | The uberall unique id of the photo
-final locationPhoto = LocationPhoto(); // LocationPhoto | The photo data to update
+final api = Openapi().getLocationsPhotosApi();
+final String id = id_example; // String | The uberall unique id of the photo
+final LocationPhoto locationPhoto = ; // LocationPhoto | The photo data to update
 
 try {
-    final result = api_instance.patchPhotosId(id, locationPhoto);
-    print(result);
-} catch (e) {
+    final response = api.patchPhotosId(id, locationPhoto);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsPhotosApi->patchPhotosId: $e\n');
 }
 ```
@@ -189,13 +189,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsPhotosApi();
-final locationPhoto = LocationPhoto(); // LocationPhoto | The photo data to upload
+final api = Openapi().getLocationsPhotosApi();
+final LocationPhoto locationPhoto = ; // LocationPhoto | The photo data to upload
 
 try {
-    final result = api_instance.postPhotos(locationPhoto);
-    print(result);
-} catch (e) {
+    final response = api.postPhotos(locationPhoto);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsPhotosApi->postPhotos: $e\n');
 }
 ```

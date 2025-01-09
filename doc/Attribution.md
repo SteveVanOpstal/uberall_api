@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **logoUrl** | **String** | URL pointing to the attribution logo | 
 **width** | **int** | Width (in px) of the attribution logo | [optional] 
 **height** | **int** | Height (in px) of the attribution logo | [optional] 
-**salesPartnerId** | [**Object**](.md) |  | [optional] 
+**salesPartnerId** | [**JsonObject**](.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

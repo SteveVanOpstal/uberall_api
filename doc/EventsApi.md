@@ -37,12 +37,12 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = EventsApi();
+final api = Openapi().getEventsApi();
 
 try {
-    final result = api_instance.deleteEvents();
-    print(result);
-} catch (e) {
+    final response = api.deleteEvents();
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling EventsApi->deleteEvents: $e\n');
 }
 ```
@@ -84,13 +84,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = EventsApi();
-final id = id_example; // String | The uberall unique id for the event
+final api = Openapi().getEventsApi();
+final String id = id_example; // String | The uberall unique id for the event
 
 try {
-    final result = api_instance.deleteEventsId(id);
-    print(result);
-} catch (e) {
+    final response = api.deleteEventsId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling EventsApi->deleteEventsId: $e\n');
 }
 ```
@@ -135,13 +135,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = EventsApi();
-final body = Object(); // Object | 
+final api = Openapi().getEventsApi();
+final JsonObject body = Object; // JsonObject | 
 
 try {
-    final result = api_instance.getEvents(body);
-    print(result);
-} catch (e) {
+    final response = api.getEvents(body);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling EventsApi->getEvents: $e\n');
 }
 ```
@@ -150,7 +150,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **Object**|  | [optional] 
+ **body** | **JsonObject**|  | [optional] 
 
 ### Return type
 
@@ -186,13 +186,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = EventsApi();
-final id = id_example; // String | The uberall unique id for the event
+final api = Openapi().getEventsApi();
+final String id = id_example; // String | The uberall unique id for the event
 
 try {
-    final result = api_instance.getEventsId(id);
-    print(result);
-} catch (e) {
+    final response = api.getEventsId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling EventsApi->getEventsId: $e\n');
 }
 ```
@@ -237,13 +237,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = EventsApi();
-final eventResponseWrapper = EventResponseWrapper(); // EventResponseWrapper | Event object that needs to be updated
+final api = Openapi().getEventsApi();
+final EventResponseWrapper eventResponseWrapper = ; // EventResponseWrapper | Event object that needs to be updated
 
 try {
-    final result = api_instance.patchEvents(eventResponseWrapper);
-    print(result);
-} catch (e) {
+    final response = api.patchEvents(eventResponseWrapper);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling EventsApi->patchEvents: $e\n');
 }
 ```
@@ -288,14 +288,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = EventsApi();
-final id = id_example; // String | The uberall unique id for the event
-final eventResponseWrapper = EventResponseWrapper(); // EventResponseWrapper | Event object that needs to be updated
+final api = Openapi().getEventsApi();
+final String id = id_example; // String | The uberall unique id for the event
+final EventResponseWrapper eventResponseWrapper = ; // EventResponseWrapper | Event object that needs to be updated
 
 try {
-    final result = api_instance.patchEventsId(id, eventResponseWrapper);
-    print(result);
-} catch (e) {
+    final response = api.patchEventsId(id, eventResponseWrapper);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling EventsApi->patchEventsId: $e\n');
 }
 ```
@@ -341,13 +341,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = EventsApi();
-final eventResponseWrapper = EventResponseWrapper(); // EventResponseWrapper | Event object that needs to be created
+final api = Openapi().getEventsApi();
+final EventResponseWrapper eventResponseWrapper = ; // EventResponseWrapper | Event object that needs to be created
 
 try {
-    final result = api_instance.postEvents(eventResponseWrapper);
-    print(result);
-} catch (e) {
+    final response = api.postEvents(eventResponseWrapper);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling EventsApi->postEvents: $e\n');
 }
 ```

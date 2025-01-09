@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **timezone** | **String** | The time zone of the location | 
 **isChargingClosed** | **bool** | Indicates if the EVSEs can be used for charging outside the opening hours of the location. E.g. when the parking garage closes its barriers overnight, it will indicate if you still can charge till the next morning | [optional] 
 **updateTime** | [**DateTime**](DateTime.md) | Date/time of the last EV data update | 
-**supplyEquipments** | [**Set<EvSupplyEquipment>**](EvSupplyEquipment.md) | Charging Station information | [optional] [default to const {}]
+**supplyEquipments** | [**BuiltSet&lt;EvSupplyEquipment&gt;**](EvSupplyEquipment.md) | Charging Station information | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

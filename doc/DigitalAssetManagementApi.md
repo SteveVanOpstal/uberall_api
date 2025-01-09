@@ -24,14 +24,14 @@ Edit an existing social template identified by its unique uberall ID
 ```dart
 import 'package:openapi/api.dart';
 
-final api_instance = DigitalAssetManagementApi();
-final id = id_example; // String | The unique uberall ID for the Social Post Template you want to edit
-final socialPostTemplate = SocialPostTemplate(); // SocialPostTemplate | A SocialPostTemplate object
+final api = Openapi().getDigitalAssetManagementApi();
+final String id = id_example; // String | The unique uberall ID for the Social Post Template you want to edit
+final SocialPostTemplate socialPostTemplate = ; // SocialPostTemplate | A SocialPostTemplate object
 
 try {
-    final result = api_instance.patchSocialTemplatesId(id, socialPostTemplate);
-    print(result);
-} catch (e) {
+    final response = api.patchSocialTemplatesId(id, socialPostTemplate);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DigitalAssetManagementApi->patchSocialTemplatesId: $e\n');
 }
 ```
@@ -69,13 +69,13 @@ Create a new social template as a part of the Digital Asset Management (DAM) fra
 ```dart
 import 'package:openapi/api.dart';
 
-final api_instance = DigitalAssetManagementApi();
-final postSocialTemplatesRequest = PostSocialTemplatesRequest(); // PostSocialTemplatesRequest | A SocialPostTemplate object that should be created
+final api = Openapi().getDigitalAssetManagementApi();
+final PostSocialTemplatesRequest postSocialTemplatesRequest = ; // PostSocialTemplatesRequest | A SocialPostTemplate object that should be created
 
 try {
-    final result = api_instance.postSocialTemplates(postSocialTemplatesRequest);
-    print(result);
-} catch (e) {
+    final response = api.postSocialTemplates(postSocialTemplatesRequest);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DigitalAssetManagementApi->postSocialTemplates: $e\n');
 }
 ```

@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **unreadCount** | **int** | Number of unread datapoints | [optional] 
 **pendingApprovalCount** | **int** | Number of replies pending approval | [optional] 
 **averageRating** | **double** | Average rating obtained | [optional] 
-**directories** | [**Map<String, Object>**](Object.md) | Breakdown by directory | [optional] [default to const {}]
+**directories** | [**BuiltMap&lt;String, JsonObject&gt;**](JsonObject.md) | Breakdown by directory | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

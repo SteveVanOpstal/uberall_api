@@ -19,9 +19,9 @@ Name | Type | Description | Notes
 **publishedListingsCount** | **int** | Number of managed online listings | [optional] 
 **synced** | **int** | Number of synced listings | [optional] 
 **visibilityIndex** | [**VisibilityIndex**](VisibilityIndex.md) |  | [optional] 
-**activeDirectories** | **List<String>** | List of active directories | [optional] [default to const []]
-**inactiveDirectories** | **List<String>** | List of inactive directories | [optional] [default to const []]
-**unfilledFields** | **List<String>** | Unfilled location fields | [optional] [default to const []]
+**activeDirectories** | **BuiltList&lt;String&gt;** | List of active directories | [optional] 
+**inactiveDirectories** | **BuiltList&lt;String&gt;** | List of inactive directories | [optional] 
+**unfilledFields** | **BuiltList&lt;String&gt;** | Unfilled location fields | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

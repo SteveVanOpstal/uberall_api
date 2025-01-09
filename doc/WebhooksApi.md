@@ -35,13 +35,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = WebhooksApi();
-final id = id_example; // String | Webhook ID
+final api = Openapi().getWebhooksApi();
+final String id = id_example; // String | Webhook ID
 
 try {
-    final result = api_instance.deleteSalesPartnersWebhooksId(id);
-    print(result);
-} catch (e) {
+    final response = api.deleteSalesPartnersWebhooksId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling WebhooksApi->deleteSalesPartnersWebhooksId: $e\n');
 }
 ```
@@ -86,12 +86,12 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = WebhooksApi();
+final api = Openapi().getWebhooksApi();
 
 try {
-    final result = api_instance.getSalesPartnersWebhooks();
-    print(result);
-} catch (e) {
+    final response = api.getSalesPartnersWebhooks();
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling WebhooksApi->getSalesPartnersWebhooks: $e\n');
 }
 ```
@@ -133,13 +133,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = WebhooksApi();
-final id = id_example; // String | Webhook ID
+final api = Openapi().getWebhooksApi();
+final String id = id_example; // String | Webhook ID
 
 try {
-    final result = api_instance.getSalesPartnersWebhooksId(id);
-    print(result);
-} catch (e) {
+    final response = api.getSalesPartnersWebhooksId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling WebhooksApi->getSalesPartnersWebhooksId: $e\n');
 }
 ```
@@ -184,14 +184,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = WebhooksApi();
-final id = id_example; // String | Webhook ID
-final webhook = Webhook(); // Webhook | Updated webhook data
+final api = Openapi().getWebhooksApi();
+final String id = id_example; // String | Webhook ID
+final Webhook webhook = ; // Webhook | Updated webhook data
 
 try {
-    final result = api_instance.patchSalesPartnersWebhooksId(id, webhook);
-    print(result);
-} catch (e) {
+    final response = api.patchSalesPartnersWebhooksId(id, webhook);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling WebhooksApi->patchSalesPartnersWebhooksId: $e\n');
 }
 ```
@@ -237,13 +237,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = WebhooksApi();
-final webhookCommand = WebhookCommand(); // WebhookCommand | Webhook data to be created
+final api = Openapi().getWebhooksApi();
+final WebhookCommand webhookCommand = ; // WebhookCommand | Webhook data to be created
 
 try {
-    final result = api_instance.postSalesPartnersWebhooks(webhookCommand);
-    print(result);
-} catch (e) {
+    final response = api.postSalesPartnersWebhooks(webhookCommand);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling WebhooksApi->postSalesPartnersWebhooks: $e\n');
 }
 ```

@@ -8,8 +8,8 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**directoryUserAccount** | [**Object**](.md) | Directory user account associated with the page | [optional] 
-**token** | [**Object**](.md) | OAuth token for the page | [optional] 
+**directoryUserAccount** | [**JsonObject**](.md) | Directory user account associated with the page | [optional] 
+**token** | [**JsonObject**](.md) | OAuth token for the page | [optional] 
 **pageId** | **String** | External page ID | [optional] 
 **name** | **String** | External page name | [optional] 
 **status** | **String** | Status of the page | [optional] 

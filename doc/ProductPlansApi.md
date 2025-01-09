@@ -33,13 +33,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ProductPlansApi();
-final country = country_example; // String | Optional parameter to retrieve plans and supported directories for a specific country
+final api = Openapi().getProductPlansApi();
+final String country = country_example; // String | Optional parameter to retrieve plans and supported directories for a specific country
 
 try {
-    final result = api_instance.getProductPlans(country);
-    print(result);
-} catch (e) {
+    final response = api.getProductPlans(country);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ProductPlansApi->getProductPlans: $e\n');
 }
 ```
@@ -84,14 +84,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ProductPlansApi();
-final id = id_example; // String | The uberall unique id of the Product Plan
-final productPlan = ProductPlan(); // ProductPlan | A Product Plan object
+final api = Openapi().getProductPlansApi();
+final String id = id_example; // String | The uberall unique id of the Product Plan
+final ProductPlan productPlan = ; // ProductPlan | A Product Plan object
 
 try {
-    final result = api_instance.patchProductPlansId(id, productPlan);
-    print(result);
-} catch (e) {
+    final response = api.patchProductPlansId(id, productPlan);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ProductPlansApi->patchProductPlansId: $e\n');
 }
 ```
@@ -137,13 +137,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ProductPlansApi();
-final productPlan = ProductPlan(); // ProductPlan | A Product Plan object
+final api = Openapi().getProductPlansApi();
+final ProductPlan productPlan = ; // ProductPlan | A Product Plan object
 
 try {
-    final result = api_instance.postProductPlans(productPlan);
-    print(result);
-} catch (e) {
+    final response = api.postProductPlans(productPlan);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ProductPlansApi->postProductPlans: $e\n');
 }
 ```

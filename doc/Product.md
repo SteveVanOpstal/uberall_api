@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **listName** | **String** |  | [optional] 
 **id** | **int** | The uberall unique id for the product | [optional] 
 **price** | **int** | Price of the product in cents: e.g. '1500' for 15 € | [optional] 
-**currency** | [**Object**](.md) | Currency used for prices in ISO-4217: e.g. EUR, USD, CHF | [optional] 
+**currency** | [**JsonObject**](.md) | Currency used for prices in ISO-4217: e.g. EUR, USD, CHF | [optional] 
 **category** | **String** | A category the product belongs to: e.g. 'Coffee' | [optional] 
 **video** | [**Video**](Video.md) |  | [optional] 
 **unit** | **String** | A unit of measure, e.g. 'per kg' | [optional] 

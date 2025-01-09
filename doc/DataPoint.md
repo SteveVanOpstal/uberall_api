@@ -8,7 +8,7 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**comments** | [**List<DataPoint>**](DataPoint.md) |  | [optional] [default to const []]
+**comments** | [**BuiltList&lt;DataPoint&gt;**](DataPoint.md) |  | [optional] 
 **locationId** | **int** | The Location ID associated with this datapoint | [optional] 
 **countLikes** | **int** | Number of likes to this item | [optional] 
 **author** | **String** | Username of the datapoint's author | [optional] 

@@ -35,13 +35,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ContentListApi();
-final id = id_example; // String | The uberall unique id of the content list
+final api = Openapi().getContentListApi();
+final String id = id_example; // String | The uberall unique id of the content list
 
 try {
-    final result = api_instance.deleteContentListsId(id);
-    print(result);
-} catch (e) {
+    final response = api.deleteContentListsId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ContentListApi->deleteContentListsId: $e\n');
 }
 ```
@@ -86,12 +86,12 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ContentListApi();
+final api = Openapi().getContentListApi();
 
 try {
-    final result = api_instance.getContentLists();
-    print(result);
-} catch (e) {
+    final response = api.getContentLists();
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ContentListApi->getContentLists: $e\n');
 }
 ```
@@ -133,13 +133,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ContentListApi();
-final id = id_example; // String | The uberall unique id of the content list
+final api = Openapi().getContentListApi();
+final String id = id_example; // String | The uberall unique id of the content list
 
 try {
-    final result = api_instance.getContentListsId(id);
-    print(result);
-} catch (e) {
+    final response = api.getContentListsId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ContentListApi->getContentListsId: $e\n');
 }
 ```
@@ -184,14 +184,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ContentListApi();
-final id = id_example; // String | The uberall unique id of the content list
-final contentListResponseWrapper = ContentListResponseWrapper(); // ContentListResponseWrapper | A ContentList object
+final api = Openapi().getContentListApi();
+final String id = id_example; // String | The uberall unique id of the content list
+final ContentListResponseWrapper contentListResponseWrapper = ; // ContentListResponseWrapper | A ContentList object
 
 try {
-    final result = api_instance.patchContentListsId(id, contentListResponseWrapper);
-    print(result);
-} catch (e) {
+    final response = api.patchContentListsId(id, contentListResponseWrapper);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ContentListApi->patchContentListsId: $e\n');
 }
 ```
@@ -237,13 +237,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ContentListApi();
-final contentList = [List<ContentList>()]; // List<ContentList> | A ContentList object
+final api = Openapi().getContentListApi();
+final BuiltList<ContentList> contentList = ; // BuiltList<ContentList> | A ContentList object
 
 try {
-    final result = api_instance.postContentLists(contentList);
-    print(result);
-} catch (e) {
+    final response = api.postContentLists(contentList);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ContentListApi->postContentLists: $e\n');
 }
 ```
@@ -252,7 +252,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contentList** | [**List<ContentList>**](ContentList.md)| A ContentList object | 
+ **contentList** | [**BuiltList&lt;ContentList&gt;**](ContentList.md)| A ContentList object | 
 
 ### Return type
 

@@ -30,13 +30,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ConfigurationApi();
-final countries = US, DE; // String | Optional list parameter of comma separated ISO 3166 alpha-2 country codes to filter response
+final api = Openapi().getConfigurationApi();
+final String countries = US, DE; // String | Optional list parameter of comma separated ISO 3166 alpha-2 country codes to filter response
 
 try {
-    final result = api_instance.getDirectoriesDirectoriesDetailsCountries(countries);
-    print(result);
-} catch (e) {
+    final response = api.getDirectoriesDirectoriesDetailsCountries(countries);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ConfigurationApi->getDirectoriesDirectoriesDetailsCountries: $e\n');
 }
 ```
@@ -81,15 +81,15 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ConfigurationApi();
-final salesPartnerId = salesPartnerId_example; // String | Sales Partner ID
-final accountId = accountId_example; // String | Directory User Account ID
-final directoryType = directoryType_example; // String | Type of Directory
+final api = Openapi().getConfigurationApi();
+final String salesPartnerId = salesPartnerId_example; // String | Sales Partner ID
+final String accountId = accountId_example; // String | Directory User Account ID
+final String directoryType = directoryType_example; // String | Type of Directory
 
 try {
-    final result = api_instance.getDirectoryBrandSalesPartnerSalesPartnerIdUserAccountAccountIdDirectoryType(salesPartnerId, accountId, directoryType);
-    print(result);
-} catch (e) {
+    final response = api.getDirectoryBrandSalesPartnerSalesPartnerIdUserAccountAccountIdDirectoryType(salesPartnerId, accountId, directoryType);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ConfigurationApi->getDirectoryBrandSalesPartnerSalesPartnerIdUserAccountAccountIdDirectoryType: $e\n');
 }
 ```
@@ -136,12 +136,12 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ConfigurationApi();
+final api = Openapi().getConfigurationApi();
 
 try {
-    final result = api_instance.getFeatures();
-    print(result);
-} catch (e) {
+    final response = api.getFeatures();
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ConfigurationApi->getFeatures: $e\n');
 }
 ```
@@ -183,16 +183,16 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ConfigurationApi();
-final salesPartnerId = salesPartnerId_example; // String | Sales Partner ID
-final accountId = accountId_example; // String | Directory User Account ID
-final directoryType = directoryType_example; // String | Type of Directory
-final createDirectoryBrandRequest = CreateDirectoryBrandRequest(); // CreateDirectoryBrandRequest | Details for creating a directory brand
+final api = Openapi().getConfigurationApi();
+final String salesPartnerId = salesPartnerId_example; // String | Sales Partner ID
+final String accountId = accountId_example; // String | Directory User Account ID
+final String directoryType = directoryType_example; // String | Type of Directory
+final CreateDirectoryBrandRequest createDirectoryBrandRequest = ; // CreateDirectoryBrandRequest | Details for creating a directory brand
 
 try {
-    final result = api_instance.postDirectoryBrandSalesPartnerSalesPartnerIdUserAccountAccountIdDirectoryType(salesPartnerId, accountId, directoryType, createDirectoryBrandRequest);
-    print(result);
-} catch (e) {
+    final response = api.postDirectoryBrandSalesPartnerSalesPartnerIdUserAccountAccountIdDirectoryType(salesPartnerId, accountId, directoryType, createDirectoryBrandRequest);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ConfigurationApi->postDirectoryBrandSalesPartnerSalesPartnerIdUserAccountAccountIdDirectoryType: $e\n');
 }
 ```

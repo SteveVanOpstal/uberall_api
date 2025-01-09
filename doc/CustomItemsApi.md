@@ -36,12 +36,12 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = CustomItemsApi();
+final api = Openapi().getCustomItemsApi();
 
 try {
-    final result = api_instance.deleteCustomItems();
-    print(result);
-} catch (e) {
+    final response = api.deleteCustomItems();
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling CustomItemsApi->deleteCustomItems: $e\n');
 }
 ```
@@ -83,13 +83,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = CustomItemsApi();
-final id = id_example; // String | The uberall unique id for the custom item
+final api = Openapi().getCustomItemsApi();
+final String id = id_example; // String | The uberall unique id for the custom item
 
 try {
-    final result = api_instance.deleteCustomItemsId(id);
-    print(result);
-} catch (e) {
+    final response = api.deleteCustomItemsId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling CustomItemsApi->deleteCustomItemsId: $e\n');
 }
 ```
@@ -134,13 +134,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = CustomItemsApi();
-final body = Object(); // Object | 
+final api = Openapi().getCustomItemsApi();
+final JsonObject body = Object; // JsonObject | 
 
 try {
-    final result = api_instance.getCustomItems(body);
-    print(result);
-} catch (e) {
+    final response = api.getCustomItems(body);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling CustomItemsApi->getCustomItems: $e\n');
 }
 ```
@@ -149,7 +149,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **Object**|  | [optional] 
+ **body** | **JsonObject**|  | [optional] 
 
 ### Return type
 
@@ -185,13 +185,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = CustomItemsApi();
-final id = id_example; // String | The uberall unique id for the custom item
+final api = Openapi().getCustomItemsApi();
+final String id = id_example; // String | The uberall unique id for the custom item
 
 try {
-    final result = api_instance.getCustomItemsId(id);
-    print(result);
-} catch (e) {
+    final response = api.getCustomItemsId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling CustomItemsApi->getCustomItemsId: $e\n');
 }
 ```
@@ -236,14 +236,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = CustomItemsApi();
-final id = id_example; // String | The uberall unique id for the custom item
-final customItem = CustomItem(); // CustomItem | CustomItem object to update
+final api = Openapi().getCustomItemsApi();
+final String id = id_example; // String | The uberall unique id for the custom item
+final CustomItem customItem = ; // CustomItem | CustomItem object to update
 
 try {
-    final result = api_instance.patchCustomItemsId(id, customItem);
-    print(result);
-} catch (e) {
+    final response = api.patchCustomItemsId(id, customItem);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling CustomItemsApi->patchCustomItemsId: $e\n');
 }
 ```
@@ -289,13 +289,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = CustomItemsApi();
-final customItem = CustomItem(); // CustomItem | CustomItem object to create
+final api = Openapi().getCustomItemsApi();
+final CustomItem customItem = ; // CustomItem | CustomItem object to create
 
 try {
-    final result = api_instance.postCustomItems(customItem);
-    print(result);
-} catch (e) {
+    final response = api.postCustomItems(customItem);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling CustomItemsApi->postCustomItems: $e\n');
 }
 ```

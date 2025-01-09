@@ -38,13 +38,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = TemplatesApi();
-final id = id_example; // String | The uberall unique id of the template
+final api = Openapi().getTemplatesApi();
+final String id = id_example; // String | The uberall unique id of the template
 
 try {
-    final result = api_instance.deleteTemplatesId(id);
-    print(result);
-} catch (e) {
+    final response = api.deleteTemplatesId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling TemplatesApi->deleteTemplatesId: $e\n');
 }
 ```
@@ -89,25 +89,25 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = TemplatesApi();
-final query = query_example; // String | Free text search that applies to title and message
-final tags = tags_example; // String | The tags values you want templates for
-final minLastEdited = minLastEdited_example; // String | The min date of the last update of the template
-final maxLastEdited = maxLastEdited_example; // String | The max date of the last update of the template
-final minTimesUsed = 789; // int | The min usage count you want templates for
-final maxTimesUsed = 789; // int | The max usage count you want templates for
-final createdBy = createdBy_example; // String | The ids of authors you want templates for
-final businesses = businesses_example; // String | The ids of businesses you want templates for
-final locations = locations_example; // String | The ids of locations you want templates for
-final page = 789; // int | Used for pagination. Page number we're interested in
-final size = 789; // int | Number of templates per page
-final sort = sort_example; // String | Name of the field we want to sort
-final direction = direction_example; // String | Use asc for ascending sort or desc for descending sort
+final api = Openapi().getTemplatesApi();
+final String query = query_example; // String | Free text search that applies to title and message
+final String tags = tags_example; // String | The tags values you want templates for
+final String minLastEdited = minLastEdited_example; // String | The min date of the last update of the template
+final String maxLastEdited = maxLastEdited_example; // String | The max date of the last update of the template
+final int minTimesUsed = 789; // int | The min usage count you want templates for
+final int maxTimesUsed = 789; // int | The max usage count you want templates for
+final String createdBy = createdBy_example; // String | The ids of authors you want templates for
+final String businesses = businesses_example; // String | The ids of businesses you want templates for
+final String locations = locations_example; // String | The ids of locations you want templates for
+final int page = 789; // int | Used for pagination. Page number we're interested in
+final int size = 789; // int | Number of templates per page
+final String sort = sort_example; // String | Name of the field we want to sort
+final String direction = direction_example; // String | Use asc for ascending sort or desc for descending sort
 
 try {
-    final result = api_instance.getTemplates(query, tags, minLastEdited, maxLastEdited, minTimesUsed, maxTimesUsed, createdBy, businesses, locations, page, size, sort, direction);
-    print(result);
-} catch (e) {
+    final response = api.getTemplates(query, tags, minLastEdited, maxLastEdited, minTimesUsed, maxTimesUsed, createdBy, businesses, locations, page, size, sort, direction);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling TemplatesApi->getTemplates: $e\n');
 }
 ```
@@ -164,13 +164,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = TemplatesApi();
-final getTemplatesAuthorsRequest = GetTemplatesAuthorsRequest(); // GetTemplatesAuthorsRequest | The ids of businesses you want authors for
+final api = Openapi().getTemplatesApi();
+final GetTemplatesAuthorsRequest getTemplatesAuthorsRequest = ; // GetTemplatesAuthorsRequest | The ids of businesses you want authors for
 
 try {
-    final result = api_instance.getTemplatesAuthors(getTemplatesAuthorsRequest);
-    print(result);
-} catch (e) {
+    final response = api.getTemplatesAuthors(getTemplatesAuthorsRequest);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling TemplatesApi->getTemplatesAuthors: $e\n');
 }
 ```
@@ -215,13 +215,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = TemplatesApi();
-final id = id_example; // String | The uberall unique id of the template
+final api = Openapi().getTemplatesApi();
+final String id = id_example; // String | The uberall unique id of the template
 
 try {
-    final result = api_instance.getTemplatesId(id);
-    print(result);
-} catch (e) {
+    final response = api.getTemplatesId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling TemplatesApi->getTemplatesId: $e\n');
 }
 ```
@@ -266,13 +266,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = TemplatesApi();
-final getTemplatesAuthorsRequest = GetTemplatesAuthorsRequest(); // GetTemplatesAuthorsRequest | The ids of businesses you want templates for
+final api = Openapi().getTemplatesApi();
+final GetTemplatesAuthorsRequest getTemplatesAuthorsRequest = ; // GetTemplatesAuthorsRequest | The ids of businesses you want templates for
 
 try {
-    final result = api_instance.getTemplatesTags(getTemplatesAuthorsRequest);
-    print(result);
-} catch (e) {
+    final response = api.getTemplatesTags(getTemplatesAuthorsRequest);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling TemplatesApi->getTemplatesTags: $e\n');
 }
 ```
@@ -317,14 +317,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = TemplatesApi();
-final id = id_example; // String | The uberall unique id of the template
-final createTemplateRequest = CreateTemplateRequest(); // CreateTemplateRequest | Template to update
+final api = Openapi().getTemplatesApi();
+final String id = id_example; // String | The uberall unique id of the template
+final CreateTemplateRequest createTemplateRequest = ; // CreateTemplateRequest | Template to update
 
 try {
-    final result = api_instance.patchTemplatesId(id, createTemplateRequest);
-    print(result);
-} catch (e) {
+    final response = api.patchTemplatesId(id, createTemplateRequest);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling TemplatesApi->patchTemplatesId: $e\n');
 }
 ```
@@ -370,13 +370,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = TemplatesApi();
-final createTemplateRequest = CreateTemplateRequest(); // CreateTemplateRequest | Template to create
+final api = Openapi().getTemplatesApi();
+final CreateTemplateRequest createTemplateRequest = ; // CreateTemplateRequest | Template to create
 
 try {
-    final result = api_instance.postTemplates(createTemplateRequest);
-    print(result);
-} catch (e) {
+    final response = api.postTemplates(createTemplateRequest);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling TemplatesApi->postTemplates: $e\n');
 }
 ```
@@ -421,13 +421,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = TemplatesApi();
-final id = id_example; // String | The uberall unique id of the template
+final api = Openapi().getTemplatesApi();
+final String id = id_example; // String | The uberall unique id of the template
 
 try {
-    final result = api_instance.postTemplatesIdIncrementUsage(id);
-    print(result);
-} catch (e) {
+    final response = api.postTemplatesIdIncrementUsage(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling TemplatesApi->postTemplatesIdIncrementUsage: $e\n');
 }
 ```

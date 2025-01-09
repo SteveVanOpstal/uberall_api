@@ -30,13 +30,13 @@ Delete an existing Social Post identified by its unique uberall ID.
 ```dart
 import 'package:openapi/api.dart';
 
-final api_instance = SocialPostingApi();
-final id = id_example; // String | The uberall unique ID of the Social Post that should be deleted
+final api = Openapi().getSocialPostingApi();
+final String id = id_example; // String | The uberall unique ID of the Social Post that should be deleted
 
 try {
-    final result = api_instance.deleteSocialPostsId(id);
-    print(result);
-} catch (e) {
+    final response = api.deleteSocialPostsId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling SocialPostingApi->deleteSocialPostsId: $e\n');
 }
 ```
@@ -81,17 +81,17 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = SocialPostingApi();
-final offset = 789; // int | The offset of the first social post to return
-final max = 789; // int | The maximum number of social posts to return
-final locationIds = []; // List<String> | Return social posts for this locations
-final socialPostStatuses = []; // List<String> | Return social posts with these statuses
-final isStoreLocator = true; // bool | Is the post for store locator
+final api = Openapi().getSocialPostingApi();
+final int offset = 789; // int | The offset of the first social post to return
+final int max = 789; // int | The maximum number of social posts to return
+final BuiltList<String> locationIds = ; // BuiltList<String> | Return social posts for this locations
+final BuiltList<String> socialPostStatuses = ; // BuiltList<String> | Return social posts with these statuses
+final bool isStoreLocator = true; // bool | Is the post for store locator
 
 try {
-    final result = api_instance.getSocialPosts(offset, max, locationIds, socialPostStatuses, isStoreLocator);
-    print(result);
-} catch (e) {
+    final response = api.getSocialPosts(offset, max, locationIds, socialPostStatuses, isStoreLocator);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling SocialPostingApi->getSocialPosts: $e\n');
 }
 ```
@@ -102,8 +102,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **int**| The offset of the first social post to return | [optional] 
  **max** | **int**| The maximum number of social posts to return | [optional] 
- **locationIds** | [**List<String>**](String.md)| Return social posts for this locations | [optional] [default to const []]
- **socialPostStatuses** | [**List<String>**](String.md)| Return social posts with these statuses | [optional] [default to const []]
+ **locationIds** | [**BuiltList&lt;String&gt;**](String.md)| Return social posts for this locations | [optional] 
+ **socialPostStatuses** | [**BuiltList&lt;String&gt;**](String.md)| Return social posts with these statuses | [optional] 
  **isStoreLocator** | **bool**| Is the post for store locator | [optional] 
 
 ### Return type
@@ -140,17 +140,17 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = SocialPostingApi();
-final locationIds = []; // List<String> | Return directories where posting is possible for these locationIds
-final businessIds = []; // List<String> | Return directories where posting is possible for these businessIds
-final locationGroupIds = []; // List<String> | Return directories where posting is possible for these locationGroupIds
-final labels = []; // List<String> | Return directories where posting is possible for these labels
-final excludedLocationIds = []; // List<String> | List of excluded locationIds
+final api = Openapi().getSocialPostingApi();
+final BuiltList<String> locationIds = ; // BuiltList<String> | Return directories where posting is possible for these locationIds
+final BuiltList<String> businessIds = ; // BuiltList<String> | Return directories where posting is possible for these businessIds
+final BuiltList<String> locationGroupIds = ; // BuiltList<String> | Return directories where posting is possible for these locationGroupIds
+final BuiltList<String> labels = ; // BuiltList<String> | Return directories where posting is possible for these labels
+final BuiltList<String> excludedLocationIds = ; // BuiltList<String> | List of excluded locationIds
 
 try {
-    final result = api_instance.getSocialPostsDirectories(locationIds, businessIds, locationGroupIds, labels, excludedLocationIds);
-    print(result);
-} catch (e) {
+    final response = api.getSocialPostsDirectories(locationIds, businessIds, locationGroupIds, labels, excludedLocationIds);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling SocialPostingApi->getSocialPostsDirectories: $e\n');
 }
 ```
@@ -159,11 +159,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **locationIds** | [**List<String>**](String.md)| Return directories where posting is possible for these locationIds | [optional] [default to const []]
- **businessIds** | [**List<String>**](String.md)| Return directories where posting is possible for these businessIds | [optional] [default to const []]
- **locationGroupIds** | [**List<String>**](String.md)| Return directories where posting is possible for these locationGroupIds | [optional] [default to const []]
- **labels** | [**List<String>**](String.md)| Return directories where posting is possible for these labels | [optional] [default to const []]
- **excludedLocationIds** | [**List<String>**](String.md)| List of excluded locationIds | [optional] [default to const []]
+ **locationIds** | [**BuiltList&lt;String&gt;**](String.md)| Return directories where posting is possible for these locationIds | [optional] 
+ **businessIds** | [**BuiltList&lt;String&gt;**](String.md)| Return directories where posting is possible for these businessIds | [optional] 
+ **locationGroupIds** | [**BuiltList&lt;String&gt;**](String.md)| Return directories where posting is possible for these locationGroupIds | [optional] 
+ **labels** | [**BuiltList&lt;String&gt;**](String.md)| Return directories where posting is possible for these labels | [optional] 
+ **excludedLocationIds** | [**BuiltList&lt;String&gt;**](String.md)| List of excluded locationIds | [optional] 
 
 ### Return type
 
@@ -199,19 +199,19 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = SocialPostingApi();
-final types = types_example; // String | The directory types we want pages for.
-final levels = levels_example; // String | String that represents the level of a directory page. The 2 possible values are \"LISTING\" and \"BUSINESS\"
-final locationIds = []; // List<String> | Return directory pages where input locationIds have access to
-final page = 789; // int | Used for pagination. Page number we're interested in
-final size = 789; // int | Used for pagination. It indicates the amount of result to be returned in a single page
-final query = query_example; // String | Filter by page name
-final body = Object(); // Object | 
+final api = Openapi().getSocialPostingApi();
+final String types = types_example; // String | The directory types we want pages for.
+final String levels = levels_example; // String | String that represents the level of a directory page. The 2 possible values are \"LISTING\" and \"BUSINESS\"
+final BuiltList<String> locationIds = ; // BuiltList<String> | Return directory pages where input locationIds have access to
+final int page = 789; // int | Used for pagination. Page number we're interested in
+final int size = 789; // int | Used for pagination. It indicates the amount of result to be returned in a single page
+final String query = query_example; // String | Filter by page name
+final JsonObject body = Object; // JsonObject | 
 
 try {
-    final result = api_instance.getSocialPostsDirectoryPages(types, levels, locationIds, page, size, query, body);
-    print(result);
-} catch (e) {
+    final response = api.getSocialPostsDirectoryPages(types, levels, locationIds, page, size, query, body);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling SocialPostingApi->getSocialPostsDirectoryPages: $e\n');
 }
 ```
@@ -222,11 +222,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **types** | **String**| The directory types we want pages for. | [optional] 
  **levels** | **String**| String that represents the level of a directory page. The 2 possible values are \"LISTING\" and \"BUSINESS\" | [optional] 
- **locationIds** | [**List<String>**](String.md)| Return directory pages where input locationIds have access to | [optional] [default to const []]
+ **locationIds** | [**BuiltList&lt;String&gt;**](String.md)| Return directory pages where input locationIds have access to | [optional] 
  **page** | **int**| Used for pagination. Page number we're interested in | [optional] 
  **size** | **int**| Used for pagination. It indicates the amount of result to be returned in a single page | [optional] 
  **query** | **String**| Filter by page name | [optional] 
- **body** | **Object**|  | [optional] 
+ **body** | **JsonObject**|  | [optional] 
 
 ### Return type
 
@@ -262,13 +262,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = SocialPostingApi();
-final id = id_example; // String | The uberall unique ID of the Social Post you want to get
+final api = Openapi().getSocialPostingApi();
+final String id = id_example; // String | The uberall unique ID of the Social Post you want to get
 
 try {
-    final result = api_instance.getSocialPostsId(id);
-    print(result);
-} catch (e) {
+    final response = api.getSocialPostsId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling SocialPostingApi->getSocialPostsId: $e\n');
 }
 ```
@@ -313,14 +313,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = SocialPostingApi();
-final id = id_example; // String | The uberall unique ID of the Social Post yu want to edit
-final socialPost = SocialPost(); // SocialPost | A SocialPost object
+final api = Openapi().getSocialPostingApi();
+final String id = id_example; // String | The uberall unique ID of the Social Post yu want to edit
+final SocialPost socialPost = ; // SocialPost | A SocialPost object
 
 try {
-    final result = api_instance.patchSocialPostsId(id, socialPost);
-    print(result);
-} catch (e) {
+    final response = api.patchSocialPostsId(id, socialPost);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling SocialPostingApi->patchSocialPostsId: $e\n');
 }
 ```
@@ -366,13 +366,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = SocialPostingApi();
-final socialPost = SocialPost(); // SocialPost | A SocialPost object
+final api = Openapi().getSocialPostingApi();
+final SocialPost socialPost = ; // SocialPost | A SocialPost object
 
 try {
-    final result = api_instance.postSocialPosts(socialPost);
-    print(result);
-} catch (e) {
+    final response = api.postSocialPosts(socialPost);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling SocialPostingApi->postSocialPosts: $e\n');
 }
 ```
@@ -417,13 +417,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = SocialPostingApi();
-final cta = cta_example; // String | The call to action
-final locationIds = []; // List<String> | The location IDs
+final api = Openapi().getSocialPostingApi();
+final String cta = cta_example; // String | The call to action
+final BuiltList<String> locationIds = ; // BuiltList<String> | The location IDs
 
 try {
-    api_instance.postSocialPostsValidateAppleCta(cta, locationIds);
-} catch (e) {
+    api.postSocialPostsValidateAppleCta(cta, locationIds);
+} catch on DioException (e) {
     print('Exception when calling SocialPostingApi->postSocialPostsValidateAppleCta: $e\n');
 }
 ```
@@ -433,7 +433,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cta** | **String**| The call to action | 
- **locationIds** | [**List<String>**](String.md)| The location IDs | [default to const []]
+ **locationIds** | [**BuiltList&lt;String&gt;**](String.md)| The location IDs | 
 
 ### Return type
 

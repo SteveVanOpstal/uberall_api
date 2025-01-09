@@ -35,16 +35,16 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = BusinessConnectionsApi();
-final directoryType = directoryType_example; // String | Type of the directory
-final salesPartnerId = salesPartnerId_example; // String | Id of the SalesPartner
-final status = status_example; // String | Filter by status
-final name = name_example; // String | Filters results by performing search with given value
+final api = Openapi().getBusinessConnectionsApi();
+final String directoryType = directoryType_example; // String | Type of the directory
+final String salesPartnerId = salesPartnerId_example; // String | Id of the SalesPartner
+final String status = status_example; // String | Filter by status
+final String name = name_example; // String | Filters results by performing search with given value
 
 try {
-    final result = api_instance.getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdCount(directoryType, salesPartnerId, status, name);
-    print(result);
-} catch (e) {
+    final response = api.getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdCount(directoryType, salesPartnerId, status, name);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling BusinessConnectionsApi->getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdCount: $e\n');
 }
 ```
@@ -92,18 +92,18 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = BusinessConnectionsApi();
-final directoryType = directoryType_example; // String | Type of the directory
-final salesPartnerId = salesPartnerId_example; // String | Id of the SalesPartner
-final status = status_example; // String | Filter by status
-final name = name_example; // String | Filters results by performing search with given value
-final max = 789; // int | Maximum number of items to return
-final offset = 789; // int | Offset used for pagination. Default: 0
+final api = Openapi().getBusinessConnectionsApi();
+final String directoryType = directoryType_example; // String | Type of the directory
+final String salesPartnerId = salesPartnerId_example; // String | Id of the SalesPartner
+final String status = status_example; // String | Filter by status
+final String name = name_example; // String | Filters results by performing search with given value
+final int max = 789; // int | Maximum number of items to return
+final int offset = 789; // int | Offset used for pagination. Default: 0
 
 try {
-    final result = api_instance.getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdList(directoryType, salesPartnerId, status, name, max, offset);
-    print(result);
-} catch (e) {
+    final response = api.getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdList(directoryType, salesPartnerId, status, name, max, offset);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling BusinessConnectionsApi->getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdList: $e\n');
 }
 ```
@@ -153,16 +153,16 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = BusinessConnectionsApi();
-final directoryType = directoryType_example; // String | Type of the directory
-final salesPartnerId = salesPartnerId_example; // String | Id of the SalesPartner
-final max = 789; // int | Maximum number of items to return
-final offset = 789; // int | Offset used for pagination. Default: 0
+final api = Openapi().getBusinessConnectionsApi();
+final String directoryType = directoryType_example; // String | Type of the directory
+final String salesPartnerId = salesPartnerId_example; // String | Id of the SalesPartner
+final int max = 789; // int | Maximum number of items to return
+final int offset = 789; // int | Offset used for pagination. Default: 0
 
 try {
-    final result = api_instance.getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdPages(directoryType, salesPartnerId, max, offset);
-    print(result);
-} catch (e) {
+    final response = api.getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdPages(directoryType, salesPartnerId, max, offset);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling BusinessConnectionsApi->getBusinessConnectionsDirectoryTypeSalesPartnerSalesPartnerIdPages: $e\n');
 }
 ```
@@ -210,15 +210,15 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = BusinessConnectionsApi();
-final directoryType = directoryType_example; // String | Type of the directory
-final businessId = businessId_example; // String | Id of the Business
-final businessConnectionRequest = BusinessConnectionRequest(); // BusinessConnectionRequest | Business connection parameters
+final api = Openapi().getBusinessConnectionsApi();
+final String directoryType = directoryType_example; // String | Type of the directory
+final String businessId = businessId_example; // String | Id of the Business
+final BusinessConnectionRequest businessConnectionRequest = ; // BusinessConnectionRequest | Business connection parameters
 
 try {
-    final result = api_instance.postBusinessConnectionsDirectoryTypeConnectBusinessId(directoryType, businessId, businessConnectionRequest);
-    print(result);
-} catch (e) {
+    final response = api.postBusinessConnectionsDirectoryTypeConnectBusinessId(directoryType, businessId, businessConnectionRequest);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling BusinessConnectionsApi->postBusinessConnectionsDirectoryTypeConnectBusinessId: $e\n');
 }
 ```
@@ -265,15 +265,15 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = BusinessConnectionsApi();
-final directoryType = directoryType_example; // String | Type of the directory
-final businessId = businessId_example; // String | Id of the Business
-final businessConnectionRequest = BusinessConnectionRequest(); // BusinessConnectionRequest | Business connection parameters
+final api = Openapi().getBusinessConnectionsApi();
+final String directoryType = directoryType_example; // String | Type of the directory
+final String businessId = businessId_example; // String | Id of the Business
+final BusinessConnectionRequest businessConnectionRequest = ; // BusinessConnectionRequest | Business connection parameters
 
 try {
-    final result = api_instance.putBusinessConnectionsDirectoryTypeDisconnectBusinessId(directoryType, businessId, businessConnectionRequest);
-    print(result);
-} catch (e) {
+    final response = api.putBusinessConnectionsDirectoryTypeDisconnectBusinessId(directoryType, businessId, businessConnectionRequest);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling BusinessConnectionsApi->putBusinessConnectionsDirectoryTypeDisconnectBusinessId: $e\n');
 }
 ```

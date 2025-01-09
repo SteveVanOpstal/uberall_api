@@ -15,12 +15,12 @@ Name | Type | Description | Notes
 **alertType** | **String** | Set to COVID_19 if this Social Post Template is a COVID-19 Google Alert Post | [optional] 
 **shared** | **bool** | Defines if the Social Post Template is shared or not. | [optional] 
 **isStoreLocator** | **bool** | When enabled, the SocialPost will be visible in StoreLocator | [optional] 
-**callToActions** | [**List<SocialPostTemplateCallToAction>**](SocialPostTemplateCallToAction.md) |  | [optional] [default to const []]
+**callToActions** | [**BuiltList&lt;SocialPostTemplateCallToAction&gt;**](SocialPostTemplateCallToAction.md) |  | [optional] 
 **userId** | **int** | Id of the user that is doing the action | 
-**directories** | **List<String>** | List of videos (currently only supports one element) | [default to const []]
-**photos** | [**List<PhotoContainer>**](PhotoContainer.md) | The Social Post Template''s photos. It should be a list containing BASE64 converted images or urls of photos from a previous Social Post. It is required if the template has no description. | [optional] [default to const []]
+**directories** | **BuiltList&lt;String&gt;** | List of videos (currently only supports one element) | 
+**photos** | [**BuiltList&lt;PhotoContainer&gt;**](PhotoContainer.md) | The Social Post Template''s photos. It should be a list containing BASE64 converted images or urls of photos from a previous Social Post. It is required if the template has no description. | [optional] 
 **ownerId** | **int** | The id of the user that owns the Social Post Template. (Only informational. If included in the request, it will be ignored.) | [optional] 
-**videos** | **List<String>** | List of videos (currently only supports one element) | [optional] [default to const []]
+**videos** | **BuiltList&lt;String&gt;** | List of videos (currently only supports one element) | [optional] 
 **ownerName** | **String** | The name of the user that owns the Social Post Template. (Only informational. If included in the request, it will be ignored.) | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

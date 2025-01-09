@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **pageCount** | **int** | The number of children on the current page | [optional] 
 **max** | **int** | The maximum number of results to return | [optional] 
 **offset** | **int** | The offset for pagination | [optional] 
-**children** | [**List<Object>**](Object.md) |  | [optional] [default to const []]
+**children** | [**BuiltList&lt;JsonObject&gt;**](JsonObject.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

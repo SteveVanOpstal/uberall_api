@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **identifier** | **String** | Required - A unique identifier for this service | [optional] 
 **listName** | **String** |  | [optional] 
 **price** | **int** | Price of the service item | [optional] 
-**currency** | [**Object**](.md) | The currency of the price for this service - required when a price is given | [optional] 
+**currency** | [**JsonObject**](.md) | The currency of the price for this service - required when a price is given | [optional] 
 **category** | **int** | Business category the service should be applied to - this is required when applying a Google structured service but not necessary for freeform services. | [optional] 
 **country** | **String** | The country where the locations providing this service are located - this is required when applying a Google structured service but not necessary for freeform services.  | [optional] 
 **googleService** | **String** | The Google name for a structured service - this is required when applying a Google structured service but not necessary for freeform services. | [optional] 

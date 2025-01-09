@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **listName** | **String** |  | [optional] 
 **id** | **int** | The uberall unique id for the custom item | [optional] 
 **price** | **int** | optional, the price of the custom, e.g. 1500 ( i.e. 15,00 EUR ) | [optional] 
-**currency** | [**Object**](.md) | optional, indicating the currency for price and priceMax in ISO-4217, e.g. EUR | [optional] 
+**currency** | [**JsonObject**](.md) | optional, indicating the currency for price and priceMax in ISO-4217, e.g. EUR | [optional] 
 **category** | **String** | optional, a category name, e.g. ''Coffee'' | [optional] 
 **video** | [**Video**](Video.md) |  | [optional] 
 **unit** | **String** | optional, indicating the unit of measure, e.g. ''per kg'' | [optional] 

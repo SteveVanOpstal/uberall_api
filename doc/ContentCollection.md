@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **name** | **String** | Mandatory - Name of the content collection | 
 **description** | **String** | A description of the collection | [optional] 
 **type** | **String** | Mandatory - the type of content collection. Values can be: MENU, PEOPLE, PRODUCTS, SERVICES, or CUSTOM | 
-**contentLists** | [**List<ContentList>**](ContentList.md) | Mandatory - Sections within the content collections | [default to const []]
-**locationIds** | **Set<int>** | Location Ids that should be associated with this collection | [optional] [default to const {}]
+**contentLists** | [**BuiltList&lt;ContentList&gt;**](ContentList.md) | Mandatory - Sections within the content collections | 
+**locationIds** | **BuiltSet&lt;int&gt;** | Location Ids that should be associated with this collection | [optional] 
 **cuisineType** | **String** | Only applicable to Menu content collections - indicates the cuisine the restaurant serves | [optional] 
 **url** | **String** | Applicable to Menu collections only - url to the brand webpage menu | [optional] 
 **id** | **int** |  | [optional] 

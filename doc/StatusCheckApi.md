@@ -29,14 +29,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('publicKey').apiKeyPrefix = 'Bearer';
 
-final api_instance = StatusCheckApi();
-final max = 50; // int | Used for pagination. Maximum number of results per page. Default: 50
-final offset = 0; // int | Offset used for pagination. Default: 0
+final api = Openapi().getStatusCheckApi();
+final int max = 50; // int | Used for pagination. Maximum number of results per page. Default: 50
+final int offset = 0; // int | Offset used for pagination. Default: 0
 
 try {
-    final result = api_instance.getSearch(max, offset);
-    print(result);
-} catch (e) {
+    final response = api.getSearch(max, offset);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling StatusCheckApi->getSearch: $e\n');
 }
 ```
@@ -78,15 +78,15 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('publicKey').apiKeyPrefix = 'Bearer';
 
-final api_instance = StatusCheckApi();
-final id = id_example; // String | The unique id of the SearchData returned by /api/search/
-final directory = directory_example; // String | The directory you want to search in
-final token = token_example; // String | The token you got using /api/search
+final api = Openapi().getStatusCheckApi();
+final String id = id_example; // String | The unique id of the SearchData returned by /api/search/
+final String directory = directory_example; // String | The directory you want to search in
+final String token = token_example; // String | The token you got using /api/search
 
 try {
-    final result = api_instance.getSearchId(id, directory, token);
-    print(result);
-} catch (e) {
+    final response = api.getSearchId(id, directory, token);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling StatusCheckApi->getSearchId: $e\n');
 }
 ```
@@ -129,22 +129,22 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('publicKey').apiKeyPrefix = 'Bearer';
 
-final api_instance = StatusCheckApi();
-final name = name_example; // String | The name of the location
-final street = street_example; // String | The street address of the location
-final country = country_example; // String | The country of the location Country. One of AT, CH, DE, ES, UK, FR, IT, NL
-final streetNo = 789; // int | unless already in address field. The location's street number 
-final zip = 789; // int | Zip code
-final city = city_example; // String | The city of the location
-final province = province_example; // String | The province of the location
-final lat = lat_example; // String | The latitude of the location
-final lng = lng_example; // String | The longitude of the location
-final phone = phone_example; // String | The phone number of the location
+final api = Openapi().getStatusCheckApi();
+final String name = name_example; // String | The name of the location
+final String street = street_example; // String | The street address of the location
+final String country = country_example; // String | The country of the location Country. One of AT, CH, DE, ES, UK, FR, IT, NL
+final int streetNo = 789; // int | unless already in address field. The location's street number 
+final int zip = 789; // int | Zip code
+final String city = city_example; // String | The city of the location
+final String province = province_example; // String | The province of the location
+final String lat = lat_example; // String | The latitude of the location
+final String lng = lng_example; // String | The longitude of the location
+final String phone = phone_example; // String | The phone number of the location
 
 try {
-    final result = api_instance.postSearch(name, street, country, streetNo, zip, city, province, lat, lng, phone);
-    print(result);
-} catch (e) {
+    final response = api.postSearch(name, street, country, streetNo, zip, city, province, lat, lng, phone);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling StatusCheckApi->postSearch: $e\n');
 }
 ```

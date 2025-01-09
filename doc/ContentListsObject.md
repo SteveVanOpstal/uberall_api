@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **max** | **int** | Maximum number of results per page | [optional] 
 **total** | **int** | Total count of results | [optional] 
 **totalLocationsCount** | **int** | Total count of locations | [optional] 
-**contentLists** | [**List<ContentList>**](ContentList.md) |  | [optional] [default to const []]
+**contentLists** | [**BuiltList&lt;ContentList&gt;**](ContentList.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

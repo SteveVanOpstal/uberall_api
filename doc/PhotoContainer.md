@@ -8,7 +8,7 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**photo** | [**Object**](.md) | Placeholder to represent photo for a social post which can either be a base64 encoded string or a S3 link for image | [optional] 
+**photo** | [**JsonObject**](.md) | Placeholder to represent photo for a social post which can either be a base64 encoded string or a S3 link for image | [optional] 
 **description** | **String** | Description for the social post photo | [optional] 
 **redirectUrl** | **String** | The URL that a user is redirected to when clicking the photo | [optional] 
 

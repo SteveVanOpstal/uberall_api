@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **url** | **String** | Url of the video | [optional] 
 **description** | **String** | Text description of the Video | [optional] 
 **type** | **String** | Video Platform. Values: [YOUTUBE, VIMEO] | [optional] 
-**typeId** | [**Object**](.md) |  | [optional] 
+**typeId** | [**JsonObject**](.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

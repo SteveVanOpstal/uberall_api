@@ -20,3 +20,4 @@ doc/api/
 
 openapi-generator-cli.jar
 openapi.json
+*.g.dart

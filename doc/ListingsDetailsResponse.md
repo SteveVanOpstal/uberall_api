@@ -9,7 +9,7 @@ import 'package:openapi/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **statistic** | [**Statistic**](Statistic.md) |  | [optional] 
-**listingsResponse** | [**List<ListingDetails>**](ListingDetails.md) | Detailed response for the listings | [optional] [default to const []]
+**listingsResponse** | [**BuiltList&lt;ListingDetails&gt;**](ListingDetails.md) | Detailed response for the listings | [optional] 
 **firstSyncStarted** | [**DateTime**](DateTime.md) | Date & time the first sync was started on the location. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

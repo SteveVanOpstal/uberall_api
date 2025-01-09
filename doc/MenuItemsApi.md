@@ -38,12 +38,12 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = MenuItemsApi();
+final api = Openapi().getMenuItemsApi();
 
 try {
-    final result = api_instance.deleteMenuItems();
-    print(result);
-} catch (e) {
+    final response = api.deleteMenuItems();
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling MenuItemsApi->deleteMenuItems: $e\n');
 }
 ```
@@ -85,13 +85,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = MenuItemsApi();
-final id = id_example; // String | The uberall unique id for the menu item
+final api = Openapi().getMenuItemsApi();
+final String id = id_example; // String | The uberall unique id for the menu item
 
 try {
-    final result = api_instance.deleteMenuItemsId(id);
-    print(result);
-} catch (e) {
+    final response = api.deleteMenuItemsId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling MenuItemsApi->deleteMenuItemsId: $e\n');
 }
 ```
@@ -136,13 +136,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = MenuItemsApi();
-final body = Object(); // Object | 
+final api = Openapi().getMenuItemsApi();
+final JsonObject body = Object; // JsonObject | 
 
 try {
-    final result = api_instance.getMenuItems(body);
-    print(result);
-} catch (e) {
+    final response = api.getMenuItems(body);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling MenuItemsApi->getMenuItems: $e\n');
 }
 ```
@@ -151,7 +151,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **Object**|  | [optional] 
+ **body** | **JsonObject**|  | [optional] 
 
 ### Return type
 
@@ -187,12 +187,12 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = MenuItemsApi();
+final api = Openapi().getMenuItemsApi();
 
 try {
-    final result = api_instance.getMenuItemsAcceptedExtraFields();
-    print(result);
-} catch (e) {
+    final response = api.getMenuItemsAcceptedExtraFields();
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling MenuItemsApi->getMenuItemsAcceptedExtraFields: $e\n');
 }
 ```
@@ -234,13 +234,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = MenuItemsApi();
-final id = id_example; // String | The uberall unique id for the menu item
+final api = Openapi().getMenuItemsApi();
+final String id = id_example; // String | The uberall unique id for the menu item
 
 try {
-    final result = api_instance.getMenuItemsId(id);
-    print(result);
-} catch (e) {
+    final response = api.getMenuItemsId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling MenuItemsApi->getMenuItemsId: $e\n');
 }
 ```
@@ -285,13 +285,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = MenuItemsApi();
-final menuItem = MenuItem(); // MenuItem | Menu Item object to update
+final api = Openapi().getMenuItemsApi();
+final MenuItem menuItem = ; // MenuItem | Menu Item object to update
 
 try {
-    final result = api_instance.patchMenuItems(menuItem);
-    print(result);
-} catch (e) {
+    final response = api.patchMenuItems(menuItem);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling MenuItemsApi->patchMenuItems: $e\n');
 }
 ```
@@ -336,14 +336,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = MenuItemsApi();
-final id = id_example; // String | The uberall unique id for the menu item
-final menuItem = MenuItem(); // MenuItem | Menu Item object to update
+final api = Openapi().getMenuItemsApi();
+final String id = id_example; // String | The uberall unique id for the menu item
+final MenuItem menuItem = ; // MenuItem | Menu Item object to update
 
 try {
-    final result = api_instance.patchMenuItemsId(id, menuItem);
-    print(result);
-} catch (e) {
+    final response = api.patchMenuItemsId(id, menuItem);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling MenuItemsApi->patchMenuItemsId: $e\n');
 }
 ```
@@ -389,13 +389,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = MenuItemsApi();
-final menuItem = MenuItem(); // MenuItem | Menu Item object to create
+final api = Openapi().getMenuItemsApi();
+final MenuItem menuItem = ; // MenuItem | Menu Item object to create
 
 try {
-    final result = api_instance.postMenuItems(menuItem);
-    print(result);
-} catch (e) {
+    final response = api.postMenuItems(menuItem);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling MenuItemsApi->postMenuItems: $e\n');
 }
 ```

@@ -34,15 +34,15 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DashboardExportsApi();
-final locationIds = locationIds_example; // String | List of location IDs to filter by
-final max = 789; // int | Max number of items to return
-final offset = 789; // int | Offset used for pagination. Default: 0
+final api = Openapi().getDashboardExportsApi();
+final String locationIds = locationIds_example; // String | List of location IDs to filter by
+final int max = 789; // int | Max number of items to return
+final int offset = 789; // int | Offset used for pagination. Default: 0
 
 try {
-    final result = api_instance.getDashboardExports(locationIds, max, offset);
-    print(result);
-} catch (e) {
+    final response = api.getDashboardExports(locationIds, max, offset);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DashboardExportsApi->getDashboardExports: $e\n');
 }
 ```
@@ -89,13 +89,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DashboardExportsApi();
-final id = id_example; // String | DashboardExportData Id
+final api = Openapi().getDashboardExportsApi();
+final String id = id_example; // String | DashboardExportData Id
 
 try {
-    final result = api_instance.getDashboardExportsId(id);
-    print(result);
-} catch (e) {
+    final response = api.getDashboardExportsId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DashboardExportsApi->getDashboardExportsId: $e\n');
 }
 ```
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getDashboardExportsIdDownload**
-> MultipartFile getDashboardExportsIdDownload(id)
+> Uint8List getDashboardExportsIdDownload(id)
 
 Download the result of a dashboard export (a PDF file)
 
@@ -140,13 +140,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DashboardExportsApi();
-final id = id_example; // String | DashboardExportData Id
+final api = Openapi().getDashboardExportsApi();
+final String id = id_example; // String | DashboardExportData Id
 
 try {
-    final result = api_instance.getDashboardExportsIdDownload(id);
-    print(result);
-} catch (e) {
+    final response = api.getDashboardExportsIdDownload(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DashboardExportsApi->getDashboardExportsIdDownload: $e\n');
 }
 ```
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MultipartFile**](MultipartFile.md)
+[**Uint8List**](Uint8List.md)
 
 ### Authorization
 
@@ -191,19 +191,19 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DashboardExportsApi();
-final start = 2017-01-01; // String | Start date of export, in yyyy-MM-dd format
-final end = 2017-12-31; // String | End date of export, in yyyy-MM-dd format
-final group = group_example; // String | Grouping of the historical data
-final whitelabelIdentifier = whitelabelIdentifier_example; // String | Whitelabel identifier string
-final locationIds = locationIds_example; // String | List of location IDs
-final language = fr; // String | Language identifier (i.e. 'fr', 'de')
-final body = Object(); // Object | 
+final api = Openapi().getDashboardExportsApi();
+final String start = 2017-01-01; // String | Start date of export, in yyyy-MM-dd format
+final String end = 2017-12-31; // String | End date of export, in yyyy-MM-dd format
+final String group = group_example; // String | Grouping of the historical data
+final String whitelabelIdentifier = whitelabelIdentifier_example; // String | Whitelabel identifier string
+final String locationIds = locationIds_example; // String | List of location IDs
+final String language = fr; // String | Language identifier (i.e. 'fr', 'de')
+final JsonObject body = Object; // JsonObject | 
 
 try {
-    final result = api_instance.postDashboardExports(start, end, group, whitelabelIdentifier, locationIds, language, body);
-    print(result);
-} catch (e) {
+    final response = api.postDashboardExports(start, end, group, whitelabelIdentifier, locationIds, language, body);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DashboardExportsApi->postDashboardExports: $e\n');
 }
 ```
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
  **whitelabelIdentifier** | **String**| Whitelabel identifier string | 
  **locationIds** | **String**| List of location IDs | 
  **language** | **String**| Language identifier (i.e. 'fr', 'de') | 
- **body** | **Object**|  | [optional] 
+ **body** | **JsonObject**|  | [optional] 
 
 ### Return type
 

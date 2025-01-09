@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **city** | **String** | City of the location | [optional] 
 **country** | **String** | Country of the location | [optional] 
 **status** | **String** | Status of the location | [optional] 
-**suggestionsForFields** | [**List<Object>**](Object.md) | Map containing fields and the suggested values from different directories. | [optional] [default to const []]
+**suggestionsForFields** | [**BuiltList&lt;JsonObject&gt;**](JsonObject.md) | Map containing fields and the suggested values from different directories. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -15,11 +15,11 @@ Name | Type | Description | Notes
 **startDate** | **String** | Start date of the DAM Asset | [optional] 
 **endDate** | **String** | End date of the DAM Asset | [optional] 
 **allManagedResources** | **bool** | Set to true if the Asset should be visible to all managed locations of the user | [optional] 
-**locationIds** | **List<int>** | Location IDs of the DAM Asset | [optional] [default to const []]
-**businessIds** | **List<int>** | Business IDs of the DAM Asset | [optional] [default to const []]
-**excludedLocationIds** | **List<int>** | Excluded location IDs of the DAM Asset | [optional] [default to const []]
-**labels** | **List<String>** | Labels of the DAM Asset | [optional] [default to const []]
-**locationGroupIds** | **List<int>** | Location Group IDs of the DAM Asset | [optional] [default to const []]
+**locationIds** | **BuiltList&lt;int&gt;** | Location IDs of the DAM Asset | [optional] 
+**businessIds** | **BuiltList&lt;int&gt;** | Business IDs of the DAM Asset | [optional] 
+**excludedLocationIds** | **BuiltList&lt;int&gt;** | Excluded location IDs of the DAM Asset | [optional] 
+**labels** | **BuiltList&lt;String&gt;** | Labels of the DAM Asset | [optional] 
+**locationGroupIds** | **BuiltList&lt;int&gt;** | Location Group IDs of the DAM Asset | [optional] 
 **folderId** | **int** | Folder ID where the DAM asset should be created | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

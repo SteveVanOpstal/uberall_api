@@ -14,8 +14,8 @@ Method | HTTP request | Description
 [**deleteDataPointsRead**](DataPointsApi.md#deletedatapointsread) | **DELETE** /data-points/read | Mark as Unread
 [**getDataPoints**](DataPointsApi.md#getdatapoints) | **GET** /data-points | Get All Data Points
 [**getDataPointsId**](DataPointsApi.md#getdatapointsid) | **GET** /data-points/{id} | Get a Data Point
-[**getDataPointsStatistics**](DataPointsApi.md#getdatapointsstatistics) | **GET** /data-points/statistics | Get Data Points'' Statistics
-[**getDataPointsTimeseries**](DataPointsApi.md#getdatapointstimeseries) | **GET** /data-points/timeseries | Get Data Points' time series
+[**getDataPointsStatistics**](DataPointsApi.md#getdatapointsstatistics) | **GET** /data-points/statistics | Get Data Points&#39;&#39; Statistics
+[**getDataPointsTimeseries**](DataPointsApi.md#getdatapointstimeseries) | **GET** /data-points/timeseries | Get Data Points&#39; time series
 [**patchDataPointsIdReply**](DataPointsApi.md#patchdatapointsidreply) | **PATCH** /data-points/{id}/reply | Reply to a Data Point
 [**postDataPointsIdFlag**](DataPointsApi.md#postdatapointsidflag) | **POST** /data-points/{id}/flag | Report a Data Point
 [**postDataPointsIdLike**](DataPointsApi.md#postdatapointsidlike) | **POST** /data-points/{id}/like | Like a Data Point
@@ -44,13 +44,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DataPointsApi();
-final id = id_example; // String | The data point id you want to unlike
+final api = Openapi().getDataPointsApi();
+final String id = id_example; // String | The data point id you want to unlike
 
 try {
-    final result = api_instance.deleteDataPointsIdLike(id);
-    print(result);
-} catch (e) {
+    final response = api.deleteDataPointsIdLike(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DataPointsApi->deleteDataPointsIdLike: $e\n');
 }
 ```
@@ -95,14 +95,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DataPointsApi();
-final id = id_example; // String | The id of the root data point
-final replyId = replyId_example; // String | The id  of the replying data point
+final api = Openapi().getDataPointsApi();
+final String id = id_example; // String | The id of the root data point
+final String replyId = replyId_example; // String | The id  of the replying data point
 
 try {
-    final result = api_instance.deleteDataPointsIdReplyReplyIdApproval(id, replyId);
-    print(result);
-} catch (e) {
+    final response = api.deleteDataPointsIdReplyReplyIdApproval(id, replyId);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DataPointsApi->deleteDataPointsIdReplyReplyIdApproval: $e\n');
 }
 ```
@@ -148,23 +148,23 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DataPointsApi();
-final selectAll = true; // bool | If all data points matching the current filter settings should be marked as unread
-final businessIds = []; // List<String> | Filter by business ids
-final countries = countries_example; // String | Filter by countries. ISO 3166-1 alpha-2 codes
-final zip = zip_example; // String | Only change inbox items for locations where zip starts with given parameter
-final dataPointTypes = [[PHOTO, REVIEW, CHECKIN]]; // List<String> | Filter by type of datapoints.
-final directoryTypes = []; // List<String> | Filter by directories
-final ratings = []; // List<String> | Only change inbox items with a rating included in ratings
-final replied = true; // bool | Only show elements you have/you have not replied to
-final ids = []; // List<String> | The uberall unique ids for the inbox items you want to mark as unread
-final excludeIds = []; // List<String> | If selectAll is set to true this parameter can contain a list of data point ids that should not be marked as unread
-final query = query_example; // String | Filter by name
+final api = Openapi().getDataPointsApi();
+final bool selectAll = true; // bool | If all data points matching the current filter settings should be marked as unread
+final BuiltList<String> businessIds = ; // BuiltList<String> | Filter by business ids
+final String countries = countries_example; // String | Filter by countries. ISO 3166-1 alpha-2 codes
+final String zip = zip_example; // String | Only change inbox items for locations where zip starts with given parameter
+final BuiltList<String> dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // BuiltList<String> | Filter by type of datapoints.
+final BuiltList<String> directoryTypes = ; // BuiltList<String> | Filter by directories
+final BuiltList<String> ratings = ; // BuiltList<String> | Only change inbox items with a rating included in ratings
+final bool replied = true; // bool | Only show elements you have/you have not replied to
+final BuiltList<String> ids = ; // BuiltList<String> | The uberall unique ids for the inbox items you want to mark as unread
+final BuiltList<String> excludeIds = ; // BuiltList<String> | If selectAll is set to true this parameter can contain a list of data point ids that should not be marked as unread
+final String query = query_example; // String | Filter by name
 
 try {
-    final result = api_instance.deleteDataPointsRead(selectAll, businessIds, countries, zip, dataPointTypes, directoryTypes, ratings, replied, ids, excludeIds, query);
-    print(result);
-} catch (e) {
+    final response = api.deleteDataPointsRead(selectAll, businessIds, countries, zip, dataPointTypes, directoryTypes, ratings, replied, ids, excludeIds, query);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DataPointsApi->deleteDataPointsRead: $e\n');
 }
 ```
@@ -174,15 +174,15 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **selectAll** | **bool**| If all data points matching the current filter settings should be marked as unread | 
- **businessIds** | [**List<String>**](String.md)| Filter by business ids | [optional] [default to const []]
+ **businessIds** | [**BuiltList&lt;String&gt;**](String.md)| Filter by business ids | [optional] 
  **countries** | **String**| Filter by countries. ISO 3166-1 alpha-2 codes | [optional] 
  **zip** | **String**| Only change inbox items for locations where zip starts with given parameter | [optional] 
- **dataPointTypes** | [**List<String>**](String.md)| Filter by type of datapoints. | [optional] [default to const []]
- **directoryTypes** | [**List<String>**](String.md)| Filter by directories | [optional] [default to const []]
- **ratings** | [**List<String>**](String.md)| Only change inbox items with a rating included in ratings | [optional] [default to const []]
+ **dataPointTypes** | [**BuiltList&lt;String&gt;**](String.md)| Filter by type of datapoints. | [optional] 
+ **directoryTypes** | [**BuiltList&lt;String&gt;**](String.md)| Filter by directories | [optional] 
+ **ratings** | [**BuiltList&lt;String&gt;**](String.md)| Only change inbox items with a rating included in ratings | [optional] 
  **replied** | **bool**| Only show elements you have/you have not replied to | [optional] 
- **ids** | [**List<String>**](String.md)| The uberall unique ids for the inbox items you want to mark as unread | [optional] [default to const []]
- **excludeIds** | [**List<String>**](String.md)| If selectAll is set to true this parameter can contain a list of data point ids that should not be marked as unread | [optional] [default to const []]
+ **ids** | [**BuiltList&lt;String&gt;**](String.md)| The uberall unique ids for the inbox items you want to mark as unread | [optional] 
+ **excludeIds** | [**BuiltList&lt;String&gt;**](String.md)| If selectAll is set to true this parameter can contain a list of data point ids that should not be marked as unread | [optional] 
  **query** | **String**| Filter by name | [optional] 
 
 ### Return type
@@ -219,31 +219,31 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DataPointsApi();
-final max = 789; // int | Used for pagination. Maximum number of results per page
-final page = 789; // int | The page number for pagination
-final labels = labels_example; // String | Filter by location labels
-final countries = countries_example; // String | The countries you want data points for. ISO 3166-1 alpha-2 codes
-final businessIds = []; // List<String> | Ids of businesses you want data points for
-final locationIds = []; // List<String> | The ids of the locations you want data points for
-final zip = zip_example; // String | Only return inbox items for locations where zip starts with given parameter
-final dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // String | Types of datapoints you want inbox items for.
-final directoryTypes = []; // List<String> | Directories you want inbox items for
-final ratings = []; // List<String> | Only return inbox items with a rating included in ratings
-final read = true; // bool | Only show read/not read elements
-final replied = true; // bool | Only show elements you have/you have not replied to
-final text = true; // bool | Only return data points with text or without
-final query = query_example; // String | Filter by name
-final minActionDate = 1514764800000; // String | The min date of the DataPoint as unix timestamp in milliseconds
-final maxActionDate = 1514764800000; // String | The max date of the DataPoint as unix timestamp in milliseconds
-final minThreadActionDate = 1514764800000; // String | The min date of the last interaction with a DataPoint as unix timestamp in milliseconds
-final maxThreadActionDate = 1514764800000; // String | The max date of the last interaction with a DataPoint as unix timestamp in milliseconds
-final fieldMask = fieldMask_example; // String | The fields you want to include in the response
+final api = Openapi().getDataPointsApi();
+final int max = 789; // int | Used for pagination. Maximum number of results per page
+final int page = 789; // int | The page number for pagination
+final String labels = labels_example; // String | Filter by location labels
+final String countries = countries_example; // String | The countries you want data points for. ISO 3166-1 alpha-2 codes
+final BuiltList<String> businessIds = ; // BuiltList<String> | Ids of businesses you want data points for
+final BuiltList<String> locationIds = ; // BuiltList<String> | The ids of the locations you want data points for
+final String zip = zip_example; // String | Only return inbox items for locations where zip starts with given parameter
+final String dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // String | Types of datapoints you want inbox items for.
+final BuiltList<String> directoryTypes = ; // BuiltList<String> | Directories you want inbox items for
+final BuiltList<String> ratings = ; // BuiltList<String> | Only return inbox items with a rating included in ratings
+final bool read = true; // bool | Only show read/not read elements
+final bool replied = true; // bool | Only show elements you have/you have not replied to
+final bool text = true; // bool | Only return data points with text or without
+final String query = query_example; // String | Filter by name
+final String minActionDate = 1514764800000; // String | The min date of the DataPoint as unix timestamp in milliseconds
+final String maxActionDate = 1514764800000; // String | The max date of the DataPoint as unix timestamp in milliseconds
+final String minThreadActionDate = 1514764800000; // String | The min date of the last interaction with a DataPoint as unix timestamp in milliseconds
+final String maxThreadActionDate = 1514764800000; // String | The max date of the last interaction with a DataPoint as unix timestamp in milliseconds
+final String fieldMask = fieldMask_example; // String | The fields you want to include in the response
 
 try {
-    final result = api_instance.getDataPoints(max, page, labels, countries, businessIds, locationIds, zip, dataPointTypes, directoryTypes, ratings, read, replied, text, query, minActionDate, maxActionDate, minThreadActionDate, maxThreadActionDate, fieldMask);
-    print(result);
-} catch (e) {
+    final response = api.getDataPoints(max, page, labels, countries, businessIds, locationIds, zip, dataPointTypes, directoryTypes, ratings, read, replied, text, query, minActionDate, maxActionDate, minThreadActionDate, maxThreadActionDate, fieldMask);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DataPointsApi->getDataPoints: $e\n');
 }
 ```
@@ -256,12 +256,12 @@ Name | Type | Description  | Notes
  **page** | **int**| The page number for pagination | [optional] 
  **labels** | **String**| Filter by location labels | [optional] 
  **countries** | **String**| The countries you want data points for. ISO 3166-1 alpha-2 codes | [optional] 
- **businessIds** | [**List<String>**](String.md)| Ids of businesses you want data points for | [optional] [default to const []]
- **locationIds** | [**List<String>**](String.md)| The ids of the locations you want data points for | [optional] [default to const []]
+ **businessIds** | [**BuiltList&lt;String&gt;**](String.md)| Ids of businesses you want data points for | [optional] 
+ **locationIds** | [**BuiltList&lt;String&gt;**](String.md)| The ids of the locations you want data points for | [optional] 
  **zip** | **String**| Only return inbox items for locations where zip starts with given parameter | [optional] 
  **dataPointTypes** | **String**| Types of datapoints you want inbox items for. | [optional] 
- **directoryTypes** | [**List<String>**](String.md)| Directories you want inbox items for | [optional] [default to const []]
- **ratings** | [**List<String>**](String.md)| Only return inbox items with a rating included in ratings | [optional] [default to const []]
+ **directoryTypes** | [**BuiltList&lt;String&gt;**](String.md)| Directories you want inbox items for | [optional] 
+ **ratings** | [**BuiltList&lt;String&gt;**](String.md)| Only return inbox items with a rating included in ratings | [optional] 
  **read** | **bool**| Only show read/not read elements | [optional] 
  **replied** | **bool**| Only show elements you have/you have not replied to | [optional] 
  **text** | **bool**| Only return data points with text or without | [optional] 
@@ -306,13 +306,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DataPointsApi();
-final id = id_example; // String | The uberall unique ID of the data point you want to retrieve
+final api = Openapi().getDataPointsApi();
+final String id = id_example; // String | The uberall unique ID of the data point you want to retrieve
 
 try {
-    final result = api_instance.getDataPointsId(id);
-    print(result);
-} catch (e) {
+    final response = api.getDataPointsId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DataPointsApi->getDataPointsId: $e\n');
 }
 ```
@@ -357,25 +357,25 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DataPointsApi();
-final businessIds = businessIds_example; // String | Ids of businesses you want inbox statistics for
-final countries = countries_example; // String | The countries you want data points' statistics for. ISO 3166-1 alpha-2 codes
-final locationIds = locationIds_example; // String | Only consider data points belonging to any of these locationIds
-final dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // String | Types of datapoints you want inbox statistics for.
-final directoryTypes = directoryTypes_example; // String | Directories you want inbox statistics for
-final ratings = []; // List<String> | Ratings of datapoints you want inbox statistics for.
-final minActionDate = minActionDate_example; // String | Only consider data points created after that date
-final maxActionDate = maxActionDate_example; // String | Only consider data points created before that date
-final minThreadActionDate = 1514764800000; // String | The min date of the last interaction with a DataPoint as unix timestamp in milliseconds
-final maxThreadActionDate = 1514764800000; // String | The max date of the last interaction with a DataPoint as unix timestamp in millisecond
-final query = query_example; // String | Filter by name
-final read = true; // bool | Only consider data points that the current user has already read
-final replied = true; // bool | Only consider data points that are either replied or not replieds
+final api = Openapi().getDataPointsApi();
+final String businessIds = businessIds_example; // String | Ids of businesses you want inbox statistics for
+final String countries = countries_example; // String | The countries you want data points' statistics for. ISO 3166-1 alpha-2 codes
+final String locationIds = locationIds_example; // String | Only consider data points belonging to any of these locationIds
+final String dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // String | Types of datapoints you want inbox statistics for.
+final String directoryTypes = directoryTypes_example; // String | Directories you want inbox statistics for
+final BuiltList<String> ratings = ; // BuiltList<String> | Ratings of datapoints you want inbox statistics for.
+final String minActionDate = minActionDate_example; // String | Only consider data points created after that date
+final String maxActionDate = maxActionDate_example; // String | Only consider data points created before that date
+final String minThreadActionDate = 1514764800000; // String | The min date of the last interaction with a DataPoint as unix timestamp in milliseconds
+final String maxThreadActionDate = 1514764800000; // String | The max date of the last interaction with a DataPoint as unix timestamp in millisecond
+final String query = query_example; // String | Filter by name
+final bool read = true; // bool | Only consider data points that the current user has already read
+final bool replied = true; // bool | Only consider data points that are either replied or not replieds
 
 try {
-    final result = api_instance.getDataPointsStatistics(businessIds, countries, locationIds, dataPointTypes, directoryTypes, ratings, minActionDate, maxActionDate, minThreadActionDate, maxThreadActionDate, query, read, replied);
-    print(result);
-} catch (e) {
+    final response = api.getDataPointsStatistics(businessIds, countries, locationIds, dataPointTypes, directoryTypes, ratings, minActionDate, maxActionDate, minThreadActionDate, maxThreadActionDate, query, read, replied);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DataPointsApi->getDataPointsStatistics: $e\n');
 }
 ```
@@ -389,7 +389,7 @@ Name | Type | Description  | Notes
  **locationIds** | **String**| Only consider data points belonging to any of these locationIds | [optional] 
  **dataPointTypes** | **String**| Types of datapoints you want inbox statistics for. | [optional] 
  **directoryTypes** | **String**| Directories you want inbox statistics for | [optional] 
- **ratings** | [**List<String>**](String.md)| Ratings of datapoints you want inbox statistics for. | [optional] [default to const []]
+ **ratings** | [**BuiltList&lt;String&gt;**](String.md)| Ratings of datapoints you want inbox statistics for. | [optional] 
  **minActionDate** | **String**| Only consider data points created after that date | [optional] 
  **maxActionDate** | **String**| Only consider data points created before that date | [optional] 
  **minThreadActionDate** | **String**| The min date of the last interaction with a DataPoint as unix timestamp in milliseconds | [optional] 
@@ -432,20 +432,20 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DataPointsApi();
-final dataPointTypes = [[PHOTO, REVIEW, CHECKIN]]; // List<String> | Types of datapoints you want inbox statistics for.
-final directoryTypes = []; // List<String> | Directories you want data points time series for
-final businessIds = []; // List<String> | Ids of businesses you want data points for
-final zip = zip_example; // String | Only return Data Points time series for locations where zip starts with given parameter
-final ratings = []; // List<String> | Only return Data Points with a rating included in ratings
-final read = true; // bool | Only show read/not read elements
-final replied = true; // bool | Only show elements you have/you have not replied to
-final countries = countries_example; // String | The countries you want data points for. ISO 3166-1 alpha-2 codes
+final api = Openapi().getDataPointsApi();
+final BuiltList<String> dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // BuiltList<String> | Types of datapoints you want inbox statistics for.
+final BuiltList<String> directoryTypes = ; // BuiltList<String> | Directories you want data points time series for
+final BuiltList<String> businessIds = ; // BuiltList<String> | Ids of businesses you want data points for
+final String zip = zip_example; // String | Only return Data Points time series for locations where zip starts with given parameter
+final BuiltList<String> ratings = ; // BuiltList<String> | Only return Data Points with a rating included in ratings
+final bool read = true; // bool | Only show read/not read elements
+final bool replied = true; // bool | Only show elements you have/you have not replied to
+final String countries = countries_example; // String | The countries you want data points for. ISO 3166-1 alpha-2 codes
 
 try {
-    final result = api_instance.getDataPointsTimeseries(dataPointTypes, directoryTypes, businessIds, zip, ratings, read, replied, countries);
-    print(result);
-} catch (e) {
+    final response = api.getDataPointsTimeseries(dataPointTypes, directoryTypes, businessIds, zip, ratings, read, replied, countries);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DataPointsApi->getDataPointsTimeseries: $e\n');
 }
 ```
@@ -454,11 +454,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dataPointTypes** | [**List<String>**](String.md)| Types of datapoints you want inbox statistics for. | [optional] [default to const []]
- **directoryTypes** | [**List<String>**](String.md)| Directories you want data points time series for | [optional] [default to const []]
- **businessIds** | [**List<String>**](String.md)| Ids of businesses you want data points for | [optional] [default to const []]
+ **dataPointTypes** | [**BuiltList&lt;String&gt;**](String.md)| Types of datapoints you want inbox statistics for. | [optional] 
+ **directoryTypes** | [**BuiltList&lt;String&gt;**](String.md)| Directories you want data points time series for | [optional] 
+ **businessIds** | [**BuiltList&lt;String&gt;**](String.md)| Ids of businesses you want data points for | [optional] 
  **zip** | **String**| Only return Data Points time series for locations where zip starts with given parameter | [optional] 
- **ratings** | [**List<String>**](String.md)| Only return Data Points with a rating included in ratings | [optional] [default to const []]
+ **ratings** | [**BuiltList&lt;String&gt;**](String.md)| Only return Data Points with a rating included in ratings | [optional] 
  **read** | **bool**| Only show read/not read elements | [optional] 
  **replied** | **bool**| Only show elements you have/you have not replied to | [optional] 
  **countries** | **String**| The countries you want data points for. ISO 3166-1 alpha-2 codes | [optional] 
@@ -497,14 +497,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DataPointsApi();
-final id = id_example; // String | The uberall unique ID of the data point you want to reply to
-final reply = reply_example; // String | The text you want to reply, on most directories this will be published and can be read by the author of the original data point
+final api = Openapi().getDataPointsApi();
+final String id = id_example; // String | The uberall unique ID of the data point you want to reply to
+final String reply = reply_example; // String | The text you want to reply, on most directories this will be published and can be read by the author of the original data point
 
 try {
-    final result = api_instance.patchDataPointsIdReply(id, reply);
-    print(result);
-} catch (e) {
+    final response = api.patchDataPointsIdReply(id, reply);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DataPointsApi->patchDataPointsIdReply: $e\n');
 }
 ```
@@ -550,14 +550,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DataPointsApi();
-final id = id_example; // String | The data point id you want to report
-final flagType = [OFFENSIVE, SPAM, NOLONGERRELEVANT, EXTERNAL_URL]; // String | Must be one supported flagType for that directory
+final api = Openapi().getDataPointsApi();
+final String id = id_example; // String | The data point id you want to report
+final String flagType = [OFFENSIVE, SPAM, NOLONGERRELEVANT, EXTERNAL_URL]; // String | Must be one supported flagType for that directory
 
 try {
-    final result = api_instance.postDataPointsIdFlag(id, flagType);
-    print(result);
-} catch (e) {
+    final response = api.postDataPointsIdFlag(id, flagType);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DataPointsApi->postDataPointsIdFlag: $e\n');
 }
 ```
@@ -603,13 +603,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DataPointsApi();
-final id = id_example; // String | The data point id you want to like
+final api = Openapi().getDataPointsApi();
+final String id = id_example; // String | The data point id you want to like
 
 try {
-    final result = api_instance.postDataPointsIdLike(id);
-    print(result);
-} catch (e) {
+    final response = api.postDataPointsIdLike(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DataPointsApi->postDataPointsIdLike: $e\n');
 }
 ```
@@ -654,14 +654,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DataPointsApi();
-final id = id_example; // String | The uberall unique ID of the data point you want to moderate
-final operation = operation_example; // String | One of APPROVE or REJECT
+final api = Openapi().getDataPointsApi();
+final String id = id_example; // String | The uberall unique ID of the data point you want to moderate
+final String operation = operation_example; // String | One of APPROVE or REJECT
 
 try {
-    final result = api_instance.postDataPointsIdModerate(id, operation);
-    print(result);
-} catch (e) {
+    final response = api.postDataPointsIdModerate(id, operation);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DataPointsApi->postDataPointsIdModerate: $e\n');
 }
 ```
@@ -707,14 +707,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DataPointsApi();
-final id = id_example; // String | The id of the root data point
-final replyId = replyId_example; // String | The id  of the replying data point
+final api = Openapi().getDataPointsApi();
+final String id = id_example; // String | The id of the root data point
+final String replyId = replyId_example; // String | The id  of the replying data point
 
 try {
-    final result = api_instance.postDataPointsIdReplyReplyIdApproval(id, replyId);
-    print(result);
-} catch (e) {
+    final response = api.postDataPointsIdReplyReplyIdApproval(id, replyId);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DataPointsApi->postDataPointsIdReplyReplyIdApproval: $e\n');
 }
 ```
@@ -760,23 +760,23 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DataPointsApi();
-final selectAll = true; // bool | If all data points matching the current filter settings should be marked as read
-final businessIds = []; // List<String> | Filter by business ids
-final countries = countries_example; // String | Filter by countries. ISO 3166-1 alpha-2 codes
-final zip = zip_example; // String | Only change inbox items for locations where zip starts with given parameter
-final dataPointTypes = [[PHOTO, REVIEW, CHECKIN]]; // List<String> | Filter by type of datapoints.
-final directoryTypes = []; // List<String> | Filter by directories
-final ratings = []; // List<String> | Only change inbox items with a rating included in ratings
-final replied = true; // bool | Only show elements you have/you have not replied to
-final ids = []; // List<String> | The uberall unique ids for the inbox items you want to mark as read
-final excludeIds = []; // List<String> | If selectAll is set to true this parameter can contain a list of data point ids that should not be marked as read
-final query = query_example; // String | Filter by name
+final api = Openapi().getDataPointsApi();
+final bool selectAll = true; // bool | If all data points matching the current filter settings should be marked as read
+final BuiltList<String> businessIds = ; // BuiltList<String> | Filter by business ids
+final String countries = countries_example; // String | Filter by countries. ISO 3166-1 alpha-2 codes
+final String zip = zip_example; // String | Only change inbox items for locations where zip starts with given parameter
+final BuiltList<String> dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // BuiltList<String> | Filter by type of datapoints.
+final BuiltList<String> directoryTypes = ; // BuiltList<String> | Filter by directories
+final BuiltList<String> ratings = ; // BuiltList<String> | Only change inbox items with a rating included in ratings
+final bool replied = true; // bool | Only show elements you have/you have not replied to
+final BuiltList<String> ids = ; // BuiltList<String> | The uberall unique ids for the inbox items you want to mark as read
+final BuiltList<String> excludeIds = ; // BuiltList<String> | If selectAll is set to true this parameter can contain a list of data point ids that should not be marked as read
+final String query = query_example; // String | Filter by name
 
 try {
-    final result = api_instance.postDataPointsRead(selectAll, businessIds, countries, zip, dataPointTypes, directoryTypes, ratings, replied, ids, excludeIds, query);
-    print(result);
-} catch (e) {
+    final response = api.postDataPointsRead(selectAll, businessIds, countries, zip, dataPointTypes, directoryTypes, ratings, replied, ids, excludeIds, query);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DataPointsApi->postDataPointsRead: $e\n');
 }
 ```
@@ -786,15 +786,15 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **selectAll** | **bool**| If all data points matching the current filter settings should be marked as read | 
- **businessIds** | [**List<String>**](String.md)| Filter by business ids | [optional] [default to const []]
+ **businessIds** | [**BuiltList&lt;String&gt;**](String.md)| Filter by business ids | [optional] 
  **countries** | **String**| Filter by countries. ISO 3166-1 alpha-2 codes | [optional] 
  **zip** | **String**| Only change inbox items for locations where zip starts with given parameter | [optional] 
- **dataPointTypes** | [**List<String>**](String.md)| Filter by type of datapoints. | [optional] [default to const []]
- **directoryTypes** | [**List<String>**](String.md)| Filter by directories | [optional] [default to const []]
- **ratings** | [**List<String>**](String.md)| Only change inbox items with a rating included in ratings | [optional] [default to const []]
+ **dataPointTypes** | [**BuiltList&lt;String&gt;**](String.md)| Filter by type of datapoints. | [optional] 
+ **directoryTypes** | [**BuiltList&lt;String&gt;**](String.md)| Filter by directories | [optional] 
+ **ratings** | [**BuiltList&lt;String&gt;**](String.md)| Only change inbox items with a rating included in ratings | [optional] 
  **replied** | **bool**| Only show elements you have/you have not replied to | [optional] 
- **ids** | [**List<String>**](String.md)| The uberall unique ids for the inbox items you want to mark as read | [optional] [default to const []]
- **excludeIds** | [**List<String>**](String.md)| If selectAll is set to true this parameter can contain a list of data point ids that should not be marked as read | [optional] [default to const []]
+ **ids** | [**BuiltList&lt;String&gt;**](String.md)| The uberall unique ids for the inbox items you want to mark as read | [optional] 
+ **excludeIds** | [**BuiltList&lt;String&gt;**](String.md)| If selectAll is set to true this parameter can contain a list of data point ids that should not be marked as read | [optional] 
  **query** | **String**| Filter by name | [optional] 
 
 ### Return type
@@ -831,15 +831,15 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DataPointsApi();
-final id = id_example; // String | The id of the root data point
-final replyId = replyId_example; // String | The id  of the replying data point
-final replyText = replyText_example; // String | The edited text of the reply
+final api = Openapi().getDataPointsApi();
+final String id = id_example; // String | The id of the root data point
+final String replyId = replyId_example; // String | The id  of the replying data point
+final String replyText = replyText_example; // String | The edited text of the reply
 
 try {
-    final result = api_instance.putDataPointsIdReplyReplyIdApproval(id, replyId, replyText);
-    print(result);
-} catch (e) {
+    final response = api.putDataPointsIdReplyReplyIdApproval(id, replyId, replyText);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DataPointsApi->putDataPointsIdReplyReplyIdApproval: $e\n');
 }
 ```

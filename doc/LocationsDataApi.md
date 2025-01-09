@@ -16,16 +16,16 @@ Method | HTTP request | Description
 [**getLocationsCountries**](LocationsDataApi.md#getlocationscountries) | **GET** /locations/countries | Get the country for locations
 [**getLocationsDirectories**](LocationsDataApi.md#getlocationsdirectories) | **GET** /locations/directories | Get the directories for locations
 [**getLocationsId**](LocationsDataApi.md#getlocationsid) | **GET** /locations/{id} | Get a Location
-[**getLocationsIdDashboard**](LocationsDataApi.md#getlocationsiddashboard) | **GET** /locations/{id}/dashboard | Get a Location''s Dashboard
-[**getLocationsIdDatapoints**](LocationsDataApi.md#getlocationsiddatapoints) | **GET** /locations/{id}/datapoints | DEPRECATED - Get Location''s Data Points
-[**getLocationsIdDatapointsStatistics**](LocationsDataApi.md#getlocationsiddatapointsstatistics) | **GET** /locations/{id}/datapoints/statistics | DEPRECATED - Get Location''s Data Point Statistics
-[**getLocationsIdVisibilityIndexes**](LocationsDataApi.md#getlocationsidvisibilityindexes) | **GET** /locations/{id}/visibility-indexes | Get Location''s Visibility Index
+[**getLocationsIdDashboard**](LocationsDataApi.md#getlocationsiddashboard) | **GET** /locations/{id}/dashboard | Get a Location&#39;&#39;s Dashboard
+[**getLocationsIdDatapoints**](LocationsDataApi.md#getlocationsiddatapoints) | **GET** /locations/{id}/datapoints | DEPRECATED - Get Location&#39;&#39;s Data Points
+[**getLocationsIdDatapointsStatistics**](LocationsDataApi.md#getlocationsiddatapointsstatistics) | **GET** /locations/{id}/datapoints/statistics | DEPRECATED - Get Location&#39;&#39;s Data Point Statistics
+[**getLocationsIdVisibilityIndexes**](LocationsDataApi.md#getlocationsidvisibilityindexes) | **GET** /locations/{id}/visibility-indexes | Get Location&#39;&#39;s Visibility Index
 [**getLocationsIdVisibilityIndexesInteresting**](LocationsDataApi.md#getlocationsidvisibilityindexesinteresting) | **GET** /locations/{id}/visibility-indexes/interesting | Get Historical Visibility Index
 [**getLocationsKeywords**](LocationsDataApi.md#getlocationskeywords) | **GET** /locations/keywords | Get the keywords for locations
 [**getLocationsLabels**](LocationsDataApi.md#getlocationslabels) | **GET** /locations/labels | Get the labels for locations
 [**getLocationsPostcodes**](LocationsDataApi.md#getlocationspostcodes) | **GET** /locations/postcodes | Get the post / zip code for locations
 [**getLocationsProvinces**](LocationsDataApi.md#getlocationsprovinces) | **GET** /locations/provinces | Get the province/state for locations
-[**getLocationsStatistics**](LocationsDataApi.md#getlocationsstatistics) | **GET** /locations/statistics | Get Locations'' Statistics
+[**getLocationsStatistics**](LocationsDataApi.md#getlocationsstatistics) | **GET** /locations/statistics | Get Locations&#39;&#39; Statistics
 [**getLocationsTrackingEvents**](LocationsDataApi.md#getlocationstrackingevents) | **GET** /locations/tracking-events | Get Tracking Events
 [**patchLocations**](LocationsDataApi.md#patchlocations) | **PATCH** /locations | Update Several Locations
 [**patchLocationsId**](LocationsDataApi.md#patchlocationsid) | **PATCH** /locations/{id} | Update a Location
@@ -54,13 +54,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsDataApi();
-final locations = []; // List<String> | The uberall unique ids for the locations you want to delete
+final api = Openapi().getLocationsDataApi();
+final BuiltList<String> locations = ; // BuiltList<String> | The uberall unique ids for the locations you want to delete
 
 try {
-    final result = api_instance.deleteLocations(locations);
-    print(result);
-} catch (e) {
+    final response = api.deleteLocations(locations);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsDataApi->deleteLocations: $e\n');
 }
 ```
@@ -69,7 +69,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **locations** | [**List<String>**](String.md)| The uberall unique ids for the locations you want to delete | [default to const []]
+ **locations** | [**BuiltList&lt;String&gt;**](String.md)| The uberall unique ids for the locations you want to delete | 
 
 ### Return type
 
@@ -105,44 +105,44 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsDataApi();
-final businessId = /api/locations?businessId=123&businessId=456; // String | Only return locations in the business identified by businessId. Allowed multiple businessIds
-final businessIds = []; // List<String> | Returns all locations associated with multiple business ids
-final cities = []; // List<String> | Get locations in the requested cities
-final classification = classification_example; // String | Possible values: REQUIRED, BASIC, ADVANCED, BONUS and COMPLETE
-final countries = []; // List<String> | Get locations in the requested country
-final endDateMax = 2020-02-05T12:18:12.000+01:00; // DateTime | Only locations with an endDate less than or equal to endDateMax will be returned
-final endDateMin = 2018-02-05T12:18:12.000+01:00; // DateTime | Only locations with an endDate greater than or equal to endDateMin will be returned.
-final excludedLocationIds = [excludedLocationIds=20&excludedLocationIds=21 for multiple locations]; // List<String> | List of locationIds that should be excluded from the result
-final facebookStatus = facebookStatus_example; // String | Possible values: CONNECTED, NOT_CONNECTED
-final fieldMask = fieldMask=city&fieldMask=zip; // String | Possible fieldMask options ( 'id', 'name', 'identifier', 'street', 'streetNo', 'streetAndNumber', 'addressExtra', 'zip', 'city', 'province',                                 'lat', 'lng', 'addressDisplay', 'phone', 'fax', 'cellPhone', 'website', 'email', 'legalIdent', 'taxNumber', 'descriptionShort', 'descriptionLong', 'imprint',                                 'openingHoursNotes', 'status','firstSyncStarted', 'lastSyncStarted', 'autoSync', 'locationSyncable', 'businessId', 'googleInsights', 'labels')
-final googleStatus = googleStatus_example; // String | Possible values: VERIFIED (the Google listing is verified and fully managed by us),                             VERIFICATION_STARTED (a verification pin has been requested for the Google listing),                             VERIFICATION_NOT_STARTED (the verification process has not been start for the Google listing),                             NOT_CONNECTED (there is no Google account connected for the listing),                             VERIFIED_BY_THIRD_PARTY (there is a verified listing on Google but we do not manage it)
-final groupIds = []; // List<String> | The groupId to which the location belongs
-final groups = []; // List<String> | The name of the group to which the location belongs
-final identifier = identifier_example; // String | Only return one location (per business) based on your internal identification system
-final labels = []; // List<String> | Only return locations that contain at least one of the given labels
-final locationIds = [?locationIds=20&locationIds=22 for multiple locations]; // List<String> | Only return locations identified by ids listed in locationIds
-final max = 789; // int | Used for pagination. Maximum number of results per page. Default: 50 (Without a defined FieldMask the maximum number of results is 50.)
-final missingDirectoryField = []; // List<String> | Only return locations that have no value for the given field
-final needsReview = true; // bool | If set to true, only return locations with faulty data in need of review. Default: false.
-final offset = 789; // int | Offset used for pagination. Default: 0
-final order = order_example; // String | use asc for ascending sort or desc for descending sort
-final postcodes = []; // List<String> | Get locations in the requested post / zip codes
-final provinces = []; // List<String> | Get locations in the requested province / state
-final query = Berlin; // String | Filter by name, zip, street, city, label
-final queryFields = []; // List<String> | The fields that will be searched to contain the value provided in the 'query' query parameter.
-final selectAll = true; // bool | Setting selectAll to true allows finding ALL locations for any given businessId, locationIds and labels. In other words these fields are OR joined.
-final sort = sort_example; // String | The location property to sort by (ascending unless order is specified).                             One of name, street, streetNo, zip, city, phone, cellphone, fax, website, email, lastSyncStarted, country
-final status = status_example; // String | Filter by locations status. One of ACTIVE, INACTIVE, CANCELLED
-final syncNeeded = true; // bool | If set to true, filter locations that have been updated but did not start a sync yet
-final syncStarted = true; // bool | If set to true, filter locations that started a sync. If set to false, filter locations that never synced
-final temporarilyClosed = true; // bool | Filter for locations that are currently set to temporarily closed (True) or are not temporarily closed (False)
-final body = Object(); // Object | 
+final api = Openapi().getLocationsDataApi();
+final String businessId = /api/locations?businessId=123&businessId=456; // String | Only return locations in the business identified by businessId. Allowed multiple businessIds
+final BuiltList<String> businessIds = ; // BuiltList<String> | Returns all locations associated with multiple business ids
+final BuiltList<String> cities = ; // BuiltList<String> | Get locations in the requested cities
+final String classification = classification_example; // String | Possible values: REQUIRED, BASIC, ADVANCED, BONUS and COMPLETE
+final BuiltList<String> countries = ; // BuiltList<String> | Get locations in the requested country
+final DateTime endDateMax = 2020-02-05T12:18:12.000+01:00; // DateTime | Only locations with an endDate less than or equal to endDateMax will be returned
+final DateTime endDateMin = 2018-02-05T12:18:12.000+01:00; // DateTime | Only locations with an endDate greater than or equal to endDateMin will be returned.
+final BuiltList<String> excludedLocationIds = excludedLocationIds=20&excludedLocationIds=21 for multiple locations; // BuiltList<String> | List of locationIds that should be excluded from the result
+final String facebookStatus = facebookStatus_example; // String | Possible values: CONNECTED, NOT_CONNECTED
+final String fieldMask = fieldMask=city&fieldMask=zip; // String | Possible fieldMask options ( 'id', 'name', 'identifier', 'street', 'streetNo', 'streetAndNumber', 'addressExtra', 'zip', 'city', 'province',                                 'lat', 'lng', 'addressDisplay', 'phone', 'fax', 'cellPhone', 'website', 'email', 'legalIdent', 'taxNumber', 'descriptionShort', 'descriptionLong', 'imprint',                                 'openingHoursNotes', 'status','firstSyncStarted', 'lastSyncStarted', 'autoSync', 'locationSyncable', 'businessId', 'googleInsights', 'labels')
+final String googleStatus = googleStatus_example; // String | Possible values: VERIFIED (the Google listing is verified and fully managed by us),                             VERIFICATION_STARTED (a verification pin has been requested for the Google listing),                             VERIFICATION_NOT_STARTED (the verification process has not been start for the Google listing),                             NOT_CONNECTED (there is no Google account connected for the listing),                             VERIFIED_BY_THIRD_PARTY (there is a verified listing on Google but we do not manage it)
+final BuiltList<String> groupIds = ; // BuiltList<String> | The groupId to which the location belongs
+final BuiltList<String> groups = ; // BuiltList<String> | The name of the group to which the location belongs
+final String identifier = identifier_example; // String | Only return one location (per business) based on your internal identification system
+final BuiltList<String> labels = ; // BuiltList<String> | Only return locations that contain at least one of the given labels
+final BuiltList<String> locationIds = ?locationIds=20&locationIds=22 for multiple locations; // BuiltList<String> | Only return locations identified by ids listed in locationIds
+final int max = 789; // int | Used for pagination. Maximum number of results per page. Default: 50 (Without a defined FieldMask the maximum number of results is 50.)
+final BuiltList<String> missingDirectoryField = ; // BuiltList<String> | Only return locations that have no value for the given field
+final bool needsReview = true; // bool | If set to true, only return locations with faulty data in need of review. Default: false.
+final int offset = 789; // int | Offset used for pagination. Default: 0
+final String order = order_example; // String | use asc for ascending sort or desc for descending sort
+final BuiltList<String> postcodes = ; // BuiltList<String> | Get locations in the requested post / zip codes
+final BuiltList<String> provinces = ; // BuiltList<String> | Get locations in the requested province / state
+final String query = Berlin; // String | Filter by name, zip, street, city, label
+final BuiltList<String> queryFields = ; // BuiltList<String> | The fields that will be searched to contain the value provided in the 'query' query parameter.
+final bool selectAll = true; // bool | Setting selectAll to true allows finding ALL locations for any given businessId, locationIds and labels. In other words these fields are OR joined.
+final String sort = sort_example; // String | The location property to sort by (ascending unless order is specified).                             One of name, street, streetNo, zip, city, phone, cellphone, fax, website, email, lastSyncStarted, country
+final String status = status_example; // String | Filter by locations status. One of ACTIVE, INACTIVE, CANCELLED
+final bool syncNeeded = true; // bool | If set to true, filter locations that have been updated but did not start a sync yet
+final bool syncStarted = true; // bool | If set to true, filter locations that started a sync. If set to false, filter locations that never synced
+final bool temporarilyClosed = true; // bool | Filter for locations that are currently set to temporarily closed (True) or are not temporarily closed (False)
+final JsonObject body = Object; // JsonObject | 
 
 try {
-    final result = api_instance.getLocations(businessId, businessIds, cities, classification, countries, endDateMax, endDateMin, excludedLocationIds, facebookStatus, fieldMask, googleStatus, groupIds, groups, identifier, labels, locationIds, max, missingDirectoryField, needsReview, offset, order, postcodes, provinces, query, queryFields, selectAll, sort, status, syncNeeded, syncStarted, temporarilyClosed, body);
-    print(result);
-} catch (e) {
+    final response = api.getLocations(businessId, businessIds, cities, classification, countries, endDateMax, endDateMin, excludedLocationIds, facebookStatus, fieldMask, googleStatus, groupIds, groups, identifier, labels, locationIds, max, missingDirectoryField, needsReview, offset, order, postcodes, provinces, query, queryFields, selectAll, sort, status, syncNeeded, syncStarted, temporarilyClosed, body);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsDataApi->getLocations: $e\n');
 }
 ```
@@ -152,37 +152,37 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **businessId** | **String**| Only return locations in the business identified by businessId. Allowed multiple businessIds | [optional] 
- **businessIds** | [**List<String>**](String.md)| Returns all locations associated with multiple business ids | [optional] [default to const []]
- **cities** | [**List<String>**](String.md)| Get locations in the requested cities | [optional] [default to const []]
+ **businessIds** | [**BuiltList&lt;String&gt;**](String.md)| Returns all locations associated with multiple business ids | [optional] 
+ **cities** | [**BuiltList&lt;String&gt;**](String.md)| Get locations in the requested cities | [optional] 
  **classification** | **String**| Possible values: REQUIRED, BASIC, ADVANCED, BONUS and COMPLETE | [optional] 
- **countries** | [**List<String>**](String.md)| Get locations in the requested country | [optional] [default to const []]
+ **countries** | [**BuiltList&lt;String&gt;**](String.md)| Get locations in the requested country | [optional] 
  **endDateMax** | **DateTime**| Only locations with an endDate less than or equal to endDateMax will be returned | [optional] 
  **endDateMin** | **DateTime**| Only locations with an endDate greater than or equal to endDateMin will be returned. | [optional] 
- **excludedLocationIds** | [**List<String>**](String.md)| List of locationIds that should be excluded from the result | [optional] [default to const []]
+ **excludedLocationIds** | [**BuiltList&lt;String&gt;**](String.md)| List of locationIds that should be excluded from the result | [optional] 
  **facebookStatus** | **String**| Possible values: CONNECTED, NOT_CONNECTED | [optional] 
  **fieldMask** | **String**| Possible fieldMask options ( 'id', 'name', 'identifier', 'street', 'streetNo', 'streetAndNumber', 'addressExtra', 'zip', 'city', 'province',                                 'lat', 'lng', 'addressDisplay', 'phone', 'fax', 'cellPhone', 'website', 'email', 'legalIdent', 'taxNumber', 'descriptionShort', 'descriptionLong', 'imprint',                                 'openingHoursNotes', 'status','firstSyncStarted', 'lastSyncStarted', 'autoSync', 'locationSyncable', 'businessId', 'googleInsights', 'labels') | [optional] 
  **googleStatus** | **String**| Possible values: VERIFIED (the Google listing is verified and fully managed by us),                             VERIFICATION_STARTED (a verification pin has been requested for the Google listing),                             VERIFICATION_NOT_STARTED (the verification process has not been start for the Google listing),                             NOT_CONNECTED (there is no Google account connected for the listing),                             VERIFIED_BY_THIRD_PARTY (there is a verified listing on Google but we do not manage it) | [optional] 
- **groupIds** | [**List<String>**](String.md)| The groupId to which the location belongs | [optional] [default to const []]
- **groups** | [**List<String>**](String.md)| The name of the group to which the location belongs | [optional] [default to const []]
+ **groupIds** | [**BuiltList&lt;String&gt;**](String.md)| The groupId to which the location belongs | [optional] 
+ **groups** | [**BuiltList&lt;String&gt;**](String.md)| The name of the group to which the location belongs | [optional] 
  **identifier** | **String**| Only return one location (per business) based on your internal identification system | [optional] 
- **labels** | [**List<String>**](String.md)| Only return locations that contain at least one of the given labels | [optional] [default to const []]
- **locationIds** | [**List<String>**](String.md)| Only return locations identified by ids listed in locationIds | [optional] [default to const []]
+ **labels** | [**BuiltList&lt;String&gt;**](String.md)| Only return locations that contain at least one of the given labels | [optional] 
+ **locationIds** | [**BuiltList&lt;String&gt;**](String.md)| Only return locations identified by ids listed in locationIds | [optional] 
  **max** | **int**| Used for pagination. Maximum number of results per page. Default: 50 (Without a defined FieldMask the maximum number of results is 50.) | [optional] 
- **missingDirectoryField** | [**List<String>**](String.md)| Only return locations that have no value for the given field | [optional] [default to const []]
+ **missingDirectoryField** | [**BuiltList&lt;String&gt;**](String.md)| Only return locations that have no value for the given field | [optional] 
  **needsReview** | **bool**| If set to true, only return locations with faulty data in need of review. Default: false. | [optional] 
  **offset** | **int**| Offset used for pagination. Default: 0 | [optional] 
  **order** | **String**| use asc for ascending sort or desc for descending sort | [optional] 
- **postcodes** | [**List<String>**](String.md)| Get locations in the requested post / zip codes | [optional] [default to const []]
- **provinces** | [**List<String>**](String.md)| Get locations in the requested province / state | [optional] [default to const []]
+ **postcodes** | [**BuiltList&lt;String&gt;**](String.md)| Get locations in the requested post / zip codes | [optional] 
+ **provinces** | [**BuiltList&lt;String&gt;**](String.md)| Get locations in the requested province / state | [optional] 
  **query** | **String**| Filter by name, zip, street, city, label | [optional] 
- **queryFields** | [**List<String>**](String.md)| The fields that will be searched to contain the value provided in the 'query' query parameter. | [optional] [default to const []]
+ **queryFields** | [**BuiltList&lt;String&gt;**](String.md)| The fields that will be searched to contain the value provided in the 'query' query parameter. | [optional] 
  **selectAll** | **bool**| Setting selectAll to true allows finding ALL locations for any given businessId, locationIds and labels. In other words these fields are OR joined. | [optional] 
  **sort** | **String**| The location property to sort by (ascending unless order is specified).                             One of name, street, streetNo, zip, city, phone, cellphone, fax, website, email, lastSyncStarted, country | [optional] 
  **status** | **String**| Filter by locations status. One of ACTIVE, INACTIVE, CANCELLED | [optional] 
  **syncNeeded** | **bool**| If set to true, filter locations that have been updated but did not start a sync yet | [optional] 
  **syncStarted** | **bool**| If set to true, filter locations that started a sync. If set to false, filter locations that never synced | [optional] 
  **temporarilyClosed** | **bool**| Filter for locations that are currently set to temporarily closed (True) or are not temporarily closed (False) | [optional] 
- **body** | **Object**|  | [optional] 
+ **body** | **JsonObject**|  | [optional] 
 
 ### Return type
 
@@ -218,12 +218,12 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsDataApi();
+final api = Openapi().getLocationsDataApi();
 
 try {
-    final result = api_instance.getLocationsAvailableLodgingFields();
-    print(result);
-} catch (e) {
+    final response = api.getLocationsAvailableLodgingFields();
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsDataApi->getLocationsAvailableLodgingFields: $e\n');
 }
 ```
@@ -265,20 +265,20 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsDataApi();
-final locationIds = []; // List<String> | Get the cities for locations by location Ids
-final businessIds = []; // List<String> | Get the cities for locations by business id
-final postcodes = []; // List<String> | Get the cities for locations by postcodes
-final countries = []; // List<String> | Get the cities for locations by country
-final provinces = []; // List<String> | Get the cities for locations by province / state
-final query = query_example; // String | Restricts the response to the cities that contain this text, for example \"ber\" would return \"Berlin\" when appropriate.
-final max = 789; // int | Maximum number of items to return
-final offset = 789; // int | Offset used for pagination. Default: 0
+final api = Openapi().getLocationsDataApi();
+final BuiltList<String> locationIds = ; // BuiltList<String> | Get the cities for locations by location Ids
+final BuiltList<String> businessIds = ; // BuiltList<String> | Get the cities for locations by business id
+final BuiltList<String> postcodes = ; // BuiltList<String> | Get the cities for locations by postcodes
+final BuiltList<String> countries = ; // BuiltList<String> | Get the cities for locations by country
+final BuiltList<String> provinces = ; // BuiltList<String> | Get the cities for locations by province / state
+final String query = query_example; // String | Restricts the response to the cities that contain this text, for example \"ber\" would return \"Berlin\" when appropriate.
+final int max = 789; // int | Maximum number of items to return
+final int offset = 789; // int | Offset used for pagination. Default: 0
 
 try {
-    final result = api_instance.getLocationsCities(locationIds, businessIds, postcodes, countries, provinces, query, max, offset);
-    print(result);
-} catch (e) {
+    final response = api.getLocationsCities(locationIds, businessIds, postcodes, countries, provinces, query, max, offset);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsDataApi->getLocationsCities: $e\n');
 }
 ```
@@ -287,11 +287,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **locationIds** | [**List<String>**](String.md)| Get the cities for locations by location Ids | [optional] [default to const []]
- **businessIds** | [**List<String>**](String.md)| Get the cities for locations by business id | [optional] [default to const []]
- **postcodes** | [**List<String>**](String.md)| Get the cities for locations by postcodes | [optional] [default to const []]
- **countries** | [**List<String>**](String.md)| Get the cities for locations by country | [optional] [default to const []]
- **provinces** | [**List<String>**](String.md)| Get the cities for locations by province / state | [optional] [default to const []]
+ **locationIds** | [**BuiltList&lt;String&gt;**](String.md)| Get the cities for locations by location Ids | [optional] 
+ **businessIds** | [**BuiltList&lt;String&gt;**](String.md)| Get the cities for locations by business id | [optional] 
+ **postcodes** | [**BuiltList&lt;String&gt;**](String.md)| Get the cities for locations by postcodes | [optional] 
+ **countries** | [**BuiltList&lt;String&gt;**](String.md)| Get the cities for locations by country | [optional] 
+ **provinces** | [**BuiltList&lt;String&gt;**](String.md)| Get the cities for locations by province / state | [optional] 
  **query** | **String**| Restricts the response to the cities that contain this text, for example \"ber\" would return \"Berlin\" when appropriate. | [optional] 
  **max** | **int**| Maximum number of items to return | [optional] 
  **offset** | **int**| Offset used for pagination. Default: 0 | [optional] 
@@ -330,15 +330,15 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsDataApi();
-final businessIds = businessIds_example; // String | The business ids for the locations that should be returned
-final max = 789; // int | Maximum number of items to return
-final offset = 789; // int | Offset used for pagination. Default: 0
+final api = Openapi().getLocationsDataApi();
+final String businessIds = businessIds_example; // String | The business ids for the locations that should be returned
+final int max = 789; // int | Maximum number of items to return
+final int offset = 789; // int | Offset used for pagination. Default: 0
 
 try {
-    final result = api_instance.getLocationsCountries(businessIds, max, offset);
-    print(result);
-} catch (e) {
+    final response = api.getLocationsCountries(businessIds, max, offset);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsDataApi->getLocationsCountries: $e\n');
 }
 ```
@@ -385,12 +385,12 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsDataApi();
+final api = Openapi().getLocationsDataApi();
 
 try {
-    final result = api_instance.getLocationsDirectories();
-    print(result);
-} catch (e) {
+    final response = api.getLocationsDirectories();
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsDataApi->getLocationsDirectories: $e\n');
 }
 ```
@@ -432,13 +432,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsDataApi();
-final id = id_example; // String | The uberall unique id of the location
+final api = Openapi().getLocationsDataApi();
+final String id = id_example; // String | The uberall unique id of the location
 
 try {
-    final result = api_instance.getLocationsId(id);
-    print(result);
-} catch (e) {
+    final response = api.getLocationsId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsDataApi->getLocationsId: $e\n');
 }
 ```
@@ -483,13 +483,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsDataApi();
-final id = id_example; // String | The uberall unique id of the location you want a dashboard for
+final api = Openapi().getLocationsDataApi();
+final String id = id_example; // String | The uberall unique id of the location you want a dashboard for
 
 try {
-    final result = api_instance.getLocationsIdDashboard(id);
-    print(result);
-} catch (e) {
+    final response = api.getLocationsIdDashboard(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsDataApi->getLocationsIdDashboard: $e\n');
 }
 ```
@@ -534,13 +534,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsDataApi();
-final id = id_example; // String | The uberall unique ID of the location you want to inbox items for
+final api = Openapi().getLocationsDataApi();
+final String id = id_example; // String | The uberall unique ID of the location you want to inbox items for
 
 try {
-    final result = api_instance.getLocationsIdDatapoints(id);
-    print(result);
-} catch (e) {
+    final response = api.getLocationsIdDatapoints(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsDataApi->getLocationsIdDatapoints: $e\n');
 }
 ```
@@ -585,20 +585,20 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsDataApi();
-final id = id_example; // String | The uberall unique ID of the location
-final dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // String | Types of datapoints you want inbox statistics for.
-final directoryTypes = directoryTypes_example; // String | Directories you want inbox statistics for
-final ratings = []; // List<String> | Ratings of datapoints you want inbox statistics for.
-final minActionDate = minActionDate_example; // String | Only consider data points created after that date
-final maxActionDate = maxActionDate_example; // String | Only consider data points created before that date
-final minThreadActionDate = 1514764800000; // String | The min date of the last interaction with a DataPoint as unix timestamp in milliseconds
-final maxThreadActionDate = 1514764800000; // String | The max date of the last interaction with a DataPoint as unix timestamp in millisecond
+final api = Openapi().getLocationsDataApi();
+final String id = id_example; // String | The uberall unique ID of the location
+final String dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // String | Types of datapoints you want inbox statistics for.
+final String directoryTypes = directoryTypes_example; // String | Directories you want inbox statistics for
+final BuiltList<String> ratings = ; // BuiltList<String> | Ratings of datapoints you want inbox statistics for.
+final String minActionDate = minActionDate_example; // String | Only consider data points created after that date
+final String maxActionDate = maxActionDate_example; // String | Only consider data points created before that date
+final String minThreadActionDate = 1514764800000; // String | The min date of the last interaction with a DataPoint as unix timestamp in milliseconds
+final String maxThreadActionDate = 1514764800000; // String | The max date of the last interaction with a DataPoint as unix timestamp in millisecond
 
 try {
-    final result = api_instance.getLocationsIdDatapointsStatistics(id, dataPointTypes, directoryTypes, ratings, minActionDate, maxActionDate, minThreadActionDate, maxThreadActionDate);
-    print(result);
-} catch (e) {
+    final response = api.getLocationsIdDatapointsStatistics(id, dataPointTypes, directoryTypes, ratings, minActionDate, maxActionDate, minThreadActionDate, maxThreadActionDate);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsDataApi->getLocationsIdDatapointsStatistics: $e\n');
 }
 ```
@@ -610,7 +610,7 @@ Name | Type | Description  | Notes
  **id** | **String**| The uberall unique ID of the location | 
  **dataPointTypes** | **String**| Types of datapoints you want inbox statistics for. | [optional] 
  **directoryTypes** | **String**| Directories you want inbox statistics for | [optional] 
- **ratings** | [**List<String>**](String.md)| Ratings of datapoints you want inbox statistics for. | [optional] [default to const []]
+ **ratings** | [**BuiltList&lt;String&gt;**](String.md)| Ratings of datapoints you want inbox statistics for. | [optional] 
  **minActionDate** | **String**| Only consider data points created after that date | [optional] 
  **maxActionDate** | **String**| Only consider data points created before that date | [optional] 
  **minThreadActionDate** | **String**| The min date of the last interaction with a DataPoint as unix timestamp in milliseconds | [optional] 
@@ -650,14 +650,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsDataApi();
-final id = id_example; // String | The uberall unique id for the location
-final days = days_example; // String | Use days to get the visibility index from as many days ago
+final api = Openapi().getLocationsDataApi();
+final String id = id_example; // String | The uberall unique id for the location
+final String days = days_example; // String | Use days to get the visibility index from as many days ago
 
 try {
-    final result = api_instance.getLocationsIdVisibilityIndexes(id, days);
-    print(result);
-} catch (e) {
+    final response = api.getLocationsIdVisibilityIndexes(id, days);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsDataApi->getLocationsIdVisibilityIndexes: $e\n');
 }
 ```
@@ -703,15 +703,15 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsDataApi();
-final id = id_example; // String | The uberall unique id of the location you want the Visibility Index for
-final startDate = 2013-10-20; // DateTime | startDate in YYYY-MM-dd
-final endDate = 2013-10-20; // DateTime | endDate in YYYY-MM-dd
+final api = Openapi().getLocationsDataApi();
+final String id = id_example; // String | The uberall unique id of the location you want the Visibility Index for
+final Date startDate = 2013-10-20; // Date | startDate in YYYY-MM-dd
+final Date endDate = 2013-10-20; // Date | endDate in YYYY-MM-dd
 
 try {
-    final result = api_instance.getLocationsIdVisibilityIndexesInteresting(id, startDate, endDate);
-    print(result);
-} catch (e) {
+    final response = api.getLocationsIdVisibilityIndexesInteresting(id, startDate, endDate);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsDataApi->getLocationsIdVisibilityIndexesInteresting: $e\n');
 }
 ```
@@ -721,8 +721,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The uberall unique id of the location you want the Visibility Index for | 
- **startDate** | **DateTime**| startDate in YYYY-MM-dd | [optional] 
- **endDate** | **DateTime**| endDate in YYYY-MM-dd | [optional] 
+ **startDate** | **Date**| startDate in YYYY-MM-dd | [optional] 
+ **endDate** | **Date**| endDate in YYYY-MM-dd | [optional] 
 
 ### Return type
 
@@ -758,15 +758,15 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsDataApi();
-final locationIds = []; // List<String> | The location ids that should have keywords returned
-final businessIds = []; // List<String> | The business ids for the locations that should be returned
-final excludedLocationIds = []; // List<String> | List of location ids which should be excluded from keywords search
+final api = Openapi().getLocationsDataApi();
+final BuiltList<String> locationIds = ; // BuiltList<String> | The location ids that should have keywords returned
+final BuiltList<String> businessIds = ; // BuiltList<String> | The business ids for the locations that should be returned
+final BuiltList<String> excludedLocationIds = ; // BuiltList<String> | List of location ids which should be excluded from keywords search
 
 try {
-    final result = api_instance.getLocationsKeywords(locationIds, businessIds, excludedLocationIds);
-    print(result);
-} catch (e) {
+    final response = api.getLocationsKeywords(locationIds, businessIds, excludedLocationIds);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsDataApi->getLocationsKeywords: $e\n');
 }
 ```
@@ -775,9 +775,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **locationIds** | [**List<String>**](String.md)| The location ids that should have keywords returned | [optional] [default to const []]
- **businessIds** | [**List<String>**](String.md)| The business ids for the locations that should be returned | [optional] [default to const []]
- **excludedLocationIds** | [**List<String>**](String.md)| List of location ids which should be excluded from keywords search | [optional] [default to const []]
+ **locationIds** | [**BuiltList&lt;String&gt;**](String.md)| The location ids that should have keywords returned | [optional] 
+ **businessIds** | [**BuiltList&lt;String&gt;**](String.md)| The business ids for the locations that should be returned | [optional] 
+ **excludedLocationIds** | [**BuiltList&lt;String&gt;**](String.md)| List of location ids which should be excluded from keywords search | [optional] 
 
 ### Return type
 
@@ -813,12 +813,12 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsDataApi();
+final api = Openapi().getLocationsDataApi();
 
 try {
-    final result = api_instance.getLocationsLabels();
-    print(result);
-} catch (e) {
+    final response = api.getLocationsLabels();
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsDataApi->getLocationsLabels: $e\n');
 }
 ```
@@ -860,20 +860,20 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsDataApi();
-final locationIds = []; // List<String> | Get the post / zip codes for associated to the given list of location Ids
-final businessIds = []; // List<String> | Get the post / zip codes for locations assigned to a business id
-final countries = []; // List<String> | Get the post / zip codes for locations within a country
-final provinces = []; // List<String> | Get the post / zip codes for locations within a province / state
-final cities = []; // List<String> | Get the post / zip codes for locations within a city
-final query = query_example; // String | Restricts the response to the post/zip codes that contain this text, for example \"374\" would return \"37490\" when appropriate.
-final max = 789; // int | Maximum number of items to return
-final offset = 789; // int | Offset used for pagination. Default: 0
+final api = Openapi().getLocationsDataApi();
+final BuiltList<String> locationIds = ; // BuiltList<String> | Get the post / zip codes for associated to the given list of location Ids
+final BuiltList<String> businessIds = ; // BuiltList<String> | Get the post / zip codes for locations assigned to a business id
+final BuiltList<String> countries = ; // BuiltList<String> | Get the post / zip codes for locations within a country
+final BuiltList<String> provinces = ; // BuiltList<String> | Get the post / zip codes for locations within a province / state
+final BuiltList<String> cities = ; // BuiltList<String> | Get the post / zip codes for locations within a city
+final String query = query_example; // String | Restricts the response to the post/zip codes that contain this text, for example \"374\" would return \"37490\" when appropriate.
+final int max = 789; // int | Maximum number of items to return
+final int offset = 789; // int | Offset used for pagination. Default: 0
 
 try {
-    final result = api_instance.getLocationsPostcodes(locationIds, businessIds, countries, provinces, cities, query, max, offset);
-    print(result);
-} catch (e) {
+    final response = api.getLocationsPostcodes(locationIds, businessIds, countries, provinces, cities, query, max, offset);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsDataApi->getLocationsPostcodes: $e\n');
 }
 ```
@@ -882,11 +882,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **locationIds** | [**List<String>**](String.md)| Get the post / zip codes for associated to the given list of location Ids | [optional] [default to const []]
- **businessIds** | [**List<String>**](String.md)| Get the post / zip codes for locations assigned to a business id | [optional] [default to const []]
- **countries** | [**List<String>**](String.md)| Get the post / zip codes for locations within a country | [optional] [default to const []]
- **provinces** | [**List<String>**](String.md)| Get the post / zip codes for locations within a province / state | [optional] [default to const []]
- **cities** | [**List<String>**](String.md)| Get the post / zip codes for locations within a city | [optional] [default to const []]
+ **locationIds** | [**BuiltList&lt;String&gt;**](String.md)| Get the post / zip codes for associated to the given list of location Ids | [optional] 
+ **businessIds** | [**BuiltList&lt;String&gt;**](String.md)| Get the post / zip codes for locations assigned to a business id | [optional] 
+ **countries** | [**BuiltList&lt;String&gt;**](String.md)| Get the post / zip codes for locations within a country | [optional] 
+ **provinces** | [**BuiltList&lt;String&gt;**](String.md)| Get the post / zip codes for locations within a province / state | [optional] 
+ **cities** | [**BuiltList&lt;String&gt;**](String.md)| Get the post / zip codes for locations within a city | [optional] 
  **query** | **String**| Restricts the response to the post/zip codes that contain this text, for example \"374\" would return \"37490\" when appropriate. | [optional] 
  **max** | **int**| Maximum number of items to return | [optional] 
  **offset** | **int**| Offset used for pagination. Default: 0 | [optional] 
@@ -925,17 +925,17 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsDataApi();
-final businessIds = []; // List<String> | Get the provinces / states of locations associated with specific Business Id(s)
-final countries = []; // List<String> | Get provinces / states for locations in a country
-final query = query_example; // String | Restricts the response to the provinces/states that contain this text, for example 'indi' would return 'Indiana' when appropriate.
-final max = 789; // int | Maximum number of items to return
-final offset = 789; // int | Offset used for pagination. Default: 0
+final api = Openapi().getLocationsDataApi();
+final BuiltList<String> businessIds = ; // BuiltList<String> | Get the provinces / states of locations associated with specific Business Id(s)
+final BuiltList<String> countries = ; // BuiltList<String> | Get provinces / states for locations in a country
+final String query = query_example; // String | Restricts the response to the provinces/states that contain this text, for example 'indi' would return 'Indiana' when appropriate.
+final int max = 789; // int | Maximum number of items to return
+final int offset = 789; // int | Offset used for pagination. Default: 0
 
 try {
-    final result = api_instance.getLocationsProvinces(businessIds, countries, query, max, offset);
-    print(result);
-} catch (e) {
+    final response = api.getLocationsProvinces(businessIds, countries, query, max, offset);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsDataApi->getLocationsProvinces: $e\n');
 }
 ```
@@ -944,8 +944,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **businessIds** | [**List<String>**](String.md)| Get the provinces / states of locations associated with specific Business Id(s) | [optional] [default to const []]
- **countries** | [**List<String>**](String.md)| Get provinces / states for locations in a country | [optional] [default to const []]
+ **businessIds** | [**BuiltList&lt;String&gt;**](String.md)| Get the provinces / states of locations associated with specific Business Id(s) | [optional] 
+ **countries** | [**BuiltList&lt;String&gt;**](String.md)| Get provinces / states for locations in a country | [optional] 
  **query** | **String**| Restricts the response to the provinces/states that contain this text, for example 'indi' would return 'Indiana' when appropriate. | [optional] 
  **max** | **int**| Maximum number of items to return | [optional] 
  **offset** | **int**| Offset used for pagination. Default: 0 | [optional] 
@@ -984,12 +984,12 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsDataApi();
+final api = Openapi().getLocationsDataApi();
 
 try {
-    final result = api_instance.getLocationsStatistics();
-    print(result);
-} catch (e) {
+    final response = api.getLocationsStatistics();
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsDataApi->getLocationsStatistics: $e\n');
 }
 ```
@@ -1031,14 +1031,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsDataApi();
-final max = 789; // int | Used for pagination. Maximum number of results per page. Default: 10
-final offset = 789; // int | Offset used for pagination. Default: 0
+final api = Openapi().getLocationsDataApi();
+final int max = 789; // int | Used for pagination. Maximum number of results per page. Default: 10
+final int offset = 789; // int | Offset used for pagination. Default: 0
 
 try {
-    final result = api_instance.getLocationsTrackingEvents(max, offset);
-    print(result);
-} catch (e) {
+    final response = api.getLocationsTrackingEvents(max, offset);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsDataApi->getLocationsTrackingEvents: $e\n');
 }
 ```
@@ -1084,13 +1084,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsDataApi();
-final location = [List<Location>()]; // List<Location> | List of Maps with both location id and params to update : [{id: 123, status: CANCELLED}, ...]
+final api = Openapi().getLocationsDataApi();
+final BuiltList<Location> location = ; // BuiltList<Location> | List of Maps with both location id and params to update : [{id: 123, status: CANCELLED}, ...]
 
 try {
-    final result = api_instance.patchLocations(location);
-    print(result);
-} catch (e) {
+    final response = api.patchLocations(location);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsDataApi->patchLocations: $e\n');
 }
 ```
@@ -1099,7 +1099,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **location** | [**List<Location>**](Location.md)| List of Maps with both location id and params to update : [{id: 123, status: CANCELLED}, ...] | 
+ **location** | [**BuiltList&lt;Location&gt;**](Location.md)| List of Maps with both location id and params to update : [{id: 123, status: CANCELLED}, ...] | 
 
 ### Return type
 
@@ -1135,14 +1135,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsDataApi();
-final id = id_example; // String | The uberall unique id for the location you want to update
-final location = Location(); // Location | Location object
+final api = Openapi().getLocationsDataApi();
+final String id = id_example; // String | The uberall unique id for the location you want to update
+final Location location = ; // Location | Location object
 
 try {
-    final result = api_instance.patchLocationsId(id, location);
-    print(result);
-} catch (e) {
+    final response = api.patchLocationsId(id, location);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsDataApi->patchLocationsId: $e\n');
 }
 ```
@@ -1188,16 +1188,16 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsDataApi();
-final id = id_example; // String | The uberall unique id of the EV Charging station for which you want to update information.
-final uid = uid_example; // String | The UID for the EV Charging station
-final status = status_example; // String | Query based on the location status
-final body = String(); // String | A EvStatus object
+final api = Openapi().getLocationsDataApi();
+final String id = id_example; // String | The uberall unique id of the EV Charging station for which you want to update information.
+final String uid = uid_example; // String | The UID for the EV Charging station
+final String status = status_example; // String | Query based on the location status
+final String body = body_example; // String | A EvStatus object
 
 try {
-    final result = api_instance.patchLocationsIdEvDataUid(id, uid, status, body);
-    print(result);
-} catch (e) {
+    final response = api.patchLocationsIdEvDataUid(id, uid, status, body);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsDataApi->patchLocationsIdEvDataUid: $e\n');
 }
 ```
@@ -1245,13 +1245,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsDataApi();
-final location = Location(); // Location | Location object
+final api = Openapi().getLocationsDataApi();
+final Location location = ; // Location | Location object
 
 try {
-    final result = api_instance.postLocations(location);
-    print(result);
-} catch (e) {
+    final response = api.postLocations(location);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsDataApi->postLocations: $e\n');
 }
 ```
@@ -1296,13 +1296,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsDataApi();
-final id = id_example; // String | The uberall unique id for the location you want to sync
+final api = Openapi().getLocationsDataApi();
+final String id = id_example; // String | The uberall unique id for the location you want to sync
 
 try {
-    final result = api_instance.postLocationsIdSync(id);
-    print(result);
-} catch (e) {
+    final response = api.postLocationsIdSync(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsDataApi->postLocationsIdSync: $e\n');
 }
 ```
@@ -1347,13 +1347,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationsDataApi();
-final locationIds = []; // List<String> | The uberall unique ids for the locations you want to sync
+final api = Openapi().getLocationsDataApi();
+final BuiltList<String> locationIds = ; // BuiltList<String> | The uberall unique ids for the locations you want to sync
 
 try {
-    final result = api_instance.postLocationsSync(locationIds);
-    print(result);
-} catch (e) {
+    final response = api.postLocationsSync(locationIds);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationsDataApi->postLocationsSync: $e\n');
 }
 ```
@@ -1362,7 +1362,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **locationIds** | [**List<String>**](String.md)| The uberall unique ids for the locations you want to sync | [default to const []]
+ **locationIds** | [**BuiltList&lt;String&gt;**](String.md)| The uberall unique ids for the locations you want to sync | 
 
 ### Return type
 

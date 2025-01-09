@@ -9,10 +9,10 @@ All URIs are relative to *https://uberall.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteLocationsIdFacebookPage**](ListingsApi.md#deletelocationsidfacebookpage) | **DELETE** /locations/{id}/facebook/page | Disconnect Location''s Facebook Page
+[**deleteLocationsIdFacebookPage**](ListingsApi.md#deletelocationsidfacebookpage) | **DELETE** /locations/{id}/facebook/page | Disconnect Location&#39;&#39;s Facebook Page
 [**deleteLocationsIdGooglePage**](ListingsApi.md#deletelocationsidgooglepage) | **DELETE** /locations/{id}/google/page | Disconnect Google Page
 [**deleteLocationsIdInstagramPage**](ListingsApi.md#deletelocationsidinstagrampage) | **DELETE** /locations/{id}/instagram/page | Disconnect Instagram Page
-[**getLocationsIdFacebookPage**](ListingsApi.md#getlocationsidfacebookpage) | **GET** /locations/{id}/facebook/page | Get Location''s Facebook Page
+[**getLocationsIdFacebookPage**](ListingsApi.md#getlocationsidfacebookpage) | **GET** /locations/{id}/facebook/page | Get Location&#39;&#39;s Facebook Page
 [**getLocationsIdGooglePage**](ListingsApi.md#getlocationsidgooglepage) | **GET** /locations/{id}/google/page | Get information about the connected Google Page of the specified location
 [**getLocationsIdListingsDetailsList**](ListingsApi.md#getlocationsidlistingsdetailslist) | **GET** /locations/{id}/listings-details/list | Get all Listings for a specific Location
 [**patchListingsId**](ListingsApi.md#patchlistingsid) | **PATCH** /listings/{id} | Edit Listing
@@ -39,13 +39,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ListingsApi();
-final id = id_example; // String | The uberall unique id of the location
+final api = Openapi().getListingsApi();
+final String id = id_example; // String | The uberall unique id of the location
 
 try {
-    final result = api_instance.deleteLocationsIdFacebookPage(id);
-    print(result);
-} catch (e) {
+    final response = api.deleteLocationsIdFacebookPage(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ListingsApi->deleteLocationsIdFacebookPage: $e\n');
 }
 ```
@@ -90,13 +90,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ListingsApi();
-final id = id_example; // String | The uberall unique ID of the location
+final api = Openapi().getListingsApi();
+final String id = id_example; // String | The uberall unique ID of the location
 
 try {
-    final result = api_instance.deleteLocationsIdGooglePage(id);
-    print(result);
-} catch (e) {
+    final response = api.deleteLocationsIdGooglePage(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ListingsApi->deleteLocationsIdGooglePage: $e\n');
 }
 ```
@@ -141,13 +141,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ListingsApi();
-final id = id_example; // String | The uberall unique id of the location
+final api = Openapi().getListingsApi();
+final String id = id_example; // String | The uberall unique id of the location
 
 try {
-    final result = api_instance.deleteLocationsIdInstagramPage(id);
-    print(result);
-} catch (e) {
+    final response = api.deleteLocationsIdInstagramPage(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ListingsApi->deleteLocationsIdInstagramPage: $e\n');
 }
 ```
@@ -192,13 +192,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ListingsApi();
-final id = id_example; // String | The uberall unique id of the location you want the Facebook page for
+final api = Openapi().getListingsApi();
+final String id = id_example; // String | The uberall unique id of the location you want the Facebook page for
 
 try {
-    final result = api_instance.getLocationsIdFacebookPage(id);
-    print(result);
-} catch (e) {
+    final response = api.getLocationsIdFacebookPage(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ListingsApi->getLocationsIdFacebookPage: $e\n');
 }
 ```
@@ -243,13 +243,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ListingsApi();
-final id = id_example; // String | The uberall unique ID of the location
+final api = Openapi().getListingsApi();
+final String id = id_example; // String | The uberall unique ID of the location
 
 try {
-    final result = api_instance.getLocationsIdGooglePage(id);
-    print(result);
-} catch (e) {
+    final response = api.getLocationsIdGooglePage(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ListingsApi->getLocationsIdGooglePage: $e\n');
 }
 ```
@@ -294,13 +294,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ListingsApi();
-final id = id_example; // String | The uberall unique id of the location
+final api = Openapi().getListingsApi();
+final String id = id_example; // String | The uberall unique id of the location
 
 try {
-    final result = api_instance.getLocationsIdListingsDetailsList(id);
-    print(result);
-} catch (e) {
+    final response = api.getLocationsIdListingsDetailsList(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ListingsApi->getLocationsIdListingsDetailsList: $e\n');
 }
 ```
@@ -345,13 +345,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ListingsApi();
-final id = id_example; // String | The ID of the MANUALLY_CREATED listing to be updated
+final api = Openapi().getListingsApi();
+final String id = id_example; // String | The ID of the MANUALLY_CREATED listing to be updated
 
 try {
-    final result = api_instance.patchListingsId(id);
-    print(result);
-} catch (e) {
+    final response = api.patchListingsId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ListingsApi->patchListingsId: $e\n');
 }
 ```
@@ -396,15 +396,15 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ListingsApi();
-final id = id_example; // String | The uberall unique id of the location
-final fbAccessToken = fbAccessToken_example; // String | A Facebook API access token with \"manage_pages\", \"publish_actions\" and \"read_page_mailboxes\" permissions
-final pageId = pageId_example; // String | The Facebook unique id of the page you want to connect
+final api = Openapi().getListingsApi();
+final String id = id_example; // String | The uberall unique id of the location
+final String fbAccessToken = fbAccessToken_example; // String | A Facebook API access token with \"manage_pages\", \"publish_actions\" and \"read_page_mailboxes\" permissions
+final String pageId = pageId_example; // String | The Facebook unique id of the page you want to connect
 
 try {
-    final result = api_instance.postLocationsIdFacebookPage(id, fbAccessToken, pageId);
-    print(result);
-} catch (e) {
+    final response = api.postLocationsIdFacebookPage(id, fbAccessToken, pageId);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ListingsApi->postLocationsIdFacebookPage: $e\n');
 }
 ```
@@ -451,13 +451,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ListingsApi();
-final id = id_example; // String | The uberall unique ID for the listing to flag
+final api = Openapi().getListingsApi();
+final String id = id_example; // String | The uberall unique ID for the listing to flag
 
 try {
-    final result = api_instance.putListingsIdFlag(id);
-    print(result);
-} catch (e) {
+    final response = api.putListingsIdFlag(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ListingsApi->putListingsIdFlag: $e\n');
 }
 ```

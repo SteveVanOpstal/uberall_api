@@ -35,14 +35,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = SocialPostingTemplatesApi();
-final id = id_example; // String | Id of the Social Post Template that should be deleted
-final userId = userId_example; // String | Id of the user requesting to delete the social post template
+final api = Openapi().getSocialPostingTemplatesApi();
+final String id = id_example; // String | Id of the Social Post Template that should be deleted
+final String userId = userId_example; // String | Id of the user requesting to delete the social post template
 
 try {
-    final result = api_instance.deleteSocialPostsTemplatesId(id, userId);
-    print(result);
-} catch (e) {
+    final response = api.deleteSocialPostsTemplatesId(id, userId);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling SocialPostingTemplatesApi->deleteSocialPostsTemplatesId: $e\n');
 }
 ```
@@ -88,15 +88,15 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = SocialPostingTemplatesApi();
-final userId = userId_example; // String | Shows the templates of the user with this id
-final max = 789; // int | Used for pagination. Maximum number of results per page.
-final offset = 789; // int | Offset used for pagination.
+final api = Openapi().getSocialPostingTemplatesApi();
+final String userId = userId_example; // String | Shows the templates of the user with this id
+final int max = 789; // int | Used for pagination. Maximum number of results per page.
+final int offset = 789; // int | Offset used for pagination.
 
 try {
-    final result = api_instance.getSocialPostsTemplates(userId, max, offset);
-    print(result);
-} catch (e) {
+    final response = api.getSocialPostsTemplates(userId, max, offset);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling SocialPostingTemplatesApi->getSocialPostsTemplates: $e\n');
 }
 ```
@@ -143,14 +143,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = SocialPostingTemplatesApi();
-final id = id_example; // String | Id of the Social Post Template
-final userId = userId_example; // String | Id of the user requesting the social post template
+final api = Openapi().getSocialPostingTemplatesApi();
+final String id = id_example; // String | Id of the Social Post Template
+final String userId = userId_example; // String | Id of the user requesting the social post template
 
 try {
-    final result = api_instance.getSocialPostsTemplatesId(id, userId);
-    print(result);
-} catch (e) {
+    final response = api.getSocialPostsTemplatesId(id, userId);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling SocialPostingTemplatesApi->getSocialPostsTemplatesId: $e\n');
 }
 ```
@@ -196,14 +196,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = SocialPostingTemplatesApi();
-final id = id_example; // String | The unique uberall ID of the Social Post Template you want to edit
-final socialPostTemplate = SocialPostTemplate(); // SocialPostTemplate | A SocialPostTemplate object
+final api = Openapi().getSocialPostingTemplatesApi();
+final String id = id_example; // String | The unique uberall ID of the Social Post Template you want to edit
+final SocialPostTemplate socialPostTemplate = ; // SocialPostTemplate | A SocialPostTemplate object
 
 try {
-    final result = api_instance.patchSocialPostsTemplatesId(id, socialPostTemplate);
-    print(result);
-} catch (e) {
+    final response = api.patchSocialPostsTemplatesId(id, socialPostTemplate);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling SocialPostingTemplatesApi->patchSocialPostsTemplatesId: $e\n');
 }
 ```
@@ -249,13 +249,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = SocialPostingTemplatesApi();
-final socialPostTemplate = SocialPostTemplate(); // SocialPostTemplate | The Social Post Template to create
+final api = Openapi().getSocialPostingTemplatesApi();
+final SocialPostTemplate socialPostTemplate = ; // SocialPostTemplate | The Social Post Template to create
 
 try {
-    final result = api_instance.postSocialPostsTemplates(socialPostTemplate);
-    print(result);
-} catch (e) {
+    final response = api.postSocialPostsTemplates(socialPostTemplate);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling SocialPostingTemplatesApi->postSocialPostsTemplates: $e\n');
 }
 ```

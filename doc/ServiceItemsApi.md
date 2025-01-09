@@ -35,13 +35,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ServiceItemsApi();
-final id = id_example; // String | The uberall unique ID for the service item
+final api = Openapi().getServiceItemsApi();
+final String id = id_example; // String | The uberall unique ID for the service item
 
 try {
-    final result = api_instance.deleteServiceItemsId(id);
-    print(result);
-} catch (e) {
+    final response = api.deleteServiceItemsId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ServiceItemsApi->deleteServiceItemsId: $e\n');
 }
 ```
@@ -86,13 +86,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ServiceItemsApi();
-final body = Object(); // Object | 
+final api = Openapi().getServiceItemsApi();
+final JsonObject body = Object; // JsonObject | 
 
 try {
-    final result = api_instance.getServiceItems(body);
-    print(result);
-} catch (e) {
+    final response = api.getServiceItems(body);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ServiceItemsApi->getServiceItems: $e\n');
 }
 ```
@@ -101,7 +101,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **Object**|  | [optional] 
+ **body** | **JsonObject**|  | [optional] 
 
 ### Return type
 
@@ -137,13 +137,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ServiceItemsApi();
-final id = id_example; // String | The uberall unique ID for the service item
+final api = Openapi().getServiceItemsApi();
+final String id = id_example; // String | The uberall unique ID for the service item
 
 try {
-    final result = api_instance.getServiceItemsId(id);
-    print(result);
-} catch (e) {
+    final response = api.getServiceItemsId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ServiceItemsApi->getServiceItemsId: $e\n');
 }
 ```
@@ -188,14 +188,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ServiceItemsApi();
-final id = id_example; // String | The uberall unique ID for the service item you want to update
-final serviceItem = ServiceItem(); // ServiceItem | A ServiceItem object
+final api = Openapi().getServiceItemsApi();
+final String id = id_example; // String | The uberall unique ID for the service item you want to update
+final ServiceItem serviceItem = ; // ServiceItem | A ServiceItem object
 
 try {
-    final result = api_instance.patchServiceItemsId(id, serviceItem);
-    print(result);
-} catch (e) {
+    final response = api.patchServiceItemsId(id, serviceItem);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ServiceItemsApi->patchServiceItemsId: $e\n');
 }
 ```
@@ -241,13 +241,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ServiceItemsApi();
-final serviceItem = ServiceItem(); // ServiceItem | A ServiceItem object
+final api = Openapi().getServiceItemsApi();
+final ServiceItem serviceItem = ; // ServiceItem | A ServiceItem object
 
 try {
-    final result = api_instance.postServiceItems(serviceItem);
-    print(result);
-} catch (e) {
+    final response = api.postServiceItems(serviceItem);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ServiceItemsApi->postServiceItems: $e\n');
 }
 ```

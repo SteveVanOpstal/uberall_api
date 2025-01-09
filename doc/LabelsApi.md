@@ -31,12 +31,12 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LabelsApi();
+final api = Openapi().getLabelsApi();
 
 try {
-    final result = api_instance.getLabels();
-    print(result);
-} catch (e) {
+    final response = api.getLabels();
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LabelsApi->getLabels: $e\n');
 }
 ```

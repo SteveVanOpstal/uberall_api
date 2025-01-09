@@ -36,13 +36,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = AutoResponseApi();
-final id = id_example; // String | id of Auto Response Rule
+final api = Openapi().getAutoResponseApi();
+final String id = id_example; // String | id of Auto Response Rule
 
 try {
-    final result = api_instance.deleteAutoResponseRulesId(id);
-    print(result);
-} catch (e) {
+    final response = api.deleteAutoResponseRulesId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling AutoResponseApi->deleteAutoResponseRulesId: $e\n');
 }
 ```
@@ -87,19 +87,19 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = AutoResponseApi();
-final businesses = []; // List<String> | Only return Auto Response Rules identified by the business ids listed in businesses
-final locations = []; // List<String> | Only return Auto Response Rules identified by the location ids listed in locations
-final excludedLocations = []; // List<String> | List of location ids that should be excluded from the result
-final page = 789; // int | Used for pagination
-final size = 789; // int | Used for pagination
-final sort = sort_example; // String | Field to sort the results in, use created_by, date_created or id
-final direction = direction_example; // String | Direction to sort the results in, use asc for ascending sort or desc for descending sort
+final api = Openapi().getAutoResponseApi();
+final BuiltList<String> businesses = ; // BuiltList<String> | Only return Auto Response Rules identified by the business ids listed in businesses
+final BuiltList<String> locations = ; // BuiltList<String> | Only return Auto Response Rules identified by the location ids listed in locations
+final BuiltList<String> excludedLocations = ; // BuiltList<String> | List of location ids that should be excluded from the result
+final int page = 789; // int | Used for pagination
+final int size = 789; // int | Used for pagination
+final String sort = sort_example; // String | Field to sort the results in, use created_by, date_created or id
+final String direction = direction_example; // String | Direction to sort the results in, use asc for ascending sort or desc for descending sort
 
 try {
-    final result = api_instance.getAutoResponseRules(businesses, locations, excludedLocations, page, size, sort, direction);
-    print(result);
-} catch (e) {
+    final response = api.getAutoResponseRules(businesses, locations, excludedLocations, page, size, sort, direction);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling AutoResponseApi->getAutoResponseRules: $e\n');
 }
 ```
@@ -108,9 +108,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **businesses** | [**List<String>**](String.md)| Only return Auto Response Rules identified by the business ids listed in businesses | [optional] [default to const []]
- **locations** | [**List<String>**](String.md)| Only return Auto Response Rules identified by the location ids listed in locations | [optional] [default to const []]
- **excludedLocations** | [**List<String>**](String.md)| List of location ids that should be excluded from the result | [optional] [default to const []]
+ **businesses** | [**BuiltList&lt;String&gt;**](String.md)| Only return Auto Response Rules identified by the business ids listed in businesses | [optional] 
+ **locations** | [**BuiltList&lt;String&gt;**](String.md)| Only return Auto Response Rules identified by the location ids listed in locations | [optional] 
+ **excludedLocations** | [**BuiltList&lt;String&gt;**](String.md)| List of location ids that should be excluded from the result | [optional] 
  **page** | **int**| Used for pagination | [optional] [default to 0]
  **size** | **int**| Used for pagination | [optional] [default to 10]
  **sort** | **String**| Field to sort the results in, use created_by, date_created or id | [optional] 
@@ -150,13 +150,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = AutoResponseApi();
-final id = id_example; // String | id of Auto Response Rule
+final api = Openapi().getAutoResponseApi();
+final String id = id_example; // String | id of Auto Response Rule
 
 try {
-    final result = api_instance.getAutoResponseRulesId(id);
-    print(result);
-} catch (e) {
+    final response = api.getAutoResponseRulesId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling AutoResponseApi->getAutoResponseRulesId: $e\n');
 }
 ```
@@ -201,14 +201,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = AutoResponseApi();
-final id = id_example; // String | id of Auto Response Rule
-final postAutoResponseRulesRequest = PostAutoResponseRulesRequest(); // PostAutoResponseRulesRequest | Auto Response Rule to be edited
+final api = Openapi().getAutoResponseApi();
+final String id = id_example; // String | id of Auto Response Rule
+final PostAutoResponseRulesRequest postAutoResponseRulesRequest = ; // PostAutoResponseRulesRequest | Auto Response Rule to be edited
 
 try {
-    final result = api_instance.patchAutoResponseRulesId(id, postAutoResponseRulesRequest);
-    print(result);
-} catch (e) {
+    final response = api.patchAutoResponseRulesId(id, postAutoResponseRulesRequest);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling AutoResponseApi->patchAutoResponseRulesId: $e\n');
 }
 ```
@@ -254,13 +254,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = AutoResponseApi();
-final postAutoResponseRulesRequest = PostAutoResponseRulesRequest(); // PostAutoResponseRulesRequest | Auto Response Rule to be created
+final api = Openapi().getAutoResponseApi();
+final PostAutoResponseRulesRequest postAutoResponseRulesRequest = ; // PostAutoResponseRulesRequest | Auto Response Rule to be created
 
 try {
-    final result = api_instance.postAutoResponseRules(postAutoResponseRulesRequest);
-    print(result);
-} catch (e) {
+    final response = api.postAutoResponseRules(postAutoResponseRulesRequest);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling AutoResponseApi->postAutoResponseRules: $e\n');
 }
 ```
@@ -305,13 +305,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = AutoResponseApi();
-final checkConflictRequest = CheckConflictRequest(); // CheckConflictRequest | A CheckConflictRequest object
+final api = Openapi().getAutoResponseApi();
+final CheckConflictRequest checkConflictRequest = ; // CheckConflictRequest | A CheckConflictRequest object
 
 try {
-    final result = api_instance.postAutoResponseRulesCheckConflict(checkConflictRequest);
-    print(result);
-} catch (e) {
+    final response = api.postAutoResponseRulesCheckConflict(checkConflictRequest);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling AutoResponseApi->postAutoResponseRulesCheckConflict: $e\n');
 }
 ```

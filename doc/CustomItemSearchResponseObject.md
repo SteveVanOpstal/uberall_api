@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **offset** | **int** | Offset for pagination | [optional] 
 **max** | **int** | Maximum number of results per page | [optional] 
 **total** | **int** | Total count of results | [optional] 
-**customItems** | [**List<CustomItem>**](CustomItem.md) |  | [optional] [default to const []]
+**customItems** | [**BuiltList&lt;CustomItem&gt;**](CustomItem.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

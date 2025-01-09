@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **language** | **String** | Language of a generated PDF report (e.g. ''de'', ''fr'', ''en'') | [optional] 
 **token** | **String** | Token of the export job | [optional] 
 **status** | **String** | Current status of the export process (e.g. ''FINISHED'', ''SCHEDULED'', ''FAILED'') | [optional] 
-**locationIds** | **Set<String>** | A list of location IDs for which to generate a report | [optional] [default to const {}]
+**locationIds** | **BuiltSet&lt;String&gt;** | A list of location IDs for which to generate a report | [optional] 
 **whitelabelIdentifier** | **String** | Whitelabel identifier which will be used in the outline of the PDF report | [optional] 
 **salesPartnerCountry** | **String** | Country of the SalesPartner | [optional] 
 

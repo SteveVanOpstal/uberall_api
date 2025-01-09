@@ -8,7 +8,7 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**results** | [**List<SearchData>**](SearchData.md) |  | [optional] [default to const []]
+**results** | [**BuiltList&lt;SearchData&gt;**](SearchData.md) |  | [optional] 
 **offset** | **int** | The offset for pagination | [optional] 
 **max** | **int** | The maximum number of results to return | [optional] 
 **count** | **int** | The total count of search data | [optional] 

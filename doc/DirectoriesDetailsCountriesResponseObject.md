@@ -8,7 +8,7 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**items** | [**List<DirectoriesDetailsCountry>**](DirectoriesDetailsCountry.md) |  | [optional] [default to const []]
+**items** | [**BuiltList&lt;DirectoriesDetailsCountry&gt;**](DirectoriesDetailsCountry.md) |  | [optional] 
 **count** | **int** | Total count of countries | [optional] 
 **max** | **int** | Maximum number of results per page | [optional] 
 **offset** | **int** | Offset for pagination | [optional] 

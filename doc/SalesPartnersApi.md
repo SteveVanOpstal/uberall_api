@@ -37,20 +37,20 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = SalesPartnersApi();
-final id = id_example; // String | Filter by specific uberall SalesPartner id
-final query = query_example; // String | Filter by name or identifier
-final status = status_example; // String | Filter by status
-final sort = sort_example; // String | SalesPartner property used for pagination. Default: 'id'
-final order = order_example; // String | Order used for pagination. Default: 'asc'
-final max = 789; // int | Used for pagination. Maximum number of results per page. Default: 1000
-final offset = 789; // int | Offset used for pagination. Default: 0
-final body = Object(); // Object | 
+final api = Openapi().getSalesPartnersApi();
+final String id = id_example; // String | Filter by specific uberall SalesPartner id
+final String query = query_example; // String | Filter by name or identifier
+final String status = status_example; // String | Filter by status
+final String sort = sort_example; // String | SalesPartner property used for pagination. Default: 'id'
+final String order = order_example; // String | Order used for pagination. Default: 'asc'
+final int max = 789; // int | Used for pagination. Maximum number of results per page. Default: 1000
+final int offset = 789; // int | Offset used for pagination. Default: 0
+final JsonObject body = Object; // JsonObject | 
 
 try {
-    final result = api_instance.getSalesPartners(id, query, status, sort, order, max, offset, body);
-    print(result);
-} catch (e) {
+    final response = api.getSalesPartners(id, query, status, sort, order, max, offset, body);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling SalesPartnersApi->getSalesPartners: $e\n');
 }
 ```
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
  **order** | **String**| Order used for pagination. Default: 'asc' | [optional] 
  **max** | **int**| Used for pagination. Maximum number of results per page. Default: 1000 | [optional] 
  **offset** | **int**| Offset used for pagination. Default: 0 | [optional] 
- **body** | **Object**|  | [optional] 
+ **body** | **JsonObject**|  | [optional] 
 
 ### Return type
 
@@ -102,13 +102,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = SalesPartnersApi();
-final id = id_example; // String | ID of the SalesPartner
+final api = Openapi().getSalesPartnersApi();
+final String id = id_example; // String | ID of the SalesPartner
 
 try {
-    final result = api_instance.getSalesPartnersId(id);
-    print(result);
-} catch (e) {
+    final response = api.getSalesPartnersId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling SalesPartnersApi->getSalesPartnersId: $e\n');
 }
 ```
@@ -153,12 +153,12 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = SalesPartnersApi();
+final api = Openapi().getSalesPartnersApi();
 
 try {
-    final result = api_instance.getSalesPartnersSubscribableEventTypes();
-    print(result);
-} catch (e) {
+    final response = api.getSalesPartnersSubscribableEventTypes();
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling SalesPartnersApi->getSalesPartnersSubscribableEventTypes: $e\n');
 }
 ```
@@ -200,13 +200,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = SalesPartnersApi();
-final body = bool(); // bool | forceSso
+final api = Openapi().getSalesPartnersApi();
+final bool body = true; // bool | forceSso
 
 try {
-    final result = api_instance.patchSalesPartnersIdSsoSettings(body);
-    print(result);
-} catch (e) {
+    final response = api.patchSalesPartnersIdSsoSettings(body);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling SalesPartnersApi->patchSalesPartnersIdSsoSettings: $e\n');
 }
 ```
@@ -251,13 +251,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = SalesPartnersApi();
-final salesPartner = SalesPartner(); // SalesPartner | SalesPartner data to create a new child SalesPartner
+final api = Openapi().getSalesPartnersApi();
+final SalesPartner salesPartner = ; // SalesPartner | SalesPartner data to create a new child SalesPartner
 
 try {
-    final result = api_instance.postSalesPartners(salesPartner);
-    print(result);
-} catch (e) {
+    final response = api.postSalesPartners(salesPartner);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling SalesPartnersApi->postSalesPartners: $e\n');
 }
 ```
@@ -302,14 +302,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = SalesPartnersApi();
-final id = id_example; // String | Sales Partner ID
-final accountId = accountId_example; // String | Directory User Account ID
+final api = Openapi().getSalesPartnersApi();
+final String id = id_example; // String | Sales Partner ID
+final String accountId = accountId_example; // String | Directory User Account ID
 
 try {
-    final result = api_instance.postSalesPartnersIdUserAccountsAccountIdAppleMaps(id, accountId);
-    print(result);
-} catch (e) {
+    final response = api.postSalesPartnersIdUserAccountsAccountIdAppleMaps(id, accountId);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling SalesPartnersApi->postSalesPartnersIdUserAccountsAccountIdAppleMaps: $e\n');
 }
 ```
@@ -355,14 +355,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = SalesPartnersApi();
-final id = id_example; // String | ID of the SalesPartner
-final salesPartner = SalesPartner(); // SalesPartner | SalesPartner data to update
+final api = Openapi().getSalesPartnersApi();
+final String id = id_example; // String | ID of the SalesPartner
+final SalesPartner salesPartner = ; // SalesPartner | SalesPartner data to update
 
 try {
-    final result = api_instance.putSalesPartnersId(id, salesPartner);
-    print(result);
-} catch (e) {
+    final response = api.putSalesPartnersId(id, salesPartner);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling SalesPartnersApi->putSalesPartnersId: $e\n');
 }
 ```

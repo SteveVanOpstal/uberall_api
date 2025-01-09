@@ -40,13 +40,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = UsersApi();
-final id = id_example; // String | User ID
+final api = Openapi().getUsersApi();
+final String id = id_example; // String | User ID
 
 try {
-    final result = api_instance.deleteUsersId(id);
-    print(result);
-} catch (e) {
+    final response = api.deleteUsersId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling UsersApi->deleteUsersId: $e\n');
 }
 ```
@@ -91,13 +91,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = UsersApi();
-final id = 789; // int | User ID
+final api = Openapi().getUsersApi();
+final int id = 789; // int | User ID
 
 try {
-    final result = api_instance.deleteUsersIdAllSessions(id);
-    print(result);
-} catch (e) {
+    final response = api.deleteUsersIdAllSessions(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling UsersApi->deleteUsersIdAllSessions: $e\n');
 }
 ```
@@ -142,19 +142,19 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = UsersApi();
-final query = query_example; // String | User's query
-final max = 56; // int | Max value
-final offset = 56; // int | Offset value
-final sort = sort_example; // String | Sort value
-final order = order_example; // String | Order value
-final locationId = 789; // int | Location ID
-final identifier = identifier_example; // String | Identifier
+final api = Openapi().getUsersApi();
+final String query = query_example; // String | User's query
+final int max = 56; // int | Max value
+final int offset = 56; // int | Offset value
+final String sort = sort_example; // String | Sort value
+final String order = order_example; // String | Order value
+final int locationId = 789; // int | Location ID
+final String identifier = identifier_example; // String | Identifier
 
 try {
-    final result = api_instance.getUsers(query, max, offset, sort, order, locationId, identifier);
-    print(result);
-} catch (e) {
+    final response = api.getUsers(query, max, offset, sort, order, locationId, identifier);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling UsersApi->getUsers: $e\n');
 }
 ```
@@ -205,14 +205,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = UsersApi();
-final userId = 789; // int | User ID
-final emailType = emailType_example; // String | Email type
+final api = Openapi().getUsersApi();
+final int userId = 789; // int | User ID
+final String emailType = emailType_example; // String | Email type
 
 try {
-    final result = api_instance.getUsersEmailUnsubscribeLink(userId, emailType);
-    print(result);
-} catch (e) {
+    final response = api.getUsersEmailUnsubscribeLink(userId, emailType);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling UsersApi->getUsersEmailUnsubscribeLink: $e\n');
 }
 ```
@@ -258,13 +258,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = UsersApi();
-final id = id_example; // String | User ID
+final api = Openapi().getUsersApi();
+final String id = id_example; // String | User ID
 
 try {
-    final result = api_instance.getUsersId(id);
-    print(result);
-} catch (e) {
+    final response = api.getUsersId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling UsersApi->getUsersId: $e\n');
 }
 ```
@@ -309,12 +309,12 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = UsersApi();
+final api = Openapi().getUsersApi();
 
 try {
-    final result = api_instance.getUsersWhitelabelInformation();
-    print(result);
-} catch (e) {
+    final response = api.getUsersWhitelabelInformation();
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling UsersApi->getUsersWhitelabelInformation: $e\n');
 }
 ```
@@ -356,13 +356,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = UsersApi();
-final id = id_example; // String | User ID
+final api = Openapi().getUsersApi();
+final String id = id_example; // String | User ID
 
 try {
-    final result = api_instance.patchUsersId(id);
-    print(result);
-} catch (e) {
+    final response = api.patchUsersId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling UsersApi->patchUsersId: $e\n');
 }
 ```
@@ -407,13 +407,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = UsersApi();
-final createUserRequest = CreateUserRequest(); // CreateUserRequest | User data to be created
+final api = Openapi().getUsersApi();
+final CreateUserRequest createUserRequest = ; // CreateUserRequest | User data to be created
 
 try {
-    final result = api_instance.postUsers(createUserRequest);
-    print(result);
-} catch (e) {
+    final response = api.postUsers(createUserRequest);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling UsersApi->postUsers: $e\n');
 }
 ```
@@ -450,13 +450,13 @@ Provides an access_token for the email or the userId provided in the LoginComman
 ```dart
 import 'package:openapi/api.dart';
 
-final api_instance = UsersApi();
-final loginCommand = LoginCommand(); // LoginCommand | A LoginCommand object
+final api = Openapi().getUsersApi();
+final LoginCommand loginCommand = ; // LoginCommand | A LoginCommand object
 
 try {
-    final result = api_instance.postUsersLogin(loginCommand);
-    print(result);
-} catch (e) {
+    final response = api.postUsersLogin(loginCommand);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling UsersApi->postUsersLogin: $e\n');
 }
 ```
@@ -501,12 +501,12 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = UsersApi();
+final api = Openapi().getUsersApi();
 
 try {
-    final result = api_instance.postUsersLogout();
-    print(result);
-} catch (e) {
+    final response = api.postUsersLogout();
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling UsersApi->postUsersLogout: $e\n');
 }
 ```

@@ -37,12 +37,12 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ProductsApi();
+final api = Openapi().getProductsApi();
 
 try {
-    final result = api_instance.deleteProducts();
-    print(result);
-} catch (e) {
+    final response = api.deleteProducts();
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ProductsApi->deleteProducts: $e\n');
 }
 ```
@@ -84,13 +84,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ProductsApi();
-final id = id_example; // String | The uberall unique ID for the product you want to delete
+final api = Openapi().getProductsApi();
+final String id = id_example; // String | The uberall unique ID for the product you want to delete
 
 try {
-    final result = api_instance.deleteProductsId(id);
-    print(result);
-} catch (e) {
+    final response = api.deleteProductsId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ProductsApi->deleteProductsId: $e\n');
 }
 ```
@@ -135,13 +135,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ProductsApi();
-final body = Object(); // Object | 
+final api = Openapi().getProductsApi();
+final JsonObject body = Object; // JsonObject | 
 
 try {
-    final result = api_instance.getProducts(body);
-    print(result);
-} catch (e) {
+    final response = api.getProducts(body);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ProductsApi->getProducts: $e\n');
 }
 ```
@@ -150,7 +150,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **Object**|  | [optional] 
+ **body** | **JsonObject**|  | [optional] 
 
 ### Return type
 
@@ -186,13 +186,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ProductsApi();
-final id = id_example; // String | The uberall unique ID for the product you want to get
+final api = Openapi().getProductsApi();
+final String id = id_example; // String | The uberall unique ID for the product you want to get
 
 try {
-    final result = api_instance.getProductsId(id);
-    print(result);
-} catch (e) {
+    final response = api.getProductsId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ProductsApi->getProductsId: $e\n');
 }
 ```
@@ -237,13 +237,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ProductsApi();
-final product = Product(); // Product | A Product object
+final api = Openapi().getProductsApi();
+final Product product = ; // Product | A Product object
 
 try {
-    final result = api_instance.patchProducts(product);
-    print(result);
-} catch (e) {
+    final response = api.patchProducts(product);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ProductsApi->patchProducts: $e\n');
 }
 ```
@@ -288,14 +288,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ProductsApi();
-final id = id_example; // String | The uberall unique ID for the product you want to update
-final product = Product(); // Product | A Product object
+final api = Openapi().getProductsApi();
+final String id = id_example; // String | The uberall unique ID for the product you want to update
+final Product product = ; // Product | A Product object
 
 try {
-    final result = api_instance.patchProductsId(id, product);
-    print(result);
-} catch (e) {
+    final response = api.patchProductsId(id, product);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ProductsApi->patchProductsId: $e\n');
 }
 ```
@@ -341,13 +341,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = ProductsApi();
-final product = Product(); // Product | A Product object
+final api = Openapi().getProductsApi();
+final Product product = ; // Product | A Product object
 
 try {
-    final result = api_instance.postProducts(product);
-    print(result);
-} catch (e) {
+    final response = api.postProducts(product);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ProductsApi->postProducts: $e\n');
 }
 ```

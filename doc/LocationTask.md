@@ -9,7 +9,7 @@ import 'package:openapi/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **String** | The type of the task. The value could be on of [LISTING_FACEBOOK_CONNECTION_MISSING, LISTING_GOOGLE_CONNECTION_MISSING, LISTING_GOOGLE_VERIFICATION_MISSING, LISTING_GOOGLE_PIN_MISSING, LISTING_FIELDS_MISSING, DATAPOINT_UNREPLIED_RECENT, DATAPOINT_UNREAD, DATAPOINT_UNREPLIED_OLD, LOCATION_PROPERTIES_MISSING, LOCATION_ADD_PHOTOS, LOCATION_SOCIAL_POST_MISSING, LOCATION_RICH_DATA_MISSING, LOCATION_ADD_NEW_PHOTOS] | [optional] 
-**properties** | [**Map<String, Object>**](Object.md) | A Map with info related to the specific task | [optional] [default to const {}]
+**properties** | [**BuiltMap&lt;String, JsonObject&gt;**](JsonObject.md) | A Map with info related to the specific task | [optional] 
 **priority** | **int** | The priority of the task to be performed on the location. The value is from 1 to 90 and depends on the Task''s type | [optional] 
 **locationId** | **int** | The location id which the next best action refers to | [optional] 
 

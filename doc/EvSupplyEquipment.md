@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **evseId** | **String** | Required - Unique id for the outside world. Compliant with “eMI3standard version V1.0”  | [optional] 
 **physicalReference** | **String** | A number/string printed on the outside of the EVSE for visual identification | [optional] 
 **updateTime** | [**DateTime**](DateTime.md) | Date/time of the Equipment's last update | 
-**connectors** | [**Set<EvConnector>**](EvConnector.md) | Details on each connector | [default to const {}]
-**parkingRestrictions** | **Set<String>** | This value, if provided by CPO, represents the restriction to the parking spot for different purposes | [optional] [default to const {}]
+**connectors** | [**BuiltSet&lt;EvConnector&gt;**](EvConnector.md) | Details on each connector | 
+**parkingRestrictions** | **BuiltSet&lt;String&gt;** | This value, if provided by CPO, represents the restriction to the parking spot for different purposes | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

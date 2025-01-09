@@ -28,13 +28,13 @@ Unlike a brand data point
 ```dart
 import 'package:openapi/api.dart';
 
-final api_instance = BrandDataPointsApi();
-final id = id_example; // String | The ID of the Brand Data Point
+final api = Openapi().getBrandDataPointsApi();
+final String id = id_example; // String | The ID of the Brand Data Point
 
 try {
-    final result = api_instance.deleteBrandDataPointsIdLike(id);
-    print(result);
-} catch (e) {
+    final response = api.deleteBrandDataPointsIdLike(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling BrandDataPointsApi->deleteBrandDataPointsIdLike: $e\n');
 }
 ```
@@ -79,14 +79,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = BrandDataPointsApi();
-final id = id_example; // String | The id of the root brand data point
-final replyId = replyId_example; // String | The id  of the replying brand data point
+final api = Openapi().getBrandDataPointsApi();
+final String id = id_example; // String | The id of the root brand data point
+final String replyId = replyId_example; // String | The id  of the replying brand data point
 
 try {
-    final result = api_instance.deleteBrandDataPointsIdReplyReplyIdApproval(id, replyId);
-    print(result);
-} catch (e) {
+    final response = api.deleteBrandDataPointsIdReplyReplyIdApproval(id, replyId);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling BrandDataPointsApi->deleteBrandDataPointsIdReplyReplyIdApproval: $e\n');
 }
 ```
@@ -132,14 +132,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = BrandDataPointsApi();
-final id = id_example; // String | The uberall unique ID of the brand data point you want to reply to
-final reply = reply_example; // String | The text you want to reply, on most directories this will be published and can be read by the author of the original data point
+final api = Openapi().getBrandDataPointsApi();
+final String id = id_example; // String | The uberall unique ID of the brand data point you want to reply to
+final String reply = reply_example; // String | The text you want to reply, on most directories this will be published and can be read by the author of the original data point
 
 try {
-    final result = api_instance.patchBrandDataPointsIdReply(id, reply);
-    print(result);
-} catch (e) {
+    final response = api.patchBrandDataPointsIdReply(id, reply);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling BrandDataPointsApi->patchBrandDataPointsIdReply: $e\n');
 }
 ```
@@ -185,13 +185,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = BrandDataPointsApi();
-final id = id_example; // String | The ID of the Brand Data Point
+final api = Openapi().getBrandDataPointsApi();
+final String id = id_example; // String | The ID of the Brand Data Point
 
 try {
-    final result = api_instance.postBrandDataPointsIdLike(id);
-    print(result);
-} catch (e) {
+    final response = api.postBrandDataPointsIdLike(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling BrandDataPointsApi->postBrandDataPointsIdLike: $e\n');
 }
 ```
@@ -236,14 +236,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = BrandDataPointsApi();
-final id = id_example; // String | The id of the root brand data point
-final replyId = replyId_example; // String | The id  of the replying brand data point
+final api = Openapi().getBrandDataPointsApi();
+final String id = id_example; // String | The id of the root brand data point
+final String replyId = replyId_example; // String | The id  of the replying brand data point
 
 try {
-    final result = api_instance.postBrandDataPointsIdReplyReplyIdApproval(id, replyId);
-    print(result);
-} catch (e) {
+    final response = api.postBrandDataPointsIdReplyReplyIdApproval(id, replyId);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling BrandDataPointsApi->postBrandDataPointsIdReplyReplyIdApproval: $e\n');
 }
 ```
@@ -289,15 +289,15 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = BrandDataPointsApi();
-final id = id_example; // String | The id of the root brand data point to approve
-final replyId = replyId_example; // String | The id of the replying brand data point to approve
-final replyText = replyText_example; // String | The edited text of the reply
+final api = Openapi().getBrandDataPointsApi();
+final String id = id_example; // String | The id of the root brand data point to approve
+final String replyId = replyId_example; // String | The id of the replying brand data point to approve
+final String replyText = replyText_example; // String | The edited text of the reply
 
 try {
-    final result = api_instance.putBrandDataPointsIdReplyReplyIdApproval(id, replyId, replyText);
-    print(result);
-} catch (e) {
+    final response = api.putBrandDataPointsIdReplyReplyIdApproval(id, replyId, replyText);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling BrandDataPointsApi->putBrandDataPointsIdReplyReplyIdApproval: $e\n');
 }
 ```

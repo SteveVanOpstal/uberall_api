@@ -35,14 +35,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = CollectionManagementApi();
-final id = id_example; // String | The uberall unique id of the Collection to delete
-final contentCollection = ContentCollection(); // ContentCollection | ContentCollection object to delete
+final api = Openapi().getCollectionManagementApi();
+final String id = id_example; // String | The uberall unique id of the Collection to delete
+final ContentCollection contentCollection = ; // ContentCollection | ContentCollection object to delete
 
 try {
-    final result = api_instance.deleteCollectionsId(id, contentCollection);
-    print(result);
-} catch (e) {
+    final response = api.deleteCollectionsId(id, contentCollection);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling CollectionManagementApi->deleteCollectionsId: $e\n');
 }
 ```
@@ -88,13 +88,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = CollectionManagementApi();
-final body = Object(); // Object | 
+final api = Openapi().getCollectionManagementApi();
+final JsonObject body = Object; // JsonObject | 
 
 try {
-    final result = api_instance.getCollections(body);
-    print(result);
-} catch (e) {
+    final response = api.getCollections(body);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling CollectionManagementApi->getCollections: $e\n');
 }
 ```
@@ -103,7 +103,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **Object**|  | [optional] 
+ **body** | **JsonObject**|  | [optional] 
 
 ### Return type
 
@@ -139,13 +139,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = CollectionManagementApi();
-final id = id_example; // String | The uberall unique id of the Collection to retrieve
+final api = Openapi().getCollectionManagementApi();
+final String id = id_example; // String | The uberall unique id of the Collection to retrieve
 
 try {
-    final result = api_instance.getCollectionsId(id);
-    print(result);
-} catch (e) {
+    final response = api.getCollectionsId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling CollectionManagementApi->getCollectionsId: $e\n');
 }
 ```
@@ -190,14 +190,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = CollectionManagementApi();
-final id = id_example; // String | The uberall unique id of the Collection to update
-final contentCollection = ContentCollection(); // ContentCollection | ContentCollection object to update
+final api = Openapi().getCollectionManagementApi();
+final String id = id_example; // String | The uberall unique id of the Collection to update
+final ContentCollection contentCollection = ; // ContentCollection | ContentCollection object to update
 
 try {
-    final result = api_instance.patchCollectionsId(id, contentCollection);
-    print(result);
-} catch (e) {
+    final response = api.patchCollectionsId(id, contentCollection);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling CollectionManagementApi->patchCollectionsId: $e\n');
 }
 ```
@@ -243,13 +243,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = CollectionManagementApi();
-final contentCollection = ContentCollection(); // ContentCollection | ContentCollection object to create
+final api = Openapi().getCollectionManagementApi();
+final ContentCollection contentCollection = ; // ContentCollection | ContentCollection object to create
 
 try {
-    final result = api_instance.postCollections(contentCollection);
-    print(result);
-} catch (e) {
+    final response = api.postCollections(contentCollection);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling CollectionManagementApi->postCollections: $e\n');
 }
 ```

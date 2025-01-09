@@ -9,14 +9,14 @@ All URIs are relative to *https://uberall.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteDataPointsFiltersId**](DataPointFiltersApi.md#deletedatapointsfiltersid) | **DELETE** /data-points/filters/{id} | Delete a saved datapoint''s filter
-[**deleteDataPointsFiltersIdSubscription**](DataPointFiltersApi.md#deletedatapointsfiltersidsubscription) | **DELETE** /data-points/filters/{id}/subscription | Unsubscribe from a saved datapoint''s filter
+[**deleteDataPointsFiltersId**](DataPointFiltersApi.md#deletedatapointsfiltersid) | **DELETE** /data-points/filters/{id} | Delete a saved datapoint&#39;&#39;s filter
+[**deleteDataPointsFiltersIdSubscription**](DataPointFiltersApi.md#deletedatapointsfiltersidsubscription) | **DELETE** /data-points/filters/{id}/subscription | Unsubscribe from a saved datapoint&#39;&#39;s filter
 [**getDataPointsFilters**](DataPointFiltersApi.md#getdatapointsfilters) | **GET** /data-points/filters | Get available filters for filtering data points
-[**getDataPointsFiltersId**](DataPointFiltersApi.md#getdatapointsfiltersid) | **GET** /data-points/filters/{id} | Get a saved datapoint''s filter
-[**getDataPointsFiltersList**](DataPointFiltersApi.md#getdatapointsfilterslist) | **GET** /data-points/filters/list | List all saved datapoint''s filters the user has access
-[**patchDataPointsFiltersId**](DataPointFiltersApi.md#patchdatapointsfiltersid) | **PATCH** /data-points/filters/{id} | Update a saved datapoint''s filter
-[**postDataPointsFilters**](DataPointFiltersApi.md#postdatapointsfilters) | **POST** /data-points/filters | Create a new saved datapoint''s filter
-[**postDataPointsFiltersIdSubscription**](DataPointFiltersApi.md#postdatapointsfiltersidsubscription) | **POST** /data-points/filters/{id}/subscription | Subscribe to a saved datapoint''s filter
+[**getDataPointsFiltersId**](DataPointFiltersApi.md#getdatapointsfiltersid) | **GET** /data-points/filters/{id} | Get a saved datapoint&#39;&#39;s filter
+[**getDataPointsFiltersList**](DataPointFiltersApi.md#getdatapointsfilterslist) | **GET** /data-points/filters/list | List all saved datapoint&#39;&#39;s filters the user has access
+[**patchDataPointsFiltersId**](DataPointFiltersApi.md#patchdatapointsfiltersid) | **PATCH** /data-points/filters/{id} | Update a saved datapoint&#39;&#39;s filter
+[**postDataPointsFilters**](DataPointFiltersApi.md#postdatapointsfilters) | **POST** /data-points/filters | Create a new saved datapoint&#39;&#39;s filter
+[**postDataPointsFiltersIdSubscription**](DataPointFiltersApi.md#postdatapointsfiltersidsubscription) | **POST** /data-points/filters/{id}/subscription | Subscribe to a saved datapoint&#39;&#39;s filter
 
 
 # **deleteDataPointsFiltersId**
@@ -38,14 +38,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DataPointFiltersApi();
-final id = id_example; // String | ID of a DataPointFilter
-final userId = 789; // int | The user that is the owner of the filter. Required when request is done as API_ADMIN
+final api = Openapi().getDataPointFiltersApi();
+final String id = id_example; // String | ID of a DataPointFilter
+final int userId = 789; // int | The user that is the owner of the filter. Required when request is done as API_ADMIN
 
 try {
-    final result = api_instance.deleteDataPointsFiltersId(id, userId);
-    print(result);
-} catch (e) {
+    final response = api.deleteDataPointsFiltersId(id, userId);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DataPointFiltersApi->deleteDataPointsFiltersId: $e\n');
 }
 ```
@@ -91,14 +91,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DataPointFiltersApi();
-final id = id_example; // String | ID of a DataPointFilter
-final userId = 789; // int | ID of a user that should be unsubscribed from the filter
+final api = Openapi().getDataPointFiltersApi();
+final String id = id_example; // String | ID of a DataPointFilter
+final int userId = 789; // int | ID of a user that should be unsubscribed from the filter
 
 try {
-    final result = api_instance.deleteDataPointsFiltersIdSubscription(id, userId);
-    print(result);
-} catch (e) {
+    final response = api.deleteDataPointsFiltersIdSubscription(id, userId);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DataPointFiltersApi->deleteDataPointsFiltersIdSubscription: $e\n');
 }
 ```
@@ -144,14 +144,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DataPointFiltersApi();
-final locationIds = locationIds_example; // String | Applies a filter of locationIds
-final userId = userId_example; // String | Shows the filters of the user with this id
+final api = Openapi().getDataPointFiltersApi();
+final String locationIds = locationIds_example; // String | Applies a filter of locationIds
+final String userId = userId_example; // String | Shows the filters of the user with this id
 
 try {
-    final result = api_instance.getDataPointsFilters(locationIds, userId);
-    print(result);
-} catch (e) {
+    final response = api.getDataPointsFilters(locationIds, userId);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DataPointFiltersApi->getDataPointsFilters: $e\n');
 }
 ```
@@ -197,13 +197,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DataPointFiltersApi();
-final id = id_example; // String | ID of a DataPointFilter
+final api = Openapi().getDataPointFiltersApi();
+final String id = id_example; // String | ID of a DataPointFilter
 
 try {
-    final result = api_instance.getDataPointsFiltersId(id);
-    print(result);
-} catch (e) {
+    final response = api.getDataPointsFiltersId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DataPointFiltersApi->getDataPointsFiltersId: $e\n');
 }
 ```
@@ -248,13 +248,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DataPointFiltersApi();
-final userId = userId_example; // String | Shows the filters of the user with this id
+final api = Openapi().getDataPointFiltersApi();
+final String userId = userId_example; // String | Shows the filters of the user with this id
 
 try {
-    final result = api_instance.getDataPointsFiltersList(userId);
-    print(result);
-} catch (e) {
+    final response = api.getDataPointsFiltersList(userId);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DataPointFiltersApi->getDataPointsFiltersList: $e\n');
 }
 ```
@@ -299,14 +299,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DataPointFiltersApi();
-final id = id_example; // String | ID of a DataPointFilter
-final dataPointFilter = DataPointFilter(); // DataPointFilter | A DataPointFilter object that needs to be updated
+final api = Openapi().getDataPointFiltersApi();
+final String id = id_example; // String | ID of a DataPointFilter
+final DataPointFilter dataPointFilter = ; // DataPointFilter | A DataPointFilter object that needs to be updated
 
 try {
-    final result = api_instance.patchDataPointsFiltersId(id, dataPointFilter);
-    print(result);
-} catch (e) {
+    final response = api.patchDataPointsFiltersId(id, dataPointFilter);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DataPointFiltersApi->patchDataPointsFiltersId: $e\n');
 }
 ```
@@ -352,13 +352,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DataPointFiltersApi();
-final dataPointFilter = DataPointFilter(); // DataPointFilter | DataPointFilter object that needs to be created
+final api = Openapi().getDataPointFiltersApi();
+final DataPointFilter dataPointFilter = ; // DataPointFilter | DataPointFilter object that needs to be created
 
 try {
-    final result = api_instance.postDataPointsFilters(dataPointFilter);
-    print(result);
-} catch (e) {
+    final response = api.postDataPointsFilters(dataPointFilter);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DataPointFiltersApi->postDataPointsFilters: $e\n');
 }
 ```
@@ -403,14 +403,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DataPointFiltersApi();
-final id = id_example; // String | ID of a DataPointFilter
-final userId = 789; // int | ID of a user that should be subscribed to the filter
+final api = Openapi().getDataPointFiltersApi();
+final String id = id_example; // String | ID of a DataPointFilter
+final int userId = 789; // int | ID of a user that should be subscribed to the filter
 
 try {
-    final result = api_instance.postDataPointsFiltersIdSubscription(id, userId);
-    print(result);
-} catch (e) {
+    final response = api.postDataPointsFiltersIdSubscription(id, userId);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DataPointFiltersApi->postDataPointsFiltersIdSubscription: $e\n');
 }
 ```

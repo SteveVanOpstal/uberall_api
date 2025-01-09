@@ -8,8 +8,8 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**interactionCountByPeriod** | [**List<Map<String, Object>>**](Map.md) | The number of reviews and photos unread by period | [optional] [default to const []]
-**averageRatingByPeriod** | [**List<TimeSeriesSegment>**](TimeSeriesSegment.md) | The average ratings of the incoming reviews in the given time periods of the total time span. | [optional] [default to const []]
+**interactionCountByPeriod** | [**BuiltList&lt;BuiltMap&lt;String, JsonObject&gt;&gt;**](BuiltMap.md) | The number of reviews and photos unread by period | [optional] 
+**averageRatingByPeriod** | [**BuiltList&lt;TimeSeriesSegment&gt;**](TimeSeriesSegment.md) | The average ratings of the incoming reviews in the given time periods of the total time span. | [optional] 
 **matchedLocationsCount** | **int** | The number of locations matching the given textFilter query | [optional] 
 **totalRatingCount** | **int** | The total number of reviews with rating in the given time span. | [optional] 
 

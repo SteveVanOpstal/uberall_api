@@ -8,7 +8,7 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**plans** | [**List<ProductPlan>**](ProductPlan.md) |  | [optional] [default to const []]
+**plans** | [**BuiltList&lt;ProductPlan&gt;**](ProductPlan.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

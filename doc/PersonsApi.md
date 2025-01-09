@@ -29,12 +29,12 @@ Delete a person identified by identifier in the url param
 ```dart
 import 'package:openapi/api.dart';
 
-final api_instance = PersonsApi();
+final api = Openapi().getPersonsApi();
 
 try {
-    final result = api_instance.deletePersons();
-    print(result);
-} catch (e) {
+    final response = api.deletePersons();
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling PersonsApi->deletePersons: $e\n');
 }
 ```
@@ -76,13 +76,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = PersonsApi();
-final id = id_example; // String | The uberall unique id of the person you want to delete
+final api = Openapi().getPersonsApi();
+final String id = id_example; // String | The uberall unique id of the person you want to delete
 
 try {
-    final result = api_instance.deletePersonsId(id);
-    print(result);
-} catch (e) {
+    final response = api.deletePersonsId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling PersonsApi->deletePersonsId: $e\n');
 }
 ```
@@ -127,13 +127,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = PersonsApi();
-final body = Object(); // Object | 
+final api = Openapi().getPersonsApi();
+final JsonObject body = Object; // JsonObject | 
 
 try {
-    final result = api_instance.getPersons(body);
-    print(result);
-} catch (e) {
+    final response = api.getPersons(body);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling PersonsApi->getPersons: $e\n');
 }
 ```
@@ -142,7 +142,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **Object**|  | [optional] 
+ **body** | **JsonObject**|  | [optional] 
 
 ### Return type
 
@@ -178,13 +178,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = PersonsApi();
-final id = id_example; // String | The uberall unique id of the person you want to get
+final api = Openapi().getPersonsApi();
+final String id = id_example; // String | The uberall unique id of the person you want to get
 
 try {
-    final result = api_instance.getPersonsId(id);
-    print(result);
-} catch (e) {
+    final response = api.getPersonsId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling PersonsApi->getPersonsId: $e\n');
 }
 ```
@@ -229,13 +229,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = PersonsApi();
-final person = Person(); // Person | Person object that needs to be updated
+final api = Openapi().getPersonsApi();
+final Person person = ; // Person | Person object that needs to be updated
 
 try {
-    final result = api_instance.patchPersons(person);
-    print(result);
-} catch (e) {
+    final response = api.patchPersons(person);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling PersonsApi->patchPersons: $e\n');
 }
 ```
@@ -280,14 +280,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = PersonsApi();
-final id = id_example; // String | The uberall unique id of the person you want to update
-final person = Person(); // Person | Person object that needs to be updated
+final api = Openapi().getPersonsApi();
+final String id = id_example; // String | The uberall unique id of the person you want to update
+final Person person = ; // Person | Person object that needs to be updated
 
 try {
-    final result = api_instance.patchPersonsId(id, person);
-    print(result);
-} catch (e) {
+    final response = api.patchPersonsId(id, person);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling PersonsApi->patchPersonsId: $e\n');
 }
 ```
@@ -333,13 +333,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = PersonsApi();
-final person = Person(); // Person | Person object that needs to be created
+final api = Openapi().getPersonsApi();
+final Person person = ; // Person | Person object that needs to be created
 
 try {
-    final result = api_instance.postPersons(person);
-    print(result);
-} catch (e) {
+    final response = api.postPersons(person);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling PersonsApi->postPersons: $e\n');
 }
 ```

@@ -36,18 +36,18 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = CategoriesApi();
-final language = language_example; // String | Show categories in the specified language. One of de, en, es, fr
-final categories = 789; // int | The uberall unique id of the category you want to get
-final q = Auto; // String | Filter categories by a search query
-final roots = true; // bool | Set to 'true' to show root categories as well (i.e., show all categories)
-final max = 10; // int | Used for pagination. Maximum number of results per page. Default: 10
-final offset = 0; // int | Offset used for pagination. Default: 0
+final api = Openapi().getCategoriesApi();
+final String language = language_example; // String | Show categories in the specified language. One of de, en, es, fr
+final int categories = 789; // int | The uberall unique id of the category you want to get
+final String q = Auto; // String | Filter categories by a search query
+final bool roots = true; // bool | Set to 'true' to show root categories as well (i.e., show all categories)
+final int max = 10; // int | Used for pagination. Maximum number of results per page. Default: 10
+final int offset = 0; // int | Offset used for pagination. Default: 0
 
 try {
-    final result = api_instance.getCategories(language, categories, q, roots, max, offset);
-    print(result);
-} catch (e) {
+    final response = api.getCategories(language, categories, q, roots, max, offset);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling CategoriesApi->getCategories: $e\n');
 }
 ```
@@ -97,16 +97,16 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = CategoriesApi();
-final id = id_example; // String | The Category id
-final country = country_example; // String | The country to retrieve the attribute recommendations for
-final keywords = []; // List<String> | Keywords to look for which are associated with attributes
-final locationId = locationId_example; // String | Location id to exclude already applied attributes on the provided location
+final api = Openapi().getCategoriesApi();
+final String id = id_example; // String | The Category id
+final String country = country_example; // String | The country to retrieve the attribute recommendations for
+final BuiltList<String> keywords = ; // BuiltList<String> | Keywords to look for which are associated with attributes
+final String locationId = locationId_example; // String | Location id to exclude already applied attributes on the provided location
 
 try {
-    final result = api_instance.getCategoriesIdAttributeRecommendations(id, country, keywords, locationId);
-    print(result);
-} catch (e) {
+    final response = api.getCategoriesIdAttributeRecommendations(id, country, keywords, locationId);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling CategoriesApi->getCategoriesIdAttributeRecommendations: $e\n');
 }
 ```
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The Category id | 
  **country** | **String**| The country to retrieve the attribute recommendations for | 
- **keywords** | [**List<String>**](String.md)| Keywords to look for which are associated with attributes | [optional] [default to const []]
+ **keywords** | [**BuiltList&lt;String&gt;**](String.md)| Keywords to look for which are associated with attributes | [optional] 
  **locationId** | **String**| Location id to exclude already applied attributes on the provided location | [optional] 
 
 ### Return type
@@ -154,15 +154,15 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = CategoriesApi();
-final id = id_example; // String | The Category id
-final country = country_example; // String | The country to retrieve the attributes for
-final language = language_example; // String | The language to show the attributes in, this affects only the name of the results
+final api = Openapi().getCategoriesApi();
+final String id = id_example; // String | The Category id
+final String country = country_example; // String | The country to retrieve the attributes for
+final String language = language_example; // String | The language to show the attributes in, this affects only the name of the results
 
 try {
-    final result = api_instance.getCategoriesIdAttributes(id, country, language);
-    print(result);
-} catch (e) {
+    final response = api.getCategoriesIdAttributes(id, country, language);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling CategoriesApi->getCategoriesIdAttributes: $e\n');
 }
 ```
@@ -209,13 +209,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = CategoriesApi();
-final id = id_example; // String | Photo types for the location id
+final api = Openapi().getCategoriesApi();
+final String id = id_example; // String | Photo types for the location id
 
 try {
-    final result = api_instance.getCategoriesIdAvailablePhotoTypes(id);
-    print(result);
-} catch (e) {
+    final response = api.getCategoriesIdAvailablePhotoTypes(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling CategoriesApi->getCategoriesIdAvailablePhotoTypes: $e\n');
 }
 ```
@@ -260,15 +260,15 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = CategoriesApi();
-final id = id_example; // String | Category ID for retrieving services
-final country = country_example; // String | Available structured services vary by country, so a country is needed to provide the available structured services from Google.
-final language = language_example; // String | The language the structured services should be returned in.
+final api = Openapi().getCategoriesApi();
+final String id = id_example; // String | Category ID for retrieving services
+final String country = country_example; // String | Available structured services vary by country, so a country is needed to provide the available structured services from Google.
+final String language = language_example; // String | The language the structured services should be returned in.
 
 try {
-    final result = api_instance.getCategoriesIdGoogleServices(id, country, language);
-    print(result);
-} catch (e) {
+    final response = api.getCategoriesIdGoogleServices(id, country, language);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling CategoriesApi->getCategoriesIdGoogleServices: $e\n');
 }
 ```
@@ -315,14 +315,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = CategoriesApi();
-final id = id_example; // String | The Category id
-final language = en or de; // String | The language to show the values in
+final api = Openapi().getCategoriesApi();
+final String id = id_example; // String | The Category id
+final String language = en or de; // String | The language to show the values in
 
 try {
-    final result = api_instance.getCategoriesIdMoreHoursTypes(id, language);
-    print(result);
-} catch (e) {
+    final response = api.getCategoriesIdMoreHoursTypes(id, language);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling CategoriesApi->getCategoriesIdMoreHoursTypes: $e\n');
 }
 ```

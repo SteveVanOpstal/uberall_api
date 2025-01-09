@@ -44,18 +44,18 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DashboardApi();
-final businessIds = []; // List<int> | The ids of the businesses you want customer feedback for
-final locationIds = []; // List<int> | The ids of the locations you want customer feedback data for
-final textFilter = Berlin; // String | Filter locations to get customer feedback for by name, zip, street, city, label
-final type = type_example; // String | The directory you want customer feedback data for
-final startDate = 2013-10-20; // DateTime | The start date
-final endDate = 2013-10-20; // DateTime | The end date
+final api = Openapi().getDashboardApi();
+final BuiltList<int> businessIds = ; // BuiltList<int> | The ids of the businesses you want customer feedback for
+final BuiltList<int> locationIds = ; // BuiltList<int> | The ids of the locations you want customer feedback data for
+final String textFilter = Berlin; // String | Filter locations to get customer feedback for by name, zip, street, city, label
+final String type = type_example; // String | The directory you want customer feedback data for
+final Date startDate = 2013-10-20; // Date | The start date
+final Date endDate = 2013-10-20; // Date | The end date
 
 try {
-    final result = api_instance.getDashboardCustomerFeedback(businessIds, locationIds, textFilter, type, startDate, endDate);
-    print(result);
-} catch (e) {
+    final response = api.getDashboardCustomerFeedback(businessIds, locationIds, textFilter, type, startDate, endDate);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DashboardApi->getDashboardCustomerFeedback: $e\n');
 }
 ```
@@ -64,12 +64,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **businessIds** | [**List<int>**](int.md)| The ids of the businesses you want customer feedback for | [optional] [default to const []]
- **locationIds** | [**List<int>**](int.md)| The ids of the locations you want customer feedback data for | [optional] [default to const []]
+ **businessIds** | [**BuiltList&lt;int&gt;**](int.md)| The ids of the businesses you want customer feedback for | [optional] 
+ **locationIds** | [**BuiltList&lt;int&gt;**](int.md)| The ids of the locations you want customer feedback data for | [optional] 
  **textFilter** | **String**| Filter locations to get customer feedback for by name, zip, street, city, label | [optional] 
  **type** | **String**| The directory you want customer feedback data for | [optional] 
- **startDate** | **DateTime**| The start date | [optional] 
- **endDate** | **DateTime**| The end date | [optional] 
+ **startDate** | **Date**| The start date | [optional] 
+ **endDate** | **Date**| The end date | [optional] 
 
 ### Return type
 
@@ -105,19 +105,19 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DashboardApi();
-final businessIds = []; // List<int> | The ids of the businesses you want customer feedback by period for
-final locationIds = []; // List<int> | The ids of the locations you want customer feedback by period data for
-final textFilter = Berlin; // String | Filter locations to get customer feedback by period for by name, zip, street, city, label
-final type = type_example; // String | The directory you want customer feedback by period data for
-final startDate = 2013-10-20; // DateTime | The start date
-final endDate = 2013-10-20; // DateTime | The end date
-final group = group_example; // String | How to group the results, one of: DAY, WEEK, MONTH, YEAR
+final api = Openapi().getDashboardApi();
+final BuiltList<int> businessIds = ; // BuiltList<int> | The ids of the businesses you want customer feedback by period for
+final BuiltList<int> locationIds = ; // BuiltList<int> | The ids of the locations you want customer feedback by period data for
+final String textFilter = Berlin; // String | Filter locations to get customer feedback by period for by name, zip, street, city, label
+final String type = type_example; // String | The directory you want customer feedback by period data for
+final Date startDate = 2013-10-20; // Date | The start date
+final Date endDate = 2013-10-20; // Date | The end date
+final String group = group_example; // String | How to group the results, one of: DAY, WEEK, MONTH, YEAR
 
 try {
-    final result = api_instance.getDashboardCustomerFeedbackByPeriod(businessIds, locationIds, textFilter, type, startDate, endDate, group);
-    print(result);
-} catch (e) {
+    final response = api.getDashboardCustomerFeedbackByPeriod(businessIds, locationIds, textFilter, type, startDate, endDate, group);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DashboardApi->getDashboardCustomerFeedbackByPeriod: $e\n');
 }
 ```
@@ -126,12 +126,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **businessIds** | [**List<int>**](int.md)| The ids of the businesses you want customer feedback by period for | [optional] [default to const []]
- **locationIds** | [**List<int>**](int.md)| The ids of the locations you want customer feedback by period data for | [optional] [default to const []]
+ **businessIds** | [**BuiltList&lt;int&gt;**](int.md)| The ids of the businesses you want customer feedback by period for | [optional] 
+ **locationIds** | [**BuiltList&lt;int&gt;**](int.md)| The ids of the locations you want customer feedback by period data for | [optional] 
  **textFilter** | **String**| Filter locations to get customer feedback by period for by name, zip, street, city, label | [optional] 
  **type** | **String**| The directory you want customer feedback by period data for | [optional] 
- **startDate** | **DateTime**| The start date | [optional] 
- **endDate** | **DateTime**| The end date | [optional] 
+ **startDate** | **Date**| The start date | [optional] 
+ **endDate** | **Date**| The end date | [optional] 
  **group** | **String**| How to group the results, one of: DAY, WEEK, MONTH, YEAR | [optional] 
 
 ### Return type
@@ -168,17 +168,17 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DashboardApi();
-final businessIds = []; // List<int> | The ids of the businesses you want customer feedback keywords for
-final locationIds = []; // List<int> | The ids of the locations you want customer feedback keywords data for
-final textFilter = Berlin; // String | Filter locations to get customer feedback keywords for by name, zip, street, city, label
-final startDate = 2013-10-20; // DateTime | The start date
-final endDate = 2013-10-20; // DateTime | The end date
+final api = Openapi().getDashboardApi();
+final BuiltList<int> businessIds = ; // BuiltList<int> | The ids of the businesses you want customer feedback keywords for
+final BuiltList<int> locationIds = ; // BuiltList<int> | The ids of the locations you want customer feedback keywords data for
+final String textFilter = Berlin; // String | Filter locations to get customer feedback keywords for by name, zip, street, city, label
+final Date startDate = 2013-10-20; // Date | The start date
+final Date endDate = 2013-10-20; // Date | The end date
 
 try {
-    final result = api_instance.getDashboardCustomerFeedbackKeywords(businessIds, locationIds, textFilter, startDate, endDate);
-    print(result);
-} catch (e) {
+    final response = api.getDashboardCustomerFeedbackKeywords(businessIds, locationIds, textFilter, startDate, endDate);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DashboardApi->getDashboardCustomerFeedbackKeywords: $e\n');
 }
 ```
@@ -187,11 +187,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **businessIds** | [**List<int>**](int.md)| The ids of the businesses you want customer feedback keywords for | [optional] [default to const []]
- **locationIds** | [**List<int>**](int.md)| The ids of the locations you want customer feedback keywords data for | [optional] [default to const []]
+ **businessIds** | [**BuiltList&lt;int&gt;**](int.md)| The ids of the businesses you want customer feedback keywords for | [optional] 
+ **locationIds** | [**BuiltList&lt;int&gt;**](int.md)| The ids of the locations you want customer feedback keywords data for | [optional] 
  **textFilter** | **String**| Filter locations to get customer feedback keywords for by name, zip, street, city, label | [optional] 
- **startDate** | **DateTime**| The start date | [optional] 
- **endDate** | **DateTime**| The end date | [optional] 
+ **startDate** | **Date**| The start date | [optional] 
+ **endDate** | **Date**| The end date | [optional] 
 
 ### Return type
 
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getDashboardExportInsightsData**
-> MultipartFile getDashboardExportInsightsData(businessIds, locationIds, textFilter, startDate, endDate)
+> Uint8List getDashboardExportInsightsData(businessIds, locationIds, textFilter, startDate, endDate)
 
 Get Insights Export Data
 
@@ -227,17 +227,17 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DashboardApi();
-final businessIds = []; // List<int> | The ids of the businesses you want insights data for
-final locationIds = []; // List<int> | The ids of the locations you want insights data for
-final textFilter = Berlin; // String | Filter locations to get insights data for by name, zip, street, city, label
-final startDate = 2013-10-20; // DateTime | The start date YYYY-MM-DD
-final endDate = 2013-10-20; // DateTime | The end date YYYY-MM-DD
+final api = Openapi().getDashboardApi();
+final BuiltList<int> businessIds = ; // BuiltList<int> | The ids of the businesses you want insights data for
+final BuiltList<int> locationIds = ; // BuiltList<int> | The ids of the locations you want insights data for
+final String textFilter = Berlin; // String | Filter locations to get insights data for by name, zip, street, city, label
+final Date startDate = 2013-10-20; // Date | The start date YYYY-MM-DD
+final Date endDate = 2013-10-20; // Date | The end date YYYY-MM-DD
 
 try {
-    final result = api_instance.getDashboardExportInsightsData(businessIds, locationIds, textFilter, startDate, endDate);
-    print(result);
-} catch (e) {
+    final response = api.getDashboardExportInsightsData(businessIds, locationIds, textFilter, startDate, endDate);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DashboardApi->getDashboardExportInsightsData: $e\n');
 }
 ```
@@ -246,15 +246,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **businessIds** | [**List<int>**](int.md)| The ids of the businesses you want insights data for | [optional] [default to const []]
- **locationIds** | [**List<int>**](int.md)| The ids of the locations you want insights data for | [optional] [default to const []]
+ **businessIds** | [**BuiltList&lt;int&gt;**](int.md)| The ids of the businesses you want insights data for | [optional] 
+ **locationIds** | [**BuiltList&lt;int&gt;**](int.md)| The ids of the locations you want insights data for | [optional] 
  **textFilter** | **String**| Filter locations to get insights data for by name, zip, street, city, label | [optional] 
- **startDate** | **DateTime**| The start date YYYY-MM-DD | [optional] 
- **endDate** | **DateTime**| The end date YYYY-MM-DD | [optional] 
+ **startDate** | **Date**| The start date YYYY-MM-DD | [optional] 
+ **endDate** | **Date**| The end date YYYY-MM-DD | [optional] 
 
 ### Return type
 
-[**MultipartFile**](MultipartFile.md)
+[**Uint8List**](Uint8List.md)
 
 ### Authorization
 
@@ -286,17 +286,17 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DashboardApi();
-final businessIds = []; // List<int> | Filter export data by these businessIds
-final locationIds = []; // List<int> | Filter export data by these locationIds
-final textFilter = textFilter_example; // String | Filter export data by this query. It is applied across these location properties: name, street, streetNo, zip, city, country, identifier, labels
-final startDate = 2013-10-20; // DateTime | Filter export data from this date
-final endDate = 2013-10-20; // DateTime | Filter export data until this date
+final api = Openapi().getDashboardApi();
+final BuiltList<int> businessIds = ; // BuiltList<int> | Filter export data by these businessIds
+final BuiltList<int> locationIds = ; // BuiltList<int> | Filter export data by these locationIds
+final String textFilter = textFilter_example; // String | Filter export data by this query. It is applied across these location properties: name, street, streetNo, zip, city, country, identifier, labels
+final Date startDate = 2013-10-20; // Date | Filter export data from this date
+final Date endDate = 2013-10-20; // Date | Filter export data until this date
 
 try {
-    final result = api_instance.getDashboardExportInsightsDataWithThreshold(businessIds, locationIds, textFilter, startDate, endDate);
-    print(result);
-} catch (e) {
+    final response = api.getDashboardExportInsightsDataWithThreshold(businessIds, locationIds, textFilter, startDate, endDate);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DashboardApi->getDashboardExportInsightsDataWithThreshold: $e\n');
 }
 ```
@@ -305,11 +305,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **businessIds** | [**List<int>**](int.md)| Filter export data by these businessIds | [optional] [default to const []]
- **locationIds** | [**List<int>**](int.md)| Filter export data by these locationIds | [optional] [default to const []]
+ **businessIds** | [**BuiltList&lt;int&gt;**](int.md)| Filter export data by these businessIds | [optional] 
+ **locationIds** | [**BuiltList&lt;int&gt;**](int.md)| Filter export data by these locationIds | [optional] 
  **textFilter** | **String**| Filter export data by this query. It is applied across these location properties: name, street, streetNo, zip, city, country, identifier, labels | [optional] 
- **startDate** | **DateTime**| Filter export data from this date | [optional] 
- **endDate** | **DateTime**| Filter export data until this date | [optional] 
+ **startDate** | **Date**| Filter export data from this date | [optional] 
+ **endDate** | **Date**| Filter export data until this date | [optional] 
 
 ### Return type
 
@@ -345,17 +345,17 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DashboardApi();
-final businessIds = []; // List<int> | The ids of the businesses you want feed items for
-final locationIds = []; // List<int> | The ids of the locations you want feed items for
-final textFilter = Berlin; // String | Filter locations to get feed for by name, zip, street, city, label
-final dateOffset = dateOffset_example; // String | returns data up to this date, default is now
-final maxItems = 789; // int | The maximum number of feed items to return
+final api = Openapi().getDashboardApi();
+final BuiltList<int> businessIds = ; // BuiltList<int> | The ids of the businesses you want feed items for
+final BuiltList<int> locationIds = ; // BuiltList<int> | The ids of the locations you want feed items for
+final String textFilter = Berlin; // String | Filter locations to get feed for by name, zip, street, city, label
+final String dateOffset = dateOffset_example; // String | returns data up to this date, default is now
+final int maxItems = 789; // int | The maximum number of feed items to return
 
 try {
-    final result = api_instance.getDashboardFeed(businessIds, locationIds, textFilter, dateOffset, maxItems);
-    print(result);
-} catch (e) {
+    final response = api.getDashboardFeed(businessIds, locationIds, textFilter, dateOffset, maxItems);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DashboardApi->getDashboardFeed: $e\n');
 }
 ```
@@ -364,8 +364,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **businessIds** | [**List<int>**](int.md)| The ids of the businesses you want feed items for | [optional] [default to const []]
- **locationIds** | [**List<int>**](int.md)| The ids of the locations you want feed items for | [optional] [default to const []]
+ **businessIds** | [**BuiltList&lt;int&gt;**](int.md)| The ids of the businesses you want feed items for | [optional] 
+ **locationIds** | [**BuiltList&lt;int&gt;**](int.md)| The ids of the locations you want feed items for | [optional] 
  **textFilter** | **String**| Filter locations to get feed for by name, zip, street, city, label | [optional] 
  **dateOffset** | **String**| returns data up to this date, default is now | [optional] 
  **maxItems** | **int**| The maximum number of feed items to return | [optional] 
@@ -404,20 +404,20 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DashboardApi();
-final type = type_example; // String | The directory you want insights for. Can be GOOGLE, FACEBOOK, BING or YELP_API
-final businessIds = []; // List<int> | The ids of the businesses you want insights data for
-final locationIds = []; // List<int> | The ids of the locations you want insights data for
-final textFilter = Berlin; // String | Filter locations to get insights data for by name, zip, street, city, label
-final startDate = 2013-10-20; // DateTime | The start date YYYY-MM-DD
-final endDate = 2013-10-20; // DateTime | The end date YYYY-MM-DD
-final group = group_example; // String | How to group the results, one of: HOUR (only for ACTIONS-PHONE), DAY, WEEK, MONTH, YEAR
-final metrics = []; // List<String> | The types of metrics you want to get
+final api = Openapi().getDashboardApi();
+final String type = type_example; // String | The directory you want insights for. Can be GOOGLE, FACEBOOK, BING or YELP_API
+final BuiltList<int> businessIds = ; // BuiltList<int> | The ids of the businesses you want insights data for
+final BuiltList<int> locationIds = ; // BuiltList<int> | The ids of the locations you want insights data for
+final String textFilter = Berlin; // String | Filter locations to get insights data for by name, zip, street, city, label
+final Date startDate = 2013-10-20; // Date | The start date YYYY-MM-DD
+final Date endDate = 2013-10-20; // Date | The end date YYYY-MM-DD
+final String group = group_example; // String | How to group the results, one of: HOUR (only for ACTIONS-PHONE), DAY, WEEK, MONTH, YEAR
+final BuiltList<String> metrics = ; // BuiltList<String> | The types of metrics you want to get
 
 try {
-    final result = api_instance.getDashboardInsightsData(type, businessIds, locationIds, textFilter, startDate, endDate, group, metrics);
-    print(result);
-} catch (e) {
+    final response = api.getDashboardInsightsData(type, businessIds, locationIds, textFilter, startDate, endDate, group, metrics);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DashboardApi->getDashboardInsightsData: $e\n');
 }
 ```
@@ -427,13 +427,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type** | **String**| The directory you want insights for. Can be GOOGLE, FACEBOOK, BING or YELP_API | 
- **businessIds** | [**List<int>**](int.md)| The ids of the businesses you want insights data for | [optional] [default to const []]
- **locationIds** | [**List<int>**](int.md)| The ids of the locations you want insights data for | [optional] [default to const []]
+ **businessIds** | [**BuiltList&lt;int&gt;**](int.md)| The ids of the businesses you want insights data for | [optional] 
+ **locationIds** | [**BuiltList&lt;int&gt;**](int.md)| The ids of the locations you want insights data for | [optional] 
  **textFilter** | **String**| Filter locations to get insights data for by name, zip, street, city, label | [optional] 
- **startDate** | **DateTime**| The start date YYYY-MM-DD | [optional] 
- **endDate** | **DateTime**| The end date YYYY-MM-DD | [optional] 
+ **startDate** | **Date**| The start date YYYY-MM-DD | [optional] 
+ **endDate** | **Date**| The end date YYYY-MM-DD | [optional] 
  **group** | **String**| How to group the results, one of: HOUR (only for ACTIONS-PHONE), DAY, WEEK, MONTH, YEAR | [optional] 
- **metrics** | [**List<String>**](String.md)| The types of metrics you want to get | [optional] [default to const []]
+ **metrics** | [**BuiltList&lt;String&gt;**](String.md)| The types of metrics you want to get | [optional] 
 
 ### Return type
 
@@ -469,18 +469,18 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DashboardApi();
-final businessIds = []; // List<int> | The ids of the businesses you want insights data warnings for
-final locationIds = []; // List<int> | The ids of the locations you want insights data warnings for
-final textFilter = Berlin; // String | Filter locations to get insights data warnings for by name, zip, street, city, label
-final type = type_example; // String | The directory you want insights warnings for
-final max = 789; // int | Used for pagination. Maximum number of results per page
-final offset = 789; // int | Offset used for pagination. Default: 0
+final api = Openapi().getDashboardApi();
+final BuiltList<int> businessIds = ; // BuiltList<int> | The ids of the businesses you want insights data warnings for
+final BuiltList<int> locationIds = ; // BuiltList<int> | The ids of the locations you want insights data warnings for
+final String textFilter = Berlin; // String | Filter locations to get insights data warnings for by name, zip, street, city, label
+final String type = type_example; // String | The directory you want insights warnings for
+final int max = 789; // int | Used for pagination. Maximum number of results per page
+final int offset = 789; // int | Offset used for pagination. Default: 0
 
 try {
-    final result = api_instance.getDashboardInsightsDataWarnings(businessIds, locationIds, textFilter, type, max, offset);
-    print(result);
-} catch (e) {
+    final response = api.getDashboardInsightsDataWarnings(businessIds, locationIds, textFilter, type, max, offset);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DashboardApi->getDashboardInsightsDataWarnings: $e\n');
 }
 ```
@@ -489,8 +489,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **businessIds** | [**List<int>**](int.md)| The ids of the businesses you want insights data warnings for | [optional] [default to const []]
- **locationIds** | [**List<int>**](int.md)| The ids of the locations you want insights data warnings for | [optional] [default to const []]
+ **businessIds** | [**BuiltList&lt;int&gt;**](int.md)| The ids of the businesses you want insights data warnings for | [optional] 
+ **locationIds** | [**BuiltList&lt;int&gt;**](int.md)| The ids of the locations you want insights data warnings for | [optional] 
  **textFilter** | **String**| Filter locations to get insights data warnings for by name, zip, street, city, label | [optional] 
  **type** | **String**| The directory you want insights warnings for | [optional] 
  **max** | **int**| Used for pagination. Maximum number of results per page | [optional] 
@@ -530,16 +530,16 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DashboardApi();
-final id = 789; // int | The id of the location you want the listing health for
-final locationIds = []; // List<int> | The ids of the locations you want listing health data for
-final businessIds = []; // List<int> | The ids of the businesses you want listing health for
-final type = type_example; // String | The directory you want listing health data for
+final api = Openapi().getDashboardApi();
+final int id = 789; // int | The id of the location you want the listing health for
+final BuiltList<int> locationIds = ; // BuiltList<int> | The ids of the locations you want listing health data for
+final BuiltList<int> businessIds = ; // BuiltList<int> | The ids of the businesses you want listing health for
+final String type = type_example; // String | The directory you want listing health data for
 
 try {
-    final result = api_instance.getDashboardListingHealthId(id, locationIds, businessIds, type);
-    print(result);
-} catch (e) {
+    final response = api.getDashboardListingHealthId(id, locationIds, businessIds, type);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DashboardApi->getDashboardListingHealthId: $e\n');
 }
 ```
@@ -549,8 +549,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The id of the location you want the listing health for | 
- **locationIds** | [**List<int>**](int.md)| The ids of the locations you want listing health data for | [optional] [default to const []]
- **businessIds** | [**List<int>**](int.md)| The ids of the businesses you want listing health for | [optional] [default to const []]
+ **locationIds** | [**BuiltList&lt;int&gt;**](int.md)| The ids of the locations you want listing health data for | [optional] 
+ **businessIds** | [**BuiltList&lt;int&gt;**](int.md)| The ids of the businesses you want listing health for | [optional] 
  **type** | **String**| The directory you want listing health data for | [optional] 
 
 ### Return type
@@ -587,13 +587,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DashboardApi();
-final id = id_example; // String | The uberall unique id for the location
+final api = Openapi().getDashboardApi();
+final String id = id_example; // String | The uberall unique id for the location
 
 try {
-    final result = api_instance.getDashboardManagersCountId(id);
-    print(result);
-} catch (e) {
+    final response = api.getDashboardManagersCountId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DashboardApi->getDashboardManagersCountId: $e\n');
 }
 ```
@@ -638,13 +638,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DashboardApi();
-final id = id_example; // String | The uberall unique id for the location
+final api = Openapi().getDashboardApi();
+final String id = id_example; // String | The uberall unique id for the location
 
 try {
-    final result = api_instance.getDashboardNextBestActionsId(id);
-    print(result);
-} catch (e) {
+    final response = api.getDashboardNextBestActionsId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DashboardApi->getDashboardNextBestActionsId: $e\n');
 }
 ```
@@ -689,14 +689,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DashboardApi();
-final businessIds = []; // List<int> | The ids of the businesses you want profile completeness for
-final locationIds = []; // List<int> | The ids of the locations you want profile completeness data for
+final api = Openapi().getDashboardApi();
+final BuiltList<int> businessIds = ; // BuiltList<int> | The ids of the businesses you want profile completeness for
+final BuiltList<int> locationIds = ; // BuiltList<int> | The ids of the locations you want profile completeness data for
 
 try {
-    final result = api_instance.getDashboardProfileCompleteness(businessIds, locationIds);
-    print(result);
-} catch (e) {
+    final response = api.getDashboardProfileCompleteness(businessIds, locationIds);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DashboardApi->getDashboardProfileCompleteness: $e\n');
 }
 ```
@@ -705,8 +705,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **businessIds** | [**List<int>**](int.md)| The ids of the businesses you want profile completeness for | [optional] [default to const []]
- **locationIds** | [**List<int>**](int.md)| The ids of the locations you want profile completeness data for | [optional] [default to const []]
+ **businessIds** | [**BuiltList&lt;int&gt;**](int.md)| The ids of the businesses you want profile completeness for | [optional] 
+ **locationIds** | [**BuiltList&lt;int&gt;**](int.md)| The ids of the locations you want profile completeness data for | [optional] 
 
 ### Return type
 
@@ -742,17 +742,17 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DashboardApi();
-final businessIds = []; // List<int> | The ids of the businesses you want suppressed duplicates for
-final locationIds = []; // List<int> | The ids of the locations you want suppressed duplicates data for
-final type = type_example; // String | The directory you want suppressed duplicates data for
-final startDate = 2013-10-20; // DateTime | The start date YYYY-MM-DD
-final endDate = 2013-10-20; // DateTime | The end date YYYY-MM-DD
+final api = Openapi().getDashboardApi();
+final BuiltList<int> businessIds = ; // BuiltList<int> | The ids of the businesses you want suppressed duplicates for
+final BuiltList<int> locationIds = ; // BuiltList<int> | The ids of the locations you want suppressed duplicates data for
+final String type = type_example; // String | The directory you want suppressed duplicates data for
+final Date startDate = 2013-10-20; // Date | The start date YYYY-MM-DD
+final Date endDate = 2013-10-20; // Date | The end date YYYY-MM-DD
 
 try {
-    final result = api_instance.getDashboardSuppressedDuplicates(businessIds, locationIds, type, startDate, endDate);
-    print(result);
-} catch (e) {
+    final response = api.getDashboardSuppressedDuplicates(businessIds, locationIds, type, startDate, endDate);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DashboardApi->getDashboardSuppressedDuplicates: $e\n');
 }
 ```
@@ -761,11 +761,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **businessIds** | [**List<int>**](int.md)| The ids of the businesses you want suppressed duplicates for | [optional] [default to const []]
- **locationIds** | [**List<int>**](int.md)| The ids of the locations you want suppressed duplicates data for | [optional] [default to const []]
+ **businessIds** | [**BuiltList&lt;int&gt;**](int.md)| The ids of the businesses you want suppressed duplicates for | [optional] 
+ **locationIds** | [**BuiltList&lt;int&gt;**](int.md)| The ids of the locations you want suppressed duplicates data for | [optional] 
  **type** | **String**| The directory you want suppressed duplicates data for | [optional] 
- **startDate** | **DateTime**| The start date YYYY-MM-DD | [optional] 
- **endDate** | **DateTime**| The end date YYYY-MM-DD | [optional] 
+ **startDate** | **Date**| The start date YYYY-MM-DD | [optional] 
+ **endDate** | **Date**| The end date YYYY-MM-DD | [optional] 
 
 ### Return type
 
@@ -801,13 +801,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = DashboardApi();
-final id = id_example; // String | The id of the location you want the visibility index for
+final api = Openapi().getDashboardApi();
+final String id = id_example; // String | The id of the location you want the visibility index for
 
 try {
-    final result = api_instance.getDashboardVisibilityIndexId(id);
-    print(result);
-} catch (e) {
+    final response = api.getDashboardVisibilityIndexId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling DashboardApi->getDashboardVisibilityIndexId: $e\n');
 }
 ```

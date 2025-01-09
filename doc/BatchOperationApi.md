@@ -32,16 +32,16 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = BatchOperationApi();
-final max = 789; // int | Used for pagination. Maximum number of results per page
-final offset = 789; // int | Offset used for pagination
-final sort = sort_example; // String | Order results by the specified field. Default is location id.
-final order = order_example; // String | Use asc for ascending sort or desc for descending sort
+final api = Openapi().getBatchOperationApi();
+final int max = 789; // int | Used for pagination. Maximum number of results per page
+final int offset = 789; // int | Offset used for pagination
+final String sort = sort_example; // String | Order results by the specified field. Default is location id.
+final String order = order_example; // String | Use asc for ascending sort or desc for descending sort
 
 try {
-    final result = api_instance.getBatch(max, offset, sort, order);
-    print(result);
-} catch (e) {
+    final response = api.getBatch(max, offset, sort, order);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling BatchOperationApi->getBatch: $e\n');
 }
 ```
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getBatchIdErrorReport**
-> MultipartFile getBatchIdErrorReport(id)
+> Uint8List getBatchIdErrorReport(id)
 
 Get Excel document with Location errors
 
@@ -89,13 +89,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = BatchOperationApi();
-final id = id_example; // String | The uberall unique ID of the location import
+final api = Openapi().getBatchOperationApi();
+final String id = id_example; // String | The uberall unique ID of the location import
 
 try {
-    final result = api_instance.getBatchIdErrorReport(id);
-    print(result);
-} catch (e) {
+    final response = api.getBatchIdErrorReport(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling BatchOperationApi->getBatchIdErrorReport: $e\n');
 }
 ```
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MultipartFile**](MultipartFile.md)
+[**Uint8List**](Uint8List.md)
 
 ### Authorization
 

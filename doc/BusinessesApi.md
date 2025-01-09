@@ -13,10 +13,10 @@ Method | HTTP request | Description
 [**getBusinesses**](BusinessesApi.md#getbusinesses) | **GET** /businesses | Get a List of Businesses
 [**getBusinessesId**](BusinessesApi.md#getbusinessesid) | **GET** /businesses/{id} | Get a Business
 [**getBusinessesIdBusinessConnectFacebookFacebookAccountIdBrandPageList**](BusinessesApi.md#getbusinessesidbusinessconnectfacebookfacebookaccountidbrandpagelist) | **GET** /businesses/{id}/business-connect/facebook/{facebookAccountId}/brand-page-list | Returns only the Facebook brand pages for the given Facebook account
-[**getBusinessesStatistics**](BusinessesApi.md#getbusinessesstatistics) | **GET** /businesses/statistics | Get Businesses'' Statistics
+[**getBusinessesStatistics**](BusinessesApi.md#getbusinessesstatistics) | **GET** /businesses/statistics | Get Businesses&#39;&#39; Statistics
 [**patchBusinessesId**](BusinessesApi.md#patchbusinessesid) | **PATCH** /businesses/{id} | Update a Business
 [**postBusinesses**](BusinessesApi.md#postbusinesses) | **POST** /businesses | Create a Business
-[**postBusinessesBusinessIdLocationsSync**](BusinessesApi.md#postbusinessesbusinessidlocationssync) | **POST** /businesses/{businessId}/locations/sync | Sync All Business'' Locations
+[**postBusinessesBusinessIdLocationsSync**](BusinessesApi.md#postbusinessesbusinessidlocationssync) | **POST** /businesses/{businessId}/locations/sync | Sync All Business&#39;&#39; Locations
 [**postBusinessesIdMigrate**](BusinessesApi.md#postbusinessesidmigrate) | **POST** /businesses/{id}/migrate | Migrate the Business to a new SalesPartner
 
 
@@ -39,13 +39,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = BusinessesApi();
-final id = id_example; // String | The uberall unique id for the business
+final api = Openapi().getBusinessesApi();
+final String id = id_example; // String | The uberall unique id for the business
 
 try {
-    final result = api_instance.deleteBusinessesId(id);
-    print(result);
-} catch (e) {
+    final response = api.deleteBusinessesId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling BusinessesApi->deleteBusinessesId: $e\n');
 }
 ```
@@ -90,26 +90,26 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = BusinessesApi();
-final query = query_example; // String | Value used to filter the results by the fields provided in the \"queryFields\" query parameter.                         By default, the value will be searched for in the following fields: \"name\", \"streetAndNo\", \"zip\", \"city\", \"country\", \"identifier\".
-final queryFields = []; // List<String> | The fields that will be searched to contain the value provided in the \"query\" query parameter.                         The default query fields are \"name\", \"streetAndNo\", \"zip\", \"city\", \"country\", \"identifier
-final identifier = identifier_example; // String | Only return one business based on your internal identification system
-final businessIds = businessIds_example; // String | Only return businesses identified by ids listed in businessIds
-final status = status_example; // String | Filter by business status. One of ACTIVE, INACTIVE
-final minLocations = minLocations_example; // String | Only return businesses with at least minLocations locations
-final maxLocations = maxLocations_example; // String | Only returns businesses with at most maxLocations locations
-final productPlan = productPlan_example; // String | Query accounts by product plan name.
-final productPlanId = productPlanId_example; // String | Query accounts by product plan Id.
-final sort = sort_example; // String | The business property to sort by (ascending). One of name, streetAndNo, city, zip, phone
-final max = max_example; // String | Used for pagination. Maximum number of results per page. Default: 10
-final offset = offset_example; // String | Offset used for pagination. Default: 0
-final fieldMask = fieldMask=type&fieldMask=city; // String | Possible fieldMask options ('id', 'identifier', 'name', 'type', 'streetAndNo', 'addressLine2',                             'province', 'zip', 'city','phone', 'country', 'status', 'canSync', 'dateCreated', 'defaultPrice','defaultOriginalPrice', 'defaultPriceSetup',                             'productPlan', 'nextProductPlan', 'numOfLocations') 
-final body = Object(); // Object | 
+final api = Openapi().getBusinessesApi();
+final String query = query_example; // String | Value used to filter the results by the fields provided in the \"queryFields\" query parameter.                         By default, the value will be searched for in the following fields: \"name\", \"streetAndNo\", \"zip\", \"city\", \"country\", \"identifier\".
+final BuiltList<String> queryFields = ; // BuiltList<String> | The fields that will be searched to contain the value provided in the \"query\" query parameter.                         The default query fields are \"name\", \"streetAndNo\", \"zip\", \"city\", \"country\", \"identifier
+final String identifier = identifier_example; // String | Only return one business based on your internal identification system
+final String businessIds = businessIds_example; // String | Only return businesses identified by ids listed in businessIds
+final String status = status_example; // String | Filter by business status. One of ACTIVE, INACTIVE
+final String minLocations = minLocations_example; // String | Only return businesses with at least minLocations locations
+final String maxLocations = maxLocations_example; // String | Only returns businesses with at most maxLocations locations
+final String productPlan = productPlan_example; // String | Query accounts by product plan name.
+final String productPlanId = productPlanId_example; // String | Query accounts by product plan Id.
+final String sort = sort_example; // String | The business property to sort by (ascending). One of name, streetAndNo, city, zip, phone
+final String max = max_example; // String | Used for pagination. Maximum number of results per page. Default: 10
+final String offset = offset_example; // String | Offset used for pagination. Default: 0
+final String fieldMask = fieldMask=type&fieldMask=city; // String | Possible fieldMask options ('id', 'identifier', 'name', 'type', 'streetAndNo', 'addressLine2',                             'province', 'zip', 'city','phone', 'country', 'status', 'canSync', 'dateCreated', 'defaultPrice','defaultOriginalPrice', 'defaultPriceSetup',                             'productPlan', 'nextProductPlan', 'numOfLocations') 
+final JsonObject body = Object; // JsonObject | 
 
 try {
-    final result = api_instance.getBusinesses(query, queryFields, identifier, businessIds, status, minLocations, maxLocations, productPlan, productPlanId, sort, max, offset, fieldMask, body);
-    print(result);
-} catch (e) {
+    final response = api.getBusinesses(query, queryFields, identifier, businessIds, status, minLocations, maxLocations, productPlan, productPlanId, sort, max, offset, fieldMask, body);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling BusinessesApi->getBusinesses: $e\n');
 }
 ```
@@ -119,7 +119,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **String**| Value used to filter the results by the fields provided in the \"queryFields\" query parameter.                         By default, the value will be searched for in the following fields: \"name\", \"streetAndNo\", \"zip\", \"city\", \"country\", \"identifier\". | [optional] 
- **queryFields** | [**List<String>**](String.md)| The fields that will be searched to contain the value provided in the \"query\" query parameter.                         The default query fields are \"name\", \"streetAndNo\", \"zip\", \"city\", \"country\", \"identifier | [optional] [default to const []]
+ **queryFields** | [**BuiltList&lt;String&gt;**](String.md)| The fields that will be searched to contain the value provided in the \"query\" query parameter.                         The default query fields are \"name\", \"streetAndNo\", \"zip\", \"city\", \"country\", \"identifier | [optional] 
  **identifier** | **String**| Only return one business based on your internal identification system | [optional] 
  **businessIds** | **String**| Only return businesses identified by ids listed in businessIds | [optional] 
  **status** | **String**| Filter by business status. One of ACTIVE, INACTIVE | [optional] 
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
  **max** | **String**| Used for pagination. Maximum number of results per page. Default: 10 | [optional] 
  **offset** | **String**| Offset used for pagination. Default: 0 | [optional] 
  **fieldMask** | **String**| Possible fieldMask options ('id', 'identifier', 'name', 'type', 'streetAndNo', 'addressLine2',                             'province', 'zip', 'city','phone', 'country', 'status', 'canSync', 'dateCreated', 'defaultPrice','defaultOriginalPrice', 'defaultPriceSetup',                             'productPlan', 'nextProductPlan', 'numOfLocations')  | [optional] 
- **body** | **Object**|  | [optional] 
+ **body** | **JsonObject**|  | [optional] 
 
 ### Return type
 
@@ -167,13 +167,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = BusinessesApi();
-final id = id_example; // String | The uberall unique id for the business
+final api = Openapi().getBusinessesApi();
+final String id = id_example; // String | The uberall unique id for the business
 
 try {
-    final result = api_instance.getBusinessesId(id);
-    print(result);
-} catch (e) {
+    final response = api.getBusinessesId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling BusinessesApi->getBusinessesId: $e\n');
 }
 ```
@@ -218,14 +218,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = BusinessesApi();
-final id = id_example; // String | Id of the business that will be used for the search
-final facebookAccountId = facebookAccountId_example; // String | Unique facebook account id which will be used for locating brand pages
+final api = Openapi().getBusinessesApi();
+final String id = id_example; // String | Id of the business that will be used for the search
+final String facebookAccountId = facebookAccountId_example; // String | Unique facebook account id which will be used for locating brand pages
 
 try {
-    final result = api_instance.getBusinessesIdBusinessConnectFacebookFacebookAccountIdBrandPageList(id, facebookAccountId);
-    print(result);
-} catch (e) {
+    final response = api.getBusinessesIdBusinessConnectFacebookFacebookAccountIdBrandPageList(id, facebookAccountId);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling BusinessesApi->getBusinessesIdBusinessConnectFacebookFacebookAccountIdBrandPageList: $e\n');
 }
 ```
@@ -271,12 +271,12 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = BusinessesApi();
+final api = Openapi().getBusinessesApi();
 
 try {
-    final result = api_instance.getBusinessesStatistics();
-    print(result);
-} catch (e) {
+    final response = api.getBusinessesStatistics();
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling BusinessesApi->getBusinessesStatistics: $e\n');
 }
 ```
@@ -318,14 +318,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = BusinessesApi();
-final id = id_example; // String | The uberall unique id for the business
-final business = Business(); // Business | A Business object
+final api = Openapi().getBusinessesApi();
+final String id = id_example; // String | The uberall unique id for the business
+final Business business = ; // Business | A Business object
 
 try {
-    final result = api_instance.patchBusinessesId(id, business);
-    print(result);
-} catch (e) {
+    final response = api.patchBusinessesId(id, business);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling BusinessesApi->patchBusinessesId: $e\n');
 }
 ```
@@ -371,13 +371,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = BusinessesApi();
-final business = Business(); // Business | A Business object
+final api = Openapi().getBusinessesApi();
+final Business business = ; // Business | A Business object
 
 try {
-    final result = api_instance.postBusinesses(business);
-    print(result);
-} catch (e) {
+    final response = api.postBusinesses(business);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling BusinessesApi->postBusinesses: $e\n');
 }
 ```
@@ -422,13 +422,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = BusinessesApi();
-final businessId = businessId_example; // String | The uberall unique id of the business
+final api = Openapi().getBusinessesApi();
+final String businessId = businessId_example; // String | The uberall unique id of the business
 
 try {
-    final result = api_instance.postBusinessesBusinessIdLocationsSync(businessId);
-    print(result);
-} catch (e) {
+    final response = api.postBusinessesBusinessIdLocationsSync(businessId);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling BusinessesApi->postBusinessesBusinessIdLocationsSync: $e\n');
 }
 ```
@@ -473,15 +473,15 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = BusinessesApi();
-final id = id_example; // String | The uberall unique id for the business
-final targetSalesPartnerId = targetSalesPartnerId_example; // String | ID of the sales partner where the business should be migrated
-final targetWhiteLabelIdentifier = targetWhiteLabelIdentifier_example; // String | If the target sales partner has more then one whitelabel, please specify which one has to be chosen
+final api = Openapi().getBusinessesApi();
+final String id = id_example; // String | The uberall unique id for the business
+final String targetSalesPartnerId = targetSalesPartnerId_example; // String | ID of the sales partner where the business should be migrated
+final String targetWhiteLabelIdentifier = targetWhiteLabelIdentifier_example; // String | If the target sales partner has more then one whitelabel, please specify which one has to be chosen
 
 try {
-    final result = api_instance.postBusinessesIdMigrate(id, targetSalesPartnerId, targetWhiteLabelIdentifier);
-    print(result);
-} catch (e) {
+    final response = api.postBusinessesIdMigrate(id, targetSalesPartnerId, targetWhiteLabelIdentifier);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling BusinessesApi->postBusinessesIdMigrate: $e\n');
 }
 ```

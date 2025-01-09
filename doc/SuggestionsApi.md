@@ -33,16 +33,16 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = SuggestionsApi();
-final id = id_example; // String | The uberall unique id for the location
-final language = language_example; // String | Filter suggestion attributes by language
-final directoryTypes = directoryTypes_example; // String | Filter suggestions by directories
-final body = Object(); // Object | 
+final api = Openapi().getSuggestionsApi();
+final String id = id_example; // String | The uberall unique id for the location
+final String language = language_example; // String | Filter suggestion attributes by language
+final String directoryTypes = directoryTypes_example; // String | Filter suggestions by directories
+final JsonObject body = Object; // JsonObject | 
 
 try {
-    final result = api_instance.getLocationsIdSuggestions(id, language, directoryTypes, body);
-    print(result);
-} catch (e) {
+    final response = api.getLocationsIdSuggestions(id, language, directoryTypes, body);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling SuggestionsApi->getLocationsIdSuggestions: $e\n');
 }
 ```
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
  **id** | **String**| The uberall unique id for the location | 
  **language** | **String**| Filter suggestion attributes by language | [optional] 
  **directoryTypes** | **String**| Filter suggestions by directories | [optional] 
- **body** | **Object**|  | [optional] 
+ **body** | **JsonObject**|  | [optional] 
 
 ### Return type
 
@@ -82,21 +82,21 @@ Get a list of suggestions for all locations managed by the logged user
 ```dart
 import 'package:openapi/api.dart';
 
-final api_instance = SuggestionsApi();
-final query = Berlin; // String | Filter by name, zip, street, city, label
-final sort = sort_example; // String | The location property to sort by (ascending unless order is specified)
-final order = order_example; // String | use asc for ascending sort or desc for descending sort
-final max = 789; // int | Used for pagination. Maximum number of results per page.
-final identifier = identifier_example; // String | The location identifier, based on your internal identification system, you want the suggestions for.
-final offset = 789; // int | Offset used for pagination. Default: 0
-final businessId = []; // List<int> | The ids of the businesses you want suggestions for
-final locationIds = []; // List<int> | The ids of the locations you want suggestions for.
-final body = Object(); // Object | 
+final api = Openapi().getSuggestionsApi();
+final String query = Berlin; // String | Filter by name, zip, street, city, label
+final String sort = sort_example; // String | The location property to sort by (ascending unless order is specified)
+final String order = order_example; // String | use asc for ascending sort or desc for descending sort
+final int max = 789; // int | Used for pagination. Maximum number of results per page.
+final String identifier = identifier_example; // String | The location identifier, based on your internal identification system, you want the suggestions for.
+final int offset = 789; // int | Offset used for pagination. Default: 0
+final BuiltList<int> businessId = ; // BuiltList<int> | The ids of the businesses you want suggestions for
+final BuiltList<int> locationIds = ; // BuiltList<int> | The ids of the locations you want suggestions for.
+final JsonObject body = Object; // JsonObject | 
 
 try {
-    final result = api_instance.getLocationsSuggestions(query, sort, order, max, identifier, offset, businessId, locationIds, body);
-    print(result);
-} catch (e) {
+    final response = api.getLocationsSuggestions(query, sort, order, max, identifier, offset, businessId, locationIds, body);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling SuggestionsApi->getLocationsSuggestions: $e\n');
 }
 ```
@@ -111,9 +111,9 @@ Name | Type | Description  | Notes
  **max** | **int**| Used for pagination. Maximum number of results per page. | [optional] 
  **identifier** | **String**| The location identifier, based on your internal identification system, you want the suggestions for. | [optional] 
  **offset** | **int**| Offset used for pagination. Default: 0 | [optional] 
- **businessId** | [**List<int>**](int.md)| The ids of the businesses you want suggestions for | [optional] [default to const []]
- **locationIds** | [**List<int>**](int.md)| The ids of the locations you want suggestions for. | [optional] [default to const []]
- **body** | **Object**|  | [optional] 
+ **businessId** | [**BuiltList&lt;int&gt;**](int.md)| The ids of the businesses you want suggestions for | [optional] 
+ **locationIds** | [**BuiltList&lt;int&gt;**](int.md)| The ids of the locations you want suggestions for. | [optional] 
+ **body** | **JsonObject**|  | [optional] 
 
 ### Return type
 
@@ -149,14 +149,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = SuggestionsApi();
-final id = id_example; // String | The uberall unique id for the location
-final suggestion = [List<Suggestion>()]; // List<Suggestion> | List of Maps with both an id and a status key: [[id: 123, status: ACCEPTED], ...]
+final api = Openapi().getSuggestionsApi();
+final String id = id_example; // String | The uberall unique id for the location
+final BuiltList<Suggestion> suggestion = ; // BuiltList<Suggestion> | List of Maps with both an id and a status key: [[id: 123, status: ACCEPTED], ...]
 
 try {
-    final result = api_instance.putLocationsIdSuggestions(id, suggestion);
-    print(result);
-} catch (e) {
+    final response = api.putLocationsIdSuggestions(id, suggestion);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling SuggestionsApi->putLocationsIdSuggestions: $e\n');
 }
 ```
@@ -166,7 +166,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The uberall unique id for the location | 
- **suggestion** | [**List<Suggestion>**](Suggestion.md)| List of Maps with both an id and a status key: [[id: 123, status: ACCEPTED], ...] | 
+ **suggestion** | [**BuiltList&lt;Suggestion&gt;**](Suggestion.md)| List of Maps with both an id and a status key: [[id: 123, status: ACCEPTED], ...] | 
 
 ### Return type
 

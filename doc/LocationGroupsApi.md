@@ -31,13 +31,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationGroupsApi();
-final id = id_example; // String | ID of the LocationGroup that should be deleted.
+final api = Openapi().getLocationGroupsApi();
+final String id = id_example; // String | ID of the LocationGroup that should be deleted.
 
 try {
-    final result = api_instance.deleteLocationGroupsId(id);
-    print(result);
-} catch (e) {
+    final response = api.deleteLocationGroupsId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationGroupsApi->deleteLocationGroupsId: $e\n');
 }
 ```
@@ -78,22 +78,22 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationGroupsApi();
-final fieldMask = []; // List<String> | Used for bypassing pagination and reducing the response objects, following are supported ['id'', 'name']
-final locationGroupIds = []; // List<int> | Used for restricting the to be returned location groups within the given range of IDs.
-final query = query_example; // String | Used for searching for a specific keyword within the location group names, only groups matching the given query via 'like' will be returned.
-final max = 789; // int | Used for pagination, specifies the amount of entries maximum returned per page (must be between 0-100).
-final offset = 789; // int | Used for pagination, specifies the starting point from which the returned subset should start.
-final page = 789; // int | Used for pagination
-final sort = sort_example; // String | Used for specify the field
-final order = order_example; // String | Used for specify the sorting direction in which the list entries shall be returned, possible values ['ASC', 'DESC'].
-final hideLocations = true; // bool | If given true value the endpoint will not return the locations array as part of the response, just the group id and name
-final body = Object(); // Object | 
+final api = Openapi().getLocationGroupsApi();
+final BuiltList<String> fieldMask = ; // BuiltList<String> | Used for bypassing pagination and reducing the response objects, following are supported ['id'', 'name']
+final BuiltList<int> locationGroupIds = ; // BuiltList<int> | Used for restricting the to be returned location groups within the given range of IDs.
+final String query = query_example; // String | Used for searching for a specific keyword within the location group names, only groups matching the given query via 'like' will be returned.
+final int max = 789; // int | Used for pagination, specifies the amount of entries maximum returned per page (must be between 0-100).
+final int offset = 789; // int | Used for pagination, specifies the starting point from which the returned subset should start.
+final int page = 789; // int | Used for pagination
+final String sort = sort_example; // String | Used for specify the field
+final String order = order_example; // String | Used for specify the sorting direction in which the list entries shall be returned, possible values ['ASC', 'DESC'].
+final bool hideLocations = true; // bool | If given true value the endpoint will not return the locations array as part of the response, just the group id and name
+final JsonObject body = Object; // JsonObject | 
 
 try {
-    final result = api_instance.getLocationGroups(fieldMask, locationGroupIds, query, max, offset, page, sort, order, hideLocations, body);
-    print(result);
-} catch (e) {
+    final response = api.getLocationGroups(fieldMask, locationGroupIds, query, max, offset, page, sort, order, hideLocations, body);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationGroupsApi->getLocationGroups: $e\n');
 }
 ```
@@ -102,8 +102,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fieldMask** | [**List<String>**](String.md)| Used for bypassing pagination and reducing the response objects, following are supported ['id'', 'name'] | [optional] [default to const []]
- **locationGroupIds** | [**List<int>**](int.md)| Used for restricting the to be returned location groups within the given range of IDs. | [optional] [default to const []]
+ **fieldMask** | [**BuiltList&lt;String&gt;**](String.md)| Used for bypassing pagination and reducing the response objects, following are supported ['id'', 'name'] | [optional] 
+ **locationGroupIds** | [**BuiltList&lt;int&gt;**](int.md)| Used for restricting the to be returned location groups within the given range of IDs. | [optional] 
  **query** | **String**| Used for searching for a specific keyword within the location group names, only groups matching the given query via 'like' will be returned. | [optional] 
  **max** | **int**| Used for pagination, specifies the amount of entries maximum returned per page (must be between 0-100). | [optional] 
  **offset** | **int**| Used for pagination, specifies the starting point from which the returned subset should start. | [optional] 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
  **sort** | **String**| Used for specify the field | [optional] 
  **order** | **String**| Used for specify the sorting direction in which the list entries shall be returned, possible values ['ASC', 'DESC']. | [optional] 
  **hideLocations** | **bool**| If given true value the endpoint will not return the locations array as part of the response, just the group id and name | [optional] 
- **body** | **Object**|  | [optional] 
+ **body** | **JsonObject**|  | [optional] 
 
 ### Return type
 
@@ -143,13 +143,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationGroupsApi();
-final id = id_example; // String | ID of the LocationGroup that should be returned.
+final api = Openapi().getLocationGroupsApi();
+final String id = id_example; // String | ID of the LocationGroup that should be returned.
 
 try {
-    final result = api_instance.getLocationGroupsId(id);
-    print(result);
-} catch (e) {
+    final response = api.getLocationGroupsId(id);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationGroupsApi->getLocationGroupsId: $e\n');
 }
 ```
@@ -190,14 +190,14 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationGroupsApi();
-final id = id_example; // String | ID of the LocationGroup that should be updated.
-final locationGroupParams = LocationGroupParams(); // LocationGroupParams | LocationGroup to update
+final api = Openapi().getLocationGroupsApi();
+final String id = id_example; // String | ID of the LocationGroup that should be updated.
+final LocationGroupParams locationGroupParams = ; // LocationGroupParams | LocationGroup to update
 
 try {
-    final result = api_instance.patchLocationGroupsId(id, locationGroupParams);
-    print(result);
-} catch (e) {
+    final response = api.patchLocationGroupsId(id, locationGroupParams);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationGroupsApi->patchLocationGroupsId: $e\n');
 }
 ```
@@ -239,13 +239,13 @@ import 'package:openapi/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
-final api_instance = LocationGroupsApi();
-final locationGroupParams = LocationGroupParams(); // LocationGroupParams | LocationGroup to create
+final api = Openapi().getLocationGroupsApi();
+final LocationGroupParams locationGroupParams = ; // LocationGroupParams | LocationGroup to create
 
 try {
-    final result = api_instance.postLocationGroups(locationGroupParams);
-    print(result);
-} catch (e) {
+    final response = api.postLocationGroups(locationGroupParams);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling LocationGroupsApi->postLocationGroups: $e\n');
 }
 ```

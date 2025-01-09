@@ -9,10 +9,10 @@ import 'package:openapi/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | id of the business on external directory | [optional] 
-**names** | **List<String>** | list of names for the business | [optional] [default to const []]
+**names** | **BuiltList&lt;String&gt;** | list of names for the business | [optional] 
 **countryCode** | **String** | country code for the business eg: en-US | [optional] 
-**categories** | [**List<DirectoryCategory>**](DirectoryCategory.md) | list of categories - oftenly the external ids being maintained for the categories on uberall side | [optional] [default to const []]
-**urls** | [**List<Object>**](Object.md) | list of urls for the business | [optional] [default to const []]
+**categories** | [**BuiltList&lt;DirectoryCategory&gt;**](DirectoryCategory.md) | list of categories - oftenly the external ids being maintained for the categories on uberall side | [optional] 
+**urls** | [**BuiltList&lt;JsonObject&gt;**](JsonObject.md) | list of urls for the business | [optional] 
 **etag** | **String** | ETag of the external business | [optional] 
 **state** | **String** | status of business on external directory | [optional] 
 **locationsCount** | **int** | count of locations under the business | [optional] 
