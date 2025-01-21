@@ -33659,12 +33659,8 @@
             "type": "array",
             "description": "A list of category IDs describing the location",
             "items": {
-              "type": "object",
-              "additionalProperties": {
-                "type": "object",
-                "description": "A list of category IDs describing the location"
-              },
-              "description": "A list of category IDs describing the location"
+              "type": "integer",
+              "format": "int64"
             }
           },
           "cellphone": {

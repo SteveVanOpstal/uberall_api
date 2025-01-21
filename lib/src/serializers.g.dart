@@ -1758,11 +1758,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(JsonObject)]),
           () => new ListBuilder<JsonObject>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [
-            const FullType(BuiltMap,
-                const [const FullType(String), const FullType(JsonObject)])
-          ]),
-          () => new ListBuilder<BuiltMap<String, JsonObject>>())
+          const FullType(BuiltList, const [const FullType(int)]),
+          () => new ListBuilder<int>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(CustomItem)]),
           () => new ListBuilder<CustomItem>())
