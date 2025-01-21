@@ -122,13 +122,13 @@ part 'basic_listing.g.dart';
 /// * [sublocalityStatus] - The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
 /// * [websiteExtra] - Utm or tracking path - only sent to GOOGLE
 /// * [photos] - Boolean indicating whether or not the listing has photos
-/// * [socialProfiles] - Social profiles of the location
+/// * [videos] - A list of videos about the location
 /// * [contentLists] - Content lists shown on the listing
+/// * [socialProfiles] - Social profiles of the location
 /// * [keywords] - The video of the social post (can only be one)
 /// * [brands] - The video of the social post (can only be one)
 /// * [services] - The video of the social post (can only be one)
 /// * [languages] - The video of the social post (can only be one)
-/// * [videos] - A list of videos about the location
 @BuiltValue()
 abstract class BasicListing
     implements Built<BasicListing, BasicListingBuilder> {
@@ -139,7 +139,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'nameStatus')
   BasicListingNameStatusEnum? get nameStatus;
-  // enum nameStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum nameStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The location''s street address
   @BuiltValueField(wireName: r'street')
@@ -148,7 +148,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'streetStatus')
   BasicListingStreetStatusEnum? get streetStatus;
-  // enum streetStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum streetStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The location''s street number
   @BuiltValueField(wireName: r'streetNo')
@@ -157,7 +157,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'streetNoStatus')
   BasicListingStreetNoStatusEnum? get streetNoStatus;
-  // enum streetNoStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum streetNoStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// Required for Spain. One of ALAMEDA, AVENIDA, CALLE, CAMINO, CARRER, CARRETERA, GLORIETA, KALEA, PASAJE, PASEO, PLACA, PLAZA, RAMBLA, RONDA, RUA, SECTOR, TRAVESERA, TRAVESIA, URBANIZACION
   @BuiltValueField(wireName: r'streetType')
@@ -167,7 +167,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'streetTypeStatus')
   BasicListingStreetTypeStatusEnum? get streetTypeStatus;
-  // enum streetTypeStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum streetTypeStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// A localized combination of street and streetNo
   @BuiltValueField(wireName: r'streetAndNo')
@@ -176,7 +176,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'streetAndNoStatus')
   BasicListingStreetAndNoStatusEnum? get streetAndNoStatus;
-  // enum streetAndNoStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum streetAndNoStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// An address extra: e.g. building, floor...
   @BuiltValueField(wireName: r'addressExtra')
@@ -185,7 +185,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'addressExtraStatus')
   BasicListingAddressExtraStatusEnum? get addressExtraStatus;
-  // enum addressExtraStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum addressExtraStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// Zip code
   @BuiltValueField(wireName: r'zip')
@@ -194,7 +194,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'zipStatus')
   BasicListingZipStatusEnum? get zipStatus;
-  // enum zipStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum zipStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// City
   @BuiltValueField(wireName: r'city')
@@ -203,7 +203,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'cityStatus')
   BasicListingCityStatusEnum? get cityStatus;
-  // enum cityStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum cityStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// If set to false the address will not be published on the directories, this is useful for businesses that don''t have customers come to them ( e.g. a plumber )
   @BuiltValueField(wireName: r'addressDisplay')
@@ -212,7 +212,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'addressDisplayStatus')
   BasicListingAddressDisplayStatusEnum? get addressDisplayStatus;
-  // enum addressDisplayStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum addressDisplayStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The location''s contact phone number
   @BuiltValueField(wireName: r'phone')
@@ -221,7 +221,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'phoneStatus')
   BasicListingPhoneStatusEnum? get phoneStatus;
-  // enum phoneStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum phoneStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The location fax number
   @BuiltValueField(wireName: r'fax')
@@ -230,7 +230,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'faxStatus')
   BasicListingFaxStatusEnum? get faxStatus;
-  // enum faxStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum faxStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// A contact mobile phone number
   @BuiltValueField(wireName: r'cellphone')
@@ -239,7 +239,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'cellphoneStatus')
   BasicListingCellphoneStatusEnum? get cellphoneStatus;
-  // enum cellphoneStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum cellphoneStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// A valid url for the location''s website (use UTMs to add tracking)
   @BuiltValueField(wireName: r'website')
@@ -248,7 +248,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'websiteStatus')
   BasicListingWebsiteStatusEnum? get websiteStatus;
-  // enum websiteStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum websiteStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// A contact email for the location
   @BuiltValueField(wireName: r'email')
@@ -257,7 +257,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'emailStatus')
   BasicListingEmailStatusEnum? get emailStatus;
-  // enum emailStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum emailStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// A long description (up to 1000 characters) for the location
   @BuiltValueField(wireName: r'descriptionLong')
@@ -266,7 +266,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'descriptionLongStatus')
   BasicListingDescriptionLongStatusEnum? get descriptionLongStatus;
-  // enum descriptionLongStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum descriptionLongStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// A short description (up to 200 characters) for the location
   @BuiltValueField(wireName: r'descriptionShort')
@@ -275,7 +275,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'descriptionShortStatus')
   BasicListingDescriptionShortStatusEnum? get descriptionShortStatus;
-  // enum descriptionShortStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum descriptionShortStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The location''s imprint
   @BuiltValueField(wireName: r'imprint')
@@ -284,7 +284,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING
   @BuiltValueField(wireName: r'imprintStatus')
   BasicListingImprintStatusEnum? get imprintStatus;
-  // enum imprintStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum imprintStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The location''s opening hours: e.g. <pre>[ &#123;      \"dayOfWeek\": 1,     \"closed\": false,     \"from1\": \"08:00\",     \"to1\": \"11:00\"   &#125;,    &#123;     \"dayOfWeek\": 2,     \"closed\": false,     \"from1\": \"08:00\",     \"to1\": \"11:00\",     \"from2\": \"13:00\",     \"to2\": \"21:00\"   &#125;,   &#123;     \"dayOfWeek\": 3,     \"closed\": true   &#125; ]</pre> Please note that having more than 2 time periods for each day is not possible.
   @BuiltValueField(wireName: r'openingHours')
@@ -293,7 +293,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'openingHoursStatus')
   BasicListingOpeningHoursStatusEnum? get openingHoursStatus;
-  // enum openingHoursStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum openingHoursStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// Additional info about opening hours: e.g. ''We never open on bank holidays'' - max. 255 characters
   @BuiltValueField(wireName: r'openingHoursNotes')
@@ -302,7 +302,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'openingHoursNotesStatus')
   BasicListingOpeningHoursNotesStatusEnum? get openingHoursNotesStatus;
-  // enum openingHoursNotesStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum openingHoursNotesStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The location''s additional service hours, such as delivery, pickup, happy hours etc. Submitted to Google.
   @BuiltValueField(wireName: r'moreHours')
@@ -311,7 +311,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'moreHoursStatus')
   BasicListingMoreHoursStatusEnum? get moreHoursStatus;
-  // enum moreHoursStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum moreHoursStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The location''s special opening hours: e.g. <pre>[ &#123;      \"date\": \"2017-06-29\",     \"closed\": true   &#125;,    &#123;     \"date\": \"2017-06-30\",     \"from1\": \"11:00\",     \"to1\": \"14:00\",     \"from2\": \"16:00\",     \"to2\": \"20:00\"   &#125; ]</pre> Please note that having more than 2 time periods for each day is not possible.
   @BuiltValueField(wireName: r'specialOpeningHours')
@@ -320,12 +320,12 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'specialOpeningHoursStatus')
   BasicListingSpecialOpeningHoursStatusEnum? get specialOpeningHoursStatus;
-  // enum specialOpeningHoursStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum specialOpeningHoursStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'keywordsStatus')
   BasicListingKeywordsStatusEnum? get keywordsStatus;
-  // enum keywordsStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum keywordsStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// Required - A list of category IDs describing the location
   @BuiltValueField(wireName: r'categories')
@@ -334,7 +334,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'categoriesStatus')
   BasicListingCategoriesStatusEnum? get categoriesStatus;
-  // enum categoriesStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MISSING,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum categoriesStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The location''s Google attributes
   @BuiltValueField(wireName: r'attributes')
@@ -343,12 +343,12 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING
   @BuiltValueField(wireName: r'attributesStatus')
   BasicListingAttributesStatusEnum? get attributesStatus;
-  // enum attributesStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum attributesStatusEnum {  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'photosStatus')
   BasicListingPhotosStatusEnum? get photosStatus;
-  // enum photosStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MISSING,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum photosStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// A legal identifier of the location. SIRET number in France
   @BuiltValueField(wireName: r'legalIdent')
@@ -357,7 +357,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'legalIdentStatus')
   BasicListingLegalIdentStatusEnum? get legalIdentStatus;
-  // enum legalIdentStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum legalIdentStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The tax number of the location. CIF/NIF in Spain
   @BuiltValueField(wireName: r'taxNumber')
@@ -366,7 +366,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'taxNumberStatus')
   BasicListingTaxNumberStatusEnum? get taxNumberStatus;
-  // enum taxNumberStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum taxNumberStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// Province. Only send when not blank
   @BuiltValueField(wireName: r'province')
@@ -375,7 +375,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'provinceStatus')
   BasicListingProvinceStatusEnum? get provinceStatus;
-  // enum provinceStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum provinceStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// Country. One of AT, CH, DE, ES, UK, FR, IT, NL
   @BuiltValueField(wireName: r'country')
@@ -385,7 +385,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'countryStatus')
   BasicListingCountryStatusEnum? get countryStatus;
-  // enum countryStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum countryStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   @BuiltValueField(wireName: r'socialPost')
   SocialPost? get socialPost;
@@ -393,22 +393,22 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'socialPostStatus')
   BasicListingSocialPostStatusEnum? get socialPostStatus;
-  // enum socialPostStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum socialPostStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'videosStatus')
   BasicListingVideosStatusEnum? get videosStatus;
-  // enum videosStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum videosStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'contentListsStatus')
   BasicListingContentListsStatusEnum? get contentListsStatus;
-  // enum contentListsStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum contentListsStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'socialProfilesStatus')
   BasicListingSocialProfilesStatusEnum? get socialProfilesStatus;
-  // enum socialProfilesStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum socialProfilesStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// Payment options available at the location
   @BuiltValueField(wireName: r'paymentOptions')
@@ -417,27 +417,27 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'paymentOptionsStatus')
   BasicListingPaymentOptionsStatusEnum? get paymentOptionsStatus;
-  // enum paymentOptionsStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum paymentOptionsStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'brandsStatus')
   BasicListingBrandsStatusEnum? get brandsStatus;
-  // enum brandsStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum brandsStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'servicesStatus')
   BasicListingServicesStatusEnum? get servicesStatus;
-  // enum servicesStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum servicesStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'transactionLinksStatus')
   BasicListingTransactionLinksStatusEnum? get transactionLinksStatus;
-  // enum transactionLinksStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum transactionLinksStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'languagesStatus')
   BasicListingLanguagesStatusEnum? get languagesStatus;
-  // enum languagesStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum languagesStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   @BuiltValueField(wireName: r'attribution')
   Attribution? get attribution;
@@ -445,7 +445,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'attributionStatus')
   BasicListingAttributionStatusEnum? get attributionStatus;
-  // enum attributionStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum attributionStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The latitude of the listing
   @BuiltValueField(wireName: r'lat')
@@ -454,7 +454,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'latStatus')
   BasicListingLatStatusEnum? get latStatus;
-  // enum latStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum latStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The longitude of the listing
   @BuiltValueField(wireName: r'lng')
@@ -463,7 +463,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'lngStatus')
   BasicListingLngStatusEnum? get lngStatus;
-  // enum lngStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum lngStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// Service areas available on the location.
   @BuiltValueField(wireName: r'serviceAreas')
@@ -472,7 +472,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'serviceAreasStatus')
   BasicListingServiceAreasStatusEnum? get serviceAreasStatus;
-  // enum serviceAreasStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum serviceAreasStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// Average rating of the listing
   @BuiltValueField(wireName: r'rating')
@@ -481,7 +481,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE or PRESENT
   @BuiltValueField(wireName: r'ratingStatus')
   BasicListingRatingStatusEnum? get ratingStatus;
-  // enum ratingStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  PRESENT,  NOT_APPLICABLE,  };
+  // enum ratingStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// Number of ratings
   @BuiltValueField(wireName: r'numberOfRatings')
@@ -490,7 +490,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE or PRESENT
   @BuiltValueField(wireName: r'numberOfRatingsStatus')
   BasicListingNumberOfRatingsStatusEnum? get numberOfRatingsStatus;
-  // enum numberOfRatingsStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  PRESENT,  NOT_APPLICABLE,  };
+  // enum numberOfRatingsStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The listing id in the directory''s database
   @BuiltValueField(wireName: r'listingId')
@@ -518,7 +518,7 @@ abstract class BasicListing
   /// Claim status of the listing. One of CLAIMABLE, NOT_CLAIMABLE, CLAIMED_BY_US, CLAIMED_BY_OTHERS, CLAIMING_IN_PROGRESS, UNKNOWN
   @BuiltValueField(wireName: r'claimStatus')
   BasicListingClaimStatusEnum? get claimStatus;
-  // enum claimStatusEnum {  CLAIMABLE,  NOT_CLAIMABLE,  CLAIMED_BY_US,  CLAIMED_BY_OTHERS,  CLAIMED_BY_ANOTHER_US,  CLAIMING_IN_PROGRESS,  UNKNOWN,  CLAIMABLE,  CLAIMED_BY_US,  CLAIMED_BY_OTHERS,  CLAIMING_IN_PROGRESS,  NOT_CLAIMABLE,  UNKNOWN,  };
+  // enum claimStatusEnum {  CLAIMABLE,  NOT_CLAIMABLE,  CLAIMED_BY_US,  CLAIMED_BY_OTHERS,  CLAIMED_BY_ANOTHER_US,  CLAIMING_IN_PROGRESS,  UNKNOWN,  };
 
   /// The National Provider Identifier (NPI) is a Health Insurance Portability and Accountability Act (HIPAA) Administrative Simplification Standard. The NPI is a unique identification number for covered health care providers.
   @BuiltValueField(wireName: r'npi')
@@ -527,7 +527,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'npiStatus')
   BasicListingNpiStatusEnum? get npiStatus;
-  // enum npiStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum npiStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// A list of category IDs for Doctor.com directory
   @BuiltValueField(wireName: r'doctorCategories')
@@ -536,7 +536,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'doctorCategoriesStatus')
   BasicListingDoctorCategoriesStatusEnum? get doctorCategoriesStatus;
-  // enum doctorCategoriesStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum doctorCategoriesStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The location''s name descriptor (submitted to Facebook).
   @BuiltValueField(wireName: r'nameDescriptor')
@@ -545,7 +545,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'nameDescriptorStatus')
   BasicListingNameDescriptorStatusEnum? get nameDescriptorStatus;
-  // enum nameDescriptorStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum nameDescriptorStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The date and time the listing was created in our database
   @BuiltValueField(wireName: r'dateCreated')
@@ -558,7 +558,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'openingDateStatus')
   BasicListingOpeningDateStatusEnum? get openingDateStatus;
-  // enum openingDateStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum openingDateStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// Custom Fields for the directory
   @BuiltValueField(wireName: r'customFields')
@@ -567,7 +567,7 @@ abstract class BasicListing
   /// The sync status of this specific field.
   @BuiltValueField(wireName: r'customFieldsStatus')
   BasicListingCustomFieldsStatusEnum? get customFieldsStatus;
-  // enum customFieldsStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum customFieldsStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The sublocality field is only available for countries that require this for their postal address. The following countries have this for: Indonesia - Sub-district, Phillipines - Barangay, Thailand - Tambon / Khwaeng, and Vietnam - Sublocality.
   @BuiltValueField(wireName: r'sublocality')
@@ -576,7 +576,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'sublocalityStatus')
   BasicListingSublocalityStatusEnum? get sublocalityStatus;
-  // enum sublocalityStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum sublocalityStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// Utm or tracking path - only sent to GOOGLE
   @BuiltValueField(wireName: r'websiteExtra')
@@ -586,13 +586,17 @@ abstract class BasicListing
   @BuiltValueField(wireName: r'photos')
   bool? get photos;
 
-  /// Social profiles of the location
-  @BuiltValueField(wireName: r'socialProfiles')
-  BuiltList<SocialProfile>? get socialProfiles;
+  /// A list of videos about the location
+  @BuiltValueField(wireName: r'videos')
+  BuiltList<Video>? get videos;
 
   /// Content lists shown on the listing
   @BuiltValueField(wireName: r'contentLists')
   BuiltList<ContentList>? get contentLists;
+
+  /// Social profiles of the location
+  @BuiltValueField(wireName: r'socialProfiles')
+  BuiltList<SocialProfile>? get socialProfiles;
 
   /// The video of the social post (can only be one)
   @BuiltValueField(wireName: r'keywords')
@@ -609,10 +613,6 @@ abstract class BasicListing
   /// The video of the social post (can only be one)
   @BuiltValueField(wireName: r'languages')
   BuiltList<String>? get languages;
-
-  /// A list of videos about the location
-  @BuiltValueField(wireName: r'videos')
-  BuiltList<Video>? get videos;
 
   BasicListing._();
 
@@ -1338,11 +1338,11 @@ class _$BasicListingSerializer implements PrimitiveSerializer<BasicListing> {
         specifiedType: const FullType(bool),
       );
     }
-    if (object.socialProfiles != null) {
-      yield r'socialProfiles';
+    if (object.videos != null) {
+      yield r'videos';
       yield serializers.serialize(
-        object.socialProfiles,
-        specifiedType: const FullType(BuiltList, [FullType(SocialProfile)]),
+        object.videos,
+        specifiedType: const FullType(BuiltList, [FullType(Video)]),
       );
     }
     if (object.contentLists != null) {
@@ -1350,6 +1350,13 @@ class _$BasicListingSerializer implements PrimitiveSerializer<BasicListing> {
       yield serializers.serialize(
         object.contentLists,
         specifiedType: const FullType(BuiltList, [FullType(ContentList)]),
+      );
+    }
+    if (object.socialProfiles != null) {
+      yield r'socialProfiles';
+      yield serializers.serialize(
+        object.socialProfiles,
+        specifiedType: const FullType(BuiltList, [FullType(SocialProfile)]),
       );
     }
     if (object.keywords != null) {
@@ -1378,13 +1385,6 @@ class _$BasicListingSerializer implements PrimitiveSerializer<BasicListing> {
       yield serializers.serialize(
         object.languages,
         specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
-    if (object.videos != null) {
-      yield r'videos';
-      yield serializers.serialize(
-        object.videos,
-        specifiedType: const FullType(BuiltList, [FullType(Video)]),
       );
     }
   }
@@ -2121,12 +2121,12 @@ class _$BasicListingSerializer implements PrimitiveSerializer<BasicListing> {
           ) as bool;
           result.photos = valueDes;
           break;
-        case r'socialProfiles':
+        case r'videos':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(SocialProfile)]),
-          ) as BuiltList<SocialProfile>;
-          result.socialProfiles.replace(valueDes);
+            specifiedType: const FullType(BuiltList, [FullType(Video)]),
+          ) as BuiltList<Video>;
+          result.videos.replace(valueDes);
           break;
         case r'contentLists':
           final valueDes = serializers.deserialize(
@@ -2134,6 +2134,13 @@ class _$BasicListingSerializer implements PrimitiveSerializer<BasicListing> {
             specifiedType: const FullType(BuiltList, [FullType(ContentList)]),
           ) as BuiltList<ContentList>;
           result.contentLists.replace(valueDes);
+          break;
+        case r'socialProfiles':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(SocialProfile)]),
+          ) as BuiltList<SocialProfile>;
+          result.socialProfiles.replace(valueDes);
           break;
         case r'keywords':
           final valueDes = serializers.deserialize(
@@ -2162,13 +2169,6 @@ class _$BasicListingSerializer implements PrimitiveSerializer<BasicListing> {
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.languages.replace(valueDes);
-          break;
-        case r'videos':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(Video)]),
-          ) as BuiltList<Video>;
-          result.videos.replace(valueDes);
           break;
         default:
           unhandled.add(key);
@@ -2225,31 +2225,6 @@ class BasicListingNameStatusEnum extends EnumClass {
   static const BasicListingNameStatusEnum NOT_APPLICABLE =
       _$basicListingNameStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingNameStatusEnum MATCH2 =
-      _$basicListingNameStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingNameStatusEnum MISMATCH2 =
-      _$basicListingNameStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingNameStatusEnum PRESENT2 =
-      _$basicListingNameStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingNameStatusEnum MISSING2 =
-      _$basicListingNameStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingNameStatusEnum NOT_APPLICABLE2 =
-      _$basicListingNameStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingNameStatusEnum> get serializer =>
       _$basicListingNameStatusEnumSerializer;
 
@@ -2287,31 +2262,6 @@ class BasicListingStreetStatusEnum extends EnumClass {
   static const BasicListingStreetStatusEnum NOT_APPLICABLE =
       _$basicListingStreetStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingStreetStatusEnum MATCH2 =
-      _$basicListingStreetStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingStreetStatusEnum MISMATCH2 =
-      _$basicListingStreetStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingStreetStatusEnum PRESENT2 =
-      _$basicListingStreetStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingStreetStatusEnum MISSING2 =
-      _$basicListingStreetStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingStreetStatusEnum NOT_APPLICABLE2 =
-      _$basicListingStreetStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingStreetStatusEnum> get serializer =>
       _$basicListingStreetStatusEnumSerializer;
 
@@ -2348,31 +2298,6 @@ class BasicListingStreetNoStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE')
   static const BasicListingStreetNoStatusEnum NOT_APPLICABLE =
       _$basicListingStreetNoStatusEnum_NOT_APPLICABLE;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingStreetNoStatusEnum MATCH2 =
-      _$basicListingStreetNoStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingStreetNoStatusEnum MISMATCH2 =
-      _$basicListingStreetNoStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingStreetNoStatusEnum PRESENT2 =
-      _$basicListingStreetNoStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingStreetNoStatusEnum MISSING2 =
-      _$basicListingStreetNoStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingStreetNoStatusEnum NOT_APPLICABLE2 =
-      _$basicListingStreetNoStatusEnum_NOT_APPLICABLE2;
 
   static Serializer<BasicListingStreetNoStatusEnum> get serializer =>
       _$basicListingStreetNoStatusEnumSerializer;
@@ -2518,31 +2443,6 @@ class BasicListingStreetTypeStatusEnum extends EnumClass {
   static const BasicListingStreetTypeStatusEnum NOT_APPLICABLE =
       _$basicListingStreetTypeStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingStreetTypeStatusEnum MATCH2 =
-      _$basicListingStreetTypeStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingStreetTypeStatusEnum MISMATCH2 =
-      _$basicListingStreetTypeStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingStreetTypeStatusEnum PRESENT2 =
-      _$basicListingStreetTypeStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingStreetTypeStatusEnum MISSING2 =
-      _$basicListingStreetTypeStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingStreetTypeStatusEnum NOT_APPLICABLE2 =
-      _$basicListingStreetTypeStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingStreetTypeStatusEnum> get serializer =>
       _$basicListingStreetTypeStatusEnumSerializer;
 
@@ -2579,31 +2479,6 @@ class BasicListingStreetAndNoStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE')
   static const BasicListingStreetAndNoStatusEnum NOT_APPLICABLE =
       _$basicListingStreetAndNoStatusEnum_NOT_APPLICABLE;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingStreetAndNoStatusEnum MATCH2 =
-      _$basicListingStreetAndNoStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingStreetAndNoStatusEnum MISMATCH2 =
-      _$basicListingStreetAndNoStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingStreetAndNoStatusEnum PRESENT2 =
-      _$basicListingStreetAndNoStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingStreetAndNoStatusEnum MISSING2 =
-      _$basicListingStreetAndNoStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingStreetAndNoStatusEnum NOT_APPLICABLE2 =
-      _$basicListingStreetAndNoStatusEnum_NOT_APPLICABLE2;
 
   static Serializer<BasicListingStreetAndNoStatusEnum> get serializer =>
       _$basicListingStreetAndNoStatusEnumSerializer;
@@ -2642,31 +2517,6 @@ class BasicListingAddressExtraStatusEnum extends EnumClass {
   static const BasicListingAddressExtraStatusEnum NOT_APPLICABLE =
       _$basicListingAddressExtraStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingAddressExtraStatusEnum MATCH2 =
-      _$basicListingAddressExtraStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingAddressExtraStatusEnum MISMATCH2 =
-      _$basicListingAddressExtraStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingAddressExtraStatusEnum PRESENT2 =
-      _$basicListingAddressExtraStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingAddressExtraStatusEnum MISSING2 =
-      _$basicListingAddressExtraStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingAddressExtraStatusEnum NOT_APPLICABLE2 =
-      _$basicListingAddressExtraStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingAddressExtraStatusEnum> get serializer =>
       _$basicListingAddressExtraStatusEnumSerializer;
 
@@ -2703,31 +2553,6 @@ class BasicListingZipStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE')
   static const BasicListingZipStatusEnum NOT_APPLICABLE =
       _$basicListingZipStatusEnum_NOT_APPLICABLE;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingZipStatusEnum MATCH2 =
-      _$basicListingZipStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingZipStatusEnum MISMATCH2 =
-      _$basicListingZipStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingZipStatusEnum PRESENT2 =
-      _$basicListingZipStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingZipStatusEnum MISSING2 =
-      _$basicListingZipStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingZipStatusEnum NOT_APPLICABLE2 =
-      _$basicListingZipStatusEnum_NOT_APPLICABLE2;
 
   static Serializer<BasicListingZipStatusEnum> get serializer =>
       _$basicListingZipStatusEnumSerializer;
@@ -2766,31 +2591,6 @@ class BasicListingCityStatusEnum extends EnumClass {
   static const BasicListingCityStatusEnum NOT_APPLICABLE =
       _$basicListingCityStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingCityStatusEnum MATCH2 =
-      _$basicListingCityStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingCityStatusEnum MISMATCH2 =
-      _$basicListingCityStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingCityStatusEnum PRESENT2 =
-      _$basicListingCityStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingCityStatusEnum MISSING2 =
-      _$basicListingCityStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingCityStatusEnum NOT_APPLICABLE2 =
-      _$basicListingCityStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingCityStatusEnum> get serializer =>
       _$basicListingCityStatusEnumSerializer;
 
@@ -2827,31 +2627,6 @@ class BasicListingAddressDisplayStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE')
   static const BasicListingAddressDisplayStatusEnum NOT_APPLICABLE =
       _$basicListingAddressDisplayStatusEnum_NOT_APPLICABLE;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingAddressDisplayStatusEnum MATCH2 =
-      _$basicListingAddressDisplayStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingAddressDisplayStatusEnum MISMATCH2 =
-      _$basicListingAddressDisplayStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingAddressDisplayStatusEnum PRESENT2 =
-      _$basicListingAddressDisplayStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingAddressDisplayStatusEnum MISSING2 =
-      _$basicListingAddressDisplayStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingAddressDisplayStatusEnum NOT_APPLICABLE2 =
-      _$basicListingAddressDisplayStatusEnum_NOT_APPLICABLE2;
 
   static Serializer<BasicListingAddressDisplayStatusEnum> get serializer =>
       _$basicListingAddressDisplayStatusEnumSerializer;
@@ -2890,31 +2665,6 @@ class BasicListingPhoneStatusEnum extends EnumClass {
   static const BasicListingPhoneStatusEnum NOT_APPLICABLE =
       _$basicListingPhoneStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingPhoneStatusEnum MATCH2 =
-      _$basicListingPhoneStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingPhoneStatusEnum MISMATCH2 =
-      _$basicListingPhoneStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingPhoneStatusEnum PRESENT2 =
-      _$basicListingPhoneStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingPhoneStatusEnum MISSING2 =
-      _$basicListingPhoneStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingPhoneStatusEnum NOT_APPLICABLE2 =
-      _$basicListingPhoneStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingPhoneStatusEnum> get serializer =>
       _$basicListingPhoneStatusEnumSerializer;
 
@@ -2951,31 +2701,6 @@ class BasicListingFaxStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE')
   static const BasicListingFaxStatusEnum NOT_APPLICABLE =
       _$basicListingFaxStatusEnum_NOT_APPLICABLE;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingFaxStatusEnum MATCH2 =
-      _$basicListingFaxStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingFaxStatusEnum MISMATCH2 =
-      _$basicListingFaxStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingFaxStatusEnum PRESENT2 =
-      _$basicListingFaxStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingFaxStatusEnum MISSING2 =
-      _$basicListingFaxStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingFaxStatusEnum NOT_APPLICABLE2 =
-      _$basicListingFaxStatusEnum_NOT_APPLICABLE2;
 
   static Serializer<BasicListingFaxStatusEnum> get serializer =>
       _$basicListingFaxStatusEnumSerializer;
@@ -3014,31 +2739,6 @@ class BasicListingCellphoneStatusEnum extends EnumClass {
   static const BasicListingCellphoneStatusEnum NOT_APPLICABLE =
       _$basicListingCellphoneStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingCellphoneStatusEnum MATCH2 =
-      _$basicListingCellphoneStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingCellphoneStatusEnum MISMATCH2 =
-      _$basicListingCellphoneStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingCellphoneStatusEnum PRESENT2 =
-      _$basicListingCellphoneStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingCellphoneStatusEnum MISSING2 =
-      _$basicListingCellphoneStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingCellphoneStatusEnum NOT_APPLICABLE2 =
-      _$basicListingCellphoneStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingCellphoneStatusEnum> get serializer =>
       _$basicListingCellphoneStatusEnumSerializer;
 
@@ -3075,31 +2775,6 @@ class BasicListingWebsiteStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE')
   static const BasicListingWebsiteStatusEnum NOT_APPLICABLE =
       _$basicListingWebsiteStatusEnum_NOT_APPLICABLE;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingWebsiteStatusEnum MATCH2 =
-      _$basicListingWebsiteStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingWebsiteStatusEnum MISMATCH2 =
-      _$basicListingWebsiteStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingWebsiteStatusEnum PRESENT2 =
-      _$basicListingWebsiteStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingWebsiteStatusEnum MISSING2 =
-      _$basicListingWebsiteStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingWebsiteStatusEnum NOT_APPLICABLE2 =
-      _$basicListingWebsiteStatusEnum_NOT_APPLICABLE2;
 
   static Serializer<BasicListingWebsiteStatusEnum> get serializer =>
       _$basicListingWebsiteStatusEnumSerializer;
@@ -3138,31 +2813,6 @@ class BasicListingEmailStatusEnum extends EnumClass {
   static const BasicListingEmailStatusEnum NOT_APPLICABLE =
       _$basicListingEmailStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingEmailStatusEnum MATCH2 =
-      _$basicListingEmailStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingEmailStatusEnum MISMATCH2 =
-      _$basicListingEmailStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingEmailStatusEnum PRESENT2 =
-      _$basicListingEmailStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingEmailStatusEnum MISSING2 =
-      _$basicListingEmailStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingEmailStatusEnum NOT_APPLICABLE2 =
-      _$basicListingEmailStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingEmailStatusEnum> get serializer =>
       _$basicListingEmailStatusEnumSerializer;
 
@@ -3199,31 +2849,6 @@ class BasicListingDescriptionLongStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE')
   static const BasicListingDescriptionLongStatusEnum NOT_APPLICABLE =
       _$basicListingDescriptionLongStatusEnum_NOT_APPLICABLE;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingDescriptionLongStatusEnum MATCH2 =
-      _$basicListingDescriptionLongStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingDescriptionLongStatusEnum MISMATCH2 =
-      _$basicListingDescriptionLongStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingDescriptionLongStatusEnum PRESENT2 =
-      _$basicListingDescriptionLongStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingDescriptionLongStatusEnum MISSING2 =
-      _$basicListingDescriptionLongStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingDescriptionLongStatusEnum NOT_APPLICABLE2 =
-      _$basicListingDescriptionLongStatusEnum_NOT_APPLICABLE2;
 
   static Serializer<BasicListingDescriptionLongStatusEnum> get serializer =>
       _$basicListingDescriptionLongStatusEnumSerializer;
@@ -3262,31 +2887,6 @@ class BasicListingDescriptionShortStatusEnum extends EnumClass {
   static const BasicListingDescriptionShortStatusEnum NOT_APPLICABLE =
       _$basicListingDescriptionShortStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingDescriptionShortStatusEnum MATCH2 =
-      _$basicListingDescriptionShortStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingDescriptionShortStatusEnum MISMATCH2 =
-      _$basicListingDescriptionShortStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingDescriptionShortStatusEnum PRESENT2 =
-      _$basicListingDescriptionShortStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingDescriptionShortStatusEnum MISSING2 =
-      _$basicListingDescriptionShortStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingDescriptionShortStatusEnum NOT_APPLICABLE2 =
-      _$basicListingDescriptionShortStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingDescriptionShortStatusEnum> get serializer =>
       _$basicListingDescriptionShortStatusEnumSerializer;
 
@@ -3323,21 +2923,6 @@ class BasicListingImprintStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE')
   static const BasicListingImprintStatusEnum NOT_APPLICABLE =
       _$basicListingImprintStatusEnum_NOT_APPLICABLE;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingImprintStatusEnum PRESENT2 =
-      _$basicListingImprintStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingImprintStatusEnum MISSING2 =
-      _$basicListingImprintStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingImprintStatusEnum NOT_APPLICABLE2 =
-      _$basicListingImprintStatusEnum_NOT_APPLICABLE2;
 
   static Serializer<BasicListingImprintStatusEnum> get serializer =>
       _$basicListingImprintStatusEnumSerializer;
@@ -3376,31 +2961,6 @@ class BasicListingOpeningHoursStatusEnum extends EnumClass {
   static const BasicListingOpeningHoursStatusEnum NOT_APPLICABLE =
       _$basicListingOpeningHoursStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingOpeningHoursStatusEnum MATCH2 =
-      _$basicListingOpeningHoursStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingOpeningHoursStatusEnum MISMATCH2 =
-      _$basicListingOpeningHoursStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingOpeningHoursStatusEnum PRESENT2 =
-      _$basicListingOpeningHoursStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingOpeningHoursStatusEnum MISSING2 =
-      _$basicListingOpeningHoursStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingOpeningHoursStatusEnum NOT_APPLICABLE2 =
-      _$basicListingOpeningHoursStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingOpeningHoursStatusEnum> get serializer =>
       _$basicListingOpeningHoursStatusEnumSerializer;
 
@@ -3437,31 +2997,6 @@ class BasicListingOpeningHoursNotesStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE')
   static const BasicListingOpeningHoursNotesStatusEnum NOT_APPLICABLE =
       _$basicListingOpeningHoursNotesStatusEnum_NOT_APPLICABLE;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingOpeningHoursNotesStatusEnum MATCH2 =
-      _$basicListingOpeningHoursNotesStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingOpeningHoursNotesStatusEnum MISMATCH2 =
-      _$basicListingOpeningHoursNotesStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingOpeningHoursNotesStatusEnum PRESENT2 =
-      _$basicListingOpeningHoursNotesStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingOpeningHoursNotesStatusEnum MISSING2 =
-      _$basicListingOpeningHoursNotesStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingOpeningHoursNotesStatusEnum NOT_APPLICABLE2 =
-      _$basicListingOpeningHoursNotesStatusEnum_NOT_APPLICABLE2;
 
   static Serializer<BasicListingOpeningHoursNotesStatusEnum> get serializer =>
       _$basicListingOpeningHoursNotesStatusEnumSerializer;
@@ -3500,31 +3035,6 @@ class BasicListingMoreHoursStatusEnum extends EnumClass {
   static const BasicListingMoreHoursStatusEnum NOT_APPLICABLE =
       _$basicListingMoreHoursStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingMoreHoursStatusEnum MATCH2 =
-      _$basicListingMoreHoursStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingMoreHoursStatusEnum MISMATCH2 =
-      _$basicListingMoreHoursStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingMoreHoursStatusEnum PRESENT2 =
-      _$basicListingMoreHoursStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingMoreHoursStatusEnum MISSING2 =
-      _$basicListingMoreHoursStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingMoreHoursStatusEnum NOT_APPLICABLE2 =
-      _$basicListingMoreHoursStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingMoreHoursStatusEnum> get serializer =>
       _$basicListingMoreHoursStatusEnumSerializer;
 
@@ -3561,31 +3071,6 @@ class BasicListingSpecialOpeningHoursStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE')
   static const BasicListingSpecialOpeningHoursStatusEnum NOT_APPLICABLE =
       _$basicListingSpecialOpeningHoursStatusEnum_NOT_APPLICABLE;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingSpecialOpeningHoursStatusEnum MATCH2 =
-      _$basicListingSpecialOpeningHoursStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingSpecialOpeningHoursStatusEnum MISMATCH2 =
-      _$basicListingSpecialOpeningHoursStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingSpecialOpeningHoursStatusEnum PRESENT2 =
-      _$basicListingSpecialOpeningHoursStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingSpecialOpeningHoursStatusEnum MISSING2 =
-      _$basicListingSpecialOpeningHoursStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingSpecialOpeningHoursStatusEnum NOT_APPLICABLE2 =
-      _$basicListingSpecialOpeningHoursStatusEnum_NOT_APPLICABLE2;
 
   static Serializer<BasicListingSpecialOpeningHoursStatusEnum> get serializer =>
       _$basicListingSpecialOpeningHoursStatusEnumSerializer;
@@ -3624,31 +3109,6 @@ class BasicListingKeywordsStatusEnum extends EnumClass {
   static const BasicListingKeywordsStatusEnum NOT_APPLICABLE =
       _$basicListingKeywordsStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingKeywordsStatusEnum MATCH2 =
-      _$basicListingKeywordsStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingKeywordsStatusEnum MISMATCH2 =
-      _$basicListingKeywordsStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingKeywordsStatusEnum PRESENT2 =
-      _$basicListingKeywordsStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingKeywordsStatusEnum MISSING2 =
-      _$basicListingKeywordsStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingKeywordsStatusEnum NOT_APPLICABLE2 =
-      _$basicListingKeywordsStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingKeywordsStatusEnum> get serializer =>
       _$basicListingKeywordsStatusEnumSerializer;
 
@@ -3686,36 +3146,6 @@ class BasicListingCategoriesStatusEnum extends EnumClass {
   static const BasicListingCategoriesStatusEnum NOT_APPLICABLE =
       _$basicListingCategoriesStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingCategoriesStatusEnum MISSING2 =
-      _$basicListingCategoriesStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingCategoriesStatusEnum MATCH2 =
-      _$basicListingCategoriesStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingCategoriesStatusEnum MISMATCH2 =
-      _$basicListingCategoriesStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingCategoriesStatusEnum PRESENT2 =
-      _$basicListingCategoriesStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING3')
-  static const BasicListingCategoriesStatusEnum MISSING3 =
-      _$basicListingCategoriesStatusEnum_MISSING3;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingCategoriesStatusEnum NOT_APPLICABLE2 =
-      _$basicListingCategoriesStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingCategoriesStatusEnum> get serializer =>
       _$basicListingCategoriesStatusEnumSerializer;
 
@@ -3728,16 +3158,6 @@ class BasicListingCategoriesStatusEnum extends EnumClass {
 }
 
 class BasicListingAttributesStatusEnum extends EnumClass {
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING
-  @BuiltValueEnumConst(wireName: r'MATCH')
-  static const BasicListingAttributesStatusEnum MATCH =
-      _$basicListingAttributesStatusEnum_MATCH;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING
-  @BuiltValueEnumConst(wireName: r'MISMATCH')
-  static const BasicListingAttributesStatusEnum MISMATCH =
-      _$basicListingAttributesStatusEnum_MISMATCH;
-
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING
   @BuiltValueEnumConst(wireName: r'PRESENT')
   static const BasicListingAttributesStatusEnum PRESENT =
@@ -3752,21 +3172,6 @@ class BasicListingAttributesStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE')
   static const BasicListingAttributesStatusEnum NOT_APPLICABLE =
       _$basicListingAttributesStatusEnum_NOT_APPLICABLE;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingAttributesStatusEnum PRESENT2 =
-      _$basicListingAttributesStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingAttributesStatusEnum MISSING2 =
-      _$basicListingAttributesStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingAttributesStatusEnum NOT_APPLICABLE2 =
-      _$basicListingAttributesStatusEnum_NOT_APPLICABLE2;
 
   static Serializer<BasicListingAttributesStatusEnum> get serializer =>
       _$basicListingAttributesStatusEnumSerializer;
@@ -3805,36 +3210,6 @@ class BasicListingPhotosStatusEnum extends EnumClass {
   static const BasicListingPhotosStatusEnum NOT_APPLICABLE =
       _$basicListingPhotosStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingPhotosStatusEnum MISSING2 =
-      _$basicListingPhotosStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingPhotosStatusEnum MATCH2 =
-      _$basicListingPhotosStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingPhotosStatusEnum MISMATCH2 =
-      _$basicListingPhotosStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingPhotosStatusEnum PRESENT2 =
-      _$basicListingPhotosStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING3')
-  static const BasicListingPhotosStatusEnum MISSING3 =
-      _$basicListingPhotosStatusEnum_MISSING3;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingPhotosStatusEnum NOT_APPLICABLE2 =
-      _$basicListingPhotosStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingPhotosStatusEnum> get serializer =>
       _$basicListingPhotosStatusEnumSerializer;
 
@@ -3871,31 +3246,6 @@ class BasicListingLegalIdentStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE')
   static const BasicListingLegalIdentStatusEnum NOT_APPLICABLE =
       _$basicListingLegalIdentStatusEnum_NOT_APPLICABLE;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingLegalIdentStatusEnum MATCH2 =
-      _$basicListingLegalIdentStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingLegalIdentStatusEnum MISMATCH2 =
-      _$basicListingLegalIdentStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingLegalIdentStatusEnum PRESENT2 =
-      _$basicListingLegalIdentStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingLegalIdentStatusEnum MISSING2 =
-      _$basicListingLegalIdentStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingLegalIdentStatusEnum NOT_APPLICABLE2 =
-      _$basicListingLegalIdentStatusEnum_NOT_APPLICABLE2;
 
   static Serializer<BasicListingLegalIdentStatusEnum> get serializer =>
       _$basicListingLegalIdentStatusEnumSerializer;
@@ -3934,31 +3284,6 @@ class BasicListingTaxNumberStatusEnum extends EnumClass {
   static const BasicListingTaxNumberStatusEnum NOT_APPLICABLE =
       _$basicListingTaxNumberStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingTaxNumberStatusEnum MATCH2 =
-      _$basicListingTaxNumberStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingTaxNumberStatusEnum MISMATCH2 =
-      _$basicListingTaxNumberStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingTaxNumberStatusEnum PRESENT2 =
-      _$basicListingTaxNumberStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingTaxNumberStatusEnum MISSING2 =
-      _$basicListingTaxNumberStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingTaxNumberStatusEnum NOT_APPLICABLE2 =
-      _$basicListingTaxNumberStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingTaxNumberStatusEnum> get serializer =>
       _$basicListingTaxNumberStatusEnumSerializer;
 
@@ -3995,31 +3320,6 @@ class BasicListingProvinceStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE')
   static const BasicListingProvinceStatusEnum NOT_APPLICABLE =
       _$basicListingProvinceStatusEnum_NOT_APPLICABLE;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingProvinceStatusEnum MATCH2 =
-      _$basicListingProvinceStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingProvinceStatusEnum MISMATCH2 =
-      _$basicListingProvinceStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingProvinceStatusEnum PRESENT2 =
-      _$basicListingProvinceStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingProvinceStatusEnum MISSING2 =
-      _$basicListingProvinceStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingProvinceStatusEnum NOT_APPLICABLE2 =
-      _$basicListingProvinceStatusEnum_NOT_APPLICABLE2;
 
   static Serializer<BasicListingProvinceStatusEnum> get serializer =>
       _$basicListingProvinceStatusEnumSerializer;
@@ -5070,31 +4370,6 @@ class BasicListingCountryStatusEnum extends EnumClass {
   static const BasicListingCountryStatusEnum NOT_APPLICABLE =
       _$basicListingCountryStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingCountryStatusEnum MATCH2 =
-      _$basicListingCountryStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingCountryStatusEnum MISMATCH2 =
-      _$basicListingCountryStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingCountryStatusEnum PRESENT2 =
-      _$basicListingCountryStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingCountryStatusEnum MISSING2 =
-      _$basicListingCountryStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingCountryStatusEnum NOT_APPLICABLE2 =
-      _$basicListingCountryStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingCountryStatusEnum> get serializer =>
       _$basicListingCountryStatusEnumSerializer;
 
@@ -5131,31 +4406,6 @@ class BasicListingSocialPostStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE')
   static const BasicListingSocialPostStatusEnum NOT_APPLICABLE =
       _$basicListingSocialPostStatusEnum_NOT_APPLICABLE;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingSocialPostStatusEnum MATCH2 =
-      _$basicListingSocialPostStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingSocialPostStatusEnum MISMATCH2 =
-      _$basicListingSocialPostStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingSocialPostStatusEnum PRESENT2 =
-      _$basicListingSocialPostStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingSocialPostStatusEnum MISSING2 =
-      _$basicListingSocialPostStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingSocialPostStatusEnum NOT_APPLICABLE2 =
-      _$basicListingSocialPostStatusEnum_NOT_APPLICABLE2;
 
   static Serializer<BasicListingSocialPostStatusEnum> get serializer =>
       _$basicListingSocialPostStatusEnumSerializer;
@@ -5194,31 +4444,6 @@ class BasicListingVideosStatusEnum extends EnumClass {
   static const BasicListingVideosStatusEnum NOT_APPLICABLE =
       _$basicListingVideosStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingVideosStatusEnum MATCH2 =
-      _$basicListingVideosStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingVideosStatusEnum MISMATCH2 =
-      _$basicListingVideosStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingVideosStatusEnum PRESENT2 =
-      _$basicListingVideosStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingVideosStatusEnum MISSING2 =
-      _$basicListingVideosStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingVideosStatusEnum NOT_APPLICABLE2 =
-      _$basicListingVideosStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingVideosStatusEnum> get serializer =>
       _$basicListingVideosStatusEnumSerializer;
 
@@ -5255,31 +4480,6 @@ class BasicListingContentListsStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE')
   static const BasicListingContentListsStatusEnum NOT_APPLICABLE =
       _$basicListingContentListsStatusEnum_NOT_APPLICABLE;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingContentListsStatusEnum MATCH2 =
-      _$basicListingContentListsStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingContentListsStatusEnum MISMATCH2 =
-      _$basicListingContentListsStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingContentListsStatusEnum PRESENT2 =
-      _$basicListingContentListsStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingContentListsStatusEnum MISSING2 =
-      _$basicListingContentListsStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingContentListsStatusEnum NOT_APPLICABLE2 =
-      _$basicListingContentListsStatusEnum_NOT_APPLICABLE2;
 
   static Serializer<BasicListingContentListsStatusEnum> get serializer =>
       _$basicListingContentListsStatusEnumSerializer;
@@ -5318,31 +4518,6 @@ class BasicListingSocialProfilesStatusEnum extends EnumClass {
   static const BasicListingSocialProfilesStatusEnum NOT_APPLICABLE =
       _$basicListingSocialProfilesStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingSocialProfilesStatusEnum MATCH2 =
-      _$basicListingSocialProfilesStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingSocialProfilesStatusEnum MISMATCH2 =
-      _$basicListingSocialProfilesStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingSocialProfilesStatusEnum PRESENT2 =
-      _$basicListingSocialProfilesStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingSocialProfilesStatusEnum MISSING2 =
-      _$basicListingSocialProfilesStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingSocialProfilesStatusEnum NOT_APPLICABLE2 =
-      _$basicListingSocialProfilesStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingSocialProfilesStatusEnum> get serializer =>
       _$basicListingSocialProfilesStatusEnumSerializer;
 
@@ -5379,31 +4554,6 @@ class BasicListingPaymentOptionsStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE')
   static const BasicListingPaymentOptionsStatusEnum NOT_APPLICABLE =
       _$basicListingPaymentOptionsStatusEnum_NOT_APPLICABLE;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingPaymentOptionsStatusEnum MATCH2 =
-      _$basicListingPaymentOptionsStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingPaymentOptionsStatusEnum MISMATCH2 =
-      _$basicListingPaymentOptionsStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingPaymentOptionsStatusEnum PRESENT2 =
-      _$basicListingPaymentOptionsStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingPaymentOptionsStatusEnum MISSING2 =
-      _$basicListingPaymentOptionsStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingPaymentOptionsStatusEnum NOT_APPLICABLE2 =
-      _$basicListingPaymentOptionsStatusEnum_NOT_APPLICABLE2;
 
   static Serializer<BasicListingPaymentOptionsStatusEnum> get serializer =>
       _$basicListingPaymentOptionsStatusEnumSerializer;
@@ -5442,31 +4592,6 @@ class BasicListingBrandsStatusEnum extends EnumClass {
   static const BasicListingBrandsStatusEnum NOT_APPLICABLE =
       _$basicListingBrandsStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingBrandsStatusEnum MATCH2 =
-      _$basicListingBrandsStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingBrandsStatusEnum MISMATCH2 =
-      _$basicListingBrandsStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingBrandsStatusEnum PRESENT2 =
-      _$basicListingBrandsStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingBrandsStatusEnum MISSING2 =
-      _$basicListingBrandsStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingBrandsStatusEnum NOT_APPLICABLE2 =
-      _$basicListingBrandsStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingBrandsStatusEnum> get serializer =>
       _$basicListingBrandsStatusEnumSerializer;
 
@@ -5503,31 +4628,6 @@ class BasicListingServicesStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE')
   static const BasicListingServicesStatusEnum NOT_APPLICABLE =
       _$basicListingServicesStatusEnum_NOT_APPLICABLE;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingServicesStatusEnum MATCH2 =
-      _$basicListingServicesStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingServicesStatusEnum MISMATCH2 =
-      _$basicListingServicesStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingServicesStatusEnum PRESENT2 =
-      _$basicListingServicesStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingServicesStatusEnum MISSING2 =
-      _$basicListingServicesStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingServicesStatusEnum NOT_APPLICABLE2 =
-      _$basicListingServicesStatusEnum_NOT_APPLICABLE2;
 
   static Serializer<BasicListingServicesStatusEnum> get serializer =>
       _$basicListingServicesStatusEnumSerializer;
@@ -5566,31 +4666,6 @@ class BasicListingTransactionLinksStatusEnum extends EnumClass {
   static const BasicListingTransactionLinksStatusEnum NOT_APPLICABLE =
       _$basicListingTransactionLinksStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingTransactionLinksStatusEnum MATCH2 =
-      _$basicListingTransactionLinksStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingTransactionLinksStatusEnum MISMATCH2 =
-      _$basicListingTransactionLinksStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingTransactionLinksStatusEnum PRESENT2 =
-      _$basicListingTransactionLinksStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingTransactionLinksStatusEnum MISSING2 =
-      _$basicListingTransactionLinksStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingTransactionLinksStatusEnum NOT_APPLICABLE2 =
-      _$basicListingTransactionLinksStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingTransactionLinksStatusEnum> get serializer =>
       _$basicListingTransactionLinksStatusEnumSerializer;
 
@@ -5627,31 +4702,6 @@ class BasicListingLanguagesStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE')
   static const BasicListingLanguagesStatusEnum NOT_APPLICABLE =
       _$basicListingLanguagesStatusEnum_NOT_APPLICABLE;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingLanguagesStatusEnum MATCH2 =
-      _$basicListingLanguagesStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingLanguagesStatusEnum MISMATCH2 =
-      _$basicListingLanguagesStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingLanguagesStatusEnum PRESENT2 =
-      _$basicListingLanguagesStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingLanguagesStatusEnum MISSING2 =
-      _$basicListingLanguagesStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingLanguagesStatusEnum NOT_APPLICABLE2 =
-      _$basicListingLanguagesStatusEnum_NOT_APPLICABLE2;
 
   static Serializer<BasicListingLanguagesStatusEnum> get serializer =>
       _$basicListingLanguagesStatusEnumSerializer;
@@ -5690,31 +4740,6 @@ class BasicListingAttributionStatusEnum extends EnumClass {
   static const BasicListingAttributionStatusEnum NOT_APPLICABLE =
       _$basicListingAttributionStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingAttributionStatusEnum MATCH2 =
-      _$basicListingAttributionStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingAttributionStatusEnum MISMATCH2 =
-      _$basicListingAttributionStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingAttributionStatusEnum PRESENT2 =
-      _$basicListingAttributionStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingAttributionStatusEnum MISSING2 =
-      _$basicListingAttributionStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingAttributionStatusEnum NOT_APPLICABLE2 =
-      _$basicListingAttributionStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingAttributionStatusEnum> get serializer =>
       _$basicListingAttributionStatusEnumSerializer;
 
@@ -5751,31 +4776,6 @@ class BasicListingLatStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE')
   static const BasicListingLatStatusEnum NOT_APPLICABLE =
       _$basicListingLatStatusEnum_NOT_APPLICABLE;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingLatStatusEnum MATCH2 =
-      _$basicListingLatStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingLatStatusEnum MISMATCH2 =
-      _$basicListingLatStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingLatStatusEnum PRESENT2 =
-      _$basicListingLatStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingLatStatusEnum MISSING2 =
-      _$basicListingLatStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingLatStatusEnum NOT_APPLICABLE2 =
-      _$basicListingLatStatusEnum_NOT_APPLICABLE2;
 
   static Serializer<BasicListingLatStatusEnum> get serializer =>
       _$basicListingLatStatusEnumSerializer;
@@ -5814,31 +4814,6 @@ class BasicListingLngStatusEnum extends EnumClass {
   static const BasicListingLngStatusEnum NOT_APPLICABLE =
       _$basicListingLngStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingLngStatusEnum MATCH2 =
-      _$basicListingLngStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingLngStatusEnum MISMATCH2 =
-      _$basicListingLngStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingLngStatusEnum PRESENT2 =
-      _$basicListingLngStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingLngStatusEnum MISSING2 =
-      _$basicListingLngStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingLngStatusEnum NOT_APPLICABLE2 =
-      _$basicListingLngStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingLngStatusEnum> get serializer =>
       _$basicListingLngStatusEnumSerializer;
 
@@ -5875,31 +4850,6 @@ class BasicListingServiceAreasStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE')
   static const BasicListingServiceAreasStatusEnum NOT_APPLICABLE =
       _$basicListingServiceAreasStatusEnum_NOT_APPLICABLE;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingServiceAreasStatusEnum MATCH2 =
-      _$basicListingServiceAreasStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingServiceAreasStatusEnum MISMATCH2 =
-      _$basicListingServiceAreasStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingServiceAreasStatusEnum PRESENT2 =
-      _$basicListingServiceAreasStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingServiceAreasStatusEnum MISSING2 =
-      _$basicListingServiceAreasStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingServiceAreasStatusEnum NOT_APPLICABLE2 =
-      _$basicListingServiceAreasStatusEnum_NOT_APPLICABLE2;
 
   static Serializer<BasicListingServiceAreasStatusEnum> get serializer =>
       _$basicListingServiceAreasStatusEnumSerializer;
@@ -5938,16 +4888,6 @@ class BasicListingRatingStatusEnum extends EnumClass {
   static const BasicListingRatingStatusEnum NOT_APPLICABLE =
       _$basicListingRatingStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE or PRESENT
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingRatingStatusEnum PRESENT2 =
-      _$basicListingRatingStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE or PRESENT
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingRatingStatusEnum NOT_APPLICABLE2 =
-      _$basicListingRatingStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingRatingStatusEnum> get serializer =>
       _$basicListingRatingStatusEnumSerializer;
 
@@ -5984,16 +4924,6 @@ class BasicListingNumberOfRatingsStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE')
   static const BasicListingNumberOfRatingsStatusEnum NOT_APPLICABLE =
       _$basicListingNumberOfRatingsStatusEnum_NOT_APPLICABLE;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE or PRESENT
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingNumberOfRatingsStatusEnum PRESENT2 =
-      _$basicListingNumberOfRatingsStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE or PRESENT
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingNumberOfRatingsStatusEnum NOT_APPLICABLE2 =
-      _$basicListingNumberOfRatingsStatusEnum_NOT_APPLICABLE2;
 
   static Serializer<BasicListingNumberOfRatingsStatusEnum> get serializer =>
       _$basicListingNumberOfRatingsStatusEnumSerializer;
@@ -7223,36 +6153,6 @@ class BasicListingClaimStatusEnum extends EnumClass {
   static const BasicListingClaimStatusEnum UNKNOWN =
       _$basicListingClaimStatusEnum_UNKNOWN;
 
-  /// Claim status of the listing. One of CLAIMABLE, NOT_CLAIMABLE, CLAIMED_BY_US, CLAIMED_BY_OTHERS, CLAIMING_IN_PROGRESS, UNKNOWN
-  @BuiltValueEnumConst(wireName: r'CLAIMABLE2')
-  static const BasicListingClaimStatusEnum CLAIMABLE2 =
-      _$basicListingClaimStatusEnum_CLAIMABLE2;
-
-  /// Claim status of the listing. One of CLAIMABLE, NOT_CLAIMABLE, CLAIMED_BY_US, CLAIMED_BY_OTHERS, CLAIMING_IN_PROGRESS, UNKNOWN
-  @BuiltValueEnumConst(wireName: r'CLAIMED_BY_US2')
-  static const BasicListingClaimStatusEnum CLAIMED_BY_US2 =
-      _$basicListingClaimStatusEnum_CLAIMED_BY_US2;
-
-  /// Claim status of the listing. One of CLAIMABLE, NOT_CLAIMABLE, CLAIMED_BY_US, CLAIMED_BY_OTHERS, CLAIMING_IN_PROGRESS, UNKNOWN
-  @BuiltValueEnumConst(wireName: r'CLAIMED_BY_OTHERS2')
-  static const BasicListingClaimStatusEnum CLAIMED_BY_OTHERS2 =
-      _$basicListingClaimStatusEnum_CLAIMED_BY_OTHERS2;
-
-  /// Claim status of the listing. One of CLAIMABLE, NOT_CLAIMABLE, CLAIMED_BY_US, CLAIMED_BY_OTHERS, CLAIMING_IN_PROGRESS, UNKNOWN
-  @BuiltValueEnumConst(wireName: r'CLAIMING_IN_PROGRESS2')
-  static const BasicListingClaimStatusEnum CLAIMING_IN_PROGRESS2 =
-      _$basicListingClaimStatusEnum_CLAIMING_IN_PROGRESS2;
-
-  /// Claim status of the listing. One of CLAIMABLE, NOT_CLAIMABLE, CLAIMED_BY_US, CLAIMED_BY_OTHERS, CLAIMING_IN_PROGRESS, UNKNOWN
-  @BuiltValueEnumConst(wireName: r'NOT_CLAIMABLE2')
-  static const BasicListingClaimStatusEnum NOT_CLAIMABLE2 =
-      _$basicListingClaimStatusEnum_NOT_CLAIMABLE2;
-
-  /// Claim status of the listing. One of CLAIMABLE, NOT_CLAIMABLE, CLAIMED_BY_US, CLAIMED_BY_OTHERS, CLAIMING_IN_PROGRESS, UNKNOWN
-  @BuiltValueEnumConst(wireName: r'UNKNOWN2')
-  static const BasicListingClaimStatusEnum UNKNOWN2 =
-      _$basicListingClaimStatusEnum_UNKNOWN2;
-
   static Serializer<BasicListingClaimStatusEnum> get serializer =>
       _$basicListingClaimStatusEnumSerializer;
 
@@ -7289,31 +6189,6 @@ class BasicListingNpiStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE')
   static const BasicListingNpiStatusEnum NOT_APPLICABLE =
       _$basicListingNpiStatusEnum_NOT_APPLICABLE;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingNpiStatusEnum MATCH2 =
-      _$basicListingNpiStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingNpiStatusEnum MISMATCH2 =
-      _$basicListingNpiStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingNpiStatusEnum PRESENT2 =
-      _$basicListingNpiStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingNpiStatusEnum MISSING2 =
-      _$basicListingNpiStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingNpiStatusEnum NOT_APPLICABLE2 =
-      _$basicListingNpiStatusEnum_NOT_APPLICABLE2;
 
   static Serializer<BasicListingNpiStatusEnum> get serializer =>
       _$basicListingNpiStatusEnumSerializer;
@@ -7352,31 +6227,6 @@ class BasicListingDoctorCategoriesStatusEnum extends EnumClass {
   static const BasicListingDoctorCategoriesStatusEnum NOT_APPLICABLE =
       _$basicListingDoctorCategoriesStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingDoctorCategoriesStatusEnum MATCH2 =
-      _$basicListingDoctorCategoriesStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingDoctorCategoriesStatusEnum MISMATCH2 =
-      _$basicListingDoctorCategoriesStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingDoctorCategoriesStatusEnum PRESENT2 =
-      _$basicListingDoctorCategoriesStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingDoctorCategoriesStatusEnum MISSING2 =
-      _$basicListingDoctorCategoriesStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingDoctorCategoriesStatusEnum NOT_APPLICABLE2 =
-      _$basicListingDoctorCategoriesStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingDoctorCategoriesStatusEnum> get serializer =>
       _$basicListingDoctorCategoriesStatusEnumSerializer;
 
@@ -7413,31 +6263,6 @@ class BasicListingNameDescriptorStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE')
   static const BasicListingNameDescriptorStatusEnum NOT_APPLICABLE =
       _$basicListingNameDescriptorStatusEnum_NOT_APPLICABLE;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingNameDescriptorStatusEnum MATCH2 =
-      _$basicListingNameDescriptorStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingNameDescriptorStatusEnum MISMATCH2 =
-      _$basicListingNameDescriptorStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingNameDescriptorStatusEnum PRESENT2 =
-      _$basicListingNameDescriptorStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingNameDescriptorStatusEnum MISSING2 =
-      _$basicListingNameDescriptorStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingNameDescriptorStatusEnum NOT_APPLICABLE2 =
-      _$basicListingNameDescriptorStatusEnum_NOT_APPLICABLE2;
 
   static Serializer<BasicListingNameDescriptorStatusEnum> get serializer =>
       _$basicListingNameDescriptorStatusEnumSerializer;
@@ -7476,31 +6301,6 @@ class BasicListingOpeningDateStatusEnum extends EnumClass {
   static const BasicListingOpeningDateStatusEnum NOT_APPLICABLE =
       _$basicListingOpeningDateStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingOpeningDateStatusEnum MATCH2 =
-      _$basicListingOpeningDateStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingOpeningDateStatusEnum MISMATCH2 =
-      _$basicListingOpeningDateStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingOpeningDateStatusEnum PRESENT2 =
-      _$basicListingOpeningDateStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingOpeningDateStatusEnum MISSING2 =
-      _$basicListingOpeningDateStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingOpeningDateStatusEnum NOT_APPLICABLE2 =
-      _$basicListingOpeningDateStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingOpeningDateStatusEnum> get serializer =>
       _$basicListingOpeningDateStatusEnumSerializer;
 
@@ -7538,31 +6338,6 @@ class BasicListingCustomFieldsStatusEnum extends EnumClass {
   static const BasicListingCustomFieldsStatusEnum NOT_APPLICABLE =
       _$basicListingCustomFieldsStatusEnum_NOT_APPLICABLE;
 
-  /// The sync status of this specific field.
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingCustomFieldsStatusEnum MATCH2 =
-      _$basicListingCustomFieldsStatusEnum_MATCH2;
-
-  /// The sync status of this specific field.
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingCustomFieldsStatusEnum MISMATCH2 =
-      _$basicListingCustomFieldsStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field.
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingCustomFieldsStatusEnum PRESENT2 =
-      _$basicListingCustomFieldsStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field.
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingCustomFieldsStatusEnum MISSING2 =
-      _$basicListingCustomFieldsStatusEnum_MISSING2;
-
-  /// The sync status of this specific field.
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingCustomFieldsStatusEnum NOT_APPLICABLE2 =
-      _$basicListingCustomFieldsStatusEnum_NOT_APPLICABLE2;
-
   static Serializer<BasicListingCustomFieldsStatusEnum> get serializer =>
       _$basicListingCustomFieldsStatusEnumSerializer;
 
@@ -7599,31 +6374,6 @@ class BasicListingSublocalityStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE')
   static const BasicListingSublocalityStatusEnum NOT_APPLICABLE =
       _$basicListingSublocalityStatusEnum_NOT_APPLICABLE;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MATCH2')
-  static const BasicListingSublocalityStatusEnum MATCH2 =
-      _$basicListingSublocalityStatusEnum_MATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISMATCH2')
-  static const BasicListingSublocalityStatusEnum MISMATCH2 =
-      _$basicListingSublocalityStatusEnum_MISMATCH2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'PRESENT2')
-  static const BasicListingSublocalityStatusEnum PRESENT2 =
-      _$basicListingSublocalityStatusEnum_PRESENT2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'MISSING2')
-  static const BasicListingSublocalityStatusEnum MISSING2 =
-      _$basicListingSublocalityStatusEnum_MISSING2;
-
-  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-  @BuiltValueEnumConst(wireName: r'NOT_APPLICABLE2')
-  static const BasicListingSublocalityStatusEnum NOT_APPLICABLE2 =
-      _$basicListingSublocalityStatusEnum_NOT_APPLICABLE2;
 
   static Serializer<BasicListingSublocalityStatusEnum> get serializer =>
       _$basicListingSublocalityStatusEnumSerializer;

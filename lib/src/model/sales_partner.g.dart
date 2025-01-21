@@ -246,29 +246,29 @@ class _$SalesPartner extends SalesPartner {
   @override
   final int? contractualMaxLocations;
   @override
-  final JsonObject? typeId;
-  @override
   final User? contactPerson;
   @override
-  final int? locationsLeft;
-  @override
-  final int? usersLeft;
-  @override
-  final JsonObject? invoicePaymentInformationId;
-  @override
-  final JsonObject? salesPartnerStatusId;
-  @override
-  final JsonObject? parentId;
-  @override
   final JsonObject? resellerTypeId;
-  @override
-  final JsonObject? attributionId;
   @override
   final JsonObject? publicTokenId;
   @override
   final JsonObject? privateTokenId;
   @override
   final JsonObject? onboardingStatusId;
+  @override
+  final JsonObject? typeId;
+  @override
+  final int? usersLeft;
+  @override
+  final JsonObject? attributionId;
+  @override
+  final JsonObject? parentId;
+  @override
+  final JsonObject? invoicePaymentInformationId;
+  @override
+  final int? locationsLeft;
+  @override
+  final JsonObject? salesPartnerStatusId;
 
   factory _$SalesPartner([void Function(SalesPartnerBuilder)? updates]) =>
       (new SalesPartnerBuilder()..update(updates))._build();
@@ -293,18 +293,18 @@ class _$SalesPartner extends SalesPartner {
       this.whitelabelInformations,
       this.activeLocations,
       this.contractualMaxLocations,
-      this.typeId,
       this.contactPerson,
-      this.locationsLeft,
-      this.usersLeft,
-      this.invoicePaymentInformationId,
-      this.salesPartnerStatusId,
-      this.parentId,
       this.resellerTypeId,
-      this.attributionId,
       this.publicTokenId,
       this.privateTokenId,
-      this.onboardingStatusId})
+      this.onboardingStatusId,
+      this.typeId,
+      this.usersLeft,
+      this.attributionId,
+      this.parentId,
+      this.invoicePaymentInformationId,
+      this.locationsLeft,
+      this.salesPartnerStatusId})
       : super._();
 
   @override
@@ -337,18 +337,18 @@ class _$SalesPartner extends SalesPartner {
         whitelabelInformations == other.whitelabelInformations &&
         activeLocations == other.activeLocations &&
         contractualMaxLocations == other.contractualMaxLocations &&
-        typeId == other.typeId &&
         contactPerson == other.contactPerson &&
-        locationsLeft == other.locationsLeft &&
-        usersLeft == other.usersLeft &&
-        invoicePaymentInformationId == other.invoicePaymentInformationId &&
-        salesPartnerStatusId == other.salesPartnerStatusId &&
-        parentId == other.parentId &&
         resellerTypeId == other.resellerTypeId &&
-        attributionId == other.attributionId &&
         publicTokenId == other.publicTokenId &&
         privateTokenId == other.privateTokenId &&
-        onboardingStatusId == other.onboardingStatusId;
+        onboardingStatusId == other.onboardingStatusId &&
+        typeId == other.typeId &&
+        usersLeft == other.usersLeft &&
+        attributionId == other.attributionId &&
+        parentId == other.parentId &&
+        invoicePaymentInformationId == other.invoicePaymentInformationId &&
+        locationsLeft == other.locationsLeft &&
+        salesPartnerStatusId == other.salesPartnerStatusId;
   }
 
   @override
@@ -373,18 +373,18 @@ class _$SalesPartner extends SalesPartner {
     _$hash = $jc(_$hash, whitelabelInformations.hashCode);
     _$hash = $jc(_$hash, activeLocations.hashCode);
     _$hash = $jc(_$hash, contractualMaxLocations.hashCode);
-    _$hash = $jc(_$hash, typeId.hashCode);
     _$hash = $jc(_$hash, contactPerson.hashCode);
-    _$hash = $jc(_$hash, locationsLeft.hashCode);
-    _$hash = $jc(_$hash, usersLeft.hashCode);
-    _$hash = $jc(_$hash, invoicePaymentInformationId.hashCode);
-    _$hash = $jc(_$hash, salesPartnerStatusId.hashCode);
-    _$hash = $jc(_$hash, parentId.hashCode);
     _$hash = $jc(_$hash, resellerTypeId.hashCode);
-    _$hash = $jc(_$hash, attributionId.hashCode);
     _$hash = $jc(_$hash, publicTokenId.hashCode);
     _$hash = $jc(_$hash, privateTokenId.hashCode);
     _$hash = $jc(_$hash, onboardingStatusId.hashCode);
+    _$hash = $jc(_$hash, typeId.hashCode);
+    _$hash = $jc(_$hash, usersLeft.hashCode);
+    _$hash = $jc(_$hash, attributionId.hashCode);
+    _$hash = $jc(_$hash, parentId.hashCode);
+    _$hash = $jc(_$hash, invoicePaymentInformationId.hashCode);
+    _$hash = $jc(_$hash, locationsLeft.hashCode);
+    _$hash = $jc(_$hash, salesPartnerStatusId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -411,18 +411,18 @@ class _$SalesPartner extends SalesPartner {
           ..add('whitelabelInformations', whitelabelInformations)
           ..add('activeLocations', activeLocations)
           ..add('contractualMaxLocations', contractualMaxLocations)
-          ..add('typeId', typeId)
           ..add('contactPerson', contactPerson)
-          ..add('locationsLeft', locationsLeft)
-          ..add('usersLeft', usersLeft)
-          ..add('invoicePaymentInformationId', invoicePaymentInformationId)
-          ..add('salesPartnerStatusId', salesPartnerStatusId)
-          ..add('parentId', parentId)
           ..add('resellerTypeId', resellerTypeId)
-          ..add('attributionId', attributionId)
           ..add('publicTokenId', publicTokenId)
           ..add('privateTokenId', privateTokenId)
-          ..add('onboardingStatusId', onboardingStatusId))
+          ..add('onboardingStatusId', onboardingStatusId)
+          ..add('typeId', typeId)
+          ..add('usersLeft', usersLeft)
+          ..add('attributionId', attributionId)
+          ..add('parentId', parentId)
+          ..add('invoicePaymentInformationId', invoicePaymentInformationId)
+          ..add('locationsLeft', locationsLeft)
+          ..add('salesPartnerStatusId', salesPartnerStatusId))
         .toString();
   }
 }
@@ -526,48 +526,15 @@ class SalesPartnerBuilder
   set contractualMaxLocations(int? contractualMaxLocations) =>
       _$this._contractualMaxLocations = contractualMaxLocations;
 
-  JsonObject? _typeId;
-  JsonObject? get typeId => _$this._typeId;
-  set typeId(JsonObject? typeId) => _$this._typeId = typeId;
-
   UserBuilder? _contactPerson;
   UserBuilder get contactPerson => _$this._contactPerson ??= new UserBuilder();
   set contactPerson(UserBuilder? contactPerson) =>
       _$this._contactPerson = contactPerson;
 
-  int? _locationsLeft;
-  int? get locationsLeft => _$this._locationsLeft;
-  set locationsLeft(int? locationsLeft) =>
-      _$this._locationsLeft = locationsLeft;
-
-  int? _usersLeft;
-  int? get usersLeft => _$this._usersLeft;
-  set usersLeft(int? usersLeft) => _$this._usersLeft = usersLeft;
-
-  JsonObject? _invoicePaymentInformationId;
-  JsonObject? get invoicePaymentInformationId =>
-      _$this._invoicePaymentInformationId;
-  set invoicePaymentInformationId(JsonObject? invoicePaymentInformationId) =>
-      _$this._invoicePaymentInformationId = invoicePaymentInformationId;
-
-  JsonObject? _salesPartnerStatusId;
-  JsonObject? get salesPartnerStatusId => _$this._salesPartnerStatusId;
-  set salesPartnerStatusId(JsonObject? salesPartnerStatusId) =>
-      _$this._salesPartnerStatusId = salesPartnerStatusId;
-
-  JsonObject? _parentId;
-  JsonObject? get parentId => _$this._parentId;
-  set parentId(JsonObject? parentId) => _$this._parentId = parentId;
-
   JsonObject? _resellerTypeId;
   JsonObject? get resellerTypeId => _$this._resellerTypeId;
   set resellerTypeId(JsonObject? resellerTypeId) =>
       _$this._resellerTypeId = resellerTypeId;
-
-  JsonObject? _attributionId;
-  JsonObject? get attributionId => _$this._attributionId;
-  set attributionId(JsonObject? attributionId) =>
-      _$this._attributionId = attributionId;
 
   JsonObject? _publicTokenId;
   JsonObject? get publicTokenId => _$this._publicTokenId;
@@ -583,6 +550,39 @@ class SalesPartnerBuilder
   JsonObject? get onboardingStatusId => _$this._onboardingStatusId;
   set onboardingStatusId(JsonObject? onboardingStatusId) =>
       _$this._onboardingStatusId = onboardingStatusId;
+
+  JsonObject? _typeId;
+  JsonObject? get typeId => _$this._typeId;
+  set typeId(JsonObject? typeId) => _$this._typeId = typeId;
+
+  int? _usersLeft;
+  int? get usersLeft => _$this._usersLeft;
+  set usersLeft(int? usersLeft) => _$this._usersLeft = usersLeft;
+
+  JsonObject? _attributionId;
+  JsonObject? get attributionId => _$this._attributionId;
+  set attributionId(JsonObject? attributionId) =>
+      _$this._attributionId = attributionId;
+
+  JsonObject? _parentId;
+  JsonObject? get parentId => _$this._parentId;
+  set parentId(JsonObject? parentId) => _$this._parentId = parentId;
+
+  JsonObject? _invoicePaymentInformationId;
+  JsonObject? get invoicePaymentInformationId =>
+      _$this._invoicePaymentInformationId;
+  set invoicePaymentInformationId(JsonObject? invoicePaymentInformationId) =>
+      _$this._invoicePaymentInformationId = invoicePaymentInformationId;
+
+  int? _locationsLeft;
+  int? get locationsLeft => _$this._locationsLeft;
+  set locationsLeft(int? locationsLeft) =>
+      _$this._locationsLeft = locationsLeft;
+
+  JsonObject? _salesPartnerStatusId;
+  JsonObject? get salesPartnerStatusId => _$this._salesPartnerStatusId;
+  set salesPartnerStatusId(JsonObject? salesPartnerStatusId) =>
+      _$this._salesPartnerStatusId = salesPartnerStatusId;
 
   SalesPartnerBuilder() {
     SalesPartner._defaults(this);
@@ -610,18 +610,18 @@ class SalesPartnerBuilder
       _whitelabelInformations = $v.whitelabelInformations?.toBuilder();
       _activeLocations = $v.activeLocations;
       _contractualMaxLocations = $v.contractualMaxLocations;
-      _typeId = $v.typeId;
       _contactPerson = $v.contactPerson?.toBuilder();
-      _locationsLeft = $v.locationsLeft;
-      _usersLeft = $v.usersLeft;
-      _invoicePaymentInformationId = $v.invoicePaymentInformationId;
-      _salesPartnerStatusId = $v.salesPartnerStatusId;
-      _parentId = $v.parentId;
       _resellerTypeId = $v.resellerTypeId;
-      _attributionId = $v.attributionId;
       _publicTokenId = $v.publicTokenId;
       _privateTokenId = $v.privateTokenId;
       _onboardingStatusId = $v.onboardingStatusId;
+      _typeId = $v.typeId;
+      _usersLeft = $v.usersLeft;
+      _attributionId = $v.attributionId;
+      _parentId = $v.parentId;
+      _invoicePaymentInformationId = $v.invoicePaymentInformationId;
+      _locationsLeft = $v.locationsLeft;
+      _salesPartnerStatusId = $v.salesPartnerStatusId;
       _$v = null;
     }
     return this;
@@ -665,18 +665,18 @@ class SalesPartnerBuilder
             whitelabelInformations: _whitelabelInformations?.build(),
             activeLocations: activeLocations,
             contractualMaxLocations: contractualMaxLocations,
-            typeId: typeId,
             contactPerson: _contactPerson?.build(),
-            locationsLeft: locationsLeft,
-            usersLeft: usersLeft,
-            invoicePaymentInformationId: invoicePaymentInformationId,
-            salesPartnerStatusId: salesPartnerStatusId,
-            parentId: parentId,
             resellerTypeId: resellerTypeId,
-            attributionId: attributionId,
             publicTokenId: publicTokenId,
             privateTokenId: privateTokenId,
             onboardingStatusId: onboardingStatusId,
+            typeId: typeId,
+            usersLeft: usersLeft,
+            attributionId: attributionId,
+            parentId: parentId,
+            invoicePaymentInformationId: invoicePaymentInformationId,
+            locationsLeft: locationsLeft,
+            salesPartnerStatusId: salesPartnerStatusId,
           );
     } catch (_) {
       late String _$failedField;

@@ -1186,7 +1186,7 @@ class LocationsDataApi {
   Future<Response<DatapointStatisticsResponseWrapper>>
       getLocationsIdDatapointsStatistics({
     required String id,
-    String? dataPointTypes,
+    BuiltList<String>? dataPointTypes,
     String? directoryTypes,
     BuiltList<String>? ratings,
     String? minActionDate,
@@ -1231,8 +1231,12 @@ class LocationsDataApi {
 
     final _queryParameters = <String, dynamic>{
       if (dataPointTypes != null)
-        r'dataPointTypes': encodeQueryParameter(
-            _serializers, dataPointTypes, const FullType(String)),
+        r'dataPointTypes': encodeCollectionQueryParameter<String>(
+          _serializers,
+          dataPointTypes,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
       if (directoryTypes != null)
         r'directoryTypes': encodeQueryParameter(
             _serializers, directoryTypes, const FullType(String)),
@@ -1628,6 +1632,7 @@ class LocationsDataApi {
   /// Get the labels assigned to a location
   ///
   /// Parameters:
+  /// * [query] - Used for searching for a specific keyword within label names, only label names matching the given query via 'like' will be returned.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1638,6 +1643,7 @@ class LocationsDataApi {
   /// Returns a [Future] containing a [Response] with a [LabelsResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<LabelsResponseWrapper>> getLocationsLabels({
+    String? query,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1671,9 +1677,16 @@ class LocationsDataApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (query != null)
+        r'query':
+            encodeQueryParameter(_serializers, query, const FullType(String)),
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,

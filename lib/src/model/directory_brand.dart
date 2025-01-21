@@ -14,10 +14,10 @@ part 'directory_brand.g.dart';
 /// Properties:
 /// * [externalId] - External ID of the directory brand
 /// * [status] - Status of the directory brand
-/// * [names]
-/// * [id]
-/// * [country]
 /// * [categories]
+/// * [country]
+/// * [id]
+/// * [names]
 @BuiltValue()
 abstract class DirectoryBrand
     implements Built<DirectoryBrand, DirectoryBrandBuilder> {
@@ -29,17 +29,17 @@ abstract class DirectoryBrand
   @BuiltValueField(wireName: r'status')
   String? get status;
 
-  @BuiltValueField(wireName: r'names')
-  BuiltList<String>? get names;
-
-  @BuiltValueField(wireName: r'id')
-  int? get id;
+  @BuiltValueField(wireName: r'categories')
+  BuiltList<String>? get categories;
 
   @BuiltValueField(wireName: r'country')
   String? get country;
 
-  @BuiltValueField(wireName: r'categories')
-  BuiltList<String>? get categories;
+  @BuiltValueField(wireName: r'id')
+  int? get id;
+
+  @BuiltValueField(wireName: r'names')
+  BuiltList<String>? get names;
 
   DirectoryBrand._();
 
@@ -81,18 +81,11 @@ class _$DirectoryBrandSerializer
         specifiedType: const FullType(String),
       );
     }
-    if (object.names != null) {
-      yield r'names';
+    if (object.categories != null) {
+      yield r'categories';
       yield serializers.serialize(
-        object.names,
+        object.categories,
         specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(int),
       );
     }
     if (object.country != null) {
@@ -102,10 +95,17 @@ class _$DirectoryBrandSerializer
         specifiedType: const FullType(String),
       );
     }
-    if (object.categories != null) {
-      yield r'categories';
+    if (object.id != null) {
+      yield r'id';
       yield serializers.serialize(
-        object.categories,
+        object.id,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.names != null) {
+      yield r'names';
+      yield serializers.serialize(
+        object.names,
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
@@ -148,19 +148,12 @@ class _$DirectoryBrandSerializer
           ) as String;
           result.status = valueDes;
           break;
-        case r'names':
+        case r'categories':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
-          result.names.replace(valueDes);
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
+          result.categories.replace(valueDes);
           break;
         case r'country':
           final valueDes = serializers.deserialize(
@@ -169,12 +162,19 @@ class _$DirectoryBrandSerializer
           ) as String;
           result.country = valueDes;
           break;
-        case r'categories':
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
+          break;
+        case r'names':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
-          result.categories.replace(valueDes);
+          result.names.replace(valueDes);
           break;
         default:
           unhandled.add(key);

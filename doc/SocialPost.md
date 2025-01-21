@@ -22,17 +22,17 @@ Name | Type | Description | Notes
 **labels** | **BuiltSet&lt;String&gt;** | The list of location labels as entered when creating/updating the Social Post. | [optional] 
 **callToActions** | [**BuiltList&lt;SocialPostCallToAction&gt;**](SocialPostCallToAction.md) |  | [optional] 
 **firstComment** | **String** | The first comment to be posted after a post creation. Only available for INSTAGRAM | [optional] 
-**locationGroupIds** | **BuiltList&lt;int&gt;** | List of locationIds that should be excluded from the request. Can be used in combination with businessId when some locations should not be considered. | [optional] 
-**businessIds** | **BuiltList&lt;int&gt;** | List of locationIds that should be excluded from the request. Can be used in combination with businessId when some locations should not be considered. | [optional] 
-**locationIds** | **BuiltList&lt;int&gt;** | List of locationIds that should be excluded from the request. Can be used in combination with businessId when some locations should not be considered. | [optional] 
-**listingPageIds** | **BuiltList&lt;int&gt;** | List of locationIds that should be excluded from the request. Can be used in combination with businessId when some locations should not be considered. | [optional] 
-**businessPageIds** | **BuiltList&lt;int&gt;** | List of locationIds that should be excluded from the request. Can be used in combination with businessId when some locations should not be considered. | [optional] 
-**excludedLocationIds** | **BuiltList&lt;int&gt;** | List of locationIds that should be excluded from the request. Can be used in combination with businessId when some locations should not be considered. | [optional] 
+**businessIds** | **BuiltList&lt;int&gt;** | The list of location group IDs as entered when creating/updating the Social Post. | [optional] 
+**locationIds** | **BuiltList&lt;int&gt;** | The list of location group IDs as entered when creating/updating the Social Post. | [optional] 
+**listingPageIds** | **BuiltList&lt;int&gt;** | The list of location group IDs as entered when creating/updating the Social Post. | [optional] 
+**businessPageIds** | **BuiltList&lt;int&gt;** | The list of location group IDs as entered when creating/updating the Social Post. | [optional] 
+**excludedLocationIds** | **BuiltList&lt;int&gt;** | The list of location group IDs as entered when creating/updating the Social Post. | [optional] 
 **directories** | **BuiltList&lt;String&gt;** | The video of the social post (can only be one) | 
 **photos** | [**BuiltList&lt;PhotoContainer&gt;**](PhotoContainer.md) | The social post''s photos | [optional] 
 **couponCode** | **String** | A couponCode for redeeming a \"Special Offer\" (SocialPost.type=OFFER). Currently only supported for Google Posts. | [optional] 
 **termsAndConditions** | **String** | Terms and Conditions for redeeming a \"Special Offer\" (SocialPost.type=OFFER). Currently only supported for Google Posts. | [optional] 
 **videos** | **BuiltList&lt;String&gt;** | The video of the social post (can only be one) | [optional] 
+**locationGroupIds** | **BuiltList&lt;int&gt;** | The list of location group IDs as entered when creating/updating the Social Post. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -20,5 +20,6 @@ dev_dependencies:
 
 scripts:
   install: wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.9.0/openapi-generator-cli-7.9.0.jar -O openapi-generator-cli.jar 
-  generate: wget https://uberall.com/en/developers/swagger -O openapi.json && java -jar openapi-generator-cli.jar generate -g dart-dio -i openapi.json -o . --skip-validate-spec --additional-properties=pubLibrary=uberall_api,pubName=uberall_api --model-name-mappings Response=UberallResponse
+  fetch: wget https://uberall.com/en/developers/swagger -O openapi.json 
+  generate: java -jar openapi-generator-cli.jar generate -g dart-dio -i openapi.json -o . --skip-validate-spec --additional-properties=pubLibrary=uberall_api,pubName=uberall_api --model-name-mappings Response=UberallResponse
   post: sed -i 's/&lt;/</g' lib/src/serializers.dart && sed -i 's/&gt;/>/g' lib/src/serializers.dart && dart run build_runner build && dart fix --apply --code=unused_import && dart format .

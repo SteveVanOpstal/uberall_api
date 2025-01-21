@@ -14,14 +14,6 @@ const FeedItemTypeEnum _$feedItemTypeEnum_LOCATION_EVENT =
     const FeedItemTypeEnum._('LOCATION_EVENT');
 const FeedItemTypeEnum _$feedItemTypeEnum_LISTING_EVENT =
     const FeedItemTypeEnum._('LISTING_EVENT');
-const FeedItemTypeEnum _$feedItemTypeEnum_INTERACTION2 =
-    const FeedItemTypeEnum._('INTERACTION2');
-const FeedItemTypeEnum _$feedItemTypeEnum_TRACKING2 =
-    const FeedItemTypeEnum._('TRACKING2');
-const FeedItemTypeEnum _$feedItemTypeEnum_LOCATION_EVENT2 =
-    const FeedItemTypeEnum._('LOCATION_EVENT2');
-const FeedItemTypeEnum _$feedItemTypeEnum_LISTING_EVENT2 =
-    const FeedItemTypeEnum._('LISTING_EVENT2');
 
 FeedItemTypeEnum _$feedItemTypeEnumValueOf(String name) {
   switch (name) {
@@ -33,14 +25,6 @@ FeedItemTypeEnum _$feedItemTypeEnumValueOf(String name) {
       return _$feedItemTypeEnum_LOCATION_EVENT;
     case 'LISTING_EVENT':
       return _$feedItemTypeEnum_LISTING_EVENT;
-    case 'INTERACTION2':
-      return _$feedItemTypeEnum_INTERACTION2;
-    case 'TRACKING2':
-      return _$feedItemTypeEnum_TRACKING2;
-    case 'LOCATION_EVENT2':
-      return _$feedItemTypeEnum_LOCATION_EVENT2;
-    case 'LISTING_EVENT2':
-      return _$feedItemTypeEnum_LISTING_EVENT2;
     default:
       throw new ArgumentError(name);
   }
@@ -52,10 +36,6 @@ final BuiltSet<FeedItemTypeEnum> _$feedItemTypeEnumValues =
   _$feedItemTypeEnum_TRACKING,
   _$feedItemTypeEnum_LOCATION_EVENT,
   _$feedItemTypeEnum_LISTING_EVENT,
-  _$feedItemTypeEnum_INTERACTION2,
-  _$feedItemTypeEnum_TRACKING2,
-  _$feedItemTypeEnum_LOCATION_EVENT2,
-  _$feedItemTypeEnum_LISTING_EVENT2,
 ]);
 
 Serializer<FeedItemTypeEnum> _$feedItemTypeEnumSerializer =
@@ -68,20 +48,12 @@ class _$FeedItemTypeEnumSerializer
     'TRACKING': 'TRACKING',
     'LOCATION_EVENT': 'LOCATION_EVENT',
     'LISTING_EVENT': 'LISTING_EVENT',
-    'INTERACTION2': 'INTERACTION2',
-    'TRACKING2': 'TRACKING2',
-    'LOCATION_EVENT2': 'LOCATION_EVENT2',
-    'LISTING_EVENT2': 'LISTING_EVENT2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'INTERACTION': 'INTERACTION',
     'TRACKING': 'TRACKING',
     'LOCATION_EVENT': 'LOCATION_EVENT',
     'LISTING_EVENT': 'LISTING_EVENT',
-    'INTERACTION2': 'INTERACTION2',
-    'TRACKING2': 'TRACKING2',
-    'LOCATION_EVENT2': 'LOCATION_EVENT2',
-    'LISTING_EVENT2': 'LISTING_EVENT2',
   };
 
   @override

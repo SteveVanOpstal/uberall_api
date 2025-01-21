@@ -20,11 +20,11 @@ class _$ServiceItem extends ServiceItem {
   @override
   final JsonObject? currency;
   @override
+  final String? googleService;
+  @override
   final int? category;
   @override
   final String? country;
-  @override
-  final String? googleService;
 
   factory _$ServiceItem([void Function(ServiceItemBuilder)? updates]) =>
       (new ServiceItemBuilder()..update(updates))._build();
@@ -36,9 +36,9 @@ class _$ServiceItem extends ServiceItem {
       this.listName,
       this.price,
       this.currency,
+      this.googleService,
       this.category,
-      this.country,
-      this.googleService})
+      this.country})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(title, r'ServiceItem', 'title');
   }
@@ -60,9 +60,9 @@ class _$ServiceItem extends ServiceItem {
         listName == other.listName &&
         price == other.price &&
         currency == other.currency &&
+        googleService == other.googleService &&
         category == other.category &&
-        country == other.country &&
-        googleService == other.googleService;
+        country == other.country;
   }
 
   @override
@@ -74,9 +74,9 @@ class _$ServiceItem extends ServiceItem {
     _$hash = $jc(_$hash, listName.hashCode);
     _$hash = $jc(_$hash, price.hashCode);
     _$hash = $jc(_$hash, currency.hashCode);
+    _$hash = $jc(_$hash, googleService.hashCode);
     _$hash = $jc(_$hash, category.hashCode);
     _$hash = $jc(_$hash, country.hashCode);
-    _$hash = $jc(_$hash, googleService.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -90,9 +90,9 @@ class _$ServiceItem extends ServiceItem {
           ..add('listName', listName)
           ..add('price', price)
           ..add('currency', currency)
+          ..add('googleService', googleService)
           ..add('category', category)
-          ..add('country', country)
-          ..add('googleService', googleService))
+          ..add('country', country))
         .toString();
   }
 }
@@ -124,6 +124,11 @@ class ServiceItemBuilder implements Builder<ServiceItem, ServiceItemBuilder> {
   JsonObject? get currency => _$this._currency;
   set currency(JsonObject? currency) => _$this._currency = currency;
 
+  String? _googleService;
+  String? get googleService => _$this._googleService;
+  set googleService(String? googleService) =>
+      _$this._googleService = googleService;
+
   int? _category;
   int? get category => _$this._category;
   set category(int? category) => _$this._category = category;
@@ -131,11 +136,6 @@ class ServiceItemBuilder implements Builder<ServiceItem, ServiceItemBuilder> {
   String? _country;
   String? get country => _$this._country;
   set country(String? country) => _$this._country = country;
-
-  String? _googleService;
-  String? get googleService => _$this._googleService;
-  set googleService(String? googleService) =>
-      _$this._googleService = googleService;
 
   ServiceItemBuilder() {
     ServiceItem._defaults(this);
@@ -150,9 +150,9 @@ class ServiceItemBuilder implements Builder<ServiceItem, ServiceItemBuilder> {
       _listName = $v.listName;
       _price = $v.price;
       _currency = $v.currency;
+      _googleService = $v.googleService;
       _category = $v.category;
       _country = $v.country;
-      _googleService = $v.googleService;
       _$v = null;
     }
     return this;
@@ -182,9 +182,9 @@ class ServiceItemBuilder implements Builder<ServiceItem, ServiceItemBuilder> {
           listName: listName,
           price: price,
           currency: currency,
+          googleService: googleService,
           category: category,
           country: country,
-          googleService: googleService,
         );
     replace(_$result);
     return _$result;

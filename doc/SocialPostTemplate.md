@@ -18,10 +18,10 @@ Name | Type | Description | Notes
 **callToActions** | [**BuiltList&lt;SocialPostTemplateCallToAction&gt;**](SocialPostTemplateCallToAction.md) |  | [optional] 
 **directories** | **BuiltList&lt;String&gt;** | List of videos (currently only supports one element) | 
 **photos** | [**BuiltList&lt;PhotoContainer&gt;**](PhotoContainer.md) | The Social Post Template''s photos. It should be a list containing BASE64 converted images or urls of photos from a previous Social Post. It is required if the template has no description. | [optional] 
-**userId** | **int** | Id of the user that is doing the action | 
+**videos** | **BuiltList&lt;String&gt;** | List of videos (currently only supports one element) | [optional] 
 **ownerId** | **int** | The id of the user that owns the Social Post Template. (Only informational. If included in the request, it will be ignored.) | [optional] 
 **ownerName** | **String** | The name of the user that owns the Social Post Template. (Only informational. If included in the request, it will be ignored.) | [optional] 
-**videos** | **BuiltList&lt;String&gt;** | List of videos (currently only supports one element) | [optional] 
+**userId** | **int** | Id of the user that is doing the action | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

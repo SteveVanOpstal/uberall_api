@@ -227,7 +227,7 @@ final String countries = countries_example; // String | The countries you want d
 final BuiltList<String> businessIds = ; // BuiltList<String> | Ids of businesses you want data points for
 final BuiltList<String> locationIds = ; // BuiltList<String> | The ids of the locations you want data points for
 final String zip = zip_example; // String | Only return inbox items for locations where zip starts with given parameter
-final String dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // String | Types of datapoints you want inbox items for.
+final BuiltList<String> dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // BuiltList<String> | Types of datapoints you want inbox items for.
 final BuiltList<String> directoryTypes = ; // BuiltList<String> | Directories you want inbox items for
 final BuiltList<String> ratings = ; // BuiltList<String> | Only return inbox items with a rating included in ratings
 final bool read = true; // bool | Only show read/not read elements
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
  **businessIds** | [**BuiltList&lt;String&gt;**](String.md)| Ids of businesses you want data points for | [optional] 
  **locationIds** | [**BuiltList&lt;String&gt;**](String.md)| The ids of the locations you want data points for | [optional] 
  **zip** | **String**| Only return inbox items for locations where zip starts with given parameter | [optional] 
- **dataPointTypes** | **String**| Types of datapoints you want inbox items for. | [optional] 
+ **dataPointTypes** | [**BuiltList&lt;String&gt;**](String.md)| Types of datapoints you want inbox items for. | [optional] 
  **directoryTypes** | [**BuiltList&lt;String&gt;**](String.md)| Directories you want inbox items for | [optional] 
  **ratings** | [**BuiltList&lt;String&gt;**](String.md)| Only return inbox items with a rating included in ratings | [optional] 
  **read** | **bool**| Only show read/not read elements | [optional] 
@@ -361,7 +361,7 @@ final api = UberallApi().getDataPointsApi();
 final String businessIds = businessIds_example; // String | Ids of businesses you want inbox statistics for
 final String countries = countries_example; // String | The countries you want data points' statistics for. ISO 3166-1 alpha-2 codes
 final String locationIds = locationIds_example; // String | Only consider data points belonging to any of these locationIds
-final String dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // String | Types of datapoints you want inbox statistics for.
+final BuiltList<String> dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // BuiltList<String> | Types of datapoints you want inbox statistics for.
 final String directoryTypes = directoryTypes_example; // String | Directories you want inbox statistics for
 final BuiltList<String> ratings = ; // BuiltList<String> | Ratings of datapoints you want inbox statistics for.
 final String minActionDate = minActionDate_example; // String | Only consider data points created after that date
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
  **businessIds** | **String**| Ids of businesses you want inbox statistics for | [optional] 
  **countries** | **String**| The countries you want data points' statistics for. ISO 3166-1 alpha-2 codes | [optional] 
  **locationIds** | **String**| Only consider data points belonging to any of these locationIds | [optional] 
- **dataPointTypes** | **String**| Types of datapoints you want inbox statistics for. | [optional] 
+ **dataPointTypes** | [**BuiltList&lt;String&gt;**](String.md)| Types of datapoints you want inbox statistics for. | [optional] 
  **directoryTypes** | **String**| Directories you want inbox statistics for | [optional] 
  **ratings** | [**BuiltList&lt;String&gt;**](String.md)| Ratings of datapoints you want inbox statistics for. | [optional] 
  **minActionDate** | **String**| Only consider data points created after that date | [optional] 

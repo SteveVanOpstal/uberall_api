@@ -25,7 +25,7 @@ abstract class FeedItem implements Built<FeedItem, FeedItemBuilder> {
   /// The Feed item type, one of [INTERACTION, TRACKING, LOCATION_EVENT, LISTING_EVENT]
   @BuiltValueField(wireName: r'type')
   FeedItemTypeEnum? get type;
-  // enum typeEnum {  INTERACTION,  TRACKING,  LOCATION_EVENT,  LISTING_EVENT,  INTERACTION,  TRACKING,  LOCATION_EVENT,  LISTING_EVENT,  };
+  // enum typeEnum {  INTERACTION,  TRACKING,  LOCATION_EVENT,  LISTING_EVENT,  };
 
   /// A Map containing the specific information related to the Feed
   @BuiltValueField(wireName: r'properties')
@@ -170,24 +170,6 @@ class FeedItemTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'LISTING_EVENT')
   static const FeedItemTypeEnum LISTING_EVENT =
       _$feedItemTypeEnum_LISTING_EVENT;
-
-  /// The Feed item type, one of [INTERACTION, TRACKING, LOCATION_EVENT, LISTING_EVENT]
-  @BuiltValueEnumConst(wireName: r'INTERACTION2')
-  static const FeedItemTypeEnum INTERACTION2 = _$feedItemTypeEnum_INTERACTION2;
-
-  /// The Feed item type, one of [INTERACTION, TRACKING, LOCATION_EVENT, LISTING_EVENT]
-  @BuiltValueEnumConst(wireName: r'TRACKING2')
-  static const FeedItemTypeEnum TRACKING2 = _$feedItemTypeEnum_TRACKING2;
-
-  /// The Feed item type, one of [INTERACTION, TRACKING, LOCATION_EVENT, LISTING_EVENT]
-  @BuiltValueEnumConst(wireName: r'LOCATION_EVENT2')
-  static const FeedItemTypeEnum LOCATION_EVENT2 =
-      _$feedItemTypeEnum_LOCATION_EVENT2;
-
-  /// The Feed item type, one of [INTERACTION, TRACKING, LOCATION_EVENT, LISTING_EVENT]
-  @BuiltValueEnumConst(wireName: r'LISTING_EVENT2')
-  static const FeedItemTypeEnum LISTING_EVENT2 =
-      _$feedItemTypeEnum_LISTING_EVENT2;
 
   static Serializer<FeedItemTypeEnum> get serializer =>
       _$feedItemTypeEnumSerializer;

@@ -18,9 +18,9 @@ part 'service_item.g.dart';
 /// * [listName]
 /// * [price] - Price of the service item
 /// * [currency] - The currency of the price for this service - required when a price is given
+/// * [googleService] - The Google name for a structured service - this is required when applying a Google structured service but not necessary for freeform services.
 /// * [category] - Business category the service should be applied to - this is required when applying a Google structured service but not necessary for freeform services.
 /// * [country] - The country where the locations providing this service are located - this is required when applying a Google structured service but not necessary for freeform services.
-/// * [googleService] - The Google name for a structured service - this is required when applying a Google structured service but not necessary for freeform services.
 @BuiltValue()
 abstract class ServiceItem implements Built<ServiceItem, ServiceItemBuilder> {
   /// Name of the service item as represented at the location
@@ -46,6 +46,10 @@ abstract class ServiceItem implements Built<ServiceItem, ServiceItemBuilder> {
   @BuiltValueField(wireName: r'currency')
   JsonObject? get currency;
 
+  /// The Google name for a structured service - this is required when applying a Google structured service but not necessary for freeform services.
+  @BuiltValueField(wireName: r'googleService')
+  String? get googleService;
+
   /// Business category the service should be applied to - this is required when applying a Google structured service but not necessary for freeform services.
   @BuiltValueField(wireName: r'category')
   int? get category;
@@ -53,10 +57,6 @@ abstract class ServiceItem implements Built<ServiceItem, ServiceItemBuilder> {
   /// The country where the locations providing this service are located - this is required when applying a Google structured service but not necessary for freeform services.
   @BuiltValueField(wireName: r'country')
   String? get country;
-
-  /// The Google name for a structured service - this is required when applying a Google structured service but not necessary for freeform services.
-  @BuiltValueField(wireName: r'googleService')
-  String? get googleService;
 
   ServiceItem._();
 
@@ -121,6 +121,13 @@ class _$ServiceItemSerializer implements PrimitiveSerializer<ServiceItem> {
         specifiedType: const FullType(JsonObject),
       );
     }
+    if (object.googleService != null) {
+      yield r'googleService';
+      yield serializers.serialize(
+        object.googleService,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.category != null) {
       yield r'category';
       yield serializers.serialize(
@@ -132,13 +139,6 @@ class _$ServiceItemSerializer implements PrimitiveSerializer<ServiceItem> {
       yield r'country';
       yield serializers.serialize(
         object.country,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.googleService != null) {
-      yield r'googleService';
-      yield serializers.serialize(
-        object.googleService,
         specifiedType: const FullType(String),
       );
     }
@@ -209,6 +209,13 @@ class _$ServiceItemSerializer implements PrimitiveSerializer<ServiceItem> {
           ) as JsonObject;
           result.currency = valueDes;
           break;
+        case r'googleService':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.googleService = valueDes;
+          break;
         case r'category':
           final valueDes = serializers.deserialize(
             value,
@@ -222,13 +229,6 @@ class _$ServiceItemSerializer implements PrimitiveSerializer<ServiceItem> {
             specifiedType: const FullType(String),
           ) as String;
           result.country = valueDes;
-          break;
-        case r'googleService':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.googleService = valueDes;
           break;
         default:
           unhandled.add(key);

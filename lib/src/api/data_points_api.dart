@@ -422,7 +422,7 @@ class DataPointsApi {
     BuiltList<String>? businessIds,
     BuiltList<String>? locationIds,
     String? zip,
-    String? dataPointTypes,
+    BuiltList<String>? dataPointTypes,
     BuiltList<String>? directoryTypes,
     BuiltList<String>? ratings,
     bool? read,
@@ -495,8 +495,12 @@ class DataPointsApi {
       if (zip != null)
         r'zip': encodeQueryParameter(_serializers, zip, const FullType(String)),
       if (dataPointTypes != null)
-        r'dataPointTypes': encodeQueryParameter(
-            _serializers, dataPointTypes, const FullType(String)),
+        r'dataPointTypes': encodeCollectionQueryParameter<String>(
+          _serializers,
+          dataPointTypes,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
       if (directoryTypes != null)
         r'directoryTypes': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -701,7 +705,7 @@ class DataPointsApi {
     String? businessIds,
     String? countries,
     String? locationIds,
-    String? dataPointTypes,
+    BuiltList<String>? dataPointTypes,
     String? directoryTypes,
     BuiltList<String>? ratings,
     String? minActionDate,
@@ -755,8 +759,12 @@ class DataPointsApi {
         r'locationIds': encodeQueryParameter(
             _serializers, locationIds, const FullType(String)),
       if (dataPointTypes != null)
-        r'dataPointTypes': encodeQueryParameter(
-            _serializers, dataPointTypes, const FullType(String)),
+        r'dataPointTypes': encodeCollectionQueryParameter<String>(
+          _serializers,
+          dataPointTypes,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
       if (directoryTypes != null)
         r'directoryTypes': encodeQueryParameter(
             _serializers, directoryTypes, const FullType(String)),

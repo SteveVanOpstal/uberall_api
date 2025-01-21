@@ -14,12 +14,6 @@ const ProductPlanStatusEnum _$productPlanStatusEnum_PENDING_APPROVAL =
     const ProductPlanStatusEnum._('PENDING_APPROVAL');
 const ProductPlanStatusEnum _$productPlanStatusEnum_DELETED =
     const ProductPlanStatusEnum._('DELETED');
-const ProductPlanStatusEnum _$productPlanStatusEnum_PENDING_APPROVAL2 =
-    const ProductPlanStatusEnum._('PENDING_APPROVAL2');
-const ProductPlanStatusEnum _$productPlanStatusEnum_ACTIVE2 =
-    const ProductPlanStatusEnum._('ACTIVE2');
-const ProductPlanStatusEnum _$productPlanStatusEnum_INACTIVE2 =
-    const ProductPlanStatusEnum._('INACTIVE2');
 
 ProductPlanStatusEnum _$productPlanStatusEnumValueOf(String name) {
   switch (name) {
@@ -31,12 +25,6 @@ ProductPlanStatusEnum _$productPlanStatusEnumValueOf(String name) {
       return _$productPlanStatusEnum_PENDING_APPROVAL;
     case 'DELETED':
       return _$productPlanStatusEnum_DELETED;
-    case 'PENDING_APPROVAL2':
-      return _$productPlanStatusEnum_PENDING_APPROVAL2;
-    case 'ACTIVE2':
-      return _$productPlanStatusEnum_ACTIVE2;
-    case 'INACTIVE2':
-      return _$productPlanStatusEnum_INACTIVE2;
     default:
       throw new ArgumentError(name);
   }
@@ -48,9 +36,6 @@ final BuiltSet<ProductPlanStatusEnum> _$productPlanStatusEnumValues =
   _$productPlanStatusEnum_INACTIVE,
   _$productPlanStatusEnum_PENDING_APPROVAL,
   _$productPlanStatusEnum_DELETED,
-  _$productPlanStatusEnum_PENDING_APPROVAL2,
-  _$productPlanStatusEnum_ACTIVE2,
-  _$productPlanStatusEnum_INACTIVE2,
 ]);
 
 const ProductPlanAutomationDirectoriesEnum
@@ -1851,18 +1836,12 @@ class _$ProductPlanStatusEnumSerializer
     'INACTIVE': 'INACTIVE',
     'PENDING_APPROVAL': 'PENDING_APPROVAL',
     'DELETED': 'DELETED',
-    'PENDING_APPROVAL2': 'PENDING_APPROVAL2',
-    'ACTIVE2': 'ACTIVE2',
-    'INACTIVE2': 'INACTIVE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ACTIVE': 'ACTIVE',
     'INACTIVE': 'INACTIVE',
     'PENDING_APPROVAL': 'PENDING_APPROVAL',
     'DELETED': 'DELETED',
-    'PENDING_APPROVAL2': 'PENDING_APPROVAL2',
-    'ACTIVE2': 'ACTIVE2',
-    'INACTIVE2': 'INACTIVE2',
   };
 
   @override

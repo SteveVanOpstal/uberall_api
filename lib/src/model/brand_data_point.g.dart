@@ -1767,28 +1767,6 @@ class _$BrandDataPointDirectoryTypeEnumSerializer
 
 class _$BrandDataPoint extends BrandDataPoint {
   @override
-  final BrandDataPointTypeEnum? type;
-  @override
-  final String? data;
-  @override
-  final bool? liked;
-  @override
-  final DateTime? actionDate;
-  @override
-  final String? author;
-  @override
-  final String? authorImage;
-  @override
-  final int? countComments;
-  @override
-  final DateTime? dateCreated;
-  @override
-  final String? directLink;
-  @override
-  final BrandDataPointDirectoryTypeEnum? directoryType;
-  @override
-  final bool? flagged;
-  @override
   final DateTime? lastUpdated;
   @override
   final double? rating;
@@ -1797,28 +1775,50 @@ class _$BrandDataPoint extends BrandDataPoint {
   @override
   final String? secondaryData;
   @override
+  final DateTime? dateCreated;
+  @override
+  final String? directLink;
+  @override
+  final BrandDataPointTypeEnum? type;
+  @override
+  final DateTime? actionDate;
+  @override
+  final String? authorImage;
+  @override
+  final int? countComments;
+  @override
+  final BrandDataPointDirectoryTypeEnum? directoryType;
+  @override
+  final bool? flagged;
+  @override
+  final String? author;
+  @override
   final DateTime? threadActionDate;
+  @override
+  final bool? liked;
+  @override
+  final String? data;
 
   factory _$BrandDataPoint([void Function(BrandDataPointBuilder)? updates]) =>
       (new BrandDataPointBuilder()..update(updates))._build();
 
   _$BrandDataPoint._(
-      {this.type,
-      this.data,
-      this.liked,
-      this.actionDate,
-      this.author,
-      this.authorImage,
-      this.countComments,
-      this.dateCreated,
-      this.directLink,
-      this.directoryType,
-      this.flagged,
-      this.lastUpdated,
+      {this.lastUpdated,
       this.rating,
       this.repliedByOwner,
       this.secondaryData,
-      this.threadActionDate})
+      this.dateCreated,
+      this.directLink,
+      this.type,
+      this.actionDate,
+      this.authorImage,
+      this.countComments,
+      this.directoryType,
+      this.flagged,
+      this.author,
+      this.threadActionDate,
+      this.liked,
+      this.data})
       : super._();
 
   @override
@@ -1833,43 +1833,43 @@ class _$BrandDataPoint extends BrandDataPoint {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is BrandDataPoint &&
-        type == other.type &&
-        data == other.data &&
-        liked == other.liked &&
-        actionDate == other.actionDate &&
-        author == other.author &&
-        authorImage == other.authorImage &&
-        countComments == other.countComments &&
-        dateCreated == other.dateCreated &&
-        directLink == other.directLink &&
-        directoryType == other.directoryType &&
-        flagged == other.flagged &&
         lastUpdated == other.lastUpdated &&
         rating == other.rating &&
         repliedByOwner == other.repliedByOwner &&
         secondaryData == other.secondaryData &&
-        threadActionDate == other.threadActionDate;
+        dateCreated == other.dateCreated &&
+        directLink == other.directLink &&
+        type == other.type &&
+        actionDate == other.actionDate &&
+        authorImage == other.authorImage &&
+        countComments == other.countComments &&
+        directoryType == other.directoryType &&
+        flagged == other.flagged &&
+        author == other.author &&
+        threadActionDate == other.threadActionDate &&
+        liked == other.liked &&
+        data == other.data;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, type.hashCode);
-    _$hash = $jc(_$hash, data.hashCode);
-    _$hash = $jc(_$hash, liked.hashCode);
-    _$hash = $jc(_$hash, actionDate.hashCode);
-    _$hash = $jc(_$hash, author.hashCode);
-    _$hash = $jc(_$hash, authorImage.hashCode);
-    _$hash = $jc(_$hash, countComments.hashCode);
-    _$hash = $jc(_$hash, dateCreated.hashCode);
-    _$hash = $jc(_$hash, directLink.hashCode);
-    _$hash = $jc(_$hash, directoryType.hashCode);
-    _$hash = $jc(_$hash, flagged.hashCode);
     _$hash = $jc(_$hash, lastUpdated.hashCode);
     _$hash = $jc(_$hash, rating.hashCode);
     _$hash = $jc(_$hash, repliedByOwner.hashCode);
     _$hash = $jc(_$hash, secondaryData.hashCode);
+    _$hash = $jc(_$hash, dateCreated.hashCode);
+    _$hash = $jc(_$hash, directLink.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, actionDate.hashCode);
+    _$hash = $jc(_$hash, authorImage.hashCode);
+    _$hash = $jc(_$hash, countComments.hashCode);
+    _$hash = $jc(_$hash, directoryType.hashCode);
+    _$hash = $jc(_$hash, flagged.hashCode);
+    _$hash = $jc(_$hash, author.hashCode);
     _$hash = $jc(_$hash, threadActionDate.hashCode);
+    _$hash = $jc(_$hash, liked.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -1877,22 +1877,22 @@ class _$BrandDataPoint extends BrandDataPoint {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'BrandDataPoint')
-          ..add('type', type)
-          ..add('data', data)
-          ..add('liked', liked)
-          ..add('actionDate', actionDate)
-          ..add('author', author)
-          ..add('authorImage', authorImage)
-          ..add('countComments', countComments)
-          ..add('dateCreated', dateCreated)
-          ..add('directLink', directLink)
-          ..add('directoryType', directoryType)
-          ..add('flagged', flagged)
           ..add('lastUpdated', lastUpdated)
           ..add('rating', rating)
           ..add('repliedByOwner', repliedByOwner)
           ..add('secondaryData', secondaryData)
-          ..add('threadActionDate', threadActionDate))
+          ..add('dateCreated', dateCreated)
+          ..add('directLink', directLink)
+          ..add('type', type)
+          ..add('actionDate', actionDate)
+          ..add('authorImage', authorImage)
+          ..add('countComments', countComments)
+          ..add('directoryType', directoryType)
+          ..add('flagged', flagged)
+          ..add('author', author)
+          ..add('threadActionDate', threadActionDate)
+          ..add('liked', liked)
+          ..add('data', data))
         .toString();
   }
 }
@@ -1900,52 +1900,6 @@ class _$BrandDataPoint extends BrandDataPoint {
 class BrandDataPointBuilder
     implements Builder<BrandDataPoint, BrandDataPointBuilder> {
   _$BrandDataPoint? _$v;
-
-  BrandDataPointTypeEnum? _type;
-  BrandDataPointTypeEnum? get type => _$this._type;
-  set type(BrandDataPointTypeEnum? type) => _$this._type = type;
-
-  String? _data;
-  String? get data => _$this._data;
-  set data(String? data) => _$this._data = data;
-
-  bool? _liked;
-  bool? get liked => _$this._liked;
-  set liked(bool? liked) => _$this._liked = liked;
-
-  DateTime? _actionDate;
-  DateTime? get actionDate => _$this._actionDate;
-  set actionDate(DateTime? actionDate) => _$this._actionDate = actionDate;
-
-  String? _author;
-  String? get author => _$this._author;
-  set author(String? author) => _$this._author = author;
-
-  String? _authorImage;
-  String? get authorImage => _$this._authorImage;
-  set authorImage(String? authorImage) => _$this._authorImage = authorImage;
-
-  int? _countComments;
-  int? get countComments => _$this._countComments;
-  set countComments(int? countComments) =>
-      _$this._countComments = countComments;
-
-  DateTime? _dateCreated;
-  DateTime? get dateCreated => _$this._dateCreated;
-  set dateCreated(DateTime? dateCreated) => _$this._dateCreated = dateCreated;
-
-  String? _directLink;
-  String? get directLink => _$this._directLink;
-  set directLink(String? directLink) => _$this._directLink = directLink;
-
-  BrandDataPointDirectoryTypeEnum? _directoryType;
-  BrandDataPointDirectoryTypeEnum? get directoryType => _$this._directoryType;
-  set directoryType(BrandDataPointDirectoryTypeEnum? directoryType) =>
-      _$this._directoryType = directoryType;
-
-  bool? _flagged;
-  bool? get flagged => _$this._flagged;
-  set flagged(bool? flagged) => _$this._flagged = flagged;
 
   DateTime? _lastUpdated;
   DateTime? get lastUpdated => _$this._lastUpdated;
@@ -1965,10 +1919,56 @@ class BrandDataPointBuilder
   set secondaryData(String? secondaryData) =>
       _$this._secondaryData = secondaryData;
 
+  DateTime? _dateCreated;
+  DateTime? get dateCreated => _$this._dateCreated;
+  set dateCreated(DateTime? dateCreated) => _$this._dateCreated = dateCreated;
+
+  String? _directLink;
+  String? get directLink => _$this._directLink;
+  set directLink(String? directLink) => _$this._directLink = directLink;
+
+  BrandDataPointTypeEnum? _type;
+  BrandDataPointTypeEnum? get type => _$this._type;
+  set type(BrandDataPointTypeEnum? type) => _$this._type = type;
+
+  DateTime? _actionDate;
+  DateTime? get actionDate => _$this._actionDate;
+  set actionDate(DateTime? actionDate) => _$this._actionDate = actionDate;
+
+  String? _authorImage;
+  String? get authorImage => _$this._authorImage;
+  set authorImage(String? authorImage) => _$this._authorImage = authorImage;
+
+  int? _countComments;
+  int? get countComments => _$this._countComments;
+  set countComments(int? countComments) =>
+      _$this._countComments = countComments;
+
+  BrandDataPointDirectoryTypeEnum? _directoryType;
+  BrandDataPointDirectoryTypeEnum? get directoryType => _$this._directoryType;
+  set directoryType(BrandDataPointDirectoryTypeEnum? directoryType) =>
+      _$this._directoryType = directoryType;
+
+  bool? _flagged;
+  bool? get flagged => _$this._flagged;
+  set flagged(bool? flagged) => _$this._flagged = flagged;
+
+  String? _author;
+  String? get author => _$this._author;
+  set author(String? author) => _$this._author = author;
+
   DateTime? _threadActionDate;
   DateTime? get threadActionDate => _$this._threadActionDate;
   set threadActionDate(DateTime? threadActionDate) =>
       _$this._threadActionDate = threadActionDate;
+
+  bool? _liked;
+  bool? get liked => _$this._liked;
+  set liked(bool? liked) => _$this._liked = liked;
+
+  String? _data;
+  String? get data => _$this._data;
+  set data(String? data) => _$this._data = data;
 
   BrandDataPointBuilder() {
     BrandDataPoint._defaults(this);
@@ -1977,22 +1977,22 @@ class BrandDataPointBuilder
   BrandDataPointBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _type = $v.type;
-      _data = $v.data;
-      _liked = $v.liked;
-      _actionDate = $v.actionDate;
-      _author = $v.author;
-      _authorImage = $v.authorImage;
-      _countComments = $v.countComments;
-      _dateCreated = $v.dateCreated;
-      _directLink = $v.directLink;
-      _directoryType = $v.directoryType;
-      _flagged = $v.flagged;
       _lastUpdated = $v.lastUpdated;
       _rating = $v.rating;
       _repliedByOwner = $v.repliedByOwner;
       _secondaryData = $v.secondaryData;
+      _dateCreated = $v.dateCreated;
+      _directLink = $v.directLink;
+      _type = $v.type;
+      _actionDate = $v.actionDate;
+      _authorImage = $v.authorImage;
+      _countComments = $v.countComments;
+      _directoryType = $v.directoryType;
+      _flagged = $v.flagged;
+      _author = $v.author;
       _threadActionDate = $v.threadActionDate;
+      _liked = $v.liked;
+      _data = $v.data;
       _$v = null;
     }
     return this;
@@ -2015,22 +2015,22 @@ class BrandDataPointBuilder
   _$BrandDataPoint _build() {
     final _$result = _$v ??
         new _$BrandDataPoint._(
-          type: type,
-          data: data,
-          liked: liked,
-          actionDate: actionDate,
-          author: author,
-          authorImage: authorImage,
-          countComments: countComments,
-          dateCreated: dateCreated,
-          directLink: directLink,
-          directoryType: directoryType,
-          flagged: flagged,
           lastUpdated: lastUpdated,
           rating: rating,
           repliedByOwner: repliedByOwner,
           secondaryData: secondaryData,
+          dateCreated: dateCreated,
+          directLink: directLink,
+          type: type,
+          actionDate: actionDate,
+          authorImage: authorImage,
+          countComments: countComments,
+          directoryType: directoryType,
+          flagged: flagged,
+          author: author,
           threadActionDate: threadActionDate,
+          liked: liked,
+          data: data,
         );
     replace(_$result);
     return _$result;

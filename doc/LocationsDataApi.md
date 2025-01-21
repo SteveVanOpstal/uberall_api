@@ -587,7 +587,7 @@ import 'package:uberall_api/api.dart';
 
 final api = UberallApi().getLocationsDataApi();
 final String id = id_example; // String | The uberall unique ID of the location
-final String dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // String | Types of datapoints you want inbox statistics for.
+final BuiltList<String> dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // BuiltList<String> | Types of datapoints you want inbox statistics for.
 final String directoryTypes = directoryTypes_example; // String | Directories you want inbox statistics for
 final BuiltList<String> ratings = ; // BuiltList<String> | Ratings of datapoints you want inbox statistics for.
 final String minActionDate = minActionDate_example; // String | Only consider data points created after that date
@@ -608,7 +608,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The uberall unique ID of the location | 
- **dataPointTypes** | **String**| Types of datapoints you want inbox statistics for. | [optional] 
+ **dataPointTypes** | [**BuiltList&lt;String&gt;**](String.md)| Types of datapoints you want inbox statistics for. | [optional] 
  **directoryTypes** | **String**| Directories you want inbox statistics for | [optional] 
  **ratings** | [**BuiltList&lt;String&gt;**](String.md)| Ratings of datapoints you want inbox statistics for. | [optional] 
  **minActionDate** | **String**| Only consider data points created after that date | [optional] 
@@ -795,7 +795,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getLocationsLabels**
-> LabelsResponseWrapper getLocationsLabels()
+> LabelsResponseWrapper getLocationsLabels(query)
 
 Get the labels for locations
 
@@ -814,9 +814,10 @@ import 'package:uberall_api/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
 final api = UberallApi().getLocationsDataApi();
+final String query = query_example; // String | Used for searching for a specific keyword within label names, only label names matching the given query via 'like' will be returned.
 
 try {
-    final response = api.getLocationsLabels();
+    final response = api.getLocationsLabels(query);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling LocationsDataApi->getLocationsLabels: $e\n');
@@ -824,7 +825,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **query** | **String**| Used for searching for a specific keyword within label names, only label names matching the given query via 'like' will be returned. | [optional] 
 
 ### Return type
 

@@ -77,30 +77,30 @@ part 'location.g.dart';
 /// * [utms] - UTM parameter to be appended to the location''s website. Codes can be sent to Google, Facebook, and Bing.
 /// * [transactionLinks] - Links that appear on some directories for specific types of customer actions, such as food ordering, appointment setting, and booking reservations. Only available for specific business categories.
 /// * [temporarilyClosed]
+/// * [nameDescriptor] - An addition to the location''s name which gives specific info about the location''s address (e.g. Mall level 2 OR Inside Departures). Sent only to FACEBOOK
 /// * [evData]
 /// * [features] - Output only. List of features available to the location
-/// * [nameDescriptor] - An addition to the location''s name which gives specific info about the location''s address (e.g. Mall level 2 OR Inside Departures). Sent only to FACEBOOK
+/// * [missingMandatoryFields] - Output only. Compile all the fields that are currently missing but mandatory for some directories. They have to be set in the Location object, so that the Listing can be created / updated on the respective platform. List of Strings, e.g. [NAME, ZIP, PHONE]
 /// * [moreHours] - The location''s additional service hours, such as delivery, pickup, happy hours etc. Submitted to Google. e.g. <pre>[&#123;     \"type\": \"ONLINE_SERVICE_HOURS\",     \"hours\": [&#123;         \"dayOfWeek\": 1,         \"from1\": \"09:00\",         \"to1\": \"18:00\"     &#125;, &#123;         \"dayOfWeek\": 2,         \"from1\": \"09:00\",         \"to1\": \"13:00\"     &#125;] &#125;, &#123;     \"type\": \"ACCESS\",     \"hours\": [&#123;         \"dayOfWeek\": 1,         \"from1\": \"06:00\",         \"to1\": \"20:00\"     &#125;] &#125;]</pre>
-/// * [profileCompleteness] - Output only. Number representing completeness of location data, up to 100
-/// * [publishedListingsCount] - Output only. Number of published listings
-/// * [socialProfiles] - The profiles of the location on social and professional networks (FACEBOOK, FOURSQUARE, INSTAGRAM, LINKEDIN, PINTEREST, TWITTER, VIMEO, XING, YOUTUBE)
+/// * [dataPoints] - Output only. Number of dataPoints (reviews, photos) left by users at this location
+/// * [listingsBeingUpdated] - Output only. Number of listings still being updated
+/// * [listingsInSync] - Output only. The number of listings in sync
+/// * [mainPhoto]
 /// * [businessId] - ID of the business this location is linked to. Mandatory when creating a location. Sending a different ID than the current businessId when updating will lead to changing the business. This is only possible in case all connected accounts (Facebook, Google, …) are compatible.
 /// * [cleansingComment] - Cleansing comment by user, set only when cleansingStatus is INVALID_DATA. Possible Values (ADDRESS_DETAILS_VERIFIED, NAME_ADDRESS_DETAILS_UPDATED, NON_CLOSURE_CONFIRMATION,)
 /// * [cleansingInvalidDataReason] - Output only. Invalid Cleansing Reason (eg. INCOMPLETE_ADDRESS,ADDRESS_ IS_PO_BOX,ADDRESS_ DOES_NOT_EXIST, LOCATION_IS_CLOSED, INFORMATION_IS_WRONG, LOCATION_IS_MOVED, NON_LATIN_CHARACTERS_ADDRESS, OTHER). Guide on how to fix invalid data issues - http://ubr.al/fix_invalid_data
 /// * [cleansingStatus] - Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
+/// * [timeZone] - The location''s timezone
+/// * [videos] - The location''s videos
+/// * [visibilityIndex] - Output only. The location''s latest visibility index
 /// * [contentLists] - The content list IDs (EVENTS, PRODUCTS, MENU, PEOPLE) describing the location
-/// * [dataPoints] - Output only. Number of dataPoints (reviews, photos) left by users at this location
 /// * [activeDirectoriesCount] - Output only. Number of active directories
 /// * [activeListingsCount] - Output only. Number of active listings
 /// * [attributes] - Google attributes
 /// * [customFields] - A Map for identifying the value input for a specific custom field name on the location. Custom fields are created at the business level. <pre>   \"customFields\": [     '{'       \"name\": \"foo\",       \"value\": \"bar\"     '}',     '{'       \"name\": \"baz\",       \"value\": \"qux\"     '}'   ] </pre>
-/// * [listingsBeingUpdated] - Output only. Number of listings still being updated
-/// * [listingsInSync] - Output only. The number of listings in sync
-/// * [mainPhoto]
-/// * [missingMandatoryFields] - Output only. Compile all the fields that are currently missing but mandatory for some directories. They have to be set in the Location object, so that the Listing can be created / updated on the respective platform. List of Strings, e.g. [NAME, ZIP, PHONE]
-/// * [timeZone] - The location''s timezone
-/// * [videos] - The location''s videos
-/// * [visibilityIndex] - Output only. The location''s latest visibility index
+/// * [profileCompleteness] - Output only. Number representing completeness of location data, up to 100
+/// * [publishedListingsCount] - Output only. Number of published listings
+/// * [socialProfiles] - The profiles of the location on social and professional networks (FACEBOOK, FOURSQUARE, INSTAGRAM, LINKEDIN, PINTEREST, TWITTER, VIMEO, XING, YOUTUBE)
 @BuiltValue()
 abstract class Location implements Built<Location, LocationBuilder> {
   /// Output only. The uberall unique id for the location
@@ -298,6 +298,10 @@ abstract class Location implements Built<Location, LocationBuilder> {
   @BuiltValueField(wireName: r'temporarilyClosed')
   LocationTemporarilyClosed? get temporarilyClosed;
 
+  /// An addition to the location''s name which gives specific info about the location''s address (e.g. Mall level 2 OR Inside Departures). Sent only to FACEBOOK
+  @BuiltValueField(wireName: r'nameDescriptor')
+  String? get nameDescriptor;
+
   @BuiltValueField(wireName: r'evData')
   EvData? get evData;
 
@@ -306,25 +310,29 @@ abstract class Location implements Built<Location, LocationBuilder> {
   BuiltSet<LocationFeaturesEnum>? get features;
   // enum featuresEnum {  NEW_PHOTO_TYPES,  ADS,  ADS_READ,  ADS_WRITE,  ADVANCED_ANALYTICS,  AI_KNOWLEDGEBASE,  AI_LOCALISATION,  AI_SUGGESTED_REPLIES,  APPLE_POSTING,  APPLE_POSTING_WRITE,  AUTO_RESPONSE,  AUTO_RESPONSE_WRITE,  AUTOMATION,  BASIC,  BASIC_PLUS,  BULK_UPDATES,  INSTAGRAM_POSTING,  INSTAGRAM_POSTING_WRITE,  BUSINESS_LEVEL_CONNECT,  CALL_TRACKING_NUMBERS,  CAN_PAY_INVOICE,  CAN_SEE_HELP_SECTION,  CHATBOT,  CHATBOT_READ,  CHATBOT_WRITE,  CHAT_READ,  CHAT_WRITE,  CLEANSING,  CONTENT_COLLECTION,  DAM,  DASHBOARD,  ENTERPRISE_ONBOARDING,  FACEBOOK_UNOWNED_PAGE_CREATE,  FIRST_PARTY_REVIEW_APPROVAL,  FORMS,  HOMEPAGE,  INBOX,  INBOX_APPROVAL,  INBOX_PREVIEW,  INBOX_TEASER,  INBOX_TWITTER,  INBOX_READ,  INBOX_WRITE,  INBOX_2_0_BETA,  INBOX_2_0_BETA_READ,  INBOX_2_0_BETA_WRITE,  INBOX_FLAG,  LISTINGS,  LIVE_CHAT,  LOCAL_SEO_REPORT,  LOCATION_APPROVAL_REQUESTS,  LOCATION_GROUP,  LOCATION_STATUS_CHANGE,  LOCATION_TRANSLATION,  LOCATION_READ,  LOCATION_WRITE,  LOCAL_INVENTORY,  MANUAL_LISTINGS,  NEAR_ME_CHECK,  PHONE_OPTIONAL,  POSTING,  POSTING_APPROVAL,  POSTING_READ,  POSTING_TONE_ADJUST,  POSTING_WRITE,  POSTING_PREVIEW,  PRICE_INFO,  QR_CODE_GENERATION,  RESPONSE_LIBRARY,  RESPONSE_LIBRARY_READ,  RESPONSE_LIBRARY_WRITE,  REVIEW_GENERATION_EMAIL,  REVIEW_GENERATION_SMS,  REVIEW_GENERATION_CREATE,  REVIEW_GENERATION_SEND,  LOCATION_APPROVAL,  LOCATION_SCHEDULED_UPDATES,  SINGLE_SIGN_ON,  SOCIAL_ADS,  STOREFINDER,  STOREFINDER_TRIAL_MODE,  LOCATOR_PAGES_BUILDER,  STOREFINDER_ANALYTICS,  STOREFINDER_GOOGLE,  STOREFINDER_MAPBOX,  SUPPORT,  SUPPRESSION,  TRACKING,  TRANSACTION_LINKS,  TWITTER_INBOX_READ,  TWITTER_INBOX_WRITE,  TWITTER_POSTING,  TWITTER_POSTING_WRITE,  UPGRADE,  USER_OTHERS_EDIT,  USER_SELF_EDIT,  UTMS,  WEBSITE_WIDGETS,  EXPANDED_REVIEWS_RESTAURANT,  EXPANDED_REVIEWS_FINANCE,  WHATS_APP_MESSAGES,  ACCESS_REQUEST_INVITATIONS,  AI_BULK_REPLIES,  };
 
-  /// An addition to the location''s name which gives specific info about the location''s address (e.g. Mall level 2 OR Inside Departures). Sent only to FACEBOOK
-  @BuiltValueField(wireName: r'nameDescriptor')
-  String? get nameDescriptor;
+  /// Output only. Compile all the fields that are currently missing but mandatory for some directories. They have to be set in the Location object, so that the Listing can be created / updated on the respective platform. List of Strings, e.g. [NAME, ZIP, PHONE]
+  @BuiltValueField(wireName: r'missingMandatoryFields')
+  BuiltSet<LocationMissingMandatoryFieldsEnum>? get missingMandatoryFields;
+  // enum missingMandatoryFieldsEnum {  NAME,  NAME_DESCRIPTOR,  STREET_NO,  STREET,  STREET_TYPE,  ADDRESS_EXTRA,  PROVINCE,  ZIP,  CITY,  COUNTRY,  LATITUDE,  LONGITUDE,  ADDRESS_DISPLAY,  SERVICE_AREAS,  CATEGORIES,  OPENING_DATE,  PHONE,  CELLPHONE,  FAX,  WEBSITE,  WEBSITE_EXTRA,  EMAIL,  OPENINGHOURS,  OPENINGHOURS_NOTES,  SPECIAL_OPENINGHOURS,  MORE_HOURS,  KEYWORDS,  DESCRIPTION_SHORT,  DESCRIPTION_LONG,  IMPRINT,  LEGAL_IDENT,  TAX_NUMBER,  ATTRIBUTION,  IS_PUBLISHED,  SOCIAL_PROFILES,  ATTRIBUTES,  PAYMENT_OPTIONS,  BRANDS,  LANGUAGES,  SERVICES,  CONTENT_LISTS,  PHOTOS,  VIDEOS,  SOCIAL_POST,  DOCTOR_CATEGORIES,  NPI,  EV_DATA,  TRANSACTION_LINKS,  SUBLOCALITY,  CUSTOM_FIELDS,  };
 
   /// The location''s additional service hours, such as delivery, pickup, happy hours etc. Submitted to Google. e.g. <pre>[&#123;     \"type\": \"ONLINE_SERVICE_HOURS\",     \"hours\": [&#123;         \"dayOfWeek\": 1,         \"from1\": \"09:00\",         \"to1\": \"18:00\"     &#125;, &#123;         \"dayOfWeek\": 2,         \"from1\": \"09:00\",         \"to1\": \"13:00\"     &#125;] &#125;, &#123;     \"type\": \"ACCESS\",     \"hours\": [&#123;         \"dayOfWeek\": 1,         \"from1\": \"06:00\",         \"to1\": \"20:00\"     &#125;] &#125;]</pre>
   @BuiltValueField(wireName: r'moreHours')
   BuiltSet<BuiltMap<String, JsonObject>>? get moreHours;
 
-  /// Output only. Number representing completeness of location data, up to 100
-  @BuiltValueField(wireName: r'profileCompleteness')
-  int? get profileCompleteness;
+  /// Output only. Number of dataPoints (reviews, photos) left by users at this location
+  @BuiltValueField(wireName: r'dataPoints')
+  int? get dataPoints;
 
-  /// Output only. Number of published listings
-  @BuiltValueField(wireName: r'publishedListingsCount')
-  int? get publishedListingsCount;
+  /// Output only. Number of listings still being updated
+  @BuiltValueField(wireName: r'listingsBeingUpdated')
+  int? get listingsBeingUpdated;
 
-  /// The profiles of the location on social and professional networks (FACEBOOK, FOURSQUARE, INSTAGRAM, LINKEDIN, PINTEREST, TWITTER, VIMEO, XING, YOUTUBE)
-  @BuiltValueField(wireName: r'socialProfiles')
-  BuiltSet<SocialProfile>? get socialProfiles;
+  /// Output only. The number of listings in sync
+  @BuiltValueField(wireName: r'listingsInSync')
+  int? get listingsInSync;
+
+  @BuiltValueField(wireName: r'mainPhoto')
+  LocationPhoto? get mainPhoto;
 
   /// ID of the business this location is linked to. Mandatory when creating a location. Sending a different ID than the current businessId when updating will lead to changing the business. This is only possible in case all connected accounts (Facebook, Google, …) are compatible.
   @BuiltValueField(wireName: r'businessId')
@@ -344,13 +352,21 @@ abstract class Location implements Built<Location, LocationBuilder> {
   LocationCleansingStatusEnum? get cleansingStatus;
   // enum cleansingStatusEnum {  UNKNOWN,  NOT_NEEDED,  SUBMISSION_NEEDED,  PENDING,  CLEANSED,  AUTO_CLEANSED,  INVALID_DATA,  UPDATE_FAILED,  };
 
+  /// The location''s timezone
+  @BuiltValueField(wireName: r'timeZone')
+  String? get timeZone;
+
+  /// The location''s videos
+  @BuiltValueField(wireName: r'videos')
+  BuiltList<Video>? get videos;
+
+  /// Output only. The location''s latest visibility index
+  @BuiltValueField(wireName: r'visibilityIndex')
+  int? get visibilityIndex;
+
   /// The content list IDs (EVENTS, PRODUCTS, MENU, PEOPLE) describing the location
   @BuiltValueField(wireName: r'contentLists')
   BuiltList<int>? get contentLists;
-
-  /// Output only. Number of dataPoints (reviews, photos) left by users at this location
-  @BuiltValueField(wireName: r'dataPoints')
-  int? get dataPoints;
 
   /// Output only. Number of active directories
   @BuiltValueField(wireName: r'activeDirectoriesCount')
@@ -368,33 +384,17 @@ abstract class Location implements Built<Location, LocationBuilder> {
   @BuiltValueField(wireName: r'customFields')
   JsonObject? get customFields;
 
-  /// Output only. Number of listings still being updated
-  @BuiltValueField(wireName: r'listingsBeingUpdated')
-  int? get listingsBeingUpdated;
+  /// Output only. Number representing completeness of location data, up to 100
+  @BuiltValueField(wireName: r'profileCompleteness')
+  int? get profileCompleteness;
 
-  /// Output only. The number of listings in sync
-  @BuiltValueField(wireName: r'listingsInSync')
-  int? get listingsInSync;
+  /// Output only. Number of published listings
+  @BuiltValueField(wireName: r'publishedListingsCount')
+  int? get publishedListingsCount;
 
-  @BuiltValueField(wireName: r'mainPhoto')
-  LocationPhoto? get mainPhoto;
-
-  /// Output only. Compile all the fields that are currently missing but mandatory for some directories. They have to be set in the Location object, so that the Listing can be created / updated on the respective platform. List of Strings, e.g. [NAME, ZIP, PHONE]
-  @BuiltValueField(wireName: r'missingMandatoryFields')
-  BuiltSet<LocationMissingMandatoryFieldsEnum>? get missingMandatoryFields;
-  // enum missingMandatoryFieldsEnum {  NAME,  NAME_DESCRIPTOR,  STREET_NO,  STREET,  STREET_TYPE,  ADDRESS_EXTRA,  PROVINCE,  ZIP,  CITY,  COUNTRY,  LATITUDE,  LONGITUDE,  ADDRESS_DISPLAY,  SERVICE_AREAS,  CATEGORIES,  OPENING_DATE,  PHONE,  CELLPHONE,  FAX,  WEBSITE,  WEBSITE_EXTRA,  EMAIL,  OPENINGHOURS,  OPENINGHOURS_NOTES,  SPECIAL_OPENINGHOURS,  MORE_HOURS,  KEYWORDS,  DESCRIPTION_SHORT,  DESCRIPTION_LONG,  IMPRINT,  LEGAL_IDENT,  TAX_NUMBER,  ATTRIBUTION,  IS_PUBLISHED,  SOCIAL_PROFILES,  ATTRIBUTES,  PAYMENT_OPTIONS,  BRANDS,  LANGUAGES,  SERVICES,  CONTENT_LISTS,  PHOTOS,  VIDEOS,  SOCIAL_POST,  DOCTOR_CATEGORIES,  NPI,  EV_DATA,  TRANSACTION_LINKS,  SUBLOCALITY,  CUSTOM_FIELDS,  };
-
-  /// The location''s timezone
-  @BuiltValueField(wireName: r'timeZone')
-  String? get timeZone;
-
-  /// The location''s videos
-  @BuiltValueField(wireName: r'videos')
-  BuiltList<Video>? get videos;
-
-  /// Output only. The location''s latest visibility index
-  @BuiltValueField(wireName: r'visibilityIndex')
-  int? get visibilityIndex;
+  /// The profiles of the location on social and professional networks (FACEBOOK, FOURSQUARE, INSTAGRAM, LINKEDIN, PINTEREST, TWITTER, VIMEO, XING, YOUTUBE)
+  @BuiltValueField(wireName: r'socialProfiles')
+  BuiltSet<SocialProfile>? get socialProfiles;
 
   Location._();
 
@@ -749,6 +749,13 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
         specifiedType: const FullType(LocationTemporarilyClosed),
       );
     }
+    if (object.nameDescriptor != null) {
+      yield r'nameDescriptor';
+      yield serializers.serialize(
+        object.nameDescriptor,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.evData != null) {
       yield r'evData';
       yield serializers.serialize(
@@ -764,11 +771,12 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
             const FullType(BuiltSet, [FullType(LocationFeaturesEnum)]),
       );
     }
-    if (object.nameDescriptor != null) {
-      yield r'nameDescriptor';
+    if (object.missingMandatoryFields != null) {
+      yield r'missingMandatoryFields';
       yield serializers.serialize(
-        object.nameDescriptor,
-        specifiedType: const FullType(String),
+        object.missingMandatoryFields,
+        specifiedType: const FullType(
+            BuiltSet, [FullType(LocationMissingMandatoryFieldsEnum)]),
       );
     }
     if (object.moreHours != null) {
@@ -780,25 +788,32 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
         ]),
       );
     }
-    if (object.profileCompleteness != null) {
-      yield r'profileCompleteness';
+    if (object.dataPoints != null) {
+      yield r'dataPoints';
       yield serializers.serialize(
-        object.profileCompleteness,
+        object.dataPoints,
         specifiedType: const FullType(int),
       );
     }
-    if (object.publishedListingsCount != null) {
-      yield r'publishedListingsCount';
+    if (object.listingsBeingUpdated != null) {
+      yield r'listingsBeingUpdated';
       yield serializers.serialize(
-        object.publishedListingsCount,
+        object.listingsBeingUpdated,
         specifiedType: const FullType(int),
       );
     }
-    if (object.socialProfiles != null) {
-      yield r'socialProfiles';
+    if (object.listingsInSync != null) {
+      yield r'listingsInSync';
       yield serializers.serialize(
-        object.socialProfiles,
-        specifiedType: const FullType(BuiltSet, [FullType(SocialProfile)]),
+        object.listingsInSync,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.mainPhoto != null) {
+      yield r'mainPhoto';
+      yield serializers.serialize(
+        object.mainPhoto,
+        specifiedType: const FullType(LocationPhoto),
       );
     }
     if (object.businessId != null) {
@@ -829,18 +844,32 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
         specifiedType: const FullType(LocationCleansingStatusEnum),
       );
     }
+    if (object.timeZone != null) {
+      yield r'timeZone';
+      yield serializers.serialize(
+        object.timeZone,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.videos != null) {
+      yield r'videos';
+      yield serializers.serialize(
+        object.videos,
+        specifiedType: const FullType(BuiltList, [FullType(Video)]),
+      );
+    }
+    if (object.visibilityIndex != null) {
+      yield r'visibilityIndex';
+      yield serializers.serialize(
+        object.visibilityIndex,
+        specifiedType: const FullType(int),
+      );
+    }
     if (object.contentLists != null) {
       yield r'contentLists';
       yield serializers.serialize(
         object.contentLists,
         specifiedType: const FullType(BuiltList, [FullType(int)]),
-      );
-    }
-    if (object.dataPoints != null) {
-      yield r'dataPoints';
-      yield serializers.serialize(
-        object.dataPoints,
-        specifiedType: const FullType(int),
       );
     }
     if (object.activeDirectoriesCount != null) {
@@ -871,54 +900,25 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
         specifiedType: const FullType(JsonObject),
       );
     }
-    if (object.listingsBeingUpdated != null) {
-      yield r'listingsBeingUpdated';
+    if (object.profileCompleteness != null) {
+      yield r'profileCompleteness';
       yield serializers.serialize(
-        object.listingsBeingUpdated,
+        object.profileCompleteness,
         specifiedType: const FullType(int),
       );
     }
-    if (object.listingsInSync != null) {
-      yield r'listingsInSync';
+    if (object.publishedListingsCount != null) {
+      yield r'publishedListingsCount';
       yield serializers.serialize(
-        object.listingsInSync,
+        object.publishedListingsCount,
         specifiedType: const FullType(int),
       );
     }
-    if (object.mainPhoto != null) {
-      yield r'mainPhoto';
+    if (object.socialProfiles != null) {
+      yield r'socialProfiles';
       yield serializers.serialize(
-        object.mainPhoto,
-        specifiedType: const FullType(LocationPhoto),
-      );
-    }
-    if (object.missingMandatoryFields != null) {
-      yield r'missingMandatoryFields';
-      yield serializers.serialize(
-        object.missingMandatoryFields,
-        specifiedType: const FullType(
-            BuiltSet, [FullType(LocationMissingMandatoryFieldsEnum)]),
-      );
-    }
-    if (object.timeZone != null) {
-      yield r'timeZone';
-      yield serializers.serialize(
-        object.timeZone,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.videos != null) {
-      yield r'videos';
-      yield serializers.serialize(
-        object.videos,
-        specifiedType: const FullType(BuiltList, [FullType(Video)]),
-      );
-    }
-    if (object.visibilityIndex != null) {
-      yield r'visibilityIndex';
-      yield serializers.serialize(
-        object.visibilityIndex,
-        specifiedType: const FullType(int),
+        object.socialProfiles,
+        specifiedType: const FullType(BuiltSet, [FullType(SocialProfile)]),
       );
     }
   }
@@ -1285,6 +1285,13 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
           ) as LocationTemporarilyClosed;
           result.temporarilyClosed.replace(valueDes);
           break;
+        case r'nameDescriptor':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.nameDescriptor = valueDes;
+          break;
         case r'evData':
           final valueDes = serializers.deserialize(
             value,
@@ -1300,12 +1307,13 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
           ) as BuiltSet<LocationFeaturesEnum>;
           result.features.replace(valueDes);
           break;
-        case r'nameDescriptor':
+        case r'missingMandatoryFields':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.nameDescriptor = valueDes;
+            specifiedType: const FullType(
+                BuiltSet, [FullType(LocationMissingMandatoryFieldsEnum)]),
+          ) as BuiltSet<LocationMissingMandatoryFieldsEnum>;
+          result.missingMandatoryFields.replace(valueDes);
           break;
         case r'moreHours':
           final valueDes = serializers.deserialize(
@@ -1316,26 +1324,33 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
           ) as BuiltSet<BuiltMap<String, JsonObject>>;
           result.moreHours.replace(valueDes);
           break;
-        case r'profileCompleteness':
+        case r'dataPoints':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(int),
           ) as int;
-          result.profileCompleteness = valueDes;
+          result.dataPoints = valueDes;
           break;
-        case r'publishedListingsCount':
+        case r'listingsBeingUpdated':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(int),
           ) as int;
-          result.publishedListingsCount = valueDes;
+          result.listingsBeingUpdated = valueDes;
           break;
-        case r'socialProfiles':
+        case r'listingsInSync':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltSet, [FullType(SocialProfile)]),
-          ) as BuiltSet<SocialProfile>;
-          result.socialProfiles.replace(valueDes);
+            specifiedType: const FullType(int),
+          ) as int;
+          result.listingsInSync = valueDes;
+          break;
+        case r'mainPhoto':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(LocationPhoto),
+          ) as LocationPhoto;
+          result.mainPhoto.replace(valueDes);
           break;
         case r'businessId':
           final valueDes = serializers.deserialize(
@@ -1365,19 +1380,33 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
           ) as LocationCleansingStatusEnum;
           result.cleansingStatus = valueDes;
           break;
+        case r'timeZone':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.timeZone = valueDes;
+          break;
+        case r'videos':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(Video)]),
+          ) as BuiltList<Video>;
+          result.videos.replace(valueDes);
+          break;
+        case r'visibilityIndex':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.visibilityIndex = valueDes;
+          break;
         case r'contentLists':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltList, [FullType(int)]),
           ) as BuiltList<int>;
           result.contentLists.replace(valueDes);
-          break;
-        case r'dataPoints':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.dataPoints = valueDes;
           break;
         case r'activeDirectoriesCount':
           final valueDes = serializers.deserialize(
@@ -1408,55 +1437,26 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
           ) as JsonObject;
           result.customFields = valueDes;
           break;
-        case r'listingsBeingUpdated':
+        case r'profileCompleteness':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(int),
           ) as int;
-          result.listingsBeingUpdated = valueDes;
+          result.profileCompleteness = valueDes;
           break;
-        case r'listingsInSync':
+        case r'publishedListingsCount':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(int),
           ) as int;
-          result.listingsInSync = valueDes;
+          result.publishedListingsCount = valueDes;
           break;
-        case r'mainPhoto':
+        case r'socialProfiles':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(LocationPhoto),
-          ) as LocationPhoto;
-          result.mainPhoto.replace(valueDes);
-          break;
-        case r'missingMandatoryFields':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltSet, [FullType(LocationMissingMandatoryFieldsEnum)]),
-          ) as BuiltSet<LocationMissingMandatoryFieldsEnum>;
-          result.missingMandatoryFields.replace(valueDes);
-          break;
-        case r'timeZone':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.timeZone = valueDes;
-          break;
-        case r'videos':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(Video)]),
-          ) as BuiltList<Video>;
-          result.videos.replace(valueDes);
-          break;
-        case r'visibilityIndex':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.visibilityIndex = valueDes;
+            specifiedType: const FullType(BuiltSet, [FullType(SocialProfile)]),
+          ) as BuiltSet<SocialProfile>;
+          result.socialProfiles.replace(valueDes);
           break;
         default:
           unhandled.add(key);
@@ -2972,85 +2972,6 @@ class LocationFeaturesEnum extends EnumClass {
       _$locationFeaturesEnumValueOf(name);
 }
 
-class LocationCleansingCommentEnum extends EnumClass {
-  /// Cleansing comment by user, set only when cleansingStatus is INVALID_DATA. Possible Values (ADDRESS_DETAILS_VERIFIED, NAME_ADDRESS_DETAILS_UPDATED, NON_CLOSURE_CONFIRMATION,)
-  @BuiltValueEnumConst(wireName: r'ADDRESS_DETAILS_VERIFIED')
-  static const LocationCleansingCommentEnum ADDRESS_DETAILS_VERIFIED =
-      _$locationCleansingCommentEnum_ADDRESS_DETAILS_VERIFIED;
-
-  /// Cleansing comment by user, set only when cleansingStatus is INVALID_DATA. Possible Values (ADDRESS_DETAILS_VERIFIED, NAME_ADDRESS_DETAILS_UPDATED, NON_CLOSURE_CONFIRMATION,)
-  @BuiltValueEnumConst(wireName: r'NAME_ADDRESS_DETAILS_UPDATED')
-  static const LocationCleansingCommentEnum NAME_ADDRESS_DETAILS_UPDATED =
-      _$locationCleansingCommentEnum_NAME_ADDRESS_DETAILS_UPDATED;
-
-  /// Cleansing comment by user, set only when cleansingStatus is INVALID_DATA. Possible Values (ADDRESS_DETAILS_VERIFIED, NAME_ADDRESS_DETAILS_UPDATED, NON_CLOSURE_CONFIRMATION,)
-  @BuiltValueEnumConst(wireName: r'NON_CLOSURE_CONFIRMATION')
-  static const LocationCleansingCommentEnum NON_CLOSURE_CONFIRMATION =
-      _$locationCleansingCommentEnum_NON_CLOSURE_CONFIRMATION;
-
-  static Serializer<LocationCleansingCommentEnum> get serializer =>
-      _$locationCleansingCommentEnumSerializer;
-
-  const LocationCleansingCommentEnum._(String name) : super(name);
-
-  static BuiltSet<LocationCleansingCommentEnum> get values =>
-      _$locationCleansingCommentEnumValues;
-  static LocationCleansingCommentEnum valueOf(String name) =>
-      _$locationCleansingCommentEnumValueOf(name);
-}
-
-class LocationCleansingStatusEnum extends EnumClass {
-  /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
-  @BuiltValueEnumConst(wireName: r'UNKNOWN')
-  static const LocationCleansingStatusEnum UNKNOWN =
-      _$locationCleansingStatusEnum_UNKNOWN;
-
-  /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
-  @BuiltValueEnumConst(wireName: r'NOT_NEEDED')
-  static const LocationCleansingStatusEnum NOT_NEEDED =
-      _$locationCleansingStatusEnum_NOT_NEEDED;
-
-  /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
-  @BuiltValueEnumConst(wireName: r'SUBMISSION_NEEDED')
-  static const LocationCleansingStatusEnum SUBMISSION_NEEDED =
-      _$locationCleansingStatusEnum_SUBMISSION_NEEDED;
-
-  /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
-  @BuiltValueEnumConst(wireName: r'PENDING')
-  static const LocationCleansingStatusEnum PENDING =
-      _$locationCleansingStatusEnum_PENDING;
-
-  /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
-  @BuiltValueEnumConst(wireName: r'CLEANSED')
-  static const LocationCleansingStatusEnum CLEANSED =
-      _$locationCleansingStatusEnum_CLEANSED;
-
-  /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
-  @BuiltValueEnumConst(wireName: r'AUTO_CLEANSED')
-  static const LocationCleansingStatusEnum AUTO_CLEANSED =
-      _$locationCleansingStatusEnum_AUTO_CLEANSED;
-
-  /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
-  @BuiltValueEnumConst(wireName: r'INVALID_DATA')
-  static const LocationCleansingStatusEnum INVALID_DATA =
-      _$locationCleansingStatusEnum_INVALID_DATA;
-
-  /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
-  @BuiltValueEnumConst(wireName: r'UPDATE_FAILED')
-  static const LocationCleansingStatusEnum UPDATE_FAILED =
-      _$locationCleansingStatusEnum_UPDATE_FAILED;
-
-  static Serializer<LocationCleansingStatusEnum> get serializer =>
-      _$locationCleansingStatusEnumSerializer;
-
-  const LocationCleansingStatusEnum._(String name) : super(name);
-
-  static BuiltSet<LocationCleansingStatusEnum> get values =>
-      _$locationCleansingStatusEnumValues;
-  static LocationCleansingStatusEnum valueOf(String name) =>
-      _$locationCleansingStatusEnumValueOf(name);
-}
-
 class LocationMissingMandatoryFieldsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NAME')
   static const LocationMissingMandatoryFieldsEnum NAME =
@@ -3212,4 +3133,83 @@ class LocationMissingMandatoryFieldsEnum extends EnumClass {
       _$locationMissingMandatoryFieldsEnumValues;
   static LocationMissingMandatoryFieldsEnum valueOf(String name) =>
       _$locationMissingMandatoryFieldsEnumValueOf(name);
+}
+
+class LocationCleansingCommentEnum extends EnumClass {
+  /// Cleansing comment by user, set only when cleansingStatus is INVALID_DATA. Possible Values (ADDRESS_DETAILS_VERIFIED, NAME_ADDRESS_DETAILS_UPDATED, NON_CLOSURE_CONFIRMATION,)
+  @BuiltValueEnumConst(wireName: r'ADDRESS_DETAILS_VERIFIED')
+  static const LocationCleansingCommentEnum ADDRESS_DETAILS_VERIFIED =
+      _$locationCleansingCommentEnum_ADDRESS_DETAILS_VERIFIED;
+
+  /// Cleansing comment by user, set only when cleansingStatus is INVALID_DATA. Possible Values (ADDRESS_DETAILS_VERIFIED, NAME_ADDRESS_DETAILS_UPDATED, NON_CLOSURE_CONFIRMATION,)
+  @BuiltValueEnumConst(wireName: r'NAME_ADDRESS_DETAILS_UPDATED')
+  static const LocationCleansingCommentEnum NAME_ADDRESS_DETAILS_UPDATED =
+      _$locationCleansingCommentEnum_NAME_ADDRESS_DETAILS_UPDATED;
+
+  /// Cleansing comment by user, set only when cleansingStatus is INVALID_DATA. Possible Values (ADDRESS_DETAILS_VERIFIED, NAME_ADDRESS_DETAILS_UPDATED, NON_CLOSURE_CONFIRMATION,)
+  @BuiltValueEnumConst(wireName: r'NON_CLOSURE_CONFIRMATION')
+  static const LocationCleansingCommentEnum NON_CLOSURE_CONFIRMATION =
+      _$locationCleansingCommentEnum_NON_CLOSURE_CONFIRMATION;
+
+  static Serializer<LocationCleansingCommentEnum> get serializer =>
+      _$locationCleansingCommentEnumSerializer;
+
+  const LocationCleansingCommentEnum._(String name) : super(name);
+
+  static BuiltSet<LocationCleansingCommentEnum> get values =>
+      _$locationCleansingCommentEnumValues;
+  static LocationCleansingCommentEnum valueOf(String name) =>
+      _$locationCleansingCommentEnumValueOf(name);
+}
+
+class LocationCleansingStatusEnum extends EnumClass {
+  /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
+  @BuiltValueEnumConst(wireName: r'UNKNOWN')
+  static const LocationCleansingStatusEnum UNKNOWN =
+      _$locationCleansingStatusEnum_UNKNOWN;
+
+  /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
+  @BuiltValueEnumConst(wireName: r'NOT_NEEDED')
+  static const LocationCleansingStatusEnum NOT_NEEDED =
+      _$locationCleansingStatusEnum_NOT_NEEDED;
+
+  /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
+  @BuiltValueEnumConst(wireName: r'SUBMISSION_NEEDED')
+  static const LocationCleansingStatusEnum SUBMISSION_NEEDED =
+      _$locationCleansingStatusEnum_SUBMISSION_NEEDED;
+
+  /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
+  @BuiltValueEnumConst(wireName: r'PENDING')
+  static const LocationCleansingStatusEnum PENDING =
+      _$locationCleansingStatusEnum_PENDING;
+
+  /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
+  @BuiltValueEnumConst(wireName: r'CLEANSED')
+  static const LocationCleansingStatusEnum CLEANSED =
+      _$locationCleansingStatusEnum_CLEANSED;
+
+  /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
+  @BuiltValueEnumConst(wireName: r'AUTO_CLEANSED')
+  static const LocationCleansingStatusEnum AUTO_CLEANSED =
+      _$locationCleansingStatusEnum_AUTO_CLEANSED;
+
+  /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
+  @BuiltValueEnumConst(wireName: r'INVALID_DATA')
+  static const LocationCleansingStatusEnum INVALID_DATA =
+      _$locationCleansingStatusEnum_INVALID_DATA;
+
+  /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
+  @BuiltValueEnumConst(wireName: r'UPDATE_FAILED')
+  static const LocationCleansingStatusEnum UPDATE_FAILED =
+      _$locationCleansingStatusEnum_UPDATE_FAILED;
+
+  static Serializer<LocationCleansingStatusEnum> get serializer =>
+      _$locationCleansingStatusEnumSerializer;
+
+  const LocationCleansingStatusEnum._(String name) : super(name);
+
+  static BuiltSet<LocationCleansingStatusEnum> get values =>
+      _$locationCleansingStatusEnumValues;
+  static LocationCleansingStatusEnum valueOf(String name) =>
+      _$locationCleansingStatusEnumValueOf(name);
 }

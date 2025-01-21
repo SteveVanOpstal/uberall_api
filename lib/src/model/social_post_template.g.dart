@@ -176,13 +176,13 @@ class _$SocialPostTemplate extends SocialPostTemplate {
   @override
   final BuiltList<PhotoContainer>? photos;
   @override
-  final int userId;
+  final BuiltList<String>? videos;
   @override
   final int? ownerId;
   @override
   final String? ownerName;
   @override
-  final BuiltList<String>? videos;
+  final int userId;
 
   factory _$SocialPostTemplate(
           [void Function(SocialPostTemplateBuilder)? updates]) =>
@@ -199,10 +199,10 @@ class _$SocialPostTemplate extends SocialPostTemplate {
       this.callToActions,
       required this.directories,
       this.photos,
-      required this.userId,
+      this.videos,
       this.ownerId,
       this.ownerName,
-      this.videos})
+      required this.userId})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(type, r'SocialPostTemplate', 'type');
     BuiltValueNullFieldError.checkNotNull(
@@ -234,10 +234,10 @@ class _$SocialPostTemplate extends SocialPostTemplate {
         callToActions == other.callToActions &&
         directories == other.directories &&
         photos == other.photos &&
-        userId == other.userId &&
+        videos == other.videos &&
         ownerId == other.ownerId &&
         ownerName == other.ownerName &&
-        videos == other.videos;
+        userId == other.userId;
   }
 
   @override
@@ -253,10 +253,10 @@ class _$SocialPostTemplate extends SocialPostTemplate {
     _$hash = $jc(_$hash, callToActions.hashCode);
     _$hash = $jc(_$hash, directories.hashCode);
     _$hash = $jc(_$hash, photos.hashCode);
-    _$hash = $jc(_$hash, userId.hashCode);
+    _$hash = $jc(_$hash, videos.hashCode);
     _$hash = $jc(_$hash, ownerId.hashCode);
     _$hash = $jc(_$hash, ownerName.hashCode);
-    _$hash = $jc(_$hash, videos.hashCode);
+    _$hash = $jc(_$hash, userId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -274,10 +274,10 @@ class _$SocialPostTemplate extends SocialPostTemplate {
           ..add('callToActions', callToActions)
           ..add('directories', directories)
           ..add('photos', photos)
-          ..add('userId', userId)
+          ..add('videos', videos)
           ..add('ownerId', ownerId)
           ..add('ownerName', ownerName)
-          ..add('videos', videos))
+          ..add('userId', userId))
         .toString();
   }
 }
@@ -335,9 +335,10 @@ class SocialPostTemplateBuilder
       _$this._photos ??= new ListBuilder<PhotoContainer>();
   set photos(ListBuilder<PhotoContainer>? photos) => _$this._photos = photos;
 
-  int? _userId;
-  int? get userId => _$this._userId;
-  set userId(int? userId) => _$this._userId = userId;
+  ListBuilder<String>? _videos;
+  ListBuilder<String> get videos =>
+      _$this._videos ??= new ListBuilder<String>();
+  set videos(ListBuilder<String>? videos) => _$this._videos = videos;
 
   int? _ownerId;
   int? get ownerId => _$this._ownerId;
@@ -347,10 +348,9 @@ class SocialPostTemplateBuilder
   String? get ownerName => _$this._ownerName;
   set ownerName(String? ownerName) => _$this._ownerName = ownerName;
 
-  ListBuilder<String>? _videos;
-  ListBuilder<String> get videos =>
-      _$this._videos ??= new ListBuilder<String>();
-  set videos(ListBuilder<String>? videos) => _$this._videos = videos;
+  int? _userId;
+  int? get userId => _$this._userId;
+  set userId(int? userId) => _$this._userId = userId;
 
   SocialPostTemplateBuilder() {
     SocialPostTemplate._defaults(this);
@@ -369,10 +369,10 @@ class SocialPostTemplateBuilder
       _callToActions = $v.callToActions?.toBuilder();
       _directories = $v.directories.toBuilder();
       _photos = $v.photos?.toBuilder();
-      _userId = $v.userId;
+      _videos = $v.videos?.toBuilder();
       _ownerId = $v.ownerId;
       _ownerName = $v.ownerName;
-      _videos = $v.videos?.toBuilder();
+      _userId = $v.userId;
       _$v = null;
     }
     return this;
@@ -408,11 +408,11 @@ class SocialPostTemplateBuilder
             callToActions: _callToActions?.build(),
             directories: directories.build(),
             photos: _photos?.build(),
-            userId: BuiltValueNullFieldError.checkNotNull(
-                userId, r'SocialPostTemplate', 'userId'),
+            videos: _videos?.build(),
             ownerId: ownerId,
             ownerName: ownerName,
-            videos: _videos?.build(),
+            userId: BuiltValueNullFieldError.checkNotNull(
+                userId, r'SocialPostTemplate', 'userId'),
           );
     } catch (_) {
       late String _$failedField;
@@ -423,7 +423,6 @@ class SocialPostTemplateBuilder
         directories.build();
         _$failedField = 'photos';
         _photos?.build();
-
         _$failedField = 'videos';
         _videos?.build();
       } catch (e) {

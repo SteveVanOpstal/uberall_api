@@ -301,11 +301,11 @@ class _$EmailSettings extends EmailSettings {
   @override
   final EmailSettingsEmailTypeEnum? emailType;
   @override
-  final JsonObject? emailTypeId;
-  @override
   final JsonObject? frequencyId;
   @override
   final JsonObject? userId;
+  @override
+  final JsonObject? emailTypeId;
 
   factory _$EmailSettings([void Function(EmailSettingsBuilder)? updates]) =>
       (new EmailSettingsBuilder()..update(updates))._build();
@@ -313,9 +313,9 @@ class _$EmailSettings extends EmailSettings {
   _$EmailSettings._(
       {this.frequency,
       this.emailType,
-      this.emailTypeId,
       this.frequencyId,
-      this.userId})
+      this.userId,
+      this.emailTypeId})
       : super._();
 
   @override
@@ -331,9 +331,9 @@ class _$EmailSettings extends EmailSettings {
     return other is EmailSettings &&
         frequency == other.frequency &&
         emailType == other.emailType &&
-        emailTypeId == other.emailTypeId &&
         frequencyId == other.frequencyId &&
-        userId == other.userId;
+        userId == other.userId &&
+        emailTypeId == other.emailTypeId;
   }
 
   @override
@@ -341,9 +341,9 @@ class _$EmailSettings extends EmailSettings {
     var _$hash = 0;
     _$hash = $jc(_$hash, frequency.hashCode);
     _$hash = $jc(_$hash, emailType.hashCode);
-    _$hash = $jc(_$hash, emailTypeId.hashCode);
     _$hash = $jc(_$hash, frequencyId.hashCode);
     _$hash = $jc(_$hash, userId.hashCode);
+    _$hash = $jc(_$hash, emailTypeId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -353,9 +353,9 @@ class _$EmailSettings extends EmailSettings {
     return (newBuiltValueToStringHelper(r'EmailSettings')
           ..add('frequency', frequency)
           ..add('emailType', emailType)
-          ..add('emailTypeId', emailTypeId)
           ..add('frequencyId', frequencyId)
-          ..add('userId', userId))
+          ..add('userId', userId)
+          ..add('emailTypeId', emailTypeId))
         .toString();
   }
 }
@@ -374,10 +374,6 @@ class EmailSettingsBuilder
   set emailType(EmailSettingsEmailTypeEnum? emailType) =>
       _$this._emailType = emailType;
 
-  JsonObject? _emailTypeId;
-  JsonObject? get emailTypeId => _$this._emailTypeId;
-  set emailTypeId(JsonObject? emailTypeId) => _$this._emailTypeId = emailTypeId;
-
   JsonObject? _frequencyId;
   JsonObject? get frequencyId => _$this._frequencyId;
   set frequencyId(JsonObject? frequencyId) => _$this._frequencyId = frequencyId;
@@ -385,6 +381,10 @@ class EmailSettingsBuilder
   JsonObject? _userId;
   JsonObject? get userId => _$this._userId;
   set userId(JsonObject? userId) => _$this._userId = userId;
+
+  JsonObject? _emailTypeId;
+  JsonObject? get emailTypeId => _$this._emailTypeId;
+  set emailTypeId(JsonObject? emailTypeId) => _$this._emailTypeId = emailTypeId;
 
   EmailSettingsBuilder() {
     EmailSettings._defaults(this);
@@ -395,9 +395,9 @@ class EmailSettingsBuilder
     if ($v != null) {
       _frequency = $v.frequency;
       _emailType = $v.emailType;
-      _emailTypeId = $v.emailTypeId;
       _frequencyId = $v.frequencyId;
       _userId = $v.userId;
+      _emailTypeId = $v.emailTypeId;
       _$v = null;
     }
     return this;
@@ -422,9 +422,9 @@ class EmailSettingsBuilder
         new _$EmailSettings._(
           frequency: frequency,
           emailType: emailType,
-          emailTypeId: emailTypeId,
           frequencyId: frequencyId,
           userId: userId,
+          emailTypeId: emailTypeId,
         );
     replace(_$result);
     return _$result;

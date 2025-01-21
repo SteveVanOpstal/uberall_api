@@ -52,7 +52,7 @@ abstract class ProductPlan implements Built<ProductPlan, ProductPlanBuilder> {
   /// One among PENDING_APPROVAL, ACTIVE, INACTIVE
   @BuiltValueField(wireName: r'status')
   ProductPlanStatusEnum? get status;
-  // enum statusEnum {  ACTIVE,  INACTIVE,  PENDING_APPROVAL,  DELETED,  PENDING_APPROVAL,  ACTIVE,  INACTIVE,  };
+  // enum statusEnum {  ACTIVE,  INACTIVE,  PENDING_APPROVAL,  DELETED,  };
 
   /// List of directories supported by this plan
   @BuiltValueField(wireName: r'automationDirectories')
@@ -437,20 +437,6 @@ class ProductPlanStatusEnum extends EnumClass {
   /// One among PENDING_APPROVAL, ACTIVE, INACTIVE
   @BuiltValueEnumConst(wireName: r'DELETED')
   static const ProductPlanStatusEnum DELETED = _$productPlanStatusEnum_DELETED;
-
-  /// One among PENDING_APPROVAL, ACTIVE, INACTIVE
-  @BuiltValueEnumConst(wireName: r'PENDING_APPROVAL2')
-  static const ProductPlanStatusEnum PENDING_APPROVAL2 =
-      _$productPlanStatusEnum_PENDING_APPROVAL2;
-
-  /// One among PENDING_APPROVAL, ACTIVE, INACTIVE
-  @BuiltValueEnumConst(wireName: r'ACTIVE2')
-  static const ProductPlanStatusEnum ACTIVE2 = _$productPlanStatusEnum_ACTIVE2;
-
-  /// One among PENDING_APPROVAL, ACTIVE, INACTIVE
-  @BuiltValueEnumConst(wireName: r'INACTIVE2')
-  static const ProductPlanStatusEnum INACTIVE2 =
-      _$productPlanStatusEnum_INACTIVE2;
 
   static Serializer<ProductPlanStatusEnum> get serializer =>
       _$productPlanStatusEnumSerializer;

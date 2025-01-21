@@ -12,71 +12,25 @@ part 'brand_data_point.g.dart';
 /// Brand Data Point Model
 ///
 /// Properties:
-/// * [type] - Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-/// * [data] - Content of the datapoint (text of the review, url of the photo, count of checkins...)
-/// * [liked] - Whether this datapoint has been liked or not
-/// * [actionDate] - The date when the review/photo/... was published in the online directory
-/// * [author] - Username of the datapoints author
-/// * [authorImage] - Author profile picture url
-/// * [countComments] - Number of comments to this item.
-/// * [dateCreated] - The date the datapoint was found
-/// * [directLink] - A link to the online profile
-/// * [directoryType] - Online directory reference name
-/// * [flagged] - Whether the datapoint has been flagged. The exact nature of the flagging depends on the directory, but can be e.g. \"Report as SPAM\"
 /// * [lastUpdated] - Date of last update
 /// * [rating] - Rating given by the user. Float value, max: 5.
 /// * [repliedByOwner] - True if the owner of the business has replied
 /// * [secondaryData] - Additional info about the datapoint (eg. text content on instagram pictures)
+/// * [dateCreated] - The date the datapoint was found
+/// * [directLink] - A link to the online profile
+/// * [type] - Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+/// * [actionDate] - The date when the review/photo/... was published in the online directory
+/// * [authorImage] - Author profile picture url
+/// * [countComments] - Number of comments to this item.
+/// * [directoryType] - Online directory reference name
+/// * [flagged] - Whether the datapoint has been flagged. The exact nature of the flagging depends on the directory, but can be e.g. \"Report as SPAM\"
+/// * [author] - Username of the datapoints author
 /// * [threadActionDate] - The date of the last interaction in that thread. When a review receives a new comment, the parent will update.
+/// * [liked] - Whether this datapoint has been liked or not
+/// * [data] - Content of the datapoint (text of the review, url of the photo, count of checkins...)
 @BuiltValue()
 abstract class BrandDataPoint
     implements Built<BrandDataPoint, BrandDataPointBuilder> {
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueField(wireName: r'type')
-  BrandDataPointTypeEnum? get type;
-  // enum typeEnum {  REVIEW,  PHOTO,  CHECKIN,  CONVERSATION,  COMMENT,  QUESTION,  POST,  IMAGE,  VIDEO,  CAROUSEL_ALBUM,  LINK,  EXPANDEDREVIEW,  };
-
-  /// Content of the datapoint (text of the review, url of the photo, count of checkins...)
-  @BuiltValueField(wireName: r'data')
-  String? get data;
-
-  /// Whether this datapoint has been liked or not
-  @BuiltValueField(wireName: r'liked')
-  bool? get liked;
-
-  /// The date when the review/photo/... was published in the online directory
-  @BuiltValueField(wireName: r'actionDate')
-  DateTime? get actionDate;
-
-  /// Username of the datapoints author
-  @BuiltValueField(wireName: r'author')
-  String? get author;
-
-  /// Author profile picture url
-  @BuiltValueField(wireName: r'authorImage')
-  String? get authorImage;
-
-  /// Number of comments to this item.
-  @BuiltValueField(wireName: r'countComments')
-  int? get countComments;
-
-  /// The date the datapoint was found
-  @BuiltValueField(wireName: r'dateCreated')
-  DateTime? get dateCreated;
-
-  /// A link to the online profile
-  @BuiltValueField(wireName: r'directLink')
-  String? get directLink;
-
-  /// Online directory reference name
-  @BuiltValueField(wireName: r'directoryType')
-  BrandDataPointDirectoryTypeEnum? get directoryType;
-  // enum directoryTypeEnum {  FOURSQUARE,  UBER,  GOOGLE,  WAZE,  GOOGLE_MAPS,  YELP,  YELP_API,  MEINESTADT,  YELLOW_MAP,  FOCUS,  LOKALEAUSKUNFT,  WEB_DE,  GMX,  ONE_AND_ONE,  FREIEAUSKUNFT,  POINTOO,  NOKIA_HERE,  FACEBOOK,  TOMTOM,  STADTBRANCHENBUCH,  CYLEX,  UNTERNEHMENSAUSKUNFT,  ACOMPIO,  BUSINESSBRANCHENBUCH,  YALWA,  THE_PHONEBOOK,  SCOOT,  CENTRAL_INDEX,  CITIPAGES,  ONE_NINE_TWO,  ONE_ONE_EIGHT,  THE_DAILY_RECORD,  THE_EVENING_STANDARD,  THE_SCOTSMAN,  LIVERPOOL_ECHO,  THE_SUN,  THE_INDEPENDENT,  TOUCH_LOCAL,  THE_MIRROR,  ANNUAIRE,  INFOBEL,  US_INFO_COM,  GARMIN,  FACTUAL,  BING,  WO_GIBTS_WAS,  KOOMIO,  ABCLOCAL,  YELLBO,  JELLOO,  GUIDELOCAL,  OEFFNUNGSZEITENBUCH,  APPLE_MAPS,  LOOCAL,  REGIONAL_DE,  WHERE_TO,  TUPALO,  GELBE_SEITEN,  DAS_OERTLICHE,  DIALO,  BUNDES_TELEFONBUCH,  BRANCHENBUCH_DEUTSCHLAND,  MARKTPLATZ_MITTELSTAND,  BUSQUEDA_LOCAL,  RICERCARE_IMPRESE,  PAGES24,  NAVMII,  AUDI,  BMW,  MERCEDES,  VW,  TOYOTA,  FORD,  FIAT,  GM,  ETRUSTED,  INSTAGRAM,  SHOPPING_TIME_NETWORK,  CITY_SQUARES,  SHOWMELOCAL,  LOCALSTACK,  CHAMBER_OF_COMMERCE,  JUDYS_BOOK,  BROWNBOOK,  MY_LOCAL_SERVICES,  YA_SABE,  UNIVISION,  AL_DIA_TX,  LA_VOZ_TX,  CHRON,  STATESMAN,  PALM_BEACH_POST,  MUNDO_HISPANICO,  EL_TIEMPO_LATINO,  LATINOS_US,  HOTFROG,  INFO_IS_INFO,  MANTA,  US_CITY,  GO_YELLOW,  N49,  PRATIQUE,  JUSTACOTE,  EZLOCAL,  ELOCAL,  TRUE_LOCAL,  START_LOCAL,  WOMO,  AUSSIE_WEB,  YELLOW_PAGES,  SUPER_PAGES,  WHITE_PAGES,  DEX_KNOWS,  KAUFDA_MANUAL,  I_GLOBAL,  BRANCHEN_INFO_MANUAL,  GUTE_BANKEN_MANUAL,  D_11880_COM_MANUAL,  BANKOEFFNUNGSZEITEN_DE_MANUAL,  BANK_OEFFNUNGSZEITEN_DE_MANUAL,  CYLEX_MANUAL,  FINDE_OFFEN_MANUAL,  MEIN_PROSPEKT_MANUAL,  DAS_SCHNELLE,  SENSIS_WHITE_PAGES,  SENSIS_TRUE_LOCAL,  SENSIS_YELLOW_PAGES,  FIND_OPEN,  WAND,  BELL_CA,  GO_LOCAL,  MEINUNGSMEISTER,  YANDEX,  YAHOO_MANUAL,  HOLIDAY_CHECK,  TRIP_ADVISOR,  BONIAL_FR,  ZIP_CH,  PAGES_JAUNES,  YELLOW_PAGES_SINGAPORE,  INFOGROUP,  WAZE_NEW,  UBER_NEW,  NEUSTAR,  TRUSTPILOT,  AUSKUNFT,  BAIDU,  NEXT_DOOR,  MICROSOFT_CORTANA,  GOOGLE_ASSISTANT,  CBANQUE,  ORANGE_118_712,  SIRI,  HUAWEI,  DOCTOR_COM,  CARE_DASH,  DENTAL_PLANS,  DOC_SPOT,  HEALTHGRADES,  SHARE_CARE,  VITALS,  WEB_MD,  WELLNESS,  ZOC_DOC,  ZWIVEL,  YP_COM_HEALTH,  BING_HEALTH,  NPPES,  RATE_MDS,  CITYSEARCH,  INSIDER_PAGES,  TWITTER,  ALEXA,  MAP_QUEST,  WEBSITE_WIDGETS,  ECO_MOVEMENT,  GOOGLE_EV,  APPLE_EV,  TESLA_EV,  EUROWAG_EV,  OPIS_EV,  TOMTOM_EV,  HERE_EV,  YELLOW_PAGES_CANADA,  BBB,  UBERALL_SOCIAL_ADS,  APPLE_APPS,  CONSUMER_AFFAIRS,  CREDIT_KARMA,  DELIVERY,  GLASSDOOR,  PLAY_GOOGLE,  GRUBHUB,  INDEED,  LENDING_TREE,  MENUISM,  OPEN_TABLE,  OPEN_TABLE_USA,  WALLET_HUB,  ZILLOW,  ZOMATO,  WHATS_APP,  FOUR_SCREEN,  AND_CHARGE,  LINKED_IN,  };
-
-  /// Whether the datapoint has been flagged. The exact nature of the flagging depends on the directory, but can be e.g. \"Report as SPAM\"
-  @BuiltValueField(wireName: r'flagged')
-  bool? get flagged;
-
   /// Date of last update
   @BuiltValueField(wireName: r'lastUpdated')
   DateTime? get lastUpdated;
@@ -93,9 +47,55 @@ abstract class BrandDataPoint
   @BuiltValueField(wireName: r'secondaryData')
   String? get secondaryData;
 
+  /// The date the datapoint was found
+  @BuiltValueField(wireName: r'dateCreated')
+  DateTime? get dateCreated;
+
+  /// A link to the online profile
+  @BuiltValueField(wireName: r'directLink')
+  String? get directLink;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueField(wireName: r'type')
+  BrandDataPointTypeEnum? get type;
+  // enum typeEnum {  REVIEW,  PHOTO,  CHECKIN,  CONVERSATION,  COMMENT,  QUESTION,  POST,  IMAGE,  VIDEO,  CAROUSEL_ALBUM,  LINK,  EXPANDEDREVIEW,  };
+
+  /// The date when the review/photo/... was published in the online directory
+  @BuiltValueField(wireName: r'actionDate')
+  DateTime? get actionDate;
+
+  /// Author profile picture url
+  @BuiltValueField(wireName: r'authorImage')
+  String? get authorImage;
+
+  /// Number of comments to this item.
+  @BuiltValueField(wireName: r'countComments')
+  int? get countComments;
+
+  /// Online directory reference name
+  @BuiltValueField(wireName: r'directoryType')
+  BrandDataPointDirectoryTypeEnum? get directoryType;
+  // enum directoryTypeEnum {  FOURSQUARE,  UBER,  GOOGLE,  WAZE,  GOOGLE_MAPS,  YELP,  YELP_API,  MEINESTADT,  YELLOW_MAP,  FOCUS,  LOKALEAUSKUNFT,  WEB_DE,  GMX,  ONE_AND_ONE,  FREIEAUSKUNFT,  POINTOO,  NOKIA_HERE,  FACEBOOK,  TOMTOM,  STADTBRANCHENBUCH,  CYLEX,  UNTERNEHMENSAUSKUNFT,  ACOMPIO,  BUSINESSBRANCHENBUCH,  YALWA,  THE_PHONEBOOK,  SCOOT,  CENTRAL_INDEX,  CITIPAGES,  ONE_NINE_TWO,  ONE_ONE_EIGHT,  THE_DAILY_RECORD,  THE_EVENING_STANDARD,  THE_SCOTSMAN,  LIVERPOOL_ECHO,  THE_SUN,  THE_INDEPENDENT,  TOUCH_LOCAL,  THE_MIRROR,  ANNUAIRE,  INFOBEL,  US_INFO_COM,  GARMIN,  FACTUAL,  BING,  WO_GIBTS_WAS,  KOOMIO,  ABCLOCAL,  YELLBO,  JELLOO,  GUIDELOCAL,  OEFFNUNGSZEITENBUCH,  APPLE_MAPS,  LOOCAL,  REGIONAL_DE,  WHERE_TO,  TUPALO,  GELBE_SEITEN,  DAS_OERTLICHE,  DIALO,  BUNDES_TELEFONBUCH,  BRANCHENBUCH_DEUTSCHLAND,  MARKTPLATZ_MITTELSTAND,  BUSQUEDA_LOCAL,  RICERCARE_IMPRESE,  PAGES24,  NAVMII,  AUDI,  BMW,  MERCEDES,  VW,  TOYOTA,  FORD,  FIAT,  GM,  ETRUSTED,  INSTAGRAM,  SHOPPING_TIME_NETWORK,  CITY_SQUARES,  SHOWMELOCAL,  LOCALSTACK,  CHAMBER_OF_COMMERCE,  JUDYS_BOOK,  BROWNBOOK,  MY_LOCAL_SERVICES,  YA_SABE,  UNIVISION,  AL_DIA_TX,  LA_VOZ_TX,  CHRON,  STATESMAN,  PALM_BEACH_POST,  MUNDO_HISPANICO,  EL_TIEMPO_LATINO,  LATINOS_US,  HOTFROG,  INFO_IS_INFO,  MANTA,  US_CITY,  GO_YELLOW,  N49,  PRATIQUE,  JUSTACOTE,  EZLOCAL,  ELOCAL,  TRUE_LOCAL,  START_LOCAL,  WOMO,  AUSSIE_WEB,  YELLOW_PAGES,  SUPER_PAGES,  WHITE_PAGES,  DEX_KNOWS,  KAUFDA_MANUAL,  I_GLOBAL,  BRANCHEN_INFO_MANUAL,  GUTE_BANKEN_MANUAL,  D_11880_COM_MANUAL,  BANKOEFFNUNGSZEITEN_DE_MANUAL,  BANK_OEFFNUNGSZEITEN_DE_MANUAL,  CYLEX_MANUAL,  FINDE_OFFEN_MANUAL,  MEIN_PROSPEKT_MANUAL,  DAS_SCHNELLE,  SENSIS_WHITE_PAGES,  SENSIS_TRUE_LOCAL,  SENSIS_YELLOW_PAGES,  FIND_OPEN,  WAND,  BELL_CA,  GO_LOCAL,  MEINUNGSMEISTER,  YANDEX,  YAHOO_MANUAL,  HOLIDAY_CHECK,  TRIP_ADVISOR,  BONIAL_FR,  ZIP_CH,  PAGES_JAUNES,  YELLOW_PAGES_SINGAPORE,  INFOGROUP,  WAZE_NEW,  UBER_NEW,  NEUSTAR,  TRUSTPILOT,  AUSKUNFT,  BAIDU,  NEXT_DOOR,  MICROSOFT_CORTANA,  GOOGLE_ASSISTANT,  CBANQUE,  ORANGE_118_712,  SIRI,  HUAWEI,  DOCTOR_COM,  CARE_DASH,  DENTAL_PLANS,  DOC_SPOT,  HEALTHGRADES,  SHARE_CARE,  VITALS,  WEB_MD,  WELLNESS,  ZOC_DOC,  ZWIVEL,  YP_COM_HEALTH,  BING_HEALTH,  NPPES,  RATE_MDS,  CITYSEARCH,  INSIDER_PAGES,  TWITTER,  ALEXA,  MAP_QUEST,  WEBSITE_WIDGETS,  ECO_MOVEMENT,  GOOGLE_EV,  APPLE_EV,  TESLA_EV,  EUROWAG_EV,  OPIS_EV,  TOMTOM_EV,  HERE_EV,  YELLOW_PAGES_CANADA,  BBB,  UBERALL_SOCIAL_ADS,  APPLE_APPS,  CONSUMER_AFFAIRS,  CREDIT_KARMA,  DELIVERY,  GLASSDOOR,  PLAY_GOOGLE,  GRUBHUB,  INDEED,  LENDING_TREE,  MENUISM,  OPEN_TABLE,  OPEN_TABLE_USA,  WALLET_HUB,  ZILLOW,  ZOMATO,  WHATS_APP,  FOUR_SCREEN,  AND_CHARGE,  LINKED_IN,  };
+
+  /// Whether the datapoint has been flagged. The exact nature of the flagging depends on the directory, but can be e.g. \"Report as SPAM\"
+  @BuiltValueField(wireName: r'flagged')
+  bool? get flagged;
+
+  /// Username of the datapoints author
+  @BuiltValueField(wireName: r'author')
+  String? get author;
+
   /// The date of the last interaction in that thread. When a review receives a new comment, the parent will update.
   @BuiltValueField(wireName: r'threadActionDate')
   DateTime? get threadActionDate;
+
+  /// Whether this datapoint has been liked or not
+  @BuiltValueField(wireName: r'liked')
+  bool? get liked;
+
+  /// Content of the datapoint (text of the review, url of the photo, count of checkins...)
+  @BuiltValueField(wireName: r'data')
+  String? get data;
 
   BrandDataPoint._();
 
@@ -123,83 +123,6 @@ class _$BrandDataPointSerializer
     BrandDataPoint object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.type != null) {
-      yield r'type';
-      yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType(BrandDataPointTypeEnum),
-      );
-    }
-    if (object.data != null) {
-      yield r'data';
-      yield serializers.serialize(
-        object.data,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.liked != null) {
-      yield r'liked';
-      yield serializers.serialize(
-        object.liked,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.actionDate != null) {
-      yield r'actionDate';
-      yield serializers.serialize(
-        object.actionDate,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.author != null) {
-      yield r'author';
-      yield serializers.serialize(
-        object.author,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.authorImage != null) {
-      yield r'authorImage';
-      yield serializers.serialize(
-        object.authorImage,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.countComments != null) {
-      yield r'countComments';
-      yield serializers.serialize(
-        object.countComments,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.dateCreated != null) {
-      yield r'dateCreated';
-      yield serializers.serialize(
-        object.dateCreated,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.directLink != null) {
-      yield r'directLink';
-      yield serializers.serialize(
-        object.directLink,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.directoryType != null) {
-      yield r'directoryType';
-      yield serializers.serialize(
-        object.directoryType,
-        specifiedType: const FullType(BrandDataPointDirectoryTypeEnum),
-      );
-    }
-    if (object.flagged != null) {
-      yield r'flagged';
-      yield serializers.serialize(
-        object.flagged,
-        specifiedType: const FullType(bool),
-      );
-    }
     if (object.lastUpdated != null) {
       yield r'lastUpdated';
       yield serializers.serialize(
@@ -228,11 +151,88 @@ class _$BrandDataPointSerializer
         specifiedType: const FullType(String),
       );
     }
+    if (object.dateCreated != null) {
+      yield r'dateCreated';
+      yield serializers.serialize(
+        object.dateCreated,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.directLink != null) {
+      yield r'directLink';
+      yield serializers.serialize(
+        object.directLink,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.type != null) {
+      yield r'type';
+      yield serializers.serialize(
+        object.type,
+        specifiedType: const FullType(BrandDataPointTypeEnum),
+      );
+    }
+    if (object.actionDate != null) {
+      yield r'actionDate';
+      yield serializers.serialize(
+        object.actionDate,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.authorImage != null) {
+      yield r'authorImage';
+      yield serializers.serialize(
+        object.authorImage,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.countComments != null) {
+      yield r'countComments';
+      yield serializers.serialize(
+        object.countComments,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.directoryType != null) {
+      yield r'directoryType';
+      yield serializers.serialize(
+        object.directoryType,
+        specifiedType: const FullType(BrandDataPointDirectoryTypeEnum),
+      );
+    }
+    if (object.flagged != null) {
+      yield r'flagged';
+      yield serializers.serialize(
+        object.flagged,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.author != null) {
+      yield r'author';
+      yield serializers.serialize(
+        object.author,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.threadActionDate != null) {
       yield r'threadActionDate';
       yield serializers.serialize(
         object.threadActionDate,
         specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.liked != null) {
+      yield r'liked';
+      yield serializers.serialize(
+        object.liked,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.data != null) {
+      yield r'data';
+      yield serializers.serialize(
+        object.data,
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -260,83 +260,6 @@ class _$BrandDataPointSerializer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BrandDataPointTypeEnum),
-          ) as BrandDataPointTypeEnum;
-          result.type = valueDes;
-          break;
-        case r'data':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.data = valueDes;
-          break;
-        case r'liked':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.liked = valueDes;
-          break;
-        case r'actionDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.actionDate = valueDes;
-          break;
-        case r'author':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.author = valueDes;
-          break;
-        case r'authorImage':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.authorImage = valueDes;
-          break;
-        case r'countComments':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.countComments = valueDes;
-          break;
-        case r'dateCreated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.dateCreated = valueDes;
-          break;
-        case r'directLink':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.directLink = valueDes;
-          break;
-        case r'directoryType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BrandDataPointDirectoryTypeEnum),
-          ) as BrandDataPointDirectoryTypeEnum;
-          result.directoryType = valueDes;
-          break;
-        case r'flagged':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.flagged = valueDes;
-          break;
         case r'lastUpdated':
           final valueDes = serializers.deserialize(
             value,
@@ -365,12 +288,89 @@ class _$BrandDataPointSerializer
           ) as String;
           result.secondaryData = valueDes;
           break;
+        case r'dateCreated':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.dateCreated = valueDes;
+          break;
+        case r'directLink':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.directLink = valueDes;
+          break;
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BrandDataPointTypeEnum),
+          ) as BrandDataPointTypeEnum;
+          result.type = valueDes;
+          break;
+        case r'actionDate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.actionDate = valueDes;
+          break;
+        case r'authorImage':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.authorImage = valueDes;
+          break;
+        case r'countComments':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.countComments = valueDes;
+          break;
+        case r'directoryType':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BrandDataPointDirectoryTypeEnum),
+          ) as BrandDataPointDirectoryTypeEnum;
+          result.directoryType = valueDes;
+          break;
+        case r'flagged':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.flagged = valueDes;
+          break;
+        case r'author':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.author = valueDes;
+          break;
         case r'threadActionDate':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.threadActionDate = valueDes;
+          break;
+        case r'liked':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.liked = valueDes;
+          break;
+        case r'data':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.data = valueDes;
           break;
         default:
           unhandled.add(key);

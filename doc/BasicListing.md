@@ -108,13 +108,13 @@ Name | Type | Description | Notes
 **sublocalityStatus** | **String** | The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH | [optional] 
 **websiteExtra** | **String** | Utm or tracking path - only sent to GOOGLE | [optional] 
 **photos** | **bool** | Boolean indicating whether or not the listing has photos | [optional] 
-**socialProfiles** | [**BuiltList&lt;SocialProfile&gt;**](SocialProfile.md) | Social profiles of the location | [optional] 
+**videos** | [**BuiltList&lt;Video&gt;**](Video.md) | A list of videos about the location | [optional] 
 **contentLists** | [**BuiltList&lt;ContentList&gt;**](ContentList.md) | Content lists shown on the listing | [optional] 
+**socialProfiles** | [**BuiltList&lt;SocialProfile&gt;**](SocialProfile.md) | Social profiles of the location | [optional] 
 **keywords** | **BuiltList&lt;String&gt;** | The video of the social post (can only be one) | [optional] 
 **brands** | **BuiltList&lt;String&gt;** | The video of the social post (can only be one) | [optional] 
 **services** | **BuiltList&lt;String&gt;** | The video of the social post (can only be one) | [optional] 
 **languages** | **BuiltList&lt;String&gt;** | The video of the social post (can only be one) | [optional] 
-**videos** | [**BuiltList&lt;Video&gt;**](Video.md) | A list of videos about the location | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

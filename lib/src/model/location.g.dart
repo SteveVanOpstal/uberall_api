@@ -1981,92 +1981,6 @@ final BuiltSet<LocationFeaturesEnum> _$locationFeaturesEnumValues =
   _$locationFeaturesEnum_AI_BULK_REPLIES,
 ]);
 
-const LocationCleansingCommentEnum
-    _$locationCleansingCommentEnum_ADDRESS_DETAILS_VERIFIED =
-    const LocationCleansingCommentEnum._('ADDRESS_DETAILS_VERIFIED');
-const LocationCleansingCommentEnum
-    _$locationCleansingCommentEnum_NAME_ADDRESS_DETAILS_UPDATED =
-    const LocationCleansingCommentEnum._('NAME_ADDRESS_DETAILS_UPDATED');
-const LocationCleansingCommentEnum
-    _$locationCleansingCommentEnum_NON_CLOSURE_CONFIRMATION =
-    const LocationCleansingCommentEnum._('NON_CLOSURE_CONFIRMATION');
-
-LocationCleansingCommentEnum _$locationCleansingCommentEnumValueOf(
-    String name) {
-  switch (name) {
-    case 'ADDRESS_DETAILS_VERIFIED':
-      return _$locationCleansingCommentEnum_ADDRESS_DETAILS_VERIFIED;
-    case 'NAME_ADDRESS_DETAILS_UPDATED':
-      return _$locationCleansingCommentEnum_NAME_ADDRESS_DETAILS_UPDATED;
-    case 'NON_CLOSURE_CONFIRMATION':
-      return _$locationCleansingCommentEnum_NON_CLOSURE_CONFIRMATION;
-    default:
-      throw new ArgumentError(name);
-  }
-}
-
-final BuiltSet<LocationCleansingCommentEnum>
-    _$locationCleansingCommentEnumValues = new BuiltSet<
-        LocationCleansingCommentEnum>(const <LocationCleansingCommentEnum>[
-  _$locationCleansingCommentEnum_ADDRESS_DETAILS_VERIFIED,
-  _$locationCleansingCommentEnum_NAME_ADDRESS_DETAILS_UPDATED,
-  _$locationCleansingCommentEnum_NON_CLOSURE_CONFIRMATION,
-]);
-
-const LocationCleansingStatusEnum _$locationCleansingStatusEnum_UNKNOWN =
-    const LocationCleansingStatusEnum._('UNKNOWN');
-const LocationCleansingStatusEnum _$locationCleansingStatusEnum_NOT_NEEDED =
-    const LocationCleansingStatusEnum._('NOT_NEEDED');
-const LocationCleansingStatusEnum
-    _$locationCleansingStatusEnum_SUBMISSION_NEEDED =
-    const LocationCleansingStatusEnum._('SUBMISSION_NEEDED');
-const LocationCleansingStatusEnum _$locationCleansingStatusEnum_PENDING =
-    const LocationCleansingStatusEnum._('PENDING');
-const LocationCleansingStatusEnum _$locationCleansingStatusEnum_CLEANSED =
-    const LocationCleansingStatusEnum._('CLEANSED');
-const LocationCleansingStatusEnum _$locationCleansingStatusEnum_AUTO_CLEANSED =
-    const LocationCleansingStatusEnum._('AUTO_CLEANSED');
-const LocationCleansingStatusEnum _$locationCleansingStatusEnum_INVALID_DATA =
-    const LocationCleansingStatusEnum._('INVALID_DATA');
-const LocationCleansingStatusEnum _$locationCleansingStatusEnum_UPDATE_FAILED =
-    const LocationCleansingStatusEnum._('UPDATE_FAILED');
-
-LocationCleansingStatusEnum _$locationCleansingStatusEnumValueOf(String name) {
-  switch (name) {
-    case 'UNKNOWN':
-      return _$locationCleansingStatusEnum_UNKNOWN;
-    case 'NOT_NEEDED':
-      return _$locationCleansingStatusEnum_NOT_NEEDED;
-    case 'SUBMISSION_NEEDED':
-      return _$locationCleansingStatusEnum_SUBMISSION_NEEDED;
-    case 'PENDING':
-      return _$locationCleansingStatusEnum_PENDING;
-    case 'CLEANSED':
-      return _$locationCleansingStatusEnum_CLEANSED;
-    case 'AUTO_CLEANSED':
-      return _$locationCleansingStatusEnum_AUTO_CLEANSED;
-    case 'INVALID_DATA':
-      return _$locationCleansingStatusEnum_INVALID_DATA;
-    case 'UPDATE_FAILED':
-      return _$locationCleansingStatusEnum_UPDATE_FAILED;
-    default:
-      throw new ArgumentError(name);
-  }
-}
-
-final BuiltSet<LocationCleansingStatusEnum>
-    _$locationCleansingStatusEnumValues = new BuiltSet<
-        LocationCleansingStatusEnum>(const <LocationCleansingStatusEnum>[
-  _$locationCleansingStatusEnum_UNKNOWN,
-  _$locationCleansingStatusEnum_NOT_NEEDED,
-  _$locationCleansingStatusEnum_SUBMISSION_NEEDED,
-  _$locationCleansingStatusEnum_PENDING,
-  _$locationCleansingStatusEnum_CLEANSED,
-  _$locationCleansingStatusEnum_AUTO_CLEANSED,
-  _$locationCleansingStatusEnum_INVALID_DATA,
-  _$locationCleansingStatusEnum_UPDATE_FAILED,
-]);
-
 const LocationMissingMandatoryFieldsEnum
     _$locationMissingMandatoryFieldsEnum_NAME =
     const LocationMissingMandatoryFieldsEnum._('NAME');
@@ -2381,6 +2295,92 @@ final BuiltSet<LocationMissingMandatoryFieldsEnum>
   _$locationMissingMandatoryFieldsEnum_CUSTOM_FIELDS,
 ]);
 
+const LocationCleansingCommentEnum
+    _$locationCleansingCommentEnum_ADDRESS_DETAILS_VERIFIED =
+    const LocationCleansingCommentEnum._('ADDRESS_DETAILS_VERIFIED');
+const LocationCleansingCommentEnum
+    _$locationCleansingCommentEnum_NAME_ADDRESS_DETAILS_UPDATED =
+    const LocationCleansingCommentEnum._('NAME_ADDRESS_DETAILS_UPDATED');
+const LocationCleansingCommentEnum
+    _$locationCleansingCommentEnum_NON_CLOSURE_CONFIRMATION =
+    const LocationCleansingCommentEnum._('NON_CLOSURE_CONFIRMATION');
+
+LocationCleansingCommentEnum _$locationCleansingCommentEnumValueOf(
+    String name) {
+  switch (name) {
+    case 'ADDRESS_DETAILS_VERIFIED':
+      return _$locationCleansingCommentEnum_ADDRESS_DETAILS_VERIFIED;
+    case 'NAME_ADDRESS_DETAILS_UPDATED':
+      return _$locationCleansingCommentEnum_NAME_ADDRESS_DETAILS_UPDATED;
+    case 'NON_CLOSURE_CONFIRMATION':
+      return _$locationCleansingCommentEnum_NON_CLOSURE_CONFIRMATION;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<LocationCleansingCommentEnum>
+    _$locationCleansingCommentEnumValues = new BuiltSet<
+        LocationCleansingCommentEnum>(const <LocationCleansingCommentEnum>[
+  _$locationCleansingCommentEnum_ADDRESS_DETAILS_VERIFIED,
+  _$locationCleansingCommentEnum_NAME_ADDRESS_DETAILS_UPDATED,
+  _$locationCleansingCommentEnum_NON_CLOSURE_CONFIRMATION,
+]);
+
+const LocationCleansingStatusEnum _$locationCleansingStatusEnum_UNKNOWN =
+    const LocationCleansingStatusEnum._('UNKNOWN');
+const LocationCleansingStatusEnum _$locationCleansingStatusEnum_NOT_NEEDED =
+    const LocationCleansingStatusEnum._('NOT_NEEDED');
+const LocationCleansingStatusEnum
+    _$locationCleansingStatusEnum_SUBMISSION_NEEDED =
+    const LocationCleansingStatusEnum._('SUBMISSION_NEEDED');
+const LocationCleansingStatusEnum _$locationCleansingStatusEnum_PENDING =
+    const LocationCleansingStatusEnum._('PENDING');
+const LocationCleansingStatusEnum _$locationCleansingStatusEnum_CLEANSED =
+    const LocationCleansingStatusEnum._('CLEANSED');
+const LocationCleansingStatusEnum _$locationCleansingStatusEnum_AUTO_CLEANSED =
+    const LocationCleansingStatusEnum._('AUTO_CLEANSED');
+const LocationCleansingStatusEnum _$locationCleansingStatusEnum_INVALID_DATA =
+    const LocationCleansingStatusEnum._('INVALID_DATA');
+const LocationCleansingStatusEnum _$locationCleansingStatusEnum_UPDATE_FAILED =
+    const LocationCleansingStatusEnum._('UPDATE_FAILED');
+
+LocationCleansingStatusEnum _$locationCleansingStatusEnumValueOf(String name) {
+  switch (name) {
+    case 'UNKNOWN':
+      return _$locationCleansingStatusEnum_UNKNOWN;
+    case 'NOT_NEEDED':
+      return _$locationCleansingStatusEnum_NOT_NEEDED;
+    case 'SUBMISSION_NEEDED':
+      return _$locationCleansingStatusEnum_SUBMISSION_NEEDED;
+    case 'PENDING':
+      return _$locationCleansingStatusEnum_PENDING;
+    case 'CLEANSED':
+      return _$locationCleansingStatusEnum_CLEANSED;
+    case 'AUTO_CLEANSED':
+      return _$locationCleansingStatusEnum_AUTO_CLEANSED;
+    case 'INVALID_DATA':
+      return _$locationCleansingStatusEnum_INVALID_DATA;
+    case 'UPDATE_FAILED':
+      return _$locationCleansingStatusEnum_UPDATE_FAILED;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<LocationCleansingStatusEnum>
+    _$locationCleansingStatusEnumValues = new BuiltSet<
+        LocationCleansingStatusEnum>(const <LocationCleansingStatusEnum>[
+  _$locationCleansingStatusEnum_UNKNOWN,
+  _$locationCleansingStatusEnum_NOT_NEEDED,
+  _$locationCleansingStatusEnum_SUBMISSION_NEEDED,
+  _$locationCleansingStatusEnum_PENDING,
+  _$locationCleansingStatusEnum_CLEANSED,
+  _$locationCleansingStatusEnum_AUTO_CLEANSED,
+  _$locationCleansingStatusEnum_INVALID_DATA,
+  _$locationCleansingStatusEnum_UPDATE_FAILED,
+]);
+
 Serializer<LocationStreetTypeEnum> _$locationStreetTypeEnumSerializer =
     new _$LocationStreetTypeEnumSerializer();
 Serializer<LocationCountryEnum> _$locationCountryEnumSerializer =
@@ -2392,15 +2392,15 @@ Serializer<LocationStatusEnum> _$locationStatusEnumSerializer =
     new _$LocationStatusEnumSerializer();
 Serializer<LocationFeaturesEnum> _$locationFeaturesEnumSerializer =
     new _$LocationFeaturesEnumSerializer();
+Serializer<LocationMissingMandatoryFieldsEnum>
+    _$locationMissingMandatoryFieldsEnumSerializer =
+    new _$LocationMissingMandatoryFieldsEnumSerializer();
 Serializer<LocationCleansingCommentEnum>
     _$locationCleansingCommentEnumSerializer =
     new _$LocationCleansingCommentEnumSerializer();
 Serializer<LocationCleansingStatusEnum>
     _$locationCleansingStatusEnumSerializer =
     new _$LocationCleansingStatusEnumSerializer();
-Serializer<LocationMissingMandatoryFieldsEnum>
-    _$locationMissingMandatoryFieldsEnumSerializer =
-    new _$LocationMissingMandatoryFieldsEnumSerializer();
 
 class _$LocationStreetTypeEnumSerializer
     implements PrimitiveSerializer<LocationStreetTypeEnum> {
@@ -3292,78 +3292,6 @@ class _$LocationFeaturesEnumSerializer
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
-class _$LocationCleansingCommentEnumSerializer
-    implements PrimitiveSerializer<LocationCleansingCommentEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'ADDRESS_DETAILS_VERIFIED': 'ADDRESS_DETAILS_VERIFIED',
-    'NAME_ADDRESS_DETAILS_UPDATED': 'NAME_ADDRESS_DETAILS_UPDATED',
-    'NON_CLOSURE_CONFIRMATION': 'NON_CLOSURE_CONFIRMATION',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'ADDRESS_DETAILS_VERIFIED': 'ADDRESS_DETAILS_VERIFIED',
-    'NAME_ADDRESS_DETAILS_UPDATED': 'NAME_ADDRESS_DETAILS_UPDATED',
-    'NON_CLOSURE_CONFIRMATION': 'NON_CLOSURE_CONFIRMATION',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[LocationCleansingCommentEnum];
-  @override
-  final String wireName = 'LocationCleansingCommentEnum';
-
-  @override
-  Object serialize(Serializers serializers, LocationCleansingCommentEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
-
-  @override
-  LocationCleansingCommentEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      LocationCleansingCommentEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
-}
-
-class _$LocationCleansingStatusEnumSerializer
-    implements PrimitiveSerializer<LocationCleansingStatusEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'UNKNOWN': 'UNKNOWN',
-    'NOT_NEEDED': 'NOT_NEEDED',
-    'SUBMISSION_NEEDED': 'SUBMISSION_NEEDED',
-    'PENDING': 'PENDING',
-    'CLEANSED': 'CLEANSED',
-    'AUTO_CLEANSED': 'AUTO_CLEANSED',
-    'INVALID_DATA': 'INVALID_DATA',
-    'UPDATE_FAILED': 'UPDATE_FAILED',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'UNKNOWN': 'UNKNOWN',
-    'NOT_NEEDED': 'NOT_NEEDED',
-    'SUBMISSION_NEEDED': 'SUBMISSION_NEEDED',
-    'PENDING': 'PENDING',
-    'CLEANSED': 'CLEANSED',
-    'AUTO_CLEANSED': 'AUTO_CLEANSED',
-    'INVALID_DATA': 'INVALID_DATA',
-    'UPDATE_FAILED': 'UPDATE_FAILED',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[LocationCleansingStatusEnum];
-  @override
-  final String wireName = 'LocationCleansingStatusEnum';
-
-  @override
-  Object serialize(Serializers serializers, LocationCleansingStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
-
-  @override
-  LocationCleansingStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      LocationCleansingStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
-}
-
 class _$LocationMissingMandatoryFieldsEnumSerializer
     implements PrimitiveSerializer<LocationMissingMandatoryFieldsEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
@@ -3490,6 +3418,78 @@ class _$LocationMissingMandatoryFieldsEnumSerializer
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
+class _$LocationCleansingCommentEnumSerializer
+    implements PrimitiveSerializer<LocationCleansingCommentEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'ADDRESS_DETAILS_VERIFIED': 'ADDRESS_DETAILS_VERIFIED',
+    'NAME_ADDRESS_DETAILS_UPDATED': 'NAME_ADDRESS_DETAILS_UPDATED',
+    'NON_CLOSURE_CONFIRMATION': 'NON_CLOSURE_CONFIRMATION',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'ADDRESS_DETAILS_VERIFIED': 'ADDRESS_DETAILS_VERIFIED',
+    'NAME_ADDRESS_DETAILS_UPDATED': 'NAME_ADDRESS_DETAILS_UPDATED',
+    'NON_CLOSURE_CONFIRMATION': 'NON_CLOSURE_CONFIRMATION',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[LocationCleansingCommentEnum];
+  @override
+  final String wireName = 'LocationCleansingCommentEnum';
+
+  @override
+  Object serialize(Serializers serializers, LocationCleansingCommentEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  LocationCleansingCommentEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      LocationCleansingCommentEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
+class _$LocationCleansingStatusEnumSerializer
+    implements PrimitiveSerializer<LocationCleansingStatusEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'UNKNOWN': 'UNKNOWN',
+    'NOT_NEEDED': 'NOT_NEEDED',
+    'SUBMISSION_NEEDED': 'SUBMISSION_NEEDED',
+    'PENDING': 'PENDING',
+    'CLEANSED': 'CLEANSED',
+    'AUTO_CLEANSED': 'AUTO_CLEANSED',
+    'INVALID_DATA': 'INVALID_DATA',
+    'UPDATE_FAILED': 'UPDATE_FAILED',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'UNKNOWN': 'UNKNOWN',
+    'NOT_NEEDED': 'NOT_NEEDED',
+    'SUBMISSION_NEEDED': 'SUBMISSION_NEEDED',
+    'PENDING': 'PENDING',
+    'CLEANSED': 'CLEANSED',
+    'AUTO_CLEANSED': 'AUTO_CLEANSED',
+    'INVALID_DATA': 'INVALID_DATA',
+    'UPDATE_FAILED': 'UPDATE_FAILED',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[LocationCleansingStatusEnum];
+  @override
+  final String wireName = 'LocationCleansingStatusEnum';
+
+  @override
+  Object serialize(Serializers serializers, LocationCleansingStatusEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  LocationCleansingStatusEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      LocationCleansingStatusEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$Location extends Location {
   @override
   final int? id;
@@ -3588,19 +3588,23 @@ class _$Location extends Location {
   @override
   final LocationTemporarilyClosed? temporarilyClosed;
   @override
+  final String? nameDescriptor;
+  @override
   final EvData? evData;
   @override
   final BuiltSet<LocationFeaturesEnum>? features;
   @override
-  final String? nameDescriptor;
+  final BuiltSet<LocationMissingMandatoryFieldsEnum>? missingMandatoryFields;
   @override
   final BuiltSet<BuiltMap<String, JsonObject>>? moreHours;
   @override
-  final int? profileCompleteness;
+  final int? dataPoints;
   @override
-  final int? publishedListingsCount;
+  final int? listingsBeingUpdated;
   @override
-  final BuiltSet<SocialProfile>? socialProfiles;
+  final int? listingsInSync;
+  @override
+  final LocationPhoto? mainPhoto;
   @override
   final int? businessId;
   @override
@@ -3610,9 +3614,13 @@ class _$Location extends Location {
   @override
   final LocationCleansingStatusEnum? cleansingStatus;
   @override
-  final BuiltList<int>? contentLists;
+  final String? timeZone;
   @override
-  final int? dataPoints;
+  final BuiltList<Video>? videos;
+  @override
+  final int? visibilityIndex;
+  @override
+  final BuiltList<int>? contentLists;
   @override
   final int? activeDirectoriesCount;
   @override
@@ -3622,19 +3630,11 @@ class _$Location extends Location {
   @override
   final JsonObject? customFields;
   @override
-  final int? listingsBeingUpdated;
+  final int? profileCompleteness;
   @override
-  final int? listingsInSync;
+  final int? publishedListingsCount;
   @override
-  final LocationPhoto? mainPhoto;
-  @override
-  final BuiltSet<LocationMissingMandatoryFieldsEnum>? missingMandatoryFields;
-  @override
-  final String? timeZone;
-  @override
-  final BuiltList<Video>? videos;
-  @override
-  final int? visibilityIndex;
+  final BuiltSet<SocialProfile>? socialProfiles;
 
   factory _$Location([void Function(LocationBuilder)? updates]) =>
       (new LocationBuilder()..update(updates))._build();
@@ -3688,30 +3688,30 @@ class _$Location extends Location {
       this.utms,
       this.transactionLinks,
       this.temporarilyClosed,
+      this.nameDescriptor,
       this.evData,
       this.features,
-      this.nameDescriptor,
+      this.missingMandatoryFields,
       this.moreHours,
-      this.profileCompleteness,
-      this.publishedListingsCount,
-      this.socialProfiles,
+      this.dataPoints,
+      this.listingsBeingUpdated,
+      this.listingsInSync,
+      this.mainPhoto,
       this.businessId,
       this.cleansingComment,
       this.cleansingInvalidDataReason,
       this.cleansingStatus,
+      this.timeZone,
+      this.videos,
+      this.visibilityIndex,
       this.contentLists,
-      this.dataPoints,
       this.activeDirectoriesCount,
       this.activeListingsCount,
       this.attributes,
       this.customFields,
-      this.listingsBeingUpdated,
-      this.listingsInSync,
-      this.mainPhoto,
-      this.missingMandatoryFields,
-      this.timeZone,
-      this.videos,
-      this.visibilityIndex})
+      this.profileCompleteness,
+      this.publishedListingsCount,
+      this.socialProfiles})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(name, r'Location', 'name');
     BuiltValueNullFieldError.checkNotNull(street, r'Location', 'street');
@@ -3778,30 +3778,30 @@ class _$Location extends Location {
         utms == other.utms &&
         transactionLinks == other.transactionLinks &&
         temporarilyClosed == other.temporarilyClosed &&
+        nameDescriptor == other.nameDescriptor &&
         evData == other.evData &&
         features == other.features &&
-        nameDescriptor == other.nameDescriptor &&
+        missingMandatoryFields == other.missingMandatoryFields &&
         moreHours == other.moreHours &&
-        profileCompleteness == other.profileCompleteness &&
-        publishedListingsCount == other.publishedListingsCount &&
-        socialProfiles == other.socialProfiles &&
+        dataPoints == other.dataPoints &&
+        listingsBeingUpdated == other.listingsBeingUpdated &&
+        listingsInSync == other.listingsInSync &&
+        mainPhoto == other.mainPhoto &&
         businessId == other.businessId &&
         cleansingComment == other.cleansingComment &&
         cleansingInvalidDataReason == other.cleansingInvalidDataReason &&
         cleansingStatus == other.cleansingStatus &&
+        timeZone == other.timeZone &&
+        videos == other.videos &&
+        visibilityIndex == other.visibilityIndex &&
         contentLists == other.contentLists &&
-        dataPoints == other.dataPoints &&
         activeDirectoriesCount == other.activeDirectoriesCount &&
         activeListingsCount == other.activeListingsCount &&
         attributes == other.attributes &&
         customFields == other.customFields &&
-        listingsBeingUpdated == other.listingsBeingUpdated &&
-        listingsInSync == other.listingsInSync &&
-        mainPhoto == other.mainPhoto &&
-        missingMandatoryFields == other.missingMandatoryFields &&
-        timeZone == other.timeZone &&
-        videos == other.videos &&
-        visibilityIndex == other.visibilityIndex;
+        profileCompleteness == other.profileCompleteness &&
+        publishedListingsCount == other.publishedListingsCount &&
+        socialProfiles == other.socialProfiles;
   }
 
   @override
@@ -3855,30 +3855,30 @@ class _$Location extends Location {
     _$hash = $jc(_$hash, utms.hashCode);
     _$hash = $jc(_$hash, transactionLinks.hashCode);
     _$hash = $jc(_$hash, temporarilyClosed.hashCode);
+    _$hash = $jc(_$hash, nameDescriptor.hashCode);
     _$hash = $jc(_$hash, evData.hashCode);
     _$hash = $jc(_$hash, features.hashCode);
-    _$hash = $jc(_$hash, nameDescriptor.hashCode);
+    _$hash = $jc(_$hash, missingMandatoryFields.hashCode);
     _$hash = $jc(_$hash, moreHours.hashCode);
-    _$hash = $jc(_$hash, profileCompleteness.hashCode);
-    _$hash = $jc(_$hash, publishedListingsCount.hashCode);
-    _$hash = $jc(_$hash, socialProfiles.hashCode);
+    _$hash = $jc(_$hash, dataPoints.hashCode);
+    _$hash = $jc(_$hash, listingsBeingUpdated.hashCode);
+    _$hash = $jc(_$hash, listingsInSync.hashCode);
+    _$hash = $jc(_$hash, mainPhoto.hashCode);
     _$hash = $jc(_$hash, businessId.hashCode);
     _$hash = $jc(_$hash, cleansingComment.hashCode);
     _$hash = $jc(_$hash, cleansingInvalidDataReason.hashCode);
     _$hash = $jc(_$hash, cleansingStatus.hashCode);
+    _$hash = $jc(_$hash, timeZone.hashCode);
+    _$hash = $jc(_$hash, videos.hashCode);
+    _$hash = $jc(_$hash, visibilityIndex.hashCode);
     _$hash = $jc(_$hash, contentLists.hashCode);
-    _$hash = $jc(_$hash, dataPoints.hashCode);
     _$hash = $jc(_$hash, activeDirectoriesCount.hashCode);
     _$hash = $jc(_$hash, activeListingsCount.hashCode);
     _$hash = $jc(_$hash, attributes.hashCode);
     _$hash = $jc(_$hash, customFields.hashCode);
-    _$hash = $jc(_$hash, listingsBeingUpdated.hashCode);
-    _$hash = $jc(_$hash, listingsInSync.hashCode);
-    _$hash = $jc(_$hash, mainPhoto.hashCode);
-    _$hash = $jc(_$hash, missingMandatoryFields.hashCode);
-    _$hash = $jc(_$hash, timeZone.hashCode);
-    _$hash = $jc(_$hash, videos.hashCode);
-    _$hash = $jc(_$hash, visibilityIndex.hashCode);
+    _$hash = $jc(_$hash, profileCompleteness.hashCode);
+    _$hash = $jc(_$hash, publishedListingsCount.hashCode);
+    _$hash = $jc(_$hash, socialProfiles.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -3934,30 +3934,30 @@ class _$Location extends Location {
           ..add('utms', utms)
           ..add('transactionLinks', transactionLinks)
           ..add('temporarilyClosed', temporarilyClosed)
+          ..add('nameDescriptor', nameDescriptor)
           ..add('evData', evData)
           ..add('features', features)
-          ..add('nameDescriptor', nameDescriptor)
+          ..add('missingMandatoryFields', missingMandatoryFields)
           ..add('moreHours', moreHours)
-          ..add('profileCompleteness', profileCompleteness)
-          ..add('publishedListingsCount', publishedListingsCount)
-          ..add('socialProfiles', socialProfiles)
+          ..add('dataPoints', dataPoints)
+          ..add('listingsBeingUpdated', listingsBeingUpdated)
+          ..add('listingsInSync', listingsInSync)
+          ..add('mainPhoto', mainPhoto)
           ..add('businessId', businessId)
           ..add('cleansingComment', cleansingComment)
           ..add('cleansingInvalidDataReason', cleansingInvalidDataReason)
           ..add('cleansingStatus', cleansingStatus)
+          ..add('timeZone', timeZone)
+          ..add('videos', videos)
+          ..add('visibilityIndex', visibilityIndex)
           ..add('contentLists', contentLists)
-          ..add('dataPoints', dataPoints)
           ..add('activeDirectoriesCount', activeDirectoriesCount)
           ..add('activeListingsCount', activeListingsCount)
           ..add('attributes', attributes)
           ..add('customFields', customFields)
-          ..add('listingsBeingUpdated', listingsBeingUpdated)
-          ..add('listingsInSync', listingsInSync)
-          ..add('mainPhoto', mainPhoto)
-          ..add('missingMandatoryFields', missingMandatoryFields)
-          ..add('timeZone', timeZone)
-          ..add('videos', videos)
-          ..add('visibilityIndex', visibilityIndex))
+          ..add('profileCompleteness', profileCompleteness)
+          ..add('publishedListingsCount', publishedListingsCount)
+          ..add('socialProfiles', socialProfiles))
         .toString();
   }
 }
@@ -4189,6 +4189,11 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   set temporarilyClosed(LocationTemporarilyClosedBuilder? temporarilyClosed) =>
       _$this._temporarilyClosed = temporarilyClosed;
 
+  String? _nameDescriptor;
+  String? get nameDescriptor => _$this._nameDescriptor;
+  set nameDescriptor(String? nameDescriptor) =>
+      _$this._nameDescriptor = nameDescriptor;
+
   EvDataBuilder? _evData;
   EvDataBuilder get evData => _$this._evData ??= new EvDataBuilder();
   set evData(EvDataBuilder? evData) => _$this._evData = evData;
@@ -4199,10 +4204,14 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   set features(SetBuilder<LocationFeaturesEnum>? features) =>
       _$this._features = features;
 
-  String? _nameDescriptor;
-  String? get nameDescriptor => _$this._nameDescriptor;
-  set nameDescriptor(String? nameDescriptor) =>
-      _$this._nameDescriptor = nameDescriptor;
+  SetBuilder<LocationMissingMandatoryFieldsEnum>? _missingMandatoryFields;
+  SetBuilder<LocationMissingMandatoryFieldsEnum> get missingMandatoryFields =>
+      _$this._missingMandatoryFields ??=
+          new SetBuilder<LocationMissingMandatoryFieldsEnum>();
+  set missingMandatoryFields(
+          SetBuilder<LocationMissingMandatoryFieldsEnum>?
+              missingMandatoryFields) =>
+      _$this._missingMandatoryFields = missingMandatoryFields;
 
   SetBuilder<BuiltMap<String, JsonObject>>? _moreHours;
   SetBuilder<BuiltMap<String, JsonObject>> get moreHours =>
@@ -4210,21 +4219,25 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   set moreHours(SetBuilder<BuiltMap<String, JsonObject>>? moreHours) =>
       _$this._moreHours = moreHours;
 
-  int? _profileCompleteness;
-  int? get profileCompleteness => _$this._profileCompleteness;
-  set profileCompleteness(int? profileCompleteness) =>
-      _$this._profileCompleteness = profileCompleteness;
+  int? _dataPoints;
+  int? get dataPoints => _$this._dataPoints;
+  set dataPoints(int? dataPoints) => _$this._dataPoints = dataPoints;
 
-  int? _publishedListingsCount;
-  int? get publishedListingsCount => _$this._publishedListingsCount;
-  set publishedListingsCount(int? publishedListingsCount) =>
-      _$this._publishedListingsCount = publishedListingsCount;
+  int? _listingsBeingUpdated;
+  int? get listingsBeingUpdated => _$this._listingsBeingUpdated;
+  set listingsBeingUpdated(int? listingsBeingUpdated) =>
+      _$this._listingsBeingUpdated = listingsBeingUpdated;
 
-  SetBuilder<SocialProfile>? _socialProfiles;
-  SetBuilder<SocialProfile> get socialProfiles =>
-      _$this._socialProfiles ??= new SetBuilder<SocialProfile>();
-  set socialProfiles(SetBuilder<SocialProfile>? socialProfiles) =>
-      _$this._socialProfiles = socialProfiles;
+  int? _listingsInSync;
+  int? get listingsInSync => _$this._listingsInSync;
+  set listingsInSync(int? listingsInSync) =>
+      _$this._listingsInSync = listingsInSync;
+
+  LocationPhotoBuilder? _mainPhoto;
+  LocationPhotoBuilder get mainPhoto =>
+      _$this._mainPhoto ??= new LocationPhotoBuilder();
+  set mainPhoto(LocationPhotoBuilder? mainPhoto) =>
+      _$this._mainPhoto = mainPhoto;
 
   int? _businessId;
   int? get businessId => _$this._businessId;
@@ -4246,15 +4259,24 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   set cleansingStatus(LocationCleansingStatusEnum? cleansingStatus) =>
       _$this._cleansingStatus = cleansingStatus;
 
+  String? _timeZone;
+  String? get timeZone => _$this._timeZone;
+  set timeZone(String? timeZone) => _$this._timeZone = timeZone;
+
+  ListBuilder<Video>? _videos;
+  ListBuilder<Video> get videos => _$this._videos ??= new ListBuilder<Video>();
+  set videos(ListBuilder<Video>? videos) => _$this._videos = videos;
+
+  int? _visibilityIndex;
+  int? get visibilityIndex => _$this._visibilityIndex;
+  set visibilityIndex(int? visibilityIndex) =>
+      _$this._visibilityIndex = visibilityIndex;
+
   ListBuilder<int>? _contentLists;
   ListBuilder<int> get contentLists =>
       _$this._contentLists ??= new ListBuilder<int>();
   set contentLists(ListBuilder<int>? contentLists) =>
       _$this._contentLists = contentLists;
-
-  int? _dataPoints;
-  int? get dataPoints => _$this._dataPoints;
-  set dataPoints(int? dataPoints) => _$this._dataPoints = dataPoints;
 
   int? _activeDirectoriesCount;
   int? get activeDirectoriesCount => _$this._activeDirectoriesCount;
@@ -4277,43 +4299,21 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   set customFields(JsonObject? customFields) =>
       _$this._customFields = customFields;
 
-  int? _listingsBeingUpdated;
-  int? get listingsBeingUpdated => _$this._listingsBeingUpdated;
-  set listingsBeingUpdated(int? listingsBeingUpdated) =>
-      _$this._listingsBeingUpdated = listingsBeingUpdated;
+  int? _profileCompleteness;
+  int? get profileCompleteness => _$this._profileCompleteness;
+  set profileCompleteness(int? profileCompleteness) =>
+      _$this._profileCompleteness = profileCompleteness;
 
-  int? _listingsInSync;
-  int? get listingsInSync => _$this._listingsInSync;
-  set listingsInSync(int? listingsInSync) =>
-      _$this._listingsInSync = listingsInSync;
+  int? _publishedListingsCount;
+  int? get publishedListingsCount => _$this._publishedListingsCount;
+  set publishedListingsCount(int? publishedListingsCount) =>
+      _$this._publishedListingsCount = publishedListingsCount;
 
-  LocationPhotoBuilder? _mainPhoto;
-  LocationPhotoBuilder get mainPhoto =>
-      _$this._mainPhoto ??= new LocationPhotoBuilder();
-  set mainPhoto(LocationPhotoBuilder? mainPhoto) =>
-      _$this._mainPhoto = mainPhoto;
-
-  SetBuilder<LocationMissingMandatoryFieldsEnum>? _missingMandatoryFields;
-  SetBuilder<LocationMissingMandatoryFieldsEnum> get missingMandatoryFields =>
-      _$this._missingMandatoryFields ??=
-          new SetBuilder<LocationMissingMandatoryFieldsEnum>();
-  set missingMandatoryFields(
-          SetBuilder<LocationMissingMandatoryFieldsEnum>?
-              missingMandatoryFields) =>
-      _$this._missingMandatoryFields = missingMandatoryFields;
-
-  String? _timeZone;
-  String? get timeZone => _$this._timeZone;
-  set timeZone(String? timeZone) => _$this._timeZone = timeZone;
-
-  ListBuilder<Video>? _videos;
-  ListBuilder<Video> get videos => _$this._videos ??= new ListBuilder<Video>();
-  set videos(ListBuilder<Video>? videos) => _$this._videos = videos;
-
-  int? _visibilityIndex;
-  int? get visibilityIndex => _$this._visibilityIndex;
-  set visibilityIndex(int? visibilityIndex) =>
-      _$this._visibilityIndex = visibilityIndex;
+  SetBuilder<SocialProfile>? _socialProfiles;
+  SetBuilder<SocialProfile> get socialProfiles =>
+      _$this._socialProfiles ??= new SetBuilder<SocialProfile>();
+  set socialProfiles(SetBuilder<SocialProfile>? socialProfiles) =>
+      _$this._socialProfiles = socialProfiles;
 
   LocationBuilder() {
     Location._defaults(this);
@@ -4370,30 +4370,30 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
       _utms = $v.utms?.toBuilder();
       _transactionLinks = $v.transactionLinks?.toBuilder();
       _temporarilyClosed = $v.temporarilyClosed?.toBuilder();
+      _nameDescriptor = $v.nameDescriptor;
       _evData = $v.evData?.toBuilder();
       _features = $v.features?.toBuilder();
-      _nameDescriptor = $v.nameDescriptor;
+      _missingMandatoryFields = $v.missingMandatoryFields?.toBuilder();
       _moreHours = $v.moreHours?.toBuilder();
-      _profileCompleteness = $v.profileCompleteness;
-      _publishedListingsCount = $v.publishedListingsCount;
-      _socialProfiles = $v.socialProfiles?.toBuilder();
+      _dataPoints = $v.dataPoints;
+      _listingsBeingUpdated = $v.listingsBeingUpdated;
+      _listingsInSync = $v.listingsInSync;
+      _mainPhoto = $v.mainPhoto?.toBuilder();
       _businessId = $v.businessId;
       _cleansingComment = $v.cleansingComment;
       _cleansingInvalidDataReason = $v.cleansingInvalidDataReason;
       _cleansingStatus = $v.cleansingStatus;
+      _timeZone = $v.timeZone;
+      _videos = $v.videos?.toBuilder();
+      _visibilityIndex = $v.visibilityIndex;
       _contentLists = $v.contentLists?.toBuilder();
-      _dataPoints = $v.dataPoints;
       _activeDirectoriesCount = $v.activeDirectoriesCount;
       _activeListingsCount = $v.activeListingsCount;
       _attributes = $v.attributes?.toBuilder();
       _customFields = $v.customFields;
-      _listingsBeingUpdated = $v.listingsBeingUpdated;
-      _listingsInSync = $v.listingsInSync;
-      _mainPhoto = $v.mainPhoto?.toBuilder();
-      _missingMandatoryFields = $v.missingMandatoryFields?.toBuilder();
-      _timeZone = $v.timeZone;
-      _videos = $v.videos?.toBuilder();
-      _visibilityIndex = $v.visibilityIndex;
+      _profileCompleteness = $v.profileCompleteness;
+      _publishedListingsCount = $v.publishedListingsCount;
+      _socialProfiles = $v.socialProfiles?.toBuilder();
       _$v = null;
     }
     return this;
@@ -4470,30 +4470,30 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
             utms: _utms?.build(),
             transactionLinks: _transactionLinks?.build(),
             temporarilyClosed: _temporarilyClosed?.build(),
+            nameDescriptor: nameDescriptor,
             evData: _evData?.build(),
             features: _features?.build(),
-            nameDescriptor: nameDescriptor,
+            missingMandatoryFields: _missingMandatoryFields?.build(),
             moreHours: _moreHours?.build(),
-            profileCompleteness: profileCompleteness,
-            publishedListingsCount: publishedListingsCount,
-            socialProfiles: _socialProfiles?.build(),
+            dataPoints: dataPoints,
+            listingsBeingUpdated: listingsBeingUpdated,
+            listingsInSync: listingsInSync,
+            mainPhoto: _mainPhoto?.build(),
             businessId: businessId,
             cleansingComment: cleansingComment,
             cleansingInvalidDataReason: cleansingInvalidDataReason,
             cleansingStatus: cleansingStatus,
+            timeZone: timeZone,
+            videos: _videos?.build(),
+            visibilityIndex: visibilityIndex,
             contentLists: _contentLists?.build(),
-            dataPoints: dataPoints,
             activeDirectoriesCount: activeDirectoriesCount,
             activeListingsCount: activeListingsCount,
             attributes: _attributes?.build(),
             customFields: customFields,
-            listingsBeingUpdated: listingsBeingUpdated,
-            listingsInSync: listingsInSync,
-            mainPhoto: _mainPhoto?.build(),
-            missingMandatoryFields: _missingMandatoryFields?.build(),
-            timeZone: timeZone,
-            videos: _videos?.build(),
-            visibilityIndex: visibilityIndex,
+            profileCompleteness: profileCompleteness,
+            publishedListingsCount: publishedListingsCount,
+            socialProfiles: _socialProfiles?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -4533,16 +4533,21 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
         _transactionLinks?.build();
         _$failedField = 'temporarilyClosed';
         _temporarilyClosed?.build();
+
         _$failedField = 'evData';
         _evData?.build();
         _$failedField = 'features';
         _features?.build();
-
+        _$failedField = 'missingMandatoryFields';
+        _missingMandatoryFields?.build();
         _$failedField = 'moreHours';
         _moreHours?.build();
 
-        _$failedField = 'socialProfiles';
-        _socialProfiles?.build();
+        _$failedField = 'mainPhoto';
+        _mainPhoto?.build();
+
+        _$failedField = 'videos';
+        _videos?.build();
 
         _$failedField = 'contentLists';
         _contentLists?.build();
@@ -4550,13 +4555,8 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
         _$failedField = 'attributes';
         _attributes?.build();
 
-        _$failedField = 'mainPhoto';
-        _mainPhoto?.build();
-        _$failedField = 'missingMandatoryFields';
-        _missingMandatoryFields?.build();
-
-        _$failedField = 'videos';
-        _videos?.build();
+        _$failedField = 'socialProfiles';
+        _socialProfiles?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'Location', _$failedField, e.toString());

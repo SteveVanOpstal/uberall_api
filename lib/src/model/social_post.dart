@@ -28,17 +28,17 @@ part 'social_post.g.dart';
 /// * [labels] - The list of location labels as entered when creating/updating the Social Post.
 /// * [callToActions]
 /// * [firstComment] - The first comment to be posted after a post creation. Only available for INSTAGRAM
-/// * [locationGroupIds] - List of locationIds that should be excluded from the request. Can be used in combination with businessId when some locations should not be considered.
-/// * [businessIds] - List of locationIds that should be excluded from the request. Can be used in combination with businessId when some locations should not be considered.
-/// * [locationIds] - List of locationIds that should be excluded from the request. Can be used in combination with businessId when some locations should not be considered.
-/// * [listingPageIds] - List of locationIds that should be excluded from the request. Can be used in combination with businessId when some locations should not be considered.
-/// * [businessPageIds] - List of locationIds that should be excluded from the request. Can be used in combination with businessId when some locations should not be considered.
-/// * [excludedLocationIds] - List of locationIds that should be excluded from the request. Can be used in combination with businessId when some locations should not be considered.
+/// * [businessIds] - The list of location group IDs as entered when creating/updating the Social Post.
+/// * [locationIds] - The list of location group IDs as entered when creating/updating the Social Post.
+/// * [listingPageIds] - The list of location group IDs as entered when creating/updating the Social Post.
+/// * [businessPageIds] - The list of location group IDs as entered when creating/updating the Social Post.
+/// * [excludedLocationIds] - The list of location group IDs as entered when creating/updating the Social Post.
 /// * [directories] - The video of the social post (can only be one)
 /// * [photos] - The social post''s photos
 /// * [couponCode] - A couponCode for redeeming a \"Special Offer\" (SocialPost.type=OFFER). Currently only supported for Google Posts.
 /// * [termsAndConditions] - Terms and Conditions for redeeming a \"Special Offer\" (SocialPost.type=OFFER). Currently only supported for Google Posts.
 /// * [videos] - The video of the social post (can only be one)
+/// * [locationGroupIds] - The list of location group IDs as entered when creating/updating the Social Post.
 @BuiltValue()
 abstract class SocialPost implements Built<SocialPost, SocialPostBuilder> {
   /// The title of the Social Post. For type QUESTION_AND_ANSWER this is going to be the question.
@@ -99,27 +99,23 @@ abstract class SocialPost implements Built<SocialPost, SocialPostBuilder> {
   @BuiltValueField(wireName: r'firstComment')
   String? get firstComment;
 
-  /// List of locationIds that should be excluded from the request. Can be used in combination with businessId when some locations should not be considered.
-  @BuiltValueField(wireName: r'locationGroupIds')
-  BuiltList<int>? get locationGroupIds;
-
-  /// List of locationIds that should be excluded from the request. Can be used in combination with businessId when some locations should not be considered.
+  /// The list of location group IDs as entered when creating/updating the Social Post.
   @BuiltValueField(wireName: r'businessIds')
   BuiltList<int>? get businessIds;
 
-  /// List of locationIds that should be excluded from the request. Can be used in combination with businessId when some locations should not be considered.
+  /// The list of location group IDs as entered when creating/updating the Social Post.
   @BuiltValueField(wireName: r'locationIds')
   BuiltList<int>? get locationIds;
 
-  /// List of locationIds that should be excluded from the request. Can be used in combination with businessId when some locations should not be considered.
+  /// The list of location group IDs as entered when creating/updating the Social Post.
   @BuiltValueField(wireName: r'listingPageIds')
   BuiltList<int>? get listingPageIds;
 
-  /// List of locationIds that should be excluded from the request. Can be used in combination with businessId when some locations should not be considered.
+  /// The list of location group IDs as entered when creating/updating the Social Post.
   @BuiltValueField(wireName: r'businessPageIds')
   BuiltList<int>? get businessPageIds;
 
-  /// List of locationIds that should be excluded from the request. Can be used in combination with businessId when some locations should not be considered.
+  /// The list of location group IDs as entered when creating/updating the Social Post.
   @BuiltValueField(wireName: r'excludedLocationIds')
   BuiltList<int>? get excludedLocationIds;
 
@@ -142,6 +138,10 @@ abstract class SocialPost implements Built<SocialPost, SocialPostBuilder> {
   /// The video of the social post (can only be one)
   @BuiltValueField(wireName: r'videos')
   BuiltList<String>? get videos;
+
+  /// The list of location group IDs as entered when creating/updating the Social Post.
+  @BuiltValueField(wireName: r'locationGroupIds')
+  BuiltList<int>? get locationGroupIds;
 
   SocialPost._();
 
@@ -261,13 +261,6 @@ class _$SocialPostSerializer implements PrimitiveSerializer<SocialPost> {
         specifiedType: const FullType(String),
       );
     }
-    if (object.locationGroupIds != null) {
-      yield r'locationGroupIds';
-      yield serializers.serialize(
-        object.locationGroupIds,
-        specifiedType: const FullType(BuiltList, [FullType(int)]),
-      );
-    }
     if (object.businessIds != null) {
       yield r'businessIds';
       yield serializers.serialize(
@@ -334,6 +327,13 @@ class _$SocialPostSerializer implements PrimitiveSerializer<SocialPost> {
       yield serializers.serialize(
         object.videos,
         specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
+    if (object.locationGroupIds != null) {
+      yield r'locationGroupIds';
+      yield serializers.serialize(
+        object.locationGroupIds,
+        specifiedType: const FullType(BuiltList, [FullType(int)]),
       );
     }
   }
@@ -460,13 +460,6 @@ class _$SocialPostSerializer implements PrimitiveSerializer<SocialPost> {
           ) as String;
           result.firstComment = valueDes;
           break;
-        case r'locationGroupIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(int)]),
-          ) as BuiltList<int>;
-          result.locationGroupIds.replace(valueDes);
-          break;
         case r'businessIds':
           final valueDes = serializers.deserialize(
             value,
@@ -537,6 +530,13 @@ class _$SocialPostSerializer implements PrimitiveSerializer<SocialPost> {
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.videos.replace(valueDes);
+          break;
+        case r'locationGroupIds':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(int)]),
+          ) as BuiltList<int>;
+          result.locationGroupIds.replace(valueDes);
           break;
         default:
           unhandled.add(key);

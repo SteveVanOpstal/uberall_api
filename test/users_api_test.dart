@@ -8,8 +8,12 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-import 'package:uberall_api/api.dart';
+import 'package:dio/dio.dart';
 import 'package:test/test.dart';
+import 'package:uberall_api/uberall_api.dart';
+
+// final dio = Dio(BaseOptions(baseUrl: 'https://uberall.com/api'))
+//   ..interceptors.add(ApiKeyAuthInterceptor());
 
 /// tests for UsersApi
 void main() {

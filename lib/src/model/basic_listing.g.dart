@@ -16,16 +16,6 @@ const BasicListingNameStatusEnum _$basicListingNameStatusEnum_MISSING =
     const BasicListingNameStatusEnum._('MISSING');
 const BasicListingNameStatusEnum _$basicListingNameStatusEnum_NOT_APPLICABLE =
     const BasicListingNameStatusEnum._('NOT_APPLICABLE');
-const BasicListingNameStatusEnum _$basicListingNameStatusEnum_MATCH2 =
-    const BasicListingNameStatusEnum._('MATCH2');
-const BasicListingNameStatusEnum _$basicListingNameStatusEnum_MISMATCH2 =
-    const BasicListingNameStatusEnum._('MISMATCH2');
-const BasicListingNameStatusEnum _$basicListingNameStatusEnum_PRESENT2 =
-    const BasicListingNameStatusEnum._('PRESENT2');
-const BasicListingNameStatusEnum _$basicListingNameStatusEnum_MISSING2 =
-    const BasicListingNameStatusEnum._('MISSING2');
-const BasicListingNameStatusEnum _$basicListingNameStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingNameStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingNameStatusEnum _$basicListingNameStatusEnumValueOf(String name) {
   switch (name) {
@@ -39,16 +29,6 @@ BasicListingNameStatusEnum _$basicListingNameStatusEnumValueOf(String name) {
       return _$basicListingNameStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingNameStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingNameStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingNameStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingNameStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingNameStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingNameStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -61,11 +41,6 @@ final BuiltSet<BasicListingNameStatusEnum> _$basicListingNameStatusEnumValues =
   _$basicListingNameStatusEnum_PRESENT,
   _$basicListingNameStatusEnum_MISSING,
   _$basicListingNameStatusEnum_NOT_APPLICABLE,
-  _$basicListingNameStatusEnum_MATCH2,
-  _$basicListingNameStatusEnum_MISMATCH2,
-  _$basicListingNameStatusEnum_PRESENT2,
-  _$basicListingNameStatusEnum_MISSING2,
-  _$basicListingNameStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingStreetStatusEnum _$basicListingStreetStatusEnum_MATCH =
@@ -79,17 +54,6 @@ const BasicListingStreetStatusEnum _$basicListingStreetStatusEnum_MISSING =
 const BasicListingStreetStatusEnum
     _$basicListingStreetStatusEnum_NOT_APPLICABLE =
     const BasicListingStreetStatusEnum._('NOT_APPLICABLE');
-const BasicListingStreetStatusEnum _$basicListingStreetStatusEnum_MATCH2 =
-    const BasicListingStreetStatusEnum._('MATCH2');
-const BasicListingStreetStatusEnum _$basicListingStreetStatusEnum_MISMATCH2 =
-    const BasicListingStreetStatusEnum._('MISMATCH2');
-const BasicListingStreetStatusEnum _$basicListingStreetStatusEnum_PRESENT2 =
-    const BasicListingStreetStatusEnum._('PRESENT2');
-const BasicListingStreetStatusEnum _$basicListingStreetStatusEnum_MISSING2 =
-    const BasicListingStreetStatusEnum._('MISSING2');
-const BasicListingStreetStatusEnum
-    _$basicListingStreetStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingStreetStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingStreetStatusEnum _$basicListingStreetStatusEnumValueOf(
     String name) {
@@ -104,16 +68,6 @@ BasicListingStreetStatusEnum _$basicListingStreetStatusEnumValueOf(
       return _$basicListingStreetStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingStreetStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingStreetStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingStreetStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingStreetStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingStreetStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingStreetStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -127,11 +81,6 @@ final BuiltSet<BasicListingStreetStatusEnum>
   _$basicListingStreetStatusEnum_PRESENT,
   _$basicListingStreetStatusEnum_MISSING,
   _$basicListingStreetStatusEnum_NOT_APPLICABLE,
-  _$basicListingStreetStatusEnum_MATCH2,
-  _$basicListingStreetStatusEnum_MISMATCH2,
-  _$basicListingStreetStatusEnum_PRESENT2,
-  _$basicListingStreetStatusEnum_MISSING2,
-  _$basicListingStreetStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingStreetNoStatusEnum _$basicListingStreetNoStatusEnum_MATCH =
@@ -145,18 +94,6 @@ const BasicListingStreetNoStatusEnum _$basicListingStreetNoStatusEnum_MISSING =
 const BasicListingStreetNoStatusEnum
     _$basicListingStreetNoStatusEnum_NOT_APPLICABLE =
     const BasicListingStreetNoStatusEnum._('NOT_APPLICABLE');
-const BasicListingStreetNoStatusEnum _$basicListingStreetNoStatusEnum_MATCH2 =
-    const BasicListingStreetNoStatusEnum._('MATCH2');
-const BasicListingStreetNoStatusEnum
-    _$basicListingStreetNoStatusEnum_MISMATCH2 =
-    const BasicListingStreetNoStatusEnum._('MISMATCH2');
-const BasicListingStreetNoStatusEnum _$basicListingStreetNoStatusEnum_PRESENT2 =
-    const BasicListingStreetNoStatusEnum._('PRESENT2');
-const BasicListingStreetNoStatusEnum _$basicListingStreetNoStatusEnum_MISSING2 =
-    const BasicListingStreetNoStatusEnum._('MISSING2');
-const BasicListingStreetNoStatusEnum
-    _$basicListingStreetNoStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingStreetNoStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingStreetNoStatusEnum _$basicListingStreetNoStatusEnumValueOf(
     String name) {
@@ -171,16 +108,6 @@ BasicListingStreetNoStatusEnum _$basicListingStreetNoStatusEnumValueOf(
       return _$basicListingStreetNoStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingStreetNoStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingStreetNoStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingStreetNoStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingStreetNoStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingStreetNoStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingStreetNoStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -194,11 +121,6 @@ final BuiltSet<BasicListingStreetNoStatusEnum>
   _$basicListingStreetNoStatusEnum_PRESENT,
   _$basicListingStreetNoStatusEnum_MISSING,
   _$basicListingStreetNoStatusEnum_NOT_APPLICABLE,
-  _$basicListingStreetNoStatusEnum_MATCH2,
-  _$basicListingStreetNoStatusEnum_MISMATCH2,
-  _$basicListingStreetNoStatusEnum_PRESENT2,
-  _$basicListingStreetNoStatusEnum_MISSING2,
-  _$basicListingStreetNoStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingStreetTypeEnum _$basicListingStreetTypeEnum_ALAMEDA =
@@ -323,21 +245,6 @@ const BasicListingStreetTypeStatusEnum
 const BasicListingStreetTypeStatusEnum
     _$basicListingStreetTypeStatusEnum_NOT_APPLICABLE =
     const BasicListingStreetTypeStatusEnum._('NOT_APPLICABLE');
-const BasicListingStreetTypeStatusEnum
-    _$basicListingStreetTypeStatusEnum_MATCH2 =
-    const BasicListingStreetTypeStatusEnum._('MATCH2');
-const BasicListingStreetTypeStatusEnum
-    _$basicListingStreetTypeStatusEnum_MISMATCH2 =
-    const BasicListingStreetTypeStatusEnum._('MISMATCH2');
-const BasicListingStreetTypeStatusEnum
-    _$basicListingStreetTypeStatusEnum_PRESENT2 =
-    const BasicListingStreetTypeStatusEnum._('PRESENT2');
-const BasicListingStreetTypeStatusEnum
-    _$basicListingStreetTypeStatusEnum_MISSING2 =
-    const BasicListingStreetTypeStatusEnum._('MISSING2');
-const BasicListingStreetTypeStatusEnum
-    _$basicListingStreetTypeStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingStreetTypeStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingStreetTypeStatusEnum _$basicListingStreetTypeStatusEnumValueOf(
     String name) {
@@ -352,16 +259,6 @@ BasicListingStreetTypeStatusEnum _$basicListingStreetTypeStatusEnumValueOf(
       return _$basicListingStreetTypeStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingStreetTypeStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingStreetTypeStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingStreetTypeStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingStreetTypeStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingStreetTypeStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingStreetTypeStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -375,11 +272,6 @@ final BuiltSet<BasicListingStreetTypeStatusEnum>
   _$basicListingStreetTypeStatusEnum_PRESENT,
   _$basicListingStreetTypeStatusEnum_MISSING,
   _$basicListingStreetTypeStatusEnum_NOT_APPLICABLE,
-  _$basicListingStreetTypeStatusEnum_MATCH2,
-  _$basicListingStreetTypeStatusEnum_MISMATCH2,
-  _$basicListingStreetTypeStatusEnum_PRESENT2,
-  _$basicListingStreetTypeStatusEnum_MISSING2,
-  _$basicListingStreetTypeStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingStreetAndNoStatusEnum
@@ -397,21 +289,6 @@ const BasicListingStreetAndNoStatusEnum
 const BasicListingStreetAndNoStatusEnum
     _$basicListingStreetAndNoStatusEnum_NOT_APPLICABLE =
     const BasicListingStreetAndNoStatusEnum._('NOT_APPLICABLE');
-const BasicListingStreetAndNoStatusEnum
-    _$basicListingStreetAndNoStatusEnum_MATCH2 =
-    const BasicListingStreetAndNoStatusEnum._('MATCH2');
-const BasicListingStreetAndNoStatusEnum
-    _$basicListingStreetAndNoStatusEnum_MISMATCH2 =
-    const BasicListingStreetAndNoStatusEnum._('MISMATCH2');
-const BasicListingStreetAndNoStatusEnum
-    _$basicListingStreetAndNoStatusEnum_PRESENT2 =
-    const BasicListingStreetAndNoStatusEnum._('PRESENT2');
-const BasicListingStreetAndNoStatusEnum
-    _$basicListingStreetAndNoStatusEnum_MISSING2 =
-    const BasicListingStreetAndNoStatusEnum._('MISSING2');
-const BasicListingStreetAndNoStatusEnum
-    _$basicListingStreetAndNoStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingStreetAndNoStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingStreetAndNoStatusEnum _$basicListingStreetAndNoStatusEnumValueOf(
     String name) {
@@ -426,16 +303,6 @@ BasicListingStreetAndNoStatusEnum _$basicListingStreetAndNoStatusEnumValueOf(
       return _$basicListingStreetAndNoStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingStreetAndNoStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingStreetAndNoStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingStreetAndNoStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingStreetAndNoStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingStreetAndNoStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingStreetAndNoStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -449,11 +316,6 @@ final BuiltSet<BasicListingStreetAndNoStatusEnum>
   _$basicListingStreetAndNoStatusEnum_PRESENT,
   _$basicListingStreetAndNoStatusEnum_MISSING,
   _$basicListingStreetAndNoStatusEnum_NOT_APPLICABLE,
-  _$basicListingStreetAndNoStatusEnum_MATCH2,
-  _$basicListingStreetAndNoStatusEnum_MISMATCH2,
-  _$basicListingStreetAndNoStatusEnum_PRESENT2,
-  _$basicListingStreetAndNoStatusEnum_MISSING2,
-  _$basicListingStreetAndNoStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingAddressExtraStatusEnum
@@ -471,21 +333,6 @@ const BasicListingAddressExtraStatusEnum
 const BasicListingAddressExtraStatusEnum
     _$basicListingAddressExtraStatusEnum_NOT_APPLICABLE =
     const BasicListingAddressExtraStatusEnum._('NOT_APPLICABLE');
-const BasicListingAddressExtraStatusEnum
-    _$basicListingAddressExtraStatusEnum_MATCH2 =
-    const BasicListingAddressExtraStatusEnum._('MATCH2');
-const BasicListingAddressExtraStatusEnum
-    _$basicListingAddressExtraStatusEnum_MISMATCH2 =
-    const BasicListingAddressExtraStatusEnum._('MISMATCH2');
-const BasicListingAddressExtraStatusEnum
-    _$basicListingAddressExtraStatusEnum_PRESENT2 =
-    const BasicListingAddressExtraStatusEnum._('PRESENT2');
-const BasicListingAddressExtraStatusEnum
-    _$basicListingAddressExtraStatusEnum_MISSING2 =
-    const BasicListingAddressExtraStatusEnum._('MISSING2');
-const BasicListingAddressExtraStatusEnum
-    _$basicListingAddressExtraStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingAddressExtraStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingAddressExtraStatusEnum _$basicListingAddressExtraStatusEnumValueOf(
     String name) {
@@ -500,16 +347,6 @@ BasicListingAddressExtraStatusEnum _$basicListingAddressExtraStatusEnumValueOf(
       return _$basicListingAddressExtraStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingAddressExtraStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingAddressExtraStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingAddressExtraStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingAddressExtraStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingAddressExtraStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingAddressExtraStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -523,11 +360,6 @@ final BuiltSet<BasicListingAddressExtraStatusEnum>
   _$basicListingAddressExtraStatusEnum_PRESENT,
   _$basicListingAddressExtraStatusEnum_MISSING,
   _$basicListingAddressExtraStatusEnum_NOT_APPLICABLE,
-  _$basicListingAddressExtraStatusEnum_MATCH2,
-  _$basicListingAddressExtraStatusEnum_MISMATCH2,
-  _$basicListingAddressExtraStatusEnum_PRESENT2,
-  _$basicListingAddressExtraStatusEnum_MISSING2,
-  _$basicListingAddressExtraStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingZipStatusEnum _$basicListingZipStatusEnum_MATCH =
@@ -540,16 +372,6 @@ const BasicListingZipStatusEnum _$basicListingZipStatusEnum_MISSING =
     const BasicListingZipStatusEnum._('MISSING');
 const BasicListingZipStatusEnum _$basicListingZipStatusEnum_NOT_APPLICABLE =
     const BasicListingZipStatusEnum._('NOT_APPLICABLE');
-const BasicListingZipStatusEnum _$basicListingZipStatusEnum_MATCH2 =
-    const BasicListingZipStatusEnum._('MATCH2');
-const BasicListingZipStatusEnum _$basicListingZipStatusEnum_MISMATCH2 =
-    const BasicListingZipStatusEnum._('MISMATCH2');
-const BasicListingZipStatusEnum _$basicListingZipStatusEnum_PRESENT2 =
-    const BasicListingZipStatusEnum._('PRESENT2');
-const BasicListingZipStatusEnum _$basicListingZipStatusEnum_MISSING2 =
-    const BasicListingZipStatusEnum._('MISSING2');
-const BasicListingZipStatusEnum _$basicListingZipStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingZipStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingZipStatusEnum _$basicListingZipStatusEnumValueOf(String name) {
   switch (name) {
@@ -563,16 +385,6 @@ BasicListingZipStatusEnum _$basicListingZipStatusEnumValueOf(String name) {
       return _$basicListingZipStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingZipStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingZipStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingZipStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingZipStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingZipStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingZipStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -585,11 +397,6 @@ final BuiltSet<BasicListingZipStatusEnum> _$basicListingZipStatusEnumValues =
   _$basicListingZipStatusEnum_PRESENT,
   _$basicListingZipStatusEnum_MISSING,
   _$basicListingZipStatusEnum_NOT_APPLICABLE,
-  _$basicListingZipStatusEnum_MATCH2,
-  _$basicListingZipStatusEnum_MISMATCH2,
-  _$basicListingZipStatusEnum_PRESENT2,
-  _$basicListingZipStatusEnum_MISSING2,
-  _$basicListingZipStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingCityStatusEnum _$basicListingCityStatusEnum_MATCH =
@@ -602,16 +409,6 @@ const BasicListingCityStatusEnum _$basicListingCityStatusEnum_MISSING =
     const BasicListingCityStatusEnum._('MISSING');
 const BasicListingCityStatusEnum _$basicListingCityStatusEnum_NOT_APPLICABLE =
     const BasicListingCityStatusEnum._('NOT_APPLICABLE');
-const BasicListingCityStatusEnum _$basicListingCityStatusEnum_MATCH2 =
-    const BasicListingCityStatusEnum._('MATCH2');
-const BasicListingCityStatusEnum _$basicListingCityStatusEnum_MISMATCH2 =
-    const BasicListingCityStatusEnum._('MISMATCH2');
-const BasicListingCityStatusEnum _$basicListingCityStatusEnum_PRESENT2 =
-    const BasicListingCityStatusEnum._('PRESENT2');
-const BasicListingCityStatusEnum _$basicListingCityStatusEnum_MISSING2 =
-    const BasicListingCityStatusEnum._('MISSING2');
-const BasicListingCityStatusEnum _$basicListingCityStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingCityStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingCityStatusEnum _$basicListingCityStatusEnumValueOf(String name) {
   switch (name) {
@@ -625,16 +422,6 @@ BasicListingCityStatusEnum _$basicListingCityStatusEnumValueOf(String name) {
       return _$basicListingCityStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingCityStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingCityStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingCityStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingCityStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingCityStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingCityStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -647,11 +434,6 @@ final BuiltSet<BasicListingCityStatusEnum> _$basicListingCityStatusEnumValues =
   _$basicListingCityStatusEnum_PRESENT,
   _$basicListingCityStatusEnum_MISSING,
   _$basicListingCityStatusEnum_NOT_APPLICABLE,
-  _$basicListingCityStatusEnum_MATCH2,
-  _$basicListingCityStatusEnum_MISMATCH2,
-  _$basicListingCityStatusEnum_PRESENT2,
-  _$basicListingCityStatusEnum_MISSING2,
-  _$basicListingCityStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingAddressDisplayStatusEnum
@@ -669,21 +451,6 @@ const BasicListingAddressDisplayStatusEnum
 const BasicListingAddressDisplayStatusEnum
     _$basicListingAddressDisplayStatusEnum_NOT_APPLICABLE =
     const BasicListingAddressDisplayStatusEnum._('NOT_APPLICABLE');
-const BasicListingAddressDisplayStatusEnum
-    _$basicListingAddressDisplayStatusEnum_MATCH2 =
-    const BasicListingAddressDisplayStatusEnum._('MATCH2');
-const BasicListingAddressDisplayStatusEnum
-    _$basicListingAddressDisplayStatusEnum_MISMATCH2 =
-    const BasicListingAddressDisplayStatusEnum._('MISMATCH2');
-const BasicListingAddressDisplayStatusEnum
-    _$basicListingAddressDisplayStatusEnum_PRESENT2 =
-    const BasicListingAddressDisplayStatusEnum._('PRESENT2');
-const BasicListingAddressDisplayStatusEnum
-    _$basicListingAddressDisplayStatusEnum_MISSING2 =
-    const BasicListingAddressDisplayStatusEnum._('MISSING2');
-const BasicListingAddressDisplayStatusEnum
-    _$basicListingAddressDisplayStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingAddressDisplayStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingAddressDisplayStatusEnum
     _$basicListingAddressDisplayStatusEnumValueOf(String name) {
@@ -698,16 +465,6 @@ BasicListingAddressDisplayStatusEnum
       return _$basicListingAddressDisplayStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingAddressDisplayStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingAddressDisplayStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingAddressDisplayStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingAddressDisplayStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingAddressDisplayStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingAddressDisplayStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -721,11 +478,6 @@ final BuiltSet<BasicListingAddressDisplayStatusEnum>
   _$basicListingAddressDisplayStatusEnum_PRESENT,
   _$basicListingAddressDisplayStatusEnum_MISSING,
   _$basicListingAddressDisplayStatusEnum_NOT_APPLICABLE,
-  _$basicListingAddressDisplayStatusEnum_MATCH2,
-  _$basicListingAddressDisplayStatusEnum_MISMATCH2,
-  _$basicListingAddressDisplayStatusEnum_PRESENT2,
-  _$basicListingAddressDisplayStatusEnum_MISSING2,
-  _$basicListingAddressDisplayStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingPhoneStatusEnum _$basicListingPhoneStatusEnum_MATCH =
@@ -738,17 +490,6 @@ const BasicListingPhoneStatusEnum _$basicListingPhoneStatusEnum_MISSING =
     const BasicListingPhoneStatusEnum._('MISSING');
 const BasicListingPhoneStatusEnum _$basicListingPhoneStatusEnum_NOT_APPLICABLE =
     const BasicListingPhoneStatusEnum._('NOT_APPLICABLE');
-const BasicListingPhoneStatusEnum _$basicListingPhoneStatusEnum_MATCH2 =
-    const BasicListingPhoneStatusEnum._('MATCH2');
-const BasicListingPhoneStatusEnum _$basicListingPhoneStatusEnum_MISMATCH2 =
-    const BasicListingPhoneStatusEnum._('MISMATCH2');
-const BasicListingPhoneStatusEnum _$basicListingPhoneStatusEnum_PRESENT2 =
-    const BasicListingPhoneStatusEnum._('PRESENT2');
-const BasicListingPhoneStatusEnum _$basicListingPhoneStatusEnum_MISSING2 =
-    const BasicListingPhoneStatusEnum._('MISSING2');
-const BasicListingPhoneStatusEnum
-    _$basicListingPhoneStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingPhoneStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingPhoneStatusEnum _$basicListingPhoneStatusEnumValueOf(String name) {
   switch (name) {
@@ -762,16 +503,6 @@ BasicListingPhoneStatusEnum _$basicListingPhoneStatusEnumValueOf(String name) {
       return _$basicListingPhoneStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingPhoneStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingPhoneStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingPhoneStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingPhoneStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingPhoneStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingPhoneStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -785,11 +516,6 @@ final BuiltSet<BasicListingPhoneStatusEnum>
   _$basicListingPhoneStatusEnum_PRESENT,
   _$basicListingPhoneStatusEnum_MISSING,
   _$basicListingPhoneStatusEnum_NOT_APPLICABLE,
-  _$basicListingPhoneStatusEnum_MATCH2,
-  _$basicListingPhoneStatusEnum_MISMATCH2,
-  _$basicListingPhoneStatusEnum_PRESENT2,
-  _$basicListingPhoneStatusEnum_MISSING2,
-  _$basicListingPhoneStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingFaxStatusEnum _$basicListingFaxStatusEnum_MATCH =
@@ -802,16 +528,6 @@ const BasicListingFaxStatusEnum _$basicListingFaxStatusEnum_MISSING =
     const BasicListingFaxStatusEnum._('MISSING');
 const BasicListingFaxStatusEnum _$basicListingFaxStatusEnum_NOT_APPLICABLE =
     const BasicListingFaxStatusEnum._('NOT_APPLICABLE');
-const BasicListingFaxStatusEnum _$basicListingFaxStatusEnum_MATCH2 =
-    const BasicListingFaxStatusEnum._('MATCH2');
-const BasicListingFaxStatusEnum _$basicListingFaxStatusEnum_MISMATCH2 =
-    const BasicListingFaxStatusEnum._('MISMATCH2');
-const BasicListingFaxStatusEnum _$basicListingFaxStatusEnum_PRESENT2 =
-    const BasicListingFaxStatusEnum._('PRESENT2');
-const BasicListingFaxStatusEnum _$basicListingFaxStatusEnum_MISSING2 =
-    const BasicListingFaxStatusEnum._('MISSING2');
-const BasicListingFaxStatusEnum _$basicListingFaxStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingFaxStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingFaxStatusEnum _$basicListingFaxStatusEnumValueOf(String name) {
   switch (name) {
@@ -825,16 +541,6 @@ BasicListingFaxStatusEnum _$basicListingFaxStatusEnumValueOf(String name) {
       return _$basicListingFaxStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingFaxStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingFaxStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingFaxStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingFaxStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingFaxStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingFaxStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -847,11 +553,6 @@ final BuiltSet<BasicListingFaxStatusEnum> _$basicListingFaxStatusEnumValues =
   _$basicListingFaxStatusEnum_PRESENT,
   _$basicListingFaxStatusEnum_MISSING,
   _$basicListingFaxStatusEnum_NOT_APPLICABLE,
-  _$basicListingFaxStatusEnum_MATCH2,
-  _$basicListingFaxStatusEnum_MISMATCH2,
-  _$basicListingFaxStatusEnum_PRESENT2,
-  _$basicListingFaxStatusEnum_MISSING2,
-  _$basicListingFaxStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingCellphoneStatusEnum _$basicListingCellphoneStatusEnum_MATCH =
@@ -868,20 +569,6 @@ const BasicListingCellphoneStatusEnum
 const BasicListingCellphoneStatusEnum
     _$basicListingCellphoneStatusEnum_NOT_APPLICABLE =
     const BasicListingCellphoneStatusEnum._('NOT_APPLICABLE');
-const BasicListingCellphoneStatusEnum _$basicListingCellphoneStatusEnum_MATCH2 =
-    const BasicListingCellphoneStatusEnum._('MATCH2');
-const BasicListingCellphoneStatusEnum
-    _$basicListingCellphoneStatusEnum_MISMATCH2 =
-    const BasicListingCellphoneStatusEnum._('MISMATCH2');
-const BasicListingCellphoneStatusEnum
-    _$basicListingCellphoneStatusEnum_PRESENT2 =
-    const BasicListingCellphoneStatusEnum._('PRESENT2');
-const BasicListingCellphoneStatusEnum
-    _$basicListingCellphoneStatusEnum_MISSING2 =
-    const BasicListingCellphoneStatusEnum._('MISSING2');
-const BasicListingCellphoneStatusEnum
-    _$basicListingCellphoneStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingCellphoneStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingCellphoneStatusEnum _$basicListingCellphoneStatusEnumValueOf(
     String name) {
@@ -896,16 +583,6 @@ BasicListingCellphoneStatusEnum _$basicListingCellphoneStatusEnumValueOf(
       return _$basicListingCellphoneStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingCellphoneStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingCellphoneStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingCellphoneStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingCellphoneStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingCellphoneStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingCellphoneStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -919,11 +596,6 @@ final BuiltSet<BasicListingCellphoneStatusEnum>
   _$basicListingCellphoneStatusEnum_PRESENT,
   _$basicListingCellphoneStatusEnum_MISSING,
   _$basicListingCellphoneStatusEnum_NOT_APPLICABLE,
-  _$basicListingCellphoneStatusEnum_MATCH2,
-  _$basicListingCellphoneStatusEnum_MISMATCH2,
-  _$basicListingCellphoneStatusEnum_PRESENT2,
-  _$basicListingCellphoneStatusEnum_MISSING2,
-  _$basicListingCellphoneStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingWebsiteStatusEnum _$basicListingWebsiteStatusEnum_MATCH =
@@ -937,17 +609,6 @@ const BasicListingWebsiteStatusEnum _$basicListingWebsiteStatusEnum_MISSING =
 const BasicListingWebsiteStatusEnum
     _$basicListingWebsiteStatusEnum_NOT_APPLICABLE =
     const BasicListingWebsiteStatusEnum._('NOT_APPLICABLE');
-const BasicListingWebsiteStatusEnum _$basicListingWebsiteStatusEnum_MATCH2 =
-    const BasicListingWebsiteStatusEnum._('MATCH2');
-const BasicListingWebsiteStatusEnum _$basicListingWebsiteStatusEnum_MISMATCH2 =
-    const BasicListingWebsiteStatusEnum._('MISMATCH2');
-const BasicListingWebsiteStatusEnum _$basicListingWebsiteStatusEnum_PRESENT2 =
-    const BasicListingWebsiteStatusEnum._('PRESENT2');
-const BasicListingWebsiteStatusEnum _$basicListingWebsiteStatusEnum_MISSING2 =
-    const BasicListingWebsiteStatusEnum._('MISSING2');
-const BasicListingWebsiteStatusEnum
-    _$basicListingWebsiteStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingWebsiteStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingWebsiteStatusEnum _$basicListingWebsiteStatusEnumValueOf(
     String name) {
@@ -962,16 +623,6 @@ BasicListingWebsiteStatusEnum _$basicListingWebsiteStatusEnumValueOf(
       return _$basicListingWebsiteStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingWebsiteStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingWebsiteStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingWebsiteStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingWebsiteStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingWebsiteStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingWebsiteStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -985,11 +636,6 @@ final BuiltSet<BasicListingWebsiteStatusEnum>
   _$basicListingWebsiteStatusEnum_PRESENT,
   _$basicListingWebsiteStatusEnum_MISSING,
   _$basicListingWebsiteStatusEnum_NOT_APPLICABLE,
-  _$basicListingWebsiteStatusEnum_MATCH2,
-  _$basicListingWebsiteStatusEnum_MISMATCH2,
-  _$basicListingWebsiteStatusEnum_PRESENT2,
-  _$basicListingWebsiteStatusEnum_MISSING2,
-  _$basicListingWebsiteStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingEmailStatusEnum _$basicListingEmailStatusEnum_MATCH =
@@ -1002,17 +648,6 @@ const BasicListingEmailStatusEnum _$basicListingEmailStatusEnum_MISSING =
     const BasicListingEmailStatusEnum._('MISSING');
 const BasicListingEmailStatusEnum _$basicListingEmailStatusEnum_NOT_APPLICABLE =
     const BasicListingEmailStatusEnum._('NOT_APPLICABLE');
-const BasicListingEmailStatusEnum _$basicListingEmailStatusEnum_MATCH2 =
-    const BasicListingEmailStatusEnum._('MATCH2');
-const BasicListingEmailStatusEnum _$basicListingEmailStatusEnum_MISMATCH2 =
-    const BasicListingEmailStatusEnum._('MISMATCH2');
-const BasicListingEmailStatusEnum _$basicListingEmailStatusEnum_PRESENT2 =
-    const BasicListingEmailStatusEnum._('PRESENT2');
-const BasicListingEmailStatusEnum _$basicListingEmailStatusEnum_MISSING2 =
-    const BasicListingEmailStatusEnum._('MISSING2');
-const BasicListingEmailStatusEnum
-    _$basicListingEmailStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingEmailStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingEmailStatusEnum _$basicListingEmailStatusEnumValueOf(String name) {
   switch (name) {
@@ -1026,16 +661,6 @@ BasicListingEmailStatusEnum _$basicListingEmailStatusEnumValueOf(String name) {
       return _$basicListingEmailStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingEmailStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingEmailStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingEmailStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingEmailStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingEmailStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingEmailStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -1049,11 +674,6 @@ final BuiltSet<BasicListingEmailStatusEnum>
   _$basicListingEmailStatusEnum_PRESENT,
   _$basicListingEmailStatusEnum_MISSING,
   _$basicListingEmailStatusEnum_NOT_APPLICABLE,
-  _$basicListingEmailStatusEnum_MATCH2,
-  _$basicListingEmailStatusEnum_MISMATCH2,
-  _$basicListingEmailStatusEnum_PRESENT2,
-  _$basicListingEmailStatusEnum_MISSING2,
-  _$basicListingEmailStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingDescriptionLongStatusEnum
@@ -1071,21 +691,6 @@ const BasicListingDescriptionLongStatusEnum
 const BasicListingDescriptionLongStatusEnum
     _$basicListingDescriptionLongStatusEnum_NOT_APPLICABLE =
     const BasicListingDescriptionLongStatusEnum._('NOT_APPLICABLE');
-const BasicListingDescriptionLongStatusEnum
-    _$basicListingDescriptionLongStatusEnum_MATCH2 =
-    const BasicListingDescriptionLongStatusEnum._('MATCH2');
-const BasicListingDescriptionLongStatusEnum
-    _$basicListingDescriptionLongStatusEnum_MISMATCH2 =
-    const BasicListingDescriptionLongStatusEnum._('MISMATCH2');
-const BasicListingDescriptionLongStatusEnum
-    _$basicListingDescriptionLongStatusEnum_PRESENT2 =
-    const BasicListingDescriptionLongStatusEnum._('PRESENT2');
-const BasicListingDescriptionLongStatusEnum
-    _$basicListingDescriptionLongStatusEnum_MISSING2 =
-    const BasicListingDescriptionLongStatusEnum._('MISSING2');
-const BasicListingDescriptionLongStatusEnum
-    _$basicListingDescriptionLongStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingDescriptionLongStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingDescriptionLongStatusEnum
     _$basicListingDescriptionLongStatusEnumValueOf(String name) {
@@ -1100,16 +705,6 @@ BasicListingDescriptionLongStatusEnum
       return _$basicListingDescriptionLongStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingDescriptionLongStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingDescriptionLongStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingDescriptionLongStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingDescriptionLongStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingDescriptionLongStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingDescriptionLongStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -1123,11 +718,6 @@ final BuiltSet<BasicListingDescriptionLongStatusEnum>
   _$basicListingDescriptionLongStatusEnum_PRESENT,
   _$basicListingDescriptionLongStatusEnum_MISSING,
   _$basicListingDescriptionLongStatusEnum_NOT_APPLICABLE,
-  _$basicListingDescriptionLongStatusEnum_MATCH2,
-  _$basicListingDescriptionLongStatusEnum_MISMATCH2,
-  _$basicListingDescriptionLongStatusEnum_PRESENT2,
-  _$basicListingDescriptionLongStatusEnum_MISSING2,
-  _$basicListingDescriptionLongStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingDescriptionShortStatusEnum
@@ -1145,21 +735,6 @@ const BasicListingDescriptionShortStatusEnum
 const BasicListingDescriptionShortStatusEnum
     _$basicListingDescriptionShortStatusEnum_NOT_APPLICABLE =
     const BasicListingDescriptionShortStatusEnum._('NOT_APPLICABLE');
-const BasicListingDescriptionShortStatusEnum
-    _$basicListingDescriptionShortStatusEnum_MATCH2 =
-    const BasicListingDescriptionShortStatusEnum._('MATCH2');
-const BasicListingDescriptionShortStatusEnum
-    _$basicListingDescriptionShortStatusEnum_MISMATCH2 =
-    const BasicListingDescriptionShortStatusEnum._('MISMATCH2');
-const BasicListingDescriptionShortStatusEnum
-    _$basicListingDescriptionShortStatusEnum_PRESENT2 =
-    const BasicListingDescriptionShortStatusEnum._('PRESENT2');
-const BasicListingDescriptionShortStatusEnum
-    _$basicListingDescriptionShortStatusEnum_MISSING2 =
-    const BasicListingDescriptionShortStatusEnum._('MISSING2');
-const BasicListingDescriptionShortStatusEnum
-    _$basicListingDescriptionShortStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingDescriptionShortStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingDescriptionShortStatusEnum
     _$basicListingDescriptionShortStatusEnumValueOf(String name) {
@@ -1174,16 +749,6 @@ BasicListingDescriptionShortStatusEnum
       return _$basicListingDescriptionShortStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingDescriptionShortStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingDescriptionShortStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingDescriptionShortStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingDescriptionShortStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingDescriptionShortStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingDescriptionShortStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -1197,11 +762,6 @@ final BuiltSet<BasicListingDescriptionShortStatusEnum>
   _$basicListingDescriptionShortStatusEnum_PRESENT,
   _$basicListingDescriptionShortStatusEnum_MISSING,
   _$basicListingDescriptionShortStatusEnum_NOT_APPLICABLE,
-  _$basicListingDescriptionShortStatusEnum_MATCH2,
-  _$basicListingDescriptionShortStatusEnum_MISMATCH2,
-  _$basicListingDescriptionShortStatusEnum_PRESENT2,
-  _$basicListingDescriptionShortStatusEnum_MISSING2,
-  _$basicListingDescriptionShortStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingImprintStatusEnum _$basicListingImprintStatusEnum_MATCH =
@@ -1215,13 +775,6 @@ const BasicListingImprintStatusEnum _$basicListingImprintStatusEnum_MISSING =
 const BasicListingImprintStatusEnum
     _$basicListingImprintStatusEnum_NOT_APPLICABLE =
     const BasicListingImprintStatusEnum._('NOT_APPLICABLE');
-const BasicListingImprintStatusEnum _$basicListingImprintStatusEnum_PRESENT2 =
-    const BasicListingImprintStatusEnum._('PRESENT2');
-const BasicListingImprintStatusEnum _$basicListingImprintStatusEnum_MISSING2 =
-    const BasicListingImprintStatusEnum._('MISSING2');
-const BasicListingImprintStatusEnum
-    _$basicListingImprintStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingImprintStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingImprintStatusEnum _$basicListingImprintStatusEnumValueOf(
     String name) {
@@ -1236,12 +789,6 @@ BasicListingImprintStatusEnum _$basicListingImprintStatusEnumValueOf(
       return _$basicListingImprintStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingImprintStatusEnum_NOT_APPLICABLE;
-    case 'PRESENT2':
-      return _$basicListingImprintStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingImprintStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingImprintStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -1255,9 +802,6 @@ final BuiltSet<BasicListingImprintStatusEnum>
   _$basicListingImprintStatusEnum_PRESENT,
   _$basicListingImprintStatusEnum_MISSING,
   _$basicListingImprintStatusEnum_NOT_APPLICABLE,
-  _$basicListingImprintStatusEnum_PRESENT2,
-  _$basicListingImprintStatusEnum_MISSING2,
-  _$basicListingImprintStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingOpeningHoursStatusEnum
@@ -1275,21 +819,6 @@ const BasicListingOpeningHoursStatusEnum
 const BasicListingOpeningHoursStatusEnum
     _$basicListingOpeningHoursStatusEnum_NOT_APPLICABLE =
     const BasicListingOpeningHoursStatusEnum._('NOT_APPLICABLE');
-const BasicListingOpeningHoursStatusEnum
-    _$basicListingOpeningHoursStatusEnum_MATCH2 =
-    const BasicListingOpeningHoursStatusEnum._('MATCH2');
-const BasicListingOpeningHoursStatusEnum
-    _$basicListingOpeningHoursStatusEnum_MISMATCH2 =
-    const BasicListingOpeningHoursStatusEnum._('MISMATCH2');
-const BasicListingOpeningHoursStatusEnum
-    _$basicListingOpeningHoursStatusEnum_PRESENT2 =
-    const BasicListingOpeningHoursStatusEnum._('PRESENT2');
-const BasicListingOpeningHoursStatusEnum
-    _$basicListingOpeningHoursStatusEnum_MISSING2 =
-    const BasicListingOpeningHoursStatusEnum._('MISSING2');
-const BasicListingOpeningHoursStatusEnum
-    _$basicListingOpeningHoursStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingOpeningHoursStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingOpeningHoursStatusEnum _$basicListingOpeningHoursStatusEnumValueOf(
     String name) {
@@ -1304,16 +833,6 @@ BasicListingOpeningHoursStatusEnum _$basicListingOpeningHoursStatusEnumValueOf(
       return _$basicListingOpeningHoursStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingOpeningHoursStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingOpeningHoursStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingOpeningHoursStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingOpeningHoursStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingOpeningHoursStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingOpeningHoursStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -1327,11 +846,6 @@ final BuiltSet<BasicListingOpeningHoursStatusEnum>
   _$basicListingOpeningHoursStatusEnum_PRESENT,
   _$basicListingOpeningHoursStatusEnum_MISSING,
   _$basicListingOpeningHoursStatusEnum_NOT_APPLICABLE,
-  _$basicListingOpeningHoursStatusEnum_MATCH2,
-  _$basicListingOpeningHoursStatusEnum_MISMATCH2,
-  _$basicListingOpeningHoursStatusEnum_PRESENT2,
-  _$basicListingOpeningHoursStatusEnum_MISSING2,
-  _$basicListingOpeningHoursStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingOpeningHoursNotesStatusEnum
@@ -1349,21 +863,6 @@ const BasicListingOpeningHoursNotesStatusEnum
 const BasicListingOpeningHoursNotesStatusEnum
     _$basicListingOpeningHoursNotesStatusEnum_NOT_APPLICABLE =
     const BasicListingOpeningHoursNotesStatusEnum._('NOT_APPLICABLE');
-const BasicListingOpeningHoursNotesStatusEnum
-    _$basicListingOpeningHoursNotesStatusEnum_MATCH2 =
-    const BasicListingOpeningHoursNotesStatusEnum._('MATCH2');
-const BasicListingOpeningHoursNotesStatusEnum
-    _$basicListingOpeningHoursNotesStatusEnum_MISMATCH2 =
-    const BasicListingOpeningHoursNotesStatusEnum._('MISMATCH2');
-const BasicListingOpeningHoursNotesStatusEnum
-    _$basicListingOpeningHoursNotesStatusEnum_PRESENT2 =
-    const BasicListingOpeningHoursNotesStatusEnum._('PRESENT2');
-const BasicListingOpeningHoursNotesStatusEnum
-    _$basicListingOpeningHoursNotesStatusEnum_MISSING2 =
-    const BasicListingOpeningHoursNotesStatusEnum._('MISSING2');
-const BasicListingOpeningHoursNotesStatusEnum
-    _$basicListingOpeningHoursNotesStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingOpeningHoursNotesStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingOpeningHoursNotesStatusEnum
     _$basicListingOpeningHoursNotesStatusEnumValueOf(String name) {
@@ -1378,16 +877,6 @@ BasicListingOpeningHoursNotesStatusEnum
       return _$basicListingOpeningHoursNotesStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingOpeningHoursNotesStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingOpeningHoursNotesStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingOpeningHoursNotesStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingOpeningHoursNotesStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingOpeningHoursNotesStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingOpeningHoursNotesStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -1401,11 +890,6 @@ final BuiltSet<BasicListingOpeningHoursNotesStatusEnum>
   _$basicListingOpeningHoursNotesStatusEnum_PRESENT,
   _$basicListingOpeningHoursNotesStatusEnum_MISSING,
   _$basicListingOpeningHoursNotesStatusEnum_NOT_APPLICABLE,
-  _$basicListingOpeningHoursNotesStatusEnum_MATCH2,
-  _$basicListingOpeningHoursNotesStatusEnum_MISMATCH2,
-  _$basicListingOpeningHoursNotesStatusEnum_PRESENT2,
-  _$basicListingOpeningHoursNotesStatusEnum_MISSING2,
-  _$basicListingOpeningHoursNotesStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingMoreHoursStatusEnum _$basicListingMoreHoursStatusEnum_MATCH =
@@ -1422,20 +906,6 @@ const BasicListingMoreHoursStatusEnum
 const BasicListingMoreHoursStatusEnum
     _$basicListingMoreHoursStatusEnum_NOT_APPLICABLE =
     const BasicListingMoreHoursStatusEnum._('NOT_APPLICABLE');
-const BasicListingMoreHoursStatusEnum _$basicListingMoreHoursStatusEnum_MATCH2 =
-    const BasicListingMoreHoursStatusEnum._('MATCH2');
-const BasicListingMoreHoursStatusEnum
-    _$basicListingMoreHoursStatusEnum_MISMATCH2 =
-    const BasicListingMoreHoursStatusEnum._('MISMATCH2');
-const BasicListingMoreHoursStatusEnum
-    _$basicListingMoreHoursStatusEnum_PRESENT2 =
-    const BasicListingMoreHoursStatusEnum._('PRESENT2');
-const BasicListingMoreHoursStatusEnum
-    _$basicListingMoreHoursStatusEnum_MISSING2 =
-    const BasicListingMoreHoursStatusEnum._('MISSING2');
-const BasicListingMoreHoursStatusEnum
-    _$basicListingMoreHoursStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingMoreHoursStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingMoreHoursStatusEnum _$basicListingMoreHoursStatusEnumValueOf(
     String name) {
@@ -1450,16 +920,6 @@ BasicListingMoreHoursStatusEnum _$basicListingMoreHoursStatusEnumValueOf(
       return _$basicListingMoreHoursStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingMoreHoursStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingMoreHoursStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingMoreHoursStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingMoreHoursStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingMoreHoursStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingMoreHoursStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -1473,11 +933,6 @@ final BuiltSet<BasicListingMoreHoursStatusEnum>
   _$basicListingMoreHoursStatusEnum_PRESENT,
   _$basicListingMoreHoursStatusEnum_MISSING,
   _$basicListingMoreHoursStatusEnum_NOT_APPLICABLE,
-  _$basicListingMoreHoursStatusEnum_MATCH2,
-  _$basicListingMoreHoursStatusEnum_MISMATCH2,
-  _$basicListingMoreHoursStatusEnum_PRESENT2,
-  _$basicListingMoreHoursStatusEnum_MISSING2,
-  _$basicListingMoreHoursStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingSpecialOpeningHoursStatusEnum
@@ -1495,21 +950,6 @@ const BasicListingSpecialOpeningHoursStatusEnum
 const BasicListingSpecialOpeningHoursStatusEnum
     _$basicListingSpecialOpeningHoursStatusEnum_NOT_APPLICABLE =
     const BasicListingSpecialOpeningHoursStatusEnum._('NOT_APPLICABLE');
-const BasicListingSpecialOpeningHoursStatusEnum
-    _$basicListingSpecialOpeningHoursStatusEnum_MATCH2 =
-    const BasicListingSpecialOpeningHoursStatusEnum._('MATCH2');
-const BasicListingSpecialOpeningHoursStatusEnum
-    _$basicListingSpecialOpeningHoursStatusEnum_MISMATCH2 =
-    const BasicListingSpecialOpeningHoursStatusEnum._('MISMATCH2');
-const BasicListingSpecialOpeningHoursStatusEnum
-    _$basicListingSpecialOpeningHoursStatusEnum_PRESENT2 =
-    const BasicListingSpecialOpeningHoursStatusEnum._('PRESENT2');
-const BasicListingSpecialOpeningHoursStatusEnum
-    _$basicListingSpecialOpeningHoursStatusEnum_MISSING2 =
-    const BasicListingSpecialOpeningHoursStatusEnum._('MISSING2');
-const BasicListingSpecialOpeningHoursStatusEnum
-    _$basicListingSpecialOpeningHoursStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingSpecialOpeningHoursStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingSpecialOpeningHoursStatusEnum
     _$basicListingSpecialOpeningHoursStatusEnumValueOf(String name) {
@@ -1524,16 +964,6 @@ BasicListingSpecialOpeningHoursStatusEnum
       return _$basicListingSpecialOpeningHoursStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingSpecialOpeningHoursStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingSpecialOpeningHoursStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingSpecialOpeningHoursStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingSpecialOpeningHoursStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingSpecialOpeningHoursStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingSpecialOpeningHoursStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -1547,11 +977,6 @@ final BuiltSet<BasicListingSpecialOpeningHoursStatusEnum>
   _$basicListingSpecialOpeningHoursStatusEnum_PRESENT,
   _$basicListingSpecialOpeningHoursStatusEnum_MISSING,
   _$basicListingSpecialOpeningHoursStatusEnum_NOT_APPLICABLE,
-  _$basicListingSpecialOpeningHoursStatusEnum_MATCH2,
-  _$basicListingSpecialOpeningHoursStatusEnum_MISMATCH2,
-  _$basicListingSpecialOpeningHoursStatusEnum_PRESENT2,
-  _$basicListingSpecialOpeningHoursStatusEnum_MISSING2,
-  _$basicListingSpecialOpeningHoursStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingKeywordsStatusEnum _$basicListingKeywordsStatusEnum_MATCH =
@@ -1565,18 +990,6 @@ const BasicListingKeywordsStatusEnum _$basicListingKeywordsStatusEnum_MISSING =
 const BasicListingKeywordsStatusEnum
     _$basicListingKeywordsStatusEnum_NOT_APPLICABLE =
     const BasicListingKeywordsStatusEnum._('NOT_APPLICABLE');
-const BasicListingKeywordsStatusEnum _$basicListingKeywordsStatusEnum_MATCH2 =
-    const BasicListingKeywordsStatusEnum._('MATCH2');
-const BasicListingKeywordsStatusEnum
-    _$basicListingKeywordsStatusEnum_MISMATCH2 =
-    const BasicListingKeywordsStatusEnum._('MISMATCH2');
-const BasicListingKeywordsStatusEnum _$basicListingKeywordsStatusEnum_PRESENT2 =
-    const BasicListingKeywordsStatusEnum._('PRESENT2');
-const BasicListingKeywordsStatusEnum _$basicListingKeywordsStatusEnum_MISSING2 =
-    const BasicListingKeywordsStatusEnum._('MISSING2');
-const BasicListingKeywordsStatusEnum
-    _$basicListingKeywordsStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingKeywordsStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingKeywordsStatusEnum _$basicListingKeywordsStatusEnumValueOf(
     String name) {
@@ -1591,16 +1004,6 @@ BasicListingKeywordsStatusEnum _$basicListingKeywordsStatusEnumValueOf(
       return _$basicListingKeywordsStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingKeywordsStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingKeywordsStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingKeywordsStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingKeywordsStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingKeywordsStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingKeywordsStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -1614,11 +1017,6 @@ final BuiltSet<BasicListingKeywordsStatusEnum>
   _$basicListingKeywordsStatusEnum_PRESENT,
   _$basicListingKeywordsStatusEnum_MISSING,
   _$basicListingKeywordsStatusEnum_NOT_APPLICABLE,
-  _$basicListingKeywordsStatusEnum_MATCH2,
-  _$basicListingKeywordsStatusEnum_MISMATCH2,
-  _$basicListingKeywordsStatusEnum_PRESENT2,
-  _$basicListingKeywordsStatusEnum_MISSING2,
-  _$basicListingKeywordsStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingCategoriesStatusEnum
@@ -1636,24 +1034,6 @@ const BasicListingCategoriesStatusEnum
 const BasicListingCategoriesStatusEnum
     _$basicListingCategoriesStatusEnum_NOT_APPLICABLE =
     const BasicListingCategoriesStatusEnum._('NOT_APPLICABLE');
-const BasicListingCategoriesStatusEnum
-    _$basicListingCategoriesStatusEnum_MISSING2 =
-    const BasicListingCategoriesStatusEnum._('MISSING2');
-const BasicListingCategoriesStatusEnum
-    _$basicListingCategoriesStatusEnum_MATCH2 =
-    const BasicListingCategoriesStatusEnum._('MATCH2');
-const BasicListingCategoriesStatusEnum
-    _$basicListingCategoriesStatusEnum_MISMATCH2 =
-    const BasicListingCategoriesStatusEnum._('MISMATCH2');
-const BasicListingCategoriesStatusEnum
-    _$basicListingCategoriesStatusEnum_PRESENT2 =
-    const BasicListingCategoriesStatusEnum._('PRESENT2');
-const BasicListingCategoriesStatusEnum
-    _$basicListingCategoriesStatusEnum_MISSING3 =
-    const BasicListingCategoriesStatusEnum._('MISSING3');
-const BasicListingCategoriesStatusEnum
-    _$basicListingCategoriesStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingCategoriesStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingCategoriesStatusEnum _$basicListingCategoriesStatusEnumValueOf(
     String name) {
@@ -1668,18 +1048,6 @@ BasicListingCategoriesStatusEnum _$basicListingCategoriesStatusEnumValueOf(
       return _$basicListingCategoriesStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingCategoriesStatusEnum_NOT_APPLICABLE;
-    case 'MISSING2':
-      return _$basicListingCategoriesStatusEnum_MISSING2;
-    case 'MATCH2':
-      return _$basicListingCategoriesStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingCategoriesStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingCategoriesStatusEnum_PRESENT2;
-    case 'MISSING3':
-      return _$basicListingCategoriesStatusEnum_MISSING3;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingCategoriesStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -1693,20 +1061,8 @@ final BuiltSet<BasicListingCategoriesStatusEnum>
   _$basicListingCategoriesStatusEnum_PRESENT,
   _$basicListingCategoriesStatusEnum_MISSING,
   _$basicListingCategoriesStatusEnum_NOT_APPLICABLE,
-  _$basicListingCategoriesStatusEnum_MISSING2,
-  _$basicListingCategoriesStatusEnum_MATCH2,
-  _$basicListingCategoriesStatusEnum_MISMATCH2,
-  _$basicListingCategoriesStatusEnum_PRESENT2,
-  _$basicListingCategoriesStatusEnum_MISSING3,
-  _$basicListingCategoriesStatusEnum_NOT_APPLICABLE2,
 ]);
 
-const BasicListingAttributesStatusEnum
-    _$basicListingAttributesStatusEnum_MATCH =
-    const BasicListingAttributesStatusEnum._('MATCH');
-const BasicListingAttributesStatusEnum
-    _$basicListingAttributesStatusEnum_MISMATCH =
-    const BasicListingAttributesStatusEnum._('MISMATCH');
 const BasicListingAttributesStatusEnum
     _$basicListingAttributesStatusEnum_PRESENT =
     const BasicListingAttributesStatusEnum._('PRESENT');
@@ -1716,35 +1072,16 @@ const BasicListingAttributesStatusEnum
 const BasicListingAttributesStatusEnum
     _$basicListingAttributesStatusEnum_NOT_APPLICABLE =
     const BasicListingAttributesStatusEnum._('NOT_APPLICABLE');
-const BasicListingAttributesStatusEnum
-    _$basicListingAttributesStatusEnum_PRESENT2 =
-    const BasicListingAttributesStatusEnum._('PRESENT2');
-const BasicListingAttributesStatusEnum
-    _$basicListingAttributesStatusEnum_MISSING2 =
-    const BasicListingAttributesStatusEnum._('MISSING2');
-const BasicListingAttributesStatusEnum
-    _$basicListingAttributesStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingAttributesStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingAttributesStatusEnum _$basicListingAttributesStatusEnumValueOf(
     String name) {
   switch (name) {
-    case 'MATCH':
-      return _$basicListingAttributesStatusEnum_MATCH;
-    case 'MISMATCH':
-      return _$basicListingAttributesStatusEnum_MISMATCH;
     case 'PRESENT':
       return _$basicListingAttributesStatusEnum_PRESENT;
     case 'MISSING':
       return _$basicListingAttributesStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingAttributesStatusEnum_NOT_APPLICABLE;
-    case 'PRESENT2':
-      return _$basicListingAttributesStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingAttributesStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingAttributesStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -1753,14 +1090,9 @@ BasicListingAttributesStatusEnum _$basicListingAttributesStatusEnumValueOf(
 final BuiltSet<BasicListingAttributesStatusEnum>
     _$basicListingAttributesStatusEnumValues = new BuiltSet<
         BasicListingAttributesStatusEnum>(const <BasicListingAttributesStatusEnum>[
-  _$basicListingAttributesStatusEnum_MATCH,
-  _$basicListingAttributesStatusEnum_MISMATCH,
   _$basicListingAttributesStatusEnum_PRESENT,
   _$basicListingAttributesStatusEnum_MISSING,
   _$basicListingAttributesStatusEnum_NOT_APPLICABLE,
-  _$basicListingAttributesStatusEnum_PRESENT2,
-  _$basicListingAttributesStatusEnum_MISSING2,
-  _$basicListingAttributesStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingPhotosStatusEnum _$basicListingPhotosStatusEnum_MATCH =
@@ -1774,19 +1106,6 @@ const BasicListingPhotosStatusEnum _$basicListingPhotosStatusEnum_MISSING =
 const BasicListingPhotosStatusEnum
     _$basicListingPhotosStatusEnum_NOT_APPLICABLE =
     const BasicListingPhotosStatusEnum._('NOT_APPLICABLE');
-const BasicListingPhotosStatusEnum _$basicListingPhotosStatusEnum_MISSING2 =
-    const BasicListingPhotosStatusEnum._('MISSING2');
-const BasicListingPhotosStatusEnum _$basicListingPhotosStatusEnum_MATCH2 =
-    const BasicListingPhotosStatusEnum._('MATCH2');
-const BasicListingPhotosStatusEnum _$basicListingPhotosStatusEnum_MISMATCH2 =
-    const BasicListingPhotosStatusEnum._('MISMATCH2');
-const BasicListingPhotosStatusEnum _$basicListingPhotosStatusEnum_PRESENT2 =
-    const BasicListingPhotosStatusEnum._('PRESENT2');
-const BasicListingPhotosStatusEnum _$basicListingPhotosStatusEnum_MISSING3 =
-    const BasicListingPhotosStatusEnum._('MISSING3');
-const BasicListingPhotosStatusEnum
-    _$basicListingPhotosStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingPhotosStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingPhotosStatusEnum _$basicListingPhotosStatusEnumValueOf(
     String name) {
@@ -1801,18 +1120,6 @@ BasicListingPhotosStatusEnum _$basicListingPhotosStatusEnumValueOf(
       return _$basicListingPhotosStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingPhotosStatusEnum_NOT_APPLICABLE;
-    case 'MISSING2':
-      return _$basicListingPhotosStatusEnum_MISSING2;
-    case 'MATCH2':
-      return _$basicListingPhotosStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingPhotosStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingPhotosStatusEnum_PRESENT2;
-    case 'MISSING3':
-      return _$basicListingPhotosStatusEnum_MISSING3;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingPhotosStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -1826,12 +1133,6 @@ final BuiltSet<BasicListingPhotosStatusEnum>
   _$basicListingPhotosStatusEnum_PRESENT,
   _$basicListingPhotosStatusEnum_MISSING,
   _$basicListingPhotosStatusEnum_NOT_APPLICABLE,
-  _$basicListingPhotosStatusEnum_MISSING2,
-  _$basicListingPhotosStatusEnum_MATCH2,
-  _$basicListingPhotosStatusEnum_MISMATCH2,
-  _$basicListingPhotosStatusEnum_PRESENT2,
-  _$basicListingPhotosStatusEnum_MISSING3,
-  _$basicListingPhotosStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingLegalIdentStatusEnum
@@ -1849,21 +1150,6 @@ const BasicListingLegalIdentStatusEnum
 const BasicListingLegalIdentStatusEnum
     _$basicListingLegalIdentStatusEnum_NOT_APPLICABLE =
     const BasicListingLegalIdentStatusEnum._('NOT_APPLICABLE');
-const BasicListingLegalIdentStatusEnum
-    _$basicListingLegalIdentStatusEnum_MATCH2 =
-    const BasicListingLegalIdentStatusEnum._('MATCH2');
-const BasicListingLegalIdentStatusEnum
-    _$basicListingLegalIdentStatusEnum_MISMATCH2 =
-    const BasicListingLegalIdentStatusEnum._('MISMATCH2');
-const BasicListingLegalIdentStatusEnum
-    _$basicListingLegalIdentStatusEnum_PRESENT2 =
-    const BasicListingLegalIdentStatusEnum._('PRESENT2');
-const BasicListingLegalIdentStatusEnum
-    _$basicListingLegalIdentStatusEnum_MISSING2 =
-    const BasicListingLegalIdentStatusEnum._('MISSING2');
-const BasicListingLegalIdentStatusEnum
-    _$basicListingLegalIdentStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingLegalIdentStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingLegalIdentStatusEnum _$basicListingLegalIdentStatusEnumValueOf(
     String name) {
@@ -1878,16 +1164,6 @@ BasicListingLegalIdentStatusEnum _$basicListingLegalIdentStatusEnumValueOf(
       return _$basicListingLegalIdentStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingLegalIdentStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingLegalIdentStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingLegalIdentStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingLegalIdentStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingLegalIdentStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingLegalIdentStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -1901,11 +1177,6 @@ final BuiltSet<BasicListingLegalIdentStatusEnum>
   _$basicListingLegalIdentStatusEnum_PRESENT,
   _$basicListingLegalIdentStatusEnum_MISSING,
   _$basicListingLegalIdentStatusEnum_NOT_APPLICABLE,
-  _$basicListingLegalIdentStatusEnum_MATCH2,
-  _$basicListingLegalIdentStatusEnum_MISMATCH2,
-  _$basicListingLegalIdentStatusEnum_PRESENT2,
-  _$basicListingLegalIdentStatusEnum_MISSING2,
-  _$basicListingLegalIdentStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingTaxNumberStatusEnum _$basicListingTaxNumberStatusEnum_MATCH =
@@ -1922,20 +1193,6 @@ const BasicListingTaxNumberStatusEnum
 const BasicListingTaxNumberStatusEnum
     _$basicListingTaxNumberStatusEnum_NOT_APPLICABLE =
     const BasicListingTaxNumberStatusEnum._('NOT_APPLICABLE');
-const BasicListingTaxNumberStatusEnum _$basicListingTaxNumberStatusEnum_MATCH2 =
-    const BasicListingTaxNumberStatusEnum._('MATCH2');
-const BasicListingTaxNumberStatusEnum
-    _$basicListingTaxNumberStatusEnum_MISMATCH2 =
-    const BasicListingTaxNumberStatusEnum._('MISMATCH2');
-const BasicListingTaxNumberStatusEnum
-    _$basicListingTaxNumberStatusEnum_PRESENT2 =
-    const BasicListingTaxNumberStatusEnum._('PRESENT2');
-const BasicListingTaxNumberStatusEnum
-    _$basicListingTaxNumberStatusEnum_MISSING2 =
-    const BasicListingTaxNumberStatusEnum._('MISSING2');
-const BasicListingTaxNumberStatusEnum
-    _$basicListingTaxNumberStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingTaxNumberStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingTaxNumberStatusEnum _$basicListingTaxNumberStatusEnumValueOf(
     String name) {
@@ -1950,16 +1207,6 @@ BasicListingTaxNumberStatusEnum _$basicListingTaxNumberStatusEnumValueOf(
       return _$basicListingTaxNumberStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingTaxNumberStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingTaxNumberStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingTaxNumberStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingTaxNumberStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingTaxNumberStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingTaxNumberStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -1973,11 +1220,6 @@ final BuiltSet<BasicListingTaxNumberStatusEnum>
   _$basicListingTaxNumberStatusEnum_PRESENT,
   _$basicListingTaxNumberStatusEnum_MISSING,
   _$basicListingTaxNumberStatusEnum_NOT_APPLICABLE,
-  _$basicListingTaxNumberStatusEnum_MATCH2,
-  _$basicListingTaxNumberStatusEnum_MISMATCH2,
-  _$basicListingTaxNumberStatusEnum_PRESENT2,
-  _$basicListingTaxNumberStatusEnum_MISSING2,
-  _$basicListingTaxNumberStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingProvinceStatusEnum _$basicListingProvinceStatusEnum_MATCH =
@@ -1991,18 +1233,6 @@ const BasicListingProvinceStatusEnum _$basicListingProvinceStatusEnum_MISSING =
 const BasicListingProvinceStatusEnum
     _$basicListingProvinceStatusEnum_NOT_APPLICABLE =
     const BasicListingProvinceStatusEnum._('NOT_APPLICABLE');
-const BasicListingProvinceStatusEnum _$basicListingProvinceStatusEnum_MATCH2 =
-    const BasicListingProvinceStatusEnum._('MATCH2');
-const BasicListingProvinceStatusEnum
-    _$basicListingProvinceStatusEnum_MISMATCH2 =
-    const BasicListingProvinceStatusEnum._('MISMATCH2');
-const BasicListingProvinceStatusEnum _$basicListingProvinceStatusEnum_PRESENT2 =
-    const BasicListingProvinceStatusEnum._('PRESENT2');
-const BasicListingProvinceStatusEnum _$basicListingProvinceStatusEnum_MISSING2 =
-    const BasicListingProvinceStatusEnum._('MISSING2');
-const BasicListingProvinceStatusEnum
-    _$basicListingProvinceStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingProvinceStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingProvinceStatusEnum _$basicListingProvinceStatusEnumValueOf(
     String name) {
@@ -2017,16 +1247,6 @@ BasicListingProvinceStatusEnum _$basicListingProvinceStatusEnumValueOf(
       return _$basicListingProvinceStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingProvinceStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingProvinceStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingProvinceStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingProvinceStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingProvinceStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingProvinceStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -2040,11 +1260,6 @@ final BuiltSet<BasicListingProvinceStatusEnum>
   _$basicListingProvinceStatusEnum_PRESENT,
   _$basicListingProvinceStatusEnum_MISSING,
   _$basicListingProvinceStatusEnum_NOT_APPLICABLE,
-  _$basicListingProvinceStatusEnum_MATCH2,
-  _$basicListingProvinceStatusEnum_MISMATCH2,
-  _$basicListingProvinceStatusEnum_PRESENT2,
-  _$basicListingProvinceStatusEnum_MISSING2,
-  _$basicListingProvinceStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingCountryEnum _$basicListingCountryEnum_AF =
@@ -3320,17 +2535,6 @@ const BasicListingCountryStatusEnum _$basicListingCountryStatusEnum_MISSING =
 const BasicListingCountryStatusEnum
     _$basicListingCountryStatusEnum_NOT_APPLICABLE =
     const BasicListingCountryStatusEnum._('NOT_APPLICABLE');
-const BasicListingCountryStatusEnum _$basicListingCountryStatusEnum_MATCH2 =
-    const BasicListingCountryStatusEnum._('MATCH2');
-const BasicListingCountryStatusEnum _$basicListingCountryStatusEnum_MISMATCH2 =
-    const BasicListingCountryStatusEnum._('MISMATCH2');
-const BasicListingCountryStatusEnum _$basicListingCountryStatusEnum_PRESENT2 =
-    const BasicListingCountryStatusEnum._('PRESENT2');
-const BasicListingCountryStatusEnum _$basicListingCountryStatusEnum_MISSING2 =
-    const BasicListingCountryStatusEnum._('MISSING2');
-const BasicListingCountryStatusEnum
-    _$basicListingCountryStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingCountryStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingCountryStatusEnum _$basicListingCountryStatusEnumValueOf(
     String name) {
@@ -3345,16 +2549,6 @@ BasicListingCountryStatusEnum _$basicListingCountryStatusEnumValueOf(
       return _$basicListingCountryStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingCountryStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingCountryStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingCountryStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingCountryStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingCountryStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingCountryStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -3368,11 +2562,6 @@ final BuiltSet<BasicListingCountryStatusEnum>
   _$basicListingCountryStatusEnum_PRESENT,
   _$basicListingCountryStatusEnum_MISSING,
   _$basicListingCountryStatusEnum_NOT_APPLICABLE,
-  _$basicListingCountryStatusEnum_MATCH2,
-  _$basicListingCountryStatusEnum_MISMATCH2,
-  _$basicListingCountryStatusEnum_PRESENT2,
-  _$basicListingCountryStatusEnum_MISSING2,
-  _$basicListingCountryStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingSocialPostStatusEnum
@@ -3390,21 +2579,6 @@ const BasicListingSocialPostStatusEnum
 const BasicListingSocialPostStatusEnum
     _$basicListingSocialPostStatusEnum_NOT_APPLICABLE =
     const BasicListingSocialPostStatusEnum._('NOT_APPLICABLE');
-const BasicListingSocialPostStatusEnum
-    _$basicListingSocialPostStatusEnum_MATCH2 =
-    const BasicListingSocialPostStatusEnum._('MATCH2');
-const BasicListingSocialPostStatusEnum
-    _$basicListingSocialPostStatusEnum_MISMATCH2 =
-    const BasicListingSocialPostStatusEnum._('MISMATCH2');
-const BasicListingSocialPostStatusEnum
-    _$basicListingSocialPostStatusEnum_PRESENT2 =
-    const BasicListingSocialPostStatusEnum._('PRESENT2');
-const BasicListingSocialPostStatusEnum
-    _$basicListingSocialPostStatusEnum_MISSING2 =
-    const BasicListingSocialPostStatusEnum._('MISSING2');
-const BasicListingSocialPostStatusEnum
-    _$basicListingSocialPostStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingSocialPostStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingSocialPostStatusEnum _$basicListingSocialPostStatusEnumValueOf(
     String name) {
@@ -3419,16 +2593,6 @@ BasicListingSocialPostStatusEnum _$basicListingSocialPostStatusEnumValueOf(
       return _$basicListingSocialPostStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingSocialPostStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingSocialPostStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingSocialPostStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingSocialPostStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingSocialPostStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingSocialPostStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -3442,11 +2606,6 @@ final BuiltSet<BasicListingSocialPostStatusEnum>
   _$basicListingSocialPostStatusEnum_PRESENT,
   _$basicListingSocialPostStatusEnum_MISSING,
   _$basicListingSocialPostStatusEnum_NOT_APPLICABLE,
-  _$basicListingSocialPostStatusEnum_MATCH2,
-  _$basicListingSocialPostStatusEnum_MISMATCH2,
-  _$basicListingSocialPostStatusEnum_PRESENT2,
-  _$basicListingSocialPostStatusEnum_MISSING2,
-  _$basicListingSocialPostStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingVideosStatusEnum _$basicListingVideosStatusEnum_MATCH =
@@ -3460,17 +2619,6 @@ const BasicListingVideosStatusEnum _$basicListingVideosStatusEnum_MISSING =
 const BasicListingVideosStatusEnum
     _$basicListingVideosStatusEnum_NOT_APPLICABLE =
     const BasicListingVideosStatusEnum._('NOT_APPLICABLE');
-const BasicListingVideosStatusEnum _$basicListingVideosStatusEnum_MATCH2 =
-    const BasicListingVideosStatusEnum._('MATCH2');
-const BasicListingVideosStatusEnum _$basicListingVideosStatusEnum_MISMATCH2 =
-    const BasicListingVideosStatusEnum._('MISMATCH2');
-const BasicListingVideosStatusEnum _$basicListingVideosStatusEnum_PRESENT2 =
-    const BasicListingVideosStatusEnum._('PRESENT2');
-const BasicListingVideosStatusEnum _$basicListingVideosStatusEnum_MISSING2 =
-    const BasicListingVideosStatusEnum._('MISSING2');
-const BasicListingVideosStatusEnum
-    _$basicListingVideosStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingVideosStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingVideosStatusEnum _$basicListingVideosStatusEnumValueOf(
     String name) {
@@ -3485,16 +2633,6 @@ BasicListingVideosStatusEnum _$basicListingVideosStatusEnumValueOf(
       return _$basicListingVideosStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingVideosStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingVideosStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingVideosStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingVideosStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingVideosStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingVideosStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -3508,11 +2646,6 @@ final BuiltSet<BasicListingVideosStatusEnum>
   _$basicListingVideosStatusEnum_PRESENT,
   _$basicListingVideosStatusEnum_MISSING,
   _$basicListingVideosStatusEnum_NOT_APPLICABLE,
-  _$basicListingVideosStatusEnum_MATCH2,
-  _$basicListingVideosStatusEnum_MISMATCH2,
-  _$basicListingVideosStatusEnum_PRESENT2,
-  _$basicListingVideosStatusEnum_MISSING2,
-  _$basicListingVideosStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingContentListsStatusEnum
@@ -3530,21 +2663,6 @@ const BasicListingContentListsStatusEnum
 const BasicListingContentListsStatusEnum
     _$basicListingContentListsStatusEnum_NOT_APPLICABLE =
     const BasicListingContentListsStatusEnum._('NOT_APPLICABLE');
-const BasicListingContentListsStatusEnum
-    _$basicListingContentListsStatusEnum_MATCH2 =
-    const BasicListingContentListsStatusEnum._('MATCH2');
-const BasicListingContentListsStatusEnum
-    _$basicListingContentListsStatusEnum_MISMATCH2 =
-    const BasicListingContentListsStatusEnum._('MISMATCH2');
-const BasicListingContentListsStatusEnum
-    _$basicListingContentListsStatusEnum_PRESENT2 =
-    const BasicListingContentListsStatusEnum._('PRESENT2');
-const BasicListingContentListsStatusEnum
-    _$basicListingContentListsStatusEnum_MISSING2 =
-    const BasicListingContentListsStatusEnum._('MISSING2');
-const BasicListingContentListsStatusEnum
-    _$basicListingContentListsStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingContentListsStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingContentListsStatusEnum _$basicListingContentListsStatusEnumValueOf(
     String name) {
@@ -3559,16 +2677,6 @@ BasicListingContentListsStatusEnum _$basicListingContentListsStatusEnumValueOf(
       return _$basicListingContentListsStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingContentListsStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingContentListsStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingContentListsStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingContentListsStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingContentListsStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingContentListsStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -3582,11 +2690,6 @@ final BuiltSet<BasicListingContentListsStatusEnum>
   _$basicListingContentListsStatusEnum_PRESENT,
   _$basicListingContentListsStatusEnum_MISSING,
   _$basicListingContentListsStatusEnum_NOT_APPLICABLE,
-  _$basicListingContentListsStatusEnum_MATCH2,
-  _$basicListingContentListsStatusEnum_MISMATCH2,
-  _$basicListingContentListsStatusEnum_PRESENT2,
-  _$basicListingContentListsStatusEnum_MISSING2,
-  _$basicListingContentListsStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingSocialProfilesStatusEnum
@@ -3604,21 +2707,6 @@ const BasicListingSocialProfilesStatusEnum
 const BasicListingSocialProfilesStatusEnum
     _$basicListingSocialProfilesStatusEnum_NOT_APPLICABLE =
     const BasicListingSocialProfilesStatusEnum._('NOT_APPLICABLE');
-const BasicListingSocialProfilesStatusEnum
-    _$basicListingSocialProfilesStatusEnum_MATCH2 =
-    const BasicListingSocialProfilesStatusEnum._('MATCH2');
-const BasicListingSocialProfilesStatusEnum
-    _$basicListingSocialProfilesStatusEnum_MISMATCH2 =
-    const BasicListingSocialProfilesStatusEnum._('MISMATCH2');
-const BasicListingSocialProfilesStatusEnum
-    _$basicListingSocialProfilesStatusEnum_PRESENT2 =
-    const BasicListingSocialProfilesStatusEnum._('PRESENT2');
-const BasicListingSocialProfilesStatusEnum
-    _$basicListingSocialProfilesStatusEnum_MISSING2 =
-    const BasicListingSocialProfilesStatusEnum._('MISSING2');
-const BasicListingSocialProfilesStatusEnum
-    _$basicListingSocialProfilesStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingSocialProfilesStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingSocialProfilesStatusEnum
     _$basicListingSocialProfilesStatusEnumValueOf(String name) {
@@ -3633,16 +2721,6 @@ BasicListingSocialProfilesStatusEnum
       return _$basicListingSocialProfilesStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingSocialProfilesStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingSocialProfilesStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingSocialProfilesStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingSocialProfilesStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingSocialProfilesStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingSocialProfilesStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -3656,11 +2734,6 @@ final BuiltSet<BasicListingSocialProfilesStatusEnum>
   _$basicListingSocialProfilesStatusEnum_PRESENT,
   _$basicListingSocialProfilesStatusEnum_MISSING,
   _$basicListingSocialProfilesStatusEnum_NOT_APPLICABLE,
-  _$basicListingSocialProfilesStatusEnum_MATCH2,
-  _$basicListingSocialProfilesStatusEnum_MISMATCH2,
-  _$basicListingSocialProfilesStatusEnum_PRESENT2,
-  _$basicListingSocialProfilesStatusEnum_MISSING2,
-  _$basicListingSocialProfilesStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingPaymentOptionsStatusEnum
@@ -3678,21 +2751,6 @@ const BasicListingPaymentOptionsStatusEnum
 const BasicListingPaymentOptionsStatusEnum
     _$basicListingPaymentOptionsStatusEnum_NOT_APPLICABLE =
     const BasicListingPaymentOptionsStatusEnum._('NOT_APPLICABLE');
-const BasicListingPaymentOptionsStatusEnum
-    _$basicListingPaymentOptionsStatusEnum_MATCH2 =
-    const BasicListingPaymentOptionsStatusEnum._('MATCH2');
-const BasicListingPaymentOptionsStatusEnum
-    _$basicListingPaymentOptionsStatusEnum_MISMATCH2 =
-    const BasicListingPaymentOptionsStatusEnum._('MISMATCH2');
-const BasicListingPaymentOptionsStatusEnum
-    _$basicListingPaymentOptionsStatusEnum_PRESENT2 =
-    const BasicListingPaymentOptionsStatusEnum._('PRESENT2');
-const BasicListingPaymentOptionsStatusEnum
-    _$basicListingPaymentOptionsStatusEnum_MISSING2 =
-    const BasicListingPaymentOptionsStatusEnum._('MISSING2');
-const BasicListingPaymentOptionsStatusEnum
-    _$basicListingPaymentOptionsStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingPaymentOptionsStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingPaymentOptionsStatusEnum
     _$basicListingPaymentOptionsStatusEnumValueOf(String name) {
@@ -3707,16 +2765,6 @@ BasicListingPaymentOptionsStatusEnum
       return _$basicListingPaymentOptionsStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingPaymentOptionsStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingPaymentOptionsStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingPaymentOptionsStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingPaymentOptionsStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingPaymentOptionsStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingPaymentOptionsStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -3730,11 +2778,6 @@ final BuiltSet<BasicListingPaymentOptionsStatusEnum>
   _$basicListingPaymentOptionsStatusEnum_PRESENT,
   _$basicListingPaymentOptionsStatusEnum_MISSING,
   _$basicListingPaymentOptionsStatusEnum_NOT_APPLICABLE,
-  _$basicListingPaymentOptionsStatusEnum_MATCH2,
-  _$basicListingPaymentOptionsStatusEnum_MISMATCH2,
-  _$basicListingPaymentOptionsStatusEnum_PRESENT2,
-  _$basicListingPaymentOptionsStatusEnum_MISSING2,
-  _$basicListingPaymentOptionsStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingBrandsStatusEnum _$basicListingBrandsStatusEnum_MATCH =
@@ -3748,17 +2791,6 @@ const BasicListingBrandsStatusEnum _$basicListingBrandsStatusEnum_MISSING =
 const BasicListingBrandsStatusEnum
     _$basicListingBrandsStatusEnum_NOT_APPLICABLE =
     const BasicListingBrandsStatusEnum._('NOT_APPLICABLE');
-const BasicListingBrandsStatusEnum _$basicListingBrandsStatusEnum_MATCH2 =
-    const BasicListingBrandsStatusEnum._('MATCH2');
-const BasicListingBrandsStatusEnum _$basicListingBrandsStatusEnum_MISMATCH2 =
-    const BasicListingBrandsStatusEnum._('MISMATCH2');
-const BasicListingBrandsStatusEnum _$basicListingBrandsStatusEnum_PRESENT2 =
-    const BasicListingBrandsStatusEnum._('PRESENT2');
-const BasicListingBrandsStatusEnum _$basicListingBrandsStatusEnum_MISSING2 =
-    const BasicListingBrandsStatusEnum._('MISSING2');
-const BasicListingBrandsStatusEnum
-    _$basicListingBrandsStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingBrandsStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingBrandsStatusEnum _$basicListingBrandsStatusEnumValueOf(
     String name) {
@@ -3773,16 +2805,6 @@ BasicListingBrandsStatusEnum _$basicListingBrandsStatusEnumValueOf(
       return _$basicListingBrandsStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingBrandsStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingBrandsStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingBrandsStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingBrandsStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingBrandsStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingBrandsStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -3796,11 +2818,6 @@ final BuiltSet<BasicListingBrandsStatusEnum>
   _$basicListingBrandsStatusEnum_PRESENT,
   _$basicListingBrandsStatusEnum_MISSING,
   _$basicListingBrandsStatusEnum_NOT_APPLICABLE,
-  _$basicListingBrandsStatusEnum_MATCH2,
-  _$basicListingBrandsStatusEnum_MISMATCH2,
-  _$basicListingBrandsStatusEnum_PRESENT2,
-  _$basicListingBrandsStatusEnum_MISSING2,
-  _$basicListingBrandsStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingServicesStatusEnum _$basicListingServicesStatusEnum_MATCH =
@@ -3814,18 +2831,6 @@ const BasicListingServicesStatusEnum _$basicListingServicesStatusEnum_MISSING =
 const BasicListingServicesStatusEnum
     _$basicListingServicesStatusEnum_NOT_APPLICABLE =
     const BasicListingServicesStatusEnum._('NOT_APPLICABLE');
-const BasicListingServicesStatusEnum _$basicListingServicesStatusEnum_MATCH2 =
-    const BasicListingServicesStatusEnum._('MATCH2');
-const BasicListingServicesStatusEnum
-    _$basicListingServicesStatusEnum_MISMATCH2 =
-    const BasicListingServicesStatusEnum._('MISMATCH2');
-const BasicListingServicesStatusEnum _$basicListingServicesStatusEnum_PRESENT2 =
-    const BasicListingServicesStatusEnum._('PRESENT2');
-const BasicListingServicesStatusEnum _$basicListingServicesStatusEnum_MISSING2 =
-    const BasicListingServicesStatusEnum._('MISSING2');
-const BasicListingServicesStatusEnum
-    _$basicListingServicesStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingServicesStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingServicesStatusEnum _$basicListingServicesStatusEnumValueOf(
     String name) {
@@ -3840,16 +2845,6 @@ BasicListingServicesStatusEnum _$basicListingServicesStatusEnumValueOf(
       return _$basicListingServicesStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingServicesStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingServicesStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingServicesStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingServicesStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingServicesStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingServicesStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -3863,11 +2858,6 @@ final BuiltSet<BasicListingServicesStatusEnum>
   _$basicListingServicesStatusEnum_PRESENT,
   _$basicListingServicesStatusEnum_MISSING,
   _$basicListingServicesStatusEnum_NOT_APPLICABLE,
-  _$basicListingServicesStatusEnum_MATCH2,
-  _$basicListingServicesStatusEnum_MISMATCH2,
-  _$basicListingServicesStatusEnum_PRESENT2,
-  _$basicListingServicesStatusEnum_MISSING2,
-  _$basicListingServicesStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingTransactionLinksStatusEnum
@@ -3885,21 +2875,6 @@ const BasicListingTransactionLinksStatusEnum
 const BasicListingTransactionLinksStatusEnum
     _$basicListingTransactionLinksStatusEnum_NOT_APPLICABLE =
     const BasicListingTransactionLinksStatusEnum._('NOT_APPLICABLE');
-const BasicListingTransactionLinksStatusEnum
-    _$basicListingTransactionLinksStatusEnum_MATCH2 =
-    const BasicListingTransactionLinksStatusEnum._('MATCH2');
-const BasicListingTransactionLinksStatusEnum
-    _$basicListingTransactionLinksStatusEnum_MISMATCH2 =
-    const BasicListingTransactionLinksStatusEnum._('MISMATCH2');
-const BasicListingTransactionLinksStatusEnum
-    _$basicListingTransactionLinksStatusEnum_PRESENT2 =
-    const BasicListingTransactionLinksStatusEnum._('PRESENT2');
-const BasicListingTransactionLinksStatusEnum
-    _$basicListingTransactionLinksStatusEnum_MISSING2 =
-    const BasicListingTransactionLinksStatusEnum._('MISSING2');
-const BasicListingTransactionLinksStatusEnum
-    _$basicListingTransactionLinksStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingTransactionLinksStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingTransactionLinksStatusEnum
     _$basicListingTransactionLinksStatusEnumValueOf(String name) {
@@ -3914,16 +2889,6 @@ BasicListingTransactionLinksStatusEnum
       return _$basicListingTransactionLinksStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingTransactionLinksStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingTransactionLinksStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingTransactionLinksStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingTransactionLinksStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingTransactionLinksStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingTransactionLinksStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -3937,11 +2902,6 @@ final BuiltSet<BasicListingTransactionLinksStatusEnum>
   _$basicListingTransactionLinksStatusEnum_PRESENT,
   _$basicListingTransactionLinksStatusEnum_MISSING,
   _$basicListingTransactionLinksStatusEnum_NOT_APPLICABLE,
-  _$basicListingTransactionLinksStatusEnum_MATCH2,
-  _$basicListingTransactionLinksStatusEnum_MISMATCH2,
-  _$basicListingTransactionLinksStatusEnum_PRESENT2,
-  _$basicListingTransactionLinksStatusEnum_MISSING2,
-  _$basicListingTransactionLinksStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingLanguagesStatusEnum _$basicListingLanguagesStatusEnum_MATCH =
@@ -3958,20 +2918,6 @@ const BasicListingLanguagesStatusEnum
 const BasicListingLanguagesStatusEnum
     _$basicListingLanguagesStatusEnum_NOT_APPLICABLE =
     const BasicListingLanguagesStatusEnum._('NOT_APPLICABLE');
-const BasicListingLanguagesStatusEnum _$basicListingLanguagesStatusEnum_MATCH2 =
-    const BasicListingLanguagesStatusEnum._('MATCH2');
-const BasicListingLanguagesStatusEnum
-    _$basicListingLanguagesStatusEnum_MISMATCH2 =
-    const BasicListingLanguagesStatusEnum._('MISMATCH2');
-const BasicListingLanguagesStatusEnum
-    _$basicListingLanguagesStatusEnum_PRESENT2 =
-    const BasicListingLanguagesStatusEnum._('PRESENT2');
-const BasicListingLanguagesStatusEnum
-    _$basicListingLanguagesStatusEnum_MISSING2 =
-    const BasicListingLanguagesStatusEnum._('MISSING2');
-const BasicListingLanguagesStatusEnum
-    _$basicListingLanguagesStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingLanguagesStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingLanguagesStatusEnum _$basicListingLanguagesStatusEnumValueOf(
     String name) {
@@ -3986,16 +2932,6 @@ BasicListingLanguagesStatusEnum _$basicListingLanguagesStatusEnumValueOf(
       return _$basicListingLanguagesStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingLanguagesStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingLanguagesStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingLanguagesStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingLanguagesStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingLanguagesStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingLanguagesStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -4009,11 +2945,6 @@ final BuiltSet<BasicListingLanguagesStatusEnum>
   _$basicListingLanguagesStatusEnum_PRESENT,
   _$basicListingLanguagesStatusEnum_MISSING,
   _$basicListingLanguagesStatusEnum_NOT_APPLICABLE,
-  _$basicListingLanguagesStatusEnum_MATCH2,
-  _$basicListingLanguagesStatusEnum_MISMATCH2,
-  _$basicListingLanguagesStatusEnum_PRESENT2,
-  _$basicListingLanguagesStatusEnum_MISSING2,
-  _$basicListingLanguagesStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingAttributionStatusEnum
@@ -4031,21 +2962,6 @@ const BasicListingAttributionStatusEnum
 const BasicListingAttributionStatusEnum
     _$basicListingAttributionStatusEnum_NOT_APPLICABLE =
     const BasicListingAttributionStatusEnum._('NOT_APPLICABLE');
-const BasicListingAttributionStatusEnum
-    _$basicListingAttributionStatusEnum_MATCH2 =
-    const BasicListingAttributionStatusEnum._('MATCH2');
-const BasicListingAttributionStatusEnum
-    _$basicListingAttributionStatusEnum_MISMATCH2 =
-    const BasicListingAttributionStatusEnum._('MISMATCH2');
-const BasicListingAttributionStatusEnum
-    _$basicListingAttributionStatusEnum_PRESENT2 =
-    const BasicListingAttributionStatusEnum._('PRESENT2');
-const BasicListingAttributionStatusEnum
-    _$basicListingAttributionStatusEnum_MISSING2 =
-    const BasicListingAttributionStatusEnum._('MISSING2');
-const BasicListingAttributionStatusEnum
-    _$basicListingAttributionStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingAttributionStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingAttributionStatusEnum _$basicListingAttributionStatusEnumValueOf(
     String name) {
@@ -4060,16 +2976,6 @@ BasicListingAttributionStatusEnum _$basicListingAttributionStatusEnumValueOf(
       return _$basicListingAttributionStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingAttributionStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingAttributionStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingAttributionStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingAttributionStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingAttributionStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingAttributionStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -4083,11 +2989,6 @@ final BuiltSet<BasicListingAttributionStatusEnum>
   _$basicListingAttributionStatusEnum_PRESENT,
   _$basicListingAttributionStatusEnum_MISSING,
   _$basicListingAttributionStatusEnum_NOT_APPLICABLE,
-  _$basicListingAttributionStatusEnum_MATCH2,
-  _$basicListingAttributionStatusEnum_MISMATCH2,
-  _$basicListingAttributionStatusEnum_PRESENT2,
-  _$basicListingAttributionStatusEnum_MISSING2,
-  _$basicListingAttributionStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingLatStatusEnum _$basicListingLatStatusEnum_MATCH =
@@ -4100,16 +3001,6 @@ const BasicListingLatStatusEnum _$basicListingLatStatusEnum_MISSING =
     const BasicListingLatStatusEnum._('MISSING');
 const BasicListingLatStatusEnum _$basicListingLatStatusEnum_NOT_APPLICABLE =
     const BasicListingLatStatusEnum._('NOT_APPLICABLE');
-const BasicListingLatStatusEnum _$basicListingLatStatusEnum_MATCH2 =
-    const BasicListingLatStatusEnum._('MATCH2');
-const BasicListingLatStatusEnum _$basicListingLatStatusEnum_MISMATCH2 =
-    const BasicListingLatStatusEnum._('MISMATCH2');
-const BasicListingLatStatusEnum _$basicListingLatStatusEnum_PRESENT2 =
-    const BasicListingLatStatusEnum._('PRESENT2');
-const BasicListingLatStatusEnum _$basicListingLatStatusEnum_MISSING2 =
-    const BasicListingLatStatusEnum._('MISSING2');
-const BasicListingLatStatusEnum _$basicListingLatStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingLatStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingLatStatusEnum _$basicListingLatStatusEnumValueOf(String name) {
   switch (name) {
@@ -4123,16 +3014,6 @@ BasicListingLatStatusEnum _$basicListingLatStatusEnumValueOf(String name) {
       return _$basicListingLatStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingLatStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingLatStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingLatStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingLatStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingLatStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingLatStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -4145,11 +3026,6 @@ final BuiltSet<BasicListingLatStatusEnum> _$basicListingLatStatusEnumValues =
   _$basicListingLatStatusEnum_PRESENT,
   _$basicListingLatStatusEnum_MISSING,
   _$basicListingLatStatusEnum_NOT_APPLICABLE,
-  _$basicListingLatStatusEnum_MATCH2,
-  _$basicListingLatStatusEnum_MISMATCH2,
-  _$basicListingLatStatusEnum_PRESENT2,
-  _$basicListingLatStatusEnum_MISSING2,
-  _$basicListingLatStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingLngStatusEnum _$basicListingLngStatusEnum_MATCH =
@@ -4162,16 +3038,6 @@ const BasicListingLngStatusEnum _$basicListingLngStatusEnum_MISSING =
     const BasicListingLngStatusEnum._('MISSING');
 const BasicListingLngStatusEnum _$basicListingLngStatusEnum_NOT_APPLICABLE =
     const BasicListingLngStatusEnum._('NOT_APPLICABLE');
-const BasicListingLngStatusEnum _$basicListingLngStatusEnum_MATCH2 =
-    const BasicListingLngStatusEnum._('MATCH2');
-const BasicListingLngStatusEnum _$basicListingLngStatusEnum_MISMATCH2 =
-    const BasicListingLngStatusEnum._('MISMATCH2');
-const BasicListingLngStatusEnum _$basicListingLngStatusEnum_PRESENT2 =
-    const BasicListingLngStatusEnum._('PRESENT2');
-const BasicListingLngStatusEnum _$basicListingLngStatusEnum_MISSING2 =
-    const BasicListingLngStatusEnum._('MISSING2');
-const BasicListingLngStatusEnum _$basicListingLngStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingLngStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingLngStatusEnum _$basicListingLngStatusEnumValueOf(String name) {
   switch (name) {
@@ -4185,16 +3051,6 @@ BasicListingLngStatusEnum _$basicListingLngStatusEnumValueOf(String name) {
       return _$basicListingLngStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingLngStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingLngStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingLngStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingLngStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingLngStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingLngStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -4207,11 +3063,6 @@ final BuiltSet<BasicListingLngStatusEnum> _$basicListingLngStatusEnumValues =
   _$basicListingLngStatusEnum_PRESENT,
   _$basicListingLngStatusEnum_MISSING,
   _$basicListingLngStatusEnum_NOT_APPLICABLE,
-  _$basicListingLngStatusEnum_MATCH2,
-  _$basicListingLngStatusEnum_MISMATCH2,
-  _$basicListingLngStatusEnum_PRESENT2,
-  _$basicListingLngStatusEnum_MISSING2,
-  _$basicListingLngStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingServiceAreasStatusEnum
@@ -4229,21 +3080,6 @@ const BasicListingServiceAreasStatusEnum
 const BasicListingServiceAreasStatusEnum
     _$basicListingServiceAreasStatusEnum_NOT_APPLICABLE =
     const BasicListingServiceAreasStatusEnum._('NOT_APPLICABLE');
-const BasicListingServiceAreasStatusEnum
-    _$basicListingServiceAreasStatusEnum_MATCH2 =
-    const BasicListingServiceAreasStatusEnum._('MATCH2');
-const BasicListingServiceAreasStatusEnum
-    _$basicListingServiceAreasStatusEnum_MISMATCH2 =
-    const BasicListingServiceAreasStatusEnum._('MISMATCH2');
-const BasicListingServiceAreasStatusEnum
-    _$basicListingServiceAreasStatusEnum_PRESENT2 =
-    const BasicListingServiceAreasStatusEnum._('PRESENT2');
-const BasicListingServiceAreasStatusEnum
-    _$basicListingServiceAreasStatusEnum_MISSING2 =
-    const BasicListingServiceAreasStatusEnum._('MISSING2');
-const BasicListingServiceAreasStatusEnum
-    _$basicListingServiceAreasStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingServiceAreasStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingServiceAreasStatusEnum _$basicListingServiceAreasStatusEnumValueOf(
     String name) {
@@ -4258,16 +3094,6 @@ BasicListingServiceAreasStatusEnum _$basicListingServiceAreasStatusEnumValueOf(
       return _$basicListingServiceAreasStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingServiceAreasStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingServiceAreasStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingServiceAreasStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingServiceAreasStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingServiceAreasStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingServiceAreasStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -4281,11 +3107,6 @@ final BuiltSet<BasicListingServiceAreasStatusEnum>
   _$basicListingServiceAreasStatusEnum_PRESENT,
   _$basicListingServiceAreasStatusEnum_MISSING,
   _$basicListingServiceAreasStatusEnum_NOT_APPLICABLE,
-  _$basicListingServiceAreasStatusEnum_MATCH2,
-  _$basicListingServiceAreasStatusEnum_MISMATCH2,
-  _$basicListingServiceAreasStatusEnum_PRESENT2,
-  _$basicListingServiceAreasStatusEnum_MISSING2,
-  _$basicListingServiceAreasStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingRatingStatusEnum _$basicListingRatingStatusEnum_MATCH =
@@ -4299,11 +3120,6 @@ const BasicListingRatingStatusEnum _$basicListingRatingStatusEnum_MISSING =
 const BasicListingRatingStatusEnum
     _$basicListingRatingStatusEnum_NOT_APPLICABLE =
     const BasicListingRatingStatusEnum._('NOT_APPLICABLE');
-const BasicListingRatingStatusEnum _$basicListingRatingStatusEnum_PRESENT2 =
-    const BasicListingRatingStatusEnum._('PRESENT2');
-const BasicListingRatingStatusEnum
-    _$basicListingRatingStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingRatingStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingRatingStatusEnum _$basicListingRatingStatusEnumValueOf(
     String name) {
@@ -4318,10 +3134,6 @@ BasicListingRatingStatusEnum _$basicListingRatingStatusEnumValueOf(
       return _$basicListingRatingStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingRatingStatusEnum_NOT_APPLICABLE;
-    case 'PRESENT2':
-      return _$basicListingRatingStatusEnum_PRESENT2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingRatingStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -4335,8 +3147,6 @@ final BuiltSet<BasicListingRatingStatusEnum>
   _$basicListingRatingStatusEnum_PRESENT,
   _$basicListingRatingStatusEnum_MISSING,
   _$basicListingRatingStatusEnum_NOT_APPLICABLE,
-  _$basicListingRatingStatusEnum_PRESENT2,
-  _$basicListingRatingStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingNumberOfRatingsStatusEnum
@@ -4354,12 +3164,6 @@ const BasicListingNumberOfRatingsStatusEnum
 const BasicListingNumberOfRatingsStatusEnum
     _$basicListingNumberOfRatingsStatusEnum_NOT_APPLICABLE =
     const BasicListingNumberOfRatingsStatusEnum._('NOT_APPLICABLE');
-const BasicListingNumberOfRatingsStatusEnum
-    _$basicListingNumberOfRatingsStatusEnum_PRESENT2 =
-    const BasicListingNumberOfRatingsStatusEnum._('PRESENT2');
-const BasicListingNumberOfRatingsStatusEnum
-    _$basicListingNumberOfRatingsStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingNumberOfRatingsStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingNumberOfRatingsStatusEnum
     _$basicListingNumberOfRatingsStatusEnumValueOf(String name) {
@@ -4374,10 +3178,6 @@ BasicListingNumberOfRatingsStatusEnum
       return _$basicListingNumberOfRatingsStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingNumberOfRatingsStatusEnum_NOT_APPLICABLE;
-    case 'PRESENT2':
-      return _$basicListingNumberOfRatingsStatusEnum_PRESENT2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingNumberOfRatingsStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -4391,8 +3191,6 @@ final BuiltSet<BasicListingNumberOfRatingsStatusEnum>
   _$basicListingNumberOfRatingsStatusEnum_PRESENT,
   _$basicListingNumberOfRatingsStatusEnum_MISSING,
   _$basicListingNumberOfRatingsStatusEnum_NOT_APPLICABLE,
-  _$basicListingNumberOfRatingsStatusEnum_PRESENT2,
-  _$basicListingNumberOfRatingsStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingDirectoryTypeEnum _$basicListingDirectoryTypeEnum_FOURSQUARE =
@@ -5684,20 +4482,6 @@ const BasicListingClaimStatusEnum
     const BasicListingClaimStatusEnum._('CLAIMING_IN_PROGRESS');
 const BasicListingClaimStatusEnum _$basicListingClaimStatusEnum_UNKNOWN =
     const BasicListingClaimStatusEnum._('UNKNOWN');
-const BasicListingClaimStatusEnum _$basicListingClaimStatusEnum_CLAIMABLE2 =
-    const BasicListingClaimStatusEnum._('CLAIMABLE2');
-const BasicListingClaimStatusEnum _$basicListingClaimStatusEnum_CLAIMED_BY_US2 =
-    const BasicListingClaimStatusEnum._('CLAIMED_BY_US2');
-const BasicListingClaimStatusEnum
-    _$basicListingClaimStatusEnum_CLAIMED_BY_OTHERS2 =
-    const BasicListingClaimStatusEnum._('CLAIMED_BY_OTHERS2');
-const BasicListingClaimStatusEnum
-    _$basicListingClaimStatusEnum_CLAIMING_IN_PROGRESS2 =
-    const BasicListingClaimStatusEnum._('CLAIMING_IN_PROGRESS2');
-const BasicListingClaimStatusEnum _$basicListingClaimStatusEnum_NOT_CLAIMABLE2 =
-    const BasicListingClaimStatusEnum._('NOT_CLAIMABLE2');
-const BasicListingClaimStatusEnum _$basicListingClaimStatusEnum_UNKNOWN2 =
-    const BasicListingClaimStatusEnum._('UNKNOWN2');
 
 BasicListingClaimStatusEnum _$basicListingClaimStatusEnumValueOf(String name) {
   switch (name) {
@@ -5715,18 +4499,6 @@ BasicListingClaimStatusEnum _$basicListingClaimStatusEnumValueOf(String name) {
       return _$basicListingClaimStatusEnum_CLAIMING_IN_PROGRESS;
     case 'UNKNOWN':
       return _$basicListingClaimStatusEnum_UNKNOWN;
-    case 'CLAIMABLE2':
-      return _$basicListingClaimStatusEnum_CLAIMABLE2;
-    case 'CLAIMED_BY_US2':
-      return _$basicListingClaimStatusEnum_CLAIMED_BY_US2;
-    case 'CLAIMED_BY_OTHERS2':
-      return _$basicListingClaimStatusEnum_CLAIMED_BY_OTHERS2;
-    case 'CLAIMING_IN_PROGRESS2':
-      return _$basicListingClaimStatusEnum_CLAIMING_IN_PROGRESS2;
-    case 'NOT_CLAIMABLE2':
-      return _$basicListingClaimStatusEnum_NOT_CLAIMABLE2;
-    case 'UNKNOWN2':
-      return _$basicListingClaimStatusEnum_UNKNOWN2;
     default:
       throw new ArgumentError(name);
   }
@@ -5742,12 +4514,6 @@ final BuiltSet<BasicListingClaimStatusEnum>
   _$basicListingClaimStatusEnum_CLAIMED_BY_ANOTHER_US,
   _$basicListingClaimStatusEnum_CLAIMING_IN_PROGRESS,
   _$basicListingClaimStatusEnum_UNKNOWN,
-  _$basicListingClaimStatusEnum_CLAIMABLE2,
-  _$basicListingClaimStatusEnum_CLAIMED_BY_US2,
-  _$basicListingClaimStatusEnum_CLAIMED_BY_OTHERS2,
-  _$basicListingClaimStatusEnum_CLAIMING_IN_PROGRESS2,
-  _$basicListingClaimStatusEnum_NOT_CLAIMABLE2,
-  _$basicListingClaimStatusEnum_UNKNOWN2,
 ]);
 
 const BasicListingNpiStatusEnum _$basicListingNpiStatusEnum_MATCH =
@@ -5760,16 +4526,6 @@ const BasicListingNpiStatusEnum _$basicListingNpiStatusEnum_MISSING =
     const BasicListingNpiStatusEnum._('MISSING');
 const BasicListingNpiStatusEnum _$basicListingNpiStatusEnum_NOT_APPLICABLE =
     const BasicListingNpiStatusEnum._('NOT_APPLICABLE');
-const BasicListingNpiStatusEnum _$basicListingNpiStatusEnum_MATCH2 =
-    const BasicListingNpiStatusEnum._('MATCH2');
-const BasicListingNpiStatusEnum _$basicListingNpiStatusEnum_MISMATCH2 =
-    const BasicListingNpiStatusEnum._('MISMATCH2');
-const BasicListingNpiStatusEnum _$basicListingNpiStatusEnum_PRESENT2 =
-    const BasicListingNpiStatusEnum._('PRESENT2');
-const BasicListingNpiStatusEnum _$basicListingNpiStatusEnum_MISSING2 =
-    const BasicListingNpiStatusEnum._('MISSING2');
-const BasicListingNpiStatusEnum _$basicListingNpiStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingNpiStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingNpiStatusEnum _$basicListingNpiStatusEnumValueOf(String name) {
   switch (name) {
@@ -5783,16 +4539,6 @@ BasicListingNpiStatusEnum _$basicListingNpiStatusEnumValueOf(String name) {
       return _$basicListingNpiStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingNpiStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingNpiStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingNpiStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingNpiStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingNpiStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingNpiStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -5805,11 +4551,6 @@ final BuiltSet<BasicListingNpiStatusEnum> _$basicListingNpiStatusEnumValues =
   _$basicListingNpiStatusEnum_PRESENT,
   _$basicListingNpiStatusEnum_MISSING,
   _$basicListingNpiStatusEnum_NOT_APPLICABLE,
-  _$basicListingNpiStatusEnum_MATCH2,
-  _$basicListingNpiStatusEnum_MISMATCH2,
-  _$basicListingNpiStatusEnum_PRESENT2,
-  _$basicListingNpiStatusEnum_MISSING2,
-  _$basicListingNpiStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingDoctorCategoriesStatusEnum
@@ -5827,21 +4568,6 @@ const BasicListingDoctorCategoriesStatusEnum
 const BasicListingDoctorCategoriesStatusEnum
     _$basicListingDoctorCategoriesStatusEnum_NOT_APPLICABLE =
     const BasicListingDoctorCategoriesStatusEnum._('NOT_APPLICABLE');
-const BasicListingDoctorCategoriesStatusEnum
-    _$basicListingDoctorCategoriesStatusEnum_MATCH2 =
-    const BasicListingDoctorCategoriesStatusEnum._('MATCH2');
-const BasicListingDoctorCategoriesStatusEnum
-    _$basicListingDoctorCategoriesStatusEnum_MISMATCH2 =
-    const BasicListingDoctorCategoriesStatusEnum._('MISMATCH2');
-const BasicListingDoctorCategoriesStatusEnum
-    _$basicListingDoctorCategoriesStatusEnum_PRESENT2 =
-    const BasicListingDoctorCategoriesStatusEnum._('PRESENT2');
-const BasicListingDoctorCategoriesStatusEnum
-    _$basicListingDoctorCategoriesStatusEnum_MISSING2 =
-    const BasicListingDoctorCategoriesStatusEnum._('MISSING2');
-const BasicListingDoctorCategoriesStatusEnum
-    _$basicListingDoctorCategoriesStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingDoctorCategoriesStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingDoctorCategoriesStatusEnum
     _$basicListingDoctorCategoriesStatusEnumValueOf(String name) {
@@ -5856,16 +4582,6 @@ BasicListingDoctorCategoriesStatusEnum
       return _$basicListingDoctorCategoriesStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingDoctorCategoriesStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingDoctorCategoriesStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingDoctorCategoriesStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingDoctorCategoriesStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingDoctorCategoriesStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingDoctorCategoriesStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -5879,11 +4595,6 @@ final BuiltSet<BasicListingDoctorCategoriesStatusEnum>
   _$basicListingDoctorCategoriesStatusEnum_PRESENT,
   _$basicListingDoctorCategoriesStatusEnum_MISSING,
   _$basicListingDoctorCategoriesStatusEnum_NOT_APPLICABLE,
-  _$basicListingDoctorCategoriesStatusEnum_MATCH2,
-  _$basicListingDoctorCategoriesStatusEnum_MISMATCH2,
-  _$basicListingDoctorCategoriesStatusEnum_PRESENT2,
-  _$basicListingDoctorCategoriesStatusEnum_MISSING2,
-  _$basicListingDoctorCategoriesStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingNameDescriptorStatusEnum
@@ -5901,21 +4612,6 @@ const BasicListingNameDescriptorStatusEnum
 const BasicListingNameDescriptorStatusEnum
     _$basicListingNameDescriptorStatusEnum_NOT_APPLICABLE =
     const BasicListingNameDescriptorStatusEnum._('NOT_APPLICABLE');
-const BasicListingNameDescriptorStatusEnum
-    _$basicListingNameDescriptorStatusEnum_MATCH2 =
-    const BasicListingNameDescriptorStatusEnum._('MATCH2');
-const BasicListingNameDescriptorStatusEnum
-    _$basicListingNameDescriptorStatusEnum_MISMATCH2 =
-    const BasicListingNameDescriptorStatusEnum._('MISMATCH2');
-const BasicListingNameDescriptorStatusEnum
-    _$basicListingNameDescriptorStatusEnum_PRESENT2 =
-    const BasicListingNameDescriptorStatusEnum._('PRESENT2');
-const BasicListingNameDescriptorStatusEnum
-    _$basicListingNameDescriptorStatusEnum_MISSING2 =
-    const BasicListingNameDescriptorStatusEnum._('MISSING2');
-const BasicListingNameDescriptorStatusEnum
-    _$basicListingNameDescriptorStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingNameDescriptorStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingNameDescriptorStatusEnum
     _$basicListingNameDescriptorStatusEnumValueOf(String name) {
@@ -5930,16 +4626,6 @@ BasicListingNameDescriptorStatusEnum
       return _$basicListingNameDescriptorStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingNameDescriptorStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingNameDescriptorStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingNameDescriptorStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingNameDescriptorStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingNameDescriptorStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingNameDescriptorStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -5953,11 +4639,6 @@ final BuiltSet<BasicListingNameDescriptorStatusEnum>
   _$basicListingNameDescriptorStatusEnum_PRESENT,
   _$basicListingNameDescriptorStatusEnum_MISSING,
   _$basicListingNameDescriptorStatusEnum_NOT_APPLICABLE,
-  _$basicListingNameDescriptorStatusEnum_MATCH2,
-  _$basicListingNameDescriptorStatusEnum_MISMATCH2,
-  _$basicListingNameDescriptorStatusEnum_PRESENT2,
-  _$basicListingNameDescriptorStatusEnum_MISSING2,
-  _$basicListingNameDescriptorStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingOpeningDateStatusEnum
@@ -5975,21 +4656,6 @@ const BasicListingOpeningDateStatusEnum
 const BasicListingOpeningDateStatusEnum
     _$basicListingOpeningDateStatusEnum_NOT_APPLICABLE =
     const BasicListingOpeningDateStatusEnum._('NOT_APPLICABLE');
-const BasicListingOpeningDateStatusEnum
-    _$basicListingOpeningDateStatusEnum_MATCH2 =
-    const BasicListingOpeningDateStatusEnum._('MATCH2');
-const BasicListingOpeningDateStatusEnum
-    _$basicListingOpeningDateStatusEnum_MISMATCH2 =
-    const BasicListingOpeningDateStatusEnum._('MISMATCH2');
-const BasicListingOpeningDateStatusEnum
-    _$basicListingOpeningDateStatusEnum_PRESENT2 =
-    const BasicListingOpeningDateStatusEnum._('PRESENT2');
-const BasicListingOpeningDateStatusEnum
-    _$basicListingOpeningDateStatusEnum_MISSING2 =
-    const BasicListingOpeningDateStatusEnum._('MISSING2');
-const BasicListingOpeningDateStatusEnum
-    _$basicListingOpeningDateStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingOpeningDateStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingOpeningDateStatusEnum _$basicListingOpeningDateStatusEnumValueOf(
     String name) {
@@ -6004,16 +4670,6 @@ BasicListingOpeningDateStatusEnum _$basicListingOpeningDateStatusEnumValueOf(
       return _$basicListingOpeningDateStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingOpeningDateStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingOpeningDateStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingOpeningDateStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingOpeningDateStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingOpeningDateStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingOpeningDateStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -6027,11 +4683,6 @@ final BuiltSet<BasicListingOpeningDateStatusEnum>
   _$basicListingOpeningDateStatusEnum_PRESENT,
   _$basicListingOpeningDateStatusEnum_MISSING,
   _$basicListingOpeningDateStatusEnum_NOT_APPLICABLE,
-  _$basicListingOpeningDateStatusEnum_MATCH2,
-  _$basicListingOpeningDateStatusEnum_MISMATCH2,
-  _$basicListingOpeningDateStatusEnum_PRESENT2,
-  _$basicListingOpeningDateStatusEnum_MISSING2,
-  _$basicListingOpeningDateStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingCustomFieldsStatusEnum
@@ -6049,21 +4700,6 @@ const BasicListingCustomFieldsStatusEnum
 const BasicListingCustomFieldsStatusEnum
     _$basicListingCustomFieldsStatusEnum_NOT_APPLICABLE =
     const BasicListingCustomFieldsStatusEnum._('NOT_APPLICABLE');
-const BasicListingCustomFieldsStatusEnum
-    _$basicListingCustomFieldsStatusEnum_MATCH2 =
-    const BasicListingCustomFieldsStatusEnum._('MATCH2');
-const BasicListingCustomFieldsStatusEnum
-    _$basicListingCustomFieldsStatusEnum_MISMATCH2 =
-    const BasicListingCustomFieldsStatusEnum._('MISMATCH2');
-const BasicListingCustomFieldsStatusEnum
-    _$basicListingCustomFieldsStatusEnum_PRESENT2 =
-    const BasicListingCustomFieldsStatusEnum._('PRESENT2');
-const BasicListingCustomFieldsStatusEnum
-    _$basicListingCustomFieldsStatusEnum_MISSING2 =
-    const BasicListingCustomFieldsStatusEnum._('MISSING2');
-const BasicListingCustomFieldsStatusEnum
-    _$basicListingCustomFieldsStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingCustomFieldsStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingCustomFieldsStatusEnum _$basicListingCustomFieldsStatusEnumValueOf(
     String name) {
@@ -6078,16 +4714,6 @@ BasicListingCustomFieldsStatusEnum _$basicListingCustomFieldsStatusEnumValueOf(
       return _$basicListingCustomFieldsStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingCustomFieldsStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingCustomFieldsStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingCustomFieldsStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingCustomFieldsStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingCustomFieldsStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingCustomFieldsStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -6101,11 +4727,6 @@ final BuiltSet<BasicListingCustomFieldsStatusEnum>
   _$basicListingCustomFieldsStatusEnum_PRESENT,
   _$basicListingCustomFieldsStatusEnum_MISSING,
   _$basicListingCustomFieldsStatusEnum_NOT_APPLICABLE,
-  _$basicListingCustomFieldsStatusEnum_MATCH2,
-  _$basicListingCustomFieldsStatusEnum_MISMATCH2,
-  _$basicListingCustomFieldsStatusEnum_PRESENT2,
-  _$basicListingCustomFieldsStatusEnum_MISSING2,
-  _$basicListingCustomFieldsStatusEnum_NOT_APPLICABLE2,
 ]);
 
 const BasicListingSublocalityStatusEnum
@@ -6123,21 +4744,6 @@ const BasicListingSublocalityStatusEnum
 const BasicListingSublocalityStatusEnum
     _$basicListingSublocalityStatusEnum_NOT_APPLICABLE =
     const BasicListingSublocalityStatusEnum._('NOT_APPLICABLE');
-const BasicListingSublocalityStatusEnum
-    _$basicListingSublocalityStatusEnum_MATCH2 =
-    const BasicListingSublocalityStatusEnum._('MATCH2');
-const BasicListingSublocalityStatusEnum
-    _$basicListingSublocalityStatusEnum_MISMATCH2 =
-    const BasicListingSublocalityStatusEnum._('MISMATCH2');
-const BasicListingSublocalityStatusEnum
-    _$basicListingSublocalityStatusEnum_PRESENT2 =
-    const BasicListingSublocalityStatusEnum._('PRESENT2');
-const BasicListingSublocalityStatusEnum
-    _$basicListingSublocalityStatusEnum_MISSING2 =
-    const BasicListingSublocalityStatusEnum._('MISSING2');
-const BasicListingSublocalityStatusEnum
-    _$basicListingSublocalityStatusEnum_NOT_APPLICABLE2 =
-    const BasicListingSublocalityStatusEnum._('NOT_APPLICABLE2');
 
 BasicListingSublocalityStatusEnum _$basicListingSublocalityStatusEnumValueOf(
     String name) {
@@ -6152,16 +4758,6 @@ BasicListingSublocalityStatusEnum _$basicListingSublocalityStatusEnumValueOf(
       return _$basicListingSublocalityStatusEnum_MISSING;
     case 'NOT_APPLICABLE':
       return _$basicListingSublocalityStatusEnum_NOT_APPLICABLE;
-    case 'MATCH2':
-      return _$basicListingSublocalityStatusEnum_MATCH2;
-    case 'MISMATCH2':
-      return _$basicListingSublocalityStatusEnum_MISMATCH2;
-    case 'PRESENT2':
-      return _$basicListingSublocalityStatusEnum_PRESENT2;
-    case 'MISSING2':
-      return _$basicListingSublocalityStatusEnum_MISSING2;
-    case 'NOT_APPLICABLE2':
-      return _$basicListingSublocalityStatusEnum_NOT_APPLICABLE2;
     default:
       throw new ArgumentError(name);
   }
@@ -6175,11 +4771,6 @@ final BuiltSet<BasicListingSublocalityStatusEnum>
   _$basicListingSublocalityStatusEnum_PRESENT,
   _$basicListingSublocalityStatusEnum_MISSING,
   _$basicListingSublocalityStatusEnum_NOT_APPLICABLE,
-  _$basicListingSublocalityStatusEnum_MATCH2,
-  _$basicListingSublocalityStatusEnum_MISMATCH2,
-  _$basicListingSublocalityStatusEnum_PRESENT2,
-  _$basicListingSublocalityStatusEnum_MISSING2,
-  _$basicListingSublocalityStatusEnum_NOT_APPLICABLE2,
 ]);
 
 Serializer<BasicListingNameStatusEnum> _$basicListingNameStatusEnumSerializer =
@@ -6348,11 +4939,6 @@ class _$BasicListingNameStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -6360,11 +4946,6 @@ class _$BasicListingNameStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -6393,11 +4974,6 @@ class _$BasicListingStreetStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -6405,11 +4981,6 @@ class _$BasicListingStreetStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -6438,11 +5009,6 @@ class _$BasicListingStreetNoStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -6450,11 +5016,6 @@ class _$BasicListingStreetNoStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -6547,11 +5108,6 @@ class _$BasicListingStreetTypeStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -6559,11 +5115,6 @@ class _$BasicListingStreetTypeStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -6593,11 +5144,6 @@ class _$BasicListingStreetAndNoStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -6605,11 +5151,6 @@ class _$BasicListingStreetAndNoStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -6639,11 +5180,6 @@ class _$BasicListingAddressExtraStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -6651,11 +5187,6 @@ class _$BasicListingAddressExtraStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -6685,11 +5216,6 @@ class _$BasicListingZipStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -6697,11 +5223,6 @@ class _$BasicListingZipStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -6730,11 +5251,6 @@ class _$BasicListingCityStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -6742,11 +5258,6 @@ class _$BasicListingCityStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -6775,11 +5286,6 @@ class _$BasicListingAddressDisplayStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -6787,11 +5293,6 @@ class _$BasicListingAddressDisplayStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -6823,11 +5324,6 @@ class _$BasicListingPhoneStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -6835,11 +5331,6 @@ class _$BasicListingPhoneStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -6868,11 +5359,6 @@ class _$BasicListingFaxStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -6880,11 +5366,6 @@ class _$BasicListingFaxStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -6913,11 +5394,6 @@ class _$BasicListingCellphoneStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -6925,11 +5401,6 @@ class _$BasicListingCellphoneStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -6959,11 +5430,6 @@ class _$BasicListingWebsiteStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -6971,11 +5437,6 @@ class _$BasicListingWebsiteStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -7005,11 +5466,6 @@ class _$BasicListingEmailStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -7017,11 +5473,6 @@ class _$BasicListingEmailStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -7050,11 +5501,6 @@ class _$BasicListingDescriptionLongStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -7062,11 +5508,6 @@ class _$BasicListingDescriptionLongStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -7098,11 +5539,6 @@ class _$BasicListingDescriptionShortStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -7110,11 +5546,6 @@ class _$BasicListingDescriptionShortStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -7146,9 +5577,6 @@ class _$BasicListingImprintStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -7156,9 +5584,6 @@ class _$BasicListingImprintStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -7188,11 +5613,6 @@ class _$BasicListingOpeningHoursStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -7200,11 +5620,6 @@ class _$BasicListingOpeningHoursStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -7234,11 +5649,6 @@ class _$BasicListingOpeningHoursNotesStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -7246,11 +5656,6 @@ class _$BasicListingOpeningHoursNotesStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -7282,11 +5687,6 @@ class _$BasicListingMoreHoursStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -7294,11 +5694,6 @@ class _$BasicListingMoreHoursStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -7328,11 +5723,6 @@ class _$BasicListingSpecialOpeningHoursStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -7340,11 +5730,6 @@ class _$BasicListingSpecialOpeningHoursStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -7376,11 +5761,6 @@ class _$BasicListingKeywordsStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -7388,11 +5768,6 @@ class _$BasicListingKeywordsStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -7422,12 +5797,6 @@ class _$BasicListingCategoriesStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MISSING2': 'MISSING2',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING3': 'MISSING3',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -7435,12 +5804,6 @@ class _$BasicListingCategoriesStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MISSING2': 'MISSING2',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING3': 'MISSING3',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -7465,24 +5828,14 @@ class _$BasicListingCategoriesStatusEnumSerializer
 class _$BasicListingAttributesStatusEnumSerializer
     implements PrimitiveSerializer<BasicListingAttributesStatusEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
-    'MATCH': 'MATCH',
-    'MISMATCH': 'MISMATCH',
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
-    'MATCH': 'MATCH',
-    'MISMATCH': 'MISMATCH',
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -7512,12 +5865,6 @@ class _$BasicListingPhotosStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MISSING2': 'MISSING2',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING3': 'MISSING3',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -7525,12 +5872,6 @@ class _$BasicListingPhotosStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MISSING2': 'MISSING2',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING3': 'MISSING3',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -7559,11 +5900,6 @@ class _$BasicListingLegalIdentStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -7571,11 +5907,6 @@ class _$BasicListingLegalIdentStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -7605,11 +5936,6 @@ class _$BasicListingTaxNumberStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -7617,11 +5943,6 @@ class _$BasicListingTaxNumberStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -7651,11 +5972,6 @@ class _$BasicListingProvinceStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -7663,11 +5979,6 @@ class _$BasicListingProvinceStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -8222,11 +6533,6 @@ class _$BasicListingCountryStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -8234,11 +6540,6 @@ class _$BasicListingCountryStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -8268,11 +6569,6 @@ class _$BasicListingSocialPostStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -8280,11 +6576,6 @@ class _$BasicListingSocialPostStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -8314,11 +6605,6 @@ class _$BasicListingVideosStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -8326,11 +6612,6 @@ class _$BasicListingVideosStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -8359,11 +6640,6 @@ class _$BasicListingContentListsStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -8371,11 +6647,6 @@ class _$BasicListingContentListsStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -8405,11 +6676,6 @@ class _$BasicListingSocialProfilesStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -8417,11 +6683,6 @@ class _$BasicListingSocialProfilesStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -8453,11 +6714,6 @@ class _$BasicListingPaymentOptionsStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -8465,11 +6721,6 @@ class _$BasicListingPaymentOptionsStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -8501,11 +6752,6 @@ class _$BasicListingBrandsStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -8513,11 +6759,6 @@ class _$BasicListingBrandsStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -8546,11 +6787,6 @@ class _$BasicListingServicesStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -8558,11 +6794,6 @@ class _$BasicListingServicesStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -8592,11 +6823,6 @@ class _$BasicListingTransactionLinksStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -8604,11 +6830,6 @@ class _$BasicListingTransactionLinksStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -8640,11 +6861,6 @@ class _$BasicListingLanguagesStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -8652,11 +6868,6 @@ class _$BasicListingLanguagesStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -8686,11 +6897,6 @@ class _$BasicListingAttributionStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -8698,11 +6904,6 @@ class _$BasicListingAttributionStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -8732,11 +6933,6 @@ class _$BasicListingLatStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -8744,11 +6940,6 @@ class _$BasicListingLatStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -8777,11 +6968,6 @@ class _$BasicListingLngStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -8789,11 +6975,6 @@ class _$BasicListingLngStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -8822,11 +7003,6 @@ class _$BasicListingServiceAreasStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -8834,11 +7010,6 @@ class _$BasicListingServiceAreasStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -8868,8 +7039,6 @@ class _$BasicListingRatingStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'PRESENT2': 'PRESENT2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -8877,8 +7046,6 @@ class _$BasicListingRatingStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'PRESENT2': 'PRESENT2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -8907,8 +7074,6 @@ class _$BasicListingNumberOfRatingsStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'PRESENT2': 'PRESENT2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -8916,8 +7081,6 @@ class _$BasicListingNumberOfRatingsStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'PRESENT2': 'PRESENT2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -9485,12 +7648,6 @@ class _$BasicListingClaimStatusEnumSerializer
     'CLAIMED_BY_ANOTHER_US': 'CLAIMED_BY_ANOTHER_US',
     'CLAIMING_IN_PROGRESS': 'CLAIMING_IN_PROGRESS',
     'UNKNOWN': 'UNKNOWN',
-    'CLAIMABLE2': 'CLAIMABLE2',
-    'CLAIMED_BY_US2': 'CLAIMED_BY_US2',
-    'CLAIMED_BY_OTHERS2': 'CLAIMED_BY_OTHERS2',
-    'CLAIMING_IN_PROGRESS2': 'CLAIMING_IN_PROGRESS2',
-    'NOT_CLAIMABLE2': 'NOT_CLAIMABLE2',
-    'UNKNOWN2': 'UNKNOWN2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'CLAIMABLE': 'CLAIMABLE',
@@ -9500,12 +7657,6 @@ class _$BasicListingClaimStatusEnumSerializer
     'CLAIMED_BY_ANOTHER_US': 'CLAIMED_BY_ANOTHER_US',
     'CLAIMING_IN_PROGRESS': 'CLAIMING_IN_PROGRESS',
     'UNKNOWN': 'UNKNOWN',
-    'CLAIMABLE2': 'CLAIMABLE2',
-    'CLAIMED_BY_US2': 'CLAIMED_BY_US2',
-    'CLAIMED_BY_OTHERS2': 'CLAIMED_BY_OTHERS2',
-    'CLAIMING_IN_PROGRESS2': 'CLAIMING_IN_PROGRESS2',
-    'NOT_CLAIMABLE2': 'NOT_CLAIMABLE2',
-    'UNKNOWN2': 'UNKNOWN2',
   };
 
   @override
@@ -9534,11 +7685,6 @@ class _$BasicListingNpiStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -9546,11 +7692,6 @@ class _$BasicListingNpiStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -9579,11 +7720,6 @@ class _$BasicListingDoctorCategoriesStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -9591,11 +7727,6 @@ class _$BasicListingDoctorCategoriesStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -9627,11 +7758,6 @@ class _$BasicListingNameDescriptorStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -9639,11 +7765,6 @@ class _$BasicListingNameDescriptorStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -9675,11 +7796,6 @@ class _$BasicListingOpeningDateStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -9687,11 +7803,6 @@ class _$BasicListingOpeningDateStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -9721,11 +7832,6 @@ class _$BasicListingCustomFieldsStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -9733,11 +7839,6 @@ class _$BasicListingCustomFieldsStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -9767,11 +7868,6 @@ class _$BasicListingSublocalityStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MATCH': 'MATCH',
@@ -9779,11 +7875,6 @@ class _$BasicListingSublocalityStatusEnumSerializer
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
-    'MATCH2': 'MATCH2',
-    'MISMATCH2': 'MISMATCH2',
-    'PRESENT2': 'PRESENT2',
-    'MISSING2': 'MISSING2',
-    'NOT_APPLICABLE2': 'NOT_APPLICABLE2',
   };
 
   @override
@@ -10007,9 +8098,11 @@ class _$BasicListing extends BasicListing {
   @override
   final bool? photos;
   @override
-  final BuiltList<SocialProfile>? socialProfiles;
+  final BuiltList<Video>? videos;
   @override
   final BuiltList<ContentList>? contentLists;
+  @override
+  final BuiltList<SocialProfile>? socialProfiles;
   @override
   final BuiltList<String>? keywords;
   @override
@@ -10018,8 +8111,6 @@ class _$BasicListing extends BasicListing {
   final BuiltList<String>? services;
   @override
   final BuiltList<String>? languages;
-  @override
-  final BuiltList<Video>? videos;
 
   factory _$BasicListing([void Function(BasicListingBuilder)? updates]) =>
       (new BasicListingBuilder()..update(updates))._build();
@@ -10125,13 +8216,13 @@ class _$BasicListing extends BasicListing {
       this.sublocalityStatus,
       this.websiteExtra,
       this.photos,
-      this.socialProfiles,
+      this.videos,
       this.contentLists,
+      this.socialProfiles,
       this.keywords,
       this.brands,
       this.services,
-      this.languages,
-      this.videos})
+      this.languages})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         categories, r'BasicListing', 'categories');
@@ -10248,13 +8339,13 @@ class _$BasicListing extends BasicListing {
         sublocalityStatus == other.sublocalityStatus &&
         websiteExtra == other.websiteExtra &&
         photos == other.photos &&
-        socialProfiles == other.socialProfiles &&
+        videos == other.videos &&
         contentLists == other.contentLists &&
+        socialProfiles == other.socialProfiles &&
         keywords == other.keywords &&
         brands == other.brands &&
         services == other.services &&
-        languages == other.languages &&
-        videos == other.videos;
+        languages == other.languages;
   }
 
   @override
@@ -10360,13 +8451,13 @@ class _$BasicListing extends BasicListing {
     _$hash = $jc(_$hash, sublocalityStatus.hashCode);
     _$hash = $jc(_$hash, websiteExtra.hashCode);
     _$hash = $jc(_$hash, photos.hashCode);
-    _$hash = $jc(_$hash, socialProfiles.hashCode);
+    _$hash = $jc(_$hash, videos.hashCode);
     _$hash = $jc(_$hash, contentLists.hashCode);
+    _$hash = $jc(_$hash, socialProfiles.hashCode);
     _$hash = $jc(_$hash, keywords.hashCode);
     _$hash = $jc(_$hash, brands.hashCode);
     _$hash = $jc(_$hash, services.hashCode);
     _$hash = $jc(_$hash, languages.hashCode);
-    _$hash = $jc(_$hash, videos.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -10474,13 +8565,13 @@ class _$BasicListing extends BasicListing {
           ..add('sublocalityStatus', sublocalityStatus)
           ..add('websiteExtra', websiteExtra)
           ..add('photos', photos)
-          ..add('socialProfiles', socialProfiles)
+          ..add('videos', videos)
           ..add('contentLists', contentLists)
+          ..add('socialProfiles', socialProfiles)
           ..add('keywords', keywords)
           ..add('brands', brands)
           ..add('services', services)
-          ..add('languages', languages)
-          ..add('videos', videos))
+          ..add('languages', languages))
         .toString();
   }
 }
@@ -11019,17 +9110,21 @@ class BasicListingBuilder
   bool? get photos => _$this._photos;
   set photos(bool? photos) => _$this._photos = photos;
 
-  ListBuilder<SocialProfile>? _socialProfiles;
-  ListBuilder<SocialProfile> get socialProfiles =>
-      _$this._socialProfiles ??= new ListBuilder<SocialProfile>();
-  set socialProfiles(ListBuilder<SocialProfile>? socialProfiles) =>
-      _$this._socialProfiles = socialProfiles;
+  ListBuilder<Video>? _videos;
+  ListBuilder<Video> get videos => _$this._videos ??= new ListBuilder<Video>();
+  set videos(ListBuilder<Video>? videos) => _$this._videos = videos;
 
   ListBuilder<ContentList>? _contentLists;
   ListBuilder<ContentList> get contentLists =>
       _$this._contentLists ??= new ListBuilder<ContentList>();
   set contentLists(ListBuilder<ContentList>? contentLists) =>
       _$this._contentLists = contentLists;
+
+  ListBuilder<SocialProfile>? _socialProfiles;
+  ListBuilder<SocialProfile> get socialProfiles =>
+      _$this._socialProfiles ??= new ListBuilder<SocialProfile>();
+  set socialProfiles(ListBuilder<SocialProfile>? socialProfiles) =>
+      _$this._socialProfiles = socialProfiles;
 
   ListBuilder<String>? _keywords;
   ListBuilder<String> get keywords =>
@@ -11051,10 +9146,6 @@ class BasicListingBuilder
       _$this._languages ??= new ListBuilder<String>();
   set languages(ListBuilder<String>? languages) =>
       _$this._languages = languages;
-
-  ListBuilder<Video>? _videos;
-  ListBuilder<Video> get videos => _$this._videos ??= new ListBuilder<Video>();
-  set videos(ListBuilder<Video>? videos) => _$this._videos = videos;
 
   BasicListingBuilder() {
     BasicListing._defaults(this);
@@ -11163,13 +9254,13 @@ class BasicListingBuilder
       _sublocalityStatus = $v.sublocalityStatus;
       _websiteExtra = $v.websiteExtra;
       _photos = $v.photos;
-      _socialProfiles = $v.socialProfiles?.toBuilder();
+      _videos = $v.videos?.toBuilder();
       _contentLists = $v.contentLists?.toBuilder();
+      _socialProfiles = $v.socialProfiles?.toBuilder();
       _keywords = $v.keywords?.toBuilder();
       _brands = $v.brands?.toBuilder();
       _services = $v.services?.toBuilder();
       _languages = $v.languages?.toBuilder();
-      _videos = $v.videos?.toBuilder();
       _$v = null;
     }
     return this;
@@ -11294,13 +9385,13 @@ class BasicListingBuilder
             sublocalityStatus: sublocalityStatus,
             websiteExtra: websiteExtra,
             photos: photos,
-            socialProfiles: _socialProfiles?.build(),
+            videos: _videos?.build(),
             contentLists: _contentLists?.build(),
+            socialProfiles: _socialProfiles?.build(),
             keywords: _keywords?.build(),
             brands: _brands?.build(),
             services: _services?.build(),
             languages: _languages?.build(),
-            videos: _videos?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -11338,10 +9429,12 @@ class BasicListingBuilder
         _$failedField = 'customFields';
         _customFields?.build();
 
-        _$failedField = 'socialProfiles';
-        _socialProfiles?.build();
+        _$failedField = 'videos';
+        _videos?.build();
         _$failedField = 'contentLists';
         _contentLists?.build();
+        _$failedField = 'socialProfiles';
+        _socialProfiles?.build();
         _$failedField = 'keywords';
         _keywords?.build();
         _$failedField = 'brands';
@@ -11350,8 +9443,6 @@ class BasicListingBuilder
         _services?.build();
         _$failedField = 'languages';
         _languages?.build();
-        _$failedField = 'videos';
-        _videos?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'BasicListing', _$failedField, e.toString());

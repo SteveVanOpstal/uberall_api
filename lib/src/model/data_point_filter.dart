@@ -26,12 +26,12 @@ part 'data_point_filter.g.dart';
 /// * [timeSpan] - The date range for which the dataPoints should be filtered.
 /// * [crossfeedFilterId] - The id of a filter saved by a user in the Feed
 /// * [businessIds] - The list of businesses IDs for which the dataPoints should be filtered
-/// * [dateEnd] - The maximum date for which the dataPoints should be filtered
-/// * [dateStart] - The minimum date for which the dataPoints should be filtered
-/// * [ownerId] - The id of the user that owns the filter
-/// * [ownerName] - The name of the user that owns the filter
 /// * [salesPartnerId] - The sales partner to which the filter belongs
 /// * [subscriberIds] - The list of user''s ids that are subscribed to the filter
+/// * [ownerId] - The id of the user that owns the filter
+/// * [ownerName] - The name of the user that owns the filter
+/// * [dateEnd] - The maximum date for which the dataPoints should be filtered
+/// * [dateStart] - The minimum date for which the dataPoints should be filtered
 @BuiltValue()
 abstract class DataPointFilter
     implements Built<DataPointFilter, DataPointFilterBuilder> {
@@ -95,13 +95,13 @@ abstract class DataPointFilter
   @BuiltValueField(wireName: r'businessIds')
   BuiltSet<int>? get businessIds;
 
-  /// The maximum date for which the dataPoints should be filtered
-  @BuiltValueField(wireName: r'dateEnd')
-  DateTime? get dateEnd;
+  /// The sales partner to which the filter belongs
+  @BuiltValueField(wireName: r'salesPartnerId')
+  int? get salesPartnerId;
 
-  /// The minimum date for which the dataPoints should be filtered
-  @BuiltValueField(wireName: r'dateStart')
-  DateTime? get dateStart;
+  /// The list of user''s ids that are subscribed to the filter
+  @BuiltValueField(wireName: r'subscriberIds')
+  BuiltList<int>? get subscriberIds;
 
   /// The id of the user that owns the filter
   @BuiltValueField(wireName: r'ownerId')
@@ -111,13 +111,13 @@ abstract class DataPointFilter
   @BuiltValueField(wireName: r'ownerName')
   String? get ownerName;
 
-  /// The sales partner to which the filter belongs
-  @BuiltValueField(wireName: r'salesPartnerId')
-  int? get salesPartnerId;
+  /// The maximum date for which the dataPoints should be filtered
+  @BuiltValueField(wireName: r'dateEnd')
+  DateTime? get dateEnd;
 
-  /// The list of user''s ids that are subscribed to the filter
-  @BuiltValueField(wireName: r'subscriberIds')
-  BuiltList<int>? get subscriberIds;
+  /// The minimum date for which the dataPoints should be filtered
+  @BuiltValueField(wireName: r'dateStart')
+  DateTime? get dateStart;
 
   DataPointFilter._();
 
@@ -244,18 +244,18 @@ class _$DataPointFilterSerializer
         specifiedType: const FullType(BuiltSet, [FullType(int)]),
       );
     }
-    if (object.dateEnd != null) {
-      yield r'dateEnd';
+    if (object.salesPartnerId != null) {
+      yield r'salesPartnerId';
       yield serializers.serialize(
-        object.dateEnd,
-        specifiedType: const FullType(DateTime),
+        object.salesPartnerId,
+        specifiedType: const FullType(int),
       );
     }
-    if (object.dateStart != null) {
-      yield r'dateStart';
+    if (object.subscriberIds != null) {
+      yield r'subscriberIds';
       yield serializers.serialize(
-        object.dateStart,
-        specifiedType: const FullType(DateTime),
+        object.subscriberIds,
+        specifiedType: const FullType(BuiltList, [FullType(int)]),
       );
     }
     if (object.ownerId != null) {
@@ -272,18 +272,18 @@ class _$DataPointFilterSerializer
         specifiedType: const FullType(String),
       );
     }
-    if (object.salesPartnerId != null) {
-      yield r'salesPartnerId';
+    if (object.dateEnd != null) {
+      yield r'dateEnd';
       yield serializers.serialize(
-        object.salesPartnerId,
-        specifiedType: const FullType(int),
+        object.dateEnd,
+        specifiedType: const FullType(DateTime),
       );
     }
-    if (object.subscriberIds != null) {
-      yield r'subscriberIds';
+    if (object.dateStart != null) {
+      yield r'dateStart';
       yield serializers.serialize(
-        object.subscriberIds,
-        specifiedType: const FullType(BuiltList, [FullType(int)]),
+        object.dateStart,
+        specifiedType: const FullType(DateTime),
       );
     }
   }
@@ -412,19 +412,19 @@ class _$DataPointFilterSerializer
           ) as BuiltSet<int>;
           result.businessIds.replace(valueDes);
           break;
-        case r'dateEnd':
+        case r'salesPartnerId':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.dateEnd = valueDes;
+            specifiedType: const FullType(int),
+          ) as int;
+          result.salesPartnerId = valueDes;
           break;
-        case r'dateStart':
+        case r'subscriberIds':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.dateStart = valueDes;
+            specifiedType: const FullType(BuiltList, [FullType(int)]),
+          ) as BuiltList<int>;
+          result.subscriberIds.replace(valueDes);
           break;
         case r'ownerId':
           final valueDes = serializers.deserialize(
@@ -440,19 +440,19 @@ class _$DataPointFilterSerializer
           ) as String;
           result.ownerName = valueDes;
           break;
-        case r'salesPartnerId':
+        case r'dateEnd':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.salesPartnerId = valueDes;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.dateEnd = valueDes;
           break;
-        case r'subscriberIds':
+        case r'dateStart':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(int)]),
-          ) as BuiltList<int>;
-          result.subscriberIds.replace(valueDes);
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.dateStart = valueDes;
           break;
         default:
           unhandled.add(key);

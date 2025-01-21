@@ -24,10 +24,10 @@ part 'social_post_template.g.dart';
 /// * [callToActions]
 /// * [directories] - List of videos (currently only supports one element)
 /// * [photos] - The Social Post Template''s photos. It should be a list containing BASE64 converted images or urls of photos from a previous Social Post. It is required if the template has no description.
-/// * [userId] - Id of the user that is doing the action
+/// * [videos] - List of videos (currently only supports one element)
 /// * [ownerId] - The id of the user that owns the Social Post Template. (Only informational. If included in the request, it will be ignored.)
 /// * [ownerName] - The name of the user that owns the Social Post Template. (Only informational. If included in the request, it will be ignored.)
-/// * [videos] - List of videos (currently only supports one element)
+/// * [userId] - Id of the user that is doing the action
 @BuiltValue()
 abstract class SocialPostTemplate
     implements Built<SocialPostTemplate, SocialPostTemplateBuilder> {
@@ -72,9 +72,9 @@ abstract class SocialPostTemplate
   @BuiltValueField(wireName: r'photos')
   BuiltList<PhotoContainer>? get photos;
 
-  /// Id of the user that is doing the action
-  @BuiltValueField(wireName: r'userId')
-  int get userId;
+  /// List of videos (currently only supports one element)
+  @BuiltValueField(wireName: r'videos')
+  BuiltList<String>? get videos;
 
   /// The id of the user that owns the Social Post Template. (Only informational. If included in the request, it will be ignored.)
   @BuiltValueField(wireName: r'ownerId')
@@ -84,9 +84,9 @@ abstract class SocialPostTemplate
   @BuiltValueField(wireName: r'ownerName')
   String? get ownerName;
 
-  /// List of videos (currently only supports one element)
-  @BuiltValueField(wireName: r'videos')
-  BuiltList<String>? get videos;
+  /// Id of the user that is doing the action
+  @BuiltValueField(wireName: r'userId')
+  int get userId;
 
   SocialPostTemplate._();
 
@@ -181,11 +181,13 @@ class _$SocialPostTemplateSerializer
         specifiedType: const FullType(BuiltList, [FullType(PhotoContainer)]),
       );
     }
-    yield r'userId';
-    yield serializers.serialize(
-      object.userId,
-      specifiedType: const FullType(int),
-    );
+    if (object.videos != null) {
+      yield r'videos';
+      yield serializers.serialize(
+        object.videos,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
     if (object.ownerId != null) {
       yield r'ownerId';
       yield serializers.serialize(
@@ -200,13 +202,11 @@ class _$SocialPostTemplateSerializer
         specifiedType: const FullType(String),
       );
     }
-    if (object.videos != null) {
-      yield r'videos';
-      yield serializers.serialize(
-        object.videos,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
+    yield r'userId';
+    yield serializers.serialize(
+      object.userId,
+      specifiedType: const FullType(int),
+    );
   }
 
   @override
@@ -304,12 +304,12 @@ class _$SocialPostTemplateSerializer
           ) as BuiltList<PhotoContainer>;
           result.photos.replace(valueDes);
           break;
-        case r'userId':
+        case r'videos':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.userId = valueDes;
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.videos.replace(valueDes);
           break;
         case r'ownerId':
           final valueDes = serializers.deserialize(
@@ -325,12 +325,12 @@ class _$SocialPostTemplateSerializer
           ) as String;
           result.ownerName = valueDes;
           break;
-        case r'videos':
+        case r'userId':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.videos.replace(valueDes);
+            specifiedType: const FullType(int),
+          ) as int;
+          result.userId = valueDes;
           break;
         default:
           unhandled.add(key);
