@@ -24,6 +24,7 @@ part 'listing.g.dart';
 /// * [lastSuccessfulUpdate] - The last time the listing was successfully updated.
 /// * [accountInfo] - A map consisting of the name and pageId of the connected account if the listing is either Google or Facebook.
 /// * [connectStatus] - Connect status of the listing.
+/// * [connectSecret] - Connect secret of the listing.
 /// * [mandatoryFields] - Mandatory fields for the specific Directory that are not set yet
 /// * [status] - The listing''s status.
 /// * [typeName] - The directory''s name in the language of the current locale.
@@ -76,6 +77,10 @@ abstract class Listing implements Built<Listing, ListingBuilder> {
   @BuiltValueField(wireName: r'connectStatus')
   ListingConnectStatusEnum? get connectStatus;
   // enum connectStatusEnum {  CONNECTED,  NOT_CONNECTED,  NOT_NEEDED,  };
+
+  /// Connect secret of the listing.
+  @BuiltValueField(wireName: r'connectSecret')
+  String? get connectSecret;
 
   /// Mandatory fields for the specific Directory that are not set yet
   @BuiltValueField(wireName: r'mandatoryFields')
@@ -190,6 +195,13 @@ class _$ListingSerializer implements PrimitiveSerializer<Listing> {
       yield serializers.serialize(
         object.connectStatus,
         specifiedType: const FullType(ListingConnectStatusEnum),
+      );
+    }
+    if (object.connectSecret != null) {
+      yield r'connectSecret';
+      yield serializers.serialize(
+        object.connectSecret,
+        specifiedType: const FullType(String),
       );
     }
     if (object.mandatoryFields != null) {
@@ -316,6 +328,13 @@ class _$ListingSerializer implements PrimitiveSerializer<Listing> {
             specifiedType: const FullType(ListingConnectStatusEnum),
           ) as ListingConnectStatusEnum;
           result.connectStatus = valueDes;
+          break;
+        case r'connectSecret':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.connectSecret = valueDes;
           break;
         case r'mandatoryFields':
           final valueDes = serializers.deserialize(

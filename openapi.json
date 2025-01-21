@@ -2065,8 +2065,11 @@
             "in": "query",
             "description": "The uberall unique id of the category you want to get",
             "schema": {
-              "type": "integer",
-              "format": "int64"
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64"
+              }
             }
           },
           {
@@ -25242,6 +25245,10 @@
               "NOT_CONNECTED",
               "NOT_NEEDED"
             ]
+          },
+          "connectSecret": {
+            "type": "string",
+            "description": "Connect secret of the listing."
           },
           "mandatoryFields": {
             "type": "array",

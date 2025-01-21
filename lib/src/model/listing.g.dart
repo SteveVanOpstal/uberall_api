@@ -2175,6 +2175,8 @@ class _$Listing extends Listing {
   @override
   final ListingConnectStatusEnum? connectStatus;
   @override
+  final String? connectSecret;
+  @override
   final BuiltList<ListingMandatoryFieldsEnum>? mandatoryFields;
   @override
   final ListingStatusEnum? status;
@@ -2196,6 +2198,7 @@ class _$Listing extends Listing {
       this.lastSuccessfulUpdate,
       this.accountInfo,
       this.connectStatus,
+      this.connectSecret,
       this.mandatoryFields,
       this.status,
       this.typeName})
@@ -2223,6 +2226,7 @@ class _$Listing extends Listing {
         lastSuccessfulUpdate == other.lastSuccessfulUpdate &&
         accountInfo == other.accountInfo &&
         connectStatus == other.connectStatus &&
+        connectSecret == other.connectSecret &&
         mandatoryFields == other.mandatoryFields &&
         status == other.status &&
         typeName == other.typeName;
@@ -2242,6 +2246,7 @@ class _$Listing extends Listing {
     _$hash = $jc(_$hash, lastSuccessfulUpdate.hashCode);
     _$hash = $jc(_$hash, accountInfo.hashCode);
     _$hash = $jc(_$hash, connectStatus.hashCode);
+    _$hash = $jc(_$hash, connectSecret.hashCode);
     _$hash = $jc(_$hash, mandatoryFields.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, typeName.hashCode);
@@ -2263,6 +2268,7 @@ class _$Listing extends Listing {
           ..add('lastSuccessfulUpdate', lastSuccessfulUpdate)
           ..add('accountInfo', accountInfo)
           ..add('connectStatus', connectStatus)
+          ..add('connectSecret', connectSecret)
           ..add('mandatoryFields', mandatoryFields)
           ..add('status', status)
           ..add('typeName', typeName))
@@ -2322,6 +2328,11 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
   set connectStatus(ListingConnectStatusEnum? connectStatus) =>
       _$this._connectStatus = connectStatus;
 
+  String? _connectSecret;
+  String? get connectSecret => _$this._connectSecret;
+  set connectSecret(String? connectSecret) =>
+      _$this._connectSecret = connectSecret;
+
   ListBuilder<ListingMandatoryFieldsEnum>? _mandatoryFields;
   ListBuilder<ListingMandatoryFieldsEnum> get mandatoryFields =>
       _$this._mandatoryFields ??= new ListBuilder<ListingMandatoryFieldsEnum>();
@@ -2355,6 +2366,7 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
       _lastSuccessfulUpdate = $v.lastSuccessfulUpdate;
       _accountInfo = $v.accountInfo;
       _connectStatus = $v.connectStatus;
+      _connectSecret = $v.connectSecret;
       _mandatoryFields = $v.mandatoryFields?.toBuilder();
       _status = $v.status;
       _typeName = $v.typeName;
@@ -2393,6 +2405,7 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
             lastSuccessfulUpdate: lastSuccessfulUpdate,
             accountInfo: accountInfo,
             connectStatus: connectStatus,
+            connectSecret: connectSecret,
             mandatoryFields: _mandatoryFields?.build(),
             status: status,
             typeName: typeName,

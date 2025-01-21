@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **lastSuccessfulUpdate** | [**DateTime**](DateTime.md) | The last time the listing was successfully updated. | [optional] 
 **accountInfo** | [**JsonObject**](.md) | A map consisting of the name and pageId of the connected account if the listing is either Google or Facebook. | [optional] 
 **connectStatus** | **String** | Connect status of the listing. | [optional] 
+**connectSecret** | **String** | Connect secret of the listing. | [optional] 
 **mandatoryFields** | **BuiltList&lt;String&gt;** | Mandatory fields for the specific Directory that are not set yet | [optional] 
 **status** | **String** | The listing''s status. | [optional] 
 **typeName** | **String** | The directory''s name in the language of the current locale. | [optional] 

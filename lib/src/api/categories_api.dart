@@ -44,7 +44,7 @@ class CategoriesApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<GenericMapResponseWrapper>> getCategories({
     required String language,
-    int? categories,
+    BuiltList<int>? categories,
     String? q,
     bool? roots,
     int? max,
@@ -84,8 +84,12 @@ class CategoriesApi {
 
     final _queryParameters = <String, dynamic>{
       if (categories != null)
-        r'categories':
-            encodeQueryParameter(_serializers, categories, const FullType(int)),
+        r'categories': encodeCollectionQueryParameter<int>(
+          _serializers,
+          categories,
+          const FullType(BuiltList, [FullType(int)]),
+          format: ListFormat.multi,
+        ),
       if (q != null)
         r'q': encodeQueryParameter(_serializers, q, const FullType(String)),
       if (roots != null)

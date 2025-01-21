@@ -38,7 +38,7 @@ import 'package:uberall_api/api.dart';
 
 final api = UberallApi().getCategoriesApi();
 final String language = language_example; // String | Show categories in the specified language. One of de, en, es, fr
-final int categories = 789; // int | The uberall unique id of the category you want to get
+final BuiltList<int> categories = ; // BuiltList<int> | The uberall unique id of the category you want to get
 final String q = Auto; // String | Filter categories by a search query
 final bool roots = true; // bool | Set to 'true' to show root categories as well (i.e., show all categories)
 final int max = 10; // int | Used for pagination. Maximum number of results per page. Default: 10
@@ -57,7 +57,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **language** | **String**| Show categories in the specified language. One of de, en, es, fr | 
- **categories** | **int**| The uberall unique id of the category you want to get | [optional] 
+ **categories** | [**BuiltList&lt;int&gt;**](int.md)| The uberall unique id of the category you want to get | [optional] 
  **q** | **String**| Filter categories by a search query | [optional] 
  **roots** | **bool**| Set to 'true' to show root categories as well (i.e., show all categories) | [optional] 
  **max** | **int**| Used for pagination. Maximum number of results per page. Default: 10 | [optional] 
