@@ -3560,7 +3560,7 @@ class _$Location extends Location {
   @override
   final BuiltSet<String>? languages;
   @override
-  final BuiltList<Category>? categories;
+  final BuiltList<int>? categories;
   @override
   final LocationStatusEnum? status;
   @override
@@ -4121,10 +4121,10 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
       _$this._languages ??= new SetBuilder<String>();
   set languages(SetBuilder<String>? languages) => _$this._languages = languages;
 
-  ListBuilder<Category>? _categories;
-  ListBuilder<Category> get categories =>
-      _$this._categories ??= new ListBuilder<Category>();
-  set categories(ListBuilder<Category>? categories) =>
+  ListBuilder<int>? _categories;
+  ListBuilder<int> get categories =>
+      _$this._categories ??= new ListBuilder<int>();
+  set categories(ListBuilder<int>? categories) =>
       _$this._categories = categories;
 
   LocationStatusEnum? _status;

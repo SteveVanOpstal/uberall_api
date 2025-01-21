@@ -869,8 +869,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltList, const [const FullType(SpecialOpeningHours)]),
           () => new ListBuilder<SpecialOpeningHours>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(JsonObject)]),
-          () => new ListBuilder<JsonObject>())
+          const FullType(BuiltList, const [const FullType(int)]),
+          () => new ListBuilder<int>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(JsonObject)]),
           () => new ListBuilder<JsonObject>())
@@ -1668,8 +1668,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltSet, const [const FullType(String)]),
           () => new SetBuilder<String>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(Category)]),
-          () => new ListBuilder<Category>())
+          const FullType(BuiltList, const [const FullType(int)]),
+          () => new ListBuilder<int>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(LocationPhoto)]),
           () => new ListBuilder<LocationPhoto>())

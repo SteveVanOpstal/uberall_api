@@ -51,7 +51,7 @@ Name | Type | Description | Notes
 **specialOpeningHours** | [**BuiltList&lt;SpecialOpeningHours&gt;**](SpecialOpeningHours.md) | The location''s special opening hours: e.g. <pre>[ &#123;      \"date\": \"2017-06-29\",     \"closed\": true   &#125;,    &#123;     \"date\": \"2017-06-30\",     \"from1\": \"11:00\",     \"to1\": \"14:00\",     \"from2\": \"16:00\",     \"to2\": \"20:00\"   &#125; ]</pre> Please note that having more than 2 time periods for each day is not possible. | [optional] 
 **specialOpeningHoursStatus** | **String** | The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH | [optional] 
 **keywordsStatus** | **String** | The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH | [optional] 
-**categories** | [**BuiltList&lt;JsonObject&gt;**](JsonObject.md) | Required - A list of category IDs describing the location | 
+**categories** | **BuiltList&lt;int&gt;** | Required - A list of category IDs describing the location | 
 **categoriesStatus** | **String** | The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH | [optional] 
 **attributes** | [**BuiltList&lt;JsonObject&gt;**](JsonObject.md) | The location''s Google attributes | [optional] 
 **attributesStatus** | **String** | The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING | [optional] 

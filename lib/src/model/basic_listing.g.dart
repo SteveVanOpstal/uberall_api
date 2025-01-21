@@ -7984,7 +7984,7 @@ class _$BasicListing extends BasicListing {
   @override
   final BasicListingKeywordsStatusEnum? keywordsStatus;
   @override
-  final BuiltList<JsonObject> categories;
+  final BuiltList<int> categories;
   @override
   final BasicListingCategoriesStatusEnum? categoriesStatus;
   @override
@@ -8805,10 +8805,10 @@ class BasicListingBuilder
   set keywordsStatus(BasicListingKeywordsStatusEnum? keywordsStatus) =>
       _$this._keywordsStatus = keywordsStatus;
 
-  ListBuilder<JsonObject>? _categories;
-  ListBuilder<JsonObject> get categories =>
-      _$this._categories ??= new ListBuilder<JsonObject>();
-  set categories(ListBuilder<JsonObject>? categories) =>
+  ListBuilder<int>? _categories;
+  ListBuilder<int> get categories =>
+      _$this._categories ??= new ListBuilder<int>();
+  set categories(ListBuilder<int>? categories) =>
       _$this._categories = categories;
 
   BasicListingCategoriesStatusEnum? _categoriesStatus;

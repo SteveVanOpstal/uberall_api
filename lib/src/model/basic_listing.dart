@@ -329,7 +329,7 @@ abstract class BasicListing
 
   /// Required - A list of category IDs describing the location
   @BuiltValueField(wireName: r'categories')
-  BuiltList<JsonObject> get categories;
+  BuiltList<int> get categories;
 
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'categoriesStatus')
@@ -943,7 +943,7 @@ class _$BasicListingSerializer implements PrimitiveSerializer<BasicListing> {
     yield r'categories';
     yield serializers.serialize(
       object.categories,
-      specifiedType: const FullType(BuiltList, [FullType(JsonObject)]),
+      specifiedType: const FullType(BuiltList, [FullType(int)]),
     );
     if (object.categoriesStatus != null) {
       yield r'categoriesStatus';
@@ -1721,8 +1721,8 @@ class _$BasicListingSerializer implements PrimitiveSerializer<BasicListing> {
         case r'categories':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(JsonObject)]),
-          ) as BuiltList<JsonObject>;
+            specifiedType: const FullType(BuiltList, [FullType(int)]),
+          ) as BuiltList<int>;
           result.categories.replace(valueDes);
           break;
         case r'categoriesStatus':

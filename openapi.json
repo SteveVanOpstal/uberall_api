@@ -15525,8 +15525,8 @@
             "type": "array",
             "description": "Required - A list of category IDs describing the location",
             "items": {
-              "type": "object",
-              "description": "Required - A list of category IDs describing the location"
+              "type": "integer",
+              "format": "int64"
             }
           },
           "categoriesStatus": {
@@ -26313,7 +26313,8 @@
             "type": "array",
             "description": "Required to start location sync  - A list of category IDs describing the location",
             "items": {
-              "$ref": "#/components/schemas/Category"
+              "type": "integer",
+              "format": "int64"
             }
           },
           "status": {
