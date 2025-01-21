@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:uberall_api/src/model/service_item.dart';
 import 'package:uberall_api/src/model/social_profile.dart';
 import 'package:uberall_api/src/model/location_temporarily_closed.dart';
 import 'package:uberall_api/src/model/opening_hours.dart';
@@ -236,7 +237,7 @@ abstract class Location implements Built<Location, LocationBuilder> {
 
   /// Services offered at the location. Do not use if Content Collections is enabled. Instead use the Service Item and Collection endpoints
   @BuiltValueField(wireName: r'services')
-  BuiltSet<String>? get services;
+  BuiltSet<ServiceItem>? get services;
 
   /// The language(s) in which customers can interact with the location''s staff
   @BuiltValueField(wireName: r'languages')
@@ -640,7 +641,7 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
       yield r'services';
       yield serializers.serialize(
         object.services,
-        specifiedType: const FullType(BuiltSet, [FullType(String)]),
+        specifiedType: const FullType(BuiltSet, [FullType(ServiceItem)]),
       );
     }
     if (object.languages != null) {
@@ -1174,8 +1175,8 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
         case r'services':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltSet, [FullType(String)]),
-          ) as BuiltSet<String>;
+            specifiedType: const FullType(BuiltSet, [FullType(ServiceItem)]),
+          ) as BuiltSet<ServiceItem>;
           result.services.replace(valueDes);
           break;
         case r'languages':

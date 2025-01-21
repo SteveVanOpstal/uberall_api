@@ -1662,8 +1662,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltSet, const [const FullType(String)]),
           () => new SetBuilder<String>())
       ..addBuilderFactory(
-          const FullType(BuiltSet, const [const FullType(String)]),
-          () => new SetBuilder<String>())
+          const FullType(BuiltSet, const [const FullType(ServiceItem)]),
+          () => new SetBuilder<ServiceItem>())
       ..addBuilderFactory(
           const FullType(BuiltSet, const [const FullType(String)]),
           () => new SetBuilder<String>())

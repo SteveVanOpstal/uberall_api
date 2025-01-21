@@ -26297,8 +26297,7 @@
             "type": "array",
             "description": "Services offered at the location. Do not use if Content Collections is enabled. Instead use the Service Item and Collection endpoints",
             "items": {
-              "type": "string",
-              "description": "Services offered at the location. Do not use if Content Collections is enabled. Instead use the Service Item and Collection endpoints\n"
+              "$ref": "#/components/schemas/ServiceItem"
             }
           },
           "languages": {
@@ -32107,7 +32106,6 @@
       },
       "ServiceItem": {
         "required": [
-          "title",
           "title"
         ],
         "type": "object",

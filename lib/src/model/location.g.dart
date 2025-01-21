@@ -3556,7 +3556,7 @@ class _$Location extends Location {
   @override
   final BuiltSet<String>? paymentOptions;
   @override
-  final BuiltSet<String>? services;
+  final BuiltSet<ServiceItem>? services;
   @override
   final BuiltSet<String>? languages;
   @override
@@ -4110,10 +4110,11 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   set paymentOptions(SetBuilder<String>? paymentOptions) =>
       _$this._paymentOptions = paymentOptions;
 
-  SetBuilder<String>? _services;
-  SetBuilder<String> get services =>
-      _$this._services ??= new SetBuilder<String>();
-  set services(SetBuilder<String>? services) => _$this._services = services;
+  SetBuilder<ServiceItem>? _services;
+  SetBuilder<ServiceItem> get services =>
+      _$this._services ??= new SetBuilder<ServiceItem>();
+  set services(SetBuilder<ServiceItem>? services) =>
+      _$this._services = services;
 
   SetBuilder<String>? _languages;
   SetBuilder<String> get languages =>
