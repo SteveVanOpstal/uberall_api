@@ -12,16 +12,25 @@ class _$SpecialOpeningHours extends SpecialOpeningHours {
   @override
   final String date;
   @override
-  final String? fromX;
+  final String? from1;
   @override
-  final String? toX;
+  final String? from2;
+  @override
+  final String? to1;
+  @override
+  final String? to2;
 
   factory _$SpecialOpeningHours(
           [void Function(SpecialOpeningHoursBuilder)? updates]) =>
       (new SpecialOpeningHoursBuilder()..update(updates))._build();
 
   _$SpecialOpeningHours._(
-      {this.closed, required this.date, this.fromX, this.toX})
+      {this.closed,
+      required this.date,
+      this.from1,
+      this.from2,
+      this.to1,
+      this.to2})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(date, r'SpecialOpeningHours', 'date');
   }
@@ -41,8 +50,10 @@ class _$SpecialOpeningHours extends SpecialOpeningHours {
     return other is SpecialOpeningHours &&
         closed == other.closed &&
         date == other.date &&
-        fromX == other.fromX &&
-        toX == other.toX;
+        from1 == other.from1 &&
+        from2 == other.from2 &&
+        to1 == other.to1 &&
+        to2 == other.to2;
   }
 
   @override
@@ -50,8 +61,10 @@ class _$SpecialOpeningHours extends SpecialOpeningHours {
     var _$hash = 0;
     _$hash = $jc(_$hash, closed.hashCode);
     _$hash = $jc(_$hash, date.hashCode);
-    _$hash = $jc(_$hash, fromX.hashCode);
-    _$hash = $jc(_$hash, toX.hashCode);
+    _$hash = $jc(_$hash, from1.hashCode);
+    _$hash = $jc(_$hash, from2.hashCode);
+    _$hash = $jc(_$hash, to1.hashCode);
+    _$hash = $jc(_$hash, to2.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -61,8 +74,10 @@ class _$SpecialOpeningHours extends SpecialOpeningHours {
     return (newBuiltValueToStringHelper(r'SpecialOpeningHours')
           ..add('closed', closed)
           ..add('date', date)
-          ..add('fromX', fromX)
-          ..add('toX', toX))
+          ..add('from1', from1)
+          ..add('from2', from2)
+          ..add('to1', to1)
+          ..add('to2', to2))
         .toString();
   }
 }
@@ -79,13 +94,21 @@ class SpecialOpeningHoursBuilder
   String? get date => _$this._date;
   set date(String? date) => _$this._date = date;
 
-  String? _fromX;
-  String? get fromX => _$this._fromX;
-  set fromX(String? fromX) => _$this._fromX = fromX;
+  String? _from1;
+  String? get from1 => _$this._from1;
+  set from1(String? from1) => _$this._from1 = from1;
 
-  String? _toX;
-  String? get toX => _$this._toX;
-  set toX(String? toX) => _$this._toX = toX;
+  String? _from2;
+  String? get from2 => _$this._from2;
+  set from2(String? from2) => _$this._from2 = from2;
+
+  String? _to1;
+  String? get to1 => _$this._to1;
+  set to1(String? to1) => _$this._to1 = to1;
+
+  String? _to2;
+  String? get to2 => _$this._to2;
+  set to2(String? to2) => _$this._to2 = to2;
 
   SpecialOpeningHoursBuilder() {
     SpecialOpeningHours._defaults(this);
@@ -96,8 +119,10 @@ class SpecialOpeningHoursBuilder
     if ($v != null) {
       _closed = $v.closed;
       _date = $v.date;
-      _fromX = $v.fromX;
-      _toX = $v.toX;
+      _from1 = $v.from1;
+      _from2 = $v.from2;
+      _to1 = $v.to1;
+      _to2 = $v.to2;
       _$v = null;
     }
     return this;
@@ -123,8 +148,10 @@ class SpecialOpeningHoursBuilder
           closed: closed,
           date: BuiltValueNullFieldError.checkNotNull(
               date, r'SpecialOpeningHours', 'date'),
-          fromX: fromX,
-          toX: toX,
+          from1: from1,
+          from2: from2,
+          to1: to1,
+          to2: to2,
         );
     replace(_$result);
     return _$result;

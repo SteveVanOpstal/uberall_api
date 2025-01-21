@@ -29011,7 +29011,11 @@
             "type": "boolean",
             "description": "Indicates whether a location is closed on a day."
           },
-          "fromX": {
+          "from1": {
+            "type": "string",
+            "description": "A beginning of a period. One or multiple periods are supported per dayOfWeek, e.g.: \"from1\": \"09:00\", \"from2\": \"15:00\""
+          },
+          "from2": {
             "type": "string",
             "description": "A beginning of a period. One or multiple periods are supported per dayOfWeek, e.g.: \"from1\": \"09:00\", \"from2\": \"15:00\""
           },
@@ -29020,7 +29024,11 @@
             "description": "The weekday of an opening hours, e.g.: 1 for Monday, 2 for Tuesday, ...",
             "format": "int32"
           },
-          "toX": {
+          "to1": {
+            "type": "string",
+            "description": "An end of a period. One or multiple periods are supported per dayOfWeek, e.g.: \"to1\": \"14:30\", \"to2\": \"17:00\""
+          },
+          "to2": {
             "type": "string",
             "description": "An end of a period. One or multiple periods are supported per dayOfWeek, e.g.: \"to1\": \"14:30\", \"to2\": \"17:00\""
           }
@@ -33438,11 +33446,19 @@
             "type": "string",
             "description": "The date of a special opening hour, e.g.: 2017-06-30"
           },
-          "fromX": {
+          "from1": {
             "type": "string",
             "description": "A beginning of a period. Up to two periods are supported per date, e.g.: \"from1\": \"09:00\", \"from2\": \"15:00\""
           },
-          "toX": {
+          "from2": {
+            "type": "string",
+            "description": "A beginning of a period. Up to two periods are supported per date, e.g.: \"from1\": \"09:00\", \"from2\": \"15:00\""
+          },
+          "to1": {
+            "type": "string",
+            "description": "An end of a period. Up to two periods are supported per date, e.g.: \"to1\": \"09:00\", \"to2\": \"15:00\""
+          },
+          "to2": {
             "type": "string",
             "description": "An end of a period. Up to two periods are supported per date, e.g.: \"to1\": \"09:00\", \"to2\": \"15:00\""
           }

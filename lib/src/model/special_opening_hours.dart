@@ -13,8 +13,10 @@ part 'special_opening_hours.g.dart';
 /// Properties:
 /// * [closed] - Indicates whether a location is closed on a date.
 /// * [date] - The date of a special opening hour, e.g.: 2017-06-30
-/// * [fromX] - A beginning of a period. Up to two periods are supported per date, e.g.: \"from1\": \"09:00\", \"from2\": \"15:00\"
-/// * [toX] - An end of a period. Up to two periods are supported per date, e.g.: \"to1\": \"09:00\", \"to2\": \"15:00\"
+/// * [from1] - A beginning of a period. Up to two periods are supported per date, e.g.: \"from1\": \"09:00\", \"from2\": \"15:00\"
+/// * [from2] - A beginning of a period. Up to two periods are supported per date, e.g.: \"from1\": \"09:00\", \"from2\": \"15:00\"
+/// * [to1] - An end of a period. Up to two periods are supported per date, e.g.: \"to1\": \"09:00\", \"to2\": \"15:00\"
+/// * [to2] - An end of a period. Up to two periods are supported per date, e.g.: \"to1\": \"09:00\", \"to2\": \"15:00\"
 @BuiltValue()
 abstract class SpecialOpeningHours
     implements Built<SpecialOpeningHours, SpecialOpeningHoursBuilder> {
@@ -27,12 +29,20 @@ abstract class SpecialOpeningHours
   String get date;
 
   /// A beginning of a period. Up to two periods are supported per date, e.g.: \"from1\": \"09:00\", \"from2\": \"15:00\"
-  @BuiltValueField(wireName: r'fromX')
-  String? get fromX;
+  @BuiltValueField(wireName: r'from1')
+  String? get from1;
+
+  /// A beginning of a period. Up to two periods are supported per date, e.g.: \"from1\": \"09:00\", \"from2\": \"15:00\"
+  @BuiltValueField(wireName: r'from2')
+  String? get from2;
 
   /// An end of a period. Up to two periods are supported per date, e.g.: \"to1\": \"09:00\", \"to2\": \"15:00\"
-  @BuiltValueField(wireName: r'toX')
-  String? get toX;
+  @BuiltValueField(wireName: r'to1')
+  String? get to1;
+
+  /// An end of a period. Up to two periods are supported per date, e.g.: \"to1\": \"09:00\", \"to2\": \"15:00\"
+  @BuiltValueField(wireName: r'to2')
+  String? get to2;
 
   SpecialOpeningHours._();
 
@@ -75,17 +85,31 @@ class _$SpecialOpeningHoursSerializer
       object.date,
       specifiedType: const FullType(String),
     );
-    if (object.fromX != null) {
-      yield r'fromX';
+    if (object.from1 != null) {
+      yield r'from1';
       yield serializers.serialize(
-        object.fromX,
+        object.from1,
         specifiedType: const FullType(String),
       );
     }
-    if (object.toX != null) {
-      yield r'toX';
+    if (object.from2 != null) {
+      yield r'from2';
       yield serializers.serialize(
-        object.toX,
+        object.from2,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.to1 != null) {
+      yield r'to1';
+      yield serializers.serialize(
+        object.to1,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.to2 != null) {
+      yield r'to2';
+      yield serializers.serialize(
+        object.to2,
         specifiedType: const FullType(String),
       );
     }
@@ -128,19 +152,33 @@ class _$SpecialOpeningHoursSerializer
           ) as String;
           result.date = valueDes;
           break;
-        case r'fromX':
+        case r'from1':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.fromX = valueDes;
+          result.from1 = valueDes;
           break;
-        case r'toX':
+        case r'from2':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.toX = valueDes;
+          result.from2 = valueDes;
+          break;
+        case r'to1':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.to1 = valueDes;
+          break;
+        case r'to2':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.to2 = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -10,16 +10,26 @@ class _$OpeningHours extends OpeningHours {
   @override
   final bool? closed;
   @override
-  final String? fromX;
+  final String? from1;
+  @override
+  final String? from2;
   @override
   final int dayOfWeek;
   @override
-  final String? toX;
+  final String? to1;
+  @override
+  final String? to2;
 
   factory _$OpeningHours([void Function(OpeningHoursBuilder)? updates]) =>
       (new OpeningHoursBuilder()..update(updates))._build();
 
-  _$OpeningHours._({this.closed, this.fromX, required this.dayOfWeek, this.toX})
+  _$OpeningHours._(
+      {this.closed,
+      this.from1,
+      this.from2,
+      required this.dayOfWeek,
+      this.to1,
+      this.to2})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         dayOfWeek, r'OpeningHours', 'dayOfWeek');
@@ -37,18 +47,22 @@ class _$OpeningHours extends OpeningHours {
     if (identical(other, this)) return true;
     return other is OpeningHours &&
         closed == other.closed &&
-        fromX == other.fromX &&
+        from1 == other.from1 &&
+        from2 == other.from2 &&
         dayOfWeek == other.dayOfWeek &&
-        toX == other.toX;
+        to1 == other.to1 &&
+        to2 == other.to2;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, closed.hashCode);
-    _$hash = $jc(_$hash, fromX.hashCode);
+    _$hash = $jc(_$hash, from1.hashCode);
+    _$hash = $jc(_$hash, from2.hashCode);
     _$hash = $jc(_$hash, dayOfWeek.hashCode);
-    _$hash = $jc(_$hash, toX.hashCode);
+    _$hash = $jc(_$hash, to1.hashCode);
+    _$hash = $jc(_$hash, to2.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -57,9 +71,11 @@ class _$OpeningHours extends OpeningHours {
   String toString() {
     return (newBuiltValueToStringHelper(r'OpeningHours')
           ..add('closed', closed)
-          ..add('fromX', fromX)
+          ..add('from1', from1)
+          ..add('from2', from2)
           ..add('dayOfWeek', dayOfWeek)
-          ..add('toX', toX))
+          ..add('to1', to1)
+          ..add('to2', to2))
         .toString();
   }
 }
@@ -72,17 +88,25 @@ class OpeningHoursBuilder
   bool? get closed => _$this._closed;
   set closed(bool? closed) => _$this._closed = closed;
 
-  String? _fromX;
-  String? get fromX => _$this._fromX;
-  set fromX(String? fromX) => _$this._fromX = fromX;
+  String? _from1;
+  String? get from1 => _$this._from1;
+  set from1(String? from1) => _$this._from1 = from1;
+
+  String? _from2;
+  String? get from2 => _$this._from2;
+  set from2(String? from2) => _$this._from2 = from2;
 
   int? _dayOfWeek;
   int? get dayOfWeek => _$this._dayOfWeek;
   set dayOfWeek(int? dayOfWeek) => _$this._dayOfWeek = dayOfWeek;
 
-  String? _toX;
-  String? get toX => _$this._toX;
-  set toX(String? toX) => _$this._toX = toX;
+  String? _to1;
+  String? get to1 => _$this._to1;
+  set to1(String? to1) => _$this._to1 = to1;
+
+  String? _to2;
+  String? get to2 => _$this._to2;
+  set to2(String? to2) => _$this._to2 = to2;
 
   OpeningHoursBuilder() {
     OpeningHours._defaults(this);
@@ -92,9 +116,11 @@ class OpeningHoursBuilder
     final $v = _$v;
     if ($v != null) {
       _closed = $v.closed;
-      _fromX = $v.fromX;
+      _from1 = $v.from1;
+      _from2 = $v.from2;
       _dayOfWeek = $v.dayOfWeek;
-      _toX = $v.toX;
+      _to1 = $v.to1;
+      _to2 = $v.to2;
       _$v = null;
     }
     return this;
@@ -118,10 +144,12 @@ class OpeningHoursBuilder
     final _$result = _$v ??
         new _$OpeningHours._(
           closed: closed,
-          fromX: fromX,
+          from1: from1,
+          from2: from2,
           dayOfWeek: BuiltValueNullFieldError.checkNotNull(
               dayOfWeek, r'OpeningHours', 'dayOfWeek'),
-          toX: toX,
+          to1: to1,
+          to2: to2,
         );
     replace(_$result);
     return _$result;
