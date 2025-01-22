@@ -1788,8 +1788,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(Person)]),
           () => new ListBuilder<Person>())
       ..addBuilderFactory(
-          const FullType(BuiltSet, const [const FullType(JsonObject)]),
-          () => new SetBuilder<JsonObject>())
+          const FullType(BuiltSet, const [const FullType(LocationPhoto)]),
+          () => new SetBuilder<LocationPhoto>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Product)]),
           () => new ListBuilder<Product>())

@@ -34060,8 +34060,7 @@
             "type": "array",
             "description": "The location''s photos.",
             "items": {
-              "type": "object",
-              "description": "The location's photos"
+              "$ref": "#/components/schemas/LocationPhoto"
             }
           },
           "products": {

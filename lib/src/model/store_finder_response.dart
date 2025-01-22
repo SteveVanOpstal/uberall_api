@@ -16,6 +16,7 @@ import 'package:uberall_api/src/model/menu_item.dart';
 import 'package:uberall_api/src/model/special_opening_hours.dart';
 import 'package:uberall_api/src/model/event.dart';
 import 'package:built_value/json_object.dart';
+import 'package:uberall_api/src/model/location_photo.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -216,7 +217,7 @@ abstract class StoreFinderResponse
 
   /// The location''s photos.
   @BuiltValueField(wireName: r'photos')
-  BuiltSet<JsonObject>? get photos;
+  BuiltSet<LocationPhoto>? get photos;
 
   /// Products offered by this location
   @BuiltValueField(wireName: r'products')
@@ -554,7 +555,7 @@ class _$StoreFinderResponseSerializer
       yield r'photos';
       yield serializers.serialize(
         object.photos,
-        specifiedType: const FullType(BuiltSet, [FullType(JsonObject)]),
+        specifiedType: const FullType(BuiltSet, [FullType(LocationPhoto)]),
       );
     }
     if (object.products != null) {
@@ -936,8 +937,8 @@ class _$StoreFinderResponseSerializer
         case r'photos':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltSet, [FullType(JsonObject)]),
-          ) as BuiltSet<JsonObject>;
+            specifiedType: const FullType(BuiltSet, [FullType(LocationPhoto)]),
+          ) as BuiltSet<LocationPhoto>;
           result.photos.replace(valueDes);
           break;
         case r'products':
