@@ -1024,8 +1024,6 @@ class _$User extends User {
   @override
   final BuiltSet<EmailSettings>? emailSettings;
   @override
-  final JsonObject? salesPartnerId;
-  @override
   final JsonObject? readDataPoints;
   @override
   final JsonObject? parentId;
@@ -1033,6 +1031,8 @@ class _$User extends User {
   final JsonObject? directoryUsers;
   @override
   final JsonObject? whitelabelInformationId;
+  @override
+  final JsonObject? salesPartnerId;
   @override
   final JsonObject? featuresDetailed;
   @override
@@ -1060,11 +1060,11 @@ class _$User extends User {
       this.identifier,
       this.features,
       this.emailSettings,
-      this.salesPartnerId,
       this.readDataPoints,
       this.parentId,
       this.directoryUsers,
       this.whitelabelInformationId,
+      this.salesPartnerId,
       this.featuresDetailed,
       this.locationGroupIds,
       this.managedLocationsViaGroups,
@@ -1100,11 +1100,11 @@ class _$User extends User {
         identifier == other.identifier &&
         features == other.features &&
         emailSettings == other.emailSettings &&
-        salesPartnerId == other.salesPartnerId &&
         readDataPoints == other.readDataPoints &&
         parentId == other.parentId &&
         directoryUsers == other.directoryUsers &&
         whitelabelInformationId == other.whitelabelInformationId &&
+        salesPartnerId == other.salesPartnerId &&
         featuresDetailed == other.featuresDetailed &&
         locationGroupIds == other.locationGroupIds &&
         managedLocationsViaGroups == other.managedLocationsViaGroups &&
@@ -1129,11 +1129,11 @@ class _$User extends User {
     _$hash = $jc(_$hash, identifier.hashCode);
     _$hash = $jc(_$hash, features.hashCode);
     _$hash = $jc(_$hash, emailSettings.hashCode);
-    _$hash = $jc(_$hash, salesPartnerId.hashCode);
     _$hash = $jc(_$hash, readDataPoints.hashCode);
     _$hash = $jc(_$hash, parentId.hashCode);
     _$hash = $jc(_$hash, directoryUsers.hashCode);
     _$hash = $jc(_$hash, whitelabelInformationId.hashCode);
+    _$hash = $jc(_$hash, salesPartnerId.hashCode);
     _$hash = $jc(_$hash, featuresDetailed.hashCode);
     _$hash = $jc(_$hash, locationGroupIds.hashCode);
     _$hash = $jc(_$hash, managedLocationsViaGroups.hashCode);
@@ -1159,11 +1159,11 @@ class _$User extends User {
           ..add('identifier', identifier)
           ..add('features', features)
           ..add('emailSettings', emailSettings)
-          ..add('salesPartnerId', salesPartnerId)
           ..add('readDataPoints', readDataPoints)
           ..add('parentId', parentId)
           ..add('directoryUsers', directoryUsers)
           ..add('whitelabelInformationId', whitelabelInformationId)
+          ..add('salesPartnerId', salesPartnerId)
           ..add('featuresDetailed', featuresDetailed)
           ..add('locationGroupIds', locationGroupIds)
           ..add('managedLocationsViaGroups', managedLocationsViaGroups)
@@ -1244,11 +1244,6 @@ class UserBuilder implements Builder<User, UserBuilder> {
   set emailSettings(SetBuilder<EmailSettings>? emailSettings) =>
       _$this._emailSettings = emailSettings;
 
-  JsonObject? _salesPartnerId;
-  JsonObject? get salesPartnerId => _$this._salesPartnerId;
-  set salesPartnerId(JsonObject? salesPartnerId) =>
-      _$this._salesPartnerId = salesPartnerId;
-
   JsonObject? _readDataPoints;
   JsonObject? get readDataPoints => _$this._readDataPoints;
   set readDataPoints(JsonObject? readDataPoints) =>
@@ -1267,6 +1262,11 @@ class UserBuilder implements Builder<User, UserBuilder> {
   JsonObject? get whitelabelInformationId => _$this._whitelabelInformationId;
   set whitelabelInformationId(JsonObject? whitelabelInformationId) =>
       _$this._whitelabelInformationId = whitelabelInformationId;
+
+  JsonObject? _salesPartnerId;
+  JsonObject? get salesPartnerId => _$this._salesPartnerId;
+  set salesPartnerId(JsonObject? salesPartnerId) =>
+      _$this._salesPartnerId = salesPartnerId;
 
   JsonObject? _featuresDetailed;
   JsonObject? get featuresDetailed => _$this._featuresDetailed;
@@ -1313,11 +1313,11 @@ class UserBuilder implements Builder<User, UserBuilder> {
       _identifier = $v.identifier;
       _features = $v.features?.toBuilder();
       _emailSettings = $v.emailSettings?.toBuilder();
-      _salesPartnerId = $v.salesPartnerId;
       _readDataPoints = $v.readDataPoints;
       _parentId = $v.parentId;
       _directoryUsers = $v.directoryUsers;
       _whitelabelInformationId = $v.whitelabelInformationId;
+      _salesPartnerId = $v.salesPartnerId;
       _featuresDetailed = $v.featuresDetailed;
       _locationGroupIds = $v.locationGroupIds?.toBuilder();
       _managedLocationsViaGroups = $v.managedLocationsViaGroups?.toBuilder();
@@ -1362,11 +1362,11 @@ class UserBuilder implements Builder<User, UserBuilder> {
             identifier: identifier,
             features: _features?.build(),
             emailSettings: _emailSettings?.build(),
-            salesPartnerId: salesPartnerId,
             readDataPoints: readDataPoints,
             parentId: parentId,
             directoryUsers: directoryUsers,
             whitelabelInformationId: whitelabelInformationId,
+            salesPartnerId: salesPartnerId,
             featuresDetailed: featuresDetailed,
             locationGroupIds: _locationGroupIds?.build(),
             managedLocationsViaGroups: _managedLocationsViaGroups?.build(),

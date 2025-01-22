@@ -160,6 +160,7 @@ Class | Method | HTTP request | Description
 [*DataPointsApi*](doc/DataPointsApi.md) | [**postDataPointsIdReplyReplyIdApproval**](doc/DataPointsApi.md#postdatapointsidreplyreplyidapproval) | **POST** /data-points/{id}/reply/{replyId}/approval | Approve reply to a Data Point
 [*DataPointsApi*](doc/DataPointsApi.md) | [**postDataPointsRead**](doc/DataPointsApi.md#postdatapointsread) | **POST** /data-points/read | Mark as Read
 [*DataPointsApi*](doc/DataPointsApi.md) | [**putDataPointsIdReplyReplyIdApproval**](doc/DataPointsApi.md#putdatapointsidreplyreplyidapproval) | **PUT** /data-points/{id}/reply/{replyId}/approval | Edit reply to a Data Point
+[*DefaultApi*](doc/DefaultApi.md) | [**getBusinessesProductPlans**](doc/DefaultApi.md#getbusinessesproductplans) | **GET** /businesses/product-plans | Get the product plans for businesses
 [*DigitalAssetManagementApi*](doc/DigitalAssetManagementApi.md) | [**patchSocialTemplatesId**](doc/DigitalAssetManagementApi.md#patchsocialtemplatesid) | **PATCH** /social-templates/{id} | Edit an existing social template
 [*DigitalAssetManagementApi*](doc/DigitalAssetManagementApi.md) | [**postSocialTemplates**](doc/DigitalAssetManagementApi.md#postsocialtemplates) | **POST** /social-templates | Create a new social template as a digital asset
 [*EventsApi*](doc/EventsApi.md) | [**deleteEvents**](doc/EventsApi.md#deleteevents) | **DELETE** /events | Delete an Event using identifier

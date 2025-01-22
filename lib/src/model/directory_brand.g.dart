@@ -14,11 +14,11 @@ class _$DirectoryBrand extends DirectoryBrand {
   @override
   final BuiltList<String>? categories;
   @override
-  final String? country;
+  final BuiltList<String>? names;
   @override
   final int? id;
   @override
-  final BuiltList<String>? names;
+  final String? country;
 
   factory _$DirectoryBrand([void Function(DirectoryBrandBuilder)? updates]) =>
       (new DirectoryBrandBuilder()..update(updates))._build();
@@ -27,9 +27,9 @@ class _$DirectoryBrand extends DirectoryBrand {
       {this.externalId,
       this.status,
       this.categories,
-      this.country,
+      this.names,
       this.id,
-      this.names})
+      this.country})
       : super._();
 
   @override
@@ -47,9 +47,9 @@ class _$DirectoryBrand extends DirectoryBrand {
         externalId == other.externalId &&
         status == other.status &&
         categories == other.categories &&
-        country == other.country &&
+        names == other.names &&
         id == other.id &&
-        names == other.names;
+        country == other.country;
   }
 
   @override
@@ -58,9 +58,9 @@ class _$DirectoryBrand extends DirectoryBrand {
     _$hash = $jc(_$hash, externalId.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, categories.hashCode);
-    _$hash = $jc(_$hash, country.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, names.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, country.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -71,9 +71,9 @@ class _$DirectoryBrand extends DirectoryBrand {
           ..add('externalId', externalId)
           ..add('status', status)
           ..add('categories', categories)
-          ..add('country', country)
+          ..add('names', names)
           ..add('id', id)
-          ..add('names', names))
+          ..add('country', country))
         .toString();
   }
 }
@@ -96,17 +96,17 @@ class DirectoryBrandBuilder
   set categories(ListBuilder<String>? categories) =>
       _$this._categories = categories;
 
-  String? _country;
-  String? get country => _$this._country;
-  set country(String? country) => _$this._country = country;
+  ListBuilder<String>? _names;
+  ListBuilder<String> get names => _$this._names ??= new ListBuilder<String>();
+  set names(ListBuilder<String>? names) => _$this._names = names;
 
   int? _id;
   int? get id => _$this._id;
   set id(int? id) => _$this._id = id;
 
-  ListBuilder<String>? _names;
-  ListBuilder<String> get names => _$this._names ??= new ListBuilder<String>();
-  set names(ListBuilder<String>? names) => _$this._names = names;
+  String? _country;
+  String? get country => _$this._country;
+  set country(String? country) => _$this._country = country;
 
   DirectoryBrandBuilder() {
     DirectoryBrand._defaults(this);
@@ -118,9 +118,9 @@ class DirectoryBrandBuilder
       _externalId = $v.externalId;
       _status = $v.status;
       _categories = $v.categories?.toBuilder();
-      _country = $v.country;
-      _id = $v.id;
       _names = $v.names?.toBuilder();
+      _id = $v.id;
+      _country = $v.country;
       _$v = null;
     }
     return this;
@@ -148,16 +148,15 @@ class DirectoryBrandBuilder
             externalId: externalId,
             status: status,
             categories: _categories?.build(),
-            country: country,
-            id: id,
             names: _names?.build(),
+            id: id,
+            country: country,
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'categories';
         _categories?.build();
-
         _$failedField = 'names';
         _names?.build();
       } catch (e) {

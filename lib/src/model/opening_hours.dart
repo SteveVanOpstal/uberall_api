@@ -12,9 +12,9 @@ part 'opening_hours.g.dart';
 ///
 /// Properties:
 /// * [closed] - Indicates whether a location is closed on a day.
+/// * [dayOfWeek] - The weekday of an opening hours, e.g.: 1 for Monday, 2 for Tuesday, ...
 /// * [from1] - A beginning of a period. One or multiple periods are supported per dayOfWeek, e.g.: \"from1\": \"09:00\", \"from2\": \"15:00\"
 /// * [from2] - A beginning of a period. One or multiple periods are supported per dayOfWeek, e.g.: \"from1\": \"09:00\", \"from2\": \"15:00\"
-/// * [dayOfWeek] - The weekday of an opening hours, e.g.: 1 for Monday, 2 for Tuesday, ...
 /// * [to1] - An end of a period. One or multiple periods are supported per dayOfWeek, e.g.: \"to1\": \"14:30\", \"to2\": \"17:00\"
 /// * [to2] - An end of a period. One or multiple periods are supported per dayOfWeek, e.g.: \"to1\": \"14:30\", \"to2\": \"17:00\"
 @BuiltValue()
@@ -24,6 +24,10 @@ abstract class OpeningHours
   @BuiltValueField(wireName: r'closed')
   bool? get closed;
 
+  /// The weekday of an opening hours, e.g.: 1 for Monday, 2 for Tuesday, ...
+  @BuiltValueField(wireName: r'dayOfWeek')
+  int get dayOfWeek;
+
   /// A beginning of a period. One or multiple periods are supported per dayOfWeek, e.g.: \"from1\": \"09:00\", \"from2\": \"15:00\"
   @BuiltValueField(wireName: r'from1')
   String? get from1;
@@ -31,10 +35,6 @@ abstract class OpeningHours
   /// A beginning of a period. One or multiple periods are supported per dayOfWeek, e.g.: \"from1\": \"09:00\", \"from2\": \"15:00\"
   @BuiltValueField(wireName: r'from2')
   String? get from2;
-
-  /// The weekday of an opening hours, e.g.: 1 for Monday, 2 for Tuesday, ...
-  @BuiltValueField(wireName: r'dayOfWeek')
-  int get dayOfWeek;
 
   /// An end of a period. One or multiple periods are supported per dayOfWeek, e.g.: \"to1\": \"14:30\", \"to2\": \"17:00\"
   @BuiltValueField(wireName: r'to1')
@@ -74,6 +74,11 @@ class _$OpeningHoursSerializer implements PrimitiveSerializer<OpeningHours> {
         specifiedType: const FullType(bool),
       );
     }
+    yield r'dayOfWeek';
+    yield serializers.serialize(
+      object.dayOfWeek,
+      specifiedType: const FullType(int),
+    );
     if (object.from1 != null) {
       yield r'from1';
       yield serializers.serialize(
@@ -88,11 +93,6 @@ class _$OpeningHoursSerializer implements PrimitiveSerializer<OpeningHours> {
         specifiedType: const FullType(String),
       );
     }
-    yield r'dayOfWeek';
-    yield serializers.serialize(
-      object.dayOfWeek,
-      specifiedType: const FullType(int),
-    );
     if (object.to1 != null) {
       yield r'to1';
       yield serializers.serialize(
@@ -139,6 +139,13 @@ class _$OpeningHoursSerializer implements PrimitiveSerializer<OpeningHours> {
           ) as bool;
           result.closed = valueDes;
           break;
+        case r'dayOfWeek':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.dayOfWeek = valueDes;
+          break;
         case r'from1':
           final valueDes = serializers.deserialize(
             value,
@@ -152,13 +159,6 @@ class _$OpeningHoursSerializer implements PrimitiveSerializer<OpeningHours> {
             specifiedType: const FullType(String),
           ) as String;
           result.from2 = valueDes;
-          break;
-        case r'dayOfWeek':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.dayOfWeek = valueDes;
           break;
         case r'to1':
           final valueDes = serializers.deserialize(

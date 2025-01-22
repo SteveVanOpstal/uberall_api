@@ -1778,6 +1778,57 @@
         ]
       }
     },
+    "/businesses/product-plans": {
+      "get": {
+        "summary": "Get the product plans for businesses",
+        "description": "Get the product plans assigned to a business",
+        "operationId": "get_businesses_product_plans",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Restricts the response to the Product Plans that contain this name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "max",
+            "in": "query",
+            "description": "Maximum number of items to return",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset used for pagination. Default: 0",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Postcodes successfully retrieved"
+          },
+          "403": {
+            "description": "Request Forbidden"
+          }
+        },
+        "security": [
+          {
+            "accessToken": []
+          },
+          {
+            "privateKey": []
+          }
+        ]
+      }
+    },
     "/businesses/statistics": {
       "get": {
         "tags": [
@@ -7836,6 +7887,14 @@
               "type": "string"
             },
             "example": "fieldMask=city&fieldMask=zip"
+          },
+          {
+            "name": "googleDirectoryStatus",
+            "in": "query",
+            "description": "Possible values: VERIFIED (the Google listing is verified and fully managed by us),\n                            UNVERIFIED (the Google listing is not verified),\n                            DISABLED (the Google listing is disabled),\n                            SUSPENDED (the Google listing is suspended),\n                            DUPLICATE (the Google listing is a duplicate),\n                            PENDING_VERIFICATION (a verification pin has been requested for the Google listing),\n                            NEEDS_REVERIFICATION (the verification process for the Google listing needs to be reverified),\n                            PENDING_REVIEW (there is no Google account connected for the listing)",
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "googleStatus",
@@ -16470,6 +16529,13 @@
             "type": "boolean",
             "description": "Boolean indicating whether or not the listing has photos"
           },
+          "socialProfiles": {
+            "type": "array",
+            "description": "Social profiles of the location",
+            "items": {
+              "$ref": "#/components/schemas/SocialProfile"
+            }
+          },
           "videos": {
             "type": "array",
             "description": "A list of videos about the location",
@@ -16484,37 +16550,30 @@
               "$ref": "#/components/schemas/ContentList"
             }
           },
-          "socialProfiles": {
-            "type": "array",
-            "description": "Social profiles of the location",
-            "items": {
-              "$ref": "#/components/schemas/SocialProfile"
-            }
-          },
           "keywords": {
             "type": "array",
-            "description": "The video of the social post (can only be one)",
+            "description": "The list of directories as entered when creating/updating the Social Post.",
             "items": {
               "type": "string"
             }
           },
           "brands": {
             "type": "array",
-            "description": "The video of the social post (can only be one)",
+            "description": "The list of directories as entered when creating/updating the Social Post.",
             "items": {
               "type": "string"
             }
           },
           "services": {
             "type": "array",
-            "description": "The video of the social post (can only be one)",
+            "description": "The list of directories as entered when creating/updating the Social Post.",
             "items": {
               "type": "string"
             }
           },
           "languages": {
             "type": "array",
-            "description": "The video of the social post (can only be one)",
+            "description": "The list of directories as entered when creating/updating the Social Post.",
             "items": {
               "type": "string"
             }
@@ -16603,32 +16662,14 @@
       "BrandDataPoint": {
         "type": "object",
         "properties": {
-          "lastUpdated": {
+          "author": {
             "type": "string",
-            "description": "Date of last update",
+            "description": "Username of the datapoints author"
+          },
+          "actionDate": {
+            "type": "string",
+            "description": "The date when the review/photo/... was published in the online directory",
             "format": "date-time"
-          },
-          "rating": {
-            "type": "number",
-            "description": "Rating given by the user. Float value, max: 5.",
-            "format": "float"
-          },
-          "repliedByOwner": {
-            "type": "boolean",
-            "description": "True if the owner of the business has replied"
-          },
-          "secondaryData": {
-            "type": "string",
-            "description": "Additional info about the datapoint (eg. text content on instagram pictures)"
-          },
-          "dateCreated": {
-            "type": "string",
-            "description": "The date the datapoint was found",
-            "format": "date-time"
-          },
-          "directLink": {
-            "type": "string",
-            "description": "A link to the online profile"
           },
           "type": {
             "type": "string",
@@ -16648,10 +16689,32 @@
               "EXPANDEDREVIEW"
             ]
           },
-          "actionDate": {
+          "threadActionDate": {
             "type": "string",
-            "description": "The date when the review/photo/... was published in the online directory",
+            "description": "The date of the last interaction in that thread. When a review receives a new comment, the parent will update.",
             "format": "date-time"
+          },
+          "lastUpdated": {
+            "type": "string",
+            "description": "Date of last update",
+            "format": "date-time"
+          },
+          "rating": {
+            "type": "number",
+            "description": "Rating given by the user. Float value, max: 5.",
+            "format": "float"
+          },
+          "repliedByOwner": {
+            "type": "boolean",
+            "description": "True if the owner of the business has replied"
+          },
+          "secondaryData": {
+            "type": "string",
+            "description": "Additional info about the datapoint (eg. text content on instagram pictures)"
+          },
+          "data": {
+            "type": "string",
+            "description": "Content of the datapoint (text of the review, url of the photo, count of checkins...)"
           },
           "authorImage": {
             "type": "string",
@@ -16661,6 +16724,15 @@
             "type": "integer",
             "description": "Number of comments to this item.",
             "format": "int32"
+          },
+          "dateCreated": {
+            "type": "string",
+            "description": "The date the datapoint was found",
+            "format": "date-time"
+          },
+          "directLink": {
+            "type": "string",
+            "description": "A link to the online profile"
           },
           "directoryType": {
             "type": "string",
@@ -16877,22 +16949,9 @@
             "type": "boolean",
             "description": "Whether the datapoint has been flagged. The exact nature of the flagging depends on the directory, but can be e.g. \"Report as SPAM\""
           },
-          "author": {
-            "type": "string",
-            "description": "Username of the datapoints author"
-          },
-          "threadActionDate": {
-            "type": "string",
-            "description": "The date of the last interaction in that thread. When a review receives a new comment, the parent will update.",
-            "format": "date-time"
-          },
           "liked": {
             "type": "boolean",
             "description": "Whether this datapoint has been liked or not"
-          },
-          "data": {
-            "type": "string",
-            "description": "Content of the datapoint (text of the review, url of the photo, count of checkins...)"
           }
         },
         "description": "Brand Data Point Model"
@@ -17377,11 +17436,26 @@
               "DELETED"
             ]
           },
-          "productPlanId": {
+          "typeId": {
             "type": "object"
           },
           "salesPartnerId": {
             "type": "object"
+          },
+          "invoicePaymentInformationId": {
+            "type": "object"
+          },
+          "productPlanId": {
+            "type": "object"
+          },
+          "defaultMarketDevelopmentFunds": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "activeLocations": {
+            "type": "integer",
+            "description": "Number of active locations in the business",
+            "format": "int32"
           },
           "countryPrices": {
             "uniqueItems": true,
@@ -17390,12 +17464,6 @@
             "items": {
               "$ref": "#/components/schemas/PricePerCountry"
             }
-          },
-          "typeId": {
-            "type": "object"
-          },
-          "invoicePaymentInformationId": {
-            "type": "object"
           },
           "defaultPrice": {
             "type": "integer",
@@ -17412,14 +17480,9 @@
             "description": "Business default setup price in cent",
             "format": "int32"
           },
-          "defaultMarketDevelopmentFunds": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "activeLocations": {
-            "type": "integer",
-            "description": "Number of active locations in the business",
-            "format": "int32"
+          "businessSyncable": {
+            "type": "boolean",
+            "description": "True if the business is allowed to start a sync. Only relevant for Businesses with more than 10 locations."
           },
           "numOfLocations": {
             "type": "integer",
@@ -17439,10 +17502,6 @@
           "customFields": {
             "type": "string",
             "description": "Custom fields allow for additional information to be added at the location level. All locations within the business will have the same list of custom fields."
-          },
-          "businessSyncable": {
-            "type": "boolean",
-            "description": "True if the business is allowed to start a sync. Only relevant for Businesses with more than 10 locations."
           },
           "dateExpiration": {
             "type": "string",
@@ -19374,14 +19433,6 @@
               "FINISHED"
             ]
           },
-          "whitelabelIdentifier": {
-            "type": "string",
-            "description": "Whitelabel identifier which will be used in the outline of the PDF report"
-          },
-          "salesPartnerCountry": {
-            "type": "string",
-            "description": "Country of the SalesPartner"
-          },
           "locationIds": {
             "uniqueItems": true,
             "type": "array",
@@ -19389,6 +19440,14 @@
             "items": {
               "type": "string"
             }
+          },
+          "whitelabelIdentifier": {
+            "type": "string",
+            "description": "Whitelabel identifier which will be used in the outline of the PDF report"
+          },
+          "salesPartnerCountry": {
+            "type": "string",
+            "description": "Country of the SalesPartner"
           }
         },
         "description": "Dashboard Export Data"
@@ -19668,32 +19727,14 @@
               "$ref": "#/components/schemas/DataPoint"
             }
           },
-          "lastUpdated": {
+          "author": {
             "type": "string",
-            "description": "Date of last update.",
+            "description": "Username of the datapoint's author"
+          },
+          "actionDate": {
+            "type": "string",
+            "description": "The date when the review/photo/... was published in the online directory",
             "format": "date-time"
-          },
-          "rating": {
-            "type": "number",
-            "description": "Rating given by the user. Float value, max: 5.",
-            "format": "float"
-          },
-          "repliedByOwner": {
-            "type": "boolean",
-            "description": "True if the owner of the business has replied"
-          },
-          "secondaryData": {
-            "type": "string",
-            "description": "Additional info about the datapoint (eg. text content on instagram pictures)"
-          },
-          "dateCreated": {
-            "type": "string",
-            "description": "The date the datapoint was found",
-            "format": "date-time"
-          },
-          "directLink": {
-            "type": "string",
-            "description": "A link to the online profile"
           },
           "type": {
             "type": "string",
@@ -19713,10 +19754,37 @@
               "EXPANDEDREVIEW"
             ]
           },
-          "actionDate": {
+          "threadActionDate": {
             "type": "string",
-            "description": "The date when the review/photo/... was published in the online directory",
+            "description": "The date of the last interaction in that thread. When a review receives a new comment, the parent will update.",
             "format": "date-time"
+          },
+          "lastUpdated": {
+            "type": "string",
+            "description": "Date of last update.",
+            "format": "date-time"
+          },
+          "rating": {
+            "type": "number",
+            "description": "Rating given by the user. Float value, max: 5.",
+            "format": "float"
+          },
+          "repliedByOwner": {
+            "type": "boolean",
+            "description": "True if the owner of the business has replied"
+          },
+          "secondaryData": {
+            "type": "string",
+            "description": "Additional info about the datapoint (eg. text content on instagram pictures)"
+          },
+          "countLikes": {
+            "type": "integer",
+            "description": "Number of likes to this item",
+            "format": "int32"
+          },
+          "data": {
+            "type": "string",
+            "description": "Content of the datapoint (text of the review, url of the photo, count of checkins...)"
           },
           "authorImage": {
             "type": "string",
@@ -19727,10 +19795,14 @@
             "description": "Number of comments to this item.",
             "format": "int32"
           },
-          "locationId": {
-            "type": "integer",
-            "description": "The Location ID associated with this datapoint",
-            "format": "int64"
+          "dateCreated": {
+            "type": "string",
+            "description": "The date the datapoint was found",
+            "format": "date-time"
+          },
+          "directLink": {
+            "type": "string",
+            "description": "A link to the online profile"
           },
           "directoryType": {
             "type": "string",
@@ -19947,27 +20019,14 @@
             "type": "boolean",
             "description": "Whether the datapoint has been flagged. The exact nature of the flagging depends on the directory, but can be e.g. \"Report as SPAM\""
           },
-          "author": {
-            "type": "string",
-            "description": "Username of the datapoint's author"
-          },
-          "threadActionDate": {
-            "type": "string",
-            "description": "The date of the last interaction in that thread. When a review receives a new comment, the parent will update.",
-            "format": "date-time"
-          },
           "liked": {
             "type": "boolean",
             "description": "Whether this datapoint has been liked or not"
           },
-          "countLikes": {
+          "locationId": {
             "type": "integer",
-            "description": "Number of likes to this item",
-            "format": "int32"
-          },
-          "data": {
-            "type": "string",
-            "description": "Content of the datapoint (text of the review, url of the photo, count of checkins...)"
+            "description": "The Location ID associated with this datapoint",
+            "format": "int64"
           }
         },
         "description": "Data Point Model"
@@ -20539,6 +20598,11 @@
             "description": "The id of a filter saved by a user in the Feed",
             "format": "int64"
           },
+          "dateStart": {
+            "type": "string",
+            "description": "The minimum date for which the dataPoints should be filtered",
+            "format": "date-time"
+          },
           "businessIds": {
             "uniqueItems": true,
             "type": "array",
@@ -20547,6 +20611,16 @@
               "type": "integer",
               "format": "int64"
             }
+          },
+          "dateEnd": {
+            "type": "string",
+            "description": "The maximum date for which the dataPoints should be filtered",
+            "format": "date-time"
+          },
+          "ownerId": {
+            "type": "integer",
+            "description": "The id of the user that owns the filter",
+            "format": "int64"
           },
           "salesPartnerId": {
             "type": "integer",
@@ -20561,24 +20635,9 @@
               "format": "int64"
             }
           },
-          "ownerId": {
-            "type": "integer",
-            "description": "The id of the user that owns the filter",
-            "format": "int64"
-          },
           "ownerName": {
             "type": "string",
             "description": "The name of the user that owns the filter"
-          },
-          "dateEnd": {
-            "type": "string",
-            "description": "The maximum date for which the dataPoints should be filtered",
-            "format": "date-time"
-          },
-          "dateStart": {
-            "type": "string",
-            "description": "The minimum date for which the dataPoints should be filtered",
-            "format": "date-time"
           }
         },
         "description": "Data Point Filter Model"
@@ -21389,18 +21448,18 @@
               "type": "string"
             }
           },
-          "country": {
-            "type": "string"
-          },
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
           "names": {
             "type": "array",
             "items": {
               "type": "string"
             }
+          },
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "country": {
+            "type": "string"
           }
         },
         "description": "The actual response object of the response, optional for non 200 responses"
@@ -26341,7 +26400,7 @@
           },
           "photos": {
             "type": "array",
-            "description": "The location's photos",
+            "description": "The location''s photos",
             "items": {
               "$ref": "#/components/schemas/LocationPhoto"
             }
@@ -26399,12 +26458,12 @@
           "temporarilyClosed": {
             "$ref": "#/components/schemas/LocationTemporarilyClosed"
           },
+          "evData": {
+            "$ref": "#/components/schemas/EvData"
+          },
           "nameDescriptor": {
             "type": "string",
             "description": "An addition to the location''s name which gives specific info about the location''s address (e.g. Mall level 2 OR Inside Departures). Sent only to FACEBOOK"
-          },
-          "evData": {
-            "$ref": "#/components/schemas/EvData"
           },
           "features": {
             "uniqueItems": true,
@@ -26519,6 +26578,19 @@
               ]
             }
           },
+          "visibilityIndex": {
+            "type": "integer",
+            "description": "Output only. The location''s latest visibility index",
+            "format": "int32"
+          },
+          "listingsInSync": {
+            "type": "integer",
+            "description": "Output only. The number of listings in sync",
+            "format": "int32"
+          },
+          "mainPhoto": {
+            "$ref": "#/components/schemas/LocationPhoto"
+          },
           "missingMandatoryFields": {
             "uniqueItems": true,
             "type": "array",
@@ -26590,23 +26662,34 @@
               }
             }
           },
-          "dataPoints": {
+          "profileCompleteness": {
             "type": "integer",
-            "description": "Output only. Number of dataPoints (reviews, photos) left by users at this location",
+            "description": "Output only. Number representing completeness of location data, up to 100",
             "format": "int32"
           },
-          "listingsBeingUpdated": {
+          "publishedListingsCount": {
             "type": "integer",
-            "description": "Output only. Number of listings still being updated",
+            "description": "Output only. Number of published listings",
             "format": "int32"
           },
-          "listingsInSync": {
-            "type": "integer",
-            "description": "Output only. The number of listings in sync",
-            "format": "int32"
+          "socialProfiles": {
+            "uniqueItems": true,
+            "type": "array",
+            "description": "The profiles of the location on social and professional networks (FACEBOOK, FOURSQUARE, INSTAGRAM, LINKEDIN, PINTEREST, TWITTER, VIMEO, XING, YOUTUBE)",
+            "items": {
+              "$ref": "#/components/schemas/SocialProfile"
+            }
           },
-          "mainPhoto": {
-            "$ref": "#/components/schemas/LocationPhoto"
+          "timeZone": {
+            "type": "string",
+            "description": "The location''s timezone "
+          },
+          "videos": {
+            "type": "array",
+            "description": "The location''s videos",
+            "items": {
+              "$ref": "#/components/schemas/Video"
+            }
           },
           "businessId": {
             "type": "integer",
@@ -26642,22 +26725,6 @@
               "NOT_CLEANSED"
             ]
           },
-          "timeZone": {
-            "type": "string",
-            "description": "The location''s timezone "
-          },
-          "videos": {
-            "type": "array",
-            "description": "The location''s videos",
-            "items": {
-              "$ref": "#/components/schemas/Video"
-            }
-          },
-          "visibilityIndex": {
-            "type": "integer",
-            "description": "Output only. The location''s latest visibility index",
-            "format": "int32"
-          },
           "contentLists": {
             "type": "array",
             "description": "The content list IDs (EVENTS, PRODUCTS, MENU, PEOPLE) describing the location",
@@ -26665,6 +26732,16 @@
               "type": "integer",
               "format": "int32"
             }
+          },
+          "dataPoints": {
+            "type": "integer",
+            "description": "Output only. Number of dataPoints (reviews, photos) left by users at this location",
+            "format": "int32"
+          },
+          "listingsBeingUpdated": {
+            "type": "integer",
+            "description": "Output only. Number of listings still being updated",
+            "format": "int32"
           },
           "activeDirectoriesCount": {
             "type": "integer",
@@ -26686,24 +26763,6 @@
           "customFields": {
             "type": "object",
             "description": "A Map for identifying the value input for a specific custom field name on the location. Custom fields are created at the business level.\n<pre>\n  \"customFields\": [\n    '{'\n      \"name\": \"foo\",\n      \"value\": \"bar\"\n    '}',\n    '{'\n      \"name\": \"baz\",\n      \"value\": \"qux\"\n    '}'\n  ]\n</pre>"
-          },
-          "profileCompleteness": {
-            "type": "integer",
-            "description": "Output only. Number representing completeness of location data, up to 100",
-            "format": "int32"
-          },
-          "publishedListingsCount": {
-            "type": "integer",
-            "description": "Output only. Number of published listings",
-            "format": "int32"
-          },
-          "socialProfiles": {
-            "uniqueItems": true,
-            "type": "array",
-            "description": "The profiles of the location on social and professional networks (FACEBOOK, FOURSQUARE, INSTAGRAM, LINKEDIN, PINTEREST, TWITTER, VIMEO, XING, YOUTUBE)",
-            "items": {
-              "$ref": "#/components/schemas/SocialProfile"
-            }
           }
         },
         "description": "Location"
@@ -29012,6 +29071,11 @@
             "type": "boolean",
             "description": "Indicates whether a location is closed on a day."
           },
+          "dayOfWeek": {
+            "type": "integer",
+            "description": "The weekday of an opening hours, e.g.: 1 for Monday, 2 for Tuesday, ...",
+            "format": "int32"
+          },
           "from1": {
             "type": "string",
             "description": "A beginning of a period. One or multiple periods are supported per dayOfWeek, e.g.: \"from1\": \"09:00\", \"from2\": \"15:00\""
@@ -29019,11 +29083,6 @@
           "from2": {
             "type": "string",
             "description": "A beginning of a period. One or multiple periods are supported per dayOfWeek, e.g.: \"from1\": \"09:00\", \"from2\": \"15:00\""
-          },
-          "dayOfWeek": {
-            "type": "integer",
-            "description": "The weekday of an opening hours, e.g.: 1 for Monday, 2 for Tuesday, ...",
-            "format": "int32"
           },
           "to1": {
             "type": "string",
@@ -31380,35 +31439,19 @@
             "type": "integer",
             "format": "int32"
           },
-          "contactPerson": {
-            "$ref": "#/components/schemas/User"
-          },
-          "resellerTypeId": {
+          "attributionId": {
             "type": "object"
           },
           "publicTokenId": {
             "type": "object"
           },
-          "privateTokenId": {
-            "type": "object"
+          "contactPerson": {
+            "$ref": "#/components/schemas/User"
           },
           "onboardingStatusId": {
             "type": "object"
           },
-          "typeId": {
-            "type": "object"
-          },
-          "usersLeft": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "attributionId": {
-            "type": "object"
-          },
           "parentId": {
-            "type": "object"
-          },
-          "invoicePaymentInformationId": {
             "type": "object"
           },
           "locationsLeft": {
@@ -31416,6 +31459,22 @@
             "format": "int32"
           },
           "salesPartnerStatusId": {
+            "type": "object"
+          },
+          "resellerTypeId": {
+            "type": "object"
+          },
+          "privateTokenId": {
+            "type": "object"
+          },
+          "usersLeft": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "typeId": {
+            "type": "object"
+          },
+          "invoicePaymentInformationId": {
             "type": "object"
           }
         },
@@ -32136,10 +32195,6 @@
             "type": "object",
             "description": "The currency of the price for this service - required when a price is given"
           },
-          "googleService": {
-            "type": "string",
-            "description": "The Google name for a structured service - this is required when applying a Google structured service but not necessary for freeform services."
-          },
           "category": {
             "type": "integer",
             "description": "Business category the service should be applied to - this is required when applying a Google structured service but not necessary for freeform services.",
@@ -32148,6 +32203,10 @@
           "country": {
             "type": "string",
             "description": "The country where the locations providing this service are located - this is required when applying a Google structured service but not necessary for freeform services.\n"
+          },
+          "googleService": {
+            "type": "string",
+            "description": "The Google name for a structured service - this is required when applying a Google structured service but not necessary for freeform services."
           }
         },
         "description": "Service Item",
@@ -32425,51 +32484,12 @@
             "type": "string",
             "description": "The first comment to be posted after a post creation. Only available for INSTAGRAM"
           },
-          "businessIds": {
+          "locationGroupIds": {
             "type": "array",
-            "description": "The list of location group IDs as entered when creating/updating the Social Post.",
+            "description": "List of locationIds that should be excluded from the request. Can be used in combination with businessId when some locations should not be considered.",
             "items": {
               "type": "integer",
               "format": "int64"
-            }
-          },
-          "locationIds": {
-            "type": "array",
-            "description": "The list of location group IDs as entered when creating/updating the Social Post.",
-            "items": {
-              "type": "integer",
-              "format": "int64"
-            }
-          },
-          "listingPageIds": {
-            "type": "array",
-            "description": "The list of location group IDs as entered when creating/updating the Social Post.",
-            "items": {
-              "type": "integer",
-              "format": "int64"
-            }
-          },
-          "businessPageIds": {
-            "type": "array",
-            "description": "The list of location group IDs as entered when creating/updating the Social Post.",
-            "items": {
-              "type": "integer",
-              "format": "int64"
-            }
-          },
-          "excludedLocationIds": {
-            "type": "array",
-            "description": "The list of location group IDs as entered when creating/updating the Social Post.",
-            "items": {
-              "type": "integer",
-              "format": "int64"
-            }
-          },
-          "directories": {
-            "type": "array",
-            "description": "The video of the social post (can only be one)",
-            "items": {
-              "type": "string"
             }
           },
           "photos": {
@@ -32489,17 +32509,56 @@
           },
           "videos": {
             "type": "array",
-            "description": "The video of the social post (can only be one)",
+            "description": "The list of directories as entered when creating/updating the Social Post.",
             "items": {
               "type": "string"
             }
           },
-          "locationGroupIds": {
+          "businessIds": {
             "type": "array",
-            "description": "The list of location group IDs as entered when creating/updating the Social Post.",
+            "description": "List of locationIds that should be excluded from the request. Can be used in combination with businessId when some locations should not be considered.",
             "items": {
               "type": "integer",
               "format": "int64"
+            }
+          },
+          "locationIds": {
+            "type": "array",
+            "description": "List of locationIds that should be excluded from the request. Can be used in combination with businessId when some locations should not be considered.",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          "listingPageIds": {
+            "type": "array",
+            "description": "List of locationIds that should be excluded from the request. Can be used in combination with businessId when some locations should not be considered.",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          "businessPageIds": {
+            "type": "array",
+            "description": "List of locationIds that should be excluded from the request. Can be used in combination with businessId when some locations should not be considered.",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          "excludedLocationIds": {
+            "type": "array",
+            "description": "List of locationIds that should be excluded from the request. Can be used in combination with businessId when some locations should not be considered.",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          "directories": {
+            "type": "array",
+            "description": "The list of directories as entered when creating/updating the Social Post.",
+            "items": {
+              "type": "string"
             }
           }
         },
@@ -32972,13 +33031,6 @@
               "$ref": "#/components/schemas/SocialPostTemplateCallToAction"
             }
           },
-          "directories": {
-            "type": "array",
-            "description": "List of videos (currently only supports one element)",
-            "items": {
-              "type": "string"
-            }
-          },
           "photos": {
             "type": "array",
             "description": "The Social Post Template''s photos. It should be a list containing BASE64 converted images or urls of photos from a previous Social Post. It is required if the template has no description.",
@@ -32993,19 +33045,26 @@
               "type": "string"
             }
           },
+          "directories": {
+            "type": "array",
+            "description": "List of videos (currently only supports one element)",
+            "items": {
+              "type": "string"
+            }
+          },
           "ownerId": {
             "type": "integer",
             "description": "The id of the user that owns the Social Post Template. (Only informational. If included in the request, it will be ignored.)",
             "format": "int64"
           },
-          "ownerName": {
-            "type": "string",
-            "description": "The name of the user that owns the Social Post Template. (Only informational. If included in the request, it will be ignored.)"
-          },
           "userId": {
             "type": "integer",
             "description": "Id of the user that is doing the action",
             "format": "int64"
+          },
+          "ownerName": {
+            "type": "string",
+            "description": "The name of the user that owns the Social Post Template. (Only informational. If included in the request, it will be ignored.)"
           }
         },
         "description": "Social Post Template Model"
@@ -34057,6 +34116,7 @@
             "description": "The location''s contact phone number."
           },
           "photos": {
+            "uniqueItems": true,
             "type": "array",
             "description": "The location's photos",
             "items": {
@@ -36127,9 +36187,6 @@
               "$ref": "#/components/schemas/EmailSettings"
             }
           },
-          "salesPartnerId": {
-            "type": "object"
-          },
           "readDataPoints": {
             "type": "object"
           },
@@ -36140,6 +36197,9 @@
             "type": "object"
           },
           "whitelabelInformationId": {
+            "type": "object"
+          },
+          "salesPartnerId": {
             "type": "object"
           },
           "featuresDetailed": {

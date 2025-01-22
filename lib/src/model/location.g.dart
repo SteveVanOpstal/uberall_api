@@ -3595,23 +3595,31 @@ class _$Location extends Location {
   @override
   final LocationTemporarilyClosed? temporarilyClosed;
   @override
-  final String? nameDescriptor;
-  @override
   final EvData? evData;
   @override
+  final String? nameDescriptor;
+  @override
   final BuiltSet<LocationFeaturesEnum>? features;
+  @override
+  final int? visibilityIndex;
+  @override
+  final int? listingsInSync;
+  @override
+  final LocationPhoto? mainPhoto;
   @override
   final BuiltSet<LocationMissingMandatoryFieldsEnum>? missingMandatoryFields;
   @override
   final BuiltSet<BuiltMap<String, JsonObject>>? moreHours;
   @override
-  final int? dataPoints;
+  final int? profileCompleteness;
   @override
-  final int? listingsBeingUpdated;
+  final int? publishedListingsCount;
   @override
-  final int? listingsInSync;
+  final BuiltSet<SocialProfile>? socialProfiles;
   @override
-  final LocationPhoto? mainPhoto;
+  final String? timeZone;
+  @override
+  final BuiltList<Video>? videos;
   @override
   final int? businessId;
   @override
@@ -3621,13 +3629,11 @@ class _$Location extends Location {
   @override
   final LocationCleansingStatusEnum? cleansingStatus;
   @override
-  final String? timeZone;
-  @override
-  final BuiltList<Video>? videos;
-  @override
-  final int? visibilityIndex;
-  @override
   final BuiltList<int>? contentLists;
+  @override
+  final int? dataPoints;
+  @override
+  final int? listingsBeingUpdated;
   @override
   final int? activeDirectoriesCount;
   @override
@@ -3636,12 +3642,6 @@ class _$Location extends Location {
   final BuiltList<AttributeWrapper>? attributes;
   @override
   final JsonObject? customFields;
-  @override
-  final int? profileCompleteness;
-  @override
-  final int? publishedListingsCount;
-  @override
-  final BuiltSet<SocialProfile>? socialProfiles;
 
   factory _$Location([void Function(LocationBuilder)? updates]) =>
       (new LocationBuilder()..update(updates))._build();
@@ -3695,30 +3695,30 @@ class _$Location extends Location {
       this.utms,
       this.transactionLinks,
       this.temporarilyClosed,
-      this.nameDescriptor,
       this.evData,
+      this.nameDescriptor,
       this.features,
-      this.missingMandatoryFields,
-      this.moreHours,
-      this.dataPoints,
-      this.listingsBeingUpdated,
+      this.visibilityIndex,
       this.listingsInSync,
       this.mainPhoto,
+      this.missingMandatoryFields,
+      this.moreHours,
+      this.profileCompleteness,
+      this.publishedListingsCount,
+      this.socialProfiles,
+      this.timeZone,
+      this.videos,
       this.businessId,
       this.cleansingComment,
       this.cleansingInvalidDataReason,
       this.cleansingStatus,
-      this.timeZone,
-      this.videos,
-      this.visibilityIndex,
       this.contentLists,
+      this.dataPoints,
+      this.listingsBeingUpdated,
       this.activeDirectoriesCount,
       this.activeListingsCount,
       this.attributes,
-      this.customFields,
-      this.profileCompleteness,
-      this.publishedListingsCount,
-      this.socialProfiles})
+      this.customFields})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(name, r'Location', 'name');
     BuiltValueNullFieldError.checkNotNull(street, r'Location', 'street');
@@ -3785,30 +3785,30 @@ class _$Location extends Location {
         utms == other.utms &&
         transactionLinks == other.transactionLinks &&
         temporarilyClosed == other.temporarilyClosed &&
-        nameDescriptor == other.nameDescriptor &&
         evData == other.evData &&
+        nameDescriptor == other.nameDescriptor &&
         features == other.features &&
-        missingMandatoryFields == other.missingMandatoryFields &&
-        moreHours == other.moreHours &&
-        dataPoints == other.dataPoints &&
-        listingsBeingUpdated == other.listingsBeingUpdated &&
+        visibilityIndex == other.visibilityIndex &&
         listingsInSync == other.listingsInSync &&
         mainPhoto == other.mainPhoto &&
+        missingMandatoryFields == other.missingMandatoryFields &&
+        moreHours == other.moreHours &&
+        profileCompleteness == other.profileCompleteness &&
+        publishedListingsCount == other.publishedListingsCount &&
+        socialProfiles == other.socialProfiles &&
+        timeZone == other.timeZone &&
+        videos == other.videos &&
         businessId == other.businessId &&
         cleansingComment == other.cleansingComment &&
         cleansingInvalidDataReason == other.cleansingInvalidDataReason &&
         cleansingStatus == other.cleansingStatus &&
-        timeZone == other.timeZone &&
-        videos == other.videos &&
-        visibilityIndex == other.visibilityIndex &&
         contentLists == other.contentLists &&
+        dataPoints == other.dataPoints &&
+        listingsBeingUpdated == other.listingsBeingUpdated &&
         activeDirectoriesCount == other.activeDirectoriesCount &&
         activeListingsCount == other.activeListingsCount &&
         attributes == other.attributes &&
-        customFields == other.customFields &&
-        profileCompleteness == other.profileCompleteness &&
-        publishedListingsCount == other.publishedListingsCount &&
-        socialProfiles == other.socialProfiles;
+        customFields == other.customFields;
   }
 
   @override
@@ -3862,30 +3862,30 @@ class _$Location extends Location {
     _$hash = $jc(_$hash, utms.hashCode);
     _$hash = $jc(_$hash, transactionLinks.hashCode);
     _$hash = $jc(_$hash, temporarilyClosed.hashCode);
-    _$hash = $jc(_$hash, nameDescriptor.hashCode);
     _$hash = $jc(_$hash, evData.hashCode);
+    _$hash = $jc(_$hash, nameDescriptor.hashCode);
     _$hash = $jc(_$hash, features.hashCode);
-    _$hash = $jc(_$hash, missingMandatoryFields.hashCode);
-    _$hash = $jc(_$hash, moreHours.hashCode);
-    _$hash = $jc(_$hash, dataPoints.hashCode);
-    _$hash = $jc(_$hash, listingsBeingUpdated.hashCode);
+    _$hash = $jc(_$hash, visibilityIndex.hashCode);
     _$hash = $jc(_$hash, listingsInSync.hashCode);
     _$hash = $jc(_$hash, mainPhoto.hashCode);
+    _$hash = $jc(_$hash, missingMandatoryFields.hashCode);
+    _$hash = $jc(_$hash, moreHours.hashCode);
+    _$hash = $jc(_$hash, profileCompleteness.hashCode);
+    _$hash = $jc(_$hash, publishedListingsCount.hashCode);
+    _$hash = $jc(_$hash, socialProfiles.hashCode);
+    _$hash = $jc(_$hash, timeZone.hashCode);
+    _$hash = $jc(_$hash, videos.hashCode);
     _$hash = $jc(_$hash, businessId.hashCode);
     _$hash = $jc(_$hash, cleansingComment.hashCode);
     _$hash = $jc(_$hash, cleansingInvalidDataReason.hashCode);
     _$hash = $jc(_$hash, cleansingStatus.hashCode);
-    _$hash = $jc(_$hash, timeZone.hashCode);
-    _$hash = $jc(_$hash, videos.hashCode);
-    _$hash = $jc(_$hash, visibilityIndex.hashCode);
     _$hash = $jc(_$hash, contentLists.hashCode);
+    _$hash = $jc(_$hash, dataPoints.hashCode);
+    _$hash = $jc(_$hash, listingsBeingUpdated.hashCode);
     _$hash = $jc(_$hash, activeDirectoriesCount.hashCode);
     _$hash = $jc(_$hash, activeListingsCount.hashCode);
     _$hash = $jc(_$hash, attributes.hashCode);
     _$hash = $jc(_$hash, customFields.hashCode);
-    _$hash = $jc(_$hash, profileCompleteness.hashCode);
-    _$hash = $jc(_$hash, publishedListingsCount.hashCode);
-    _$hash = $jc(_$hash, socialProfiles.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -3941,30 +3941,30 @@ class _$Location extends Location {
           ..add('utms', utms)
           ..add('transactionLinks', transactionLinks)
           ..add('temporarilyClosed', temporarilyClosed)
-          ..add('nameDescriptor', nameDescriptor)
           ..add('evData', evData)
+          ..add('nameDescriptor', nameDescriptor)
           ..add('features', features)
-          ..add('missingMandatoryFields', missingMandatoryFields)
-          ..add('moreHours', moreHours)
-          ..add('dataPoints', dataPoints)
-          ..add('listingsBeingUpdated', listingsBeingUpdated)
+          ..add('visibilityIndex', visibilityIndex)
           ..add('listingsInSync', listingsInSync)
           ..add('mainPhoto', mainPhoto)
+          ..add('missingMandatoryFields', missingMandatoryFields)
+          ..add('moreHours', moreHours)
+          ..add('profileCompleteness', profileCompleteness)
+          ..add('publishedListingsCount', publishedListingsCount)
+          ..add('socialProfiles', socialProfiles)
+          ..add('timeZone', timeZone)
+          ..add('videos', videos)
           ..add('businessId', businessId)
           ..add('cleansingComment', cleansingComment)
           ..add('cleansingInvalidDataReason', cleansingInvalidDataReason)
           ..add('cleansingStatus', cleansingStatus)
-          ..add('timeZone', timeZone)
-          ..add('videos', videos)
-          ..add('visibilityIndex', visibilityIndex)
           ..add('contentLists', contentLists)
+          ..add('dataPoints', dataPoints)
+          ..add('listingsBeingUpdated', listingsBeingUpdated)
           ..add('activeDirectoriesCount', activeDirectoriesCount)
           ..add('activeListingsCount', activeListingsCount)
           ..add('attributes', attributes)
-          ..add('customFields', customFields)
-          ..add('profileCompleteness', profileCompleteness)
-          ..add('publishedListingsCount', publishedListingsCount)
-          ..add('socialProfiles', socialProfiles))
+          ..add('customFields', customFields))
         .toString();
   }
 }
@@ -4197,20 +4197,36 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   set temporarilyClosed(LocationTemporarilyClosedBuilder? temporarilyClosed) =>
       _$this._temporarilyClosed = temporarilyClosed;
 
+  EvDataBuilder? _evData;
+  EvDataBuilder get evData => _$this._evData ??= new EvDataBuilder();
+  set evData(EvDataBuilder? evData) => _$this._evData = evData;
+
   String? _nameDescriptor;
   String? get nameDescriptor => _$this._nameDescriptor;
   set nameDescriptor(String? nameDescriptor) =>
       _$this._nameDescriptor = nameDescriptor;
-
-  EvDataBuilder? _evData;
-  EvDataBuilder get evData => _$this._evData ??= new EvDataBuilder();
-  set evData(EvDataBuilder? evData) => _$this._evData = evData;
 
   SetBuilder<LocationFeaturesEnum>? _features;
   SetBuilder<LocationFeaturesEnum> get features =>
       _$this._features ??= new SetBuilder<LocationFeaturesEnum>();
   set features(SetBuilder<LocationFeaturesEnum>? features) =>
       _$this._features = features;
+
+  int? _visibilityIndex;
+  int? get visibilityIndex => _$this._visibilityIndex;
+  set visibilityIndex(int? visibilityIndex) =>
+      _$this._visibilityIndex = visibilityIndex;
+
+  int? _listingsInSync;
+  int? get listingsInSync => _$this._listingsInSync;
+  set listingsInSync(int? listingsInSync) =>
+      _$this._listingsInSync = listingsInSync;
+
+  LocationPhotoBuilder? _mainPhoto;
+  LocationPhotoBuilder get mainPhoto =>
+      _$this._mainPhoto ??= new LocationPhotoBuilder();
+  set mainPhoto(LocationPhotoBuilder? mainPhoto) =>
+      _$this._mainPhoto = mainPhoto;
 
   SetBuilder<LocationMissingMandatoryFieldsEnum>? _missingMandatoryFields;
   SetBuilder<LocationMissingMandatoryFieldsEnum> get missingMandatoryFields =>
@@ -4227,25 +4243,29 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   set moreHours(SetBuilder<BuiltMap<String, JsonObject>>? moreHours) =>
       _$this._moreHours = moreHours;
 
-  int? _dataPoints;
-  int? get dataPoints => _$this._dataPoints;
-  set dataPoints(int? dataPoints) => _$this._dataPoints = dataPoints;
+  int? _profileCompleteness;
+  int? get profileCompleteness => _$this._profileCompleteness;
+  set profileCompleteness(int? profileCompleteness) =>
+      _$this._profileCompleteness = profileCompleteness;
 
-  int? _listingsBeingUpdated;
-  int? get listingsBeingUpdated => _$this._listingsBeingUpdated;
-  set listingsBeingUpdated(int? listingsBeingUpdated) =>
-      _$this._listingsBeingUpdated = listingsBeingUpdated;
+  int? _publishedListingsCount;
+  int? get publishedListingsCount => _$this._publishedListingsCount;
+  set publishedListingsCount(int? publishedListingsCount) =>
+      _$this._publishedListingsCount = publishedListingsCount;
 
-  int? _listingsInSync;
-  int? get listingsInSync => _$this._listingsInSync;
-  set listingsInSync(int? listingsInSync) =>
-      _$this._listingsInSync = listingsInSync;
+  SetBuilder<SocialProfile>? _socialProfiles;
+  SetBuilder<SocialProfile> get socialProfiles =>
+      _$this._socialProfiles ??= new SetBuilder<SocialProfile>();
+  set socialProfiles(SetBuilder<SocialProfile>? socialProfiles) =>
+      _$this._socialProfiles = socialProfiles;
 
-  LocationPhotoBuilder? _mainPhoto;
-  LocationPhotoBuilder get mainPhoto =>
-      _$this._mainPhoto ??= new LocationPhotoBuilder();
-  set mainPhoto(LocationPhotoBuilder? mainPhoto) =>
-      _$this._mainPhoto = mainPhoto;
+  String? _timeZone;
+  String? get timeZone => _$this._timeZone;
+  set timeZone(String? timeZone) => _$this._timeZone = timeZone;
+
+  ListBuilder<Video>? _videos;
+  ListBuilder<Video> get videos => _$this._videos ??= new ListBuilder<Video>();
+  set videos(ListBuilder<Video>? videos) => _$this._videos = videos;
 
   int? _businessId;
   int? get businessId => _$this._businessId;
@@ -4267,24 +4287,20 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   set cleansingStatus(LocationCleansingStatusEnum? cleansingStatus) =>
       _$this._cleansingStatus = cleansingStatus;
 
-  String? _timeZone;
-  String? get timeZone => _$this._timeZone;
-  set timeZone(String? timeZone) => _$this._timeZone = timeZone;
-
-  ListBuilder<Video>? _videos;
-  ListBuilder<Video> get videos => _$this._videos ??= new ListBuilder<Video>();
-  set videos(ListBuilder<Video>? videos) => _$this._videos = videos;
-
-  int? _visibilityIndex;
-  int? get visibilityIndex => _$this._visibilityIndex;
-  set visibilityIndex(int? visibilityIndex) =>
-      _$this._visibilityIndex = visibilityIndex;
-
   ListBuilder<int>? _contentLists;
   ListBuilder<int> get contentLists =>
       _$this._contentLists ??= new ListBuilder<int>();
   set contentLists(ListBuilder<int>? contentLists) =>
       _$this._contentLists = contentLists;
+
+  int? _dataPoints;
+  int? get dataPoints => _$this._dataPoints;
+  set dataPoints(int? dataPoints) => _$this._dataPoints = dataPoints;
+
+  int? _listingsBeingUpdated;
+  int? get listingsBeingUpdated => _$this._listingsBeingUpdated;
+  set listingsBeingUpdated(int? listingsBeingUpdated) =>
+      _$this._listingsBeingUpdated = listingsBeingUpdated;
 
   int? _activeDirectoriesCount;
   int? get activeDirectoriesCount => _$this._activeDirectoriesCount;
@@ -4306,22 +4322,6 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   JsonObject? get customFields => _$this._customFields;
   set customFields(JsonObject? customFields) =>
       _$this._customFields = customFields;
-
-  int? _profileCompleteness;
-  int? get profileCompleteness => _$this._profileCompleteness;
-  set profileCompleteness(int? profileCompleteness) =>
-      _$this._profileCompleteness = profileCompleteness;
-
-  int? _publishedListingsCount;
-  int? get publishedListingsCount => _$this._publishedListingsCount;
-  set publishedListingsCount(int? publishedListingsCount) =>
-      _$this._publishedListingsCount = publishedListingsCount;
-
-  SetBuilder<SocialProfile>? _socialProfiles;
-  SetBuilder<SocialProfile> get socialProfiles =>
-      _$this._socialProfiles ??= new SetBuilder<SocialProfile>();
-  set socialProfiles(SetBuilder<SocialProfile>? socialProfiles) =>
-      _$this._socialProfiles = socialProfiles;
 
   LocationBuilder() {
     Location._defaults(this);
@@ -4378,30 +4378,30 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
       _utms = $v.utms?.toBuilder();
       _transactionLinks = $v.transactionLinks?.toBuilder();
       _temporarilyClosed = $v.temporarilyClosed?.toBuilder();
-      _nameDescriptor = $v.nameDescriptor;
       _evData = $v.evData?.toBuilder();
+      _nameDescriptor = $v.nameDescriptor;
       _features = $v.features?.toBuilder();
-      _missingMandatoryFields = $v.missingMandatoryFields?.toBuilder();
-      _moreHours = $v.moreHours?.toBuilder();
-      _dataPoints = $v.dataPoints;
-      _listingsBeingUpdated = $v.listingsBeingUpdated;
+      _visibilityIndex = $v.visibilityIndex;
       _listingsInSync = $v.listingsInSync;
       _mainPhoto = $v.mainPhoto?.toBuilder();
+      _missingMandatoryFields = $v.missingMandatoryFields?.toBuilder();
+      _moreHours = $v.moreHours?.toBuilder();
+      _profileCompleteness = $v.profileCompleteness;
+      _publishedListingsCount = $v.publishedListingsCount;
+      _socialProfiles = $v.socialProfiles?.toBuilder();
+      _timeZone = $v.timeZone;
+      _videos = $v.videos?.toBuilder();
       _businessId = $v.businessId;
       _cleansingComment = $v.cleansingComment;
       _cleansingInvalidDataReason = $v.cleansingInvalidDataReason;
       _cleansingStatus = $v.cleansingStatus;
-      _timeZone = $v.timeZone;
-      _videos = $v.videos?.toBuilder();
-      _visibilityIndex = $v.visibilityIndex;
       _contentLists = $v.contentLists?.toBuilder();
+      _dataPoints = $v.dataPoints;
+      _listingsBeingUpdated = $v.listingsBeingUpdated;
       _activeDirectoriesCount = $v.activeDirectoriesCount;
       _activeListingsCount = $v.activeListingsCount;
       _attributes = $v.attributes?.toBuilder();
       _customFields = $v.customFields;
-      _profileCompleteness = $v.profileCompleteness;
-      _publishedListingsCount = $v.publishedListingsCount;
-      _socialProfiles = $v.socialProfiles?.toBuilder();
       _$v = null;
     }
     return this;
@@ -4478,30 +4478,30 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
             utms: _utms?.build(),
             transactionLinks: _transactionLinks?.build(),
             temporarilyClosed: _temporarilyClosed?.build(),
-            nameDescriptor: nameDescriptor,
             evData: _evData?.build(),
+            nameDescriptor: nameDescriptor,
             features: _features?.build(),
-            missingMandatoryFields: _missingMandatoryFields?.build(),
-            moreHours: _moreHours?.build(),
-            dataPoints: dataPoints,
-            listingsBeingUpdated: listingsBeingUpdated,
+            visibilityIndex: visibilityIndex,
             listingsInSync: listingsInSync,
             mainPhoto: _mainPhoto?.build(),
+            missingMandatoryFields: _missingMandatoryFields?.build(),
+            moreHours: _moreHours?.build(),
+            profileCompleteness: profileCompleteness,
+            publishedListingsCount: publishedListingsCount,
+            socialProfiles: _socialProfiles?.build(),
+            timeZone: timeZone,
+            videos: _videos?.build(),
             businessId: businessId,
             cleansingComment: cleansingComment,
             cleansingInvalidDataReason: cleansingInvalidDataReason,
             cleansingStatus: cleansingStatus,
-            timeZone: timeZone,
-            videos: _videos?.build(),
-            visibilityIndex: visibilityIndex,
             contentLists: _contentLists?.build(),
+            dataPoints: dataPoints,
+            listingsBeingUpdated: listingsBeingUpdated,
             activeDirectoriesCount: activeDirectoriesCount,
             activeListingsCount: activeListingsCount,
             attributes: _attributes?.build(),
             customFields: customFields,
-            profileCompleteness: profileCompleteness,
-            publishedListingsCount: publishedListingsCount,
-            socialProfiles: _socialProfiles?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -4541,18 +4541,21 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
         _transactionLinks?.build();
         _$failedField = 'temporarilyClosed';
         _temporarilyClosed?.build();
-
         _$failedField = 'evData';
         _evData?.build();
+
         _$failedField = 'features';
         _features?.build();
+
+        _$failedField = 'mainPhoto';
+        _mainPhoto?.build();
         _$failedField = 'missingMandatoryFields';
         _missingMandatoryFields?.build();
         _$failedField = 'moreHours';
         _moreHours?.build();
 
-        _$failedField = 'mainPhoto';
-        _mainPhoto?.build();
+        _$failedField = 'socialProfiles';
+        _socialProfiles?.build();
 
         _$failedField = 'videos';
         _videos?.build();
@@ -4562,9 +4565,6 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
 
         _$failedField = 'attributes';
         _attributes?.build();
-
-        _$failedField = 'socialProfiles';
-        _socialProfiles?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'Location', _$failedField, e.toString());

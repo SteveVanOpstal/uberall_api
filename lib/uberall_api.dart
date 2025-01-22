@@ -24,6 +24,7 @@ export 'package:uberall_api/src/api/dashboard_api.dart';
 export 'package:uberall_api/src/api/dashboard_exports_api.dart';
 export 'package:uberall_api/src/api/data_point_filters_api.dart';
 export 'package:uberall_api/src/api/data_points_api.dart';
+export 'package:uberall_api/src/api/default_api.dart';
 export 'package:uberall_api/src/api/digital_asset_management_api.dart';
 export 'package:uberall_api/src/api/events_api.dart';
 export 'package:uberall_api/src/api/labels_api.dart';

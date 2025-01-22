@@ -178,11 +178,11 @@ class _$DashboardExportData extends DashboardExportData {
   @override
   final DashboardExportDataStatusEnum? status;
   @override
+  final BuiltSet<String>? locationIds;
+  @override
   final String? whitelabelIdentifier;
   @override
   final String? salesPartnerCountry;
-  @override
-  final BuiltSet<String>? locationIds;
 
   factory _$DashboardExportData(
           [void Function(DashboardExportDataBuilder)? updates]) =>
@@ -195,9 +195,9 @@ class _$DashboardExportData extends DashboardExportData {
       this.language,
       this.token,
       this.status,
+      this.locationIds,
       this.whitelabelIdentifier,
-      this.salesPartnerCountry,
-      this.locationIds})
+      this.salesPartnerCountry})
       : super._();
 
   @override
@@ -219,9 +219,9 @@ class _$DashboardExportData extends DashboardExportData {
         language == other.language &&
         token == other.token &&
         status == other.status &&
+        locationIds == other.locationIds &&
         whitelabelIdentifier == other.whitelabelIdentifier &&
-        salesPartnerCountry == other.salesPartnerCountry &&
-        locationIds == other.locationIds;
+        salesPartnerCountry == other.salesPartnerCountry;
   }
 
   @override
@@ -233,9 +233,9 @@ class _$DashboardExportData extends DashboardExportData {
     _$hash = $jc(_$hash, language.hashCode);
     _$hash = $jc(_$hash, token.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, locationIds.hashCode);
     _$hash = $jc(_$hash, whitelabelIdentifier.hashCode);
     _$hash = $jc(_$hash, salesPartnerCountry.hashCode);
-    _$hash = $jc(_$hash, locationIds.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -249,9 +249,9 @@ class _$DashboardExportData extends DashboardExportData {
           ..add('language', language)
           ..add('token', token)
           ..add('status', status)
+          ..add('locationIds', locationIds)
           ..add('whitelabelIdentifier', whitelabelIdentifier)
-          ..add('salesPartnerCountry', salesPartnerCountry)
-          ..add('locationIds', locationIds))
+          ..add('salesPartnerCountry', salesPartnerCountry))
         .toString();
   }
 }
@@ -284,6 +284,12 @@ class DashboardExportDataBuilder
   DashboardExportDataStatusEnum? get status => _$this._status;
   set status(DashboardExportDataStatusEnum? status) => _$this._status = status;
 
+  SetBuilder<String>? _locationIds;
+  SetBuilder<String> get locationIds =>
+      _$this._locationIds ??= new SetBuilder<String>();
+  set locationIds(SetBuilder<String>? locationIds) =>
+      _$this._locationIds = locationIds;
+
   String? _whitelabelIdentifier;
   String? get whitelabelIdentifier => _$this._whitelabelIdentifier;
   set whitelabelIdentifier(String? whitelabelIdentifier) =>
@@ -293,12 +299,6 @@ class DashboardExportDataBuilder
   String? get salesPartnerCountry => _$this._salesPartnerCountry;
   set salesPartnerCountry(String? salesPartnerCountry) =>
       _$this._salesPartnerCountry = salesPartnerCountry;
-
-  SetBuilder<String>? _locationIds;
-  SetBuilder<String> get locationIds =>
-      _$this._locationIds ??= new SetBuilder<String>();
-  set locationIds(SetBuilder<String>? locationIds) =>
-      _$this._locationIds = locationIds;
 
   DashboardExportDataBuilder() {
     DashboardExportData._defaults(this);
@@ -313,9 +313,9 @@ class DashboardExportDataBuilder
       _language = $v.language;
       _token = $v.token;
       _status = $v.status;
+      _locationIds = $v.locationIds?.toBuilder();
       _whitelabelIdentifier = $v.whitelabelIdentifier;
       _salesPartnerCountry = $v.salesPartnerCountry;
-      _locationIds = $v.locationIds?.toBuilder();
       _$v = null;
     }
     return this;
@@ -346,9 +346,9 @@ class DashboardExportDataBuilder
             language: language,
             token: token,
             status: status,
+            locationIds: _locationIds?.build(),
             whitelabelIdentifier: whitelabelIdentifier,
             salesPartnerCountry: salesPartnerCountry,
-            locationIds: _locationIds?.build(),
           );
     } catch (_) {
       late String _$failedField;

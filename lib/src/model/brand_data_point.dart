@@ -12,25 +12,42 @@ part 'brand_data_point.g.dart';
 /// Brand Data Point Model
 ///
 /// Properties:
+/// * [author] - Username of the datapoints author
+/// * [actionDate] - The date when the review/photo/... was published in the online directory
+/// * [type] - Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+/// * [threadActionDate] - The date of the last interaction in that thread. When a review receives a new comment, the parent will update.
 /// * [lastUpdated] - Date of last update
 /// * [rating] - Rating given by the user. Float value, max: 5.
 /// * [repliedByOwner] - True if the owner of the business has replied
 /// * [secondaryData] - Additional info about the datapoint (eg. text content on instagram pictures)
-/// * [dateCreated] - The date the datapoint was found
-/// * [directLink] - A link to the online profile
-/// * [type] - Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-/// * [actionDate] - The date when the review/photo/... was published in the online directory
+/// * [data] - Content of the datapoint (text of the review, url of the photo, count of checkins...)
 /// * [authorImage] - Author profile picture url
 /// * [countComments] - Number of comments to this item.
+/// * [dateCreated] - The date the datapoint was found
+/// * [directLink] - A link to the online profile
 /// * [directoryType] - Online directory reference name
 /// * [flagged] - Whether the datapoint has been flagged. The exact nature of the flagging depends on the directory, but can be e.g. \"Report as SPAM\"
-/// * [author] - Username of the datapoints author
-/// * [threadActionDate] - The date of the last interaction in that thread. When a review receives a new comment, the parent will update.
 /// * [liked] - Whether this datapoint has been liked or not
-/// * [data] - Content of the datapoint (text of the review, url of the photo, count of checkins...)
 @BuiltValue()
 abstract class BrandDataPoint
     implements Built<BrandDataPoint, BrandDataPointBuilder> {
+  /// Username of the datapoints author
+  @BuiltValueField(wireName: r'author')
+  String? get author;
+
+  /// The date when the review/photo/... was published in the online directory
+  @BuiltValueField(wireName: r'actionDate')
+  DateTime? get actionDate;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueField(wireName: r'type')
+  BrandDataPointTypeEnum? get type;
+  // enum typeEnum {  REVIEW,  PHOTO,  CHECKIN,  CONVERSATION,  COMMENT,  QUESTION,  POST,  IMAGE,  VIDEO,  CAROUSEL_ALBUM,  LINK,  EXPANDEDREVIEW,  };
+
+  /// The date of the last interaction in that thread. When a review receives a new comment, the parent will update.
+  @BuiltValueField(wireName: r'threadActionDate')
+  DateTime? get threadActionDate;
+
   /// Date of last update
   @BuiltValueField(wireName: r'lastUpdated')
   DateTime? get lastUpdated;
@@ -47,22 +64,9 @@ abstract class BrandDataPoint
   @BuiltValueField(wireName: r'secondaryData')
   String? get secondaryData;
 
-  /// The date the datapoint was found
-  @BuiltValueField(wireName: r'dateCreated')
-  DateTime? get dateCreated;
-
-  /// A link to the online profile
-  @BuiltValueField(wireName: r'directLink')
-  String? get directLink;
-
-  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-  @BuiltValueField(wireName: r'type')
-  BrandDataPointTypeEnum? get type;
-  // enum typeEnum {  REVIEW,  PHOTO,  CHECKIN,  CONVERSATION,  COMMENT,  QUESTION,  POST,  IMAGE,  VIDEO,  CAROUSEL_ALBUM,  LINK,  EXPANDEDREVIEW,  };
-
-  /// The date when the review/photo/... was published in the online directory
-  @BuiltValueField(wireName: r'actionDate')
-  DateTime? get actionDate;
+  /// Content of the datapoint (text of the review, url of the photo, count of checkins...)
+  @BuiltValueField(wireName: r'data')
+  String? get data;
 
   /// Author profile picture url
   @BuiltValueField(wireName: r'authorImage')
@@ -71,6 +75,14 @@ abstract class BrandDataPoint
   /// Number of comments to this item.
   @BuiltValueField(wireName: r'countComments')
   int? get countComments;
+
+  /// The date the datapoint was found
+  @BuiltValueField(wireName: r'dateCreated')
+  DateTime? get dateCreated;
+
+  /// A link to the online profile
+  @BuiltValueField(wireName: r'directLink')
+  String? get directLink;
 
   /// Online directory reference name
   @BuiltValueField(wireName: r'directoryType')
@@ -81,21 +93,9 @@ abstract class BrandDataPoint
   @BuiltValueField(wireName: r'flagged')
   bool? get flagged;
 
-  /// Username of the datapoints author
-  @BuiltValueField(wireName: r'author')
-  String? get author;
-
-  /// The date of the last interaction in that thread. When a review receives a new comment, the parent will update.
-  @BuiltValueField(wireName: r'threadActionDate')
-  DateTime? get threadActionDate;
-
   /// Whether this datapoint has been liked or not
   @BuiltValueField(wireName: r'liked')
   bool? get liked;
-
-  /// Content of the datapoint (text of the review, url of the photo, count of checkins...)
-  @BuiltValueField(wireName: r'data')
-  String? get data;
 
   BrandDataPoint._();
 
@@ -123,6 +123,34 @@ class _$BrandDataPointSerializer
     BrandDataPoint object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.author != null) {
+      yield r'author';
+      yield serializers.serialize(
+        object.author,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.actionDate != null) {
+      yield r'actionDate';
+      yield serializers.serialize(
+        object.actionDate,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.type != null) {
+      yield r'type';
+      yield serializers.serialize(
+        object.type,
+        specifiedType: const FullType(BrandDataPointTypeEnum),
+      );
+    }
+    if (object.threadActionDate != null) {
+      yield r'threadActionDate';
+      yield serializers.serialize(
+        object.threadActionDate,
+        specifiedType: const FullType(DateTime),
+      );
+    }
     if (object.lastUpdated != null) {
       yield r'lastUpdated';
       yield serializers.serialize(
@@ -151,32 +179,11 @@ class _$BrandDataPointSerializer
         specifiedType: const FullType(String),
       );
     }
-    if (object.dateCreated != null) {
-      yield r'dateCreated';
+    if (object.data != null) {
+      yield r'data';
       yield serializers.serialize(
-        object.dateCreated,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.directLink != null) {
-      yield r'directLink';
-      yield serializers.serialize(
-        object.directLink,
+        object.data,
         specifiedType: const FullType(String),
-      );
-    }
-    if (object.type != null) {
-      yield r'type';
-      yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType(BrandDataPointTypeEnum),
-      );
-    }
-    if (object.actionDate != null) {
-      yield r'actionDate';
-      yield serializers.serialize(
-        object.actionDate,
-        specifiedType: const FullType(DateTime),
       );
     }
     if (object.authorImage != null) {
@@ -193,6 +200,20 @@ class _$BrandDataPointSerializer
         specifiedType: const FullType(int),
       );
     }
+    if (object.dateCreated != null) {
+      yield r'dateCreated';
+      yield serializers.serialize(
+        object.dateCreated,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.directLink != null) {
+      yield r'directLink';
+      yield serializers.serialize(
+        object.directLink,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.directoryType != null) {
       yield r'directoryType';
       yield serializers.serialize(
@@ -207,32 +228,11 @@ class _$BrandDataPointSerializer
         specifiedType: const FullType(bool),
       );
     }
-    if (object.author != null) {
-      yield r'author';
-      yield serializers.serialize(
-        object.author,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.threadActionDate != null) {
-      yield r'threadActionDate';
-      yield serializers.serialize(
-        object.threadActionDate,
-        specifiedType: const FullType(DateTime),
-      );
-    }
     if (object.liked != null) {
       yield r'liked';
       yield serializers.serialize(
         object.liked,
         specifiedType: const FullType(bool),
-      );
-    }
-    if (object.data != null) {
-      yield r'data';
-      yield serializers.serialize(
-        object.data,
-        specifiedType: const FullType(String),
       );
     }
   }
@@ -260,6 +260,34 @@ class _$BrandDataPointSerializer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'author':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.author = valueDes;
+          break;
+        case r'actionDate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.actionDate = valueDes;
+          break;
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BrandDataPointTypeEnum),
+          ) as BrandDataPointTypeEnum;
+          result.type = valueDes;
+          break;
+        case r'threadActionDate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.threadActionDate = valueDes;
+          break;
         case r'lastUpdated':
           final valueDes = serializers.deserialize(
             value,
@@ -288,33 +316,12 @@ class _$BrandDataPointSerializer
           ) as String;
           result.secondaryData = valueDes;
           break;
-        case r'dateCreated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.dateCreated = valueDes;
-          break;
-        case r'directLink':
+        case r'data':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.directLink = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BrandDataPointTypeEnum),
-          ) as BrandDataPointTypeEnum;
-          result.type = valueDes;
-          break;
-        case r'actionDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.actionDate = valueDes;
+          result.data = valueDes;
           break;
         case r'authorImage':
           final valueDes = serializers.deserialize(
@@ -330,6 +337,20 @@ class _$BrandDataPointSerializer
           ) as int;
           result.countComments = valueDes;
           break;
+        case r'dateCreated':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.dateCreated = valueDes;
+          break;
+        case r'directLink':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.directLink = valueDes;
+          break;
         case r'directoryType':
           final valueDes = serializers.deserialize(
             value,
@@ -344,33 +365,12 @@ class _$BrandDataPointSerializer
           ) as bool;
           result.flagged = valueDes;
           break;
-        case r'author':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.author = valueDes;
-          break;
-        case r'threadActionDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.threadActionDate = valueDes;
-          break;
         case r'liked':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(bool),
           ) as bool;
           result.liked = valueDes;
-          break;
-        case r'data':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.data = valueDes;
           break;
         default:
           unhandled.add(key);

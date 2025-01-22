@@ -122,13 +122,13 @@ part 'basic_listing.g.dart';
 /// * [sublocalityStatus] - The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
 /// * [websiteExtra] - Utm or tracking path - only sent to GOOGLE
 /// * [photos] - Boolean indicating whether or not the listing has photos
+/// * [socialProfiles] - Social profiles of the location
 /// * [videos] - A list of videos about the location
 /// * [contentLists] - Content lists shown on the listing
-/// * [socialProfiles] - Social profiles of the location
-/// * [keywords] - The video of the social post (can only be one)
-/// * [brands] - The video of the social post (can only be one)
-/// * [services] - The video of the social post (can only be one)
-/// * [languages] - The video of the social post (can only be one)
+/// * [keywords] - The list of directories as entered when creating/updating the Social Post.
+/// * [brands] - The list of directories as entered when creating/updating the Social Post.
+/// * [services] - The list of directories as entered when creating/updating the Social Post.
+/// * [languages] - The list of directories as entered when creating/updating the Social Post.
 @BuiltValue()
 abstract class BasicListing
     implements Built<BasicListing, BasicListingBuilder> {
@@ -586,6 +586,10 @@ abstract class BasicListing
   @BuiltValueField(wireName: r'photos')
   bool? get photos;
 
+  /// Social profiles of the location
+  @BuiltValueField(wireName: r'socialProfiles')
+  BuiltList<SocialProfile>? get socialProfiles;
+
   /// A list of videos about the location
   @BuiltValueField(wireName: r'videos')
   BuiltList<Video>? get videos;
@@ -594,23 +598,19 @@ abstract class BasicListing
   @BuiltValueField(wireName: r'contentLists')
   BuiltList<ContentList>? get contentLists;
 
-  /// Social profiles of the location
-  @BuiltValueField(wireName: r'socialProfiles')
-  BuiltList<SocialProfile>? get socialProfiles;
-
-  /// The video of the social post (can only be one)
+  /// The list of directories as entered when creating/updating the Social Post.
   @BuiltValueField(wireName: r'keywords')
   BuiltList<String>? get keywords;
 
-  /// The video of the social post (can only be one)
+  /// The list of directories as entered when creating/updating the Social Post.
   @BuiltValueField(wireName: r'brands')
   BuiltList<String>? get brands;
 
-  /// The video of the social post (can only be one)
+  /// The list of directories as entered when creating/updating the Social Post.
   @BuiltValueField(wireName: r'services')
   BuiltList<String>? get services;
 
-  /// The video of the social post (can only be one)
+  /// The list of directories as entered when creating/updating the Social Post.
   @BuiltValueField(wireName: r'languages')
   BuiltList<String>? get languages;
 
@@ -1338,6 +1338,13 @@ class _$BasicListingSerializer implements PrimitiveSerializer<BasicListing> {
         specifiedType: const FullType(bool),
       );
     }
+    if (object.socialProfiles != null) {
+      yield r'socialProfiles';
+      yield serializers.serialize(
+        object.socialProfiles,
+        specifiedType: const FullType(BuiltList, [FullType(SocialProfile)]),
+      );
+    }
     if (object.videos != null) {
       yield r'videos';
       yield serializers.serialize(
@@ -1350,13 +1357,6 @@ class _$BasicListingSerializer implements PrimitiveSerializer<BasicListing> {
       yield serializers.serialize(
         object.contentLists,
         specifiedType: const FullType(BuiltList, [FullType(ContentList)]),
-      );
-    }
-    if (object.socialProfiles != null) {
-      yield r'socialProfiles';
-      yield serializers.serialize(
-        object.socialProfiles,
-        specifiedType: const FullType(BuiltList, [FullType(SocialProfile)]),
       );
     }
     if (object.keywords != null) {
@@ -2121,6 +2121,13 @@ class _$BasicListingSerializer implements PrimitiveSerializer<BasicListing> {
           ) as bool;
           result.photos = valueDes;
           break;
+        case r'socialProfiles':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(SocialProfile)]),
+          ) as BuiltList<SocialProfile>;
+          result.socialProfiles.replace(valueDes);
+          break;
         case r'videos':
           final valueDes = serializers.deserialize(
             value,
@@ -2134,13 +2141,6 @@ class _$BasicListingSerializer implements PrimitiveSerializer<BasicListing> {
             specifiedType: const FullType(BuiltList, [FullType(ContentList)]),
           ) as BuiltList<ContentList>;
           result.contentLists.replace(valueDes);
-          break;
-        case r'socialProfiles':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(SocialProfile)]),
-          ) as BuiltList<SocialProfile>;
-          result.socialProfiles.replace(valueDes);
           break;
         case r'keywords':
           final valueDes = serializers.deserialize(

@@ -8098,11 +8098,11 @@ class _$BasicListing extends BasicListing {
   @override
   final bool? photos;
   @override
+  final BuiltList<SocialProfile>? socialProfiles;
+  @override
   final BuiltList<Video>? videos;
   @override
   final BuiltList<ContentList>? contentLists;
-  @override
-  final BuiltList<SocialProfile>? socialProfiles;
   @override
   final BuiltList<String>? keywords;
   @override
@@ -8216,9 +8216,9 @@ class _$BasicListing extends BasicListing {
       this.sublocalityStatus,
       this.websiteExtra,
       this.photos,
+      this.socialProfiles,
       this.videos,
       this.contentLists,
-      this.socialProfiles,
       this.keywords,
       this.brands,
       this.services,
@@ -8339,9 +8339,9 @@ class _$BasicListing extends BasicListing {
         sublocalityStatus == other.sublocalityStatus &&
         websiteExtra == other.websiteExtra &&
         photos == other.photos &&
+        socialProfiles == other.socialProfiles &&
         videos == other.videos &&
         contentLists == other.contentLists &&
-        socialProfiles == other.socialProfiles &&
         keywords == other.keywords &&
         brands == other.brands &&
         services == other.services &&
@@ -8451,9 +8451,9 @@ class _$BasicListing extends BasicListing {
     _$hash = $jc(_$hash, sublocalityStatus.hashCode);
     _$hash = $jc(_$hash, websiteExtra.hashCode);
     _$hash = $jc(_$hash, photos.hashCode);
+    _$hash = $jc(_$hash, socialProfiles.hashCode);
     _$hash = $jc(_$hash, videos.hashCode);
     _$hash = $jc(_$hash, contentLists.hashCode);
-    _$hash = $jc(_$hash, socialProfiles.hashCode);
     _$hash = $jc(_$hash, keywords.hashCode);
     _$hash = $jc(_$hash, brands.hashCode);
     _$hash = $jc(_$hash, services.hashCode);
@@ -8565,9 +8565,9 @@ class _$BasicListing extends BasicListing {
           ..add('sublocalityStatus', sublocalityStatus)
           ..add('websiteExtra', websiteExtra)
           ..add('photos', photos)
+          ..add('socialProfiles', socialProfiles)
           ..add('videos', videos)
           ..add('contentLists', contentLists)
-          ..add('socialProfiles', socialProfiles)
           ..add('keywords', keywords)
           ..add('brands', brands)
           ..add('services', services)
@@ -9110,6 +9110,12 @@ class BasicListingBuilder
   bool? get photos => _$this._photos;
   set photos(bool? photos) => _$this._photos = photos;
 
+  ListBuilder<SocialProfile>? _socialProfiles;
+  ListBuilder<SocialProfile> get socialProfiles =>
+      _$this._socialProfiles ??= new ListBuilder<SocialProfile>();
+  set socialProfiles(ListBuilder<SocialProfile>? socialProfiles) =>
+      _$this._socialProfiles = socialProfiles;
+
   ListBuilder<Video>? _videos;
   ListBuilder<Video> get videos => _$this._videos ??= new ListBuilder<Video>();
   set videos(ListBuilder<Video>? videos) => _$this._videos = videos;
@@ -9119,12 +9125,6 @@ class BasicListingBuilder
       _$this._contentLists ??= new ListBuilder<ContentList>();
   set contentLists(ListBuilder<ContentList>? contentLists) =>
       _$this._contentLists = contentLists;
-
-  ListBuilder<SocialProfile>? _socialProfiles;
-  ListBuilder<SocialProfile> get socialProfiles =>
-      _$this._socialProfiles ??= new ListBuilder<SocialProfile>();
-  set socialProfiles(ListBuilder<SocialProfile>? socialProfiles) =>
-      _$this._socialProfiles = socialProfiles;
 
   ListBuilder<String>? _keywords;
   ListBuilder<String> get keywords =>
@@ -9254,9 +9254,9 @@ class BasicListingBuilder
       _sublocalityStatus = $v.sublocalityStatus;
       _websiteExtra = $v.websiteExtra;
       _photos = $v.photos;
+      _socialProfiles = $v.socialProfiles?.toBuilder();
       _videos = $v.videos?.toBuilder();
       _contentLists = $v.contentLists?.toBuilder();
-      _socialProfiles = $v.socialProfiles?.toBuilder();
       _keywords = $v.keywords?.toBuilder();
       _brands = $v.brands?.toBuilder();
       _services = $v.services?.toBuilder();
@@ -9385,9 +9385,9 @@ class BasicListingBuilder
             sublocalityStatus: sublocalityStatus,
             websiteExtra: websiteExtra,
             photos: photos,
+            socialProfiles: _socialProfiles?.build(),
             videos: _videos?.build(),
             contentLists: _contentLists?.build(),
-            socialProfiles: _socialProfiles?.build(),
             keywords: _keywords?.build(),
             brands: _brands?.build(),
             services: _services?.build(),
@@ -9429,12 +9429,12 @@ class BasicListingBuilder
         _$failedField = 'customFields';
         _customFields?.build();
 
+        _$failedField = 'socialProfiles';
+        _socialProfiles?.build();
         _$failedField = 'videos';
         _videos?.build();
         _$failedField = 'contentLists';
         _contentLists?.build();
-        _$failedField = 'socialProfiles';
-        _socialProfiles?.build();
         _$failedField = 'keywords';
         _keywords?.build();
         _$failedField = 'brands';

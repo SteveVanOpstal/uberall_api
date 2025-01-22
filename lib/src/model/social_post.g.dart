@@ -278,6 +278,16 @@ class _$SocialPost extends SocialPost {
   @override
   final String? firstComment;
   @override
+  final BuiltList<int>? locationGroupIds;
+  @override
+  final BuiltList<PhotoContainer>? photos;
+  @override
+  final String? couponCode;
+  @override
+  final String? termsAndConditions;
+  @override
+  final BuiltList<String>? videos;
+  @override
   final BuiltList<int>? businessIds;
   @override
   final BuiltList<int>? locationIds;
@@ -289,16 +299,6 @@ class _$SocialPost extends SocialPost {
   final BuiltList<int>? excludedLocationIds;
   @override
   final BuiltList<String> directories;
-  @override
-  final BuiltList<PhotoContainer>? photos;
-  @override
-  final String? couponCode;
-  @override
-  final String? termsAndConditions;
-  @override
-  final BuiltList<String>? videos;
-  @override
-  final BuiltList<int>? locationGroupIds;
 
   factory _$SocialPost([void Function(SocialPostBuilder)? updates]) =>
       (new SocialPostBuilder()..update(updates))._build();
@@ -318,17 +318,17 @@ class _$SocialPost extends SocialPost {
       this.labels,
       this.callToActions,
       this.firstComment,
+      this.locationGroupIds,
+      this.photos,
+      this.couponCode,
+      this.termsAndConditions,
+      this.videos,
       this.businessIds,
       this.locationIds,
       this.listingPageIds,
       this.businessPageIds,
       this.excludedLocationIds,
-      required this.directories,
-      this.photos,
-      this.couponCode,
-      this.termsAndConditions,
-      this.videos,
-      this.locationGroupIds})
+      required this.directories})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(type, r'SocialPost', 'type');
     BuiltValueNullFieldError.checkNotNull(
@@ -362,17 +362,17 @@ class _$SocialPost extends SocialPost {
         labels == other.labels &&
         callToActions == other.callToActions &&
         firstComment == other.firstComment &&
+        locationGroupIds == other.locationGroupIds &&
+        photos == other.photos &&
+        couponCode == other.couponCode &&
+        termsAndConditions == other.termsAndConditions &&
+        videos == other.videos &&
         businessIds == other.businessIds &&
         locationIds == other.locationIds &&
         listingPageIds == other.listingPageIds &&
         businessPageIds == other.businessPageIds &&
         excludedLocationIds == other.excludedLocationIds &&
-        directories == other.directories &&
-        photos == other.photos &&
-        couponCode == other.couponCode &&
-        termsAndConditions == other.termsAndConditions &&
-        videos == other.videos &&
-        locationGroupIds == other.locationGroupIds;
+        directories == other.directories;
   }
 
   @override
@@ -392,17 +392,17 @@ class _$SocialPost extends SocialPost {
     _$hash = $jc(_$hash, labels.hashCode);
     _$hash = $jc(_$hash, callToActions.hashCode);
     _$hash = $jc(_$hash, firstComment.hashCode);
+    _$hash = $jc(_$hash, locationGroupIds.hashCode);
+    _$hash = $jc(_$hash, photos.hashCode);
+    _$hash = $jc(_$hash, couponCode.hashCode);
+    _$hash = $jc(_$hash, termsAndConditions.hashCode);
+    _$hash = $jc(_$hash, videos.hashCode);
     _$hash = $jc(_$hash, businessIds.hashCode);
     _$hash = $jc(_$hash, locationIds.hashCode);
     _$hash = $jc(_$hash, listingPageIds.hashCode);
     _$hash = $jc(_$hash, businessPageIds.hashCode);
     _$hash = $jc(_$hash, excludedLocationIds.hashCode);
     _$hash = $jc(_$hash, directories.hashCode);
-    _$hash = $jc(_$hash, photos.hashCode);
-    _$hash = $jc(_$hash, couponCode.hashCode);
-    _$hash = $jc(_$hash, termsAndConditions.hashCode);
-    _$hash = $jc(_$hash, videos.hashCode);
-    _$hash = $jc(_$hash, locationGroupIds.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -424,17 +424,17 @@ class _$SocialPost extends SocialPost {
           ..add('labels', labels)
           ..add('callToActions', callToActions)
           ..add('firstComment', firstComment)
+          ..add('locationGroupIds', locationGroupIds)
+          ..add('photos', photos)
+          ..add('couponCode', couponCode)
+          ..add('termsAndConditions', termsAndConditions)
+          ..add('videos', videos)
           ..add('businessIds', businessIds)
           ..add('locationIds', locationIds)
           ..add('listingPageIds', listingPageIds)
           ..add('businessPageIds', businessPageIds)
           ..add('excludedLocationIds', excludedLocationIds)
-          ..add('directories', directories)
-          ..add('photos', photos)
-          ..add('couponCode', couponCode)
-          ..add('termsAndConditions', termsAndConditions)
-          ..add('videos', videos)
-          ..add('locationGroupIds', locationGroupIds))
+          ..add('directories', directories))
         .toString();
   }
 }
@@ -503,6 +503,31 @@ class SocialPostBuilder implements Builder<SocialPost, SocialPostBuilder> {
   String? get firstComment => _$this._firstComment;
   set firstComment(String? firstComment) => _$this._firstComment = firstComment;
 
+  ListBuilder<int>? _locationGroupIds;
+  ListBuilder<int> get locationGroupIds =>
+      _$this._locationGroupIds ??= new ListBuilder<int>();
+  set locationGroupIds(ListBuilder<int>? locationGroupIds) =>
+      _$this._locationGroupIds = locationGroupIds;
+
+  ListBuilder<PhotoContainer>? _photos;
+  ListBuilder<PhotoContainer> get photos =>
+      _$this._photos ??= new ListBuilder<PhotoContainer>();
+  set photos(ListBuilder<PhotoContainer>? photos) => _$this._photos = photos;
+
+  String? _couponCode;
+  String? get couponCode => _$this._couponCode;
+  set couponCode(String? couponCode) => _$this._couponCode = couponCode;
+
+  String? _termsAndConditions;
+  String? get termsAndConditions => _$this._termsAndConditions;
+  set termsAndConditions(String? termsAndConditions) =>
+      _$this._termsAndConditions = termsAndConditions;
+
+  ListBuilder<String>? _videos;
+  ListBuilder<String> get videos =>
+      _$this._videos ??= new ListBuilder<String>();
+  set videos(ListBuilder<String>? videos) => _$this._videos = videos;
+
   ListBuilder<int>? _businessIds;
   ListBuilder<int> get businessIds =>
       _$this._businessIds ??= new ListBuilder<int>();
@@ -539,31 +564,6 @@ class SocialPostBuilder implements Builder<SocialPost, SocialPostBuilder> {
   set directories(ListBuilder<String>? directories) =>
       _$this._directories = directories;
 
-  ListBuilder<PhotoContainer>? _photos;
-  ListBuilder<PhotoContainer> get photos =>
-      _$this._photos ??= new ListBuilder<PhotoContainer>();
-  set photos(ListBuilder<PhotoContainer>? photos) => _$this._photos = photos;
-
-  String? _couponCode;
-  String? get couponCode => _$this._couponCode;
-  set couponCode(String? couponCode) => _$this._couponCode = couponCode;
-
-  String? _termsAndConditions;
-  String? get termsAndConditions => _$this._termsAndConditions;
-  set termsAndConditions(String? termsAndConditions) =>
-      _$this._termsAndConditions = termsAndConditions;
-
-  ListBuilder<String>? _videos;
-  ListBuilder<String> get videos =>
-      _$this._videos ??= new ListBuilder<String>();
-  set videos(ListBuilder<String>? videos) => _$this._videos = videos;
-
-  ListBuilder<int>? _locationGroupIds;
-  ListBuilder<int> get locationGroupIds =>
-      _$this._locationGroupIds ??= new ListBuilder<int>();
-  set locationGroupIds(ListBuilder<int>? locationGroupIds) =>
-      _$this._locationGroupIds = locationGroupIds;
-
   SocialPostBuilder() {
     SocialPost._defaults(this);
   }
@@ -585,17 +585,17 @@ class SocialPostBuilder implements Builder<SocialPost, SocialPostBuilder> {
       _labels = $v.labels?.toBuilder();
       _callToActions = $v.callToActions?.toBuilder();
       _firstComment = $v.firstComment;
+      _locationGroupIds = $v.locationGroupIds?.toBuilder();
+      _photos = $v.photos?.toBuilder();
+      _couponCode = $v.couponCode;
+      _termsAndConditions = $v.termsAndConditions;
+      _videos = $v.videos?.toBuilder();
       _businessIds = $v.businessIds?.toBuilder();
       _locationIds = $v.locationIds?.toBuilder();
       _listingPageIds = $v.listingPageIds?.toBuilder();
       _businessPageIds = $v.businessPageIds?.toBuilder();
       _excludedLocationIds = $v.excludedLocationIds?.toBuilder();
       _directories = $v.directories.toBuilder();
-      _photos = $v.photos?.toBuilder();
-      _couponCode = $v.couponCode;
-      _termsAndConditions = $v.termsAndConditions;
-      _videos = $v.videos?.toBuilder();
-      _locationGroupIds = $v.locationGroupIds?.toBuilder();
       _$v = null;
     }
     return this;
@@ -636,17 +636,17 @@ class SocialPostBuilder implements Builder<SocialPost, SocialPostBuilder> {
             labels: _labels?.build(),
             callToActions: _callToActions?.build(),
             firstComment: firstComment,
+            locationGroupIds: _locationGroupIds?.build(),
+            photos: _photos?.build(),
+            couponCode: couponCode,
+            termsAndConditions: termsAndConditions,
+            videos: _videos?.build(),
             businessIds: _businessIds?.build(),
             locationIds: _locationIds?.build(),
             listingPageIds: _listingPageIds?.build(),
             businessPageIds: _businessPageIds?.build(),
             excludedLocationIds: _excludedLocationIds?.build(),
             directories: directories.build(),
-            photos: _photos?.build(),
-            couponCode: couponCode,
-            termsAndConditions: termsAndConditions,
-            videos: _videos?.build(),
-            locationGroupIds: _locationGroupIds?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -656,6 +656,13 @@ class SocialPostBuilder implements Builder<SocialPost, SocialPostBuilder> {
         _$failedField = 'callToActions';
         _callToActions?.build();
 
+        _$failedField = 'locationGroupIds';
+        _locationGroupIds?.build();
+        _$failedField = 'photos';
+        _photos?.build();
+
+        _$failedField = 'videos';
+        _videos?.build();
         _$failedField = 'businessIds';
         _businessIds?.build();
         _$failedField = 'locationIds';
@@ -668,13 +675,6 @@ class SocialPostBuilder implements Builder<SocialPost, SocialPostBuilder> {
         _excludedLocationIds?.build();
         _$failedField = 'directories';
         directories.build();
-        _$failedField = 'photos';
-        _photos?.build();
-
-        _$failedField = 'videos';
-        _videos?.build();
-        _$failedField = 'locationGroupIds';
-        _locationGroupIds?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'SocialPost', _$failedField, e.toString());

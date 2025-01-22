@@ -3654,19 +3654,19 @@ class _$DataPointFilter extends DataPointFilter {
   @override
   final int? crossfeedFilterId;
   @override
+  final DateTime? dateStart;
+  @override
   final BuiltSet<int>? businessIds;
+  @override
+  final DateTime? dateEnd;
+  @override
+  final int? ownerId;
   @override
   final int? salesPartnerId;
   @override
   final BuiltList<int>? subscriberIds;
   @override
-  final int? ownerId;
-  @override
   final String? ownerName;
-  @override
-  final DateTime? dateEnd;
-  @override
-  final DateTime? dateStart;
 
   factory _$DataPointFilter([void Function(DataPointFilterBuilder)? updates]) =>
       (new DataPointFilterBuilder()..update(updates))._build();
@@ -3685,13 +3685,13 @@ class _$DataPointFilter extends DataPointFilter {
       this.query,
       this.timeSpan,
       this.crossfeedFilterId,
+      this.dateStart,
       this.businessIds,
+      this.dateEnd,
+      this.ownerId,
       this.salesPartnerId,
       this.subscriberIds,
-      this.ownerId,
-      this.ownerName,
-      this.dateEnd,
-      this.dateStart})
+      this.ownerName})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(name, r'DataPointFilter', 'name');
   }
@@ -3721,13 +3721,13 @@ class _$DataPointFilter extends DataPointFilter {
         query == other.query &&
         timeSpan == other.timeSpan &&
         crossfeedFilterId == other.crossfeedFilterId &&
+        dateStart == other.dateStart &&
         businessIds == other.businessIds &&
+        dateEnd == other.dateEnd &&
+        ownerId == other.ownerId &&
         salesPartnerId == other.salesPartnerId &&
         subscriberIds == other.subscriberIds &&
-        ownerId == other.ownerId &&
-        ownerName == other.ownerName &&
-        dateEnd == other.dateEnd &&
-        dateStart == other.dateStart;
+        ownerName == other.ownerName;
   }
 
   @override
@@ -3746,13 +3746,13 @@ class _$DataPointFilter extends DataPointFilter {
     _$hash = $jc(_$hash, query.hashCode);
     _$hash = $jc(_$hash, timeSpan.hashCode);
     _$hash = $jc(_$hash, crossfeedFilterId.hashCode);
+    _$hash = $jc(_$hash, dateStart.hashCode);
     _$hash = $jc(_$hash, businessIds.hashCode);
+    _$hash = $jc(_$hash, dateEnd.hashCode);
+    _$hash = $jc(_$hash, ownerId.hashCode);
     _$hash = $jc(_$hash, salesPartnerId.hashCode);
     _$hash = $jc(_$hash, subscriberIds.hashCode);
-    _$hash = $jc(_$hash, ownerId.hashCode);
     _$hash = $jc(_$hash, ownerName.hashCode);
-    _$hash = $jc(_$hash, dateEnd.hashCode);
-    _$hash = $jc(_$hash, dateStart.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -3773,13 +3773,13 @@ class _$DataPointFilter extends DataPointFilter {
           ..add('query', query)
           ..add('timeSpan', timeSpan)
           ..add('crossfeedFilterId', crossfeedFilterId)
+          ..add('dateStart', dateStart)
           ..add('businessIds', businessIds)
+          ..add('dateEnd', dateEnd)
+          ..add('ownerId', ownerId)
           ..add('salesPartnerId', salesPartnerId)
           ..add('subscriberIds', subscriberIds)
-          ..add('ownerId', ownerId)
-          ..add('ownerName', ownerName)
-          ..add('dateEnd', dateEnd)
-          ..add('dateStart', dateStart))
+          ..add('ownerName', ownerName))
         .toString();
   }
 }
@@ -3850,11 +3850,23 @@ class DataPointFilterBuilder
   set crossfeedFilterId(int? crossfeedFilterId) =>
       _$this._crossfeedFilterId = crossfeedFilterId;
 
+  DateTime? _dateStart;
+  DateTime? get dateStart => _$this._dateStart;
+  set dateStart(DateTime? dateStart) => _$this._dateStart = dateStart;
+
   SetBuilder<int>? _businessIds;
   SetBuilder<int> get businessIds =>
       _$this._businessIds ??= new SetBuilder<int>();
   set businessIds(SetBuilder<int>? businessIds) =>
       _$this._businessIds = businessIds;
+
+  DateTime? _dateEnd;
+  DateTime? get dateEnd => _$this._dateEnd;
+  set dateEnd(DateTime? dateEnd) => _$this._dateEnd = dateEnd;
+
+  int? _ownerId;
+  int? get ownerId => _$this._ownerId;
+  set ownerId(int? ownerId) => _$this._ownerId = ownerId;
 
   int? _salesPartnerId;
   int? get salesPartnerId => _$this._salesPartnerId;
@@ -3867,21 +3879,9 @@ class DataPointFilterBuilder
   set subscriberIds(ListBuilder<int>? subscriberIds) =>
       _$this._subscriberIds = subscriberIds;
 
-  int? _ownerId;
-  int? get ownerId => _$this._ownerId;
-  set ownerId(int? ownerId) => _$this._ownerId = ownerId;
-
   String? _ownerName;
   String? get ownerName => _$this._ownerName;
   set ownerName(String? ownerName) => _$this._ownerName = ownerName;
-
-  DateTime? _dateEnd;
-  DateTime? get dateEnd => _$this._dateEnd;
-  set dateEnd(DateTime? dateEnd) => _$this._dateEnd = dateEnd;
-
-  DateTime? _dateStart;
-  DateTime? get dateStart => _$this._dateStart;
-  set dateStart(DateTime? dateStart) => _$this._dateStart = dateStart;
 
   DataPointFilterBuilder() {
     DataPointFilter._defaults(this);
@@ -3903,13 +3903,13 @@ class DataPointFilterBuilder
       _query = $v.query;
       _timeSpan = $v.timeSpan;
       _crossfeedFilterId = $v.crossfeedFilterId;
+      _dateStart = $v.dateStart;
       _businessIds = $v.businessIds?.toBuilder();
+      _dateEnd = $v.dateEnd;
+      _ownerId = $v.ownerId;
       _salesPartnerId = $v.salesPartnerId;
       _subscriberIds = $v.subscriberIds?.toBuilder();
-      _ownerId = $v.ownerId;
       _ownerName = $v.ownerName;
-      _dateEnd = $v.dateEnd;
-      _dateStart = $v.dateStart;
       _$v = null;
     }
     return this;
@@ -3948,13 +3948,13 @@ class DataPointFilterBuilder
             query: query,
             timeSpan: timeSpan,
             crossfeedFilterId: crossfeedFilterId,
+            dateStart: dateStart,
             businessIds: _businessIds?.build(),
+            dateEnd: dateEnd,
+            ownerId: ownerId,
             salesPartnerId: salesPartnerId,
             subscriberIds: _subscriberIds?.build(),
-            ownerId: ownerId,
             ownerName: ownerName,
-            dateEnd: dateEnd,
-            dateStart: dateStart,
           );
     } catch (_) {
       late String _$failedField;

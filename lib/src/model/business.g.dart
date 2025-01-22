@@ -1942,15 +1942,19 @@ class _$Business extends Business {
   @override
   final BusinessStatusEnum? status;
   @override
-  final JsonObject? productPlanId;
+  final JsonObject? typeId;
   @override
   final JsonObject? salesPartnerId;
   @override
-  final BuiltSet<PricePerCountry>? countryPrices;
-  @override
-  final JsonObject? typeId;
-  @override
   final JsonObject? invoicePaymentInformationId;
+  @override
+  final JsonObject? productPlanId;
+  @override
+  final int? defaultMarketDevelopmentFunds;
+  @override
+  final int? activeLocations;
+  @override
+  final BuiltSet<PricePerCountry>? countryPrices;
   @override
   final int? defaultPrice;
   @override
@@ -1958,9 +1962,7 @@ class _$Business extends Business {
   @override
   final int? defaultPriceSetup;
   @override
-  final int? defaultMarketDevelopmentFunds;
-  @override
-  final int? activeLocations;
+  final bool? businessSyncable;
   @override
   final int? numOfLocations;
   @override
@@ -1969,8 +1971,6 @@ class _$Business extends Business {
   final int? nextProductPlanId;
   @override
   final String? customFields;
-  @override
-  final bool? businessSyncable;
   @override
   final DateTime? dateExpiration;
 
@@ -1992,21 +1992,21 @@ class _$Business extends Business {
       this.productPlan,
       this.dateCreated,
       this.status,
-      this.productPlanId,
-      this.salesPartnerId,
-      this.countryPrices,
       this.typeId,
+      this.salesPartnerId,
       this.invoicePaymentInformationId,
+      this.productPlanId,
+      this.defaultMarketDevelopmentFunds,
+      this.activeLocations,
+      this.countryPrices,
       this.defaultPrice,
       this.defaultOriginalPrice,
       this.defaultPriceSetup,
-      this.defaultMarketDevelopmentFunds,
-      this.activeLocations,
+      this.businessSyncable,
       this.numOfLocations,
       this.effectiveDate,
       this.nextProductPlanId,
       this.customFields,
-      this.businessSyncable,
       this.dateExpiration})
       : super._();
 
@@ -2035,21 +2035,21 @@ class _$Business extends Business {
         productPlan == other.productPlan &&
         dateCreated == other.dateCreated &&
         status == other.status &&
-        productPlanId == other.productPlanId &&
-        salesPartnerId == other.salesPartnerId &&
-        countryPrices == other.countryPrices &&
         typeId == other.typeId &&
+        salesPartnerId == other.salesPartnerId &&
         invoicePaymentInformationId == other.invoicePaymentInformationId &&
+        productPlanId == other.productPlanId &&
+        defaultMarketDevelopmentFunds == other.defaultMarketDevelopmentFunds &&
+        activeLocations == other.activeLocations &&
+        countryPrices == other.countryPrices &&
         defaultPrice == other.defaultPrice &&
         defaultOriginalPrice == other.defaultOriginalPrice &&
         defaultPriceSetup == other.defaultPriceSetup &&
-        defaultMarketDevelopmentFunds == other.defaultMarketDevelopmentFunds &&
-        activeLocations == other.activeLocations &&
+        businessSyncable == other.businessSyncable &&
         numOfLocations == other.numOfLocations &&
         effectiveDate == other.effectiveDate &&
         nextProductPlanId == other.nextProductPlanId &&
         customFields == other.customFields &&
-        businessSyncable == other.businessSyncable &&
         dateExpiration == other.dateExpiration;
   }
 
@@ -2070,21 +2070,21 @@ class _$Business extends Business {
     _$hash = $jc(_$hash, productPlan.hashCode);
     _$hash = $jc(_$hash, dateCreated.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
-    _$hash = $jc(_$hash, productPlanId.hashCode);
-    _$hash = $jc(_$hash, salesPartnerId.hashCode);
-    _$hash = $jc(_$hash, countryPrices.hashCode);
     _$hash = $jc(_$hash, typeId.hashCode);
+    _$hash = $jc(_$hash, salesPartnerId.hashCode);
     _$hash = $jc(_$hash, invoicePaymentInformationId.hashCode);
+    _$hash = $jc(_$hash, productPlanId.hashCode);
+    _$hash = $jc(_$hash, defaultMarketDevelopmentFunds.hashCode);
+    _$hash = $jc(_$hash, activeLocations.hashCode);
+    _$hash = $jc(_$hash, countryPrices.hashCode);
     _$hash = $jc(_$hash, defaultPrice.hashCode);
     _$hash = $jc(_$hash, defaultOriginalPrice.hashCode);
     _$hash = $jc(_$hash, defaultPriceSetup.hashCode);
-    _$hash = $jc(_$hash, defaultMarketDevelopmentFunds.hashCode);
-    _$hash = $jc(_$hash, activeLocations.hashCode);
+    _$hash = $jc(_$hash, businessSyncable.hashCode);
     _$hash = $jc(_$hash, numOfLocations.hashCode);
     _$hash = $jc(_$hash, effectiveDate.hashCode);
     _$hash = $jc(_$hash, nextProductPlanId.hashCode);
     _$hash = $jc(_$hash, customFields.hashCode);
-    _$hash = $jc(_$hash, businessSyncable.hashCode);
     _$hash = $jc(_$hash, dateExpiration.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -2107,21 +2107,21 @@ class _$Business extends Business {
           ..add('productPlan', productPlan)
           ..add('dateCreated', dateCreated)
           ..add('status', status)
-          ..add('productPlanId', productPlanId)
-          ..add('salesPartnerId', salesPartnerId)
-          ..add('countryPrices', countryPrices)
           ..add('typeId', typeId)
+          ..add('salesPartnerId', salesPartnerId)
           ..add('invoicePaymentInformationId', invoicePaymentInformationId)
+          ..add('productPlanId', productPlanId)
+          ..add('defaultMarketDevelopmentFunds', defaultMarketDevelopmentFunds)
+          ..add('activeLocations', activeLocations)
+          ..add('countryPrices', countryPrices)
           ..add('defaultPrice', defaultPrice)
           ..add('defaultOriginalPrice', defaultOriginalPrice)
           ..add('defaultPriceSetup', defaultPriceSetup)
-          ..add('defaultMarketDevelopmentFunds', defaultMarketDevelopmentFunds)
-          ..add('activeLocations', activeLocations)
+          ..add('businessSyncable', businessSyncable)
           ..add('numOfLocations', numOfLocations)
           ..add('effectiveDate', effectiveDate)
           ..add('nextProductPlanId', nextProductPlanId)
           ..add('customFields', customFields)
-          ..add('businessSyncable', businessSyncable)
           ..add('dateExpiration', dateExpiration))
         .toString();
   }
@@ -2188,31 +2188,42 @@ class BusinessBuilder implements Builder<Business, BusinessBuilder> {
   BusinessStatusEnum? get status => _$this._status;
   set status(BusinessStatusEnum? status) => _$this._status = status;
 
-  JsonObject? _productPlanId;
-  JsonObject? get productPlanId => _$this._productPlanId;
-  set productPlanId(JsonObject? productPlanId) =>
-      _$this._productPlanId = productPlanId;
+  JsonObject? _typeId;
+  JsonObject? get typeId => _$this._typeId;
+  set typeId(JsonObject? typeId) => _$this._typeId = typeId;
 
   JsonObject? _salesPartnerId;
   JsonObject? get salesPartnerId => _$this._salesPartnerId;
   set salesPartnerId(JsonObject? salesPartnerId) =>
       _$this._salesPartnerId = salesPartnerId;
 
-  SetBuilder<PricePerCountry>? _countryPrices;
-  SetBuilder<PricePerCountry> get countryPrices =>
-      _$this._countryPrices ??= new SetBuilder<PricePerCountry>();
-  set countryPrices(SetBuilder<PricePerCountry>? countryPrices) =>
-      _$this._countryPrices = countryPrices;
-
-  JsonObject? _typeId;
-  JsonObject? get typeId => _$this._typeId;
-  set typeId(JsonObject? typeId) => _$this._typeId = typeId;
-
   JsonObject? _invoicePaymentInformationId;
   JsonObject? get invoicePaymentInformationId =>
       _$this._invoicePaymentInformationId;
   set invoicePaymentInformationId(JsonObject? invoicePaymentInformationId) =>
       _$this._invoicePaymentInformationId = invoicePaymentInformationId;
+
+  JsonObject? _productPlanId;
+  JsonObject? get productPlanId => _$this._productPlanId;
+  set productPlanId(JsonObject? productPlanId) =>
+      _$this._productPlanId = productPlanId;
+
+  int? _defaultMarketDevelopmentFunds;
+  int? get defaultMarketDevelopmentFunds =>
+      _$this._defaultMarketDevelopmentFunds;
+  set defaultMarketDevelopmentFunds(int? defaultMarketDevelopmentFunds) =>
+      _$this._defaultMarketDevelopmentFunds = defaultMarketDevelopmentFunds;
+
+  int? _activeLocations;
+  int? get activeLocations => _$this._activeLocations;
+  set activeLocations(int? activeLocations) =>
+      _$this._activeLocations = activeLocations;
+
+  SetBuilder<PricePerCountry>? _countryPrices;
+  SetBuilder<PricePerCountry> get countryPrices =>
+      _$this._countryPrices ??= new SetBuilder<PricePerCountry>();
+  set countryPrices(SetBuilder<PricePerCountry>? countryPrices) =>
+      _$this._countryPrices = countryPrices;
 
   int? _defaultPrice;
   int? get defaultPrice => _$this._defaultPrice;
@@ -2228,16 +2239,10 @@ class BusinessBuilder implements Builder<Business, BusinessBuilder> {
   set defaultPriceSetup(int? defaultPriceSetup) =>
       _$this._defaultPriceSetup = defaultPriceSetup;
 
-  int? _defaultMarketDevelopmentFunds;
-  int? get defaultMarketDevelopmentFunds =>
-      _$this._defaultMarketDevelopmentFunds;
-  set defaultMarketDevelopmentFunds(int? defaultMarketDevelopmentFunds) =>
-      _$this._defaultMarketDevelopmentFunds = defaultMarketDevelopmentFunds;
-
-  int? _activeLocations;
-  int? get activeLocations => _$this._activeLocations;
-  set activeLocations(int? activeLocations) =>
-      _$this._activeLocations = activeLocations;
+  bool? _businessSyncable;
+  bool? get businessSyncable => _$this._businessSyncable;
+  set businessSyncable(bool? businessSyncable) =>
+      _$this._businessSyncable = businessSyncable;
 
   int? _numOfLocations;
   int? get numOfLocations => _$this._numOfLocations;
@@ -2257,11 +2262,6 @@ class BusinessBuilder implements Builder<Business, BusinessBuilder> {
   String? _customFields;
   String? get customFields => _$this._customFields;
   set customFields(String? customFields) => _$this._customFields = customFields;
-
-  bool? _businessSyncable;
-  bool? get businessSyncable => _$this._businessSyncable;
-  set businessSyncable(bool? businessSyncable) =>
-      _$this._businessSyncable = businessSyncable;
 
   DateTime? _dateExpiration;
   DateTime? get dateExpiration => _$this._dateExpiration;
@@ -2289,21 +2289,21 @@ class BusinessBuilder implements Builder<Business, BusinessBuilder> {
       _productPlan = $v.productPlan?.toBuilder();
       _dateCreated = $v.dateCreated;
       _status = $v.status;
-      _productPlanId = $v.productPlanId;
-      _salesPartnerId = $v.salesPartnerId;
-      _countryPrices = $v.countryPrices?.toBuilder();
       _typeId = $v.typeId;
+      _salesPartnerId = $v.salesPartnerId;
       _invoicePaymentInformationId = $v.invoicePaymentInformationId;
+      _productPlanId = $v.productPlanId;
+      _defaultMarketDevelopmentFunds = $v.defaultMarketDevelopmentFunds;
+      _activeLocations = $v.activeLocations;
+      _countryPrices = $v.countryPrices?.toBuilder();
       _defaultPrice = $v.defaultPrice;
       _defaultOriginalPrice = $v.defaultOriginalPrice;
       _defaultPriceSetup = $v.defaultPriceSetup;
-      _defaultMarketDevelopmentFunds = $v.defaultMarketDevelopmentFunds;
-      _activeLocations = $v.activeLocations;
+      _businessSyncable = $v.businessSyncable;
       _numOfLocations = $v.numOfLocations;
       _effectiveDate = $v.effectiveDate;
       _nextProductPlanId = $v.nextProductPlanId;
       _customFields = $v.customFields;
-      _businessSyncable = $v.businessSyncable;
       _dateExpiration = $v.dateExpiration;
       _$v = null;
     }
@@ -2343,21 +2343,21 @@ class BusinessBuilder implements Builder<Business, BusinessBuilder> {
             productPlan: _productPlan?.build(),
             dateCreated: dateCreated,
             status: status,
-            productPlanId: productPlanId,
-            salesPartnerId: salesPartnerId,
-            countryPrices: _countryPrices?.build(),
             typeId: typeId,
+            salesPartnerId: salesPartnerId,
             invoicePaymentInformationId: invoicePaymentInformationId,
+            productPlanId: productPlanId,
+            defaultMarketDevelopmentFunds: defaultMarketDevelopmentFunds,
+            activeLocations: activeLocations,
+            countryPrices: _countryPrices?.build(),
             defaultPrice: defaultPrice,
             defaultOriginalPrice: defaultOriginalPrice,
             defaultPriceSetup: defaultPriceSetup,
-            defaultMarketDevelopmentFunds: defaultMarketDevelopmentFunds,
-            activeLocations: activeLocations,
+            businessSyncable: businessSyncable,
             numOfLocations: numOfLocations,
             effectiveDate: effectiveDate,
             nextProductPlanId: nextProductPlanId,
             customFields: customFields,
-            businessSyncable: businessSyncable,
             dateExpiration: dateExpiration,
           );
     } catch (_) {

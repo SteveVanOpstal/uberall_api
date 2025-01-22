@@ -25,13 +25,13 @@ part 'data_point_filter.g.dart';
 /// * [query] - Any combination of words that should be checked in the dataPoints text, reply messages and author
 /// * [timeSpan] - The date range for which the dataPoints should be filtered.
 /// * [crossfeedFilterId] - The id of a filter saved by a user in the Feed
+/// * [dateStart] - The minimum date for which the dataPoints should be filtered
 /// * [businessIds] - The list of businesses IDs for which the dataPoints should be filtered
+/// * [dateEnd] - The maximum date for which the dataPoints should be filtered
+/// * [ownerId] - The id of the user that owns the filter
 /// * [salesPartnerId] - The sales partner to which the filter belongs
 /// * [subscriberIds] - The list of user''s ids that are subscribed to the filter
-/// * [ownerId] - The id of the user that owns the filter
 /// * [ownerName] - The name of the user that owns the filter
-/// * [dateEnd] - The maximum date for which the dataPoints should be filtered
-/// * [dateStart] - The minimum date for which the dataPoints should be filtered
 @BuiltValue()
 abstract class DataPointFilter
     implements Built<DataPointFilter, DataPointFilterBuilder> {
@@ -91,9 +91,21 @@ abstract class DataPointFilter
   @BuiltValueField(wireName: r'crossfeedFilterId')
   int? get crossfeedFilterId;
 
+  /// The minimum date for which the dataPoints should be filtered
+  @BuiltValueField(wireName: r'dateStart')
+  DateTime? get dateStart;
+
   /// The list of businesses IDs for which the dataPoints should be filtered
   @BuiltValueField(wireName: r'businessIds')
   BuiltSet<int>? get businessIds;
+
+  /// The maximum date for which the dataPoints should be filtered
+  @BuiltValueField(wireName: r'dateEnd')
+  DateTime? get dateEnd;
+
+  /// The id of the user that owns the filter
+  @BuiltValueField(wireName: r'ownerId')
+  int? get ownerId;
 
   /// The sales partner to which the filter belongs
   @BuiltValueField(wireName: r'salesPartnerId')
@@ -103,21 +115,9 @@ abstract class DataPointFilter
   @BuiltValueField(wireName: r'subscriberIds')
   BuiltList<int>? get subscriberIds;
 
-  /// The id of the user that owns the filter
-  @BuiltValueField(wireName: r'ownerId')
-  int? get ownerId;
-
   /// The name of the user that owns the filter
   @BuiltValueField(wireName: r'ownerName')
   String? get ownerName;
-
-  /// The maximum date for which the dataPoints should be filtered
-  @BuiltValueField(wireName: r'dateEnd')
-  DateTime? get dateEnd;
-
-  /// The minimum date for which the dataPoints should be filtered
-  @BuiltValueField(wireName: r'dateStart')
-  DateTime? get dateStart;
 
   DataPointFilter._();
 
@@ -237,11 +237,32 @@ class _$DataPointFilterSerializer
         specifiedType: const FullType(int),
       );
     }
+    if (object.dateStart != null) {
+      yield r'dateStart';
+      yield serializers.serialize(
+        object.dateStart,
+        specifiedType: const FullType(DateTime),
+      );
+    }
     if (object.businessIds != null) {
       yield r'businessIds';
       yield serializers.serialize(
         object.businessIds,
         specifiedType: const FullType(BuiltSet, [FullType(int)]),
+      );
+    }
+    if (object.dateEnd != null) {
+      yield r'dateEnd';
+      yield serializers.serialize(
+        object.dateEnd,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.ownerId != null) {
+      yield r'ownerId';
+      yield serializers.serialize(
+        object.ownerId,
+        specifiedType: const FullType(int),
       );
     }
     if (object.salesPartnerId != null) {
@@ -258,32 +279,11 @@ class _$DataPointFilterSerializer
         specifiedType: const FullType(BuiltList, [FullType(int)]),
       );
     }
-    if (object.ownerId != null) {
-      yield r'ownerId';
-      yield serializers.serialize(
-        object.ownerId,
-        specifiedType: const FullType(int),
-      );
-    }
     if (object.ownerName != null) {
       yield r'ownerName';
       yield serializers.serialize(
         object.ownerName,
         specifiedType: const FullType(String),
-      );
-    }
-    if (object.dateEnd != null) {
-      yield r'dateEnd';
-      yield serializers.serialize(
-        object.dateEnd,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.dateStart != null) {
-      yield r'dateStart';
-      yield serializers.serialize(
-        object.dateStart,
-        specifiedType: const FullType(DateTime),
       );
     }
   }
@@ -405,12 +405,33 @@ class _$DataPointFilterSerializer
           ) as int;
           result.crossfeedFilterId = valueDes;
           break;
+        case r'dateStart':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.dateStart = valueDes;
+          break;
         case r'businessIds':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltSet, [FullType(int)]),
           ) as BuiltSet<int>;
           result.businessIds.replace(valueDes);
+          break;
+        case r'dateEnd':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.dateEnd = valueDes;
+          break;
+        case r'ownerId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.ownerId = valueDes;
           break;
         case r'salesPartnerId':
           final valueDes = serializers.deserialize(
@@ -426,33 +447,12 @@ class _$DataPointFilterSerializer
           ) as BuiltList<int>;
           result.subscriberIds.replace(valueDes);
           break;
-        case r'ownerId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.ownerId = valueDes;
-          break;
         case r'ownerName':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.ownerName = valueDes;
-          break;
-        case r'dateEnd':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.dateEnd = valueDes;
-          break;
-        case r'dateStart':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.dateStart = valueDes;
           break;
         default:
           unhandled.add(key);

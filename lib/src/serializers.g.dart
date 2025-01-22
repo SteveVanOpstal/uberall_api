@@ -888,14 +888,14 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltMap, const [const FullType(String), const FullType(String)]),
           () => new MapBuilder<String, String>())
       ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(SocialProfile)]),
+          () => new ListBuilder<SocialProfile>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Video)]),
           () => new ListBuilder<Video>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ContentList)]),
           () => new ListBuilder<ContentList>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(SocialProfile)]),
-          () => new ListBuilder<SocialProfile>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
@@ -973,11 +973,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
               const [const FullType(SocialPostTemplateCallToAction)]),
           () => new ListBuilder<SocialPostTemplateCallToAction>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
-      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(PhotoContainer)]),
           () => new ListBuilder<PhotoContainer>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
@@ -1700,6 +1700,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
           ]),
           () => new SetBuilder<BuiltMap<String, JsonObject>>())
       ..addBuilderFactory(
+          const FullType(BuiltSet, const [const FullType(SocialProfile)]),
+          () => new SetBuilder<SocialProfile>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Video)]),
           () => new ListBuilder<Video>())
       ..addBuilderFactory(
@@ -1708,9 +1711,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(AttributeWrapper)]),
           () => new ListBuilder<AttributeWrapper>())
-      ..addBuilderFactory(
-          const FullType(BuiltSet, const [const FullType(SocialProfile)]),
-          () => new SetBuilder<SocialProfile>())
       ..addBuilderFactory(
           const FullType(BuiltSet, const [
             const FullType(ListingHealthDirectoriesMissingConnectEnum)
@@ -1789,8 +1789,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<Person>())
       ..addBuilderFactory(
           const FullType(
-              BuiltList, const [const FullType(LocationPhotoResponse)]),
-          () => new ListBuilder<LocationPhotoResponse>())
+              BuiltSet, const [const FullType(LocationPhotoResponse)]),
+          () => new SetBuilder<LocationPhotoResponse>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Product)]),
           () => new ListBuilder<Product>())
@@ -1817,21 +1817,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(int)]),
           () => new ListBuilder<int>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(int)]),
-          () => new ListBuilder<int>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(int)]),
-          () => new ListBuilder<int>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(int)]),
-          () => new ListBuilder<int>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(int)]),
-          () => new ListBuilder<int>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
-      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(PhotoContainer)]),
           () => new ListBuilder<PhotoContainer>())
       ..addBuilderFactory(
@@ -1840,6 +1825,21 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(int)]),
           () => new ListBuilder<int>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(int)]),
+          () => new ListBuilder<int>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(int)]),
+          () => new ListBuilder<int>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(int)]),
+          () => new ListBuilder<int>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(int)]),
+          () => new ListBuilder<int>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltSet, const [const FullType(String)]),
           () => new SetBuilder<String>())

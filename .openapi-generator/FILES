@@ -91,6 +91,7 @@ doc/DataPointTimeSeriesValue.md
 doc/DataPointsApi.md
 doc/DatapointStatisticsResponse.md
 doc/DatapointStatisticsResponseWrapper.md
+doc/DefaultApi.md
 doc/DeleteResponseObject.md
 doc/DeleteResponseWrapper.md
 doc/DigitalAssetManagementApi.md
@@ -358,6 +359,7 @@ lib/src/api/dashboard_api.dart
 lib/src/api/dashboard_exports_api.dart
 lib/src/api/data_point_filters_api.dart
 lib/src/api/data_points_api.dart
+lib/src/api/default_api.dart
 lib/src/api/digital_asset_management_api.dart
 lib/src/api/events_api.dart
 lib/src/api/labels_api.dart
@@ -697,3 +699,4 @@ lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
 lib/uberall_api.dart
+test/default_api_test.dart

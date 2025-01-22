@@ -217,7 +217,7 @@ abstract class StoreFinderResponse
 
   /// The location's photos
   @BuiltValueField(wireName: r'photos')
-  BuiltList<LocationPhotoResponse>? get photos;
+  BuiltSet<LocationPhotoResponse>? get photos;
 
   /// Products offered by this location
   @BuiltValueField(wireName: r'products')
@@ -556,7 +556,7 @@ class _$StoreFinderResponseSerializer
       yield serializers.serialize(
         object.photos,
         specifiedType:
-            const FullType(BuiltList, [FullType(LocationPhotoResponse)]),
+            const FullType(BuiltSet, [FullType(LocationPhotoResponse)]),
       );
     }
     if (object.products != null) {
@@ -939,8 +939,8 @@ class _$StoreFinderResponseSerializer
           final valueDes = serializers.deserialize(
             value,
             specifiedType:
-                const FullType(BuiltList, [FullType(LocationPhotoResponse)]),
-          ) as BuiltList<LocationPhotoResponse>;
+                const FullType(BuiltSet, [FullType(LocationPhotoResponse)]),
+          ) as BuiltSet<LocationPhotoResponse>;
           result.photos.replace(valueDes);
           break;
         case r'products':
