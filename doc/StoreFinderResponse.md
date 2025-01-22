@@ -42,7 +42,7 @@ Name | Type | Description | Notes
 **paymentOptions** | **BuiltSet&lt;String&gt;** | The payment options accepted at the location (eg. cash, bank transfer, ...) | [optional] 
 **people** | [**BuiltList&lt;Person&gt;**](Person.md) | People associated with this location | [optional] 
 **phone** | **String** | The location''s contact phone number. | [optional] 
-**photos** | [**BuiltSet&lt;LocationPhoto&gt;**](LocationPhoto.md) | The location''s photos. | [optional] 
+**photos** | [**BuiltList&lt;LocationPhotoResponse&gt;**](LocationPhotoResponse.md) | The location's photos | [optional] 
 **products** | [**BuiltList&lt;Product&gt;**](Product.md) | Products offered by this location | [optional] 
 **province** | **String** | The province the location is residing in. | [optional] 
 **reviewCount** | **int** | How many Google Reviews this location has in total | [optional] 

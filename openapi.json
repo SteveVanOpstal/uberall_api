@@ -26341,7 +26341,7 @@
           },
           "photos": {
             "type": "array",
-            "description": "The location''s photos",
+            "description": "The location's photos",
             "items": {
               "$ref": "#/components/schemas/LocationPhoto"
             }
@@ -34056,11 +34056,10 @@
             "description": "The location''s contact phone number."
           },
           "photos": {
-            "uniqueItems": true,
             "type": "array",
-            "description": "The location''s photos.",
+            "description": "The location's photos",
             "items": {
-              "$ref": "#/components/schemas/LocationPhoto"
+              "$ref": "#/components/schemas/LocationPhotoResponse"
             }
           },
           "products": {

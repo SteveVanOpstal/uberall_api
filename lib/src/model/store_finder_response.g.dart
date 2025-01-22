@@ -1870,7 +1870,7 @@ class _$StoreFinderResponse extends StoreFinderResponse {
   @override
   final String? phone;
   @override
-  final BuiltSet<LocationPhoto>? photos;
+  final BuiltList<LocationPhotoResponse>? photos;
   @override
   final BuiltList<Product>? products;
   @override
@@ -2307,10 +2307,11 @@ class StoreFinderResponseBuilder
   String? get phone => _$this._phone;
   set phone(String? phone) => _$this._phone = phone;
 
-  SetBuilder<LocationPhoto>? _photos;
-  SetBuilder<LocationPhoto> get photos =>
-      _$this._photos ??= new SetBuilder<LocationPhoto>();
-  set photos(SetBuilder<LocationPhoto>? photos) => _$this._photos = photos;
+  ListBuilder<LocationPhotoResponse>? _photos;
+  ListBuilder<LocationPhotoResponse> get photos =>
+      _$this._photos ??= new ListBuilder<LocationPhotoResponse>();
+  set photos(ListBuilder<LocationPhotoResponse>? photos) =>
+      _$this._photos = photos;
 
   ListBuilder<Product>? _products;
   ListBuilder<Product> get products =>

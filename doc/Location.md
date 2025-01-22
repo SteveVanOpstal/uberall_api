@@ -46,7 +46,7 @@ Name | Type | Description | Notes
 **status** | **String** | The status of the location. One of: <ul><li>ACTIVE - will be synced and renewed</li> <li>INACTIVE - will not be synced anymore, claims of listings will be released where possible</li> <li>CANCELLED - will be synced, will not be renewed. Once endDate is reached, location will switch to INACTIVE</li> <li>CLOSED - location has shut down, we''ll mark listings as permanently closed or remove listings from the internet where permanently closed status is not supported</li></ul> | [optional] 
 **lastSyncStarted** | [**DateTime**](DateTime.md) | Output only. Date of the last sync for the location | [optional] 
 **identifier** | **String** | The location identifier based on your internal identification system | [optional] 
-**photos** | [**BuiltList&lt;LocationPhoto&gt;**](LocationPhoto.md) | The location''s photos | [optional] 
+**photos** | [**BuiltList&lt;LocationPhoto&gt;**](LocationPhoto.md) | The location's photos | [optional] 
 **dateCreated** | [**DateTime**](DateTime.md) | Output only. The date and time the location was created in our database | [optional] 
 **lastUpdated** | [**DateTime**](DateTime.md) | Output only. Date of the last changes made to the location. Includes updates by users, API, location cleansing, and duplicate checks | [optional] 
 **autoSync** | **bool** | When autosync is set to true, information changed for the location in Uberall will automatically be syncronized to all connected listings without the need to explicitly start a sync again after it''s been started once. | [optional] 
