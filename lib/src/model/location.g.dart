@@ -2344,6 +2344,8 @@ const LocationCleansingStatusEnum _$locationCleansingStatusEnum_INVALID_DATA =
     const LocationCleansingStatusEnum._('INVALID_DATA');
 const LocationCleansingStatusEnum _$locationCleansingStatusEnum_UPDATE_FAILED =
     const LocationCleansingStatusEnum._('UPDATE_FAILED');
+const LocationCleansingStatusEnum _$locationCleansingStatusEnum_NOT_CLEANSED =
+    const LocationCleansingStatusEnum._('NOT_CLEANSED');
 
 LocationCleansingStatusEnum _$locationCleansingStatusEnumValueOf(String name) {
   switch (name) {
@@ -2363,6 +2365,8 @@ LocationCleansingStatusEnum _$locationCleansingStatusEnumValueOf(String name) {
       return _$locationCleansingStatusEnum_INVALID_DATA;
     case 'UPDATE_FAILED':
       return _$locationCleansingStatusEnum_UPDATE_FAILED;
+    case 'NOT_CLEANSED':
+      return _$locationCleansingStatusEnum_NOT_CLEANSED;
     default:
       throw new ArgumentError(name);
   }
@@ -2379,6 +2383,7 @@ final BuiltSet<LocationCleansingStatusEnum>
   _$locationCleansingStatusEnum_AUTO_CLEANSED,
   _$locationCleansingStatusEnum_INVALID_DATA,
   _$locationCleansingStatusEnum_UPDATE_FAILED,
+  _$locationCleansingStatusEnum_NOT_CLEANSED,
 ]);
 
 Serializer<LocationStreetTypeEnum> _$locationStreetTypeEnumSerializer =
@@ -3460,6 +3465,7 @@ class _$LocationCleansingStatusEnumSerializer
     'AUTO_CLEANSED': 'AUTO_CLEANSED',
     'INVALID_DATA': 'INVALID_DATA',
     'UPDATE_FAILED': 'UPDATE_FAILED',
+    'NOT_CLEANSED': 'NOT_CLEANSED',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'UNKNOWN': 'UNKNOWN',
@@ -3470,6 +3476,7 @@ class _$LocationCleansingStatusEnumSerializer
     'AUTO_CLEANSED': 'AUTO_CLEANSED',
     'INVALID_DATA': 'INVALID_DATA',
     'UPDATE_FAILED': 'UPDATE_FAILED',
+    'NOT_CLEANSED': 'NOT_CLEANSED',
   };
 
   @override

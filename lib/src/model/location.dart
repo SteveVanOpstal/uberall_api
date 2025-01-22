@@ -350,7 +350,7 @@ abstract class Location implements Built<Location, LocationBuilder> {
   /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
   @BuiltValueField(wireName: r'cleansingStatus')
   LocationCleansingStatusEnum? get cleansingStatus;
-  // enum cleansingStatusEnum {  UNKNOWN,  NOT_NEEDED,  SUBMISSION_NEEDED,  PENDING,  CLEANSED,  AUTO_CLEANSED,  INVALID_DATA,  UPDATE_FAILED,  };
+  // enum cleansingStatusEnum {  UNKNOWN,  NOT_NEEDED,  SUBMISSION_NEEDED,  PENDING,  CLEANSED,  AUTO_CLEANSED,  INVALID_DATA,  UPDATE_FAILED,  NOT_CLEANSED,  };
 
   /// The location''s timezone
   @BuiltValueField(wireName: r'timeZone')
@@ -3202,6 +3202,11 @@ class LocationCleansingStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'UPDATE_FAILED')
   static const LocationCleansingStatusEnum UPDATE_FAILED =
       _$locationCleansingStatusEnum_UPDATE_FAILED;
+
+  /// Output only. Current cleansing status for the location. Possible values: NOT_CLEANSED, PENDING, CLEANSED, INVALID_DATA
+  @BuiltValueEnumConst(wireName: r'NOT_CLEANSED')
+  static const LocationCleansingStatusEnum NOT_CLEANSED =
+      _$locationCleansingStatusEnum_NOT_CLEANSED;
 
   static Serializer<LocationCleansingStatusEnum> get serializer =>
       _$locationCleansingStatusEnumSerializer;
