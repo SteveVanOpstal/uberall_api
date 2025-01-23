@@ -1010,7 +1010,7 @@ class _$User extends User {
   @override
   final UserRoleEnum role;
   @override
-  final BuiltSet<Location>? managedLocations;
+  final BuiltSet<int>? managedLocations;
   @override
   final BuiltSet<Business>? managedBusinesses;
   @override
@@ -1205,10 +1205,10 @@ class UserBuilder implements Builder<User, UserBuilder> {
   UserRoleEnum? get role => _$this._role;
   set role(UserRoleEnum? role) => _$this._role = role;
 
-  SetBuilder<Location>? _managedLocations;
-  SetBuilder<Location> get managedLocations =>
-      _$this._managedLocations ??= new SetBuilder<Location>();
-  set managedLocations(SetBuilder<Location>? managedLocations) =>
+  SetBuilder<int>? _managedLocations;
+  SetBuilder<int> get managedLocations =>
+      _$this._managedLocations ??= new SetBuilder<int>();
+  set managedLocations(SetBuilder<int>? managedLocations) =>
       _$this._managedLocations = managedLocations;
 
   SetBuilder<Business>? _managedBusinesses;

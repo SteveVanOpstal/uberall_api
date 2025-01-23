@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **phone** | **String** | The user''s phone number | [optional] 
 **status** | **String** | The status of the current user. One of CREATED, VERIFIED, UNVERIFIED, INVITED, INACTIVE, NO_LOGIN | [optional] 
 **role** | **String** | User Role | 
-**managedLocations** | [**BuiltSet&lt;Location&gt;**](Location.md) | A list of locations managed by this user | [optional] 
+**managedLocations** | **BuiltSet&lt;int&gt;** | A list of locations managed by this user | [optional] 
 **managedBusinesses** | [**BuiltSet&lt;Business&gt;**](Business.md) | A list of businesses managed by this user | [optional] 
 **salesPartner** | [**SalesPartner**](SalesPartner.md) |  | [optional] 
 **preferredLanguage** | **String** | Preferred language of a user. If not set, this will default to the language in context, e.g., location''s for e-mails and browser language for our applications. | [optional] 

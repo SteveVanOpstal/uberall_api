@@ -7,7 +7,6 @@ import 'package:uberall_api/src/model/sales_partner.dart';
 import 'package:uberall_api/src/model/email_settings.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:uberall_api/src/model/business.dart';
-import 'package:uberall_api/src/model/location.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -75,7 +74,7 @@ abstract class User implements Built<User, UserBuilder> {
 
   /// A list of locations managed by this user
   @BuiltValueField(wireName: r'managedLocations')
-  BuiltSet<Location>? get managedLocations;
+  BuiltSet<int>? get managedLocations;
 
   /// A list of businesses managed by this user
   @BuiltValueField(wireName: r'managedBusinesses')
@@ -202,7 +201,7 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
       yield r'managedLocations';
       yield serializers.serialize(
         object.managedLocations,
-        specifiedType: const FullType(BuiltSet, [FullType(Location)]),
+        specifiedType: const FullType(BuiltSet, [FullType(int)]),
       );
     }
     if (object.managedBusinesses != null) {
@@ -387,8 +386,8 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
         case r'managedLocations':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltSet, [FullType(Location)]),
-          ) as BuiltSet<Location>;
+            specifiedType: const FullType(BuiltSet, [FullType(int)]),
+          ) as BuiltSet<int>;
           result.managedLocations.replace(valueDes);
           break;
         case r'managedBusinesses':

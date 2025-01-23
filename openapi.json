@@ -36326,7 +36326,8 @@
             "type": "array",
             "description": "A list of locations managed by this user",
             "items": {
-              "$ref": "#/components/schemas/Location"
+              "type": "integer",
+              "format": "int64"
             }
           },
           "managedBusinesses": {
