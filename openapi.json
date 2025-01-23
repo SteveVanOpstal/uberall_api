@@ -14288,6 +14288,73 @@
         ]
       }
     },
+    "/users/me": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get the current user",
+        "description": "Get the current user",
+        "operationId": "get_user_me",
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved user",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserWrapper"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error occurred"
+          }
+        },
+        "security": [
+          {
+            "accessToken": []
+          },
+          {
+            "privateKey": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Update the current user",
+        "description": "Update the current user",
+        "operationId": "patch_user_me",
+        "responses": {
+          "200": {
+            "description": "Successfully edited user",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserWrapper"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error occurred"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "accessToken": []
+          },
+          {
+            "privateKey": []
+          }
+        ]
+      }
+    },
     "/users/logout": {
       "post": {
         "tags": [

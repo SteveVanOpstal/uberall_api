@@ -11,10 +11,12 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteUsersId**](UsersApi.md#deleteusersid) | **DELETE** /users/{id} | Delete a User
 [**deleteUsersIdAllSessions**](UsersApi.md#deleteusersidallsessions) | **DELETE** /users/{id}/all-sessions | Invalidate all active user sessions
+[**getUserMe**](UsersApi.md#getuserme) | **GET** /users/me | Get the current user
 [**getUsers**](UsersApi.md#getusers) | **GET** /users | Get All Users
 [**getUsersEmailUnsubscribeLink**](UsersApi.md#getusersemailunsubscribelink) | **GET** /users/email-unsubscribe-link | Unsubscribe email link
 [**getUsersId**](UsersApi.md#getusersid) | **GET** /users/{id} | Get a User
 [**getUsersWhitelabelInformation**](UsersApi.md#getuserswhitelabelinformation) | **GET** /users/whitelabel-information | Get whitelabel information
+[**patchUserMe**](UsersApi.md#patchuserme) | **PATCH** /users/me | Update the current user
 [**patchUsersId**](UsersApi.md#patchusersid) | **PATCH** /users/{id} | Update a User
 [**postUsers**](UsersApi.md#postusers) | **POST** /users | Create a User
 [**postUsersLogin**](UsersApi.md#postuserslogin) | **POST** /users/login | Provide an access_token for the user
@@ -111,6 +113,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**LogoutResponseWrapper**](LogoutResponseWrapper.md)
+
+### Authorization
+
+[privateKey](../README.md#privateKey), [accessToken](../README.md#accessToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getUserMe**
+> UserWrapper getUserMe()
+
+Get the current user
+
+Get the current user
+
+### Example
+```dart
+import 'package:uberall_api/api.dart';
+// TODO Configure API key authorization: privateKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: accessToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
+
+final api = UberallApi().getUsersApi();
+
+try {
+    final response = api.getUserMe();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling UsersApi->getUserMe: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**UserWrapper**](UserWrapper.md)
 
 ### Authorization
 
@@ -325,6 +374,53 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**WhitelabelInformationWrapper**](WhitelabelInformationWrapper.md)
+
+### Authorization
+
+[privateKey](../README.md#privateKey), [accessToken](../README.md#accessToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patchUserMe**
+> UserWrapper patchUserMe()
+
+Update the current user
+
+Update the current user
+
+### Example
+```dart
+import 'package:uberall_api/api.dart';
+// TODO Configure API key authorization: privateKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: accessToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
+
+final api = UberallApi().getUsersApi();
+
+try {
+    final response = api.patchUserMe();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling UsersApi->patchUserMe: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**UserWrapper**](UserWrapper.md)
 
 ### Authorization
 

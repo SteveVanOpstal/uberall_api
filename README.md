@@ -283,10 +283,12 @@ Class | Method | HTTP request | Description
 [*TemplatesApi*](doc/TemplatesApi.md) | [**postTemplatesIdIncrementUsage**](doc/TemplatesApi.md#posttemplatesidincrementusage) | **POST** /templates/{id}/increment-usage | Increment the count of times a Template has been used
 [*UsersApi*](doc/UsersApi.md) | [**deleteUsersId**](doc/UsersApi.md#deleteusersid) | **DELETE** /users/{id} | Delete a User
 [*UsersApi*](doc/UsersApi.md) | [**deleteUsersIdAllSessions**](doc/UsersApi.md#deleteusersidallsessions) | **DELETE** /users/{id}/all-sessions | Invalidate all active user sessions
+[*UsersApi*](doc/UsersApi.md) | [**getUserMe**](doc/UsersApi.md#getuserme) | **GET** /users/me | Get the current user
 [*UsersApi*](doc/UsersApi.md) | [**getUsers**](doc/UsersApi.md#getusers) | **GET** /users | Get All Users
 [*UsersApi*](doc/UsersApi.md) | [**getUsersEmailUnsubscribeLink**](doc/UsersApi.md#getusersemailunsubscribelink) | **GET** /users/email-unsubscribe-link | Unsubscribe email link
 [*UsersApi*](doc/UsersApi.md) | [**getUsersId**](doc/UsersApi.md#getusersid) | **GET** /users/{id} | Get a User
 [*UsersApi*](doc/UsersApi.md) | [**getUsersWhitelabelInformation**](doc/UsersApi.md#getuserswhitelabelinformation) | **GET** /users/whitelabel-information | Get whitelabel information
+[*UsersApi*](doc/UsersApi.md) | [**patchUserMe**](doc/UsersApi.md#patchuserme) | **PATCH** /users/me | Update the current user
 [*UsersApi*](doc/UsersApi.md) | [**patchUsersId**](doc/UsersApi.md#patchusersid) | **PATCH** /users/{id} | Update a User
 [*UsersApi*](doc/UsersApi.md) | [**postUsers**](doc/UsersApi.md#postusers) | **POST** /users | Create a User
 [*UsersApi*](doc/UsersApi.md) | [**postUsersLogin**](doc/UsersApi.md#postuserslogin) | **POST** /users/login | Provide an access_token for the user
