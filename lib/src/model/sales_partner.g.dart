@@ -250,7 +250,7 @@ class _$SalesPartner extends SalesPartner {
   @override
   final JsonObject? publicTokenId;
   @override
-  final User? contactPerson;
+  final int? contactPerson;
   @override
   final JsonObject? onboardingStatusId;
   @override
@@ -536,9 +536,9 @@ class SalesPartnerBuilder
   set publicTokenId(JsonObject? publicTokenId) =>
       _$this._publicTokenId = publicTokenId;
 
-  UserBuilder? _contactPerson;
-  UserBuilder get contactPerson => _$this._contactPerson ??= new UserBuilder();
-  set contactPerson(UserBuilder? contactPerson) =>
+  int? _contactPerson;
+  int? get contactPerson => _$this._contactPerson;
+  set contactPerson(int? contactPerson) =>
       _$this._contactPerson = contactPerson;
 
   JsonObject? _onboardingStatusId;
@@ -612,7 +612,7 @@ class SalesPartnerBuilder
       _contractualMaxLocations = $v.contractualMaxLocations;
       _attributionId = $v.attributionId;
       _publicTokenId = $v.publicTokenId;
-      _contactPerson = $v.contactPerson?.toBuilder();
+      _contactPerson = $v.contactPerson;
       _onboardingStatusId = $v.onboardingStatusId;
       _parentId = $v.parentId;
       _locationsLeft = $v.locationsLeft;
@@ -667,7 +667,7 @@ class SalesPartnerBuilder
             contractualMaxLocations: contractualMaxLocations,
             attributionId: attributionId,
             publicTokenId: publicTokenId,
-            contactPerson: _contactPerson?.build(),
+            contactPerson: contactPerson,
             onboardingStatusId: onboardingStatusId,
             parentId: parentId,
             locationsLeft: locationsLeft,
@@ -689,9 +689,6 @@ class SalesPartnerBuilder
 
         _$failedField = 'whitelabelInformations';
         _whitelabelInformations?.build();
-
-        _$failedField = 'contactPerson';
-        _contactPerson?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'SalesPartner', _$failedField, e.toString());

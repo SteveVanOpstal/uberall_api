@@ -31728,7 +31728,8 @@
             "type": "object"
           },
           "contactPerson": {
-            "$ref": "#/components/schemas/User"
+            "type": "integer",
+            "format": "int32"
           },
           "onboardingStatusId": {
             "type": "object"

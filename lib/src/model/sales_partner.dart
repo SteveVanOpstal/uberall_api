@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:uberall_api/src/model/user.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:uberall_api/src/model/attribution.dart';
 import 'package:uberall_api/src/model/whitelabel_information.dart';
@@ -133,7 +132,7 @@ abstract class SalesPartner
   JsonObject? get publicTokenId;
 
   @BuiltValueField(wireName: r'contactPerson')
-  User? get contactPerson;
+  int? get contactPerson;
 
   @BuiltValueField(wireName: r'onboardingStatusId')
   JsonObject? get onboardingStatusId;
@@ -337,7 +336,7 @@ class _$SalesPartnerSerializer implements PrimitiveSerializer<SalesPartner> {
       yield r'contactPerson';
       yield serializers.serialize(
         object.contactPerson,
-        specifiedType: const FullType(User),
+        specifiedType: const FullType(int),
       );
     }
     if (object.onboardingStatusId != null) {
@@ -579,9 +578,9 @@ class _$SalesPartnerSerializer implements PrimitiveSerializer<SalesPartner> {
         case r'contactPerson':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(User),
-          ) as User;
-          result.contactPerson.replace(valueDes);
+            specifiedType: const FullType(int),
+          ) as int;
+          result.contactPerson = valueDes;
           break;
         case r'onboardingStatusId':
           final valueDes = serializers.deserialize(

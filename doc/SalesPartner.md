@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **contractualMaxLocations** | **int** |  | [optional] 
 **attributionId** | [**JsonObject**](.md) |  | [optional] 
 **publicTokenId** | [**JsonObject**](.md) |  | [optional] 
-**contactPerson** | [**User**](User.md) |  | [optional] 
+**contactPerson** | **int** |  | [optional] 
 **onboardingStatusId** | [**JsonObject**](.md) |  | [optional] 
 **parentId** | [**JsonObject**](.md) |  | [optional] 
 **locationsLeft** | **int** |  | [optional] 
