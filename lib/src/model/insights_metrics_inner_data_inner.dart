@@ -3,69 +3,69 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
-import 'package:uberall_api/src/model/insights_metrics_inner_data_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'insights_metrics_inner.g.dart';
+part 'insights_metrics_inner_data_inner.g.dart';
 
-/// InsightsMetricsInner
+/// InsightsMetricsInnerDataInner
 ///
 /// Properties:
-/// * [name]
-/// * [data]
+/// * [period]
+/// * [count]
 @BuiltValue()
-abstract class InsightsMetricsInner
-    implements Built<InsightsMetricsInner, InsightsMetricsInnerBuilder> {
-  @BuiltValueField(wireName: r'name')
-  String? get name;
+abstract class InsightsMetricsInnerDataInner
+    implements
+        Built<InsightsMetricsInnerDataInner,
+            InsightsMetricsInnerDataInnerBuilder> {
+  @BuiltValueField(wireName: r'period')
+  String? get period;
 
-  @BuiltValueField(wireName: r'data')
-  BuiltList<InsightsMetricsInnerDataInner>? get data;
+  @BuiltValueField(wireName: r'count')
+  int? get count;
 
-  InsightsMetricsInner._();
+  InsightsMetricsInnerDataInner._();
 
-  factory InsightsMetricsInner([void updates(InsightsMetricsInnerBuilder b)]) =
-      _$InsightsMetricsInner;
+  factory InsightsMetricsInnerDataInner(
+          [void updates(InsightsMetricsInnerDataInnerBuilder b)]) =
+      _$InsightsMetricsInnerDataInner;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(InsightsMetricsInnerBuilder b) => b;
+  static void _defaults(InsightsMetricsInnerDataInnerBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<InsightsMetricsInner> get serializer =>
-      _$InsightsMetricsInnerSerializer();
+  static Serializer<InsightsMetricsInnerDataInner> get serializer =>
+      _$InsightsMetricsInnerDataInnerSerializer();
 }
 
-class _$InsightsMetricsInnerSerializer
-    implements PrimitiveSerializer<InsightsMetricsInner> {
+class _$InsightsMetricsInnerDataInnerSerializer
+    implements PrimitiveSerializer<InsightsMetricsInnerDataInner> {
   @override
   final Iterable<Type> types = const [
-    InsightsMetricsInner,
-    _$InsightsMetricsInner
+    InsightsMetricsInnerDataInner,
+    _$InsightsMetricsInnerDataInner
   ];
 
   @override
-  final String wireName = r'InsightsMetricsInner';
+  final String wireName = r'InsightsMetricsInnerDataInner';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    InsightsMetricsInner object, {
+    InsightsMetricsInnerDataInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.name != null) {
-      yield r'name';
+    if (object.period != null) {
+      yield r'period';
       yield serializers.serialize(
-        object.name,
+        object.period,
         specifiedType: const FullType(String),
       );
     }
-    if (object.data != null) {
-      yield r'data';
+    if (object.count != null) {
+      yield r'count';
       yield serializers.serialize(
-        object.data,
-        specifiedType: const FullType(
-            BuiltList, [FullType(InsightsMetricsInnerDataInner)]),
+        object.count,
+        specifiedType: const FullType(int),
       );
     }
   }
@@ -73,7 +73,7 @@ class _$InsightsMetricsInnerSerializer
   @override
   Object serialize(
     Serializers serializers,
-    InsightsMetricsInner object, {
+    InsightsMetricsInnerDataInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -86,27 +86,26 @@ class _$InsightsMetricsInnerSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required InsightsMetricsInnerBuilder result,
+    required InsightsMetricsInnerDataInnerBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'name':
+        case r'period':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.name = valueDes;
+          result.period = valueDes;
           break;
-        case r'data':
+        case r'count':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(InsightsMetricsInnerDataInner)]),
-          ) as BuiltList<InsightsMetricsInnerDataInner>;
-          result.data.replace(valueDes);
+            specifiedType: const FullType(int),
+          ) as int;
+          result.count = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -117,12 +116,12 @@ class _$InsightsMetricsInnerSerializer
   }
 
   @override
-  InsightsMetricsInner deserialize(
+  InsightsMetricsInnerDataInner deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = InsightsMetricsInnerBuilder();
+    final result = InsightsMetricsInnerDataInnerBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

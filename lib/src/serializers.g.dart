@@ -323,6 +323,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(InboxResponseWrapperStatusEnum.serializer)
       ..add(Insights.serializer)
       ..add(InsightsMetricsInner.serializer)
+      ..add(InsightsMetricsInnerDataInner.serializer)
       ..add(InsightsWrapper.serializer)
       ..add(InsightsWrapperErrorCodeEnum.serializer)
       ..add(InsightsWrapperStatusEnum.serializer)
@@ -813,6 +814,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltList, const [const FullType(InsightsMetricsInner)]),
           () => new ListBuilder<InsightsMetricsInner>())
       ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(InsightsMetricsInnerDataInner)]),
+          () => new ListBuilder<InsightsMetricsInnerDataInner>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(JsonObject)]),
           () => new ListBuilder<JsonObject>())
       ..addBuilderFactory(
@@ -995,9 +1000,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(StoreFinderResponse)]),
           () => new ListBuilder<StoreFinderResponse>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

@@ -10,7 +10,7 @@ class _$InsightsMetricsInner extends InsightsMetricsInner {
   @override
   final String? name;
   @override
-  final BuiltList<String>? data;
+  final BuiltList<InsightsMetricsInnerDataInner>? data;
 
   factory _$InsightsMetricsInner(
           [void Function(InsightsMetricsInnerBuilder)? updates]) =>
@@ -61,9 +61,11 @@ class InsightsMetricsInnerBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  ListBuilder<String>? _data;
-  ListBuilder<String> get data => _$this._data ??= new ListBuilder<String>();
-  set data(ListBuilder<String>? data) => _$this._data = data;
+  ListBuilder<InsightsMetricsInnerDataInner>? _data;
+  ListBuilder<InsightsMetricsInnerDataInner> get data =>
+      _$this._data ??= new ListBuilder<InsightsMetricsInnerDataInner>();
+  set data(ListBuilder<InsightsMetricsInnerDataInner>? data) =>
+      _$this._data = data;
 
   InsightsMetricsInnerBuilder() {
     InsightsMetricsInner._defaults(this);

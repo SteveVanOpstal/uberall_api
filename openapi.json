@@ -24643,12 +24643,17 @@
                 },
                 "data": {
                   "type": "array",
-                  "period": {
-                    "type": "string"
-                  },
-                  "count": {
-                    "type": "integer",
-                    "format": "int32"
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "period": {
+                        "type": "string"
+                      },
+                      "count": {
+                        "type": "integer",
+                        "format": "int32"
+                      }
+                    }
                   }
                 }
               }
