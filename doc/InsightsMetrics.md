@@ -1,4 +1,4 @@
-# uberall_api.model.Insights
+# uberall_api.model.InsightsMetrics
 
 ## Load the model package
 ```dart
@@ -8,8 +8,8 @@ import 'package:uberall_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metrics** | [**InsightsMetrics**](InsightsMetrics.md) |  | [optional] 
-**matchedLocationsCount** | **int** | The number of locations matching the filter which the insights are returned for | [optional] 
+**name** | **String** |  | [optional] 
+**data** | **BuiltList&lt;String&gt;** | Metrics | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

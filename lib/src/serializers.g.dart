@@ -322,6 +322,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(InboxResponseWrapperErrorCodeEnum.serializer)
       ..add(InboxResponseWrapperStatusEnum.serializer)
       ..add(Insights.serializer)
+      ..add(InsightsMetrics.serializer)
       ..add(InsightsWrapper.serializer)
       ..add(InsightsWrapperErrorCodeEnum.serializer)
       ..add(InsightsWrapperStatusEnum.serializer)
@@ -1375,6 +1376,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
       ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(DirectoryCategory)]),
           () => new ListBuilder<DirectoryCategory>())
       ..addBuilderFactory(
@@ -1541,16 +1545,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(int)]),
           () => new ListBuilder<int>())
-      ..addBuilderFactory(
-          const FullType(BuiltMap, const [
-            const FullType(String),
-            const FullType(BuiltMap, const [
-              const FullType(String),
-              const FullType(BuiltList, const [const FullType(JsonObject)])
-            ])
-          ]),
-          () =>
-              new MapBuilder<String, BuiltMap<String, BuiltList<JsonObject>>>())
       ..addBuilderFactory(
           const FullType(BuiltMap, const [
             const FullType(String),
