@@ -322,7 +322,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(InboxResponseWrapperErrorCodeEnum.serializer)
       ..add(InboxResponseWrapperStatusEnum.serializer)
       ..add(Insights.serializer)
-      ..add(InsightsMetrics.serializer)
+      ..add(InsightsMetricsInner.serializer)
       ..add(InsightsWrapper.serializer)
       ..add(InsightsWrapperErrorCodeEnum.serializer)
       ..add(InsightsWrapperStatusEnum.serializer)
@@ -808,6 +808,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(FiltersResponseTimeSpansEnum)]),
           () => new ListBuilder<FiltersResponseTimeSpansEnum>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(InsightsMetricsInner)]),
+          () => new ListBuilder<InsightsMetricsInner>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(JsonObject)]),
           () => new ListBuilder<JsonObject>())

@@ -8,7 +8,7 @@ part of 'insights.dart';
 
 class _$Insights extends Insights {
   @override
-  final InsightsMetrics? metrics;
+  final BuiltList<InsightsMetricsInner>? metrics;
   @override
   final int? matchedLocationsCount;
 
@@ -53,10 +53,11 @@ class _$Insights extends Insights {
 class InsightsBuilder implements Builder<Insights, InsightsBuilder> {
   _$Insights? _$v;
 
-  InsightsMetricsBuilder? _metrics;
-  InsightsMetricsBuilder get metrics =>
-      _$this._metrics ??= new InsightsMetricsBuilder();
-  set metrics(InsightsMetricsBuilder? metrics) => _$this._metrics = metrics;
+  ListBuilder<InsightsMetricsInner>? _metrics;
+  ListBuilder<InsightsMetricsInner> get metrics =>
+      _$this._metrics ??= new ListBuilder<InsightsMetricsInner>();
+  set metrics(ListBuilder<InsightsMetricsInner>? metrics) =>
+      _$this._metrics = metrics;
 
   int? _matchedLocationsCount;
   int? get matchedLocationsCount => _$this._matchedLocationsCount;

@@ -176,7 +176,7 @@ export 'package:uberall_api/src/model/inbox_response.dart';
 export 'package:uberall_api/src/model/inbox_response_object.dart';
 export 'package:uberall_api/src/model/inbox_response_wrapper.dart';
 export 'package:uberall_api/src/model/insights.dart';
-export 'package:uberall_api/src/model/insights_metrics.dart';
+export 'package:uberall_api/src/model/insights_metrics_inner.dart';
 export 'package:uberall_api/src/model/insights_wrapper.dart';
 export 'package:uberall_api/src/model/keywords_object.dart';
 export 'package:uberall_api/src/model/keywords_wrapper.dart';

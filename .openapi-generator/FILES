@@ -146,7 +146,7 @@ doc/InboxResponse.md
 doc/InboxResponseObject.md
 doc/InboxResponseWrapper.md
 doc/Insights.md
-doc/InsightsMetrics.md
+doc/InsightsMetricsInner.md
 doc/InsightsWrapper.md
 doc/KeywordsObject.md
 doc/KeywordsWrapper.md
@@ -519,7 +519,7 @@ lib/src/model/inbox_response.dart
 lib/src/model/inbox_response_object.dart
 lib/src/model/inbox_response_wrapper.dart
 lib/src/model/insights.dart
-lib/src/model/insights_metrics.dart
+lib/src/model/insights_metrics_inner.dart
 lib/src/model/insights_wrapper.dart
 lib/src/model/keywords_object.dart
 lib/src/model/keywords_wrapper.dart
@@ -701,4 +701,3 @@ lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
 lib/uberall_api.dart
-test/insights_metrics_test.dart

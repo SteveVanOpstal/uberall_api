@@ -143,7 +143,7 @@ import 'package:uberall_api/src/model/inbox_response.dart';
 import 'package:uberall_api/src/model/inbox_response_object.dart';
 import 'package:uberall_api/src/model/inbox_response_wrapper.dart';
 import 'package:uberall_api/src/model/insights.dart';
-import 'package:uberall_api/src/model/insights_metrics.dart';
+import 'package:uberall_api/src/model/insights_metrics_inner.dart';
 import 'package:uberall_api/src/model/insights_wrapper.dart';
 import 'package:uberall_api/src/model/keywords_object.dart';
 import 'package:uberall_api/src/model/keywords_wrapper.dart';
@@ -456,7 +456,7 @@ part 'serializers.g.dart';
   InboxResponseObject,
   InboxResponseWrapper,
   Insights,
-  InsightsMetrics,
+  InsightsMetricsInner,
   InsightsWrapper,
   KeywordsObject,
   KeywordsWrapper,
