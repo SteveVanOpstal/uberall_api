@@ -8,7 +8,7 @@ part of 'insights_metrics_inner_data_inner.dart';
 
 class _$InsightsMetricsInnerDataInner extends InsightsMetricsInnerDataInner {
   @override
-  final String? period;
+  final DateTime? period;
   @override
   final int? count;
 
@@ -59,9 +59,9 @@ class InsightsMetricsInnerDataInnerBuilder
             InsightsMetricsInnerDataInnerBuilder> {
   _$InsightsMetricsInnerDataInner? _$v;
 
-  String? _period;
-  String? get period => _$this._period;
-  set period(String? period) => _$this._period = period;
+  DateTime? _period;
+  DateTime? get period => _$this._period;
+  set period(DateTime? period) => _$this._period = period;
 
   int? _count;
   int? get count => _$this._count;

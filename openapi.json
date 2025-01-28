@@ -24647,7 +24647,8 @@
                     "type": "object",
                     "properties": {
                       "period": {
-                        "type": "string"
+                        "type": "string",
+                        "format": "date-time"
                       },
                       "count": {
                         "type": "integer",

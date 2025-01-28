@@ -19,7 +19,7 @@ abstract class InsightsMetricsInnerDataInner
         Built<InsightsMetricsInnerDataInner,
             InsightsMetricsInnerDataInnerBuilder> {
   @BuiltValueField(wireName: r'period')
-  String? get period;
+  DateTime? get period;
 
   @BuiltValueField(wireName: r'count')
   int? get count;
@@ -58,7 +58,7 @@ class _$InsightsMetricsInnerDataInnerSerializer
       yield r'period';
       yield serializers.serialize(
         object.period,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType(DateTime),
       );
     }
     if (object.count != null) {
@@ -96,8 +96,8 @@ class _$InsightsMetricsInnerDataInnerSerializer
         case r'period':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.period = valueDes;
           break;
         case r'count':
