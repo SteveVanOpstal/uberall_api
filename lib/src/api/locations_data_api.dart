@@ -155,6 +155,7 @@ class LocationsDataApi {
   /// * [excludedLocationIds] - List of locationIds that should be excluded from the result
   /// * [facebookStatus] - Possible values: CONNECTED, NOT_CONNECTED
   /// * [fieldMask] - Possible fieldMask options ( 'id', 'name', 'identifier', 'street', 'streetNo', 'streetAndNumber', 'addressExtra', 'zip', 'city', 'province',                                 'lat', 'lng', 'addressDisplay', 'phone', 'fax', 'cellPhone', 'website', 'email', 'legalIdent', 'taxNumber', 'descriptionShort', 'descriptionLong', 'imprint',                                 'openingHoursNotes', 'status','firstSyncStarted', 'lastSyncStarted', 'autoSync', 'locationSyncable', 'businessId', 'googleInsights', 'labels')
+  /// * [googleDirectoryStatus] - Possible values: VERIFIED (the Google listing is verified and fully managed by us),                             UNVERIFIED (the Google listing is not verified),                             DISABLED (the Google listing is disabled),                             SUSPENDED (the Google listing is suspended),                             DUPLICATE (the Google listing is a duplicate),                             PENDING_VERIFICATION (a verification pin has been requested for the Google listing),                             NEEDS_REVERIFICATION (the verification process for the Google listing needs to be reverified),                             PENDING_REVIEW (there is no Google account connected for the listing)
   /// * [googleStatus] - Possible values: VERIFIED (the Google listing is verified and fully managed by us),                             VERIFICATION_STARTED (a verification pin has been requested for the Google listing),                             VERIFICATION_NOT_STARTED (the verification process has not been start for the Google listing),                             NOT_CONNECTED (there is no Google account connected for the listing),                             VERIFIED_BY_THIRD_PARTY (there is a verified listing on Google but we do not manage it)
   /// * [groupIds] - The groupId to which the location belongs
   /// * [groups] - The name of the group to which the location belongs
@@ -197,6 +198,7 @@ class LocationsDataApi {
     BuiltList<String>? excludedLocationIds,
     String? facebookStatus,
     String? fieldMask,
+    String? googleDirectoryStatus,
     String? googleStatus,
     BuiltList<String>? groupIds,
     BuiltList<String>? groups,
@@ -299,6 +301,9 @@ class LocationsDataApi {
       if (fieldMask != null)
         r'fieldMask': encodeQueryParameter(
             _serializers, fieldMask, const FullType(String)),
+      if (googleDirectoryStatus != null)
+        r'googleDirectoryStatus': encodeQueryParameter(
+            _serializers, googleDirectoryStatus, const FullType(String)),
       if (googleStatus != null)
         r'googleStatus': encodeQueryParameter(
             _serializers, googleStatus, const FullType(String)),

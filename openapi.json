@@ -27988,6 +27988,11 @@
         ],
         "type": "object",
         "properties": {
+          "id": {
+            "type": "integer",
+            "description": "The uberall unique id for the photo",
+            "format": "int64"
+          },
           "description": {
             "type": "string",
             "description": "A description for the photo - max 255 chars"
@@ -28063,6 +28068,14 @@
           "url": {
             "type": "string",
             "description": "url of the photo"
+          },
+          "publicUrl": {
+            "type": "string",
+            "description": "A public url for this photo"
+          },
+          "thumbnailUrl": {
+            "type": "string",
+            "description": "Url for the image thumbnail"
           }
         },
         "description": "Location Photo"

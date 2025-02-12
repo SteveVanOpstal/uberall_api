@@ -12,6 +12,7 @@ part 'location_photo.g.dart';
 /// Location Photo
 ///
 /// Properties:
+/// * [id] - The uberall unique id for the photo
 /// * [description] - A description for the photo - max 255 chars
 /// * [sourceUrl] - The URL to the original photo
 /// * [identifier] - The photo identifier based on your internal identification system
@@ -24,9 +25,15 @@ part 'location_photo.g.dart';
 /// * [dateCreated] - The date when the object was created in uberall database
 /// * [lastUpdated] - Date of the last changes made to the photo
 /// * [url] - url of the photo
+/// * [publicUrl] - A public url for this photo
+/// * [thumbnailUrl] - Url for the image thumbnail
 @BuiltValue()
 abstract class LocationPhoto
     implements Built<LocationPhoto, LocationPhotoBuilder> {
+  /// The uberall unique id for the photo
+  @BuiltValueField(wireName: r'id')
+  int? get id;
+
   /// A description for the photo - max 255 chars
   @BuiltValueField(wireName: r'description')
   String? get description;
@@ -76,6 +83,14 @@ abstract class LocationPhoto
   @BuiltValueField(wireName: r'url')
   String get url;
 
+  /// A public url for this photo
+  @BuiltValueField(wireName: r'publicUrl')
+  String? get publicUrl;
+
+  /// Url for the image thumbnail
+  @BuiltValueField(wireName: r'thumbnailUrl')
+  String? get thumbnailUrl;
+
   LocationPhoto._();
 
   factory LocationPhoto([void updates(LocationPhotoBuilder b)]) =
@@ -101,6 +116,13 @@ class _$LocationPhotoSerializer implements PrimitiveSerializer<LocationPhoto> {
     LocationPhoto object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.id != null) {
+      yield r'id';
+      yield serializers.serialize(
+        object.id,
+        specifiedType: const FullType(int),
+      );
+    }
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -181,6 +203,20 @@ class _$LocationPhotoSerializer implements PrimitiveSerializer<LocationPhoto> {
       object.url,
       specifiedType: const FullType(String),
     );
+    if (object.publicUrl != null) {
+      yield r'publicUrl';
+      yield serializers.serialize(
+        object.publicUrl,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.thumbnailUrl != null) {
+      yield r'thumbnailUrl';
+      yield serializers.serialize(
+        object.thumbnailUrl,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -206,6 +242,13 @@ class _$LocationPhotoSerializer implements PrimitiveSerializer<LocationPhoto> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
+          break;
         case r'description':
           final valueDes = serializers.deserialize(
             value,
@@ -289,6 +332,20 @@ class _$LocationPhotoSerializer implements PrimitiveSerializer<LocationPhoto> {
             specifiedType: const FullType(String),
           ) as String;
           result.url = valueDes;
+          break;
+        case r'publicUrl':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.publicUrl = valueDes;
+          break;
+        case r'thumbnailUrl':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.thumbnailUrl = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -180,6 +180,8 @@ class _$LocationPhotoTypeEnumSerializer
 
 class _$LocationPhoto extends LocationPhoto {
   @override
+  final int? id;
+  @override
   final String? description;
   @override
   final String? sourceUrl;
@@ -203,12 +205,17 @@ class _$LocationPhoto extends LocationPhoto {
   final DateTime? lastUpdated;
   @override
   final String url;
+  @override
+  final String? publicUrl;
+  @override
+  final String? thumbnailUrl;
 
   factory _$LocationPhoto([void Function(LocationPhotoBuilder)? updates]) =>
       (new LocationPhotoBuilder()..update(updates))._build();
 
   _$LocationPhoto._(
-      {this.description,
+      {this.id,
+      this.description,
       this.sourceUrl,
       this.identifier,
       this.cropOffsetX,
@@ -219,7 +226,9 @@ class _$LocationPhoto extends LocationPhoto {
       this.order,
       this.dateCreated,
       this.lastUpdated,
-      required this.url})
+      required this.url,
+      this.publicUrl,
+      this.thumbnailUrl})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(type, r'LocationPhoto', 'type');
     BuiltValueNullFieldError.checkNotNull(url, r'LocationPhoto', 'url');
@@ -236,6 +245,7 @@ class _$LocationPhoto extends LocationPhoto {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is LocationPhoto &&
+        id == other.id &&
         description == other.description &&
         sourceUrl == other.sourceUrl &&
         identifier == other.identifier &&
@@ -247,12 +257,15 @@ class _$LocationPhoto extends LocationPhoto {
         order == other.order &&
         dateCreated == other.dateCreated &&
         lastUpdated == other.lastUpdated &&
-        url == other.url;
+        url == other.url &&
+        publicUrl == other.publicUrl &&
+        thumbnailUrl == other.thumbnailUrl;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, sourceUrl.hashCode);
     _$hash = $jc(_$hash, identifier.hashCode);
@@ -265,6 +278,8 @@ class _$LocationPhoto extends LocationPhoto {
     _$hash = $jc(_$hash, dateCreated.hashCode);
     _$hash = $jc(_$hash, lastUpdated.hashCode);
     _$hash = $jc(_$hash, url.hashCode);
+    _$hash = $jc(_$hash, publicUrl.hashCode);
+    _$hash = $jc(_$hash, thumbnailUrl.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -272,6 +287,7 @@ class _$LocationPhoto extends LocationPhoto {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'LocationPhoto')
+          ..add('id', id)
           ..add('description', description)
           ..add('sourceUrl', sourceUrl)
           ..add('identifier', identifier)
@@ -283,7 +299,9 @@ class _$LocationPhoto extends LocationPhoto {
           ..add('order', order)
           ..add('dateCreated', dateCreated)
           ..add('lastUpdated', lastUpdated)
-          ..add('url', url))
+          ..add('url', url)
+          ..add('publicUrl', publicUrl)
+          ..add('thumbnailUrl', thumbnailUrl))
         .toString();
   }
 }
@@ -291,6 +309,10 @@ class _$LocationPhoto extends LocationPhoto {
 class LocationPhotoBuilder
     implements Builder<LocationPhoto, LocationPhotoBuilder> {
   _$LocationPhoto? _$v;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(int? id) => _$this._id = id;
 
   String? _description;
   String? get description => _$this._description;
@@ -340,6 +362,14 @@ class LocationPhotoBuilder
   String? get url => _$this._url;
   set url(String? url) => _$this._url = url;
 
+  String? _publicUrl;
+  String? get publicUrl => _$this._publicUrl;
+  set publicUrl(String? publicUrl) => _$this._publicUrl = publicUrl;
+
+  String? _thumbnailUrl;
+  String? get thumbnailUrl => _$this._thumbnailUrl;
+  set thumbnailUrl(String? thumbnailUrl) => _$this._thumbnailUrl = thumbnailUrl;
+
   LocationPhotoBuilder() {
     LocationPhoto._defaults(this);
   }
@@ -347,6 +377,7 @@ class LocationPhotoBuilder
   LocationPhotoBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _id = $v.id;
       _description = $v.description;
       _sourceUrl = $v.sourceUrl;
       _identifier = $v.identifier;
@@ -359,6 +390,8 @@ class LocationPhotoBuilder
       _dateCreated = $v.dateCreated;
       _lastUpdated = $v.lastUpdated;
       _url = $v.url;
+      _publicUrl = $v.publicUrl;
+      _thumbnailUrl = $v.thumbnailUrl;
       _$v = null;
     }
     return this;
@@ -381,6 +414,7 @@ class LocationPhotoBuilder
   _$LocationPhoto _build() {
     final _$result = _$v ??
         new _$LocationPhoto._(
+          id: id,
           description: description,
           sourceUrl: sourceUrl,
           identifier: identifier,
@@ -395,6 +429,8 @@ class LocationPhotoBuilder
           lastUpdated: lastUpdated,
           url: BuiltValueNullFieldError.checkNotNull(
               url, r'LocationPhoto', 'url'),
+          publicUrl: publicUrl,
+          thumbnailUrl: thumbnailUrl,
         );
     replace(_$result);
     return _$result;

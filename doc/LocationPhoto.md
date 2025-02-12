@@ -8,6 +8,7 @@ import 'package:uberall_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **int** | The uberall unique id for the photo | [optional] 
 **description** | **String** | A description for the photo - max 255 chars | [optional] 
 **sourceUrl** | **String** | The URL to the original photo | [optional] 
 **identifier** | **String** | The photo identifier based on your internal identification system | [optional] 
@@ -20,6 +21,8 @@ Name | Type | Description | Notes
 **dateCreated** | [**DateTime**](DateTime.md) | The date when the object was created in uberall database | [optional] 
 **lastUpdated** | [**DateTime**](DateTime.md) | Date of the last changes made to the photo | [optional] 
 **url** | **String** | url of the photo | 
+**publicUrl** | **String** | A public url for this photo | [optional] 
+**thumbnailUrl** | **String** | Url for the image thumbnail | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
