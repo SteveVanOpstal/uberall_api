@@ -27057,6 +27057,11 @@
           "customFields": {
             "type": "object",
             "description": "A Map for identifying the value input for a specific custom field name on the location. Custom fields are created at the business level.\n<pre>\n  \"customFields\": [\n    '{'\n      \"name\": \"foo\",\n      \"value\": \"bar\"\n    '}',\n    '{'\n      \"name\": \"baz\",\n      \"value\": \"qux\"\n    '}'\n  ]\n</pre>"
+          },
+          "averageRating": {
+            "type": "number",
+            "description": "The average rating of all Google Reviews",
+            "format": "float"
           }
         },
         "description": "Location"

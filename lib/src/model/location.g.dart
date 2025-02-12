@@ -3642,6 +3642,8 @@ class _$Location extends Location {
   final BuiltList<AttributeWrapper>? attributes;
   @override
   final JsonObject? customFields;
+  @override
+  final double? averageRating;
 
   factory _$Location([void Function(LocationBuilder)? updates]) =>
       (new LocationBuilder()..update(updates))._build();
@@ -3718,7 +3720,8 @@ class _$Location extends Location {
       this.activeDirectoriesCount,
       this.activeListingsCount,
       this.attributes,
-      this.customFields})
+      this.customFields,
+      this.averageRating})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(name, r'Location', 'name');
     BuiltValueNullFieldError.checkNotNull(street, r'Location', 'street');
@@ -3808,7 +3811,8 @@ class _$Location extends Location {
         activeDirectoriesCount == other.activeDirectoriesCount &&
         activeListingsCount == other.activeListingsCount &&
         attributes == other.attributes &&
-        customFields == other.customFields;
+        customFields == other.customFields &&
+        averageRating == other.averageRating;
   }
 
   @override
@@ -3886,6 +3890,7 @@ class _$Location extends Location {
     _$hash = $jc(_$hash, activeListingsCount.hashCode);
     _$hash = $jc(_$hash, attributes.hashCode);
     _$hash = $jc(_$hash, customFields.hashCode);
+    _$hash = $jc(_$hash, averageRating.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -3964,7 +3969,8 @@ class _$Location extends Location {
           ..add('activeDirectoriesCount', activeDirectoriesCount)
           ..add('activeListingsCount', activeListingsCount)
           ..add('attributes', attributes)
-          ..add('customFields', customFields))
+          ..add('customFields', customFields)
+          ..add('averageRating', averageRating))
         .toString();
   }
 }
@@ -4323,6 +4329,11 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   set customFields(JsonObject? customFields) =>
       _$this._customFields = customFields;
 
+  double? _averageRating;
+  double? get averageRating => _$this._averageRating;
+  set averageRating(double? averageRating) =>
+      _$this._averageRating = averageRating;
+
   LocationBuilder() {
     Location._defaults(this);
   }
@@ -4402,6 +4413,7 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
       _activeListingsCount = $v.activeListingsCount;
       _attributes = $v.attributes?.toBuilder();
       _customFields = $v.customFields;
+      _averageRating = $v.averageRating;
       _$v = null;
     }
     return this;
@@ -4502,6 +4514,7 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
             activeListingsCount: activeListingsCount,
             attributes: _attributes?.build(),
             customFields: customFields,
+            averageRating: averageRating,
           );
     } catch (_) {
       late String _$failedField;

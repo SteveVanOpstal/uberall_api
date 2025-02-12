@@ -80,6 +80,7 @@ Name | Type | Description | Notes
 **activeListingsCount** | **int** | Output only. Number of active listings | [optional] 
 **attributes** | [**BuiltList&lt;AttributeWrapper&gt;**](AttributeWrapper.md) | Google attributes | [optional] 
 **customFields** | [**JsonObject**](.md) | A Map for identifying the value input for a specific custom field name on the location. Custom fields are created at the business level. <pre>   \"customFields\": [     '{'       \"name\": \"foo\",       \"value\": \"bar\"     '}',     '{'       \"name\": \"baz\",       \"value\": \"qux\"     '}'   ] </pre> | [optional] 
+**averageRating** | **double** | The average rating of all Google Reviews | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

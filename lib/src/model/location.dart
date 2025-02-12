@@ -101,6 +101,7 @@ part 'location.g.dart';
 /// * [activeListingsCount] - Output only. Number of active listings
 /// * [attributes] - Google attributes
 /// * [customFields] - A Map for identifying the value input for a specific custom field name on the location. Custom fields are created at the business level. <pre>   \"customFields\": [     '{'       \"name\": \"foo\",       \"value\": \"bar\"     '}',     '{'       \"name\": \"baz\",       \"value\": \"qux\"     '}'   ] </pre>
+/// * [averageRating] - The average rating of all Google Reviews
 @BuiltValue()
 abstract class Location implements Built<Location, LocationBuilder> {
   /// Output only. The uberall unique id for the location
@@ -395,6 +396,10 @@ abstract class Location implements Built<Location, LocationBuilder> {
   /// A Map for identifying the value input for a specific custom field name on the location. Custom fields are created at the business level. <pre>   \"customFields\": [     '{'       \"name\": \"foo\",       \"value\": \"bar\"     '}',     '{'       \"name\": \"baz\",       \"value\": \"qux\"     '}'   ] </pre>
   @BuiltValueField(wireName: r'customFields')
   JsonObject? get customFields;
+
+  /// The average rating of all Google Reviews
+  @BuiltValueField(wireName: r'averageRating')
+  double? get averageRating;
 
   Location._();
 
@@ -919,6 +924,13 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
       yield serializers.serialize(
         object.customFields,
         specifiedType: const FullType(JsonObject),
+      );
+    }
+    if (object.averageRating != null) {
+      yield r'averageRating';
+      yield serializers.serialize(
+        object.averageRating,
+        specifiedType: const FullType(double),
       );
     }
   }
@@ -1457,6 +1469,13 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
             specifiedType: const FullType(JsonObject),
           ) as JsonObject;
           result.customFields = valueDes;
+          break;
+        case r'averageRating':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(double),
+          ) as double;
+          result.averageRating = valueDes;
           break;
         default:
           unhandled.add(key);
