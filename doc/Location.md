@@ -41,7 +41,7 @@ Name | Type | Description | Notes
 **brands** | **BuiltList&lt;String&gt;** | The brands offered by the location to its customers | [optional] 
 **paymentOptions** | **BuiltSet&lt;String&gt;** | The payment options accepted at the location (eg. cash, bank transfer, ...) | [optional] 
 **languages** | **BuiltSet&lt;String&gt;** | The language(s) in which customers can interact with the location''s staff | [optional] 
-**categories** | [**BuiltList&lt;Category&gt;**](Category.md) | Required to start location sync  - A list of category IDs describing the location | 
+**categories** | **BuiltList&lt;int&gt;** | Required to start location sync  - A list of category IDs describing the location | 
 **status** | **String** | The status of the location. One of: <ul><li>ACTIVE - will be synced and renewed</li> <li>INACTIVE - will not be synced anymore, claims of listings will be released where possible</li> <li>CANCELLED - will be synced, will not be renewed. Once endDate is reached, location will switch to INACTIVE</li> <li>CLOSED - location has shut down, we''ll mark listings as permanently closed or remove listings from the internet where permanently closed status is not supported</li></ul> | [optional] 
 **lastSyncStarted** | [**DateTime**](DateTime.md) | Output only. Date of the last sync for the location | [optional] 
 **identifier** | **String** | The location identifier based on your internal identification system | [optional] 

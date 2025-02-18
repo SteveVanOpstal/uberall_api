@@ -1663,8 +1663,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltSet, const [const FullType(String)]),
           () => new SetBuilder<String>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(Category)]),
-          () => new ListBuilder<Category>())
+          const FullType(BuiltList, const [const FullType(int)]),
+          () => new ListBuilder<int>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(LocationPhoto)]),
           () => new ListBuilder<LocationPhoto>())

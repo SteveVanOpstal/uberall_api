@@ -20,7 +20,6 @@ import 'package:uberall_api/src/model/more_hours_response.dart';
 import 'package:uberall_api/src/model/ev_data.dart';
 import 'package:uberall_api/src/model/attribute_wrapper.dart';
 import 'package:uberall_api/src/model/date.dart';
-import 'package:uberall_api/src/model/category.dart';
 import 'package:built_value/json_object.dart';
 import 'package:uberall_api/src/model/location_photo.dart';
 import 'package:built_value/built_value.dart';
@@ -242,7 +241,7 @@ abstract class Location implements Built<Location, LocationBuilder> {
 
   /// Required to start location sync  - A list of category IDs describing the location
   @BuiltValueField(wireName: r'categories')
-  BuiltList<Category> get categories;
+  BuiltList<int> get categories;
 
   /// The status of the location. One of: <ul><li>ACTIVE - will be synced and renewed</li> <li>INACTIVE - will not be synced anymore, claims of listings will be released where possible</li> <li>CANCELLED - will be synced, will not be renewed. Once endDate is reached, location will switch to INACTIVE</li> <li>CLOSED - location has shut down, we''ll mark listings as permanently closed or remove listings from the internet where permanently closed status is not supported</li></ul>
   @BuiltValueField(wireName: r'status')
@@ -648,7 +647,7 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
     yield r'categories';
     yield serializers.serialize(
       object.categories,
-      specifiedType: const FullType(BuiltList, [FullType(Category)]),
+      specifiedType: const FullType(BuiltList, [FullType(int)]),
     );
     if (object.status != null) {
       yield r'status';
@@ -1179,8 +1178,8 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
         case r'categories':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(Category)]),
-          ) as BuiltList<Category>;
+            specifiedType: const FullType(BuiltList, [FullType(int)]),
+          ) as BuiltList<int>;
           result.categories.replace(valueDes);
           break;
         case r'status':

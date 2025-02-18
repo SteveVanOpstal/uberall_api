@@ -26461,7 +26461,8 @@
             "type": "array",
             "description": "Required to start location sync  - A list of category IDs describing the location",
             "items": {
-              "$ref": "#/components/schemas/Category"
+              "type": "integer",
+              "format": "int32"
             }
           },
           "status": {
