@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **deleteCollectionsId**
-> GenericMapResponseWrapper deleteCollectionsId(id, contentCollection)
+> UberallResponse deleteCollectionsId(id, contentCollection)
 
 Delete a Collection
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GenericMapResponseWrapper**](GenericMapResponseWrapper.md)
+[**UberallResponse**](UberallResponse.md)
 
 ### Authorization
 

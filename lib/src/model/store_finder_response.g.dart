@@ -1816,7 +1816,7 @@ class _$StoreFinderResponse extends StoreFinderResponse {
   @override
   final BuiltList<JsonObject>? callToActions;
   @override
-  final BuiltList<int>? categories;
+  final BuiltList<BuiltMap<String, JsonObject>>? categories;
   @override
   final String? cellphone;
   @override
@@ -1870,7 +1870,7 @@ class _$StoreFinderResponse extends StoreFinderResponse {
   @override
   final String? phone;
   @override
-  final BuiltSet<LocationPhotoResponse>? photos;
+  final BuiltSet<JsonObject>? photos;
   @override
   final BuiltList<Product>? products;
   @override
@@ -2180,10 +2180,10 @@ class StoreFinderResponseBuilder
   set callToActions(ListBuilder<JsonObject>? callToActions) =>
       _$this._callToActions = callToActions;
 
-  ListBuilder<int>? _categories;
-  ListBuilder<int> get categories =>
-      _$this._categories ??= new ListBuilder<int>();
-  set categories(ListBuilder<int>? categories) =>
+  ListBuilder<BuiltMap<String, JsonObject>>? _categories;
+  ListBuilder<BuiltMap<String, JsonObject>> get categories =>
+      _$this._categories ??= new ListBuilder<BuiltMap<String, JsonObject>>();
+  set categories(ListBuilder<BuiltMap<String, JsonObject>>? categories) =>
       _$this._categories = categories;
 
   String? _cellphone;
@@ -2307,11 +2307,10 @@ class StoreFinderResponseBuilder
   String? get phone => _$this._phone;
   set phone(String? phone) => _$this._phone = phone;
 
-  SetBuilder<LocationPhotoResponse>? _photos;
-  SetBuilder<LocationPhotoResponse> get photos =>
-      _$this._photos ??= new SetBuilder<LocationPhotoResponse>();
-  set photos(SetBuilder<LocationPhotoResponse>? photos) =>
-      _$this._photos = photos;
+  SetBuilder<JsonObject>? _photos;
+  SetBuilder<JsonObject> get photos =>
+      _$this._photos ??= new SetBuilder<JsonObject>();
+  set photos(SetBuilder<JsonObject>? photos) => _$this._photos = photos;
 
   ListBuilder<Product>? _products;
   ListBuilder<Product> get products =>

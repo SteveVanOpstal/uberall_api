@@ -1805,18 +1805,12 @@ class _$PricePerCountry extends PricePerCountry {
   final int? marketDevelopmentFunds;
   @override
   final int? priceSetup;
-  @override
-  final JsonObject? productPlanId;
 
   factory _$PricePerCountry([void Function(PricePerCountryBuilder)? updates]) =>
       (new PricePerCountryBuilder()..update(updates))._build();
 
   _$PricePerCountry._(
-      {this.country,
-      this.price,
-      this.marketDevelopmentFunds,
-      this.priceSetup,
-      this.productPlanId})
+      {this.country, this.price, this.marketDevelopmentFunds, this.priceSetup})
       : super._();
 
   @override
@@ -1834,8 +1828,7 @@ class _$PricePerCountry extends PricePerCountry {
         country == other.country &&
         price == other.price &&
         marketDevelopmentFunds == other.marketDevelopmentFunds &&
-        priceSetup == other.priceSetup &&
-        productPlanId == other.productPlanId;
+        priceSetup == other.priceSetup;
   }
 
   @override
@@ -1845,7 +1838,6 @@ class _$PricePerCountry extends PricePerCountry {
     _$hash = $jc(_$hash, price.hashCode);
     _$hash = $jc(_$hash, marketDevelopmentFunds.hashCode);
     _$hash = $jc(_$hash, priceSetup.hashCode);
-    _$hash = $jc(_$hash, productPlanId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -1856,8 +1848,7 @@ class _$PricePerCountry extends PricePerCountry {
           ..add('country', country)
           ..add('price', price)
           ..add('marketDevelopmentFunds', marketDevelopmentFunds)
-          ..add('priceSetup', priceSetup)
-          ..add('productPlanId', productPlanId))
+          ..add('priceSetup', priceSetup))
         .toString();
   }
 }
@@ -1883,11 +1874,6 @@ class PricePerCountryBuilder
   int? get priceSetup => _$this._priceSetup;
   set priceSetup(int? priceSetup) => _$this._priceSetup = priceSetup;
 
-  JsonObject? _productPlanId;
-  JsonObject? get productPlanId => _$this._productPlanId;
-  set productPlanId(JsonObject? productPlanId) =>
-      _$this._productPlanId = productPlanId;
-
   PricePerCountryBuilder() {
     PricePerCountry._defaults(this);
   }
@@ -1899,7 +1885,6 @@ class PricePerCountryBuilder
       _price = $v.price;
       _marketDevelopmentFunds = $v.marketDevelopmentFunds;
       _priceSetup = $v.priceSetup;
-      _productPlanId = $v.productPlanId;
       _$v = null;
     }
     return this;
@@ -1926,7 +1911,6 @@ class PricePerCountryBuilder
           price: price,
           marketDevelopmentFunds: marketDevelopmentFunds,
           priceSetup: priceSetup,
-          productPlanId: productPlanId,
         );
     replace(_$result);
     return _$result;

@@ -26,7 +26,6 @@ Method | HTTP request | Description
 [**getLocationsPostcodes**](LocationsDataApi.md#getlocationspostcodes) | **GET** /locations/postcodes | Get the post / zip code for locations
 [**getLocationsProvinces**](LocationsDataApi.md#getlocationsprovinces) | **GET** /locations/provinces | Get the province/state for locations
 [**getLocationsStatistics**](LocationsDataApi.md#getlocationsstatistics) | **GET** /locations/statistics | Get Locations&#39;&#39; Statistics
-[**getLocationsTrackingEvents**](LocationsDataApi.md#getlocationstrackingevents) | **GET** /locations/tracking-events | Get Tracking Events
 [**patchLocations**](LocationsDataApi.md#patchlocations) | **PATCH** /locations | Update Several Locations
 [**patchLocationsId**](LocationsDataApi.md#patchlocationsid) | **PATCH** /locations/{id} | Update a Location
 [**patchLocationsIdEvDataUid**](LocationsDataApi.md#patchlocationsidevdatauid) | **PATCH** /locations/{id}/ev-data/{uid} | Update EV Dynamic Data
@@ -115,7 +114,7 @@ final DateTime endDateMax = 2020-02-05T12:18:12.000+01:00; // DateTime | Only lo
 final DateTime endDateMin = 2018-02-05T12:18:12.000+01:00; // DateTime | Only locations with an endDate greater than or equal to endDateMin will be returned.
 final BuiltList<String> excludedLocationIds = excludedLocationIds=20&excludedLocationIds=21 for multiple locations; // BuiltList<String> | List of locationIds that should be excluded from the result
 final String facebookStatus = facebookStatus_example; // String | Possible values: CONNECTED, NOT_CONNECTED
-final String fieldMask = fieldMask=city&fieldMask=zip; // String | Possible fieldMask options ( 'id', 'name', 'identifier', 'street', 'streetNo', 'streetAndNumber', 'addressExtra', 'zip', 'city', 'province',                                 'lat', 'lng', 'addressDisplay', 'phone', 'fax', 'cellPhone', 'website', 'email', 'legalIdent', 'taxNumber', 'descriptionShort', 'descriptionLong', 'imprint',                                 'openingHoursNotes', 'status','firstSyncStarted', 'lastSyncStarted', 'autoSync', 'locationSyncable', 'businessId', 'googleInsights', 'labels')
+final String fieldMask = fieldMask=city&fieldMask=zip; // String | Possible fieldMask options ( 'id', 'name', 'identifier', 'street', 'streetNo', 'streetAndNumber', 'addressExtra', 'zip', 'city', 'country',                                                                'dateCreated', 'endDate', 'province', 'lat', 'lng', 'addressDisplay', 'phone', 'fax', 'timeZone',                                                                'cellphone', 'website', 'email', 'legalIdent', 'taxNumber', 'descriptionShort',                                                                'descriptionLong', 'imprint', 'openingHoursNotes', 'status', 'photos', 'attributes',                                                                'firstSyncStarted', 'lastUpdated', 'lastSyncStarted', 'autoSync', 'locationSyncable', 'businessId', 'businessName', 'productPlanName',                                                                'googleInsights', 'labels', 'customFields', 'features', 'groups', 'openingHours', 'specialOpeningHours', 'nameDescriptor',                                                                'actionsRequired', 'profileCompleteness', 'suggestionsForFieldsAvailable', 'listingsInSync', 'activeListingsCount',                                                                'dataPoints', 'averageRating', 'directoriesMissingConnect' )
 final String googleDirectoryStatus = googleDirectoryStatus_example; // String | Possible values: VERIFIED (the Google listing is verified and fully managed by us),                             UNVERIFIED (the Google listing is not verified),                             DISABLED (the Google listing is disabled),                             SUSPENDED (the Google listing is suspended),                             DUPLICATE (the Google listing is a duplicate),                             PENDING_VERIFICATION (a verification pin has been requested for the Google listing),                             NEEDS_REVERIFICATION (the verification process for the Google listing needs to be reverified),                             PENDING_REVIEW (there is no Google account connected for the listing)
 final String googleStatus = googleStatus_example; // String | Possible values: VERIFIED (the Google listing is verified and fully managed by us),                             VERIFICATION_STARTED (a verification pin has been requested for the Google listing),                             VERIFICATION_NOT_STARTED (the verification process has not been start for the Google listing),                             NOT_CONNECTED (there is no Google account connected for the listing),                             VERIFIED_BY_THIRD_PARTY (there is a verified listing on Google but we do not manage it)
 final BuiltList<String> groupIds = ; // BuiltList<String> | The groupId to which the location belongs
@@ -161,7 +160,7 @@ Name | Type | Description  | Notes
  **endDateMin** | **DateTime**| Only locations with an endDate greater than or equal to endDateMin will be returned. | [optional] 
  **excludedLocationIds** | [**BuiltList&lt;String&gt;**](String.md)| List of locationIds that should be excluded from the result | [optional] 
  **facebookStatus** | **String**| Possible values: CONNECTED, NOT_CONNECTED | [optional] 
- **fieldMask** | **String**| Possible fieldMask options ( 'id', 'name', 'identifier', 'street', 'streetNo', 'streetAndNumber', 'addressExtra', 'zip', 'city', 'province',                                 'lat', 'lng', 'addressDisplay', 'phone', 'fax', 'cellPhone', 'website', 'email', 'legalIdent', 'taxNumber', 'descriptionShort', 'descriptionLong', 'imprint',                                 'openingHoursNotes', 'status','firstSyncStarted', 'lastSyncStarted', 'autoSync', 'locationSyncable', 'businessId', 'googleInsights', 'labels') | [optional] 
+ **fieldMask** | **String**| Possible fieldMask options ( 'id', 'name', 'identifier', 'street', 'streetNo', 'streetAndNumber', 'addressExtra', 'zip', 'city', 'country',                                                                'dateCreated', 'endDate', 'province', 'lat', 'lng', 'addressDisplay', 'phone', 'fax', 'timeZone',                                                                'cellphone', 'website', 'email', 'legalIdent', 'taxNumber', 'descriptionShort',                                                                'descriptionLong', 'imprint', 'openingHoursNotes', 'status', 'photos', 'attributes',                                                                'firstSyncStarted', 'lastUpdated', 'lastSyncStarted', 'autoSync', 'locationSyncable', 'businessId', 'businessName', 'productPlanName',                                                                'googleInsights', 'labels', 'customFields', 'features', 'groups', 'openingHours', 'specialOpeningHours', 'nameDescriptor',                                                                'actionsRequired', 'profileCompleteness', 'suggestionsForFieldsAvailable', 'listingsInSync', 'activeListingsCount',                                                                'dataPoints', 'averageRating', 'directoriesMissingConnect' ) | [optional] 
  **googleDirectoryStatus** | **String**| Possible values: VERIFIED (the Google listing is verified and fully managed by us),                             UNVERIFIED (the Google listing is not verified),                             DISABLED (the Google listing is disabled),                             SUSPENDED (the Google listing is suspended),                             DUPLICATE (the Google listing is a duplicate),                             PENDING_VERIFICATION (a verification pin has been requested for the Google listing),                             NEEDS_REVERIFICATION (the verification process for the Google listing needs to be reverified),                             PENDING_REVIEW (there is no Google account connected for the listing) | [optional] 
  **googleStatus** | **String**| Possible values: VERIFIED (the Google listing is verified and fully managed by us),                             VERIFICATION_STARTED (a verification pin has been requested for the Google listing),                             VERIFICATION_NOT_STARTED (the verification process has not been start for the Google listing),                             NOT_CONNECTED (there is no Google account connected for the listing),                             VERIFIED_BY_THIRD_PARTY (there is a verified listing on Google but we do not manage it) | [optional] 
  **groupIds** | [**BuiltList&lt;String&gt;**](String.md)| The groupId to which the location belongs | [optional] 
@@ -589,8 +588,8 @@ import 'package:uberall_api/api.dart';
 
 final api = UberallApi().getLocationsDataApi();
 final String id = id_example; // String | The uberall unique ID of the location
-final BuiltList<String> dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // BuiltList<String> | Types of datapoints you want inbox statistics for.
-final String directoryTypes = directoryTypes_example; // String | Directories you want inbox statistics for
+final BuiltList<String> dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // BuiltList<String> | Types of datapoints you want inbox statistics for
+final BuiltList<String> directoryTypes = ; // BuiltList<String> | Directories you want inbox statistics for
 final BuiltList<String> ratings = ; // BuiltList<String> | Ratings of datapoints you want inbox statistics for.
 final String minActionDate = minActionDate_example; // String | Only consider data points created after that date
 final String maxActionDate = maxActionDate_example; // String | Only consider data points created before that date
@@ -610,8 +609,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The uberall unique ID of the location | 
- **dataPointTypes** | [**BuiltList&lt;String&gt;**](String.md)| Types of datapoints you want inbox statistics for. | [optional] 
- **directoryTypes** | **String**| Directories you want inbox statistics for | [optional] 
+ **dataPointTypes** | [**BuiltList&lt;String&gt;**](String.md)| Types of datapoints you want inbox statistics for | [optional] 
+ **directoryTypes** | [**BuiltList&lt;String&gt;**](String.md)| Directories you want inbox statistics for | [optional] 
  **ratings** | [**BuiltList&lt;String&gt;**](String.md)| Ratings of datapoints you want inbox statistics for. | [optional] 
  **minActionDate** | **String**| Only consider data points created after that date | [optional] 
  **maxActionDate** | **String**| Only consider data points created before that date | [optional] 
@@ -1018,59 +1017,6 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getLocationsTrackingEvents**
-> TrackingEventsResponseWrapper getLocationsTrackingEvents(max, offset)
-
-Get Tracking Events
-
-Returns a list of tracking events for all locations managed by the logged user
-
-### Example
-```dart
-import 'package:uberall_api/api.dart';
-// TODO Configure API key authorization: privateKey
-//defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: accessToken
-//defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
-
-final api = UberallApi().getLocationsDataApi();
-final int max = 789; // int | Used for pagination. Maximum number of results per page. Default: 10
-final int offset = 789; // int | Offset used for pagination. Default: 0
-
-try {
-    final response = api.getLocationsTrackingEvents(max, offset);
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling LocationsDataApi->getLocationsTrackingEvents: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **max** | **int**| Used for pagination. Maximum number of results per page. Default: 10 | [optional] 
- **offset** | **int**| Offset used for pagination. Default: 0 | [optional] 
-
-### Return type
-
-[**TrackingEventsResponseWrapper**](TrackingEventsResponseWrapper.md)
-
-### Authorization
-
-[privateKey](../README.md#privateKey), [accessToken](../README.md#accessToken)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **patchLocations**
 > UpdateResponseWrapper patchLocations(location)
 
@@ -1335,7 +1281,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postLocationsSync**
-> UberallResponse postLocationsSync(locationIds)
+> UberallResponse postLocationsSync(body)
 
 Sync Several Locations
 
@@ -1354,10 +1300,10 @@ import 'package:uberall_api/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
 final api = UberallApi().getLocationsDataApi();
-final BuiltList<String> locationIds = ; // BuiltList<String> | The uberall unique ids for the locations you want to sync
+final JsonObject body = Object; // JsonObject | LocationSearchParams object
 
 try {
-    final response = api.postLocationsSync(locationIds);
+    final response = api.postLocationsSync(body);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling LocationsDataApi->postLocationsSync: $e\n');
@@ -1368,7 +1314,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **locationIds** | [**BuiltList&lt;String&gt;**](String.md)| The uberall unique ids for the locations you want to sync | 
+ **body** | **JsonObject**| LocationSearchParams object | [optional] 
 
 ### Return type
 
@@ -1380,7 +1326,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

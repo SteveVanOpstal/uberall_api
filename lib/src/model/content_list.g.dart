@@ -18,10 +18,6 @@ const ContentListTypeEnum _$contentListTypeEnum_SERVICES =
     const ContentListTypeEnum._('SERVICES');
 const ContentListTypeEnum _$contentListTypeEnum_EVENTS =
     const ContentListTypeEnum._('EVENTS');
-const ContentListTypeEnum
-    _$contentListTypeEnum_sERVICESCommaPRODUCTSCommaMENUCommaPEOPLECommaCUSTOM =
-    const ContentListTypeEnum._(
-        'sERVICESCommaPRODUCTSCommaMENUCommaPEOPLECommaCUSTOM');
 
 ContentListTypeEnum _$contentListTypeEnumValueOf(String name) {
   switch (name) {
@@ -37,8 +33,6 @@ ContentListTypeEnum _$contentListTypeEnumValueOf(String name) {
       return _$contentListTypeEnum_SERVICES;
     case 'EVENTS':
       return _$contentListTypeEnum_EVENTS;
-    case 'sERVICESCommaPRODUCTSCommaMENUCommaPEOPLECommaCUSTOM':
-      return _$contentListTypeEnum_sERVICESCommaPRODUCTSCommaMENUCommaPEOPLECommaCUSTOM;
     default:
       throw new ArgumentError(name);
   }
@@ -52,7 +46,6 @@ final BuiltSet<ContentListTypeEnum> _$contentListTypeEnumValues =
   _$contentListTypeEnum_CUSTOM,
   _$contentListTypeEnum_SERVICES,
   _$contentListTypeEnum_EVENTS,
-  _$contentListTypeEnum_sERVICESCommaPRODUCTSCommaMENUCommaPEOPLECommaCUSTOM,
 ]);
 
 Serializer<ContentListTypeEnum> _$contentListTypeEnumSerializer =
@@ -67,8 +60,6 @@ class _$ContentListTypeEnumSerializer
     'CUSTOM': 'CUSTOM',
     'SERVICES': 'SERVICES',
     'EVENTS': 'EVENTS',
-    'sERVICESCommaPRODUCTSCommaMENUCommaPEOPLECommaCUSTOM':
-        'SERVICES, PRODUCTS, MENU, PEOPLE, CUSTOM',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MENU': 'MENU',
@@ -77,8 +68,6 @@ class _$ContentListTypeEnumSerializer
     'CUSTOM': 'CUSTOM',
     'SERVICES': 'SERVICES',
     'EVENTS': 'EVENTS',
-    'SERVICES, PRODUCTS, MENU, PEOPLE, CUSTOM':
-        'sERVICESCommaPRODUCTSCommaMENUCommaPEOPLECommaCUSTOM',
   };
 
   @override
@@ -110,6 +99,8 @@ class _$ContentList extends ContentList {
   @override
   final String? description;
   @override
+  final int? orderNumber;
+  @override
   final int? id;
 
   factory _$ContentList([void Function(ContentListBuilder)? updates]) =>
@@ -121,6 +112,7 @@ class _$ContentList extends ContentList {
       this.dateCreated,
       this.lastUpdated,
       this.description,
+      this.orderNumber,
       this.id})
       : super._();
 
@@ -140,6 +132,7 @@ class _$ContentList extends ContentList {
         dateCreated == other.dateCreated &&
         lastUpdated == other.lastUpdated &&
         description == other.description &&
+        orderNumber == other.orderNumber &&
         id == other.id;
   }
 
@@ -151,6 +144,7 @@ class _$ContentList extends ContentList {
     _$hash = $jc(_$hash, dateCreated.hashCode);
     _$hash = $jc(_$hash, lastUpdated.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, orderNumber.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -164,6 +158,7 @@ class _$ContentList extends ContentList {
           ..add('dateCreated', dateCreated)
           ..add('lastUpdated', lastUpdated)
           ..add('description', description)
+          ..add('orderNumber', orderNumber)
           ..add('id', id))
         .toString();
   }
@@ -192,6 +187,10 @@ class ContentListBuilder implements Builder<ContentList, ContentListBuilder> {
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
 
+  int? _orderNumber;
+  int? get orderNumber => _$this._orderNumber;
+  set orderNumber(int? orderNumber) => _$this._orderNumber = orderNumber;
+
   int? _id;
   int? get id => _$this._id;
   set id(int? id) => _$this._id = id;
@@ -208,6 +207,7 @@ class ContentListBuilder implements Builder<ContentList, ContentListBuilder> {
       _dateCreated = $v.dateCreated;
       _lastUpdated = $v.lastUpdated;
       _description = $v.description;
+      _orderNumber = $v.orderNumber;
       _id = $v.id;
       _$v = null;
     }
@@ -236,6 +236,7 @@ class ContentListBuilder implements Builder<ContentList, ContentListBuilder> {
           dateCreated: dateCreated,
           lastUpdated: lastUpdated,
           description: description,
+          orderNumber: orderNumber,
           id: id,
         );
     replace(_$result);

@@ -4,7 +4,6 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -15,8 +14,6 @@ part 'social_profile.g.dart';
 /// Properties:
 /// * [url] - Url of the Social Profile
 /// * [type] - Social Profile Type. Values: [FACEBOOK, LINKEDIN, TWITTER, YOUTUBE, XING, INSTAGRAM, FOURSQUARE, PINTEREST]
-/// * [locationId]
-/// * [typeId]
 @BuiltValue()
 abstract class SocialProfile
     implements Built<SocialProfile, SocialProfileBuilder> {
@@ -27,13 +24,7 @@ abstract class SocialProfile
   /// Social Profile Type. Values: [FACEBOOK, LINKEDIN, TWITTER, YOUTUBE, XING, INSTAGRAM, FOURSQUARE, PINTEREST]
   @BuiltValueField(wireName: r'type')
   SocialProfileTypeEnum? get type;
-  // enum typeEnum {  FACEBOOK,  LINKEDIN,  TWITTER,  YOUTUBE,  XING,  INSTAGRAM,  FOURSQUARE,  PINTEREST,  VIMEO,  FACEBOOK, LINKEDIN, TWITTER, YOUTUBE, XING, INSTAGRAM, FOURSQUARE, PINTEREST, VIMEO,  };
-
-  @BuiltValueField(wireName: r'locationId')
-  JsonObject? get locationId;
-
-  @BuiltValueField(wireName: r'typeId')
-  JsonObject? get typeId;
+  // enum typeEnum {  FACEBOOK,  LINKEDIN,  TWITTER,  YOUTUBE,  XING,  INSTAGRAM,  FOURSQUARE,  PINTEREST,  VIMEO,  };
 
   SocialProfile._();
 
@@ -74,20 +65,6 @@ class _$SocialProfileSerializer implements PrimitiveSerializer<SocialProfile> {
         specifiedType: const FullType(SocialProfileTypeEnum),
       );
     }
-    if (object.locationId != null) {
-      yield r'locationId';
-      yield serializers.serialize(
-        object.locationId,
-        specifiedType: const FullType(JsonObject),
-      );
-    }
-    if (object.typeId != null) {
-      yield r'typeId';
-      yield serializers.serialize(
-        object.typeId,
-        specifiedType: const FullType(JsonObject),
-      );
-    }
   }
 
   @override
@@ -126,20 +103,6 @@ class _$SocialProfileSerializer implements PrimitiveSerializer<SocialProfile> {
             specifiedType: const FullType(SocialProfileTypeEnum),
           ) as SocialProfileTypeEnum;
           result.type = valueDes;
-          break;
-        case r'locationId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.locationId = valueDes;
-          break;
-        case r'typeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.typeId = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -211,14 +174,6 @@ class SocialProfileTypeEnum extends EnumClass {
   /// Social Profile Type. Values: [FACEBOOK, LINKEDIN, TWITTER, YOUTUBE, XING, INSTAGRAM, FOURSQUARE, PINTEREST]
   @BuiltValueEnumConst(wireName: r'VIMEO')
   static const SocialProfileTypeEnum VIMEO = _$socialProfileTypeEnum_VIMEO;
-
-  /// Social Profile Type. Values: [FACEBOOK, LINKEDIN, TWITTER, YOUTUBE, XING, INSTAGRAM, FOURSQUARE, PINTEREST]
-  @BuiltValueEnumConst(
-      wireName:
-          r'FACEBOOK, LINKEDIN, TWITTER, YOUTUBE, XING, INSTAGRAM, FOURSQUARE, PINTEREST, VIMEO')
-  static const SocialProfileTypeEnum
-      fACEBOOKCommaLINKEDINCommaTWITTERCommaYOUTUBECommaXINGCommaINSTAGRAMCommaFOURSQUARECommaPINTERESTCommaVIMEO =
-      _$socialProfileTypeEnum_fACEBOOKCommaLINKEDINCommaTWITTERCommaYOUTUBECommaXINGCommaINSTAGRAMCommaFOURSQUARECommaPINTERESTCommaVIMEO;
 
   static Serializer<SocialProfileTypeEnum> get serializer =>
       _$socialProfileTypeEnumSerializer;

@@ -18,10 +18,6 @@ const ContentCollectionTypeEnum _$contentCollectionTypeEnum_SERVICES =
     const ContentCollectionTypeEnum._('SERVICES');
 const ContentCollectionTypeEnum _$contentCollectionTypeEnum_EVENTS =
     const ContentCollectionTypeEnum._('EVENTS');
-const ContentCollectionTypeEnum
-    _$contentCollectionTypeEnum_mENUCommaPEOPLECommaPRODUCTSCommaSERVICESCommaOrCUSTOM =
-    const ContentCollectionTypeEnum._(
-        'mENUCommaPEOPLECommaPRODUCTSCommaSERVICESCommaOrCUSTOM');
 
 ContentCollectionTypeEnum _$contentCollectionTypeEnumValueOf(String name) {
   switch (name) {
@@ -37,8 +33,6 @@ ContentCollectionTypeEnum _$contentCollectionTypeEnumValueOf(String name) {
       return _$contentCollectionTypeEnum_SERVICES;
     case 'EVENTS':
       return _$contentCollectionTypeEnum_EVENTS;
-    case 'mENUCommaPEOPLECommaPRODUCTSCommaSERVICESCommaOrCUSTOM':
-      return _$contentCollectionTypeEnum_mENUCommaPEOPLECommaPRODUCTSCommaSERVICESCommaOrCUSTOM;
     default:
       throw new ArgumentError(name);
   }
@@ -52,7 +46,6 @@ final BuiltSet<ContentCollectionTypeEnum> _$contentCollectionTypeEnumValues =
   _$contentCollectionTypeEnum_CUSTOM,
   _$contentCollectionTypeEnum_SERVICES,
   _$contentCollectionTypeEnum_EVENTS,
-  _$contentCollectionTypeEnum_mENUCommaPEOPLECommaPRODUCTSCommaSERVICESCommaOrCUSTOM,
 ]);
 
 const ContentCollectionCuisineTypeEnum
@@ -269,8 +262,6 @@ class _$ContentCollectionTypeEnumSerializer
     'CUSTOM': 'CUSTOM',
     'SERVICES': 'SERVICES',
     'EVENTS': 'EVENTS',
-    'mENUCommaPEOPLECommaPRODUCTSCommaSERVICESCommaOrCUSTOM':
-        'MENU, PEOPLE, PRODUCTS, SERVICES, or CUSTOM',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MENU': 'MENU',
@@ -279,8 +270,6 @@ class _$ContentCollectionTypeEnumSerializer
     'CUSTOM': 'CUSTOM',
     'SERVICES': 'SERVICES',
     'EVENTS': 'EVENTS',
-    'MENU, PEOPLE, PRODUCTS, SERVICES, or CUSTOM':
-        'mENUCommaPEOPLECommaPRODUCTSCommaSERVICESCommaOrCUSTOM',
   };
 
   @override

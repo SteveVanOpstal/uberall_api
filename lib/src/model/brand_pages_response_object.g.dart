@@ -8,7 +8,7 @@ part of 'brand_pages_response_object.dart';
 
 class _$BrandPagesResponseObject extends BrandPagesResponseObject {
   @override
-  final BuiltList<String>? brandPages;
+  final BuiltList<JsonObject>? brandPages;
 
   factory _$BrandPagesResponseObject(
           [void Function(BrandPagesResponseObjectBuilder)? updates]) =>
@@ -52,10 +52,10 @@ class BrandPagesResponseObjectBuilder
         Builder<BrandPagesResponseObject, BrandPagesResponseObjectBuilder> {
   _$BrandPagesResponseObject? _$v;
 
-  ListBuilder<String>? _brandPages;
-  ListBuilder<String> get brandPages =>
-      _$this._brandPages ??= new ListBuilder<String>();
-  set brandPages(ListBuilder<String>? brandPages) =>
+  ListBuilder<JsonObject>? _brandPages;
+  ListBuilder<JsonObject> get brandPages =>
+      _$this._brandPages ??= new ListBuilder<JsonObject>();
+  set brandPages(ListBuilder<JsonObject>? brandPages) =>
       _$this._brandPages = brandPages;
 
   BrandPagesResponseObjectBuilder() {

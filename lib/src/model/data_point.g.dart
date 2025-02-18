@@ -30,6 +30,8 @@ const DataPointTypeEnum _$dataPointTypeEnum_LINK =
     const DataPointTypeEnum._('LINK');
 const DataPointTypeEnum _$dataPointTypeEnum_EXPANDEDREVIEW =
     const DataPointTypeEnum._('EXPANDEDREVIEW');
+const DataPointTypeEnum _$dataPointTypeEnum_AD_POST =
+    const DataPointTypeEnum._('AD_POST');
 
 DataPointTypeEnum _$dataPointTypeEnumValueOf(String name) {
   switch (name) {
@@ -57,6 +59,8 @@ DataPointTypeEnum _$dataPointTypeEnumValueOf(String name) {
       return _$dataPointTypeEnum_LINK;
     case 'EXPANDEDREVIEW':
       return _$dataPointTypeEnum_EXPANDEDREVIEW;
+    case 'AD_POST':
+      return _$dataPointTypeEnum_AD_POST;
     default:
       throw new ArgumentError(name);
   }
@@ -76,6 +80,7 @@ final BuiltSet<DataPointTypeEnum> _$dataPointTypeEnumValues =
   _$dataPointTypeEnum_CAROUSEL_ALBUM,
   _$dataPointTypeEnum_LINK,
   _$dataPointTypeEnum_EXPANDEDREVIEW,
+  _$dataPointTypeEnum_AD_POST,
 ]);
 
 const DataPointDirectoryTypeEnum _$dataPointDirectoryTypeEnum_FOURSQUARE =
@@ -1160,6 +1165,7 @@ class _$DataPointTypeEnumSerializer
     'CAROUSEL_ALBUM': 'CAROUSEL_ALBUM',
     'LINK': 'LINK',
     'EXPANDEDREVIEW': 'EXPANDEDREVIEW',
+    'AD_POST': 'AD_POST',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'REVIEW': 'REVIEW',
@@ -1174,6 +1180,7 @@ class _$DataPointTypeEnumSerializer
     'CAROUSEL_ALBUM': 'CAROUSEL_ALBUM',
     'LINK': 'LINK',
     'EXPANDEDREVIEW': 'EXPANDEDREVIEW',
+    'AD_POST': 'AD_POST',
   };
 
   @override
@@ -1630,27 +1637,23 @@ class _$DataPointDirectoryTypeEnumSerializer
 
 class _$DataPoint extends DataPoint {
   @override
+  final int? id;
+  @override
   final BuiltList<DataPoint>? comments;
   @override
-  final String? author;
+  final bool? liked;
   @override
-  final DateTime? actionDate;
+  final String? data;
   @override
   final DataPointTypeEnum? type;
   @override
-  final DateTime? threadActionDate;
-  @override
-  final DateTime? lastUpdated;
-  @override
-  final double? rating;
-  @override
-  final bool? repliedByOwner;
-  @override
-  final String? secondaryData;
-  @override
   final int? countLikes;
   @override
-  final String? data;
+  final int? locationId;
+  @override
+  final DateTime? actionDate;
+  @override
+  final String? author;
   @override
   final String? authorImage;
   @override
@@ -1664,33 +1667,40 @@ class _$DataPoint extends DataPoint {
   @override
   final bool? flagged;
   @override
-  final bool? liked;
+  final DateTime? lastUpdated;
   @override
-  final int? locationId;
+  final double? rating;
+  @override
+  final bool? repliedByOwner;
+  @override
+  final String? secondaryData;
+  @override
+  final DateTime? threadActionDate;
 
   factory _$DataPoint([void Function(DataPointBuilder)? updates]) =>
       (new DataPointBuilder()..update(updates))._build();
 
   _$DataPoint._(
-      {this.comments,
-      this.author,
-      this.actionDate,
-      this.type,
-      this.threadActionDate,
-      this.lastUpdated,
-      this.rating,
-      this.repliedByOwner,
-      this.secondaryData,
-      this.countLikes,
+      {this.id,
+      this.comments,
+      this.liked,
       this.data,
+      this.type,
+      this.countLikes,
+      this.locationId,
+      this.actionDate,
+      this.author,
       this.authorImage,
       this.countComments,
       this.dateCreated,
       this.directLink,
       this.directoryType,
       this.flagged,
-      this.liked,
-      this.locationId})
+      this.lastUpdated,
+      this.rating,
+      this.repliedByOwner,
+      this.secondaryData,
+      this.threadActionDate})
       : super._();
 
   @override
@@ -1704,49 +1714,51 @@ class _$DataPoint extends DataPoint {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is DataPoint &&
+        id == other.id &&
         comments == other.comments &&
-        author == other.author &&
-        actionDate == other.actionDate &&
-        type == other.type &&
-        threadActionDate == other.threadActionDate &&
-        lastUpdated == other.lastUpdated &&
-        rating == other.rating &&
-        repliedByOwner == other.repliedByOwner &&
-        secondaryData == other.secondaryData &&
-        countLikes == other.countLikes &&
+        liked == other.liked &&
         data == other.data &&
+        type == other.type &&
+        countLikes == other.countLikes &&
+        locationId == other.locationId &&
+        actionDate == other.actionDate &&
+        author == other.author &&
         authorImage == other.authorImage &&
         countComments == other.countComments &&
         dateCreated == other.dateCreated &&
         directLink == other.directLink &&
         directoryType == other.directoryType &&
         flagged == other.flagged &&
-        liked == other.liked &&
-        locationId == other.locationId;
+        lastUpdated == other.lastUpdated &&
+        rating == other.rating &&
+        repliedByOwner == other.repliedByOwner &&
+        secondaryData == other.secondaryData &&
+        threadActionDate == other.threadActionDate;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, comments.hashCode);
-    _$hash = $jc(_$hash, author.hashCode);
-    _$hash = $jc(_$hash, actionDate.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
-    _$hash = $jc(_$hash, threadActionDate.hashCode);
-    _$hash = $jc(_$hash, lastUpdated.hashCode);
-    _$hash = $jc(_$hash, rating.hashCode);
-    _$hash = $jc(_$hash, repliedByOwner.hashCode);
-    _$hash = $jc(_$hash, secondaryData.hashCode);
-    _$hash = $jc(_$hash, countLikes.hashCode);
+    _$hash = $jc(_$hash, liked.hashCode);
     _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, countLikes.hashCode);
+    _$hash = $jc(_$hash, locationId.hashCode);
+    _$hash = $jc(_$hash, actionDate.hashCode);
+    _$hash = $jc(_$hash, author.hashCode);
     _$hash = $jc(_$hash, authorImage.hashCode);
     _$hash = $jc(_$hash, countComments.hashCode);
     _$hash = $jc(_$hash, dateCreated.hashCode);
     _$hash = $jc(_$hash, directLink.hashCode);
     _$hash = $jc(_$hash, directoryType.hashCode);
     _$hash = $jc(_$hash, flagged.hashCode);
-    _$hash = $jc(_$hash, liked.hashCode);
-    _$hash = $jc(_$hash, locationId.hashCode);
+    _$hash = $jc(_$hash, lastUpdated.hashCode);
+    _$hash = $jc(_$hash, rating.hashCode);
+    _$hash = $jc(_$hash, repliedByOwner.hashCode);
+    _$hash = $jc(_$hash, secondaryData.hashCode);
+    _$hash = $jc(_$hash, threadActionDate.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -1754,25 +1766,26 @@ class _$DataPoint extends DataPoint {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'DataPoint')
+          ..add('id', id)
           ..add('comments', comments)
-          ..add('author', author)
-          ..add('actionDate', actionDate)
-          ..add('type', type)
-          ..add('threadActionDate', threadActionDate)
-          ..add('lastUpdated', lastUpdated)
-          ..add('rating', rating)
-          ..add('repliedByOwner', repliedByOwner)
-          ..add('secondaryData', secondaryData)
-          ..add('countLikes', countLikes)
+          ..add('liked', liked)
           ..add('data', data)
+          ..add('type', type)
+          ..add('countLikes', countLikes)
+          ..add('locationId', locationId)
+          ..add('actionDate', actionDate)
+          ..add('author', author)
           ..add('authorImage', authorImage)
           ..add('countComments', countComments)
           ..add('dateCreated', dateCreated)
           ..add('directLink', directLink)
           ..add('directoryType', directoryType)
           ..add('flagged', flagged)
-          ..add('liked', liked)
-          ..add('locationId', locationId))
+          ..add('lastUpdated', lastUpdated)
+          ..add('rating', rating)
+          ..add('repliedByOwner', repliedByOwner)
+          ..add('secondaryData', secondaryData)
+          ..add('threadActionDate', threadActionDate))
         .toString();
   }
 }
@@ -1780,53 +1793,42 @@ class _$DataPoint extends DataPoint {
 class DataPointBuilder implements Builder<DataPoint, DataPointBuilder> {
   _$DataPoint? _$v;
 
+  int? _id;
+  int? get id => _$this._id;
+  set id(int? id) => _$this._id = id;
+
   ListBuilder<DataPoint>? _comments;
   ListBuilder<DataPoint> get comments =>
       _$this._comments ??= new ListBuilder<DataPoint>();
   set comments(ListBuilder<DataPoint>? comments) => _$this._comments = comments;
 
-  String? _author;
-  String? get author => _$this._author;
-  set author(String? author) => _$this._author = author;
+  bool? _liked;
+  bool? get liked => _$this._liked;
+  set liked(bool? liked) => _$this._liked = liked;
 
-  DateTime? _actionDate;
-  DateTime? get actionDate => _$this._actionDate;
-  set actionDate(DateTime? actionDate) => _$this._actionDate = actionDate;
+  String? _data;
+  String? get data => _$this._data;
+  set data(String? data) => _$this._data = data;
 
   DataPointTypeEnum? _type;
   DataPointTypeEnum? get type => _$this._type;
   set type(DataPointTypeEnum? type) => _$this._type = type;
 
-  DateTime? _threadActionDate;
-  DateTime? get threadActionDate => _$this._threadActionDate;
-  set threadActionDate(DateTime? threadActionDate) =>
-      _$this._threadActionDate = threadActionDate;
-
-  DateTime? _lastUpdated;
-  DateTime? get lastUpdated => _$this._lastUpdated;
-  set lastUpdated(DateTime? lastUpdated) => _$this._lastUpdated = lastUpdated;
-
-  double? _rating;
-  double? get rating => _$this._rating;
-  set rating(double? rating) => _$this._rating = rating;
-
-  bool? _repliedByOwner;
-  bool? get repliedByOwner => _$this._repliedByOwner;
-  set repliedByOwner(bool? repliedByOwner) =>
-      _$this._repliedByOwner = repliedByOwner;
-
-  String? _secondaryData;
-  String? get secondaryData => _$this._secondaryData;
-  set secondaryData(String? secondaryData) =>
-      _$this._secondaryData = secondaryData;
-
   int? _countLikes;
   int? get countLikes => _$this._countLikes;
   set countLikes(int? countLikes) => _$this._countLikes = countLikes;
 
-  String? _data;
-  String? get data => _$this._data;
-  set data(String? data) => _$this._data = data;
+  int? _locationId;
+  int? get locationId => _$this._locationId;
+  set locationId(int? locationId) => _$this._locationId = locationId;
+
+  DateTime? _actionDate;
+  DateTime? get actionDate => _$this._actionDate;
+  set actionDate(DateTime? actionDate) => _$this._actionDate = actionDate;
+
+  String? _author;
+  String? get author => _$this._author;
+  set author(String? author) => _$this._author = author;
 
   String? _authorImage;
   String? get authorImage => _$this._authorImage;
@@ -1854,13 +1856,28 @@ class DataPointBuilder implements Builder<DataPoint, DataPointBuilder> {
   bool? get flagged => _$this._flagged;
   set flagged(bool? flagged) => _$this._flagged = flagged;
 
-  bool? _liked;
-  bool? get liked => _$this._liked;
-  set liked(bool? liked) => _$this._liked = liked;
+  DateTime? _lastUpdated;
+  DateTime? get lastUpdated => _$this._lastUpdated;
+  set lastUpdated(DateTime? lastUpdated) => _$this._lastUpdated = lastUpdated;
 
-  int? _locationId;
-  int? get locationId => _$this._locationId;
-  set locationId(int? locationId) => _$this._locationId = locationId;
+  double? _rating;
+  double? get rating => _$this._rating;
+  set rating(double? rating) => _$this._rating = rating;
+
+  bool? _repliedByOwner;
+  bool? get repliedByOwner => _$this._repliedByOwner;
+  set repliedByOwner(bool? repliedByOwner) =>
+      _$this._repliedByOwner = repliedByOwner;
+
+  String? _secondaryData;
+  String? get secondaryData => _$this._secondaryData;
+  set secondaryData(String? secondaryData) =>
+      _$this._secondaryData = secondaryData;
+
+  DateTime? _threadActionDate;
+  DateTime? get threadActionDate => _$this._threadActionDate;
+  set threadActionDate(DateTime? threadActionDate) =>
+      _$this._threadActionDate = threadActionDate;
 
   DataPointBuilder() {
     DataPoint._defaults(this);
@@ -1869,25 +1886,26 @@ class DataPointBuilder implements Builder<DataPoint, DataPointBuilder> {
   DataPointBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _id = $v.id;
       _comments = $v.comments?.toBuilder();
-      _author = $v.author;
-      _actionDate = $v.actionDate;
-      _type = $v.type;
-      _threadActionDate = $v.threadActionDate;
-      _lastUpdated = $v.lastUpdated;
-      _rating = $v.rating;
-      _repliedByOwner = $v.repliedByOwner;
-      _secondaryData = $v.secondaryData;
-      _countLikes = $v.countLikes;
+      _liked = $v.liked;
       _data = $v.data;
+      _type = $v.type;
+      _countLikes = $v.countLikes;
+      _locationId = $v.locationId;
+      _actionDate = $v.actionDate;
+      _author = $v.author;
       _authorImage = $v.authorImage;
       _countComments = $v.countComments;
       _dateCreated = $v.dateCreated;
       _directLink = $v.directLink;
       _directoryType = $v.directoryType;
       _flagged = $v.flagged;
-      _liked = $v.liked;
-      _locationId = $v.locationId;
+      _lastUpdated = $v.lastUpdated;
+      _rating = $v.rating;
+      _repliedByOwner = $v.repliedByOwner;
+      _secondaryData = $v.secondaryData;
+      _threadActionDate = $v.threadActionDate;
       _$v = null;
     }
     return this;
@@ -1912,25 +1930,26 @@ class DataPointBuilder implements Builder<DataPoint, DataPointBuilder> {
     try {
       _$result = _$v ??
           new _$DataPoint._(
+            id: id,
             comments: _comments?.build(),
-            author: author,
-            actionDate: actionDate,
-            type: type,
-            threadActionDate: threadActionDate,
-            lastUpdated: lastUpdated,
-            rating: rating,
-            repliedByOwner: repliedByOwner,
-            secondaryData: secondaryData,
-            countLikes: countLikes,
+            liked: liked,
             data: data,
+            type: type,
+            countLikes: countLikes,
+            locationId: locationId,
+            actionDate: actionDate,
+            author: author,
             authorImage: authorImage,
             countComments: countComments,
             dateCreated: dateCreated,
             directLink: directLink,
             directoryType: directoryType,
             flagged: flagged,
-            liked: liked,
-            locationId: locationId,
+            lastUpdated: lastUpdated,
+            rating: rating,
+            repliedByOwner: repliedByOwner,
+            secondaryData: secondaryData,
+            threadActionDate: threadActionDate,
           );
     } catch (_) {
       late String _$failedField;

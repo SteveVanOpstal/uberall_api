@@ -29,7 +29,6 @@ import 'package:uberall_api/src/model/location_wrapper.dart';
 import 'package:uberall_api/src/model/lodging_field_response_wrapper.dart';
 import 'package:uberall_api/src/model/postcodes_response_wrapper.dart';
 import 'package:uberall_api/src/model/provinces_response_wrapper.dart';
-import 'package:uberall_api/src/model/tracking_events_response_wrapper.dart';
 import 'package:uberall_api/src/model/uberall_response.dart';
 import 'package:uberall_api/src/model/update_response_wrapper.dart';
 import 'package:uberall_api/src/model/visibility_index_wrapper.dart';
@@ -154,7 +153,7 @@ class LocationsDataApi {
   /// * [endDateMin] - Only locations with an endDate greater than or equal to endDateMin will be returned.
   /// * [excludedLocationIds] - List of locationIds that should be excluded from the result
   /// * [facebookStatus] - Possible values: CONNECTED, NOT_CONNECTED
-  /// * [fieldMask] - Possible fieldMask options ( 'id', 'name', 'identifier', 'street', 'streetNo', 'streetAndNumber', 'addressExtra', 'zip', 'city', 'province',                                 'lat', 'lng', 'addressDisplay', 'phone', 'fax', 'cellPhone', 'website', 'email', 'legalIdent', 'taxNumber', 'descriptionShort', 'descriptionLong', 'imprint',                                 'openingHoursNotes', 'status','firstSyncStarted', 'lastSyncStarted', 'autoSync', 'locationSyncable', 'businessId', 'googleInsights', 'labels')
+  /// * [fieldMask] - Possible fieldMask options ( 'id', 'name', 'identifier', 'street', 'streetNo', 'streetAndNumber', 'addressExtra', 'zip', 'city', 'country',                                                                'dateCreated', 'endDate', 'province', 'lat', 'lng', 'addressDisplay', 'phone', 'fax', 'timeZone',                                                                'cellphone', 'website', 'email', 'legalIdent', 'taxNumber', 'descriptionShort',                                                                'descriptionLong', 'imprint', 'openingHoursNotes', 'status', 'photos', 'attributes',                                                                'firstSyncStarted', 'lastUpdated', 'lastSyncStarted', 'autoSync', 'locationSyncable', 'businessId', 'businessName', 'productPlanName',                                                                'googleInsights', 'labels', 'customFields', 'features', 'groups', 'openingHours', 'specialOpeningHours', 'nameDescriptor',                                                                'actionsRequired', 'profileCompleteness', 'suggestionsForFieldsAvailable', 'listingsInSync', 'activeListingsCount',                                                                'dataPoints', 'averageRating', 'directoriesMissingConnect' )
   /// * [googleDirectoryStatus] - Possible values: VERIFIED (the Google listing is verified and fully managed by us),                             UNVERIFIED (the Google listing is not verified),                             DISABLED (the Google listing is disabled),                             SUSPENDED (the Google listing is suspended),                             DUPLICATE (the Google listing is a duplicate),                             PENDING_VERIFICATION (a verification pin has been requested for the Google listing),                             NEEDS_REVERIFICATION (the verification process for the Google listing needs to be reverified),                             PENDING_REVIEW (there is no Google account connected for the listing)
   /// * [googleStatus] - Possible values: VERIFIED (the Google listing is verified and fully managed by us),                             VERIFICATION_STARTED (a verification pin has been requested for the Google listing),                             VERIFICATION_NOT_STARTED (the verification process has not been start for the Google listing),                             NOT_CONNECTED (there is no Google account connected for the listing),                             VERIFIED_BY_THIRD_PARTY (there is a verified listing on Google but we do not manage it)
   /// * [groupIds] - The groupId to which the location belongs
@@ -1171,7 +1170,7 @@ class LocationsDataApi {
   ///
   /// Parameters:
   /// * [id] - The uberall unique ID of the location
-  /// * [dataPointTypes] - Types of datapoints you want inbox statistics for.
+  /// * [dataPointTypes] - Types of datapoints you want inbox statistics for
   /// * [directoryTypes] - Directories you want inbox statistics for
   /// * [ratings] - Ratings of datapoints you want inbox statistics for.
   /// * [minActionDate] - Only consider data points created after that date
@@ -1192,7 +1191,7 @@ class LocationsDataApi {
       getLocationsIdDatapointsStatistics({
     required String id,
     BuiltList<String>? dataPointTypes,
-    String? directoryTypes,
+    BuiltList<String>? directoryTypes,
     BuiltList<String>? ratings,
     String? minActionDate,
     String? maxActionDate,
@@ -1243,8 +1242,12 @@ class LocationsDataApi {
           format: ListFormat.multi,
         ),
       if (directoryTypes != null)
-        r'directoryTypes': encodeQueryParameter(
-            _serializers, directoryTypes, const FullType(String)),
+        r'directoryTypes': encodeCollectionQueryParameter<String>(
+          _serializers,
+          directoryTypes,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
       if (ratings != null)
         r'ratings': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -2089,106 +2092,6 @@ class LocationsDataApi {
     );
   }
 
-  /// Get Tracking Events
-  /// Returns a list of tracking events for all locations managed by the logged user
-  ///
-  /// Parameters:
-  /// * [max] - Used for pagination. Maximum number of results per page. Default: 10
-  /// * [offset] - Offset used for pagination. Default: 0
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [TrackingEventsResponseWrapper] as data
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<TrackingEventsResponseWrapper>> getLocationsTrackingEvents({
-    int? max,
-    int? offset,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/locations/tracking-events';
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'apiKey',
-            'name': 'privateKey',
-            'keyName': 'privateKey',
-            'where': 'header',
-          },
-          {
-            'type': 'apiKey',
-            'name': 'accessToken',
-            'keyName': 'accessToken',
-            'where': 'header',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _queryParameters = <String, dynamic>{
-      if (max != null)
-        r'max': encodeQueryParameter(_serializers, max, const FullType(int)),
-      if (offset != null)
-        r'offset':
-            encodeQueryParameter(_serializers, offset, const FullType(int)),
-    };
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    TrackingEventsResponseWrapper? _responseData;
-
-    try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
-          ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TrackingEventsResponseWrapper),
-            ) as TrackingEventsResponseWrapper;
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<TrackingEventsResponseWrapper>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
   /// Update Several Locations
   /// Make changes to a list of locations. Any blank parameter deletes an old value, any unspecified parameter does nothing
   ///
@@ -2740,7 +2643,7 @@ class LocationsDataApi {
   /// Start a sync on all directories for several locations identified by their unique uberall id
   ///
   /// Parameters:
-  /// * [locationIds] - The uberall unique ids for the locations you want to sync
+  /// * [body] - LocationSearchParams object
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -2751,7 +2654,7 @@ class LocationsDataApi {
   /// Returns a [Future] containing a [Response] with a [UberallResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UberallResponse>> postLocationsSync({
-    required BuiltList<String> locationIds,
+    JsonObject? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -2782,22 +2685,30 @@ class LocationsDataApi {
         ],
         ...?extra,
       },
+      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      r'locationIds': encodeCollectionQueryParameter<String>(
-        _serializers,
-        locationIds,
-        const FullType(BuiltList, [FullType(String)]),
-        format: ListFormat.multi,
-      ),
-    };
+    dynamic _bodyData;
+
+    try {
+      _bodyData = body;
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
 
     final _response = await _dio.request<Object>(
       _path,
+      data: _bodyData,
       options: _options,
-      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,

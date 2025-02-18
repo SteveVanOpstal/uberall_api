@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **deleteMenuItems**
-> GenericMapResponseWrapper deleteMenuItems()
+> UberallResponse deleteMenuItems()
 
 Delete a Menu Item using identifier
 
@@ -53,7 +53,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**GenericMapResponseWrapper**](GenericMapResponseWrapper.md)
+[**UberallResponse**](UberallResponse.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteMenuItemsId**
-> GenericMapResponseWrapper deleteMenuItemsId(id)
+> UberallResponse deleteMenuItemsId(id)
 
 Delete a Menu Item
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GenericMapResponseWrapper**](GenericMapResponseWrapper.md)
+[**UberallResponse**](UberallResponse.md)
 
 ### Authorization
 

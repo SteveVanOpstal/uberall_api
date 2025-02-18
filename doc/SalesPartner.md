@@ -27,18 +27,9 @@ Name | Type | Description | Notes
 **whitelabelInformations** | [**BuiltSet&lt;WhitelabelInformation&gt;**](WhitelabelInformation.md) | List of the sales partner''s white-label information | [optional] 
 **activeLocations** | **int** |  | [optional] 
 **contractualMaxLocations** | **int** |  | [optional] 
-**attributionId** | [**JsonObject**](.md) |  | [optional] 
-**publicTokenId** | [**JsonObject**](.md) |  | [optional] 
-**contactPerson** | **int** |  | [optional] 
-**onboardingStatusId** | [**JsonObject**](.md) |  | [optional] 
-**parentId** | [**JsonObject**](.md) |  | [optional] 
-**locationsLeft** | **int** |  | [optional] 
-**salesPartnerStatusId** | [**JsonObject**](.md) |  | [optional] 
-**resellerTypeId** | [**JsonObject**](.md) |  | [optional] 
-**privateTokenId** | [**JsonObject**](.md) |  | [optional] 
+**contactPerson** | [**User**](User.md) |  | [optional] 
 **usersLeft** | **int** |  | [optional] 
-**typeId** | [**JsonObject**](.md) |  | [optional] 
-**invoicePaymentInformationId** | [**JsonObject**](.md) |  | [optional] 
+**locationsLeft** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

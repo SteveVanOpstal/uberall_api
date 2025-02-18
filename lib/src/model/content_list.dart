@@ -17,6 +17,7 @@ part 'content_list.g.dart';
 /// * [dateCreated] - The date the content list was created
 /// * [lastUpdated] - The date the content list was last updated
 /// * [description] - A description of the content list (section)
+/// * [orderNumber]
 /// * [id]
 @BuiltValue()
 abstract class ContentList implements Built<ContentList, ContentListBuilder> {
@@ -27,7 +28,7 @@ abstract class ContentList implements Built<ContentList, ContentListBuilder> {
   /// The type of content list. One of SERVICES, PRODUCTS, MENU, PEOPLE or CUSTOM. The type cannot be updated after creation.
   @BuiltValueField(wireName: r'type')
   ContentListTypeEnum? get type;
-  // enum typeEnum {  MENU,  PEOPLE,  PRODUCTS,  CUSTOM,  SERVICES,  EVENTS,  SERVICES, PRODUCTS, MENU, PEOPLE, CUSTOM,  };
+  // enum typeEnum {  MENU,  PEOPLE,  PRODUCTS,  CUSTOM,  SERVICES,  EVENTS,  };
 
   /// The date the content list was created
   @BuiltValueField(wireName: r'dateCreated')
@@ -40,6 +41,9 @@ abstract class ContentList implements Built<ContentList, ContentListBuilder> {
   /// A description of the content list (section)
   @BuiltValueField(wireName: r'description')
   String? get description;
+
+  @BuiltValueField(wireName: r'orderNumber')
+  int? get orderNumber;
 
   @BuiltValueField(wireName: r'id')
   int? get id;
@@ -100,6 +104,13 @@ class _$ContentListSerializer implements PrimitiveSerializer<ContentList> {
       yield serializers.serialize(
         object.description,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.orderNumber != null) {
+      yield r'orderNumber';
+      yield serializers.serialize(
+        object.orderNumber,
+        specifiedType: const FullType(int),
       );
     }
     if (object.id != null) {
@@ -169,6 +180,13 @@ class _$ContentListSerializer implements PrimitiveSerializer<ContentList> {
           ) as String;
           result.description = valueDes;
           break;
+        case r'orderNumber':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.orderNumber = valueDes;
+          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
@@ -229,12 +247,6 @@ class ContentListTypeEnum extends EnumClass {
   /// The type of content list. One of SERVICES, PRODUCTS, MENU, PEOPLE or CUSTOM. The type cannot be updated after creation.
   @BuiltValueEnumConst(wireName: r'EVENTS')
   static const ContentListTypeEnum EVENTS = _$contentListTypeEnum_EVENTS;
-
-  /// The type of content list. One of SERVICES, PRODUCTS, MENU, PEOPLE or CUSTOM. The type cannot be updated after creation.
-  @BuiltValueEnumConst(wireName: r'SERVICES, PRODUCTS, MENU, PEOPLE, CUSTOM')
-  static const ContentListTypeEnum
-      sERVICESCommaPRODUCTSCommaMENUCommaPEOPLECommaCUSTOM =
-      _$contentListTypeEnum_sERVICESCommaPRODUCTSCommaMENUCommaPEOPLECommaCUSTOM;
 
   static Serializer<ContentListTypeEnum> get serializer =>
       _$contentListTypeEnumSerializer;

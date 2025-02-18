@@ -30,6 +30,8 @@ const BrandDataPointTypeEnum _$brandDataPointTypeEnum_LINK =
     const BrandDataPointTypeEnum._('LINK');
 const BrandDataPointTypeEnum _$brandDataPointTypeEnum_EXPANDEDREVIEW =
     const BrandDataPointTypeEnum._('EXPANDEDREVIEW');
+const BrandDataPointTypeEnum _$brandDataPointTypeEnum_AD_POST =
+    const BrandDataPointTypeEnum._('AD_POST');
 
 BrandDataPointTypeEnum _$brandDataPointTypeEnumValueOf(String name) {
   switch (name) {
@@ -57,6 +59,8 @@ BrandDataPointTypeEnum _$brandDataPointTypeEnumValueOf(String name) {
       return _$brandDataPointTypeEnum_LINK;
     case 'EXPANDEDREVIEW':
       return _$brandDataPointTypeEnum_EXPANDEDREVIEW;
+    case 'AD_POST':
+      return _$brandDataPointTypeEnum_AD_POST;
     default:
       throw new ArgumentError(name);
   }
@@ -76,6 +80,7 @@ final BuiltSet<BrandDataPointTypeEnum> _$brandDataPointTypeEnumValues =
   _$brandDataPointTypeEnum_CAROUSEL_ALBUM,
   _$brandDataPointTypeEnum_LINK,
   _$brandDataPointTypeEnum_EXPANDEDREVIEW,
+  _$brandDataPointTypeEnum_AD_POST,
 ]);
 
 const BrandDataPointDirectoryTypeEnum
@@ -1296,6 +1301,7 @@ class _$BrandDataPointTypeEnumSerializer
     'CAROUSEL_ALBUM': 'CAROUSEL_ALBUM',
     'LINK': 'LINK',
     'EXPANDEDREVIEW': 'EXPANDEDREVIEW',
+    'AD_POST': 'AD_POST',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'REVIEW': 'REVIEW',
@@ -1310,6 +1316,7 @@ class _$BrandDataPointTypeEnumSerializer
     'CAROUSEL_ALBUM': 'CAROUSEL_ALBUM',
     'LINK': 'LINK',
     'EXPANDEDREVIEW': 'EXPANDEDREVIEW',
+    'AD_POST': 'AD_POST',
   };
 
   @override
@@ -1767,23 +1774,17 @@ class _$BrandDataPointDirectoryTypeEnumSerializer
 
 class _$BrandDataPoint extends BrandDataPoint {
   @override
-  final String? author;
+  final int? id;
   @override
-  final DateTime? actionDate;
+  final bool? liked;
+  @override
+  final String? data;
   @override
   final BrandDataPointTypeEnum? type;
   @override
-  final DateTime? threadActionDate;
+  final DateTime? actionDate;
   @override
-  final DateTime? lastUpdated;
-  @override
-  final double? rating;
-  @override
-  final bool? repliedByOwner;
-  @override
-  final String? secondaryData;
-  @override
-  final String? data;
+  final String? author;
   @override
   final String? authorImage;
   @override
@@ -1797,28 +1798,37 @@ class _$BrandDataPoint extends BrandDataPoint {
   @override
   final bool? flagged;
   @override
-  final bool? liked;
+  final DateTime? lastUpdated;
+  @override
+  final double? rating;
+  @override
+  final bool? repliedByOwner;
+  @override
+  final String? secondaryData;
+  @override
+  final DateTime? threadActionDate;
 
   factory _$BrandDataPoint([void Function(BrandDataPointBuilder)? updates]) =>
       (new BrandDataPointBuilder()..update(updates))._build();
 
   _$BrandDataPoint._(
-      {this.author,
-      this.actionDate,
-      this.type,
-      this.threadActionDate,
-      this.lastUpdated,
-      this.rating,
-      this.repliedByOwner,
-      this.secondaryData,
+      {this.id,
+      this.liked,
       this.data,
+      this.type,
+      this.actionDate,
+      this.author,
       this.authorImage,
       this.countComments,
       this.dateCreated,
       this.directLink,
       this.directoryType,
       this.flagged,
-      this.liked})
+      this.lastUpdated,
+      this.rating,
+      this.repliedByOwner,
+      this.secondaryData,
+      this.threadActionDate})
       : super._();
 
   @override
@@ -1833,43 +1843,45 @@ class _$BrandDataPoint extends BrandDataPoint {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is BrandDataPoint &&
-        author == other.author &&
-        actionDate == other.actionDate &&
-        type == other.type &&
-        threadActionDate == other.threadActionDate &&
-        lastUpdated == other.lastUpdated &&
-        rating == other.rating &&
-        repliedByOwner == other.repliedByOwner &&
-        secondaryData == other.secondaryData &&
+        id == other.id &&
+        liked == other.liked &&
         data == other.data &&
+        type == other.type &&
+        actionDate == other.actionDate &&
+        author == other.author &&
         authorImage == other.authorImage &&
         countComments == other.countComments &&
         dateCreated == other.dateCreated &&
         directLink == other.directLink &&
         directoryType == other.directoryType &&
         flagged == other.flagged &&
-        liked == other.liked;
+        lastUpdated == other.lastUpdated &&
+        rating == other.rating &&
+        repliedByOwner == other.repliedByOwner &&
+        secondaryData == other.secondaryData &&
+        threadActionDate == other.threadActionDate;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, author.hashCode);
-    _$hash = $jc(_$hash, actionDate.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
-    _$hash = $jc(_$hash, threadActionDate.hashCode);
-    _$hash = $jc(_$hash, lastUpdated.hashCode);
-    _$hash = $jc(_$hash, rating.hashCode);
-    _$hash = $jc(_$hash, repliedByOwner.hashCode);
-    _$hash = $jc(_$hash, secondaryData.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, liked.hashCode);
     _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, actionDate.hashCode);
+    _$hash = $jc(_$hash, author.hashCode);
     _$hash = $jc(_$hash, authorImage.hashCode);
     _$hash = $jc(_$hash, countComments.hashCode);
     _$hash = $jc(_$hash, dateCreated.hashCode);
     _$hash = $jc(_$hash, directLink.hashCode);
     _$hash = $jc(_$hash, directoryType.hashCode);
     _$hash = $jc(_$hash, flagged.hashCode);
-    _$hash = $jc(_$hash, liked.hashCode);
+    _$hash = $jc(_$hash, lastUpdated.hashCode);
+    _$hash = $jc(_$hash, rating.hashCode);
+    _$hash = $jc(_$hash, repliedByOwner.hashCode);
+    _$hash = $jc(_$hash, secondaryData.hashCode);
+    _$hash = $jc(_$hash, threadActionDate.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -1877,22 +1889,23 @@ class _$BrandDataPoint extends BrandDataPoint {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'BrandDataPoint')
-          ..add('author', author)
-          ..add('actionDate', actionDate)
-          ..add('type', type)
-          ..add('threadActionDate', threadActionDate)
-          ..add('lastUpdated', lastUpdated)
-          ..add('rating', rating)
-          ..add('repliedByOwner', repliedByOwner)
-          ..add('secondaryData', secondaryData)
+          ..add('id', id)
+          ..add('liked', liked)
           ..add('data', data)
+          ..add('type', type)
+          ..add('actionDate', actionDate)
+          ..add('author', author)
           ..add('authorImage', authorImage)
           ..add('countComments', countComments)
           ..add('dateCreated', dateCreated)
           ..add('directLink', directLink)
           ..add('directoryType', directoryType)
           ..add('flagged', flagged)
-          ..add('liked', liked))
+          ..add('lastUpdated', lastUpdated)
+          ..add('rating', rating)
+          ..add('repliedByOwner', repliedByOwner)
+          ..add('secondaryData', secondaryData)
+          ..add('threadActionDate', threadActionDate))
         .toString();
   }
 }
@@ -1901,44 +1914,29 @@ class BrandDataPointBuilder
     implements Builder<BrandDataPoint, BrandDataPointBuilder> {
   _$BrandDataPoint? _$v;
 
-  String? _author;
-  String? get author => _$this._author;
-  set author(String? author) => _$this._author = author;
+  int? _id;
+  int? get id => _$this._id;
+  set id(int? id) => _$this._id = id;
 
-  DateTime? _actionDate;
-  DateTime? get actionDate => _$this._actionDate;
-  set actionDate(DateTime? actionDate) => _$this._actionDate = actionDate;
+  bool? _liked;
+  bool? get liked => _$this._liked;
+  set liked(bool? liked) => _$this._liked = liked;
+
+  String? _data;
+  String? get data => _$this._data;
+  set data(String? data) => _$this._data = data;
 
   BrandDataPointTypeEnum? _type;
   BrandDataPointTypeEnum? get type => _$this._type;
   set type(BrandDataPointTypeEnum? type) => _$this._type = type;
 
-  DateTime? _threadActionDate;
-  DateTime? get threadActionDate => _$this._threadActionDate;
-  set threadActionDate(DateTime? threadActionDate) =>
-      _$this._threadActionDate = threadActionDate;
+  DateTime? _actionDate;
+  DateTime? get actionDate => _$this._actionDate;
+  set actionDate(DateTime? actionDate) => _$this._actionDate = actionDate;
 
-  DateTime? _lastUpdated;
-  DateTime? get lastUpdated => _$this._lastUpdated;
-  set lastUpdated(DateTime? lastUpdated) => _$this._lastUpdated = lastUpdated;
-
-  double? _rating;
-  double? get rating => _$this._rating;
-  set rating(double? rating) => _$this._rating = rating;
-
-  bool? _repliedByOwner;
-  bool? get repliedByOwner => _$this._repliedByOwner;
-  set repliedByOwner(bool? repliedByOwner) =>
-      _$this._repliedByOwner = repliedByOwner;
-
-  String? _secondaryData;
-  String? get secondaryData => _$this._secondaryData;
-  set secondaryData(String? secondaryData) =>
-      _$this._secondaryData = secondaryData;
-
-  String? _data;
-  String? get data => _$this._data;
-  set data(String? data) => _$this._data = data;
+  String? _author;
+  String? get author => _$this._author;
+  set author(String? author) => _$this._author = author;
 
   String? _authorImage;
   String? get authorImage => _$this._authorImage;
@@ -1966,9 +1964,28 @@ class BrandDataPointBuilder
   bool? get flagged => _$this._flagged;
   set flagged(bool? flagged) => _$this._flagged = flagged;
 
-  bool? _liked;
-  bool? get liked => _$this._liked;
-  set liked(bool? liked) => _$this._liked = liked;
+  DateTime? _lastUpdated;
+  DateTime? get lastUpdated => _$this._lastUpdated;
+  set lastUpdated(DateTime? lastUpdated) => _$this._lastUpdated = lastUpdated;
+
+  double? _rating;
+  double? get rating => _$this._rating;
+  set rating(double? rating) => _$this._rating = rating;
+
+  bool? _repliedByOwner;
+  bool? get repliedByOwner => _$this._repliedByOwner;
+  set repliedByOwner(bool? repliedByOwner) =>
+      _$this._repliedByOwner = repliedByOwner;
+
+  String? _secondaryData;
+  String? get secondaryData => _$this._secondaryData;
+  set secondaryData(String? secondaryData) =>
+      _$this._secondaryData = secondaryData;
+
+  DateTime? _threadActionDate;
+  DateTime? get threadActionDate => _$this._threadActionDate;
+  set threadActionDate(DateTime? threadActionDate) =>
+      _$this._threadActionDate = threadActionDate;
 
   BrandDataPointBuilder() {
     BrandDataPoint._defaults(this);
@@ -1977,22 +1994,23 @@ class BrandDataPointBuilder
   BrandDataPointBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _author = $v.author;
-      _actionDate = $v.actionDate;
-      _type = $v.type;
-      _threadActionDate = $v.threadActionDate;
-      _lastUpdated = $v.lastUpdated;
-      _rating = $v.rating;
-      _repliedByOwner = $v.repliedByOwner;
-      _secondaryData = $v.secondaryData;
+      _id = $v.id;
+      _liked = $v.liked;
       _data = $v.data;
+      _type = $v.type;
+      _actionDate = $v.actionDate;
+      _author = $v.author;
       _authorImage = $v.authorImage;
       _countComments = $v.countComments;
       _dateCreated = $v.dateCreated;
       _directLink = $v.directLink;
       _directoryType = $v.directoryType;
       _flagged = $v.flagged;
-      _liked = $v.liked;
+      _lastUpdated = $v.lastUpdated;
+      _rating = $v.rating;
+      _repliedByOwner = $v.repliedByOwner;
+      _secondaryData = $v.secondaryData;
+      _threadActionDate = $v.threadActionDate;
       _$v = null;
     }
     return this;
@@ -2015,22 +2033,23 @@ class BrandDataPointBuilder
   _$BrandDataPoint _build() {
     final _$result = _$v ??
         new _$BrandDataPoint._(
-          author: author,
-          actionDate: actionDate,
-          type: type,
-          threadActionDate: threadActionDate,
-          lastUpdated: lastUpdated,
-          rating: rating,
-          repliedByOwner: repliedByOwner,
-          secondaryData: secondaryData,
+          id: id,
+          liked: liked,
           data: data,
+          type: type,
+          actionDate: actionDate,
+          author: author,
           authorImage: authorImage,
           countComments: countComments,
           dateCreated: dateCreated,
           directLink: directLink,
           directoryType: directoryType,
           flagged: flagged,
-          liked: liked,
+          lastUpdated: lastUpdated,
+          rating: rating,
+          repliedByOwner: repliedByOwner,
+          secondaryData: secondaryData,
+          threadActionDate: threadActionDate,
         );
     replace(_$result);
     return _$result;

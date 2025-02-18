@@ -22,12 +22,12 @@ part 'social_post_template.g.dart';
 /// * [shared] - Defines if the Social Post Template is shared or not.
 /// * [isStoreLocator] - When enabled, the SocialPost will be visible in StoreLocator
 /// * [callToActions]
-/// * [photos] - The Social Post Template''s photos. It should be a list containing BASE64 converted images or urls of photos from a previous Social Post. It is required if the template has no description.
-/// * [videos] - List of videos (currently only supports one element)
 /// * [directories] - List of videos (currently only supports one element)
+/// * [photos] - The Social Post Template''s photos. It should be a list containing BASE64 converted images or urls of photos from a previous Social Post. It is required if the template has no description.
 /// * [ownerId] - The id of the user that owns the Social Post Template. (Only informational. If included in the request, it will be ignored.)
-/// * [userId] - Id of the user that is doing the action
 /// * [ownerName] - The name of the user that owns the Social Post Template. (Only informational. If included in the request, it will be ignored.)
+/// * [userId] - Id of the user that is doing the action
+/// * [videos] - List of videos (currently only supports one element)
 @BuiltValue()
 abstract class SocialPostTemplate
     implements Built<SocialPostTemplate, SocialPostTemplateBuilder> {
@@ -64,29 +64,29 @@ abstract class SocialPostTemplate
   @BuiltValueField(wireName: r'callToActions')
   BuiltList<SocialPostTemplateCallToAction>? get callToActions;
 
-  /// The Social Post Template''s photos. It should be a list containing BASE64 converted images or urls of photos from a previous Social Post. It is required if the template has no description.
-  @BuiltValueField(wireName: r'photos')
-  BuiltList<PhotoContainer>? get photos;
-
-  /// List of videos (currently only supports one element)
-  @BuiltValueField(wireName: r'videos')
-  BuiltList<String>? get videos;
-
   /// List of videos (currently only supports one element)
   @BuiltValueField(wireName: r'directories')
   BuiltList<String> get directories;
+
+  /// The Social Post Template''s photos. It should be a list containing BASE64 converted images or urls of photos from a previous Social Post. It is required if the template has no description.
+  @BuiltValueField(wireName: r'photos')
+  BuiltList<PhotoContainer>? get photos;
 
   /// The id of the user that owns the Social Post Template. (Only informational. If included in the request, it will be ignored.)
   @BuiltValueField(wireName: r'ownerId')
   int? get ownerId;
 
+  /// The name of the user that owns the Social Post Template. (Only informational. If included in the request, it will be ignored.)
+  @BuiltValueField(wireName: r'ownerName')
+  String? get ownerName;
+
   /// Id of the user that is doing the action
   @BuiltValueField(wireName: r'userId')
   int get userId;
 
-  /// The name of the user that owns the Social Post Template. (Only informational. If included in the request, it will be ignored.)
-  @BuiltValueField(wireName: r'ownerName')
-  String? get ownerName;
+  /// List of videos (currently only supports one element)
+  @BuiltValueField(wireName: r'videos')
+  BuiltList<String>? get videos;
 
   SocialPostTemplate._();
 
@@ -169,6 +169,11 @@ class _$SocialPostTemplateSerializer
             BuiltList, [FullType(SocialPostTemplateCallToAction)]),
       );
     }
+    yield r'directories';
+    yield serializers.serialize(
+      object.directories,
+      specifiedType: const FullType(BuiltList, [FullType(String)]),
+    );
     if (object.photos != null) {
       yield r'photos';
       yield serializers.serialize(
@@ -176,18 +181,6 @@ class _$SocialPostTemplateSerializer
         specifiedType: const FullType(BuiltList, [FullType(PhotoContainer)]),
       );
     }
-    if (object.videos != null) {
-      yield r'videos';
-      yield serializers.serialize(
-        object.videos,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
-    yield r'directories';
-    yield serializers.serialize(
-      object.directories,
-      specifiedType: const FullType(BuiltList, [FullType(String)]),
-    );
     if (object.ownerId != null) {
       yield r'ownerId';
       yield serializers.serialize(
@@ -195,16 +188,23 @@ class _$SocialPostTemplateSerializer
         specifiedType: const FullType(int),
       );
     }
-    yield r'userId';
-    yield serializers.serialize(
-      object.userId,
-      specifiedType: const FullType(int),
-    );
     if (object.ownerName != null) {
       yield r'ownerName';
       yield serializers.serialize(
         object.ownerName,
         specifiedType: const FullType(String),
+      );
+    }
+    yield r'userId';
+    yield serializers.serialize(
+      object.userId,
+      specifiedType: const FullType(int),
+    );
+    if (object.videos != null) {
+      yield r'videos';
+      yield serializers.serialize(
+        object.videos,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
   }
@@ -289,6 +289,13 @@ class _$SocialPostTemplateSerializer
           ) as BuiltList<SocialPostTemplateCallToAction>;
           result.callToActions.replace(valueDes);
           break;
+        case r'directories':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.directories.replace(valueDes);
+          break;
         case r'photos':
           final valueDes = serializers.deserialize(
             value,
@@ -297,26 +304,19 @@ class _$SocialPostTemplateSerializer
           ) as BuiltList<PhotoContainer>;
           result.photos.replace(valueDes);
           break;
-        case r'videos':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.videos.replace(valueDes);
-          break;
-        case r'directories':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.directories.replace(valueDes);
-          break;
         case r'ownerId':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(int),
           ) as int;
           result.ownerId = valueDes;
+          break;
+        case r'ownerName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.ownerName = valueDes;
           break;
         case r'userId':
           final valueDes = serializers.deserialize(
@@ -325,12 +325,12 @@ class _$SocialPostTemplateSerializer
           ) as int;
           result.userId = valueDes;
           break;
-        case r'ownerName':
+        case r'videos':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.ownerName = valueDes;
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.videos.replace(valueDes);
           break;
         default:
           unhandled.add(key);

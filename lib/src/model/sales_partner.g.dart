@@ -246,29 +246,11 @@ class _$SalesPartner extends SalesPartner {
   @override
   final int? contractualMaxLocations;
   @override
-  final JsonObject? attributionId;
-  @override
-  final JsonObject? publicTokenId;
-  @override
-  final int? contactPerson;
-  @override
-  final JsonObject? onboardingStatusId;
-  @override
-  final JsonObject? parentId;
-  @override
-  final int? locationsLeft;
-  @override
-  final JsonObject? salesPartnerStatusId;
-  @override
-  final JsonObject? resellerTypeId;
-  @override
-  final JsonObject? privateTokenId;
+  final User? contactPerson;
   @override
   final int? usersLeft;
   @override
-  final JsonObject? typeId;
-  @override
-  final JsonObject? invoicePaymentInformationId;
+  final int? locationsLeft;
 
   factory _$SalesPartner([void Function(SalesPartnerBuilder)? updates]) =>
       (new SalesPartnerBuilder()..update(updates))._build();
@@ -293,18 +275,9 @@ class _$SalesPartner extends SalesPartner {
       this.whitelabelInformations,
       this.activeLocations,
       this.contractualMaxLocations,
-      this.attributionId,
-      this.publicTokenId,
       this.contactPerson,
-      this.onboardingStatusId,
-      this.parentId,
-      this.locationsLeft,
-      this.salesPartnerStatusId,
-      this.resellerTypeId,
-      this.privateTokenId,
       this.usersLeft,
-      this.typeId,
-      this.invoicePaymentInformationId})
+      this.locationsLeft})
       : super._();
 
   @override
@@ -337,18 +310,9 @@ class _$SalesPartner extends SalesPartner {
         whitelabelInformations == other.whitelabelInformations &&
         activeLocations == other.activeLocations &&
         contractualMaxLocations == other.contractualMaxLocations &&
-        attributionId == other.attributionId &&
-        publicTokenId == other.publicTokenId &&
         contactPerson == other.contactPerson &&
-        onboardingStatusId == other.onboardingStatusId &&
-        parentId == other.parentId &&
-        locationsLeft == other.locationsLeft &&
-        salesPartnerStatusId == other.salesPartnerStatusId &&
-        resellerTypeId == other.resellerTypeId &&
-        privateTokenId == other.privateTokenId &&
         usersLeft == other.usersLeft &&
-        typeId == other.typeId &&
-        invoicePaymentInformationId == other.invoicePaymentInformationId;
+        locationsLeft == other.locationsLeft;
   }
 
   @override
@@ -373,18 +337,9 @@ class _$SalesPartner extends SalesPartner {
     _$hash = $jc(_$hash, whitelabelInformations.hashCode);
     _$hash = $jc(_$hash, activeLocations.hashCode);
     _$hash = $jc(_$hash, contractualMaxLocations.hashCode);
-    _$hash = $jc(_$hash, attributionId.hashCode);
-    _$hash = $jc(_$hash, publicTokenId.hashCode);
     _$hash = $jc(_$hash, contactPerson.hashCode);
-    _$hash = $jc(_$hash, onboardingStatusId.hashCode);
-    _$hash = $jc(_$hash, parentId.hashCode);
-    _$hash = $jc(_$hash, locationsLeft.hashCode);
-    _$hash = $jc(_$hash, salesPartnerStatusId.hashCode);
-    _$hash = $jc(_$hash, resellerTypeId.hashCode);
-    _$hash = $jc(_$hash, privateTokenId.hashCode);
     _$hash = $jc(_$hash, usersLeft.hashCode);
-    _$hash = $jc(_$hash, typeId.hashCode);
-    _$hash = $jc(_$hash, invoicePaymentInformationId.hashCode);
+    _$hash = $jc(_$hash, locationsLeft.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -411,18 +366,9 @@ class _$SalesPartner extends SalesPartner {
           ..add('whitelabelInformations', whitelabelInformations)
           ..add('activeLocations', activeLocations)
           ..add('contractualMaxLocations', contractualMaxLocations)
-          ..add('attributionId', attributionId)
-          ..add('publicTokenId', publicTokenId)
           ..add('contactPerson', contactPerson)
-          ..add('onboardingStatusId', onboardingStatusId)
-          ..add('parentId', parentId)
-          ..add('locationsLeft', locationsLeft)
-          ..add('salesPartnerStatusId', salesPartnerStatusId)
-          ..add('resellerTypeId', resellerTypeId)
-          ..add('privateTokenId', privateTokenId)
           ..add('usersLeft', usersLeft)
-          ..add('typeId', typeId)
-          ..add('invoicePaymentInformationId', invoicePaymentInformationId))
+          ..add('locationsLeft', locationsLeft))
         .toString();
   }
 }
@@ -526,63 +472,19 @@ class SalesPartnerBuilder
   set contractualMaxLocations(int? contractualMaxLocations) =>
       _$this._contractualMaxLocations = contractualMaxLocations;
 
-  JsonObject? _attributionId;
-  JsonObject? get attributionId => _$this._attributionId;
-  set attributionId(JsonObject? attributionId) =>
-      _$this._attributionId = attributionId;
-
-  JsonObject? _publicTokenId;
-  JsonObject? get publicTokenId => _$this._publicTokenId;
-  set publicTokenId(JsonObject? publicTokenId) =>
-      _$this._publicTokenId = publicTokenId;
-
-  int? _contactPerson;
-  int? get contactPerson => _$this._contactPerson;
-  set contactPerson(int? contactPerson) =>
+  UserBuilder? _contactPerson;
+  UserBuilder get contactPerson => _$this._contactPerson ??= new UserBuilder();
+  set contactPerson(UserBuilder? contactPerson) =>
       _$this._contactPerson = contactPerson;
-
-  JsonObject? _onboardingStatusId;
-  JsonObject? get onboardingStatusId => _$this._onboardingStatusId;
-  set onboardingStatusId(JsonObject? onboardingStatusId) =>
-      _$this._onboardingStatusId = onboardingStatusId;
-
-  JsonObject? _parentId;
-  JsonObject? get parentId => _$this._parentId;
-  set parentId(JsonObject? parentId) => _$this._parentId = parentId;
-
-  int? _locationsLeft;
-  int? get locationsLeft => _$this._locationsLeft;
-  set locationsLeft(int? locationsLeft) =>
-      _$this._locationsLeft = locationsLeft;
-
-  JsonObject? _salesPartnerStatusId;
-  JsonObject? get salesPartnerStatusId => _$this._salesPartnerStatusId;
-  set salesPartnerStatusId(JsonObject? salesPartnerStatusId) =>
-      _$this._salesPartnerStatusId = salesPartnerStatusId;
-
-  JsonObject? _resellerTypeId;
-  JsonObject? get resellerTypeId => _$this._resellerTypeId;
-  set resellerTypeId(JsonObject? resellerTypeId) =>
-      _$this._resellerTypeId = resellerTypeId;
-
-  JsonObject? _privateTokenId;
-  JsonObject? get privateTokenId => _$this._privateTokenId;
-  set privateTokenId(JsonObject? privateTokenId) =>
-      _$this._privateTokenId = privateTokenId;
 
   int? _usersLeft;
   int? get usersLeft => _$this._usersLeft;
   set usersLeft(int? usersLeft) => _$this._usersLeft = usersLeft;
 
-  JsonObject? _typeId;
-  JsonObject? get typeId => _$this._typeId;
-  set typeId(JsonObject? typeId) => _$this._typeId = typeId;
-
-  JsonObject? _invoicePaymentInformationId;
-  JsonObject? get invoicePaymentInformationId =>
-      _$this._invoicePaymentInformationId;
-  set invoicePaymentInformationId(JsonObject? invoicePaymentInformationId) =>
-      _$this._invoicePaymentInformationId = invoicePaymentInformationId;
+  int? _locationsLeft;
+  int? get locationsLeft => _$this._locationsLeft;
+  set locationsLeft(int? locationsLeft) =>
+      _$this._locationsLeft = locationsLeft;
 
   SalesPartnerBuilder() {
     SalesPartner._defaults(this);
@@ -610,18 +512,9 @@ class SalesPartnerBuilder
       _whitelabelInformations = $v.whitelabelInformations?.toBuilder();
       _activeLocations = $v.activeLocations;
       _contractualMaxLocations = $v.contractualMaxLocations;
-      _attributionId = $v.attributionId;
-      _publicTokenId = $v.publicTokenId;
-      _contactPerson = $v.contactPerson;
-      _onboardingStatusId = $v.onboardingStatusId;
-      _parentId = $v.parentId;
-      _locationsLeft = $v.locationsLeft;
-      _salesPartnerStatusId = $v.salesPartnerStatusId;
-      _resellerTypeId = $v.resellerTypeId;
-      _privateTokenId = $v.privateTokenId;
+      _contactPerson = $v.contactPerson?.toBuilder();
       _usersLeft = $v.usersLeft;
-      _typeId = $v.typeId;
-      _invoicePaymentInformationId = $v.invoicePaymentInformationId;
+      _locationsLeft = $v.locationsLeft;
       _$v = null;
     }
     return this;
@@ -665,18 +558,9 @@ class SalesPartnerBuilder
             whitelabelInformations: _whitelabelInformations?.build(),
             activeLocations: activeLocations,
             contractualMaxLocations: contractualMaxLocations,
-            attributionId: attributionId,
-            publicTokenId: publicTokenId,
-            contactPerson: contactPerson,
-            onboardingStatusId: onboardingStatusId,
-            parentId: parentId,
-            locationsLeft: locationsLeft,
-            salesPartnerStatusId: salesPartnerStatusId,
-            resellerTypeId: resellerTypeId,
-            privateTokenId: privateTokenId,
+            contactPerson: _contactPerson?.build(),
             usersLeft: usersLeft,
-            typeId: typeId,
-            invoicePaymentInformationId: invoicePaymentInformationId,
+            locationsLeft: locationsLeft,
           );
     } catch (_) {
       late String _$failedField;
@@ -689,6 +573,9 @@ class SalesPartnerBuilder
 
         _$failedField = 'whitelabelInformations';
         _whitelabelInformations?.build();
+
+        _$failedField = 'contactPerson';
+        _contactPerson?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'SalesPartner', _$failedField, e.toString());

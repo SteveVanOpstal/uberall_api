@@ -7,6 +7,7 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:built_collection/built_collection.dart';
 import 'package:uberall_api/src/api_util.dart';
 import 'package:uberall_api/src/model/data_point_filter.dart';
 import 'package:uberall_api/src/model/data_point_filter_response_wrapper.dart';
@@ -239,7 +240,7 @@ class DataPointFiltersApi {
   /// Returns a [Future] containing a [Response] with a [FiltersResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<FiltersResponseWrapper>> getDataPointsFilters({
-    String? locationIds,
+    BuiltList<String>? locationIds,
     String? userId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -276,8 +277,12 @@ class DataPointFiltersApi {
 
     final _queryParameters = <String, dynamic>{
       if (locationIds != null)
-        r'locationIds': encodeQueryParameter(
-            _serializers, locationIds, const FullType(String)),
+        r'locationIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          locationIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
       if (userId != null)
         r'userId':
             encodeQueryParameter(_serializers, userId, const FullType(String)),

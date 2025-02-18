@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:uberall_api/src/model/user.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:uberall_api/src/model/attribution.dart';
 import 'package:uberall_api/src/model/whitelabel_information.dart';
@@ -34,18 +35,9 @@ part 'sales_partner.g.dart';
 /// * [whitelabelInformations] - List of the sales partner''s white-label information
 /// * [activeLocations]
 /// * [contractualMaxLocations]
-/// * [attributionId]
-/// * [publicTokenId]
 /// * [contactPerson]
-/// * [onboardingStatusId]
-/// * [parentId]
-/// * [locationsLeft]
-/// * [salesPartnerStatusId]
-/// * [resellerTypeId]
-/// * [privateTokenId]
 /// * [usersLeft]
-/// * [typeId]
-/// * [invoicePaymentInformationId]
+/// * [locationsLeft]
 @BuiltValue()
 abstract class SalesPartner
     implements Built<SalesPartner, SalesPartnerBuilder> {
@@ -125,41 +117,14 @@ abstract class SalesPartner
   @BuiltValueField(wireName: r'contractualMaxLocations')
   int? get contractualMaxLocations;
 
-  @BuiltValueField(wireName: r'attributionId')
-  JsonObject? get attributionId;
-
-  @BuiltValueField(wireName: r'publicTokenId')
-  JsonObject? get publicTokenId;
-
   @BuiltValueField(wireName: r'contactPerson')
-  int? get contactPerson;
-
-  @BuiltValueField(wireName: r'onboardingStatusId')
-  JsonObject? get onboardingStatusId;
-
-  @BuiltValueField(wireName: r'parentId')
-  JsonObject? get parentId;
-
-  @BuiltValueField(wireName: r'locationsLeft')
-  int? get locationsLeft;
-
-  @BuiltValueField(wireName: r'salesPartnerStatusId')
-  JsonObject? get salesPartnerStatusId;
-
-  @BuiltValueField(wireName: r'resellerTypeId')
-  JsonObject? get resellerTypeId;
-
-  @BuiltValueField(wireName: r'privateTokenId')
-  JsonObject? get privateTokenId;
+  User? get contactPerson;
 
   @BuiltValueField(wireName: r'usersLeft')
   int? get usersLeft;
 
-  @BuiltValueField(wireName: r'typeId')
-  JsonObject? get typeId;
-
-  @BuiltValueField(wireName: r'invoicePaymentInformationId')
-  JsonObject? get invoicePaymentInformationId;
+  @BuiltValueField(wireName: r'locationsLeft')
+  int? get locationsLeft;
 
   SalesPartner._();
 
@@ -318,67 +283,11 @@ class _$SalesPartnerSerializer implements PrimitiveSerializer<SalesPartner> {
         specifiedType: const FullType(int),
       );
     }
-    if (object.attributionId != null) {
-      yield r'attributionId';
-      yield serializers.serialize(
-        object.attributionId,
-        specifiedType: const FullType(JsonObject),
-      );
-    }
-    if (object.publicTokenId != null) {
-      yield r'publicTokenId';
-      yield serializers.serialize(
-        object.publicTokenId,
-        specifiedType: const FullType(JsonObject),
-      );
-    }
     if (object.contactPerson != null) {
       yield r'contactPerson';
       yield serializers.serialize(
         object.contactPerson,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.onboardingStatusId != null) {
-      yield r'onboardingStatusId';
-      yield serializers.serialize(
-        object.onboardingStatusId,
-        specifiedType: const FullType(JsonObject),
-      );
-    }
-    if (object.parentId != null) {
-      yield r'parentId';
-      yield serializers.serialize(
-        object.parentId,
-        specifiedType: const FullType(JsonObject),
-      );
-    }
-    if (object.locationsLeft != null) {
-      yield r'locationsLeft';
-      yield serializers.serialize(
-        object.locationsLeft,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.salesPartnerStatusId != null) {
-      yield r'salesPartnerStatusId';
-      yield serializers.serialize(
-        object.salesPartnerStatusId,
-        specifiedType: const FullType(JsonObject),
-      );
-    }
-    if (object.resellerTypeId != null) {
-      yield r'resellerTypeId';
-      yield serializers.serialize(
-        object.resellerTypeId,
-        specifiedType: const FullType(JsonObject),
-      );
-    }
-    if (object.privateTokenId != null) {
-      yield r'privateTokenId';
-      yield serializers.serialize(
-        object.privateTokenId,
-        specifiedType: const FullType(JsonObject),
+        specifiedType: const FullType(User),
       );
     }
     if (object.usersLeft != null) {
@@ -388,18 +297,11 @@ class _$SalesPartnerSerializer implements PrimitiveSerializer<SalesPartner> {
         specifiedType: const FullType(int),
       );
     }
-    if (object.typeId != null) {
-      yield r'typeId';
+    if (object.locationsLeft != null) {
+      yield r'locationsLeft';
       yield serializers.serialize(
-        object.typeId,
-        specifiedType: const FullType(JsonObject),
-      );
-    }
-    if (object.invoicePaymentInformationId != null) {
-      yield r'invoicePaymentInformationId';
-      yield serializers.serialize(
-        object.invoicePaymentInformationId,
-        specifiedType: const FullType(JsonObject),
+        object.locationsLeft,
+        specifiedType: const FullType(int),
       );
     }
   }
@@ -561,68 +463,12 @@ class _$SalesPartnerSerializer implements PrimitiveSerializer<SalesPartner> {
           ) as int;
           result.contractualMaxLocations = valueDes;
           break;
-        case r'attributionId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.attributionId = valueDes;
-          break;
-        case r'publicTokenId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.publicTokenId = valueDes;
-          break;
         case r'contactPerson':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.contactPerson = valueDes;
-          break;
-        case r'onboardingStatusId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.onboardingStatusId = valueDes;
-          break;
-        case r'parentId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.parentId = valueDes;
-          break;
-        case r'locationsLeft':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.locationsLeft = valueDes;
-          break;
-        case r'salesPartnerStatusId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.salesPartnerStatusId = valueDes;
-          break;
-        case r'resellerTypeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.resellerTypeId = valueDes;
-          break;
-        case r'privateTokenId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.privateTokenId = valueDes;
+            specifiedType: const FullType(User),
+          ) as User;
+          result.contactPerson.replace(valueDes);
           break;
         case r'usersLeft':
           final valueDes = serializers.deserialize(
@@ -631,19 +477,12 @@ class _$SalesPartnerSerializer implements PrimitiveSerializer<SalesPartner> {
           ) as int;
           result.usersLeft = valueDes;
           break;
-        case r'typeId':
+        case r'locationsLeft':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.typeId = valueDes;
-          break;
-        case r'invoicePaymentInformationId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.invoicePaymentInformationId = valueDes;
+            specifiedType: const FullType(int),
+          ) as int;
+          result.locationsLeft = valueDes;
           break;
         default:
           unhandled.add(key);

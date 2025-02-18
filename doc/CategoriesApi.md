@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **getCategories**
-> GenericMapResponseWrapper getCategories(language, categories, q, roots, max, offset)
+> UberallResponse getCategories(language, categories, q, roots, max, offset)
 
 Get All or Several Categories
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GenericMapResponseWrapper**](GenericMapResponseWrapper.md)
+[**UberallResponse**](UberallResponse.md)
 
 ### Authorization
 

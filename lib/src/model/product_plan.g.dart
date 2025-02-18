@@ -1294,6 +1294,8 @@ const ProductPlanFeaturesEnum _$productPlanFeaturesEnum_ADS_WRITE =
     const ProductPlanFeaturesEnum._('ADS_WRITE');
 const ProductPlanFeaturesEnum _$productPlanFeaturesEnum_ADVANCED_ANALYTICS =
     const ProductPlanFeaturesEnum._('ADVANCED_ANALYTICS');
+const ProductPlanFeaturesEnum _$productPlanFeaturesEnum_aDVANCEDANALYTICS20 =
+    const ProductPlanFeaturesEnum._('aDVANCEDANALYTICS20');
 const ProductPlanFeaturesEnum _$productPlanFeaturesEnum_AI_KNOWLEDGEBASE =
     const ProductPlanFeaturesEnum._('AI_KNOWLEDGEBASE');
 const ProductPlanFeaturesEnum _$productPlanFeaturesEnum_AI_LOCALISATION =
@@ -1357,6 +1359,8 @@ const ProductPlanFeaturesEnum
     const ProductPlanFeaturesEnum._('FIRST_PARTY_REVIEW_APPROVAL');
 const ProductPlanFeaturesEnum _$productPlanFeaturesEnum_FORMS =
     const ProductPlanFeaturesEnum._('FORMS');
+const ProductPlanFeaturesEnum _$productPlanFeaturesEnum_GOOGLE_POSTING =
+    const ProductPlanFeaturesEnum._('GOOGLE_POSTING');
 const ProductPlanFeaturesEnum _$productPlanFeaturesEnum_HOMEPAGE =
     const ProductPlanFeaturesEnum._('HOMEPAGE');
 const ProductPlanFeaturesEnum _$productPlanFeaturesEnum_INBOX =
@@ -1513,6 +1517,8 @@ ProductPlanFeaturesEnum _$productPlanFeaturesEnumValueOf(String name) {
       return _$productPlanFeaturesEnum_ADS_WRITE;
     case 'ADVANCED_ANALYTICS':
       return _$productPlanFeaturesEnum_ADVANCED_ANALYTICS;
+    case 'aDVANCEDANALYTICS20':
+      return _$productPlanFeaturesEnum_aDVANCEDANALYTICS20;
     case 'AI_KNOWLEDGEBASE':
       return _$productPlanFeaturesEnum_AI_KNOWLEDGEBASE;
     case 'AI_LOCALISATION':
@@ -1573,6 +1579,8 @@ ProductPlanFeaturesEnum _$productPlanFeaturesEnumValueOf(String name) {
       return _$productPlanFeaturesEnum_FIRST_PARTY_REVIEW_APPROVAL;
     case 'FORMS':
       return _$productPlanFeaturesEnum_FORMS;
+    case 'GOOGLE_POSTING':
+      return _$productPlanFeaturesEnum_GOOGLE_POSTING;
     case 'HOMEPAGE':
       return _$productPlanFeaturesEnum_HOMEPAGE;
     case 'INBOX':
@@ -1721,6 +1729,7 @@ final BuiltSet<ProductPlanFeaturesEnum> _$productPlanFeaturesEnumValues =
   _$productPlanFeaturesEnum_ADS_READ,
   _$productPlanFeaturesEnum_ADS_WRITE,
   _$productPlanFeaturesEnum_ADVANCED_ANALYTICS,
+  _$productPlanFeaturesEnum_aDVANCEDANALYTICS20,
   _$productPlanFeaturesEnum_AI_KNOWLEDGEBASE,
   _$productPlanFeaturesEnum_AI_LOCALISATION,
   _$productPlanFeaturesEnum_AI_SUGGESTED_REPLIES,
@@ -1751,6 +1760,7 @@ final BuiltSet<ProductPlanFeaturesEnum> _$productPlanFeaturesEnumValues =
   _$productPlanFeaturesEnum_FACEBOOK_UNOWNED_PAGE_CREATE,
   _$productPlanFeaturesEnum_FIRST_PARTY_REVIEW_APPROVAL,
   _$productPlanFeaturesEnum_FORMS,
+  _$productPlanFeaturesEnum_GOOGLE_POSTING,
   _$productPlanFeaturesEnum_HOMEPAGE,
   _$productPlanFeaturesEnum_INBOX,
   _$productPlanFeaturesEnum_INBOX_APPROVAL,
@@ -2307,6 +2317,7 @@ class _$ProductPlanFeaturesEnumSerializer
     'ADS_READ': 'ADS_READ',
     'ADS_WRITE': 'ADS_WRITE',
     'ADVANCED_ANALYTICS': 'ADVANCED_ANALYTICS',
+    'aDVANCEDANALYTICS20': 'ADVANCED_ANALYTICS_2_0',
     'AI_KNOWLEDGEBASE': 'AI_KNOWLEDGEBASE',
     'AI_LOCALISATION': 'AI_LOCALISATION',
     'AI_SUGGESTED_REPLIES': 'AI_SUGGESTED_REPLIES',
@@ -2337,6 +2348,7 @@ class _$ProductPlanFeaturesEnumSerializer
     'FACEBOOK_UNOWNED_PAGE_CREATE': 'FACEBOOK_UNOWNED_PAGE_CREATE',
     'FIRST_PARTY_REVIEW_APPROVAL': 'FIRST_PARTY_REVIEW_APPROVAL',
     'FORMS': 'FORMS',
+    'GOOGLE_POSTING': 'GOOGLE_POSTING',
     'HOMEPAGE': 'HOMEPAGE',
     'INBOX': 'INBOX',
     'INBOX_APPROVAL': 'INBOX_APPROVAL',
@@ -2412,6 +2424,7 @@ class _$ProductPlanFeaturesEnumSerializer
     'ADS_READ': 'ADS_READ',
     'ADS_WRITE': 'ADS_WRITE',
     'ADVANCED_ANALYTICS': 'ADVANCED_ANALYTICS',
+    'ADVANCED_ANALYTICS_2_0': 'aDVANCEDANALYTICS20',
     'AI_KNOWLEDGEBASE': 'AI_KNOWLEDGEBASE',
     'AI_LOCALISATION': 'AI_LOCALISATION',
     'AI_SUGGESTED_REPLIES': 'AI_SUGGESTED_REPLIES',
@@ -2442,6 +2455,7 @@ class _$ProductPlanFeaturesEnumSerializer
     'FACEBOOK_UNOWNED_PAGE_CREATE': 'FACEBOOK_UNOWNED_PAGE_CREATE',
     'FIRST_PARTY_REVIEW_APPROVAL': 'FIRST_PARTY_REVIEW_APPROVAL',
     'FORMS': 'FORMS',
+    'GOOGLE_POSTING': 'GOOGLE_POSTING',
     'HOMEPAGE': 'HOMEPAGE',
     'INBOX': 'INBOX',
     'INBOX_APPROVAL': 'INBOX_APPROVAL',
@@ -2563,8 +2577,6 @@ class _$ProductPlan extends ProductPlan {
   final int? initialBillingPeriod;
   @override
   final int? initialDuration;
-  @override
-  final JsonObject? salesPartnerId;
 
   factory _$ProductPlan([void Function(ProductPlanBuilder)? updates]) =>
       (new ProductPlanBuilder()..update(updates))._build();
@@ -2585,8 +2597,7 @@ class _$ProductPlan extends ProductPlan {
       required this.duration,
       this.features,
       this.initialBillingPeriod,
-      this.initialDuration,
-      this.salesPartnerId})
+      this.initialDuration})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(name, r'ProductPlan', 'name');
     BuiltValueNullFieldError.checkNotNull(duration, r'ProductPlan', 'duration');
@@ -2618,8 +2629,7 @@ class _$ProductPlan extends ProductPlan {
         duration == other.duration &&
         features == other.features &&
         initialBillingPeriod == other.initialBillingPeriod &&
-        initialDuration == other.initialDuration &&
-        salesPartnerId == other.salesPartnerId;
+        initialDuration == other.initialDuration;
   }
 
   @override
@@ -2641,7 +2651,6 @@ class _$ProductPlan extends ProductPlan {
     _$hash = $jc(_$hash, features.hashCode);
     _$hash = $jc(_$hash, initialBillingPeriod.hashCode);
     _$hash = $jc(_$hash, initialDuration.hashCode);
-    _$hash = $jc(_$hash, salesPartnerId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -2664,8 +2673,7 @@ class _$ProductPlan extends ProductPlan {
           ..add('duration', duration)
           ..add('features', features)
           ..add('initialBillingPeriod', initialBillingPeriod)
-          ..add('initialDuration', initialDuration)
-          ..add('salesPartnerId', salesPartnerId))
+          ..add('initialDuration', initialDuration))
         .toString();
   }
 }
@@ -2753,11 +2761,6 @@ class ProductPlanBuilder implements Builder<ProductPlan, ProductPlanBuilder> {
   set initialDuration(int? initialDuration) =>
       _$this._initialDuration = initialDuration;
 
-  JsonObject? _salesPartnerId;
-  JsonObject? get salesPartnerId => _$this._salesPartnerId;
-  set salesPartnerId(JsonObject? salesPartnerId) =>
-      _$this._salesPartnerId = salesPartnerId;
-
   ProductPlanBuilder() {
     ProductPlan._defaults(this);
   }
@@ -2781,7 +2784,6 @@ class ProductPlanBuilder implements Builder<ProductPlan, ProductPlanBuilder> {
       _features = $v.features?.toBuilder();
       _initialBillingPeriod = $v.initialBillingPeriod;
       _initialDuration = $v.initialDuration;
-      _salesPartnerId = $v.salesPartnerId;
       _$v = null;
     }
     return this;
@@ -2824,7 +2826,6 @@ class ProductPlanBuilder implements Builder<ProductPlan, ProductPlanBuilder> {
             features: _features?.build(),
             initialBillingPeriod: initialBillingPeriod,
             initialDuration: initialDuration,
-            salesPartnerId: salesPartnerId,
           );
     } catch (_) {
       late String _$failedField;

@@ -45,6 +45,8 @@ const DirectoryPageTypeEnum _$directoryPageTypeEnum_APPLE_MAPS =
     const DirectoryPageTypeEnum._('APPLE_MAPS');
 const DirectoryPageTypeEnum _$directoryPageTypeEnum_TRUSTPILOT =
     const DirectoryPageTypeEnum._('TRUSTPILOT');
+const DirectoryPageTypeEnum _$directoryPageTypeEnum_LINKED_IN =
+    const DirectoryPageTypeEnum._('LINKED_IN');
 
 DirectoryPageTypeEnum _$directoryPageTypeEnumValueOf(String name) {
   switch (name) {
@@ -60,6 +62,8 @@ DirectoryPageTypeEnum _$directoryPageTypeEnumValueOf(String name) {
       return _$directoryPageTypeEnum_APPLE_MAPS;
     case 'TRUSTPILOT':
       return _$directoryPageTypeEnum_TRUSTPILOT;
+    case 'LINKED_IN':
+      return _$directoryPageTypeEnum_LINKED_IN;
     default:
       throw new ArgumentError(name);
   }
@@ -73,6 +77,7 @@ final BuiltSet<DirectoryPageTypeEnum> _$directoryPageTypeEnumValues =
   _$directoryPageTypeEnum_TWITTER,
   _$directoryPageTypeEnum_APPLE_MAPS,
   _$directoryPageTypeEnum_TRUSTPILOT,
+  _$directoryPageTypeEnum_LINKED_IN,
 ]);
 
 Serializer<DirectoryPageStatusEnum> _$directoryPageStatusEnumSerializer =
@@ -120,6 +125,7 @@ class _$DirectoryPageTypeEnumSerializer
     'TWITTER': 'TWITTER',
     'APPLE_MAPS': 'APPLE_MAPS',
     'TRUSTPILOT': 'TRUSTPILOT',
+    'LINKED_IN': 'LINKED_IN',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'FACEBOOK': 'FACEBOOK',
@@ -128,6 +134,7 @@ class _$DirectoryPageTypeEnumSerializer
     'TWITTER': 'TWITTER',
     'APPLE_MAPS': 'APPLE_MAPS',
     'TRUSTPILOT': 'TRUSTPILOT',
+    'LINKED_IN': 'LINKED_IN',
   };
 
   @override

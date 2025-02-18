@@ -5,7 +5,6 @@
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
 import 'package:uberall_api/src/model/price_per_country.dart';
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -30,7 +29,6 @@ part 'product_plan.g.dart';
 /// * [features] - List of features supported by this plan
 /// * [initialBillingPeriod] - Initial Billing Period
 /// * [initialDuration] - Initial Duration
-/// * [salesPartnerId]
 @BuiltValue()
 abstract class ProductPlan implements Built<ProductPlan, ProductPlanBuilder> {
   /// True, if this is the default ProductPlan. A new created business will get this product plan, if not declared differently.
@@ -90,7 +88,7 @@ abstract class ProductPlan implements Built<ProductPlan, ProductPlanBuilder> {
   /// List of features supported by this plan
   @BuiltValueField(wireName: r'features')
   BuiltSet<ProductPlanFeaturesEnum>? get features;
-  // enum featuresEnum {  NEW_PHOTO_TYPES,  ADS,  ADS_READ,  ADS_WRITE,  ADVANCED_ANALYTICS,  AI_KNOWLEDGEBASE,  AI_LOCALISATION,  AI_SUGGESTED_REPLIES,  APPLE_POSTING,  APPLE_POSTING_WRITE,  AUTO_RESPONSE,  AUTO_RESPONSE_WRITE,  AUTOMATION,  BASIC,  BASIC_PLUS,  BULK_UPDATES,  INSTAGRAM_POSTING,  INSTAGRAM_POSTING_WRITE,  BUSINESS_LEVEL_CONNECT,  CALL_TRACKING_NUMBERS,  CAN_PAY_INVOICE,  CAN_SEE_HELP_SECTION,  CHATBOT,  CHATBOT_READ,  CHATBOT_WRITE,  CHAT_READ,  CHAT_WRITE,  CLEANSING,  CONTENT_COLLECTION,  DAM,  DASHBOARD,  ENTERPRISE_ONBOARDING,  FACEBOOK_UNOWNED_PAGE_CREATE,  FIRST_PARTY_REVIEW_APPROVAL,  FORMS,  HOMEPAGE,  INBOX,  INBOX_APPROVAL,  INBOX_PREVIEW,  INBOX_TEASER,  INBOX_TWITTER,  INBOX_READ,  INBOX_WRITE,  INBOX_2_0_BETA,  INBOX_2_0_BETA_READ,  INBOX_2_0_BETA_WRITE,  INBOX_FLAG,  LISTINGS,  LIVE_CHAT,  LOCAL_SEO_REPORT,  LOCATION_APPROVAL_REQUESTS,  LOCATION_GROUP,  LOCATION_STATUS_CHANGE,  LOCATION_TRANSLATION,  LOCATION_READ,  LOCATION_WRITE,  LOCAL_INVENTORY,  MANUAL_LISTINGS,  NEAR_ME_CHECK,  PHONE_OPTIONAL,  POSTING,  POSTING_APPROVAL,  POSTING_READ,  POSTING_TONE_ADJUST,  POSTING_WRITE,  POSTING_PREVIEW,  PRICE_INFO,  QR_CODE_GENERATION,  RESPONSE_LIBRARY,  RESPONSE_LIBRARY_READ,  RESPONSE_LIBRARY_WRITE,  REVIEW_GENERATION_EMAIL,  REVIEW_GENERATION_SMS,  REVIEW_GENERATION_CREATE,  REVIEW_GENERATION_SEND,  LOCATION_APPROVAL,  LOCATION_SCHEDULED_UPDATES,  SINGLE_SIGN_ON,  SOCIAL_ADS,  STOREFINDER,  STOREFINDER_TRIAL_MODE,  LOCATOR_PAGES_BUILDER,  STOREFINDER_ANALYTICS,  STOREFINDER_GOOGLE,  STOREFINDER_MAPBOX,  SUPPORT,  SUPPRESSION,  TRACKING,  TRANSACTION_LINKS,  TWITTER_INBOX_READ,  TWITTER_INBOX_WRITE,  TWITTER_POSTING,  TWITTER_POSTING_WRITE,  UPGRADE,  USER_OTHERS_EDIT,  USER_SELF_EDIT,  UTMS,  WEBSITE_WIDGETS,  EXPANDED_REVIEWS_RESTAURANT,  EXPANDED_REVIEWS_FINANCE,  WHATS_APP_MESSAGES,  ACCESS_REQUEST_INVITATIONS,  AI_BULK_REPLIES,  };
+  // enum featuresEnum {  NEW_PHOTO_TYPES,  ADS,  ADS_READ,  ADS_WRITE,  ADVANCED_ANALYTICS,  ADVANCED_ANALYTICS_2_0,  AI_KNOWLEDGEBASE,  AI_LOCALISATION,  AI_SUGGESTED_REPLIES,  APPLE_POSTING,  APPLE_POSTING_WRITE,  AUTO_RESPONSE,  AUTO_RESPONSE_WRITE,  AUTOMATION,  BASIC,  BASIC_PLUS,  BULK_UPDATES,  INSTAGRAM_POSTING,  INSTAGRAM_POSTING_WRITE,  BUSINESS_LEVEL_CONNECT,  CALL_TRACKING_NUMBERS,  CAN_PAY_INVOICE,  CAN_SEE_HELP_SECTION,  CHATBOT,  CHATBOT_READ,  CHATBOT_WRITE,  CHAT_READ,  CHAT_WRITE,  CLEANSING,  CONTENT_COLLECTION,  DAM,  DASHBOARD,  ENTERPRISE_ONBOARDING,  FACEBOOK_UNOWNED_PAGE_CREATE,  FIRST_PARTY_REVIEW_APPROVAL,  FORMS,  GOOGLE_POSTING,  HOMEPAGE,  INBOX,  INBOX_APPROVAL,  INBOX_PREVIEW,  INBOX_TEASER,  INBOX_TWITTER,  INBOX_READ,  INBOX_WRITE,  INBOX_2_0_BETA,  INBOX_2_0_BETA_READ,  INBOX_2_0_BETA_WRITE,  INBOX_FLAG,  LISTINGS,  LIVE_CHAT,  LOCAL_SEO_REPORT,  LOCATION_APPROVAL_REQUESTS,  LOCATION_GROUP,  LOCATION_STATUS_CHANGE,  LOCATION_TRANSLATION,  LOCATION_READ,  LOCATION_WRITE,  LOCAL_INVENTORY,  MANUAL_LISTINGS,  NEAR_ME_CHECK,  PHONE_OPTIONAL,  POSTING,  POSTING_APPROVAL,  POSTING_READ,  POSTING_TONE_ADJUST,  POSTING_WRITE,  POSTING_PREVIEW,  PRICE_INFO,  QR_CODE_GENERATION,  RESPONSE_LIBRARY,  RESPONSE_LIBRARY_READ,  RESPONSE_LIBRARY_WRITE,  REVIEW_GENERATION_EMAIL,  REVIEW_GENERATION_SMS,  REVIEW_GENERATION_CREATE,  REVIEW_GENERATION_SEND,  LOCATION_APPROVAL,  LOCATION_SCHEDULED_UPDATES,  SINGLE_SIGN_ON,  SOCIAL_ADS,  STOREFINDER,  STOREFINDER_TRIAL_MODE,  LOCATOR_PAGES_BUILDER,  STOREFINDER_ANALYTICS,  STOREFINDER_GOOGLE,  STOREFINDER_MAPBOX,  SUPPORT,  SUPPRESSION,  TRACKING,  TRANSACTION_LINKS,  TWITTER_INBOX_READ,  TWITTER_INBOX_WRITE,  TWITTER_POSTING,  TWITTER_POSTING_WRITE,  UPGRADE,  USER_OTHERS_EDIT,  USER_SELF_EDIT,  UTMS,  WEBSITE_WIDGETS,  EXPANDED_REVIEWS_RESTAURANT,  EXPANDED_REVIEWS_FINANCE,  WHATS_APP_MESSAGES,  ACCESS_REQUEST_INVITATIONS,  AI_BULK_REPLIES,  };
 
   /// Initial Billing Period
   @BuiltValueField(wireName: r'initialBillingPeriod')
@@ -99,9 +97,6 @@ abstract class ProductPlan implements Built<ProductPlan, ProductPlanBuilder> {
   /// Initial Duration
   @BuiltValueField(wireName: r'initialDuration')
   int? get initialDuration;
-
-  @BuiltValueField(wireName: r'salesPartnerId')
-  JsonObject? get salesPartnerId;
 
   ProductPlan._();
 
@@ -234,13 +229,6 @@ class _$ProductPlanSerializer implements PrimitiveSerializer<ProductPlan> {
       yield serializers.serialize(
         object.initialDuration,
         specifiedType: const FullType(int),
-      );
-    }
-    if (object.salesPartnerId != null) {
-      yield r'salesPartnerId';
-      yield serializers.serialize(
-        object.salesPartnerId,
-        specifiedType: const FullType(JsonObject),
       );
     }
   }
@@ -382,13 +370,6 @@ class _$ProductPlanSerializer implements PrimitiveSerializer<ProductPlan> {
             specifiedType: const FullType(int),
           ) as int;
           result.initialDuration = valueDes;
-          break;
-        case r'salesPartnerId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.salesPartnerId = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -1514,6 +1495,11 @@ class ProductPlanFeaturesEnum extends EnumClass {
       _$productPlanFeaturesEnum_ADVANCED_ANALYTICS;
 
   /// List of features supported by this plan
+  @BuiltValueEnumConst(wireName: r'ADVANCED_ANALYTICS_2_0')
+  static const ProductPlanFeaturesEnum aDVANCEDANALYTICS20 =
+      _$productPlanFeaturesEnum_aDVANCEDANALYTICS20;
+
+  /// List of features supported by this plan
   @BuiltValueEnumConst(wireName: r'AI_KNOWLEDGEBASE')
   static const ProductPlanFeaturesEnum AI_KNOWLEDGEBASE =
       _$productPlanFeaturesEnum_AI_KNOWLEDGEBASE;
@@ -1659,6 +1645,11 @@ class ProductPlanFeaturesEnum extends EnumClass {
   /// List of features supported by this plan
   @BuiltValueEnumConst(wireName: r'FORMS')
   static const ProductPlanFeaturesEnum FORMS = _$productPlanFeaturesEnum_FORMS;
+
+  /// List of features supported by this plan
+  @BuiltValueEnumConst(wireName: r'GOOGLE_POSTING')
+  static const ProductPlanFeaturesEnum GOOGLE_POSTING =
+      _$productPlanFeaturesEnum_GOOGLE_POSTING;
 
   /// List of features supported by this plan
   @BuiltValueEnumConst(wireName: r'HOMEPAGE')

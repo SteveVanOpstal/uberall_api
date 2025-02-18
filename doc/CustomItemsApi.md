@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **deleteCustomItems**
-> GenericMapResponseWrapper deleteCustomItems()
+> UberallResponse deleteCustomItems()
 
 Delete a Custom Item using identifier
 
@@ -51,7 +51,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**GenericMapResponseWrapper**](GenericMapResponseWrapper.md)
+[**UberallResponse**](UberallResponse.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteCustomItemsId**
-> GenericMapResponseWrapper deleteCustomItemsId(id)
+> UberallResponse deleteCustomItemsId(id)
 
 Delete a Custom Item
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GenericMapResponseWrapper**](GenericMapResponseWrapper.md)
+[**UberallResponse**](UberallResponse.md)
 
 ### Authorization
 

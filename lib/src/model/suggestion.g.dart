@@ -16,9 +16,6 @@ const SuggestionStatusEnum _$suggestionStatusEnum_DECLINED =
     const SuggestionStatusEnum._('DECLINED');
 const SuggestionStatusEnum _$suggestionStatusEnum_DECLINED_OLD_API =
     const SuggestionStatusEnum._('DECLINED_OLD_API');
-const SuggestionStatusEnum
-    _$suggestionStatusEnum_aCCEPTEDCommaDECLINEDCommaACTIVE =
-    const SuggestionStatusEnum._('aCCEPTEDCommaDECLINEDCommaACTIVE');
 
 SuggestionStatusEnum _$suggestionStatusEnumValueOf(String name) {
   switch (name) {
@@ -32,8 +29,6 @@ SuggestionStatusEnum _$suggestionStatusEnumValueOf(String name) {
       return _$suggestionStatusEnum_DECLINED;
     case 'DECLINED_OLD_API':
       return _$suggestionStatusEnum_DECLINED_OLD_API;
-    case 'aCCEPTEDCommaDECLINEDCommaACTIVE':
-      return _$suggestionStatusEnum_aCCEPTEDCommaDECLINEDCommaACTIVE;
     default:
       throw new ArgumentError(name);
   }
@@ -46,7 +41,6 @@ final BuiltSet<SuggestionStatusEnum> _$suggestionStatusEnumValues =
   _$suggestionStatusEnum_ACCEPTED,
   _$suggestionStatusEnum_DECLINED,
   _$suggestionStatusEnum_DECLINED_OLD_API,
-  _$suggestionStatusEnum_aCCEPTEDCommaDECLINEDCommaACTIVE,
 ]);
 
 const SuggestionDirectoryEnum _$suggestionDirectoryEnum_FOURSQUARE =
@@ -1102,7 +1096,6 @@ class _$SuggestionStatusEnumSerializer
     'ACCEPTED': 'ACCEPTED',
     'DECLINED': 'DECLINED',
     'DECLINED_OLD_API': 'DECLINED_OLD_API',
-    'aCCEPTEDCommaDECLINEDCommaACTIVE': 'ACCEPTED, DECLINED, ACTIVE',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'HIDDEN': 'HIDDEN',
@@ -1110,7 +1103,6 @@ class _$SuggestionStatusEnumSerializer
     'ACCEPTED': 'ACCEPTED',
     'DECLINED': 'DECLINED',
     'DECLINED_OLD_API': 'DECLINED_OLD_API',
-    'ACCEPTED, DECLINED, ACTIVE': 'aCCEPTEDCommaDECLINEDCommaACTIVE',
   };
 
   @override

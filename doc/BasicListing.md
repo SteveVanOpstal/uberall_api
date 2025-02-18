@@ -51,7 +51,6 @@ Name | Type | Description | Notes
 **specialOpeningHours** | [**BuiltList&lt;SpecialOpeningHours&gt;**](SpecialOpeningHours.md) | The location''s special opening hours: e.g. <pre>[ &#123;      \"date\": \"2017-06-29\",     \"closed\": true   &#125;,    &#123;     \"date\": \"2017-06-30\",     \"from1\": \"11:00\",     \"to1\": \"14:00\",     \"from2\": \"16:00\",     \"to2\": \"20:00\"   &#125; ]</pre> Please note that having more than 2 time periods for each day is not possible. | [optional] 
 **specialOpeningHoursStatus** | **String** | The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH | [optional] 
 **keywordsStatus** | **String** | The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH | [optional] 
-**categories** | **BuiltList&lt;int&gt;** | Required - A list of category IDs describing the location | 
 **categoriesStatus** | **String** | The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH | [optional] 
 **attributes** | [**BuiltList&lt;JsonObject&gt;**](JsonObject.md) | The location''s Google attributes | [optional] 
 **attributesStatus** | **String** | The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING | [optional] 
@@ -104,17 +103,18 @@ Name | Type | Description | Notes
 **openingDateStatus** | **String** | The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH | [optional] 
 **customFields** | **BuiltMap&lt;String, String&gt;** | Custom Fields for the directory | [optional] 
 **customFieldsStatus** | **String** | The sync status of this specific field. | [optional] 
-**sublocality** | **String** | The sublocality field is only available for countries that require this for their postal address. The following countries have this for: Indonesia - Sub-district, Phillipines - Barangay, Thailand - Tambon / Khwaeng, and Vietnam - Sublocality. | [optional] 
+**sublocality** | **String** | The sublocality field is only available for countries that require this for their postal address. The following countries have this for: Indonesia - Sub-district, Phillipines - Barangay, Thailand - Tambon / Khwaeng, Vietnam - Sublocality, Malaysia - Village, Nigeria - Local area, South Africa - Suburb. | [optional] 
 **sublocalityStatus** | **String** | The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH | [optional] 
 **websiteExtra** | **String** | Utm or tracking path - only sent to GOOGLE | [optional] 
 **photos** | **bool** | Boolean indicating whether or not the listing has photos | [optional] 
+**services** | **BuiltList&lt;String&gt;** | The video of the social post (can only be one) | [optional] 
+**keywords** | **BuiltList&lt;String&gt;** | The video of the social post (can only be one) | [optional] 
+**brands** | **BuiltList&lt;String&gt;** | The video of the social post (can only be one) | [optional] 
+**languages** | **BuiltList&lt;String&gt;** | The video of the social post (can only be one) | [optional] 
+**categories** | **BuiltList&lt;int&gt;** | Required - A list of category IDs describing the location | [optional] 
+**contentLists** | [**BuiltList&lt;ContentList&gt;**](ContentList.md) | Content lists shown on the listing | [optional] 
 **socialProfiles** | [**BuiltList&lt;SocialProfile&gt;**](SocialProfile.md) | Social profiles of the location | [optional] 
 **videos** | [**BuiltList&lt;Video&gt;**](Video.md) | A list of videos about the location | [optional] 
-**contentLists** | [**BuiltList&lt;ContentList&gt;**](ContentList.md) | Content lists shown on the listing | [optional] 
-**keywords** | **BuiltList&lt;String&gt;** | The list of directories as entered when creating/updating the Social Post. | [optional] 
-**brands** | **BuiltList&lt;String&gt;** | The list of directories as entered when creating/updating the Social Post. | [optional] 
-**services** | **BuiltList&lt;String&gt;** | The list of directories as entered when creating/updating the Social Post. | [optional] 
-**languages** | **BuiltList&lt;String&gt;** | The list of directories as entered when creating/updating the Social Post. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

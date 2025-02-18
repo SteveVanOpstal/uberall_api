@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **price** | **int** | Price for the country in cents: e.g. 1500 for 15 € | [optional] 
 **marketDevelopmentFunds** | **int** | Market Development Funds (MDF) | [optional] 
 **priceSetup** | **int** | Setup fee | [optional] 
-**productPlanId** | [**JsonObject**](.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

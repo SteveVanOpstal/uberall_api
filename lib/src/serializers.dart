@@ -35,6 +35,7 @@ import 'package:uberall_api/src/model/brand_pages_response_object.dart';
 import 'package:uberall_api/src/model/brand_pages_response_wrapper.dart';
 import 'package:uberall_api/src/model/business.dart';
 import 'package:uberall_api/src/model/business_connection_request.dart';
+import 'package:uberall_api/src/model/business_filters_response.dart';
 import 'package:uberall_api/src/model/business_page_response_wrapper.dart';
 import 'package:uberall_api/src/model/business_response_wrapper.dart';
 import 'package:uberall_api/src/model/business_statistics.dart';
@@ -131,9 +132,8 @@ import 'package:uberall_api/src/model/feed_item.dart';
 import 'package:uberall_api/src/model/feed_item_wrapper.dart';
 import 'package:uberall_api/src/model/filters_response.dart';
 import 'package:uberall_api/src/model/filters_response_wrapper.dart';
-import 'package:uberall_api/src/model/generic_map.dart';
-import 'package:uberall_api/src/model/generic_map_response_wrapper.dart';
 import 'package:uberall_api/src/model/get_templates_authors_request.dart';
+import 'package:uberall_api/src/model/google_service_item.dart';
 import 'package:uberall_api/src/model/google_services_response_object.dart';
 import 'package:uberall_api/src/model/google_services_response_wrapper.dart';
 import 'package:uberall_api/src/model/google_venue_details_object.dart';
@@ -143,8 +143,6 @@ import 'package:uberall_api/src/model/inbox_response.dart';
 import 'package:uberall_api/src/model/inbox_response_object.dart';
 import 'package:uberall_api/src/model/inbox_response_wrapper.dart';
 import 'package:uberall_api/src/model/insights.dart';
-import 'package:uberall_api/src/model/insights_metrics_inner.dart';
-import 'package:uberall_api/src/model/insights_metrics_inner_data_inner.dart';
 import 'package:uberall_api/src/model/insights_wrapper.dart';
 import 'package:uberall_api/src/model/keywords_object.dart';
 import 'package:uberall_api/src/model/keywords_wrapper.dart';
@@ -202,6 +200,7 @@ import 'package:uberall_api/src/model/menu_item_response_wrapper.dart';
 import 'package:uberall_api/src/model/menu_item_search_response_object.dart';
 import 'package:uberall_api/src/model/menu_item_search_response_wrapper.dart';
 import 'package:uberall_api/src/model/more_hours_object.dart';
+import 'package:uberall_api/src/model/more_hours_response.dart';
 import 'package:uberall_api/src/model/more_hours_wrapper.dart';
 import 'package:uberall_api/src/model/next_open.dart';
 import 'package:uberall_api/src/model/opening_hours.dart';
@@ -295,8 +294,6 @@ import 'package:uberall_api/src/model/suggestion_search_response_wrapper.dart';
 import 'package:uberall_api/src/model/suppressed_duplicates.dart';
 import 'package:uberall_api/src/model/suppressed_duplicates_wrapper.dart';
 import 'package:uberall_api/src/model/time_series_segment.dart';
-import 'package:uberall_api/src/model/tracking_events_response_object.dart';
-import 'package:uberall_api/src/model/tracking_events_response_wrapper.dart';
 import 'package:uberall_api/src/model/utm.dart';
 import 'package:uberall_api/src/model/uberall_response.dart';
 import 'package:uberall_api/src/model/unsubscribe_action_link_object.dart';
@@ -349,6 +346,7 @@ part 'serializers.g.dart';
   BrandPagesResponseWrapper,
   Business,
   BusinessConnectionRequest,
+  BusinessFiltersResponse,
   BusinessPageResponseWrapper,
   BusinessResponseWrapper,
   BusinessStatistics,
@@ -445,9 +443,8 @@ part 'serializers.g.dart';
   FeedItemWrapper,
   FiltersResponse,
   FiltersResponseWrapper,
-  GenericMap,
-  GenericMapResponseWrapper,
   GetTemplatesAuthorsRequest,
+  GoogleServiceItem,
   GoogleServicesResponseObject,
   GoogleServicesResponseWrapper,
   GoogleVenueDetailsObject,
@@ -457,8 +454,6 @@ part 'serializers.g.dart';
   InboxResponseObject,
   InboxResponseWrapper,
   Insights,
-  InsightsMetricsInner,
-  InsightsMetricsInnerDataInner,
   InsightsWrapper,
   KeywordsObject,
   KeywordsWrapper,
@@ -516,6 +511,7 @@ part 'serializers.g.dart';
   MenuItemSearchResponseObject,
   MenuItemSearchResponseWrapper,
   MoreHoursObject,
+  MoreHoursResponse,
   MoreHoursWrapper,
   NextOpen,
   OpeningHours,
@@ -609,8 +605,6 @@ part 'serializers.g.dart';
   SuppressedDuplicates,
   SuppressedDuplicatesWrapper,
   TimeSeriesSegment,
-  TrackingEventsResponseObject,
-  TrackingEventsResponseWrapper,
   UTM,
   UberallResponse,
   UnsubscribeActionLinkObject,
@@ -640,6 +634,11 @@ part 'serializers.g.dart';
   WhitelabelInformationWrapper,
 ])
 Serializers serializers = (_$serializers.toBuilder()
+      ..addBuilderFactory(
+        const FullType(
+            BuiltMap, [FullType(String), FullType(BuiltList<JsonObject>)]),
+        () => MapBuilder<String, BuiltList<JsonObject>>(),
+      )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(ContentList)]),
         () => ListBuilder<ContentList>(),

@@ -30,7 +30,7 @@ abstract class Image implements Built<Image, ImageBuilder> {
   /// The image type, one of [LOGO, MAIN, IMAGE]
   @BuiltValueField(wireName: r'type')
   ImageTypeEnum get type;
-  // enum typeEnum {  LOGO,  MAIN,  IMAGE,  LOGO, MAIN, IMAGE,  };
+  // enum typeEnum {  LOGO,  MAIN,  IMAGE,  };
 
   /// Description of the image
   @BuiltValueField(wireName: r'description')
@@ -193,11 +193,6 @@ class ImageTypeEnum extends EnumClass {
   /// The image type, one of [LOGO, MAIN, IMAGE]
   @BuiltValueEnumConst(wireName: r'IMAGE')
   static const ImageTypeEnum IMAGE = _$imageTypeEnum_IMAGE;
-
-  /// The image type, one of [LOGO, MAIN, IMAGE]
-  @BuiltValueEnumConst(wireName: r'LOGO, MAIN, IMAGE')
-  static const ImageTypeEnum lOGOCommaMAINCommaIMAGE =
-      _$imageTypeEnum_lOGOCommaMAINCommaIMAGE;
 
   static Serializer<ImageTypeEnum> get serializer => _$imageTypeEnumSerializer;
 

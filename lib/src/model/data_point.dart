@@ -12,70 +12,63 @@ part 'data_point.g.dart';
 /// Data Point Model
 ///
 /// Properties:
+/// * [id] - The uberall unique id of the data point
 /// * [comments]
-/// * [author] - Username of the datapoint's author
-/// * [actionDate] - The date when the review/photo/... was published in the online directory
-/// * [type] - Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
-/// * [threadActionDate] - The date of the last interaction in that thread. When a review receives a new comment, the parent will update.
-/// * [lastUpdated] - Date of last update.
-/// * [rating] - Rating given by the user. Float value, max: 5.
-/// * [repliedByOwner] - True if the owner of the business has replied
-/// * [secondaryData] - Additional info about the datapoint (eg. text content on instagram pictures)
-/// * [countLikes] - Number of likes to this item
+/// * [liked] - Whether this datapoint has been liked or not
 /// * [data] - Content of the datapoint (text of the review, url of the photo, count of checkins...)
+/// * [type] - Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+/// * [countLikes] - Number of likes to this item
+/// * [locationId] - The Location ID associated with this datapoint
+/// * [actionDate] - The date when the review/photo/... was published in the online directory
+/// * [author] - Username of the datapoint's author
 /// * [authorImage] - Author profile picture url
 /// * [countComments] - Number of comments to this item.
 /// * [dateCreated] - The date the datapoint was found
 /// * [directLink] - A link to the online profile
 /// * [directoryType] - Online directory reference name
 /// * [flagged] - Whether the datapoint has been flagged. The exact nature of the flagging depends on the directory, but can be e.g. \"Report as SPAM\"
-/// * [liked] - Whether this datapoint has been liked or not
-/// * [locationId] - The Location ID associated with this datapoint
+/// * [lastUpdated] - Date of last update.
+/// * [rating] - Rating given by the user. Float value, max: 5.
+/// * [repliedByOwner] - True if the owner of the business has replied
+/// * [secondaryData] - Additional info about the datapoint (eg. text content on instagram pictures)
+/// * [threadActionDate] - The date of the last interaction in that thread. When a review receives a new comment, the parent will update.
 @BuiltValue()
 abstract class DataPoint implements Built<DataPoint, DataPointBuilder> {
+  /// The uberall unique id of the data point
+  @BuiltValueField(wireName: r'id')
+  int? get id;
+
   @BuiltValueField(wireName: r'comments')
   BuiltList<DataPoint>? get comments;
 
-  /// Username of the datapoint's author
-  @BuiltValueField(wireName: r'author')
-  String? get author;
+  /// Whether this datapoint has been liked or not
+  @BuiltValueField(wireName: r'liked')
+  bool? get liked;
 
-  /// The date when the review/photo/... was published in the online directory
-  @BuiltValueField(wireName: r'actionDate')
-  DateTime? get actionDate;
+  /// Content of the datapoint (text of the review, url of the photo, count of checkins...)
+  @BuiltValueField(wireName: r'data')
+  String? get data;
 
   /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
   @BuiltValueField(wireName: r'type')
   DataPointTypeEnum? get type;
-  // enum typeEnum {  REVIEW,  PHOTO,  CHECKIN,  CONVERSATION,  COMMENT,  QUESTION,  POST,  IMAGE,  VIDEO,  CAROUSEL_ALBUM,  LINK,  EXPANDEDREVIEW,  };
-
-  /// The date of the last interaction in that thread. When a review receives a new comment, the parent will update.
-  @BuiltValueField(wireName: r'threadActionDate')
-  DateTime? get threadActionDate;
-
-  /// Date of last update.
-  @BuiltValueField(wireName: r'lastUpdated')
-  DateTime? get lastUpdated;
-
-  /// Rating given by the user. Float value, max: 5.
-  @BuiltValueField(wireName: r'rating')
-  double? get rating;
-
-  /// True if the owner of the business has replied
-  @BuiltValueField(wireName: r'repliedByOwner')
-  bool? get repliedByOwner;
-
-  /// Additional info about the datapoint (eg. text content on instagram pictures)
-  @BuiltValueField(wireName: r'secondaryData')
-  String? get secondaryData;
+  // enum typeEnum {  REVIEW,  PHOTO,  CHECKIN,  CONVERSATION,  COMMENT,  QUESTION,  POST,  IMAGE,  VIDEO,  CAROUSEL_ALBUM,  LINK,  EXPANDEDREVIEW,  AD_POST,  };
 
   /// Number of likes to this item
   @BuiltValueField(wireName: r'countLikes')
   int? get countLikes;
 
-  /// Content of the datapoint (text of the review, url of the photo, count of checkins...)
-  @BuiltValueField(wireName: r'data')
-  String? get data;
+  /// The Location ID associated with this datapoint
+  @BuiltValueField(wireName: r'locationId')
+  int? get locationId;
+
+  /// The date when the review/photo/... was published in the online directory
+  @BuiltValueField(wireName: r'actionDate')
+  DateTime? get actionDate;
+
+  /// Username of the datapoint's author
+  @BuiltValueField(wireName: r'author')
+  String? get author;
 
   /// Author profile picture url
   @BuiltValueField(wireName: r'authorImage')
@@ -102,13 +95,25 @@ abstract class DataPoint implements Built<DataPoint, DataPointBuilder> {
   @BuiltValueField(wireName: r'flagged')
   bool? get flagged;
 
-  /// Whether this datapoint has been liked or not
-  @BuiltValueField(wireName: r'liked')
-  bool? get liked;
+  /// Date of last update.
+  @BuiltValueField(wireName: r'lastUpdated')
+  DateTime? get lastUpdated;
 
-  /// The Location ID associated with this datapoint
-  @BuiltValueField(wireName: r'locationId')
-  int? get locationId;
+  /// Rating given by the user. Float value, max: 5.
+  @BuiltValueField(wireName: r'rating')
+  double? get rating;
+
+  /// True if the owner of the business has replied
+  @BuiltValueField(wireName: r'repliedByOwner')
+  bool? get repliedByOwner;
+
+  /// Additional info about the datapoint (eg. text content on instagram pictures)
+  @BuiltValueField(wireName: r'secondaryData')
+  String? get secondaryData;
+
+  /// The date of the last interaction in that thread. When a review receives a new comment, the parent will update.
+  @BuiltValueField(wireName: r'threadActionDate')
+  DateTime? get threadActionDate;
 
   DataPoint._();
 
@@ -133,6 +138,13 @@ class _$DataPointSerializer implements PrimitiveSerializer<DataPoint> {
     DataPoint object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.id != null) {
+      yield r'id';
+      yield serializers.serialize(
+        object.id,
+        specifiedType: const FullType(int),
+      );
+    }
     if (object.comments != null) {
       yield r'comments';
       yield serializers.serialize(
@@ -140,18 +152,18 @@ class _$DataPointSerializer implements PrimitiveSerializer<DataPoint> {
         specifiedType: const FullType(BuiltList, [FullType(DataPoint)]),
       );
     }
-    if (object.author != null) {
-      yield r'author';
+    if (object.liked != null) {
+      yield r'liked';
       yield serializers.serialize(
-        object.author,
-        specifiedType: const FullType(String),
+        object.liked,
+        specifiedType: const FullType(bool),
       );
     }
-    if (object.actionDate != null) {
-      yield r'actionDate';
+    if (object.data != null) {
+      yield r'data';
       yield serializers.serialize(
-        object.actionDate,
-        specifiedType: const FullType(DateTime),
+        object.data,
+        specifiedType: const FullType(String),
       );
     }
     if (object.type != null) {
@@ -161,41 +173,6 @@ class _$DataPointSerializer implements PrimitiveSerializer<DataPoint> {
         specifiedType: const FullType(DataPointTypeEnum),
       );
     }
-    if (object.threadActionDate != null) {
-      yield r'threadActionDate';
-      yield serializers.serialize(
-        object.threadActionDate,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.lastUpdated != null) {
-      yield r'lastUpdated';
-      yield serializers.serialize(
-        object.lastUpdated,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.rating != null) {
-      yield r'rating';
-      yield serializers.serialize(
-        object.rating,
-        specifiedType: const FullType(double),
-      );
-    }
-    if (object.repliedByOwner != null) {
-      yield r'repliedByOwner';
-      yield serializers.serialize(
-        object.repliedByOwner,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.secondaryData != null) {
-      yield r'secondaryData';
-      yield serializers.serialize(
-        object.secondaryData,
-        specifiedType: const FullType(String),
-      );
-    }
     if (object.countLikes != null) {
       yield r'countLikes';
       yield serializers.serialize(
@@ -203,10 +180,24 @@ class _$DataPointSerializer implements PrimitiveSerializer<DataPoint> {
         specifiedType: const FullType(int),
       );
     }
-    if (object.data != null) {
-      yield r'data';
+    if (object.locationId != null) {
+      yield r'locationId';
       yield serializers.serialize(
-        object.data,
+        object.locationId,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.actionDate != null) {
+      yield r'actionDate';
+      yield serializers.serialize(
+        object.actionDate,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.author != null) {
+      yield r'author';
+      yield serializers.serialize(
+        object.author,
         specifiedType: const FullType(String),
       );
     }
@@ -252,18 +243,39 @@ class _$DataPointSerializer implements PrimitiveSerializer<DataPoint> {
         specifiedType: const FullType(bool),
       );
     }
-    if (object.liked != null) {
-      yield r'liked';
+    if (object.lastUpdated != null) {
+      yield r'lastUpdated';
       yield serializers.serialize(
-        object.liked,
+        object.lastUpdated,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.rating != null) {
+      yield r'rating';
+      yield serializers.serialize(
+        object.rating,
+        specifiedType: const FullType(double),
+      );
+    }
+    if (object.repliedByOwner != null) {
+      yield r'repliedByOwner';
+      yield serializers.serialize(
+        object.repliedByOwner,
         specifiedType: const FullType(bool),
       );
     }
-    if (object.locationId != null) {
-      yield r'locationId';
+    if (object.secondaryData != null) {
+      yield r'secondaryData';
       yield serializers.serialize(
-        object.locationId,
-        specifiedType: const FullType(int),
+        object.secondaryData,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.threadActionDate != null) {
+      yield r'threadActionDate';
+      yield serializers.serialize(
+        object.threadActionDate,
+        specifiedType: const FullType(DateTime),
       );
     }
   }
@@ -291,6 +303,13 @@ class _$DataPointSerializer implements PrimitiveSerializer<DataPoint> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
+          break;
         case r'comments':
           final valueDes = serializers.deserialize(
             value,
@@ -298,19 +317,19 @@ class _$DataPointSerializer implements PrimitiveSerializer<DataPoint> {
           ) as BuiltList<DataPoint>;
           result.comments.replace(valueDes);
           break;
-        case r'author':
+        case r'liked':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.liked = valueDes;
+          break;
+        case r'data':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.author = valueDes;
-          break;
-        case r'actionDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.actionDate = valueDes;
+          result.data = valueDes;
           break;
         case r'type':
           final valueDes = serializers.deserialize(
@@ -319,41 +338,6 @@ class _$DataPointSerializer implements PrimitiveSerializer<DataPoint> {
           ) as DataPointTypeEnum;
           result.type = valueDes;
           break;
-        case r'threadActionDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.threadActionDate = valueDes;
-          break;
-        case r'lastUpdated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.lastUpdated = valueDes;
-          break;
-        case r'rating':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(double),
-          ) as double;
-          result.rating = valueDes;
-          break;
-        case r'repliedByOwner':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.repliedByOwner = valueDes;
-          break;
-        case r'secondaryData':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.secondaryData = valueDes;
-          break;
         case r'countLikes':
           final valueDes = serializers.deserialize(
             value,
@@ -361,12 +345,26 @@ class _$DataPointSerializer implements PrimitiveSerializer<DataPoint> {
           ) as int;
           result.countLikes = valueDes;
           break;
-        case r'data':
+        case r'locationId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.locationId = valueDes;
+          break;
+        case r'actionDate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.actionDate = valueDes;
+          break;
+        case r'author':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.data = valueDes;
+          result.author = valueDes;
           break;
         case r'authorImage':
           final valueDes = serializers.deserialize(
@@ -410,19 +408,40 @@ class _$DataPointSerializer implements PrimitiveSerializer<DataPoint> {
           ) as bool;
           result.flagged = valueDes;
           break;
-        case r'liked':
+        case r'lastUpdated':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.lastUpdated = valueDes;
+          break;
+        case r'rating':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(double),
+          ) as double;
+          result.rating = valueDes;
+          break;
+        case r'repliedByOwner':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(bool),
           ) as bool;
-          result.liked = valueDes;
+          result.repliedByOwner = valueDes;
           break;
-        case r'locationId':
+        case r'secondaryData':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.locationId = valueDes;
+            specifiedType: const FullType(String),
+          ) as String;
+          result.secondaryData = valueDes;
+          break;
+        case r'threadActionDate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.threadActionDate = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -504,6 +523,10 @@ class DataPointTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'EXPANDEDREVIEW')
   static const DataPointTypeEnum EXPANDEDREVIEW =
       _$dataPointTypeEnum_EXPANDEDREVIEW;
+
+  /// Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
+  @BuiltValueEnumConst(wireName: r'AD_POST')
+  static const DataPointTypeEnum AD_POST = _$dataPointTypeEnum_AD_POST;
 
   static Serializer<DataPointTypeEnum> get serializer =>
       _$dataPointTypeEnumSerializer;

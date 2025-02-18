@@ -9,8 +9,6 @@ part of 'video.dart';
 const VideoTypeEnum _$videoTypeEnum_YOUTUBE = const VideoTypeEnum._('YOUTUBE');
 const VideoTypeEnum _$videoTypeEnum_VIMEO = const VideoTypeEnum._('VIMEO');
 const VideoTypeEnum _$videoTypeEnum_UBERALL = const VideoTypeEnum._('UBERALL');
-const VideoTypeEnum _$videoTypeEnum_yOUTUBECommaVIMEO =
-    const VideoTypeEnum._('yOUTUBECommaVIMEO');
 
 VideoTypeEnum _$videoTypeEnumValueOf(String name) {
   switch (name) {
@@ -20,8 +18,6 @@ VideoTypeEnum _$videoTypeEnumValueOf(String name) {
       return _$videoTypeEnum_VIMEO;
     case 'UBERALL':
       return _$videoTypeEnum_UBERALL;
-    case 'yOUTUBECommaVIMEO':
-      return _$videoTypeEnum_yOUTUBECommaVIMEO;
     default:
       throw new ArgumentError(name);
   }
@@ -32,7 +28,6 @@ final BuiltSet<VideoTypeEnum> _$videoTypeEnumValues =
   _$videoTypeEnum_YOUTUBE,
   _$videoTypeEnum_VIMEO,
   _$videoTypeEnum_UBERALL,
-  _$videoTypeEnum_yOUTUBECommaVIMEO,
 ]);
 
 Serializer<VideoTypeEnum> _$videoTypeEnumSerializer =
@@ -43,13 +38,11 @@ class _$VideoTypeEnumSerializer implements PrimitiveSerializer<VideoTypeEnum> {
     'YOUTUBE': 'YOUTUBE',
     'VIMEO': 'VIMEO',
     'UBERALL': 'UBERALL',
-    'yOUTUBECommaVIMEO': 'YOUTUBE, VIMEO',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'YOUTUBE': 'YOUTUBE',
     'VIMEO': 'VIMEO',
     'UBERALL': 'UBERALL',
-    'YOUTUBE, VIMEO': 'yOUTUBECommaVIMEO',
   };
 
   @override
@@ -78,14 +71,11 @@ class _$Video extends Video {
   final String? description;
   @override
   final VideoTypeEnum? type;
-  @override
-  final JsonObject? typeId;
 
   factory _$Video([void Function(VideoBuilder)? updates]) =>
       (new VideoBuilder()..update(updates))._build();
 
-  _$Video._({this.id, this.url, this.description, this.type, this.typeId})
-      : super._();
+  _$Video._({this.id, this.url, this.description, this.type}) : super._();
 
   @override
   Video rebuild(void Function(VideoBuilder) updates) =>
@@ -101,8 +91,7 @@ class _$Video extends Video {
         id == other.id &&
         url == other.url &&
         description == other.description &&
-        type == other.type &&
-        typeId == other.typeId;
+        type == other.type;
   }
 
   @override
@@ -112,7 +101,6 @@ class _$Video extends Video {
     _$hash = $jc(_$hash, url.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
-    _$hash = $jc(_$hash, typeId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -123,8 +111,7 @@ class _$Video extends Video {
           ..add('id', id)
           ..add('url', url)
           ..add('description', description)
-          ..add('type', type)
-          ..add('typeId', typeId))
+          ..add('type', type))
         .toString();
   }
 }
@@ -148,10 +135,6 @@ class VideoBuilder implements Builder<Video, VideoBuilder> {
   VideoTypeEnum? get type => _$this._type;
   set type(VideoTypeEnum? type) => _$this._type = type;
 
-  JsonObject? _typeId;
-  JsonObject? get typeId => _$this._typeId;
-  set typeId(JsonObject? typeId) => _$this._typeId = typeId;
-
   VideoBuilder() {
     Video._defaults(this);
   }
@@ -163,7 +146,6 @@ class VideoBuilder implements Builder<Video, VideoBuilder> {
       _url = $v.url;
       _description = $v.description;
       _type = $v.type;
-      _typeId = $v.typeId;
       _$v = null;
     }
     return this;
@@ -190,7 +172,6 @@ class VideoBuilder implements Builder<Video, VideoBuilder> {
           url: url,
           description: description,
           type: type,
-          typeId: typeId,
         );
     replace(_$result);
     return _$result;

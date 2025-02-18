@@ -23,7 +23,6 @@ import 'package:uberall_api/src/api/dashboard_api.dart';
 import 'package:uberall_api/src/api/dashboard_exports_api.dart';
 import 'package:uberall_api/src/api/data_point_filters_api.dart';
 import 'package:uberall_api/src/api/data_points_api.dart';
-import 'package:uberall_api/src/api/default_api.dart';
 import 'package:uberall_api/src/api/digital_asset_management_api.dart';
 import 'package:uberall_api/src/api/events_api.dart';
 import 'package:uberall_api/src/api/labels_api.dart';
@@ -193,12 +192,6 @@ class UberallApi {
   /// by doing that all interceptors will not be executed
   DataPointsApi getDataPointsApi() {
     return DataPointsApi(dio, serializers);
-  }
-
-  /// Get DefaultApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  DefaultApi getDefaultApi() {
-    return DefaultApi(dio, serializers);
   }
 
   /// Get DigitalAssetManagementApi instance, base route and serializer can be overridden by a given but be careful,

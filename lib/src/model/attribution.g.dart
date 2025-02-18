@@ -17,8 +17,6 @@ class _$Attribution extends Attribution {
   final int? width;
   @override
   final int? height;
-  @override
-  final JsonObject? salesPartnerId;
 
   factory _$Attribution([void Function(AttributionBuilder)? updates]) =>
       (new AttributionBuilder()..update(updates))._build();
@@ -28,8 +26,7 @@ class _$Attribution extends Attribution {
       required this.url,
       required this.logoUrl,
       this.width,
-      this.height,
-      this.salesPartnerId})
+      this.height})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(name, r'Attribution', 'name');
     BuiltValueNullFieldError.checkNotNull(url, r'Attribution', 'url');
@@ -51,8 +48,7 @@ class _$Attribution extends Attribution {
         url == other.url &&
         logoUrl == other.logoUrl &&
         width == other.width &&
-        height == other.height &&
-        salesPartnerId == other.salesPartnerId;
+        height == other.height;
   }
 
   @override
@@ -63,7 +59,6 @@ class _$Attribution extends Attribution {
     _$hash = $jc(_$hash, logoUrl.hashCode);
     _$hash = $jc(_$hash, width.hashCode);
     _$hash = $jc(_$hash, height.hashCode);
-    _$hash = $jc(_$hash, salesPartnerId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -75,8 +70,7 @@ class _$Attribution extends Attribution {
           ..add('url', url)
           ..add('logoUrl', logoUrl)
           ..add('width', width)
-          ..add('height', height)
-          ..add('salesPartnerId', salesPartnerId))
+          ..add('height', height))
         .toString();
   }
 }
@@ -104,11 +98,6 @@ class AttributionBuilder implements Builder<Attribution, AttributionBuilder> {
   int? get height => _$this._height;
   set height(int? height) => _$this._height = height;
 
-  JsonObject? _salesPartnerId;
-  JsonObject? get salesPartnerId => _$this._salesPartnerId;
-  set salesPartnerId(JsonObject? salesPartnerId) =>
-      _$this._salesPartnerId = salesPartnerId;
-
   AttributionBuilder() {
     Attribution._defaults(this);
   }
@@ -121,7 +110,6 @@ class AttributionBuilder implements Builder<Attribution, AttributionBuilder> {
       _logoUrl = $v.logoUrl;
       _width = $v.width;
       _height = $v.height;
-      _salesPartnerId = $v.salesPartnerId;
       _$v = null;
     }
     return this;
@@ -152,7 +140,6 @@ class AttributionBuilder implements Builder<Attribution, AttributionBuilder> {
               logoUrl, r'Attribution', 'logoUrl'),
           width: width,
           height: height,
-          salesPartnerId: salesPartnerId,
         );
     replace(_$result);
     return _$result;

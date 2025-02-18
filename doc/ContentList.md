@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **dateCreated** | [**DateTime**](DateTime.md) | The date the content list was created | [optional] 
 **lastUpdated** | [**DateTime**](DateTime.md) | The date the content list was last updated | [optional] 
 **description** | **String** | A description of the content list (section) | [optional] 
+**orderNumber** | **int** |  | [optional] 
 **id** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

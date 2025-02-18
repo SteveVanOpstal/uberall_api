@@ -350,6 +350,7 @@ class SalesPartnersApi {
   /// Can be used to update certain SSO settings for a single SalesPartner.
   ///
   /// Parameters:
+  /// * [id] - ID of the SalesPartner
   /// * [body] - forceSso
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -361,6 +362,7 @@ class SalesPartnersApi {
   /// Returns a [Future] containing a [Response] with a [SalesPartnerWrapper] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<SalesPartnerWrapper>> patchSalesPartnersIdSsoSettings({
+    required String id,
     bool? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -369,7 +371,10 @@ class SalesPartnersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/sales-partners/{id}/sso-settings';
+    final _path = r'/sales-partners/{id}/sso-settings'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -560,12 +565,13 @@ class SalesPartnersApi {
     );
   }
 
-  /// Disconnect Apple directory User Account
-  /// Disconnects the Apple account for the given sales partner and account ID
+  /// Disconnect Directory User Account
+  /// Disconnects the Dierctory User Account for the given sales partner and invalidates it if no other sales partner is connected to it
   ///
   /// Parameters:
   /// * [id] - Sales Partner ID
   /// * [accountId] - Directory User Account ID
+  /// * [directoryType] - Directory Type of User Account (in lower case)
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -576,9 +582,10 @@ class SalesPartnersApi {
   /// Returns a [Future] containing a [Response] with a [UberallResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UberallResponse>>
-      postSalesPartnersIdUserAccountsAccountIdAppleMaps({
+      postSalesPartnersIdUserAccountsAccountIdDirectoryType({
     required String id,
     required String accountId,
+    required String directoryType,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -586,16 +593,22 @@ class SalesPartnersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/sales-partners/{id}/user-accounts/{accountId}/apple_maps'
-        .replaceAll(
-            '{' r'id' '}',
-            encodeQueryParameter(_serializers, id, const FullType(String))
-                .toString())
-        .replaceAll(
-            '{' r'accountId' '}',
-            encodeQueryParameter(
-                    _serializers, accountId, const FullType(String))
-                .toString());
+    final _path =
+        r'/sales-partners/{id}/user-accounts/{accountId}/{directoryType}'
+            .replaceAll(
+                '{' r'id' '}',
+                encodeQueryParameter(_serializers, id, const FullType(String))
+                    .toString())
+            .replaceAll(
+                '{' r'accountId' '}',
+                encodeQueryParameter(
+                        _serializers, accountId, const FullType(String))
+                    .toString())
+            .replaceAll(
+                '{' r'directoryType' '}',
+                encodeQueryParameter(
+                        _serializers, directoryType, const FullType(String))
+                    .toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{

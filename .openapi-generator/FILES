@@ -25,6 +25,7 @@ doc/BrandPagesResponseWrapper.md
 doc/Business.md
 doc/BusinessConnectionRequest.md
 doc/BusinessConnectionsApi.md
+doc/BusinessFiltersResponse.md
 doc/BusinessPageResponseWrapper.md
 doc/BusinessResponseWrapper.md
 doc/BusinessStatistics.md
@@ -91,7 +92,6 @@ doc/DataPointTimeSeriesValue.md
 doc/DataPointsApi.md
 doc/DatapointStatisticsResponse.md
 doc/DatapointStatisticsResponseWrapper.md
-doc/DefaultApi.md
 doc/DeleteResponseObject.md
 doc/DeleteResponseWrapper.md
 doc/DigitalAssetManagementApi.md
@@ -134,9 +134,8 @@ doc/FeedItem.md
 doc/FeedItemWrapper.md
 doc/FiltersResponse.md
 doc/FiltersResponseWrapper.md
-doc/GenericMap.md
-doc/GenericMapResponseWrapper.md
 doc/GetTemplatesAuthorsRequest.md
+doc/GoogleServiceItem.md
 doc/GoogleServicesResponseObject.md
 doc/GoogleServicesResponseWrapper.md
 doc/GoogleVenueDetailsObject.md
@@ -146,8 +145,6 @@ doc/InboxResponse.md
 doc/InboxResponseObject.md
 doc/InboxResponseWrapper.md
 doc/Insights.md
-doc/InsightsMetricsInner.md
-doc/InsightsMetricsInnerDataInner.md
 doc/InsightsWrapper.md
 doc/KeywordsObject.md
 doc/KeywordsWrapper.md
@@ -211,6 +208,7 @@ doc/MenuItemSearchResponseObject.md
 doc/MenuItemSearchResponseWrapper.md
 doc/MenuItemsApi.md
 doc/MoreHoursObject.md
+doc/MoreHoursResponse.md
 doc/MoreHoursWrapper.md
 doc/NextOpen.md
 doc/OpeningHours.md
@@ -315,8 +313,6 @@ doc/SuppressedDuplicates.md
 doc/SuppressedDuplicatesWrapper.md
 doc/TemplatesApi.md
 doc/TimeSeriesSegment.md
-doc/TrackingEventsResponseObject.md
-doc/TrackingEventsResponseWrapper.md
 doc/UTM.md
 doc/UberallResponse.md
 doc/UnsubscribeActionLinkObject.md
@@ -361,7 +357,6 @@ lib/src/api/dashboard_api.dart
 lib/src/api/dashboard_exports_api.dart
 lib/src/api/data_point_filters_api.dart
 lib/src/api/data_points_api.dart
-lib/src/api/default_api.dart
 lib/src/api/digital_asset_management_api.dart
 lib/src/api/events_api.dart
 lib/src/api/labels_api.dart
@@ -411,6 +406,7 @@ lib/src/model/brand_pages_response_object.dart
 lib/src/model/brand_pages_response_wrapper.dart
 lib/src/model/business.dart
 lib/src/model/business_connection_request.dart
+lib/src/model/business_filters_response.dart
 lib/src/model/business_page_response_wrapper.dart
 lib/src/model/business_response_wrapper.dart
 lib/src/model/business_statistics.dart
@@ -508,9 +504,8 @@ lib/src/model/feed_item.dart
 lib/src/model/feed_item_wrapper.dart
 lib/src/model/filters_response.dart
 lib/src/model/filters_response_wrapper.dart
-lib/src/model/generic_map.dart
-lib/src/model/generic_map_response_wrapper.dart
 lib/src/model/get_templates_authors_request.dart
+lib/src/model/google_service_item.dart
 lib/src/model/google_services_response_object.dart
 lib/src/model/google_services_response_wrapper.dart
 lib/src/model/google_venue_details_object.dart
@@ -520,8 +515,6 @@ lib/src/model/inbox_response.dart
 lib/src/model/inbox_response_object.dart
 lib/src/model/inbox_response_wrapper.dart
 lib/src/model/insights.dart
-lib/src/model/insights_metrics_inner.dart
-lib/src/model/insights_metrics_inner_data_inner.dart
 lib/src/model/insights_wrapper.dart
 lib/src/model/keywords_object.dart
 lib/src/model/keywords_wrapper.dart
@@ -579,6 +572,7 @@ lib/src/model/menu_item_response_wrapper.dart
 lib/src/model/menu_item_search_response_object.dart
 lib/src/model/menu_item_search_response_wrapper.dart
 lib/src/model/more_hours_object.dart
+lib/src/model/more_hours_response.dart
 lib/src/model/more_hours_wrapper.dart
 lib/src/model/next_open.dart
 lib/src/model/opening_hours.dart
@@ -672,8 +666,6 @@ lib/src/model/suggestion_search_response_wrapper.dart
 lib/src/model/suppressed_duplicates.dart
 lib/src/model/suppressed_duplicates_wrapper.dart
 lib/src/model/time_series_segment.dart
-lib/src/model/tracking_events_response_object.dart
-lib/src/model/tracking_events_response_wrapper.dart
 lib/src/model/uberall_response.dart
 lib/src/model/unsubscribe_action_link_object.dart
 lib/src/model/unsubscribe_action_link_wrapper.dart
@@ -703,3 +695,6 @@ lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
 lib/uberall_api.dart
+test/business_filters_response_test.dart
+test/google_service_item_test.dart
+test/more_hours_response_test.dart

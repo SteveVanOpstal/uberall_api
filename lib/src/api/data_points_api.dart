@@ -222,7 +222,7 @@ class DataPointsApi {
   /// * [businessIds] - Filter by business ids
   /// * [countries] - Filter by countries. ISO 3166-1 alpha-2 codes
   /// * [zip] - Only change inbox items for locations where zip starts with given parameter
-  /// * [dataPointTypes] - Filter by type of datapoints.
+  /// * [dataPointTypes] - Filter by type of datapoints
   /// * [directoryTypes] - Filter by directories
   /// * [ratings] - Only change inbox items with a rating included in ratings
   /// * [replied] - Only show elements you have/you have not replied to
@@ -241,7 +241,7 @@ class DataPointsApi {
   Future<Response<SuccessResponseWrapper>> deleteDataPointsRead({
     required bool selectAll,
     BuiltList<String>? businessIds,
-    String? countries,
+    BuiltList<String>? countries,
     String? zip,
     BuiltList<String>? dataPointTypes,
     BuiltList<String>? directoryTypes,
@@ -292,8 +292,12 @@ class DataPointsApi {
           format: ListFormat.multi,
         ),
       if (countries != null)
-        r'countries': encodeQueryParameter(
-            _serializers, countries, const FullType(String)),
+        r'countries': encodeCollectionQueryParameter<String>(
+          _serializers,
+          countries,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
       if (zip != null)
         r'zip': encodeQueryParameter(_serializers, zip, const FullType(String)),
       if (dataPointTypes != null)
@@ -393,7 +397,7 @@ class DataPointsApi {
   /// * [businessIds] - Ids of businesses you want data points for
   /// * [locationIds] - The ids of the locations you want data points for
   /// * [zip] - Only return inbox items for locations where zip starts with given parameter
-  /// * [dataPointTypes] - Types of datapoints you want inbox items for.
+  /// * [dataPointTypes] - Types of datapoints you want inbox items for
   /// * [directoryTypes] - Directories you want inbox items for
   /// * [ratings] - Only return inbox items with a rating included in ratings
   /// * [read] - Only show read/not read elements
@@ -417,8 +421,8 @@ class DataPointsApi {
   Future<Response<InboxResponseWrapper>> getDataPoints({
     int? max,
     int? page,
-    String? labels,
-    String? countries,
+    BuiltList<String>? labels,
+    BuiltList<String>? countries,
     BuiltList<String>? businessIds,
     BuiltList<String>? locationIds,
     String? zip,
@@ -473,11 +477,19 @@ class DataPointsApi {
       if (page != null)
         r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
       if (labels != null)
-        r'labels':
-            encodeQueryParameter(_serializers, labels, const FullType(String)),
+        r'labels': encodeCollectionQueryParameter<String>(
+          _serializers,
+          labels,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
       if (countries != null)
-        r'countries': encodeQueryParameter(
-            _serializers, countries, const FullType(String)),
+        r'countries': encodeCollectionQueryParameter<String>(
+          _serializers,
+          countries,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
       if (businessIds != null)
         r'businessIds': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -682,7 +694,7 @@ class DataPointsApi {
   /// * [businessIds] - Ids of businesses you want inbox statistics for
   /// * [countries] - The countries you want data points' statistics for. ISO 3166-1 alpha-2 codes
   /// * [locationIds] - Only consider data points belonging to any of these locationIds
-  /// * [dataPointTypes] - Types of datapoints you want inbox statistics for.
+  /// * [dataPointTypes] - Types of datapoints you want inbox statistics for
   /// * [directoryTypes] - Directories you want inbox statistics for
   /// * [ratings] - Ratings of datapoints you want inbox statistics for.
   /// * [minActionDate] - Only consider data points created after that date
@@ -702,11 +714,11 @@ class DataPointsApi {
   /// Returns a [Future] containing a [Response] with a [DatapointStatisticsResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<DatapointStatisticsResponseWrapper>> getDataPointsStatistics({
-    String? businessIds,
-    String? countries,
-    String? locationIds,
+    BuiltList<String>? businessIds,
+    BuiltList<String>? countries,
+    BuiltList<String>? locationIds,
     BuiltList<String>? dataPointTypes,
-    String? directoryTypes,
+    BuiltList<String>? directoryTypes,
     BuiltList<String>? ratings,
     String? minActionDate,
     String? maxActionDate,
@@ -750,14 +762,26 @@ class DataPointsApi {
 
     final _queryParameters = <String, dynamic>{
       if (businessIds != null)
-        r'businessIds': encodeQueryParameter(
-            _serializers, businessIds, const FullType(String)),
+        r'businessIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          businessIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
       if (countries != null)
-        r'countries': encodeQueryParameter(
-            _serializers, countries, const FullType(String)),
+        r'countries': encodeCollectionQueryParameter<String>(
+          _serializers,
+          countries,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
       if (locationIds != null)
-        r'locationIds': encodeQueryParameter(
-            _serializers, locationIds, const FullType(String)),
+        r'locationIds': encodeCollectionQueryParameter<String>(
+          _serializers,
+          locationIds,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
       if (dataPointTypes != null)
         r'dataPointTypes': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -766,8 +790,12 @@ class DataPointsApi {
           format: ListFormat.multi,
         ),
       if (directoryTypes != null)
-        r'directoryTypes': encodeQueryParameter(
-            _serializers, directoryTypes, const FullType(String)),
+        r'directoryTypes': encodeCollectionQueryParameter<String>(
+          _serializers,
+          directoryTypes,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
       if (ratings != null)
         r'ratings': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -842,7 +870,7 @@ class DataPointsApi {
   /// Returns time series of Data Points
   ///
   /// Parameters:
-  /// * [dataPointTypes] - Types of datapoints you want inbox statistics for.
+  /// * [dataPointTypes] - Types of datapoints you want inbox statistics for
   /// * [directoryTypes] - Directories you want data points time series for
   /// * [businessIds] - Ids of businesses you want data points for
   /// * [zip] - Only return Data Points time series for locations where zip starts with given parameter
@@ -867,7 +895,7 @@ class DataPointsApi {
     BuiltList<String>? ratings,
     bool? read,
     bool? replied,
-    String? countries,
+    BuiltList<String>? countries,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -938,8 +966,12 @@ class DataPointsApi {
         r'replied':
             encodeQueryParameter(_serializers, replied, const FullType(bool)),
       if (countries != null)
-        r'countries': encodeQueryParameter(
-            _serializers, countries, const FullType(String)),
+        r'countries': encodeCollectionQueryParameter<String>(
+          _serializers,
+          countries,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1483,7 +1515,7 @@ class DataPointsApi {
   /// * [businessIds] - Filter by business ids
   /// * [countries] - Filter by countries. ISO 3166-1 alpha-2 codes
   /// * [zip] - Only change inbox items for locations where zip starts with given parameter
-  /// * [dataPointTypes] - Filter by type of datapoints.
+  /// * [dataPointTypes] - Filter by type of datapoints
   /// * [directoryTypes] - Filter by directories
   /// * [ratings] - Only change inbox items with a rating included in ratings
   /// * [replied] - Only show elements you have/you have not replied to
@@ -1502,7 +1534,7 @@ class DataPointsApi {
   Future<Response<SuccessResponseWrapper>> postDataPointsRead({
     required bool selectAll,
     BuiltList<String>? businessIds,
-    String? countries,
+    BuiltList<String>? countries,
     String? zip,
     BuiltList<String>? dataPointTypes,
     BuiltList<String>? directoryTypes,
@@ -1553,8 +1585,12 @@ class DataPointsApi {
           format: ListFormat.multi,
         ),
       if (countries != null)
-        r'countries': encodeQueryParameter(
-            _serializers, countries, const FullType(String)),
+        r'countries': encodeCollectionQueryParameter<String>(
+          _serializers,
+          countries,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
       if (zip != null)
         r'zip': encodeQueryParameter(_serializers, zip, const FullType(String)),
       if (dataPointTypes != null)

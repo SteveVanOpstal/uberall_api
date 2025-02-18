@@ -3,21 +3,31 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'more_hours_object.g.dart';
 
-/// The actual response object of the response, optional for non 200 responses
+/// The MoreHours of the given type
 ///
 /// Properties:
-/// * [results]
+/// * [dayOfWeek] - The MoreHours dayOfWeek, represented by a number
+/// * [from] - The MoreHours from as a String
+/// * [to] - The MoreHours to as a String
 @BuiltValue()
 abstract class MoreHoursObject
     implements Built<MoreHoursObject, MoreHoursObjectBuilder> {
-  @BuiltValueField(wireName: r'results')
-  BuiltList<String>? get results;
+  /// The MoreHours dayOfWeek, represented by a number
+  @BuiltValueField(wireName: r'dayOfWeek')
+  int? get dayOfWeek;
+
+  /// The MoreHours from as a String
+  @BuiltValueField(wireName: r'from')
+  String? get from;
+
+  /// The MoreHours to as a String
+  @BuiltValueField(wireName: r'to')
+  String? get to;
 
   MoreHoursObject._();
 
@@ -45,11 +55,25 @@ class _$MoreHoursObjectSerializer
     MoreHoursObject object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.results != null) {
-      yield r'results';
+    if (object.dayOfWeek != null) {
+      yield r'dayOfWeek';
       yield serializers.serialize(
-        object.results,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
+        object.dayOfWeek,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.from != null) {
+      yield r'from';
+      yield serializers.serialize(
+        object.from,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.to != null) {
+      yield r'to';
+      yield serializers.serialize(
+        object.to,
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -77,12 +101,26 @@ class _$MoreHoursObjectSerializer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'results':
+        case r'dayOfWeek':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.results.replace(valueDes);
+            specifiedType: const FullType(int),
+          ) as int;
+          result.dayOfWeek = valueDes;
+          break;
+        case r'from':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.from = valueDes;
+          break;
+        case r'to':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.to = valueDes;
           break;
         default:
           unhandled.add(key);

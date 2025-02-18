@@ -11,7 +11,7 @@ import 'package:dio/dio.dart';
 import 'package:uberall_api/src/api_util.dart';
 import 'package:uberall_api/src/model/content_collection.dart';
 import 'package:uberall_api/src/model/content_lists_wrapper.dart';
-import 'package:uberall_api/src/model/generic_map_response_wrapper.dart';
+import 'package:uberall_api/src/model/uberall_response.dart';
 
 class CollectionManagementApi {
   final Dio _dio;
@@ -33,9 +33,9 @@ class CollectionManagementApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [GenericMapResponseWrapper] as data
+  /// Returns a [Future] containing a [Response] with a [UberallResponse] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GenericMapResponseWrapper>> deleteCollectionsId({
+  Future<Response<UberallResponse>> deleteCollectionsId({
     required String id,
     ContentCollection? contentCollection,
     CancelToken? cancelToken,
@@ -103,7 +103,7 @@ class CollectionManagementApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GenericMapResponseWrapper? _responseData;
+    UberallResponse? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -111,8 +111,8 @@ class CollectionManagementApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(GenericMapResponseWrapper),
-            ) as GenericMapResponseWrapper;
+              specifiedType: const FullType(UberallResponse),
+            ) as UberallResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -123,7 +123,7 @@ class CollectionManagementApi {
       );
     }
 
-    return Response<GenericMapResponseWrapper>(
+    return Response<UberallResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

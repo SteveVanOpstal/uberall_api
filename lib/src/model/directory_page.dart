@@ -48,7 +48,7 @@ abstract class DirectoryPage
   /// Type of the page
   @BuiltValueField(wireName: r'type')
   DirectoryPageTypeEnum? get type;
-  // enum typeEnum {  FACEBOOK,  INSTAGRAM,  GOOGLE,  TWITTER,  APPLE_MAPS,  TRUSTPILOT,  };
+  // enum typeEnum {  FACEBOOK,  INSTAGRAM,  GOOGLE,  TWITTER,  APPLE_MAPS,  TRUSTPILOT,  LINKED_IN,  };
 
   /// Date the page was created
   @BuiltValueField(wireName: r'dateCreated')
@@ -303,6 +303,11 @@ class DirectoryPageTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'TRUSTPILOT')
   static const DirectoryPageTypeEnum TRUSTPILOT =
       _$directoryPageTypeEnum_TRUSTPILOT;
+
+  /// Type of the page
+  @BuiltValueEnumConst(wireName: r'LINKED_IN')
+  static const DirectoryPageTypeEnum LINKED_IN =
+      _$directoryPageTypeEnum_LINKED_IN;
 
   static Serializer<DirectoryPageTypeEnum> get serializer =>
       _$directoryPageTypeEnumSerializer;

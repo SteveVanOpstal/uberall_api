@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -17,7 +16,6 @@ part 'attribution.g.dart';
 /// * [logoUrl] - URL pointing to the attribution logo
 /// * [width] - Width (in px) of the attribution logo
 /// * [height] - Height (in px) of the attribution logo
-/// * [salesPartnerId]
 @BuiltValue()
 abstract class Attribution implements Built<Attribution, AttributionBuilder> {
   /// Name of the attribution
@@ -39,9 +37,6 @@ abstract class Attribution implements Built<Attribution, AttributionBuilder> {
   /// Height (in px) of the attribution logo
   @BuiltValueField(wireName: r'height')
   int? get height;
-
-  @BuiltValueField(wireName: r'salesPartnerId')
-  JsonObject? get salesPartnerId;
 
   Attribution._();
 
@@ -93,13 +88,6 @@ class _$AttributionSerializer implements PrimitiveSerializer<Attribution> {
       yield serializers.serialize(
         object.height,
         specifiedType: const FullType(int),
-      );
-    }
-    if (object.salesPartnerId != null) {
-      yield r'salesPartnerId';
-      yield serializers.serialize(
-        object.salesPartnerId,
-        specifiedType: const FullType(JsonObject),
       );
     }
   }
@@ -161,13 +149,6 @@ class _$AttributionSerializer implements PrimitiveSerializer<Attribution> {
             specifiedType: const FullType(int),
           ) as int;
           result.height = valueDes;
-          break;
-        case r'salesPartnerId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.salesPartnerId = valueDes;
           break;
         default:
           unhandled.add(key);

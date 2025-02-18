@@ -9,8 +9,6 @@ part of 'image.dart';
 const ImageTypeEnum _$imageTypeEnum_LOGO = const ImageTypeEnum._('LOGO');
 const ImageTypeEnum _$imageTypeEnum_MAIN = const ImageTypeEnum._('MAIN');
 const ImageTypeEnum _$imageTypeEnum_IMAGE = const ImageTypeEnum._('IMAGE');
-const ImageTypeEnum _$imageTypeEnum_lOGOCommaMAINCommaIMAGE =
-    const ImageTypeEnum._('lOGOCommaMAINCommaIMAGE');
 
 ImageTypeEnum _$imageTypeEnumValueOf(String name) {
   switch (name) {
@@ -20,8 +18,6 @@ ImageTypeEnum _$imageTypeEnumValueOf(String name) {
       return _$imageTypeEnum_MAIN;
     case 'IMAGE':
       return _$imageTypeEnum_IMAGE;
-    case 'lOGOCommaMAINCommaIMAGE':
-      return _$imageTypeEnum_lOGOCommaMAINCommaIMAGE;
     default:
       throw new ArgumentError(name);
   }
@@ -32,7 +28,6 @@ final BuiltSet<ImageTypeEnum> _$imageTypeEnumValues =
   _$imageTypeEnum_LOGO,
   _$imageTypeEnum_MAIN,
   _$imageTypeEnum_IMAGE,
-  _$imageTypeEnum_lOGOCommaMAINCommaIMAGE,
 ]);
 
 Serializer<ImageTypeEnum> _$imageTypeEnumSerializer =
@@ -43,13 +38,11 @@ class _$ImageTypeEnumSerializer implements PrimitiveSerializer<ImageTypeEnum> {
     'LOGO': 'LOGO',
     'MAIN': 'MAIN',
     'IMAGE': 'IMAGE',
-    'lOGOCommaMAINCommaIMAGE': 'LOGO, MAIN, IMAGE',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'LOGO': 'LOGO',
     'MAIN': 'MAIN',
     'IMAGE': 'IMAGE',
-    'LOGO, MAIN, IMAGE': 'lOGOCommaMAINCommaIMAGE',
   };
 
   @override

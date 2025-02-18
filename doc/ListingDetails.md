@@ -8,8 +8,8 @@ import 'package:uberall_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | Listing detail id | [optional] 
-**type** | **String** | Directory type | [optional] 
+**id** | **int** | The id of the listing details | [optional] 
+**type** | **String** | The directory where this listing appears | [optional] 
 **typeName** | **String** | Listing type / Publisher name | [optional] 
 **listingUrl** | **String** | Listing URL | [optional] 
 **category** | **String** | The category of the directory of this listing | [optional] 

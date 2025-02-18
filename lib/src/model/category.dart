@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 
 part 'category.g.dart';
 
-/// Represents one of uberall's categories.
+/// Represents one of uberall's categories
 ///
 /// Properties:
 /// * [id] - The uberall unique id for the category

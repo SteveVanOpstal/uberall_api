@@ -12,7 +12,7 @@ import 'package:uberall_api/src/api_util.dart';
 import 'package:uberall_api/src/model/custom_item.dart';
 import 'package:uberall_api/src/model/custom_item_response_wrapper.dart';
 import 'package:uberall_api/src/model/custom_item_search_response_wrapper.dart';
-import 'package:uberall_api/src/model/generic_map_response_wrapper.dart';
+import 'package:uberall_api/src/model/uberall_response.dart';
 
 class CustomItemsApi {
   final Dio _dio;
@@ -32,9 +32,9 @@ class CustomItemsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [GenericMapResponseWrapper] as data
+  /// Returns a [Future] containing a [Response] with a [UberallResponse] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GenericMapResponseWrapper>> deleteCustomItems({
+  Future<Response<UberallResponse>> deleteCustomItems({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -76,7 +76,7 @@ class CustomItemsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GenericMapResponseWrapper? _responseData;
+    UberallResponse? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -84,8 +84,8 @@ class CustomItemsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(GenericMapResponseWrapper),
-            ) as GenericMapResponseWrapper;
+              specifiedType: const FullType(UberallResponse),
+            ) as UberallResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -96,7 +96,7 @@ class CustomItemsApi {
       );
     }
 
-    return Response<GenericMapResponseWrapper>(
+    return Response<UberallResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -120,9 +120,9 @@ class CustomItemsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [GenericMapResponseWrapper] as data
+  /// Returns a [Future] containing a [Response] with a [UberallResponse] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GenericMapResponseWrapper>> deleteCustomItemsId({
+  Future<Response<UberallResponse>> deleteCustomItemsId({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -168,7 +168,7 @@ class CustomItemsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GenericMapResponseWrapper? _responseData;
+    UberallResponse? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -176,8 +176,8 @@ class CustomItemsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(GenericMapResponseWrapper),
-            ) as GenericMapResponseWrapper;
+              specifiedType: const FullType(UberallResponse),
+            ) as UberallResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -188,7 +188,7 @@ class CustomItemsApi {
       );
     }
 
-    return Response<GenericMapResponseWrapper>(
+    return Response<UberallResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

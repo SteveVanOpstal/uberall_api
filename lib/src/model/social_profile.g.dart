@@ -24,10 +24,6 @@ const SocialProfileTypeEnum _$socialProfileTypeEnum_PINTEREST =
     const SocialProfileTypeEnum._('PINTEREST');
 const SocialProfileTypeEnum _$socialProfileTypeEnum_VIMEO =
     const SocialProfileTypeEnum._('VIMEO');
-const SocialProfileTypeEnum
-    _$socialProfileTypeEnum_fACEBOOKCommaLINKEDINCommaTWITTERCommaYOUTUBECommaXINGCommaINSTAGRAMCommaFOURSQUARECommaPINTERESTCommaVIMEO =
-    const SocialProfileTypeEnum._(
-        'fACEBOOKCommaLINKEDINCommaTWITTERCommaYOUTUBECommaXINGCommaINSTAGRAMCommaFOURSQUARECommaPINTERESTCommaVIMEO');
 
 SocialProfileTypeEnum _$socialProfileTypeEnumValueOf(String name) {
   switch (name) {
@@ -49,8 +45,6 @@ SocialProfileTypeEnum _$socialProfileTypeEnumValueOf(String name) {
       return _$socialProfileTypeEnum_PINTEREST;
     case 'VIMEO':
       return _$socialProfileTypeEnum_VIMEO;
-    case 'fACEBOOKCommaLINKEDINCommaTWITTERCommaYOUTUBECommaXINGCommaINSTAGRAMCommaFOURSQUARECommaPINTERESTCommaVIMEO':
-      return _$socialProfileTypeEnum_fACEBOOKCommaLINKEDINCommaTWITTERCommaYOUTUBECommaXINGCommaINSTAGRAMCommaFOURSQUARECommaPINTERESTCommaVIMEO;
     default:
       throw new ArgumentError(name);
   }
@@ -67,7 +61,6 @@ final BuiltSet<SocialProfileTypeEnum> _$socialProfileTypeEnumValues =
   _$socialProfileTypeEnum_FOURSQUARE,
   _$socialProfileTypeEnum_PINTEREST,
   _$socialProfileTypeEnum_VIMEO,
-  _$socialProfileTypeEnum_fACEBOOKCommaLINKEDINCommaTWITTERCommaYOUTUBECommaXINGCommaINSTAGRAMCommaFOURSQUARECommaPINTERESTCommaVIMEO,
 ]);
 
 Serializer<SocialProfileTypeEnum> _$socialProfileTypeEnumSerializer =
@@ -85,8 +78,6 @@ class _$SocialProfileTypeEnumSerializer
     'FOURSQUARE': 'FOURSQUARE',
     'PINTEREST': 'PINTEREST',
     'VIMEO': 'VIMEO',
-    'fACEBOOKCommaLINKEDINCommaTWITTERCommaYOUTUBECommaXINGCommaINSTAGRAMCommaFOURSQUARECommaPINTERESTCommaVIMEO':
-        'FACEBOOK, LINKEDIN, TWITTER, YOUTUBE, XING, INSTAGRAM, FOURSQUARE, PINTEREST, VIMEO',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'FACEBOOK': 'FACEBOOK',
@@ -98,8 +89,6 @@ class _$SocialProfileTypeEnumSerializer
     'FOURSQUARE': 'FOURSQUARE',
     'PINTEREST': 'PINTEREST',
     'VIMEO': 'VIMEO',
-    'FACEBOOK, LINKEDIN, TWITTER, YOUTUBE, XING, INSTAGRAM, FOURSQUARE, PINTEREST, VIMEO':
-        'fACEBOOKCommaLINKEDINCommaTWITTERCommaYOUTUBECommaXINGCommaINSTAGRAMCommaFOURSQUARECommaPINTERESTCommaVIMEO',
   };
 
   @override
@@ -124,16 +113,11 @@ class _$SocialProfile extends SocialProfile {
   final String? url;
   @override
   final SocialProfileTypeEnum? type;
-  @override
-  final JsonObject? locationId;
-  @override
-  final JsonObject? typeId;
 
   factory _$SocialProfile([void Function(SocialProfileBuilder)? updates]) =>
       (new SocialProfileBuilder()..update(updates))._build();
 
-  _$SocialProfile._({this.url, this.type, this.locationId, this.typeId})
-      : super._();
+  _$SocialProfile._({this.url, this.type}) : super._();
 
   @override
   SocialProfile rebuild(void Function(SocialProfileBuilder) updates) =>
@@ -145,11 +129,7 @@ class _$SocialProfile extends SocialProfile {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is SocialProfile &&
-        url == other.url &&
-        type == other.type &&
-        locationId == other.locationId &&
-        typeId == other.typeId;
+    return other is SocialProfile && url == other.url && type == other.type;
   }
 
   @override
@@ -157,8 +137,6 @@ class _$SocialProfile extends SocialProfile {
     var _$hash = 0;
     _$hash = $jc(_$hash, url.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
-    _$hash = $jc(_$hash, locationId.hashCode);
-    _$hash = $jc(_$hash, typeId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -167,9 +145,7 @@ class _$SocialProfile extends SocialProfile {
   String toString() {
     return (newBuiltValueToStringHelper(r'SocialProfile')
           ..add('url', url)
-          ..add('type', type)
-          ..add('locationId', locationId)
-          ..add('typeId', typeId))
+          ..add('type', type))
         .toString();
   }
 }
@@ -186,14 +162,6 @@ class SocialProfileBuilder
   SocialProfileTypeEnum? get type => _$this._type;
   set type(SocialProfileTypeEnum? type) => _$this._type = type;
 
-  JsonObject? _locationId;
-  JsonObject? get locationId => _$this._locationId;
-  set locationId(JsonObject? locationId) => _$this._locationId = locationId;
-
-  JsonObject? _typeId;
-  JsonObject? get typeId => _$this._typeId;
-  set typeId(JsonObject? typeId) => _$this._typeId = typeId;
-
   SocialProfileBuilder() {
     SocialProfile._defaults(this);
   }
@@ -203,8 +171,6 @@ class SocialProfileBuilder
     if ($v != null) {
       _url = $v.url;
       _type = $v.type;
-      _locationId = $v.locationId;
-      _typeId = $v.typeId;
       _$v = null;
     }
     return this;
@@ -229,8 +195,6 @@ class SocialProfileBuilder
         new _$SocialProfile._(
           url: url,
           type: type,
-          locationId: locationId,
-          typeId: typeId,
         );
     replace(_$result);
     return _$result;

@@ -8,7 +8,7 @@ part of 'google_services_response_object.dart';
 
 class _$GoogleServicesResponseObject extends GoogleServicesResponseObject {
   @override
-  final BuiltList<String>? googleServices;
+  final BuiltList<GoogleServiceItem>? googleServices;
 
   factory _$GoogleServicesResponseObject(
           [void Function(GoogleServicesResponseObjectBuilder)? updates]) =>
@@ -54,10 +54,10 @@ class GoogleServicesResponseObjectBuilder
             GoogleServicesResponseObjectBuilder> {
   _$GoogleServicesResponseObject? _$v;
 
-  ListBuilder<String>? _googleServices;
-  ListBuilder<String> get googleServices =>
-      _$this._googleServices ??= new ListBuilder<String>();
-  set googleServices(ListBuilder<String>? googleServices) =>
+  ListBuilder<GoogleServiceItem>? _googleServices;
+  ListBuilder<GoogleServiceItem> get googleServices =>
+      _$this._googleServices ??= new ListBuilder<GoogleServiceItem>();
+  set googleServices(ListBuilder<GoogleServiceItem>? googleServices) =>
       _$this._googleServices = googleServices;
 
   GoogleServicesResponseObjectBuilder() {

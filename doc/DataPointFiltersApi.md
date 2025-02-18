@@ -145,7 +145,7 @@ import 'package:uberall_api/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
 final api = UberallApi().getDataPointFiltersApi();
-final String locationIds = locationIds_example; // String | Applies a filter of locationIds
+final BuiltList<String> locationIds = ; // BuiltList<String> | Applies a filter of locationIds
 final String userId = userId_example; // String | Shows the filters of the user with this id
 
 try {
@@ -160,7 +160,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **locationIds** | **String**| Applies a filter of locationIds | [optional] 
+ **locationIds** | [**BuiltList&lt;String&gt;**](String.md)| Applies a filter of locationIds | [optional] 
  **userId** | **String**| Shows the filters of the user with this id | [optional] 
 
 ### Return type

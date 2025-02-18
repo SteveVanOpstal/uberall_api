@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
+import 'package:uberall_api/src/model/google_service_item.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -19,7 +20,7 @@ abstract class GoogleServicesResponseObject
         Built<GoogleServicesResponseObject,
             GoogleServicesResponseObjectBuilder> {
   @BuiltValueField(wireName: r'googleServices')
-  BuiltList<String>? get googleServices;
+  BuiltList<GoogleServiceItem>? get googleServices;
 
   GoogleServicesResponseObject._();
 
@@ -55,7 +56,7 @@ class _$GoogleServicesResponseObjectSerializer
       yield r'googleServices';
       yield serializers.serialize(
         object.googleServices,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
+        specifiedType: const FullType(BuiltList, [FullType(GoogleServiceItem)]),
       );
     }
   }
@@ -86,8 +87,9 @@ class _$GoogleServicesResponseObjectSerializer
         case r'googleServices':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+            specifiedType:
+                const FullType(BuiltList, [FullType(GoogleServiceItem)]),
+          ) as BuiltList<GoogleServiceItem>;
           result.googleServices.replace(valueDes);
           break;
         default:

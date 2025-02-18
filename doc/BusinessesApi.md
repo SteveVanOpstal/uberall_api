@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**getBusinesses**](BusinessesApi.md#getbusinesses) | **GET** /businesses | Get a List of Businesses
 [**getBusinessesId**](BusinessesApi.md#getbusinessesid) | **GET** /businesses/{id} | Get a Business
 [**getBusinessesIdBusinessConnectFacebookFacebookAccountIdBrandPageList**](BusinessesApi.md#getbusinessesidbusinessconnectfacebookfacebookaccountidbrandpagelist) | **GET** /businesses/{id}/business-connect/facebook/{facebookAccountId}/brand-page-list | Returns only the Facebook brand pages for the given Facebook account
+[**getBusinessesProductPlans**](BusinessesApi.md#getbusinessesproductplans) | **GET** /businesses/product-plans | Get the product plans for businesses
 [**getBusinessesStatistics**](BusinessesApi.md#getbusinessesstatistics) | **GET** /businesses/statistics | Get Businesses&#39;&#39; Statistics
 [**patchBusinessesId**](BusinessesApi.md#patchbusinessesid) | **PATCH** /businesses/{id} | Update a Business
 [**postBusinesses**](BusinessesApi.md#postbusinesses) | **POST** /businesses | Create a Business
@@ -249,6 +250,60 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getBusinessesProductPlans**
+> getBusinessesProductPlans(query, max, offset)
+
+Get the product plans for businesses
+
+Get the product plans assigned to a business
+
+### Example
+```dart
+import 'package:uberall_api/api.dart';
+// TODO Configure API key authorization: privateKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('privateKey').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: accessToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
+
+final api = UberallApi().getBusinessesApi();
+final String query = query_example; // String | Restricts the response to the Product Plans that contain this name
+final int max = 789; // int | Maximum number of items to return
+final int offset = 789; // int | Offset used for pagination. Default: 0
+
+try {
+    api.getBusinessesProductPlans(query, max, offset);
+} catch on DioException (e) {
+    print('Exception when calling BusinessesApi->getBusinessesProductPlans: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **query** | **String**| Restricts the response to the Product Plans that contain this name | [optional] 
+ **max** | **int**| Maximum number of items to return | [optional] 
+ **offset** | **int**| Offset used for pagination. Default: 0 | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[privateKey](../README.md#privateKey), [accessToken](../README.md#accessToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

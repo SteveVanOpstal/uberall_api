@@ -22,6 +22,9 @@ const LocationFeatureResponseCurrentFeaturesEnum
     _$locationFeatureResponseCurrentFeaturesEnum_ADVANCED_ANALYTICS =
     const LocationFeatureResponseCurrentFeaturesEnum._('ADVANCED_ANALYTICS');
 const LocationFeatureResponseCurrentFeaturesEnum
+    _$locationFeatureResponseCurrentFeaturesEnum_aDVANCEDANALYTICS20 =
+    const LocationFeatureResponseCurrentFeaturesEnum._('aDVANCEDANALYTICS20');
+const LocationFeatureResponseCurrentFeaturesEnum
     _$locationFeatureResponseCurrentFeaturesEnum_AI_KNOWLEDGEBASE =
     const LocationFeatureResponseCurrentFeaturesEnum._('AI_KNOWLEDGEBASE');
 const LocationFeatureResponseCurrentFeaturesEnum
@@ -115,6 +118,9 @@ const LocationFeatureResponseCurrentFeaturesEnum
 const LocationFeatureResponseCurrentFeaturesEnum
     _$locationFeatureResponseCurrentFeaturesEnum_FORMS =
     const LocationFeatureResponseCurrentFeaturesEnum._('FORMS');
+const LocationFeatureResponseCurrentFeaturesEnum
+    _$locationFeatureResponseCurrentFeaturesEnum_GOOGLE_POSTING =
+    const LocationFeatureResponseCurrentFeaturesEnum._('GOOGLE_POSTING');
 const LocationFeatureResponseCurrentFeaturesEnum
     _$locationFeatureResponseCurrentFeaturesEnum_HOMEPAGE =
     const LocationFeatureResponseCurrentFeaturesEnum._('HOMEPAGE');
@@ -344,6 +350,8 @@ LocationFeatureResponseCurrentFeaturesEnum
       return _$locationFeatureResponseCurrentFeaturesEnum_ADS_WRITE;
     case 'ADVANCED_ANALYTICS':
       return _$locationFeatureResponseCurrentFeaturesEnum_ADVANCED_ANALYTICS;
+    case 'aDVANCEDANALYTICS20':
+      return _$locationFeatureResponseCurrentFeaturesEnum_aDVANCEDANALYTICS20;
     case 'AI_KNOWLEDGEBASE':
       return _$locationFeatureResponseCurrentFeaturesEnum_AI_KNOWLEDGEBASE;
     case 'AI_LOCALISATION':
@@ -404,6 +412,8 @@ LocationFeatureResponseCurrentFeaturesEnum
       return _$locationFeatureResponseCurrentFeaturesEnum_FIRST_PARTY_REVIEW_APPROVAL;
     case 'FORMS':
       return _$locationFeatureResponseCurrentFeaturesEnum_FORMS;
+    case 'GOOGLE_POSTING':
+      return _$locationFeatureResponseCurrentFeaturesEnum_GOOGLE_POSTING;
     case 'HOMEPAGE':
       return _$locationFeatureResponseCurrentFeaturesEnum_HOMEPAGE;
     case 'INBOX':
@@ -553,6 +563,7 @@ final BuiltSet<LocationFeatureResponseCurrentFeaturesEnum>
   _$locationFeatureResponseCurrentFeaturesEnum_ADS_READ,
   _$locationFeatureResponseCurrentFeaturesEnum_ADS_WRITE,
   _$locationFeatureResponseCurrentFeaturesEnum_ADVANCED_ANALYTICS,
+  _$locationFeatureResponseCurrentFeaturesEnum_aDVANCEDANALYTICS20,
   _$locationFeatureResponseCurrentFeaturesEnum_AI_KNOWLEDGEBASE,
   _$locationFeatureResponseCurrentFeaturesEnum_AI_LOCALISATION,
   _$locationFeatureResponseCurrentFeaturesEnum_AI_SUGGESTED_REPLIES,
@@ -583,6 +594,7 @@ final BuiltSet<LocationFeatureResponseCurrentFeaturesEnum>
   _$locationFeatureResponseCurrentFeaturesEnum_FACEBOOK_UNOWNED_PAGE_CREATE,
   _$locationFeatureResponseCurrentFeaturesEnum_FIRST_PARTY_REVIEW_APPROVAL,
   _$locationFeatureResponseCurrentFeaturesEnum_FORMS,
+  _$locationFeatureResponseCurrentFeaturesEnum_GOOGLE_POSTING,
   _$locationFeatureResponseCurrentFeaturesEnum_HOMEPAGE,
   _$locationFeatureResponseCurrentFeaturesEnum_INBOX,
   _$locationFeatureResponseCurrentFeaturesEnum_INBOX_APPROVAL,
@@ -668,6 +680,9 @@ const LocationFeatureResponsePotentialFeaturesEnum
 const LocationFeatureResponsePotentialFeaturesEnum
     _$locationFeatureResponsePotentialFeaturesEnum_ADVANCED_ANALYTICS =
     const LocationFeatureResponsePotentialFeaturesEnum._('ADVANCED_ANALYTICS');
+const LocationFeatureResponsePotentialFeaturesEnum
+    _$locationFeatureResponsePotentialFeaturesEnum_aDVANCEDANALYTICS20 =
+    const LocationFeatureResponsePotentialFeaturesEnum._('aDVANCEDANALYTICS20');
 const LocationFeatureResponsePotentialFeaturesEnum
     _$locationFeatureResponsePotentialFeaturesEnum_AI_KNOWLEDGEBASE =
     const LocationFeatureResponsePotentialFeaturesEnum._('AI_KNOWLEDGEBASE');
@@ -766,6 +781,9 @@ const LocationFeatureResponsePotentialFeaturesEnum
 const LocationFeatureResponsePotentialFeaturesEnum
     _$locationFeatureResponsePotentialFeaturesEnum_FORMS =
     const LocationFeatureResponsePotentialFeaturesEnum._('FORMS');
+const LocationFeatureResponsePotentialFeaturesEnum
+    _$locationFeatureResponsePotentialFeaturesEnum_GOOGLE_POSTING =
+    const LocationFeatureResponsePotentialFeaturesEnum._('GOOGLE_POSTING');
 const LocationFeatureResponsePotentialFeaturesEnum
     _$locationFeatureResponsePotentialFeaturesEnum_HOMEPAGE =
     const LocationFeatureResponsePotentialFeaturesEnum._('HOMEPAGE');
@@ -1001,6 +1019,8 @@ LocationFeatureResponsePotentialFeaturesEnum
       return _$locationFeatureResponsePotentialFeaturesEnum_ADS_WRITE;
     case 'ADVANCED_ANALYTICS':
       return _$locationFeatureResponsePotentialFeaturesEnum_ADVANCED_ANALYTICS;
+    case 'aDVANCEDANALYTICS20':
+      return _$locationFeatureResponsePotentialFeaturesEnum_aDVANCEDANALYTICS20;
     case 'AI_KNOWLEDGEBASE':
       return _$locationFeatureResponsePotentialFeaturesEnum_AI_KNOWLEDGEBASE;
     case 'AI_LOCALISATION':
@@ -1061,6 +1081,8 @@ LocationFeatureResponsePotentialFeaturesEnum
       return _$locationFeatureResponsePotentialFeaturesEnum_FIRST_PARTY_REVIEW_APPROVAL;
     case 'FORMS':
       return _$locationFeatureResponsePotentialFeaturesEnum_FORMS;
+    case 'GOOGLE_POSTING':
+      return _$locationFeatureResponsePotentialFeaturesEnum_GOOGLE_POSTING;
     case 'HOMEPAGE':
       return _$locationFeatureResponsePotentialFeaturesEnum_HOMEPAGE;
     case 'INBOX':
@@ -1210,6 +1232,7 @@ final BuiltSet<LocationFeatureResponsePotentialFeaturesEnum>
   _$locationFeatureResponsePotentialFeaturesEnum_ADS_READ,
   _$locationFeatureResponsePotentialFeaturesEnum_ADS_WRITE,
   _$locationFeatureResponsePotentialFeaturesEnum_ADVANCED_ANALYTICS,
+  _$locationFeatureResponsePotentialFeaturesEnum_aDVANCEDANALYTICS20,
   _$locationFeatureResponsePotentialFeaturesEnum_AI_KNOWLEDGEBASE,
   _$locationFeatureResponsePotentialFeaturesEnum_AI_LOCALISATION,
   _$locationFeatureResponsePotentialFeaturesEnum_AI_SUGGESTED_REPLIES,
@@ -1240,6 +1263,7 @@ final BuiltSet<LocationFeatureResponsePotentialFeaturesEnum>
   _$locationFeatureResponsePotentialFeaturesEnum_FACEBOOK_UNOWNED_PAGE_CREATE,
   _$locationFeatureResponsePotentialFeaturesEnum_FIRST_PARTY_REVIEW_APPROVAL,
   _$locationFeatureResponsePotentialFeaturesEnum_FORMS,
+  _$locationFeatureResponsePotentialFeaturesEnum_GOOGLE_POSTING,
   _$locationFeatureResponsePotentialFeaturesEnum_HOMEPAGE,
   _$locationFeatureResponsePotentialFeaturesEnum_INBOX,
   _$locationFeatureResponsePotentialFeaturesEnum_INBOX_APPROVAL,
@@ -1325,6 +1349,9 @@ const LocationFeatureResponseLimitReachedEnum
 const LocationFeatureResponseLimitReachedEnum
     _$locationFeatureResponseLimitReachedEnum_ADVANCED_ANALYTICS =
     const LocationFeatureResponseLimitReachedEnum._('ADVANCED_ANALYTICS');
+const LocationFeatureResponseLimitReachedEnum
+    _$locationFeatureResponseLimitReachedEnum_aDVANCEDANALYTICS20 =
+    const LocationFeatureResponseLimitReachedEnum._('aDVANCEDANALYTICS20');
 const LocationFeatureResponseLimitReachedEnum
     _$locationFeatureResponseLimitReachedEnum_AI_KNOWLEDGEBASE =
     const LocationFeatureResponseLimitReachedEnum._('AI_KNOWLEDGEBASE');
@@ -1417,6 +1444,9 @@ const LocationFeatureResponseLimitReachedEnum
 const LocationFeatureResponseLimitReachedEnum
     _$locationFeatureResponseLimitReachedEnum_FORMS =
     const LocationFeatureResponseLimitReachedEnum._('FORMS');
+const LocationFeatureResponseLimitReachedEnum
+    _$locationFeatureResponseLimitReachedEnum_GOOGLE_POSTING =
+    const LocationFeatureResponseLimitReachedEnum._('GOOGLE_POSTING');
 const LocationFeatureResponseLimitReachedEnum
     _$locationFeatureResponseLimitReachedEnum_HOMEPAGE =
     const LocationFeatureResponseLimitReachedEnum._('HOMEPAGE');
@@ -1639,6 +1669,8 @@ LocationFeatureResponseLimitReachedEnum
       return _$locationFeatureResponseLimitReachedEnum_ADS_WRITE;
     case 'ADVANCED_ANALYTICS':
       return _$locationFeatureResponseLimitReachedEnum_ADVANCED_ANALYTICS;
+    case 'aDVANCEDANALYTICS20':
+      return _$locationFeatureResponseLimitReachedEnum_aDVANCEDANALYTICS20;
     case 'AI_KNOWLEDGEBASE':
       return _$locationFeatureResponseLimitReachedEnum_AI_KNOWLEDGEBASE;
     case 'AI_LOCALISATION':
@@ -1699,6 +1731,8 @@ LocationFeatureResponseLimitReachedEnum
       return _$locationFeatureResponseLimitReachedEnum_FIRST_PARTY_REVIEW_APPROVAL;
     case 'FORMS':
       return _$locationFeatureResponseLimitReachedEnum_FORMS;
+    case 'GOOGLE_POSTING':
+      return _$locationFeatureResponseLimitReachedEnum_GOOGLE_POSTING;
     case 'HOMEPAGE':
       return _$locationFeatureResponseLimitReachedEnum_HOMEPAGE;
     case 'INBOX':
@@ -1848,6 +1882,7 @@ final BuiltSet<LocationFeatureResponseLimitReachedEnum>
   _$locationFeatureResponseLimitReachedEnum_ADS_READ,
   _$locationFeatureResponseLimitReachedEnum_ADS_WRITE,
   _$locationFeatureResponseLimitReachedEnum_ADVANCED_ANALYTICS,
+  _$locationFeatureResponseLimitReachedEnum_aDVANCEDANALYTICS20,
   _$locationFeatureResponseLimitReachedEnum_AI_KNOWLEDGEBASE,
   _$locationFeatureResponseLimitReachedEnum_AI_LOCALISATION,
   _$locationFeatureResponseLimitReachedEnum_AI_SUGGESTED_REPLIES,
@@ -1878,6 +1913,7 @@ final BuiltSet<LocationFeatureResponseLimitReachedEnum>
   _$locationFeatureResponseLimitReachedEnum_FACEBOOK_UNOWNED_PAGE_CREATE,
   _$locationFeatureResponseLimitReachedEnum_FIRST_PARTY_REVIEW_APPROVAL,
   _$locationFeatureResponseLimitReachedEnum_FORMS,
+  _$locationFeatureResponseLimitReachedEnum_GOOGLE_POSTING,
   _$locationFeatureResponseLimitReachedEnum_HOMEPAGE,
   _$locationFeatureResponseLimitReachedEnum_INBOX,
   _$locationFeatureResponseLimitReachedEnum_INBOX_APPROVAL,
@@ -2019,6 +2055,7 @@ class _$LocationFeatureResponseCurrentFeaturesEnumSerializer
     'ADS_READ': 'ADS_READ',
     'ADS_WRITE': 'ADS_WRITE',
     'ADVANCED_ANALYTICS': 'ADVANCED_ANALYTICS',
+    'aDVANCEDANALYTICS20': 'ADVANCED_ANALYTICS_2_0',
     'AI_KNOWLEDGEBASE': 'AI_KNOWLEDGEBASE',
     'AI_LOCALISATION': 'AI_LOCALISATION',
     'AI_SUGGESTED_REPLIES': 'AI_SUGGESTED_REPLIES',
@@ -2049,6 +2086,7 @@ class _$LocationFeatureResponseCurrentFeaturesEnumSerializer
     'FACEBOOK_UNOWNED_PAGE_CREATE': 'FACEBOOK_UNOWNED_PAGE_CREATE',
     'FIRST_PARTY_REVIEW_APPROVAL': 'FIRST_PARTY_REVIEW_APPROVAL',
     'FORMS': 'FORMS',
+    'GOOGLE_POSTING': 'GOOGLE_POSTING',
     'HOMEPAGE': 'HOMEPAGE',
     'INBOX': 'INBOX',
     'INBOX_APPROVAL': 'INBOX_APPROVAL',
@@ -2124,6 +2162,7 @@ class _$LocationFeatureResponseCurrentFeaturesEnumSerializer
     'ADS_READ': 'ADS_READ',
     'ADS_WRITE': 'ADS_WRITE',
     'ADVANCED_ANALYTICS': 'ADVANCED_ANALYTICS',
+    'ADVANCED_ANALYTICS_2_0': 'aDVANCEDANALYTICS20',
     'AI_KNOWLEDGEBASE': 'AI_KNOWLEDGEBASE',
     'AI_LOCALISATION': 'AI_LOCALISATION',
     'AI_SUGGESTED_REPLIES': 'AI_SUGGESTED_REPLIES',
@@ -2154,6 +2193,7 @@ class _$LocationFeatureResponseCurrentFeaturesEnumSerializer
     'FACEBOOK_UNOWNED_PAGE_CREATE': 'FACEBOOK_UNOWNED_PAGE_CREATE',
     'FIRST_PARTY_REVIEW_APPROVAL': 'FIRST_PARTY_REVIEW_APPROVAL',
     'FORMS': 'FORMS',
+    'GOOGLE_POSTING': 'GOOGLE_POSTING',
     'HOMEPAGE': 'HOMEPAGE',
     'INBOX': 'INBOX',
     'INBOX_APPROVAL': 'INBOX_APPROVAL',
@@ -2254,6 +2294,7 @@ class _$LocationFeatureResponsePotentialFeaturesEnumSerializer
     'ADS_READ': 'ADS_READ',
     'ADS_WRITE': 'ADS_WRITE',
     'ADVANCED_ANALYTICS': 'ADVANCED_ANALYTICS',
+    'aDVANCEDANALYTICS20': 'ADVANCED_ANALYTICS_2_0',
     'AI_KNOWLEDGEBASE': 'AI_KNOWLEDGEBASE',
     'AI_LOCALISATION': 'AI_LOCALISATION',
     'AI_SUGGESTED_REPLIES': 'AI_SUGGESTED_REPLIES',
@@ -2284,6 +2325,7 @@ class _$LocationFeatureResponsePotentialFeaturesEnumSerializer
     'FACEBOOK_UNOWNED_PAGE_CREATE': 'FACEBOOK_UNOWNED_PAGE_CREATE',
     'FIRST_PARTY_REVIEW_APPROVAL': 'FIRST_PARTY_REVIEW_APPROVAL',
     'FORMS': 'FORMS',
+    'GOOGLE_POSTING': 'GOOGLE_POSTING',
     'HOMEPAGE': 'HOMEPAGE',
     'INBOX': 'INBOX',
     'INBOX_APPROVAL': 'INBOX_APPROVAL',
@@ -2359,6 +2401,7 @@ class _$LocationFeatureResponsePotentialFeaturesEnumSerializer
     'ADS_READ': 'ADS_READ',
     'ADS_WRITE': 'ADS_WRITE',
     'ADVANCED_ANALYTICS': 'ADVANCED_ANALYTICS',
+    'ADVANCED_ANALYTICS_2_0': 'aDVANCEDANALYTICS20',
     'AI_KNOWLEDGEBASE': 'AI_KNOWLEDGEBASE',
     'AI_LOCALISATION': 'AI_LOCALISATION',
     'AI_SUGGESTED_REPLIES': 'AI_SUGGESTED_REPLIES',
@@ -2389,6 +2432,7 @@ class _$LocationFeatureResponsePotentialFeaturesEnumSerializer
     'FACEBOOK_UNOWNED_PAGE_CREATE': 'FACEBOOK_UNOWNED_PAGE_CREATE',
     'FIRST_PARTY_REVIEW_APPROVAL': 'FIRST_PARTY_REVIEW_APPROVAL',
     'FORMS': 'FORMS',
+    'GOOGLE_POSTING': 'GOOGLE_POSTING',
     'HOMEPAGE': 'HOMEPAGE',
     'INBOX': 'INBOX',
     'INBOX_APPROVAL': 'INBOX_APPROVAL',
@@ -2488,6 +2532,7 @@ class _$LocationFeatureResponseLimitReachedEnumSerializer
     'ADS_READ': 'ADS_READ',
     'ADS_WRITE': 'ADS_WRITE',
     'ADVANCED_ANALYTICS': 'ADVANCED_ANALYTICS',
+    'aDVANCEDANALYTICS20': 'ADVANCED_ANALYTICS_2_0',
     'AI_KNOWLEDGEBASE': 'AI_KNOWLEDGEBASE',
     'AI_LOCALISATION': 'AI_LOCALISATION',
     'AI_SUGGESTED_REPLIES': 'AI_SUGGESTED_REPLIES',
@@ -2518,6 +2563,7 @@ class _$LocationFeatureResponseLimitReachedEnumSerializer
     'FACEBOOK_UNOWNED_PAGE_CREATE': 'FACEBOOK_UNOWNED_PAGE_CREATE',
     'FIRST_PARTY_REVIEW_APPROVAL': 'FIRST_PARTY_REVIEW_APPROVAL',
     'FORMS': 'FORMS',
+    'GOOGLE_POSTING': 'GOOGLE_POSTING',
     'HOMEPAGE': 'HOMEPAGE',
     'INBOX': 'INBOX',
     'INBOX_APPROVAL': 'INBOX_APPROVAL',
@@ -2593,6 +2639,7 @@ class _$LocationFeatureResponseLimitReachedEnumSerializer
     'ADS_READ': 'ADS_READ',
     'ADS_WRITE': 'ADS_WRITE',
     'ADVANCED_ANALYTICS': 'ADVANCED_ANALYTICS',
+    'ADVANCED_ANALYTICS_2_0': 'aDVANCEDANALYTICS20',
     'AI_KNOWLEDGEBASE': 'AI_KNOWLEDGEBASE',
     'AI_LOCALISATION': 'AI_LOCALISATION',
     'AI_SUGGESTED_REPLIES': 'AI_SUGGESTED_REPLIES',
@@ -2623,6 +2670,7 @@ class _$LocationFeatureResponseLimitReachedEnumSerializer
     'FACEBOOK_UNOWNED_PAGE_CREATE': 'FACEBOOK_UNOWNED_PAGE_CREATE',
     'FIRST_PARTY_REVIEW_APPROVAL': 'FIRST_PARTY_REVIEW_APPROVAL',
     'FORMS': 'FORMS',
+    'GOOGLE_POSTING': 'GOOGLE_POSTING',
     'HOMEPAGE': 'HOMEPAGE',
     'INBOX': 'INBOX',
     'INBOX_APPROVAL': 'INBOX_APPROVAL',

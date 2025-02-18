@@ -172,17 +172,17 @@ class _$SocialPostTemplate extends SocialPostTemplate {
   @override
   final BuiltList<SocialPostTemplateCallToAction>? callToActions;
   @override
-  final BuiltList<PhotoContainer>? photos;
-  @override
-  final BuiltList<String>? videos;
-  @override
   final BuiltList<String> directories;
+  @override
+  final BuiltList<PhotoContainer>? photos;
   @override
   final int? ownerId;
   @override
+  final String? ownerName;
+  @override
   final int userId;
   @override
-  final String? ownerName;
+  final BuiltList<String>? videos;
 
   factory _$SocialPostTemplate(
           [void Function(SocialPostTemplateBuilder)? updates]) =>
@@ -197,12 +197,12 @@ class _$SocialPostTemplate extends SocialPostTemplate {
       this.shared,
       this.isStoreLocator,
       this.callToActions,
-      this.photos,
-      this.videos,
       required this.directories,
+      this.photos,
       this.ownerId,
+      this.ownerName,
       required this.userId,
-      this.ownerName})
+      this.videos})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(type, r'SocialPostTemplate', 'type');
     BuiltValueNullFieldError.checkNotNull(
@@ -232,12 +232,12 @@ class _$SocialPostTemplate extends SocialPostTemplate {
         shared == other.shared &&
         isStoreLocator == other.isStoreLocator &&
         callToActions == other.callToActions &&
-        photos == other.photos &&
-        videos == other.videos &&
         directories == other.directories &&
+        photos == other.photos &&
         ownerId == other.ownerId &&
+        ownerName == other.ownerName &&
         userId == other.userId &&
-        ownerName == other.ownerName;
+        videos == other.videos;
   }
 
   @override
@@ -251,12 +251,12 @@ class _$SocialPostTemplate extends SocialPostTemplate {
     _$hash = $jc(_$hash, shared.hashCode);
     _$hash = $jc(_$hash, isStoreLocator.hashCode);
     _$hash = $jc(_$hash, callToActions.hashCode);
-    _$hash = $jc(_$hash, photos.hashCode);
-    _$hash = $jc(_$hash, videos.hashCode);
     _$hash = $jc(_$hash, directories.hashCode);
+    _$hash = $jc(_$hash, photos.hashCode);
     _$hash = $jc(_$hash, ownerId.hashCode);
-    _$hash = $jc(_$hash, userId.hashCode);
     _$hash = $jc(_$hash, ownerName.hashCode);
+    _$hash = $jc(_$hash, userId.hashCode);
+    _$hash = $jc(_$hash, videos.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -272,12 +272,12 @@ class _$SocialPostTemplate extends SocialPostTemplate {
           ..add('shared', shared)
           ..add('isStoreLocator', isStoreLocator)
           ..add('callToActions', callToActions)
-          ..add('photos', photos)
-          ..add('videos', videos)
           ..add('directories', directories)
+          ..add('photos', photos)
           ..add('ownerId', ownerId)
+          ..add('ownerName', ownerName)
           ..add('userId', userId)
-          ..add('ownerName', ownerName))
+          ..add('videos', videos))
         .toString();
   }
 }
@@ -324,33 +324,33 @@ class SocialPostTemplateBuilder
           ListBuilder<SocialPostTemplateCallToAction>? callToActions) =>
       _$this._callToActions = callToActions;
 
-  ListBuilder<PhotoContainer>? _photos;
-  ListBuilder<PhotoContainer> get photos =>
-      _$this._photos ??= new ListBuilder<PhotoContainer>();
-  set photos(ListBuilder<PhotoContainer>? photos) => _$this._photos = photos;
-
-  ListBuilder<String>? _videos;
-  ListBuilder<String> get videos =>
-      _$this._videos ??= new ListBuilder<String>();
-  set videos(ListBuilder<String>? videos) => _$this._videos = videos;
-
   ListBuilder<String>? _directories;
   ListBuilder<String> get directories =>
       _$this._directories ??= new ListBuilder<String>();
   set directories(ListBuilder<String>? directories) =>
       _$this._directories = directories;
 
+  ListBuilder<PhotoContainer>? _photos;
+  ListBuilder<PhotoContainer> get photos =>
+      _$this._photos ??= new ListBuilder<PhotoContainer>();
+  set photos(ListBuilder<PhotoContainer>? photos) => _$this._photos = photos;
+
   int? _ownerId;
   int? get ownerId => _$this._ownerId;
   set ownerId(int? ownerId) => _$this._ownerId = ownerId;
+
+  String? _ownerName;
+  String? get ownerName => _$this._ownerName;
+  set ownerName(String? ownerName) => _$this._ownerName = ownerName;
 
   int? _userId;
   int? get userId => _$this._userId;
   set userId(int? userId) => _$this._userId = userId;
 
-  String? _ownerName;
-  String? get ownerName => _$this._ownerName;
-  set ownerName(String? ownerName) => _$this._ownerName = ownerName;
+  ListBuilder<String>? _videos;
+  ListBuilder<String> get videos =>
+      _$this._videos ??= new ListBuilder<String>();
+  set videos(ListBuilder<String>? videos) => _$this._videos = videos;
 
   SocialPostTemplateBuilder() {
     SocialPostTemplate._defaults(this);
@@ -367,12 +367,12 @@ class SocialPostTemplateBuilder
       _shared = $v.shared;
       _isStoreLocator = $v.isStoreLocator;
       _callToActions = $v.callToActions?.toBuilder();
-      _photos = $v.photos?.toBuilder();
-      _videos = $v.videos?.toBuilder();
       _directories = $v.directories.toBuilder();
+      _photos = $v.photos?.toBuilder();
       _ownerId = $v.ownerId;
-      _userId = $v.userId;
       _ownerName = $v.ownerName;
+      _userId = $v.userId;
+      _videos = $v.videos?.toBuilder();
       _$v = null;
     }
     return this;
@@ -406,25 +406,26 @@ class SocialPostTemplateBuilder
             shared: shared,
             isStoreLocator: isStoreLocator,
             callToActions: _callToActions?.build(),
-            photos: _photos?.build(),
-            videos: _videos?.build(),
             directories: directories.build(),
+            photos: _photos?.build(),
             ownerId: ownerId,
+            ownerName: ownerName,
             userId: BuiltValueNullFieldError.checkNotNull(
                 userId, r'SocialPostTemplate', 'userId'),
-            ownerName: ownerName,
+            videos: _videos?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'callToActions';
         _callToActions?.build();
-        _$failedField = 'photos';
-        _photos?.build();
-        _$failedField = 'videos';
-        _videos?.build();
         _$failedField = 'directories';
         directories.build();
+        _$failedField = 'photos';
+        _photos?.build();
+
+        _$failedField = 'videos';
+        _videos?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'SocialPostTemplate', _$failedField, e.toString());

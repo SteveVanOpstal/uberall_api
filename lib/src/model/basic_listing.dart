@@ -65,7 +65,6 @@ part 'basic_listing.g.dart';
 /// * [specialOpeningHours] - The location''s special opening hours: e.g. <pre>[ &#123;      \"date\": \"2017-06-29\",     \"closed\": true   &#125;,    &#123;     \"date\": \"2017-06-30\",     \"from1\": \"11:00\",     \"to1\": \"14:00\",     \"from2\": \"16:00\",     \"to2\": \"20:00\"   &#125; ]</pre> Please note that having more than 2 time periods for each day is not possible.
 /// * [specialOpeningHoursStatus] - The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
 /// * [keywordsStatus] - The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
-/// * [categories] - Required - A list of category IDs describing the location
 /// * [categoriesStatus] - The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
 /// * [attributes] - The location''s Google attributes
 /// * [attributesStatus] - The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING
@@ -118,17 +117,18 @@ part 'basic_listing.g.dart';
 /// * [openingDateStatus] - The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
 /// * [customFields] - Custom Fields for the directory
 /// * [customFieldsStatus] - The sync status of this specific field.
-/// * [sublocality] - The sublocality field is only available for countries that require this for their postal address. The following countries have this for: Indonesia - Sub-district, Phillipines - Barangay, Thailand - Tambon / Khwaeng, and Vietnam - Sublocality.
+/// * [sublocality] - The sublocality field is only available for countries that require this for their postal address. The following countries have this for: Indonesia - Sub-district, Phillipines - Barangay, Thailand - Tambon / Khwaeng, Vietnam - Sublocality, Malaysia - Village, Nigeria - Local area, South Africa - Suburb.
 /// * [sublocalityStatus] - The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
 /// * [websiteExtra] - Utm or tracking path - only sent to GOOGLE
 /// * [photos] - Boolean indicating whether or not the listing has photos
+/// * [services] - The video of the social post (can only be one)
+/// * [keywords] - The video of the social post (can only be one)
+/// * [brands] - The video of the social post (can only be one)
+/// * [languages] - The video of the social post (can only be one)
+/// * [categories] - Required - A list of category IDs describing the location
+/// * [contentLists] - Content lists shown on the listing
 /// * [socialProfiles] - Social profiles of the location
 /// * [videos] - A list of videos about the location
-/// * [contentLists] - Content lists shown on the listing
-/// * [keywords] - The list of directories as entered when creating/updating the Social Post.
-/// * [brands] - The list of directories as entered when creating/updating the Social Post.
-/// * [services] - The list of directories as entered when creating/updating the Social Post.
-/// * [languages] - The list of directories as entered when creating/updating the Social Post.
 @BuiltValue()
 abstract class BasicListing
     implements Built<BasicListing, BasicListingBuilder> {
@@ -327,10 +327,6 @@ abstract class BasicListing
   BasicListingKeywordsStatusEnum? get keywordsStatus;
   // enum keywordsStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
-  /// Required - A list of category IDs describing the location
-  @BuiltValueField(wireName: r'categories')
-  BuiltList<int> get categories;
-
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'categoriesStatus')
   BasicListingCategoriesStatusEnum? get categoriesStatus;
@@ -343,7 +339,7 @@ abstract class BasicListing
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING
   @BuiltValueField(wireName: r'attributesStatus')
   BasicListingAttributesStatusEnum? get attributesStatus;
-  // enum attributesStatusEnum {  PRESENT,  MISSING,  NOT_APPLICABLE,  };
+  // enum attributesStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING, MATCH, MISMATCH
   @BuiltValueField(wireName: r'photosStatus')
@@ -569,7 +565,7 @@ abstract class BasicListing
   BasicListingCustomFieldsStatusEnum? get customFieldsStatus;
   // enum customFieldsStatusEnum {  MATCH,  MISMATCH,  PRESENT,  MISSING,  NOT_APPLICABLE,  };
 
-  /// The sublocality field is only available for countries that require this for their postal address. The following countries have this for: Indonesia - Sub-district, Phillipines - Barangay, Thailand - Tambon / Khwaeng, and Vietnam - Sublocality.
+  /// The sublocality field is only available for countries that require this for their postal address. The following countries have this for: Indonesia - Sub-district, Phillipines - Barangay, Thailand - Tambon / Khwaeng, Vietnam - Sublocality, Malaysia - Village, Nigeria - Local area, South Africa - Suburb.
   @BuiltValueField(wireName: r'sublocality')
   String? get sublocality;
 
@@ -586,6 +582,30 @@ abstract class BasicListing
   @BuiltValueField(wireName: r'photos')
   bool? get photos;
 
+  /// The video of the social post (can only be one)
+  @BuiltValueField(wireName: r'services')
+  BuiltList<String>? get services;
+
+  /// The video of the social post (can only be one)
+  @BuiltValueField(wireName: r'keywords')
+  BuiltList<String>? get keywords;
+
+  /// The video of the social post (can only be one)
+  @BuiltValueField(wireName: r'brands')
+  BuiltList<String>? get brands;
+
+  /// The video of the social post (can only be one)
+  @BuiltValueField(wireName: r'languages')
+  BuiltList<String>? get languages;
+
+  /// Required - A list of category IDs describing the location
+  @BuiltValueField(wireName: r'categories')
+  BuiltList<int>? get categories;
+
+  /// Content lists shown on the listing
+  @BuiltValueField(wireName: r'contentLists')
+  BuiltList<ContentList>? get contentLists;
+
   /// Social profiles of the location
   @BuiltValueField(wireName: r'socialProfiles')
   BuiltList<SocialProfile>? get socialProfiles;
@@ -593,26 +613,6 @@ abstract class BasicListing
   /// A list of videos about the location
   @BuiltValueField(wireName: r'videos')
   BuiltList<Video>? get videos;
-
-  /// Content lists shown on the listing
-  @BuiltValueField(wireName: r'contentLists')
-  BuiltList<ContentList>? get contentLists;
-
-  /// The list of directories as entered when creating/updating the Social Post.
-  @BuiltValueField(wireName: r'keywords')
-  BuiltList<String>? get keywords;
-
-  /// The list of directories as entered when creating/updating the Social Post.
-  @BuiltValueField(wireName: r'brands')
-  BuiltList<String>? get brands;
-
-  /// The list of directories as entered when creating/updating the Social Post.
-  @BuiltValueField(wireName: r'services')
-  BuiltList<String>? get services;
-
-  /// The list of directories as entered when creating/updating the Social Post.
-  @BuiltValueField(wireName: r'languages')
-  BuiltList<String>? get languages;
 
   BasicListing._();
 
@@ -940,11 +940,6 @@ class _$BasicListingSerializer implements PrimitiveSerializer<BasicListing> {
         specifiedType: const FullType(BasicListingKeywordsStatusEnum),
       );
     }
-    yield r'categories';
-    yield serializers.serialize(
-      object.categories,
-      specifiedType: const FullType(BuiltList, [FullType(int)]),
-    );
     if (object.categoriesStatus != null) {
       yield r'categoriesStatus';
       yield serializers.serialize(
@@ -1338,25 +1333,11 @@ class _$BasicListingSerializer implements PrimitiveSerializer<BasicListing> {
         specifiedType: const FullType(bool),
       );
     }
-    if (object.socialProfiles != null) {
-      yield r'socialProfiles';
+    if (object.services != null) {
+      yield r'services';
       yield serializers.serialize(
-        object.socialProfiles,
-        specifiedType: const FullType(BuiltList, [FullType(SocialProfile)]),
-      );
-    }
-    if (object.videos != null) {
-      yield r'videos';
-      yield serializers.serialize(
-        object.videos,
-        specifiedType: const FullType(BuiltList, [FullType(Video)]),
-      );
-    }
-    if (object.contentLists != null) {
-      yield r'contentLists';
-      yield serializers.serialize(
-        object.contentLists,
-        specifiedType: const FullType(BuiltList, [FullType(ContentList)]),
+        object.services,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
     if (object.keywords != null) {
@@ -1373,18 +1354,39 @@ class _$BasicListingSerializer implements PrimitiveSerializer<BasicListing> {
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
-    if (object.services != null) {
-      yield r'services';
-      yield serializers.serialize(
-        object.services,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
     if (object.languages != null) {
       yield r'languages';
       yield serializers.serialize(
         object.languages,
         specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
+    if (object.categories != null) {
+      yield r'categories';
+      yield serializers.serialize(
+        object.categories,
+        specifiedType: const FullType(BuiltList, [FullType(int)]),
+      );
+    }
+    if (object.contentLists != null) {
+      yield r'contentLists';
+      yield serializers.serialize(
+        object.contentLists,
+        specifiedType: const FullType(BuiltList, [FullType(ContentList)]),
+      );
+    }
+    if (object.socialProfiles != null) {
+      yield r'socialProfiles';
+      yield serializers.serialize(
+        object.socialProfiles,
+        specifiedType: const FullType(BuiltList, [FullType(SocialProfile)]),
+      );
+    }
+    if (object.videos != null) {
+      yield r'videos';
+      yield serializers.serialize(
+        object.videos,
+        specifiedType: const FullType(BuiltList, [FullType(Video)]),
       );
     }
   }
@@ -1717,13 +1719,6 @@ class _$BasicListingSerializer implements PrimitiveSerializer<BasicListing> {
             specifiedType: const FullType(BasicListingKeywordsStatusEnum),
           ) as BasicListingKeywordsStatusEnum;
           result.keywordsStatus = valueDes;
-          break;
-        case r'categories':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(int)]),
-          ) as BuiltList<int>;
-          result.categories.replace(valueDes);
           break;
         case r'categoriesStatus':
           final valueDes = serializers.deserialize(
@@ -2121,26 +2116,12 @@ class _$BasicListingSerializer implements PrimitiveSerializer<BasicListing> {
           ) as bool;
           result.photos = valueDes;
           break;
-        case r'socialProfiles':
+        case r'services':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(SocialProfile)]),
-          ) as BuiltList<SocialProfile>;
-          result.socialProfiles.replace(valueDes);
-          break;
-        case r'videos':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(Video)]),
-          ) as BuiltList<Video>;
-          result.videos.replace(valueDes);
-          break;
-        case r'contentLists':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(ContentList)]),
-          ) as BuiltList<ContentList>;
-          result.contentLists.replace(valueDes);
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.services.replace(valueDes);
           break;
         case r'keywords':
           final valueDes = serializers.deserialize(
@@ -2156,19 +2137,40 @@ class _$BasicListingSerializer implements PrimitiveSerializer<BasicListing> {
           ) as BuiltList<String>;
           result.brands.replace(valueDes);
           break;
-        case r'services':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.services.replace(valueDes);
-          break;
         case r'languages':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.languages.replace(valueDes);
+          break;
+        case r'categories':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(int)]),
+          ) as BuiltList<int>;
+          result.categories.replace(valueDes);
+          break;
+        case r'contentLists':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(ContentList)]),
+          ) as BuiltList<ContentList>;
+          result.contentLists.replace(valueDes);
+          break;
+        case r'socialProfiles':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(SocialProfile)]),
+          ) as BuiltList<SocialProfile>;
+          result.socialProfiles.replace(valueDes);
+          break;
+        case r'videos':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(Video)]),
+          ) as BuiltList<Video>;
+          result.videos.replace(valueDes);
           break;
         default:
           unhandled.add(key);
@@ -3158,6 +3160,16 @@ class BasicListingCategoriesStatusEnum extends EnumClass {
 }
 
 class BasicListingAttributesStatusEnum extends EnumClass {
+  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING
+  @BuiltValueEnumConst(wireName: r'MATCH')
+  static const BasicListingAttributesStatusEnum MATCH =
+      _$basicListingAttributesStatusEnum_MATCH;
+
+  /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING
+  @BuiltValueEnumConst(wireName: r'MISMATCH')
+  static const BasicListingAttributesStatusEnum MISMATCH =
+      _$basicListingAttributesStatusEnum_MISMATCH;
+
   /// The sync status of this specific field. One of NOT_APPLICABLE, PRESENT, MISSING
   @BuiltValueEnumConst(wireName: r'PRESENT')
   static const BasicListingAttributesStatusEnum PRESENT =

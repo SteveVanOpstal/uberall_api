@@ -106,6 +106,15 @@ const EmailSettingsEmailTypeEnum
     _$emailSettingsEmailTypeEnum_NEW_CONTACT_FORM_NOTIFICATION_BUSINESS =
     const EmailSettingsEmailTypeEnum._(
         'NEW_CONTACT_FORM_NOTIFICATION_BUSINESS');
+const EmailSettingsEmailTypeEnum
+    _$emailSettingsEmailTypeEnum_tIMELYTASKNOTIFICATION1 =
+    const EmailSettingsEmailTypeEnum._('tIMELYTASKNOTIFICATION1');
+const EmailSettingsEmailTypeEnum
+    _$emailSettingsEmailTypeEnum_tIMELYTASKNOTIFICATION2 =
+    const EmailSettingsEmailTypeEnum._('tIMELYTASKNOTIFICATION2');
+const EmailSettingsEmailTypeEnum
+    _$emailSettingsEmailTypeEnum_tIMELYTASKNOTIFICATION3 =
+    const EmailSettingsEmailTypeEnum._('tIMELYTASKNOTIFICATION3');
 
 EmailSettingsEmailTypeEnum _$emailSettingsEmailTypeEnumValueOf(String name) {
   switch (name) {
@@ -149,6 +158,12 @@ EmailSettingsEmailTypeEnum _$emailSettingsEmailTypeEnumValueOf(String name) {
       return _$emailSettingsEmailTypeEnum_NEW_CONTACT_FORM_NOTIFICATION_LOCATION;
     case 'NEW_CONTACT_FORM_NOTIFICATION_BUSINESS':
       return _$emailSettingsEmailTypeEnum_NEW_CONTACT_FORM_NOTIFICATION_BUSINESS;
+    case 'tIMELYTASKNOTIFICATION1':
+      return _$emailSettingsEmailTypeEnum_tIMELYTASKNOTIFICATION1;
+    case 'tIMELYTASKNOTIFICATION2':
+      return _$emailSettingsEmailTypeEnum_tIMELYTASKNOTIFICATION2;
+    case 'tIMELYTASKNOTIFICATION3':
+      return _$emailSettingsEmailTypeEnum_tIMELYTASKNOTIFICATION3;
     default:
       throw new ArgumentError(name);
   }
@@ -176,6 +191,9 @@ final BuiltSet<EmailSettingsEmailTypeEnum> _$emailSettingsEmailTypeEnumValues =
   _$emailSettingsEmailTypeEnum_NEW_CHAT_NOTIFICATION_BUSINESS,
   _$emailSettingsEmailTypeEnum_NEW_CONTACT_FORM_NOTIFICATION_LOCATION,
   _$emailSettingsEmailTypeEnum_NEW_CONTACT_FORM_NOTIFICATION_BUSINESS,
+  _$emailSettingsEmailTypeEnum_tIMELYTASKNOTIFICATION1,
+  _$emailSettingsEmailTypeEnum_tIMELYTASKNOTIFICATION2,
+  _$emailSettingsEmailTypeEnum_tIMELYTASKNOTIFICATION3,
 ]);
 
 Serializer<EmailSettingsFrequencyEnum> _$emailSettingsFrequencyEnumSerializer =
@@ -248,6 +266,9 @@ class _$EmailSettingsEmailTypeEnumSerializer
         'NEW_CONTACT_FORM_NOTIFICATION_LOCATION',
     'NEW_CONTACT_FORM_NOTIFICATION_BUSINESS':
         'NEW_CONTACT_FORM_NOTIFICATION_BUSINESS',
+    'tIMELYTASKNOTIFICATION1': 'TIMELY_TASK_NOTIFICATION_1',
+    'tIMELYTASKNOTIFICATION2': 'TIMELY_TASK_NOTIFICATION_2',
+    'tIMELYTASKNOTIFICATION3': 'TIMELY_TASK_NOTIFICATION_3',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'DIGEST': 'DIGEST',
@@ -275,6 +296,9 @@ class _$EmailSettingsEmailTypeEnumSerializer
         'NEW_CONTACT_FORM_NOTIFICATION_LOCATION',
     'NEW_CONTACT_FORM_NOTIFICATION_BUSINESS':
         'NEW_CONTACT_FORM_NOTIFICATION_BUSINESS',
+    'TIMELY_TASK_NOTIFICATION_1': 'tIMELYTASKNOTIFICATION1',
+    'TIMELY_TASK_NOTIFICATION_2': 'tIMELYTASKNOTIFICATION2',
+    'TIMELY_TASK_NOTIFICATION_3': 'tIMELYTASKNOTIFICATION3',
   };
 
   @override
@@ -300,23 +324,11 @@ class _$EmailSettings extends EmailSettings {
   final EmailSettingsFrequencyEnum? frequency;
   @override
   final EmailSettingsEmailTypeEnum? emailType;
-  @override
-  final JsonObject? frequencyId;
-  @override
-  final JsonObject? userId;
-  @override
-  final JsonObject? emailTypeId;
 
   factory _$EmailSettings([void Function(EmailSettingsBuilder)? updates]) =>
       (new EmailSettingsBuilder()..update(updates))._build();
 
-  _$EmailSettings._(
-      {this.frequency,
-      this.emailType,
-      this.frequencyId,
-      this.userId,
-      this.emailTypeId})
-      : super._();
+  _$EmailSettings._({this.frequency, this.emailType}) : super._();
 
   @override
   EmailSettings rebuild(void Function(EmailSettingsBuilder) updates) =>
@@ -330,10 +342,7 @@ class _$EmailSettings extends EmailSettings {
     if (identical(other, this)) return true;
     return other is EmailSettings &&
         frequency == other.frequency &&
-        emailType == other.emailType &&
-        frequencyId == other.frequencyId &&
-        userId == other.userId &&
-        emailTypeId == other.emailTypeId;
+        emailType == other.emailType;
   }
 
   @override
@@ -341,9 +350,6 @@ class _$EmailSettings extends EmailSettings {
     var _$hash = 0;
     _$hash = $jc(_$hash, frequency.hashCode);
     _$hash = $jc(_$hash, emailType.hashCode);
-    _$hash = $jc(_$hash, frequencyId.hashCode);
-    _$hash = $jc(_$hash, userId.hashCode);
-    _$hash = $jc(_$hash, emailTypeId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -352,10 +358,7 @@ class _$EmailSettings extends EmailSettings {
   String toString() {
     return (newBuiltValueToStringHelper(r'EmailSettings')
           ..add('frequency', frequency)
-          ..add('emailType', emailType)
-          ..add('frequencyId', frequencyId)
-          ..add('userId', userId)
-          ..add('emailTypeId', emailTypeId))
+          ..add('emailType', emailType))
         .toString();
   }
 }
@@ -374,18 +377,6 @@ class EmailSettingsBuilder
   set emailType(EmailSettingsEmailTypeEnum? emailType) =>
       _$this._emailType = emailType;
 
-  JsonObject? _frequencyId;
-  JsonObject? get frequencyId => _$this._frequencyId;
-  set frequencyId(JsonObject? frequencyId) => _$this._frequencyId = frequencyId;
-
-  JsonObject? _userId;
-  JsonObject? get userId => _$this._userId;
-  set userId(JsonObject? userId) => _$this._userId = userId;
-
-  JsonObject? _emailTypeId;
-  JsonObject? get emailTypeId => _$this._emailTypeId;
-  set emailTypeId(JsonObject? emailTypeId) => _$this._emailTypeId = emailTypeId;
-
   EmailSettingsBuilder() {
     EmailSettings._defaults(this);
   }
@@ -395,9 +386,6 @@ class EmailSettingsBuilder
     if ($v != null) {
       _frequency = $v.frequency;
       _emailType = $v.emailType;
-      _frequencyId = $v.frequencyId;
-      _userId = $v.userId;
-      _emailTypeId = $v.emailTypeId;
       _$v = null;
     }
     return this;
@@ -422,9 +410,6 @@ class EmailSettingsBuilder
         new _$EmailSettings._(
           frequency: frequency,
           emailType: emailType,
-          frequencyId: frequencyId,
-          userId: userId,
-          emailTypeId: emailTypeId,
         );
     replace(_$result);
     return _$result;

@@ -12,13 +12,13 @@ class _$DirectoryBrand extends DirectoryBrand {
   @override
   final String? status;
   @override
-  final BuiltList<String>? categories;
+  final int? id;
   @override
   final BuiltList<String>? names;
   @override
-  final int? id;
-  @override
   final String? country;
+  @override
+  final BuiltList<String>? categories;
 
   factory _$DirectoryBrand([void Function(DirectoryBrandBuilder)? updates]) =>
       (new DirectoryBrandBuilder()..update(updates))._build();
@@ -26,10 +26,10 @@ class _$DirectoryBrand extends DirectoryBrand {
   _$DirectoryBrand._(
       {this.externalId,
       this.status,
-      this.categories,
-      this.names,
       this.id,
-      this.country})
+      this.names,
+      this.country,
+      this.categories})
       : super._();
 
   @override
@@ -46,10 +46,10 @@ class _$DirectoryBrand extends DirectoryBrand {
     return other is DirectoryBrand &&
         externalId == other.externalId &&
         status == other.status &&
-        categories == other.categories &&
-        names == other.names &&
         id == other.id &&
-        country == other.country;
+        names == other.names &&
+        country == other.country &&
+        categories == other.categories;
   }
 
   @override
@@ -57,10 +57,10 @@ class _$DirectoryBrand extends DirectoryBrand {
     var _$hash = 0;
     _$hash = $jc(_$hash, externalId.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
-    _$hash = $jc(_$hash, categories.hashCode);
-    _$hash = $jc(_$hash, names.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, names.hashCode);
     _$hash = $jc(_$hash, country.hashCode);
+    _$hash = $jc(_$hash, categories.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -70,10 +70,10 @@ class _$DirectoryBrand extends DirectoryBrand {
     return (newBuiltValueToStringHelper(r'DirectoryBrand')
           ..add('externalId', externalId)
           ..add('status', status)
-          ..add('categories', categories)
-          ..add('names', names)
           ..add('id', id)
-          ..add('country', country))
+          ..add('names', names)
+          ..add('country', country)
+          ..add('categories', categories))
         .toString();
   }
 }
@@ -90,23 +90,23 @@ class DirectoryBrandBuilder
   String? get status => _$this._status;
   set status(String? status) => _$this._status = status;
 
-  ListBuilder<String>? _categories;
-  ListBuilder<String> get categories =>
-      _$this._categories ??= new ListBuilder<String>();
-  set categories(ListBuilder<String>? categories) =>
-      _$this._categories = categories;
+  int? _id;
+  int? get id => _$this._id;
+  set id(int? id) => _$this._id = id;
 
   ListBuilder<String>? _names;
   ListBuilder<String> get names => _$this._names ??= new ListBuilder<String>();
   set names(ListBuilder<String>? names) => _$this._names = names;
 
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
-
   String? _country;
   String? get country => _$this._country;
   set country(String? country) => _$this._country = country;
+
+  ListBuilder<String>? _categories;
+  ListBuilder<String> get categories =>
+      _$this._categories ??= new ListBuilder<String>();
+  set categories(ListBuilder<String>? categories) =>
+      _$this._categories = categories;
 
   DirectoryBrandBuilder() {
     DirectoryBrand._defaults(this);
@@ -117,10 +117,10 @@ class DirectoryBrandBuilder
     if ($v != null) {
       _externalId = $v.externalId;
       _status = $v.status;
-      _categories = $v.categories?.toBuilder();
-      _names = $v.names?.toBuilder();
       _id = $v.id;
+      _names = $v.names?.toBuilder();
       _country = $v.country;
+      _categories = $v.categories?.toBuilder();
       _$v = null;
     }
     return this;
@@ -147,18 +147,19 @@ class DirectoryBrandBuilder
           new _$DirectoryBrand._(
             externalId: externalId,
             status: status,
-            categories: _categories?.build(),
-            names: _names?.build(),
             id: id,
+            names: _names?.build(),
             country: country,
+            categories: _categories?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'categories';
-        _categories?.build();
         _$failedField = 'names';
         _names?.build();
+
+        _$failedField = 'categories';
+        _categories?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'DirectoryBrand', _$failedField, e.toString());

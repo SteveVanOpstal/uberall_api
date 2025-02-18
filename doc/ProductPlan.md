@@ -24,7 +24,6 @@ Name | Type | Description | Notes
 **features** | **BuiltSet&lt;String&gt;** | List of features supported by this plan | [optional] 
 **initialBillingPeriod** | **int** | Initial Billing Period | [optional] 
 **initialDuration** | **int** | Initial Duration | [optional] 
-**salesPartnerId** | [**JsonObject**](.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

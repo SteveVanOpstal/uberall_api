@@ -3494,7 +3494,7 @@ class _$FiltersResponse extends FiltersResponse {
   @override
   final BuiltList<FiltersResponseCountriesEnum>? countries;
   @override
-  final BuiltList<String>? businesses;
+  final BuiltList<BusinessFiltersResponse>? businesses;
   @override
   final BuiltList<String>? labels;
   @override
@@ -3570,10 +3570,10 @@ class FiltersResponseBuilder
   set countries(ListBuilder<FiltersResponseCountriesEnum>? countries) =>
       _$this._countries = countries;
 
-  ListBuilder<String>? _businesses;
-  ListBuilder<String> get businesses =>
-      _$this._businesses ??= new ListBuilder<String>();
-  set businesses(ListBuilder<String>? businesses) =>
+  ListBuilder<BusinessFiltersResponse>? _businesses;
+  ListBuilder<BusinessFiltersResponse> get businesses =>
+      _$this._businesses ??= new ListBuilder<BusinessFiltersResponse>();
+  set businesses(ListBuilder<BusinessFiltersResponse>? businesses) =>
       _$this._businesses = businesses;
 
   ListBuilder<String>? _labels;

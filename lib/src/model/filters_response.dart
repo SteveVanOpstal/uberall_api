@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
+import 'package:uberall_api/src/model/business_filters_response.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -32,7 +33,7 @@ abstract class FiltersResponse
 
   /// List of business ids and names
   @BuiltValueField(wireName: r'businesses')
-  BuiltList<String>? get businesses;
+  BuiltList<BusinessFiltersResponse>? get businesses;
 
   /// List of labels
   @BuiltValueField(wireName: r'labels')
@@ -88,7 +89,8 @@ class _$FiltersResponseSerializer
       yield r'businesses';
       yield serializers.serialize(
         object.businesses,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
+        specifiedType:
+            const FullType(BuiltList, [FullType(BusinessFiltersResponse)]),
       );
     }
     if (object.labels != null) {
@@ -150,8 +152,9 @@ class _$FiltersResponseSerializer
         case r'businesses':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+            specifiedType:
+                const FullType(BuiltList, [FullType(BusinessFiltersResponse)]),
+          ) as BuiltList<BusinessFiltersResponse>;
           result.businesses.replace(valueDes);
           break;
         case r'labels':

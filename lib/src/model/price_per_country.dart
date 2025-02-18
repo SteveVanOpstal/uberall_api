@@ -4,7 +4,6 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -17,7 +16,6 @@ part 'price_per_country.g.dart';
 /// * [price] - Price for the country in cents: e.g. 1500 for 15 €
 /// * [marketDevelopmentFunds] - Market Development Funds (MDF)
 /// * [priceSetup] - Setup fee
-/// * [productPlanId]
 @BuiltValue()
 abstract class PricePerCountry
     implements Built<PricePerCountry, PricePerCountryBuilder> {
@@ -37,9 +35,6 @@ abstract class PricePerCountry
   /// Setup fee
   @BuiltValueField(wireName: r'priceSetup')
   int? get priceSetup;
-
-  @BuiltValueField(wireName: r'productPlanId')
-  JsonObject? get productPlanId;
 
   PricePerCountry._();
 
@@ -95,13 +90,6 @@ class _$PricePerCountrySerializer
         specifiedType: const FullType(int),
       );
     }
-    if (object.productPlanId != null) {
-      yield r'productPlanId';
-      yield serializers.serialize(
-        object.productPlanId,
-        specifiedType: const FullType(JsonObject),
-      );
-    }
   }
 
   @override
@@ -154,13 +142,6 @@ class _$PricePerCountrySerializer
             specifiedType: const FullType(int),
           ) as int;
           result.priceSetup = valueDes;
-          break;
-        case r'productPlanId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.productPlanId = valueDes;
           break;
         default:
           unhandled.add(key);

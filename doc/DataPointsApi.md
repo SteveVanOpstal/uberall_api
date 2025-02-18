@@ -151,9 +151,9 @@ import 'package:uberall_api/api.dart';
 final api = UberallApi().getDataPointsApi();
 final bool selectAll = true; // bool | If all data points matching the current filter settings should be marked as unread
 final BuiltList<String> businessIds = ; // BuiltList<String> | Filter by business ids
-final String countries = countries_example; // String | Filter by countries. ISO 3166-1 alpha-2 codes
+final BuiltList<String> countries = ; // BuiltList<String> | Filter by countries. ISO 3166-1 alpha-2 codes
 final String zip = zip_example; // String | Only change inbox items for locations where zip starts with given parameter
-final BuiltList<String> dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // BuiltList<String> | Filter by type of datapoints.
+final BuiltList<String> dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // BuiltList<String> | Filter by type of datapoints
 final BuiltList<String> directoryTypes = ; // BuiltList<String> | Filter by directories
 final BuiltList<String> ratings = ; // BuiltList<String> | Only change inbox items with a rating included in ratings
 final bool replied = true; // bool | Only show elements you have/you have not replied to
@@ -175,9 +175,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **selectAll** | **bool**| If all data points matching the current filter settings should be marked as unread | 
  **businessIds** | [**BuiltList&lt;String&gt;**](String.md)| Filter by business ids | [optional] 
- **countries** | **String**| Filter by countries. ISO 3166-1 alpha-2 codes | [optional] 
+ **countries** | [**BuiltList&lt;String&gt;**](String.md)| Filter by countries. ISO 3166-1 alpha-2 codes | [optional] 
  **zip** | **String**| Only change inbox items for locations where zip starts with given parameter | [optional] 
- **dataPointTypes** | [**BuiltList&lt;String&gt;**](String.md)| Filter by type of datapoints. | [optional] 
+ **dataPointTypes** | [**BuiltList&lt;String&gt;**](String.md)| Filter by type of datapoints | [optional] 
  **directoryTypes** | [**BuiltList&lt;String&gt;**](String.md)| Filter by directories | [optional] 
  **ratings** | [**BuiltList&lt;String&gt;**](String.md)| Only change inbox items with a rating included in ratings | [optional] 
  **replied** | **bool**| Only show elements you have/you have not replied to | [optional] 
@@ -222,12 +222,12 @@ import 'package:uberall_api/api.dart';
 final api = UberallApi().getDataPointsApi();
 final int max = 789; // int | Used for pagination. Maximum number of results per page
 final int page = 789; // int | The page number for pagination
-final String labels = labels_example; // String | Filter by location labels
-final String countries = countries_example; // String | The countries you want data points for. ISO 3166-1 alpha-2 codes
+final BuiltList<String> labels = ; // BuiltList<String> | Filter by location labels
+final BuiltList<String> countries = ; // BuiltList<String> | The countries you want data points for. ISO 3166-1 alpha-2 codes
 final BuiltList<String> businessIds = ; // BuiltList<String> | Ids of businesses you want data points for
 final BuiltList<String> locationIds = ; // BuiltList<String> | The ids of the locations you want data points for
 final String zip = zip_example; // String | Only return inbox items for locations where zip starts with given parameter
-final BuiltList<String> dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // BuiltList<String> | Types of datapoints you want inbox items for.
+final BuiltList<String> dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // BuiltList<String> | Types of datapoints you want inbox items for
 final BuiltList<String> directoryTypes = ; // BuiltList<String> | Directories you want inbox items for
 final BuiltList<String> ratings = ; // BuiltList<String> | Only return inbox items with a rating included in ratings
 final bool read = true; // bool | Only show read/not read elements
@@ -254,12 +254,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **max** | **int**| Used for pagination. Maximum number of results per page | [optional] 
  **page** | **int**| The page number for pagination | [optional] 
- **labels** | **String**| Filter by location labels | [optional] 
- **countries** | **String**| The countries you want data points for. ISO 3166-1 alpha-2 codes | [optional] 
+ **labels** | [**BuiltList&lt;String&gt;**](String.md)| Filter by location labels | [optional] 
+ **countries** | [**BuiltList&lt;String&gt;**](String.md)| The countries you want data points for. ISO 3166-1 alpha-2 codes | [optional] 
  **businessIds** | [**BuiltList&lt;String&gt;**](String.md)| Ids of businesses you want data points for | [optional] 
  **locationIds** | [**BuiltList&lt;String&gt;**](String.md)| The ids of the locations you want data points for | [optional] 
  **zip** | **String**| Only return inbox items for locations where zip starts with given parameter | [optional] 
- **dataPointTypes** | [**BuiltList&lt;String&gt;**](String.md)| Types of datapoints you want inbox items for. | [optional] 
+ **dataPointTypes** | [**BuiltList&lt;String&gt;**](String.md)| Types of datapoints you want inbox items for | [optional] 
  **directoryTypes** | [**BuiltList&lt;String&gt;**](String.md)| Directories you want inbox items for | [optional] 
  **ratings** | [**BuiltList&lt;String&gt;**](String.md)| Only return inbox items with a rating included in ratings | [optional] 
  **read** | **bool**| Only show read/not read elements | [optional] 
@@ -358,11 +358,11 @@ import 'package:uberall_api/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
 final api = UberallApi().getDataPointsApi();
-final String businessIds = businessIds_example; // String | Ids of businesses you want inbox statistics for
-final String countries = countries_example; // String | The countries you want data points' statistics for. ISO 3166-1 alpha-2 codes
-final String locationIds = locationIds_example; // String | Only consider data points belonging to any of these locationIds
-final BuiltList<String> dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // BuiltList<String> | Types of datapoints you want inbox statistics for.
-final String directoryTypes = directoryTypes_example; // String | Directories you want inbox statistics for
+final BuiltList<String> businessIds = ; // BuiltList<String> | Ids of businesses you want inbox statistics for
+final BuiltList<String> countries = ; // BuiltList<String> | The countries you want data points' statistics for. ISO 3166-1 alpha-2 codes
+final BuiltList<String> locationIds = ; // BuiltList<String> | Only consider data points belonging to any of these locationIds
+final BuiltList<String> dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // BuiltList<String> | Types of datapoints you want inbox statistics for
+final BuiltList<String> directoryTypes = ; // BuiltList<String> | Directories you want inbox statistics for
 final BuiltList<String> ratings = ; // BuiltList<String> | Ratings of datapoints you want inbox statistics for.
 final String minActionDate = minActionDate_example; // String | Only consider data points created after that date
 final String maxActionDate = maxActionDate_example; // String | Only consider data points created before that date
@@ -384,11 +384,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **businessIds** | **String**| Ids of businesses you want inbox statistics for | [optional] 
- **countries** | **String**| The countries you want data points' statistics for. ISO 3166-1 alpha-2 codes | [optional] 
- **locationIds** | **String**| Only consider data points belonging to any of these locationIds | [optional] 
- **dataPointTypes** | [**BuiltList&lt;String&gt;**](String.md)| Types of datapoints you want inbox statistics for. | [optional] 
- **directoryTypes** | **String**| Directories you want inbox statistics for | [optional] 
+ **businessIds** | [**BuiltList&lt;String&gt;**](String.md)| Ids of businesses you want inbox statistics for | [optional] 
+ **countries** | [**BuiltList&lt;String&gt;**](String.md)| The countries you want data points' statistics for. ISO 3166-1 alpha-2 codes | [optional] 
+ **locationIds** | [**BuiltList&lt;String&gt;**](String.md)| Only consider data points belonging to any of these locationIds | [optional] 
+ **dataPointTypes** | [**BuiltList&lt;String&gt;**](String.md)| Types of datapoints you want inbox statistics for | [optional] 
+ **directoryTypes** | [**BuiltList&lt;String&gt;**](String.md)| Directories you want inbox statistics for | [optional] 
  **ratings** | [**BuiltList&lt;String&gt;**](String.md)| Ratings of datapoints you want inbox statistics for. | [optional] 
  **minActionDate** | **String**| Only consider data points created after that date | [optional] 
  **maxActionDate** | **String**| Only consider data points created before that date | [optional] 
@@ -433,14 +433,14 @@ import 'package:uberall_api/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
 final api = UberallApi().getDataPointsApi();
-final BuiltList<String> dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // BuiltList<String> | Types of datapoints you want inbox statistics for.
+final BuiltList<String> dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // BuiltList<String> | Types of datapoints you want inbox statistics for
 final BuiltList<String> directoryTypes = ; // BuiltList<String> | Directories you want data points time series for
 final BuiltList<String> businessIds = ; // BuiltList<String> | Ids of businesses you want data points for
 final String zip = zip_example; // String | Only return Data Points time series for locations where zip starts with given parameter
 final BuiltList<String> ratings = ; // BuiltList<String> | Only return Data Points with a rating included in ratings
 final bool read = true; // bool | Only show read/not read elements
 final bool replied = true; // bool | Only show elements you have/you have not replied to
-final String countries = countries_example; // String | The countries you want data points for. ISO 3166-1 alpha-2 codes
+final BuiltList<String> countries = ; // BuiltList<String> | The countries you want data points for. ISO 3166-1 alpha-2 codes
 
 try {
     final response = api.getDataPointsTimeseries(dataPointTypes, directoryTypes, businessIds, zip, ratings, read, replied, countries);
@@ -454,14 +454,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dataPointTypes** | [**BuiltList&lt;String&gt;**](String.md)| Types of datapoints you want inbox statistics for. | [optional] 
+ **dataPointTypes** | [**BuiltList&lt;String&gt;**](String.md)| Types of datapoints you want inbox statistics for | [optional] 
  **directoryTypes** | [**BuiltList&lt;String&gt;**](String.md)| Directories you want data points time series for | [optional] 
  **businessIds** | [**BuiltList&lt;String&gt;**](String.md)| Ids of businesses you want data points for | [optional] 
  **zip** | **String**| Only return Data Points time series for locations where zip starts with given parameter | [optional] 
  **ratings** | [**BuiltList&lt;String&gt;**](String.md)| Only return Data Points with a rating included in ratings | [optional] 
  **read** | **bool**| Only show read/not read elements | [optional] 
  **replied** | **bool**| Only show elements you have/you have not replied to | [optional] 
- **countries** | **String**| The countries you want data points for. ISO 3166-1 alpha-2 codes | [optional] 
+ **countries** | [**BuiltList&lt;String&gt;**](String.md)| The countries you want data points for. ISO 3166-1 alpha-2 codes | [optional] 
 
 ### Return type
 
@@ -763,9 +763,9 @@ import 'package:uberall_api/api.dart';
 final api = UberallApi().getDataPointsApi();
 final bool selectAll = true; // bool | If all data points matching the current filter settings should be marked as read
 final BuiltList<String> businessIds = ; // BuiltList<String> | Filter by business ids
-final String countries = countries_example; // String | Filter by countries. ISO 3166-1 alpha-2 codes
+final BuiltList<String> countries = ; // BuiltList<String> | Filter by countries. ISO 3166-1 alpha-2 codes
 final String zip = zip_example; // String | Only change inbox items for locations where zip starts with given parameter
-final BuiltList<String> dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // BuiltList<String> | Filter by type of datapoints.
+final BuiltList<String> dataPointTypes = [PHOTO, REVIEW, CHECKIN]; // BuiltList<String> | Filter by type of datapoints
 final BuiltList<String> directoryTypes = ; // BuiltList<String> | Filter by directories
 final BuiltList<String> ratings = ; // BuiltList<String> | Only change inbox items with a rating included in ratings
 final bool replied = true; // bool | Only show elements you have/you have not replied to
@@ -787,9 +787,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **selectAll** | **bool**| If all data points matching the current filter settings should be marked as read | 
  **businessIds** | [**BuiltList&lt;String&gt;**](String.md)| Filter by business ids | [optional] 
- **countries** | **String**| Filter by countries. ISO 3166-1 alpha-2 codes | [optional] 
+ **countries** | [**BuiltList&lt;String&gt;**](String.md)| Filter by countries. ISO 3166-1 alpha-2 codes | [optional] 
  **zip** | **String**| Only change inbox items for locations where zip starts with given parameter | [optional] 
- **dataPointTypes** | [**BuiltList&lt;String&gt;**](String.md)| Filter by type of datapoints. | [optional] 
+ **dataPointTypes** | [**BuiltList&lt;String&gt;**](String.md)| Filter by type of datapoints | [optional] 
  **directoryTypes** | [**BuiltList&lt;String&gt;**](String.md)| Filter by directories | [optional] 
  **ratings** | [**BuiltList&lt;String&gt;**](String.md)| Only change inbox items with a rating included in ratings | [optional] 
  **replied** | **bool**| Only show elements you have/you have not replied to | [optional] 

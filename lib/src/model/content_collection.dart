@@ -40,7 +40,7 @@ abstract class ContentCollection
   /// Mandatory - the type of content collection. Values can be: MENU, PEOPLE, PRODUCTS, SERVICES, or CUSTOM
   @BuiltValueField(wireName: r'type')
   ContentCollectionTypeEnum get type;
-  // enum typeEnum {  MENU,  PEOPLE,  PRODUCTS,  CUSTOM,  SERVICES,  EVENTS,  MENU, PEOPLE, PRODUCTS, SERVICES, or CUSTOM,  };
+  // enum typeEnum {  MENU,  PEOPLE,  PRODUCTS,  CUSTOM,  SERVICES,  EVENTS,  };
 
   /// Mandatory - Sections within the content collections
   @BuiltValueField(wireName: r'contentLists')
@@ -290,12 +290,6 @@ class ContentCollectionTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'EVENTS')
   static const ContentCollectionTypeEnum EVENTS =
       _$contentCollectionTypeEnum_EVENTS;
-
-  /// Mandatory - the type of content collection. Values can be: MENU, PEOPLE, PRODUCTS, SERVICES, or CUSTOM
-  @BuiltValueEnumConst(wireName: r'MENU, PEOPLE, PRODUCTS, SERVICES, or CUSTOM')
-  static const ContentCollectionTypeEnum
-      mENUCommaPEOPLECommaPRODUCTSCommaSERVICESCommaOrCUSTOM =
-      _$contentCollectionTypeEnum_mENUCommaPEOPLECommaPRODUCTSCommaSERVICESCommaOrCUSTOM;
 
   static Serializer<ContentCollectionTypeEnum> get serializer =>
       _$contentCollectionTypeEnumSerializer;

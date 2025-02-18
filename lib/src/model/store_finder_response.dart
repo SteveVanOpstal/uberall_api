@@ -10,7 +10,6 @@ import 'package:uberall_api/src/model/video.dart';
 import 'package:uberall_api/src/model/next_open.dart';
 import 'package:uberall_api/src/model/custom_item.dart';
 import 'package:uberall_api/src/model/product.dart';
-import 'package:uberall_api/src/model/location_photo_response.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:uberall_api/src/model/person.dart';
 import 'package:uberall_api/src/model/menu_item.dart';
@@ -59,7 +58,7 @@ part 'store_finder_response.g.dart';
 /// * [paymentOptions] - The payment options accepted at the location (eg. cash, bank transfer, ...)
 /// * [people] - People associated with this location
 /// * [phone] - The location''s contact phone number.
-/// * [photos] - The location's photos
+/// * [photos] - The location''s photos.
 /// * [products] - Products offered by this location
 /// * [province] - The province the location is residing in.
 /// * [reviewCount] - How many Google Reviews this location has in total
@@ -109,7 +108,7 @@ abstract class StoreFinderResponse
 
   /// A list of category IDs describing the location
   @BuiltValueField(wireName: r'categories')
-  BuiltList<int>? get categories;
+  BuiltList<BuiltMap<String, JsonObject>>? get categories;
 
   /// A contact mobile phone number
   @BuiltValueField(wireName: r'cellphone')
@@ -215,9 +214,9 @@ abstract class StoreFinderResponse
   @BuiltValueField(wireName: r'phone')
   String? get phone;
 
-  /// The location's photos
+  /// The location''s photos.
   @BuiltValueField(wireName: r'photos')
-  BuiltSet<LocationPhotoResponse>? get photos;
+  BuiltSet<JsonObject>? get photos;
 
   /// Products offered by this location
   @BuiltValueField(wireName: r'products')
@@ -365,7 +364,9 @@ class _$StoreFinderResponseSerializer
       yield r'categories';
       yield serializers.serialize(
         object.categories,
-        specifiedType: const FullType(BuiltList, [FullType(int)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(BuiltMap, [FullType(String), FullType(JsonObject)])
+        ]),
       );
     }
     if (object.cellphone != null) {
@@ -555,8 +556,7 @@ class _$StoreFinderResponseSerializer
       yield r'photos';
       yield serializers.serialize(
         object.photos,
-        specifiedType:
-            const FullType(BuiltSet, [FullType(LocationPhotoResponse)]),
+        specifiedType: const FullType(BuiltSet, [FullType(JsonObject)]),
       );
     }
     if (object.products != null) {
@@ -748,8 +748,10 @@ class _$StoreFinderResponseSerializer
         case r'categories':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(int)]),
-          ) as BuiltList<int>;
+            specifiedType: const FullType(BuiltList, [
+              FullType(BuiltMap, [FullType(String), FullType(JsonObject)])
+            ]),
+          ) as BuiltList<BuiltMap<String, JsonObject>>;
           result.categories.replace(valueDes);
           break;
         case r'cellphone':
@@ -938,9 +940,8 @@ class _$StoreFinderResponseSerializer
         case r'photos':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType:
-                const FullType(BuiltSet, [FullType(LocationPhotoResponse)]),
-          ) as BuiltSet<LocationPhotoResponse>;
+            specifiedType: const FullType(BuiltSet, [FullType(JsonObject)]),
+          ) as BuiltSet<JsonObject>;
           result.photos.replace(valueDes);
           break;
         case r'products':

@@ -2465,6 +2465,9 @@ const DataPointFilterDataPointTypesEnum
 const DataPointFilterDataPointTypesEnum
     _$dataPointFilterDataPointTypesEnum_EXPANDEDREVIEW =
     const DataPointFilterDataPointTypesEnum._('EXPANDEDREVIEW');
+const DataPointFilterDataPointTypesEnum
+    _$dataPointFilterDataPointTypesEnum_AD_POST =
+    const DataPointFilterDataPointTypesEnum._('AD_POST');
 
 DataPointFilterDataPointTypesEnum _$dataPointFilterDataPointTypesEnumValueOf(
     String name) {
@@ -2493,6 +2496,8 @@ DataPointFilterDataPointTypesEnum _$dataPointFilterDataPointTypesEnumValueOf(
       return _$dataPointFilterDataPointTypesEnum_LINK;
     case 'EXPANDEDREVIEW':
       return _$dataPointFilterDataPointTypesEnum_EXPANDEDREVIEW;
+    case 'AD_POST':
+      return _$dataPointFilterDataPointTypesEnum_AD_POST;
     default:
       throw new ArgumentError(name);
   }
@@ -2513,6 +2518,7 @@ final BuiltSet<DataPointFilterDataPointTypesEnum>
   _$dataPointFilterDataPointTypesEnum_CAROUSEL_ALBUM,
   _$dataPointFilterDataPointTypesEnum_LINK,
   _$dataPointFilterDataPointTypesEnum_EXPANDEDREVIEW,
+  _$dataPointFilterDataPointTypesEnum_AD_POST,
 ]);
 
 const DataPointFilterTimeSpanEnum _$dataPointFilterTimeSpanEnum_TODAY =
@@ -3552,6 +3558,7 @@ class _$DataPointFilterDataPointTypesEnumSerializer
     'CAROUSEL_ALBUM': 'CAROUSEL_ALBUM',
     'LINK': 'LINK',
     'EXPANDEDREVIEW': 'EXPANDEDREVIEW',
+    'AD_POST': 'AD_POST',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'REVIEW': 'REVIEW',
@@ -3566,6 +3573,7 @@ class _$DataPointFilterDataPointTypesEnumSerializer
     'CAROUSEL_ALBUM': 'CAROUSEL_ALBUM',
     'LINK': 'LINK',
     'EXPANDEDREVIEW': 'EXPANDEDREVIEW',
+    'AD_POST': 'AD_POST',
   };
 
   @override
@@ -3654,19 +3662,19 @@ class _$DataPointFilter extends DataPointFilter {
   @override
   final int? crossfeedFilterId;
   @override
-  final DateTime? dateStart;
-  @override
   final BuiltSet<int>? businessIds;
   @override
   final DateTime? dateEnd;
   @override
+  final DateTime? dateStart;
+  @override
   final int? ownerId;
+  @override
+  final String? ownerName;
   @override
   final int? salesPartnerId;
   @override
   final BuiltList<int>? subscriberIds;
-  @override
-  final String? ownerName;
 
   factory _$DataPointFilter([void Function(DataPointFilterBuilder)? updates]) =>
       (new DataPointFilterBuilder()..update(updates))._build();
@@ -3685,13 +3693,13 @@ class _$DataPointFilter extends DataPointFilter {
       this.query,
       this.timeSpan,
       this.crossfeedFilterId,
-      this.dateStart,
       this.businessIds,
       this.dateEnd,
+      this.dateStart,
       this.ownerId,
+      this.ownerName,
       this.salesPartnerId,
-      this.subscriberIds,
-      this.ownerName})
+      this.subscriberIds})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(name, r'DataPointFilter', 'name');
   }
@@ -3721,13 +3729,13 @@ class _$DataPointFilter extends DataPointFilter {
         query == other.query &&
         timeSpan == other.timeSpan &&
         crossfeedFilterId == other.crossfeedFilterId &&
-        dateStart == other.dateStart &&
         businessIds == other.businessIds &&
         dateEnd == other.dateEnd &&
+        dateStart == other.dateStart &&
         ownerId == other.ownerId &&
+        ownerName == other.ownerName &&
         salesPartnerId == other.salesPartnerId &&
-        subscriberIds == other.subscriberIds &&
-        ownerName == other.ownerName;
+        subscriberIds == other.subscriberIds;
   }
 
   @override
@@ -3746,13 +3754,13 @@ class _$DataPointFilter extends DataPointFilter {
     _$hash = $jc(_$hash, query.hashCode);
     _$hash = $jc(_$hash, timeSpan.hashCode);
     _$hash = $jc(_$hash, crossfeedFilterId.hashCode);
-    _$hash = $jc(_$hash, dateStart.hashCode);
     _$hash = $jc(_$hash, businessIds.hashCode);
     _$hash = $jc(_$hash, dateEnd.hashCode);
+    _$hash = $jc(_$hash, dateStart.hashCode);
     _$hash = $jc(_$hash, ownerId.hashCode);
+    _$hash = $jc(_$hash, ownerName.hashCode);
     _$hash = $jc(_$hash, salesPartnerId.hashCode);
     _$hash = $jc(_$hash, subscriberIds.hashCode);
-    _$hash = $jc(_$hash, ownerName.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -3773,13 +3781,13 @@ class _$DataPointFilter extends DataPointFilter {
           ..add('query', query)
           ..add('timeSpan', timeSpan)
           ..add('crossfeedFilterId', crossfeedFilterId)
-          ..add('dateStart', dateStart)
           ..add('businessIds', businessIds)
           ..add('dateEnd', dateEnd)
+          ..add('dateStart', dateStart)
           ..add('ownerId', ownerId)
+          ..add('ownerName', ownerName)
           ..add('salesPartnerId', salesPartnerId)
-          ..add('subscriberIds', subscriberIds)
-          ..add('ownerName', ownerName))
+          ..add('subscriberIds', subscriberIds))
         .toString();
   }
 }
@@ -3850,10 +3858,6 @@ class DataPointFilterBuilder
   set crossfeedFilterId(int? crossfeedFilterId) =>
       _$this._crossfeedFilterId = crossfeedFilterId;
 
-  DateTime? _dateStart;
-  DateTime? get dateStart => _$this._dateStart;
-  set dateStart(DateTime? dateStart) => _$this._dateStart = dateStart;
-
   SetBuilder<int>? _businessIds;
   SetBuilder<int> get businessIds =>
       _$this._businessIds ??= new SetBuilder<int>();
@@ -3864,9 +3868,17 @@ class DataPointFilterBuilder
   DateTime? get dateEnd => _$this._dateEnd;
   set dateEnd(DateTime? dateEnd) => _$this._dateEnd = dateEnd;
 
+  DateTime? _dateStart;
+  DateTime? get dateStart => _$this._dateStart;
+  set dateStart(DateTime? dateStart) => _$this._dateStart = dateStart;
+
   int? _ownerId;
   int? get ownerId => _$this._ownerId;
   set ownerId(int? ownerId) => _$this._ownerId = ownerId;
+
+  String? _ownerName;
+  String? get ownerName => _$this._ownerName;
+  set ownerName(String? ownerName) => _$this._ownerName = ownerName;
 
   int? _salesPartnerId;
   int? get salesPartnerId => _$this._salesPartnerId;
@@ -3878,10 +3890,6 @@ class DataPointFilterBuilder
       _$this._subscriberIds ??= new ListBuilder<int>();
   set subscriberIds(ListBuilder<int>? subscriberIds) =>
       _$this._subscriberIds = subscriberIds;
-
-  String? _ownerName;
-  String? get ownerName => _$this._ownerName;
-  set ownerName(String? ownerName) => _$this._ownerName = ownerName;
 
   DataPointFilterBuilder() {
     DataPointFilter._defaults(this);
@@ -3903,13 +3911,13 @@ class DataPointFilterBuilder
       _query = $v.query;
       _timeSpan = $v.timeSpan;
       _crossfeedFilterId = $v.crossfeedFilterId;
-      _dateStart = $v.dateStart;
       _businessIds = $v.businessIds?.toBuilder();
       _dateEnd = $v.dateEnd;
+      _dateStart = $v.dateStart;
       _ownerId = $v.ownerId;
+      _ownerName = $v.ownerName;
       _salesPartnerId = $v.salesPartnerId;
       _subscriberIds = $v.subscriberIds?.toBuilder();
-      _ownerName = $v.ownerName;
       _$v = null;
     }
     return this;
@@ -3948,13 +3956,13 @@ class DataPointFilterBuilder
             query: query,
             timeSpan: timeSpan,
             crossfeedFilterId: crossfeedFilterId,
-            dateStart: dateStart,
             businessIds: _businessIds?.build(),
             dateEnd: dateEnd,
+            dateStart: dateStart,
             ownerId: ownerId,
+            ownerName: ownerName,
             salesPartnerId: salesPartnerId,
             subscriberIds: _subscriberIds?.build(),
-            ownerName: ownerName,
           );
     } catch (_) {
       late String _$failedField;

@@ -25,13 +25,13 @@ part 'data_point_filter.g.dart';
 /// * [query] - Any combination of words that should be checked in the dataPoints text, reply messages and author
 /// * [timeSpan] - The date range for which the dataPoints should be filtered.
 /// * [crossfeedFilterId] - The id of a filter saved by a user in the Feed
-/// * [dateStart] - The minimum date for which the dataPoints should be filtered
 /// * [businessIds] - The list of businesses IDs for which the dataPoints should be filtered
 /// * [dateEnd] - The maximum date for which the dataPoints should be filtered
+/// * [dateStart] - The minimum date for which the dataPoints should be filtered
 /// * [ownerId] - The id of the user that owns the filter
+/// * [ownerName] - The name of the user that owns the filter
 /// * [salesPartnerId] - The sales partner to which the filter belongs
 /// * [subscriberIds] - The list of user''s ids that are subscribed to the filter
-/// * [ownerName] - The name of the user that owns the filter
 @BuiltValue()
 abstract class DataPointFilter
     implements Built<DataPointFilter, DataPointFilterBuilder> {
@@ -56,7 +56,7 @@ abstract class DataPointFilter
   /// The list of data point types (REVIEW or PHOTO) for which the dataPoints should be filtered
   @BuiltValueField(wireName: r'dataPointTypes')
   BuiltSet<DataPointFilterDataPointTypesEnum>? get dataPointTypes;
-  // enum dataPointTypesEnum {  REVIEW,  PHOTO,  CHECKIN,  CONVERSATION,  COMMENT,  QUESTION,  POST,  IMAGE,  VIDEO,  CAROUSEL_ALBUM,  LINK,  EXPANDEDREVIEW,  };
+  // enum dataPointTypesEnum {  REVIEW,  PHOTO,  CHECKIN,  CONVERSATION,  COMMENT,  QUESTION,  POST,  IMAGE,  VIDEO,  CAROUSEL_ALBUM,  LINK,  EXPANDEDREVIEW,  AD_POST,  };
 
   /// The list of ratings (1, 2, 3, 4 or 5) for which the dataPoints should be filtered
   @BuiltValueField(wireName: r'ratings')
@@ -91,10 +91,6 @@ abstract class DataPointFilter
   @BuiltValueField(wireName: r'crossfeedFilterId')
   int? get crossfeedFilterId;
 
-  /// The minimum date for which the dataPoints should be filtered
-  @BuiltValueField(wireName: r'dateStart')
-  DateTime? get dateStart;
-
   /// The list of businesses IDs for which the dataPoints should be filtered
   @BuiltValueField(wireName: r'businessIds')
   BuiltSet<int>? get businessIds;
@@ -103,9 +99,17 @@ abstract class DataPointFilter
   @BuiltValueField(wireName: r'dateEnd')
   DateTime? get dateEnd;
 
+  /// The minimum date for which the dataPoints should be filtered
+  @BuiltValueField(wireName: r'dateStart')
+  DateTime? get dateStart;
+
   /// The id of the user that owns the filter
   @BuiltValueField(wireName: r'ownerId')
   int? get ownerId;
+
+  /// The name of the user that owns the filter
+  @BuiltValueField(wireName: r'ownerName')
+  String? get ownerName;
 
   /// The sales partner to which the filter belongs
   @BuiltValueField(wireName: r'salesPartnerId')
@@ -114,10 +118,6 @@ abstract class DataPointFilter
   /// The list of user''s ids that are subscribed to the filter
   @BuiltValueField(wireName: r'subscriberIds')
   BuiltList<int>? get subscriberIds;
-
-  /// The name of the user that owns the filter
-  @BuiltValueField(wireName: r'ownerName')
-  String? get ownerName;
 
   DataPointFilter._();
 
@@ -237,13 +237,6 @@ class _$DataPointFilterSerializer
         specifiedType: const FullType(int),
       );
     }
-    if (object.dateStart != null) {
-      yield r'dateStart';
-      yield serializers.serialize(
-        object.dateStart,
-        specifiedType: const FullType(DateTime),
-      );
-    }
     if (object.businessIds != null) {
       yield r'businessIds';
       yield serializers.serialize(
@@ -258,11 +251,25 @@ class _$DataPointFilterSerializer
         specifiedType: const FullType(DateTime),
       );
     }
+    if (object.dateStart != null) {
+      yield r'dateStart';
+      yield serializers.serialize(
+        object.dateStart,
+        specifiedType: const FullType(DateTime),
+      );
+    }
     if (object.ownerId != null) {
       yield r'ownerId';
       yield serializers.serialize(
         object.ownerId,
         specifiedType: const FullType(int),
+      );
+    }
+    if (object.ownerName != null) {
+      yield r'ownerName';
+      yield serializers.serialize(
+        object.ownerName,
+        specifiedType: const FullType(String),
       );
     }
     if (object.salesPartnerId != null) {
@@ -277,13 +284,6 @@ class _$DataPointFilterSerializer
       yield serializers.serialize(
         object.subscriberIds,
         specifiedType: const FullType(BuiltList, [FullType(int)]),
-      );
-    }
-    if (object.ownerName != null) {
-      yield r'ownerName';
-      yield serializers.serialize(
-        object.ownerName,
-        specifiedType: const FullType(String),
       );
     }
   }
@@ -405,13 +405,6 @@ class _$DataPointFilterSerializer
           ) as int;
           result.crossfeedFilterId = valueDes;
           break;
-        case r'dateStart':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.dateStart = valueDes;
-          break;
         case r'businessIds':
           final valueDes = serializers.deserialize(
             value,
@@ -426,12 +419,26 @@ class _$DataPointFilterSerializer
           ) as DateTime;
           result.dateEnd = valueDes;
           break;
+        case r'dateStart':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.dateStart = valueDes;
+          break;
         case r'ownerId':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(int),
           ) as int;
           result.ownerId = valueDes;
+          break;
+        case r'ownerName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.ownerName = valueDes;
           break;
         case r'salesPartnerId':
           final valueDes = serializers.deserialize(
@@ -446,13 +453,6 @@ class _$DataPointFilterSerializer
             specifiedType: const FullType(BuiltList, [FullType(int)]),
           ) as BuiltList<int>;
           result.subscriberIds.replace(valueDes);
-          break;
-        case r'ownerName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.ownerName = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -2842,6 +2842,11 @@ class DataPointFilterDataPointTypesEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'EXPANDEDREVIEW')
   static const DataPointFilterDataPointTypesEnum EXPANDEDREVIEW =
       _$dataPointFilterDataPointTypesEnum_EXPANDEDREVIEW;
+
+  /// The list of data point types (REVIEW or PHOTO) for which the dataPoints should be filtered
+  @BuiltValueEnumConst(wireName: r'AD_POST')
+  static const DataPointFilterDataPointTypesEnum AD_POST =
+      _$dataPointFilterDataPointTypesEnum_AD_POST;
 
   static Serializer<DataPointFilterDataPointTypesEnum> get serializer =>
       _$dataPointFilterDataPointTypesEnumSerializer;

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 [**getSalesPartnersSubscribableEventTypes**](SalesPartnersApi.md#getsalespartnerssubscribableeventtypes) | **GET** /sales-partners/subscribable-event-types | Get all possible webhooks types
 [**patchSalesPartnersIdSsoSettings**](SalesPartnersApi.md#patchsalespartnersidssosettings) | **PATCH** /sales-partners/{id}/sso-settings | Update SSO Settings of a SalesPartner
 [**postSalesPartners**](SalesPartnersApi.md#postsalespartners) | **POST** /sales-partners | Create child SalesPartner
-[**postSalesPartnersIdUserAccountsAccountIdAppleMaps**](SalesPartnersApi.md#postsalespartnersiduseraccountsaccountidapplemaps) | **POST** /sales-partners/{id}/user-accounts/{accountId}/apple_maps | Disconnect Apple directory User Account
+[**postSalesPartnersIdUserAccountsAccountIdDirectoryType**](SalesPartnersApi.md#postsalespartnersiduseraccountsaccountiddirectorytype) | **POST** /sales-partners/{id}/user-accounts/{accountId}/{directoryType} | Disconnect Directory User Account
 [**putSalesPartnersId**](SalesPartnersApi.md#putsalespartnersid) | **PUT** /sales-partners/{id} | Update a single SalesPartner
 
 
@@ -182,7 +182,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patchSalesPartnersIdSsoSettings**
-> SalesPartnerWrapper patchSalesPartnersIdSsoSettings(body)
+> SalesPartnerWrapper patchSalesPartnersIdSsoSettings(id, body)
 
 Update SSO Settings of a SalesPartner
 
@@ -201,10 +201,11 @@ import 'package:uberall_api/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
 final api = UberallApi().getSalesPartnersApi();
+final String id = id_example; // String | ID of the SalesPartner
 final bool body = true; // bool | forceSso
 
 try {
-    final response = api.patchSalesPartnersIdSsoSettings(body);
+    final response = api.patchSalesPartnersIdSsoSettings(id, body);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling SalesPartnersApi->patchSalesPartnersIdSsoSettings: $e\n');
@@ -215,6 +216,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the SalesPartner | 
  **body** | **bool**| forceSso | [optional] 
 
 ### Return type
@@ -283,12 +285,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **postSalesPartnersIdUserAccountsAccountIdAppleMaps**
-> UberallResponse postSalesPartnersIdUserAccountsAccountIdAppleMaps(id, accountId)
+# **postSalesPartnersIdUserAccountsAccountIdDirectoryType**
+> UberallResponse postSalesPartnersIdUserAccountsAccountIdDirectoryType(id, accountId, directoryType)
 
-Disconnect Apple directory User Account
+Disconnect Directory User Account
 
-Disconnects the Apple account for the given sales partner and account ID
+Disconnects the Dierctory User Account for the given sales partner and invalidates it if no other sales partner is connected to it
 
 ### Example
 ```dart
@@ -305,12 +307,13 @@ import 'package:uberall_api/api.dart';
 final api = UberallApi().getSalesPartnersApi();
 final String id = id_example; // String | Sales Partner ID
 final String accountId = accountId_example; // String | Directory User Account ID
+final String directoryType = directoryType_example; // String | Directory Type of User Account (in lower case)
 
 try {
-    final response = api.postSalesPartnersIdUserAccountsAccountIdAppleMaps(id, accountId);
+    final response = api.postSalesPartnersIdUserAccountsAccountIdDirectoryType(id, accountId, directoryType);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling SalesPartnersApi->postSalesPartnersIdUserAccountsAccountIdAppleMaps: $e\n');
+    print('Exception when calling SalesPartnersApi->postSalesPartnersIdUserAccountsAccountIdDirectoryType: $e\n');
 }
 ```
 
@@ -320,6 +323,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| Sales Partner ID | 
  **accountId** | **String**| Directory User Account ID | 
+ **directoryType** | **String**| Directory Type of User Account (in lower case) | 
 
 ### Return type
 

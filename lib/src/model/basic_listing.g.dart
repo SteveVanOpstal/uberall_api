@@ -1064,6 +1064,12 @@ final BuiltSet<BasicListingCategoriesStatusEnum>
 ]);
 
 const BasicListingAttributesStatusEnum
+    _$basicListingAttributesStatusEnum_MATCH =
+    const BasicListingAttributesStatusEnum._('MATCH');
+const BasicListingAttributesStatusEnum
+    _$basicListingAttributesStatusEnum_MISMATCH =
+    const BasicListingAttributesStatusEnum._('MISMATCH');
+const BasicListingAttributesStatusEnum
     _$basicListingAttributesStatusEnum_PRESENT =
     const BasicListingAttributesStatusEnum._('PRESENT');
 const BasicListingAttributesStatusEnum
@@ -1076,6 +1082,10 @@ const BasicListingAttributesStatusEnum
 BasicListingAttributesStatusEnum _$basicListingAttributesStatusEnumValueOf(
     String name) {
   switch (name) {
+    case 'MATCH':
+      return _$basicListingAttributesStatusEnum_MATCH;
+    case 'MISMATCH':
+      return _$basicListingAttributesStatusEnum_MISMATCH;
     case 'PRESENT':
       return _$basicListingAttributesStatusEnum_PRESENT;
     case 'MISSING':
@@ -1090,6 +1100,8 @@ BasicListingAttributesStatusEnum _$basicListingAttributesStatusEnumValueOf(
 final BuiltSet<BasicListingAttributesStatusEnum>
     _$basicListingAttributesStatusEnumValues = new BuiltSet<
         BasicListingAttributesStatusEnum>(const <BasicListingAttributesStatusEnum>[
+  _$basicListingAttributesStatusEnum_MATCH,
+  _$basicListingAttributesStatusEnum_MISMATCH,
   _$basicListingAttributesStatusEnum_PRESENT,
   _$basicListingAttributesStatusEnum_MISSING,
   _$basicListingAttributesStatusEnum_NOT_APPLICABLE,
@@ -5828,11 +5840,15 @@ class _$BasicListingCategoriesStatusEnumSerializer
 class _$BasicListingAttributesStatusEnumSerializer
     implements PrimitiveSerializer<BasicListingAttributesStatusEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
+    'MATCH': 'MATCH',
+    'MISMATCH': 'MISMATCH',
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
+    'MATCH': 'MATCH',
+    'MISMATCH': 'MISMATCH',
     'PRESENT': 'PRESENT',
     'MISSING': 'MISSING',
     'NOT_APPLICABLE': 'NOT_APPLICABLE',
@@ -7984,8 +8000,6 @@ class _$BasicListing extends BasicListing {
   @override
   final BasicListingKeywordsStatusEnum? keywordsStatus;
   @override
-  final BuiltList<int> categories;
-  @override
   final BasicListingCategoriesStatusEnum? categoriesStatus;
   @override
   final BuiltList<JsonObject>? attributes;
@@ -8098,19 +8112,21 @@ class _$BasicListing extends BasicListing {
   @override
   final bool? photos;
   @override
-  final BuiltList<SocialProfile>? socialProfiles;
-  @override
-  final BuiltList<Video>? videos;
-  @override
-  final BuiltList<ContentList>? contentLists;
+  final BuiltList<String>? services;
   @override
   final BuiltList<String>? keywords;
   @override
   final BuiltList<String>? brands;
   @override
-  final BuiltList<String>? services;
-  @override
   final BuiltList<String>? languages;
+  @override
+  final BuiltList<int>? categories;
+  @override
+  final BuiltList<ContentList>? contentLists;
+  @override
+  final BuiltList<SocialProfile>? socialProfiles;
+  @override
+  final BuiltList<Video>? videos;
 
   factory _$BasicListing([void Function(BasicListingBuilder)? updates]) =>
       (new BasicListingBuilder()..update(updates))._build();
@@ -8159,7 +8175,6 @@ class _$BasicListing extends BasicListing {
       this.specialOpeningHours,
       this.specialOpeningHoursStatus,
       this.keywordsStatus,
-      required this.categories,
       this.categoriesStatus,
       this.attributes,
       this.attributesStatus,
@@ -8216,17 +8231,15 @@ class _$BasicListing extends BasicListing {
       this.sublocalityStatus,
       this.websiteExtra,
       this.photos,
-      this.socialProfiles,
-      this.videos,
-      this.contentLists,
+      this.services,
       this.keywords,
       this.brands,
-      this.services,
-      this.languages})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        categories, r'BasicListing', 'categories');
-  }
+      this.languages,
+      this.categories,
+      this.contentLists,
+      this.socialProfiles,
+      this.videos})
+      : super._();
 
   @override
   BasicListing rebuild(void Function(BasicListingBuilder) updates) =>
@@ -8282,7 +8295,6 @@ class _$BasicListing extends BasicListing {
         specialOpeningHours == other.specialOpeningHours &&
         specialOpeningHoursStatus == other.specialOpeningHoursStatus &&
         keywordsStatus == other.keywordsStatus &&
-        categories == other.categories &&
         categoriesStatus == other.categoriesStatus &&
         attributes == other.attributes &&
         attributesStatus == other.attributesStatus &&
@@ -8339,13 +8351,14 @@ class _$BasicListing extends BasicListing {
         sublocalityStatus == other.sublocalityStatus &&
         websiteExtra == other.websiteExtra &&
         photos == other.photos &&
-        socialProfiles == other.socialProfiles &&
-        videos == other.videos &&
-        contentLists == other.contentLists &&
+        services == other.services &&
         keywords == other.keywords &&
         brands == other.brands &&
-        services == other.services &&
-        languages == other.languages;
+        languages == other.languages &&
+        categories == other.categories &&
+        contentLists == other.contentLists &&
+        socialProfiles == other.socialProfiles &&
+        videos == other.videos;
   }
 
   @override
@@ -8394,7 +8407,6 @@ class _$BasicListing extends BasicListing {
     _$hash = $jc(_$hash, specialOpeningHours.hashCode);
     _$hash = $jc(_$hash, specialOpeningHoursStatus.hashCode);
     _$hash = $jc(_$hash, keywordsStatus.hashCode);
-    _$hash = $jc(_$hash, categories.hashCode);
     _$hash = $jc(_$hash, categoriesStatus.hashCode);
     _$hash = $jc(_$hash, attributes.hashCode);
     _$hash = $jc(_$hash, attributesStatus.hashCode);
@@ -8451,13 +8463,14 @@ class _$BasicListing extends BasicListing {
     _$hash = $jc(_$hash, sublocalityStatus.hashCode);
     _$hash = $jc(_$hash, websiteExtra.hashCode);
     _$hash = $jc(_$hash, photos.hashCode);
-    _$hash = $jc(_$hash, socialProfiles.hashCode);
-    _$hash = $jc(_$hash, videos.hashCode);
-    _$hash = $jc(_$hash, contentLists.hashCode);
+    _$hash = $jc(_$hash, services.hashCode);
     _$hash = $jc(_$hash, keywords.hashCode);
     _$hash = $jc(_$hash, brands.hashCode);
-    _$hash = $jc(_$hash, services.hashCode);
     _$hash = $jc(_$hash, languages.hashCode);
+    _$hash = $jc(_$hash, categories.hashCode);
+    _$hash = $jc(_$hash, contentLists.hashCode);
+    _$hash = $jc(_$hash, socialProfiles.hashCode);
+    _$hash = $jc(_$hash, videos.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -8508,7 +8521,6 @@ class _$BasicListing extends BasicListing {
           ..add('specialOpeningHours', specialOpeningHours)
           ..add('specialOpeningHoursStatus', specialOpeningHoursStatus)
           ..add('keywordsStatus', keywordsStatus)
-          ..add('categories', categories)
           ..add('categoriesStatus', categoriesStatus)
           ..add('attributes', attributes)
           ..add('attributesStatus', attributesStatus)
@@ -8565,13 +8577,14 @@ class _$BasicListing extends BasicListing {
           ..add('sublocalityStatus', sublocalityStatus)
           ..add('websiteExtra', websiteExtra)
           ..add('photos', photos)
-          ..add('socialProfiles', socialProfiles)
-          ..add('videos', videos)
-          ..add('contentLists', contentLists)
+          ..add('services', services)
           ..add('keywords', keywords)
           ..add('brands', brands)
-          ..add('services', services)
-          ..add('languages', languages))
+          ..add('languages', languages)
+          ..add('categories', categories)
+          ..add('contentLists', contentLists)
+          ..add('socialProfiles', socialProfiles)
+          ..add('videos', videos))
         .toString();
   }
 }
@@ -8804,12 +8817,6 @@ class BasicListingBuilder
   BasicListingKeywordsStatusEnum? get keywordsStatus => _$this._keywordsStatus;
   set keywordsStatus(BasicListingKeywordsStatusEnum? keywordsStatus) =>
       _$this._keywordsStatus = keywordsStatus;
-
-  ListBuilder<int>? _categories;
-  ListBuilder<int> get categories =>
-      _$this._categories ??= new ListBuilder<int>();
-  set categories(ListBuilder<int>? categories) =>
-      _$this._categories = categories;
 
   BasicListingCategoriesStatusEnum? _categoriesStatus;
   BasicListingCategoriesStatusEnum? get categoriesStatus =>
@@ -9110,21 +9117,10 @@ class BasicListingBuilder
   bool? get photos => _$this._photos;
   set photos(bool? photos) => _$this._photos = photos;
 
-  ListBuilder<SocialProfile>? _socialProfiles;
-  ListBuilder<SocialProfile> get socialProfiles =>
-      _$this._socialProfiles ??= new ListBuilder<SocialProfile>();
-  set socialProfiles(ListBuilder<SocialProfile>? socialProfiles) =>
-      _$this._socialProfiles = socialProfiles;
-
-  ListBuilder<Video>? _videos;
-  ListBuilder<Video> get videos => _$this._videos ??= new ListBuilder<Video>();
-  set videos(ListBuilder<Video>? videos) => _$this._videos = videos;
-
-  ListBuilder<ContentList>? _contentLists;
-  ListBuilder<ContentList> get contentLists =>
-      _$this._contentLists ??= new ListBuilder<ContentList>();
-  set contentLists(ListBuilder<ContentList>? contentLists) =>
-      _$this._contentLists = contentLists;
+  ListBuilder<String>? _services;
+  ListBuilder<String> get services =>
+      _$this._services ??= new ListBuilder<String>();
+  set services(ListBuilder<String>? services) => _$this._services = services;
 
   ListBuilder<String>? _keywords;
   ListBuilder<String> get keywords =>
@@ -9136,16 +9132,33 @@ class BasicListingBuilder
       _$this._brands ??= new ListBuilder<String>();
   set brands(ListBuilder<String>? brands) => _$this._brands = brands;
 
-  ListBuilder<String>? _services;
-  ListBuilder<String> get services =>
-      _$this._services ??= new ListBuilder<String>();
-  set services(ListBuilder<String>? services) => _$this._services = services;
-
   ListBuilder<String>? _languages;
   ListBuilder<String> get languages =>
       _$this._languages ??= new ListBuilder<String>();
   set languages(ListBuilder<String>? languages) =>
       _$this._languages = languages;
+
+  ListBuilder<int>? _categories;
+  ListBuilder<int> get categories =>
+      _$this._categories ??= new ListBuilder<int>();
+  set categories(ListBuilder<int>? categories) =>
+      _$this._categories = categories;
+
+  ListBuilder<ContentList>? _contentLists;
+  ListBuilder<ContentList> get contentLists =>
+      _$this._contentLists ??= new ListBuilder<ContentList>();
+  set contentLists(ListBuilder<ContentList>? contentLists) =>
+      _$this._contentLists = contentLists;
+
+  ListBuilder<SocialProfile>? _socialProfiles;
+  ListBuilder<SocialProfile> get socialProfiles =>
+      _$this._socialProfiles ??= new ListBuilder<SocialProfile>();
+  set socialProfiles(ListBuilder<SocialProfile>? socialProfiles) =>
+      _$this._socialProfiles = socialProfiles;
+
+  ListBuilder<Video>? _videos;
+  ListBuilder<Video> get videos => _$this._videos ??= new ListBuilder<Video>();
+  set videos(ListBuilder<Video>? videos) => _$this._videos = videos;
 
   BasicListingBuilder() {
     BasicListing._defaults(this);
@@ -9197,7 +9210,6 @@ class BasicListingBuilder
       _specialOpeningHours = $v.specialOpeningHours?.toBuilder();
       _specialOpeningHoursStatus = $v.specialOpeningHoursStatus;
       _keywordsStatus = $v.keywordsStatus;
-      _categories = $v.categories.toBuilder();
       _categoriesStatus = $v.categoriesStatus;
       _attributes = $v.attributes?.toBuilder();
       _attributesStatus = $v.attributesStatus;
@@ -9254,13 +9266,14 @@ class BasicListingBuilder
       _sublocalityStatus = $v.sublocalityStatus;
       _websiteExtra = $v.websiteExtra;
       _photos = $v.photos;
-      _socialProfiles = $v.socialProfiles?.toBuilder();
-      _videos = $v.videos?.toBuilder();
-      _contentLists = $v.contentLists?.toBuilder();
+      _services = $v.services?.toBuilder();
       _keywords = $v.keywords?.toBuilder();
       _brands = $v.brands?.toBuilder();
-      _services = $v.services?.toBuilder();
       _languages = $v.languages?.toBuilder();
+      _categories = $v.categories?.toBuilder();
+      _contentLists = $v.contentLists?.toBuilder();
+      _socialProfiles = $v.socialProfiles?.toBuilder();
+      _videos = $v.videos?.toBuilder();
       _$v = null;
     }
     return this;
@@ -9328,7 +9341,6 @@ class BasicListingBuilder
             specialOpeningHours: _specialOpeningHours?.build(),
             specialOpeningHoursStatus: specialOpeningHoursStatus,
             keywordsStatus: keywordsStatus,
-            categories: categories.build(),
             categoriesStatus: categoriesStatus,
             attributes: _attributes?.build(),
             attributesStatus: attributesStatus,
@@ -9385,13 +9397,14 @@ class BasicListingBuilder
             sublocalityStatus: sublocalityStatus,
             websiteExtra: websiteExtra,
             photos: photos,
-            socialProfiles: _socialProfiles?.build(),
-            videos: _videos?.build(),
-            contentLists: _contentLists?.build(),
+            services: _services?.build(),
             keywords: _keywords?.build(),
             brands: _brands?.build(),
-            services: _services?.build(),
             languages: _languages?.build(),
+            categories: _categories?.build(),
+            contentLists: _contentLists?.build(),
+            socialProfiles: _socialProfiles?.build(),
+            videos: _videos?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -9404,9 +9417,6 @@ class BasicListingBuilder
 
         _$failedField = 'specialOpeningHours';
         _specialOpeningHours?.build();
-
-        _$failedField = 'categories';
-        categories.build();
 
         _$failedField = 'attributes';
         _attributes?.build();
@@ -9429,20 +9439,22 @@ class BasicListingBuilder
         _$failedField = 'customFields';
         _customFields?.build();
 
-        _$failedField = 'socialProfiles';
-        _socialProfiles?.build();
-        _$failedField = 'videos';
-        _videos?.build();
-        _$failedField = 'contentLists';
-        _contentLists?.build();
+        _$failedField = 'services';
+        _services?.build();
         _$failedField = 'keywords';
         _keywords?.build();
         _$failedField = 'brands';
         _brands?.build();
-        _$failedField = 'services';
-        _services?.build();
         _$failedField = 'languages';
         _languages?.build();
+        _$failedField = 'categories';
+        _categories?.build();
+        _$failedField = 'contentLists';
+        _contentLists?.build();
+        _$failedField = 'socialProfiles';
+        _socialProfiles?.build();
+        _$failedField = 'videos';
+        _videos?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'BasicListing', _$failedField, e.toString());

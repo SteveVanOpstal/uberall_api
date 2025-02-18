@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -18,7 +19,7 @@ abstract class BrandPagesResponseObject
     implements
         Built<BrandPagesResponseObject, BrandPagesResponseObjectBuilder> {
   @BuiltValueField(wireName: r'brandPages')
-  BuiltList<String>? get brandPages;
+  BuiltList<JsonObject>? get brandPages;
 
   BrandPagesResponseObject._();
 
@@ -54,7 +55,7 @@ class _$BrandPagesResponseObjectSerializer
       yield r'brandPages';
       yield serializers.serialize(
         object.brandPages,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
+        specifiedType: const FullType(BuiltList, [FullType(JsonObject)]),
       );
     }
   }
@@ -85,8 +86,8 @@ class _$BrandPagesResponseObjectSerializer
         case r'brandPages':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+            specifiedType: const FullType(BuiltList, [FullType(JsonObject)]),
+          ) as BuiltList<JsonObject>;
           result.brandPages.replace(valueDes);
           break;
         default:

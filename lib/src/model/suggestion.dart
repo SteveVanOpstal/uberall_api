@@ -26,7 +26,7 @@ abstract class Suggestion implements Built<Suggestion, SuggestionBuilder> {
   /// ACCEPTED, DECLINED or ACTIVE (if no decision was made for accepting/declining the suggestion)
   @BuiltValueField(wireName: r'status')
   SuggestionStatusEnum? get status;
-  // enum statusEnum {  HIDDEN,  PENDING,  ACCEPTED,  DECLINED,  DECLINED_OLD_API,  ACCEPTED, DECLINED, ACTIVE,  };
+  // enum statusEnum {  HIDDEN,  PENDING,  ACCEPTED,  DECLINED,  DECLINED_OLD_API,  };
 
   /// Suggestion Value
   @BuiltValueField(wireName: r'value')
@@ -191,11 +191,6 @@ class SuggestionStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'DECLINED_OLD_API')
   static const SuggestionStatusEnum DECLINED_OLD_API =
       _$suggestionStatusEnum_DECLINED_OLD_API;
-
-  /// ACCEPTED, DECLINED or ACTIVE (if no decision was made for accepting/declining the suggestion)
-  @BuiltValueEnumConst(wireName: r'ACCEPTED, DECLINED, ACTIVE')
-  static const SuggestionStatusEnum aCCEPTEDCommaDECLINEDCommaACTIVE =
-      _$suggestionStatusEnum_aCCEPTEDCommaDECLINEDCommaACTIVE;
 
   static Serializer<SuggestionStatusEnum> get serializer =>
       _$suggestionStatusEnumSerializer;

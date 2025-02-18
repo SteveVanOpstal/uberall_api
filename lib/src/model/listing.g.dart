@@ -2173,9 +2173,9 @@ class _$Listing extends Listing {
   @override
   final JsonObject? accountInfo;
   @override
-  final ListingConnectStatusEnum? connectStatus;
-  @override
   final String? connectSecret;
+  @override
+  final ListingConnectStatusEnum? connectStatus;
   @override
   final BuiltList<ListingMandatoryFieldsEnum>? mandatoryFields;
   @override
@@ -2197,8 +2197,8 @@ class _$Listing extends Listing {
       this.lastChecked,
       this.lastSuccessfulUpdate,
       this.accountInfo,
-      this.connectStatus,
       this.connectSecret,
+      this.connectStatus,
       this.mandatoryFields,
       this.status,
       this.typeName})
@@ -2225,8 +2225,8 @@ class _$Listing extends Listing {
         lastChecked == other.lastChecked &&
         lastSuccessfulUpdate == other.lastSuccessfulUpdate &&
         accountInfo == other.accountInfo &&
-        connectStatus == other.connectStatus &&
         connectSecret == other.connectSecret &&
+        connectStatus == other.connectStatus &&
         mandatoryFields == other.mandatoryFields &&
         status == other.status &&
         typeName == other.typeName;
@@ -2245,8 +2245,8 @@ class _$Listing extends Listing {
     _$hash = $jc(_$hash, lastChecked.hashCode);
     _$hash = $jc(_$hash, lastSuccessfulUpdate.hashCode);
     _$hash = $jc(_$hash, accountInfo.hashCode);
-    _$hash = $jc(_$hash, connectStatus.hashCode);
     _$hash = $jc(_$hash, connectSecret.hashCode);
+    _$hash = $jc(_$hash, connectStatus.hashCode);
     _$hash = $jc(_$hash, mandatoryFields.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, typeName.hashCode);
@@ -2267,8 +2267,8 @@ class _$Listing extends Listing {
           ..add('lastChecked', lastChecked)
           ..add('lastSuccessfulUpdate', lastSuccessfulUpdate)
           ..add('accountInfo', accountInfo)
-          ..add('connectStatus', connectStatus)
           ..add('connectSecret', connectSecret)
+          ..add('connectStatus', connectStatus)
           ..add('mandatoryFields', mandatoryFields)
           ..add('status', status)
           ..add('typeName', typeName))
@@ -2323,15 +2323,15 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
   JsonObject? get accountInfo => _$this._accountInfo;
   set accountInfo(JsonObject? accountInfo) => _$this._accountInfo = accountInfo;
 
-  ListingConnectStatusEnum? _connectStatus;
-  ListingConnectStatusEnum? get connectStatus => _$this._connectStatus;
-  set connectStatus(ListingConnectStatusEnum? connectStatus) =>
-      _$this._connectStatus = connectStatus;
-
   String? _connectSecret;
   String? get connectSecret => _$this._connectSecret;
   set connectSecret(String? connectSecret) =>
       _$this._connectSecret = connectSecret;
+
+  ListingConnectStatusEnum? _connectStatus;
+  ListingConnectStatusEnum? get connectStatus => _$this._connectStatus;
+  set connectStatus(ListingConnectStatusEnum? connectStatus) =>
+      _$this._connectStatus = connectStatus;
 
   ListBuilder<ListingMandatoryFieldsEnum>? _mandatoryFields;
   ListBuilder<ListingMandatoryFieldsEnum> get mandatoryFields =>
@@ -2365,8 +2365,8 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
       _lastChecked = $v.lastChecked;
       _lastSuccessfulUpdate = $v.lastSuccessfulUpdate;
       _accountInfo = $v.accountInfo;
-      _connectStatus = $v.connectStatus;
       _connectSecret = $v.connectSecret;
+      _connectStatus = $v.connectStatus;
       _mandatoryFields = $v.mandatoryFields?.toBuilder();
       _status = $v.status;
       _typeName = $v.typeName;
@@ -2404,8 +2404,8 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
             lastChecked: lastChecked,
             lastSuccessfulUpdate: lastSuccessfulUpdate,
             accountInfo: accountInfo,
-            connectStatus: connectStatus,
             connectSecret: connectSecret,
+            connectStatus: connectStatus,
             mandatoryFields: _mandatoryFields?.build(),
             status: status,
             typeName: typeName,

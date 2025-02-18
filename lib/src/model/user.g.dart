@@ -134,6 +134,8 @@ const UserFeaturesEnum _$userFeaturesEnum_ADS_WRITE =
     const UserFeaturesEnum._('ADS_WRITE');
 const UserFeaturesEnum _$userFeaturesEnum_ADVANCED_ANALYTICS =
     const UserFeaturesEnum._('ADVANCED_ANALYTICS');
+const UserFeaturesEnum _$userFeaturesEnum_aDVANCEDANALYTICS20 =
+    const UserFeaturesEnum._('aDVANCEDANALYTICS20');
 const UserFeaturesEnum _$userFeaturesEnum_AI_KNOWLEDGEBASE =
     const UserFeaturesEnum._('AI_KNOWLEDGEBASE');
 const UserFeaturesEnum _$userFeaturesEnum_AI_LOCALISATION =
@@ -193,6 +195,8 @@ const UserFeaturesEnum _$userFeaturesEnum_FIRST_PARTY_REVIEW_APPROVAL =
     const UserFeaturesEnum._('FIRST_PARTY_REVIEW_APPROVAL');
 const UserFeaturesEnum _$userFeaturesEnum_FORMS =
     const UserFeaturesEnum._('FORMS');
+const UserFeaturesEnum _$userFeaturesEnum_GOOGLE_POSTING =
+    const UserFeaturesEnum._('GOOGLE_POSTING');
 const UserFeaturesEnum _$userFeaturesEnum_HOMEPAGE =
     const UserFeaturesEnum._('HOMEPAGE');
 const UserFeaturesEnum _$userFeaturesEnum_INBOX =
@@ -342,6 +346,8 @@ UserFeaturesEnum _$userFeaturesEnumValueOf(String name) {
       return _$userFeaturesEnum_ADS_WRITE;
     case 'ADVANCED_ANALYTICS':
       return _$userFeaturesEnum_ADVANCED_ANALYTICS;
+    case 'aDVANCEDANALYTICS20':
+      return _$userFeaturesEnum_aDVANCEDANALYTICS20;
     case 'AI_KNOWLEDGEBASE':
       return _$userFeaturesEnum_AI_KNOWLEDGEBASE;
     case 'AI_LOCALISATION':
@@ -402,6 +408,8 @@ UserFeaturesEnum _$userFeaturesEnumValueOf(String name) {
       return _$userFeaturesEnum_FIRST_PARTY_REVIEW_APPROVAL;
     case 'FORMS':
       return _$userFeaturesEnum_FORMS;
+    case 'GOOGLE_POSTING':
+      return _$userFeaturesEnum_GOOGLE_POSTING;
     case 'HOMEPAGE':
       return _$userFeaturesEnum_HOMEPAGE;
     case 'INBOX':
@@ -550,6 +558,7 @@ final BuiltSet<UserFeaturesEnum> _$userFeaturesEnumValues =
   _$userFeaturesEnum_ADS_READ,
   _$userFeaturesEnum_ADS_WRITE,
   _$userFeaturesEnum_ADVANCED_ANALYTICS,
+  _$userFeaturesEnum_aDVANCEDANALYTICS20,
   _$userFeaturesEnum_AI_KNOWLEDGEBASE,
   _$userFeaturesEnum_AI_LOCALISATION,
   _$userFeaturesEnum_AI_SUGGESTED_REPLIES,
@@ -580,6 +589,7 @@ final BuiltSet<UserFeaturesEnum> _$userFeaturesEnumValues =
   _$userFeaturesEnum_FACEBOOK_UNOWNED_PAGE_CREATE,
   _$userFeaturesEnum_FIRST_PARTY_REVIEW_APPROVAL,
   _$userFeaturesEnum_FORMS,
+  _$userFeaturesEnum_GOOGLE_POSTING,
   _$userFeaturesEnum_HOMEPAGE,
   _$userFeaturesEnum_INBOX,
   _$userFeaturesEnum_INBOX_APPROVAL,
@@ -772,6 +782,7 @@ class _$UserFeaturesEnumSerializer
     'ADS_READ': 'ADS_READ',
     'ADS_WRITE': 'ADS_WRITE',
     'ADVANCED_ANALYTICS': 'ADVANCED_ANALYTICS',
+    'aDVANCEDANALYTICS20': 'ADVANCED_ANALYTICS_2_0',
     'AI_KNOWLEDGEBASE': 'AI_KNOWLEDGEBASE',
     'AI_LOCALISATION': 'AI_LOCALISATION',
     'AI_SUGGESTED_REPLIES': 'AI_SUGGESTED_REPLIES',
@@ -802,6 +813,7 @@ class _$UserFeaturesEnumSerializer
     'FACEBOOK_UNOWNED_PAGE_CREATE': 'FACEBOOK_UNOWNED_PAGE_CREATE',
     'FIRST_PARTY_REVIEW_APPROVAL': 'FIRST_PARTY_REVIEW_APPROVAL',
     'FORMS': 'FORMS',
+    'GOOGLE_POSTING': 'GOOGLE_POSTING',
     'HOMEPAGE': 'HOMEPAGE',
     'INBOX': 'INBOX',
     'INBOX_APPROVAL': 'INBOX_APPROVAL',
@@ -877,6 +889,7 @@ class _$UserFeaturesEnumSerializer
     'ADS_READ': 'ADS_READ',
     'ADS_WRITE': 'ADS_WRITE',
     'ADVANCED_ANALYTICS': 'ADVANCED_ANALYTICS',
+    'ADVANCED_ANALYTICS_2_0': 'aDVANCEDANALYTICS20',
     'AI_KNOWLEDGEBASE': 'AI_KNOWLEDGEBASE',
     'AI_LOCALISATION': 'AI_LOCALISATION',
     'AI_SUGGESTED_REPLIES': 'AI_SUGGESTED_REPLIES',
@@ -907,6 +920,7 @@ class _$UserFeaturesEnumSerializer
     'FACEBOOK_UNOWNED_PAGE_CREATE': 'FACEBOOK_UNOWNED_PAGE_CREATE',
     'FIRST_PARTY_REVIEW_APPROVAL': 'FIRST_PARTY_REVIEW_APPROVAL',
     'FORMS': 'FORMS',
+    'GOOGLE_POSTING': 'GOOGLE_POSTING',
     'HOMEPAGE': 'HOMEPAGE',
     'INBOX': 'INBOX',
     'INBOX_APPROVAL': 'INBOX_APPROVAL',
@@ -1010,7 +1024,7 @@ class _$User extends User {
   @override
   final UserRoleEnum role;
   @override
-  final BuiltSet<int>? managedLocations;
+  final BuiltSet<Location>? managedLocations;
   @override
   final BuiltSet<Business>? managedBusinesses;
   @override
@@ -1023,16 +1037,6 @@ class _$User extends User {
   final BuiltSet<UserFeaturesEnum>? features;
   @override
   final BuiltSet<EmailSettings>? emailSettings;
-  @override
-  final JsonObject? readDataPoints;
-  @override
-  final JsonObject? parentId;
-  @override
-  final JsonObject? directoryUsers;
-  @override
-  final JsonObject? whitelabelInformationId;
-  @override
-  final JsonObject? salesPartnerId;
   @override
   final JsonObject? featuresDetailed;
   @override
@@ -1060,11 +1064,6 @@ class _$User extends User {
       this.identifier,
       this.features,
       this.emailSettings,
-      this.readDataPoints,
-      this.parentId,
-      this.directoryUsers,
-      this.whitelabelInformationId,
-      this.salesPartnerId,
       this.featuresDetailed,
       this.locationGroupIds,
       this.managedLocationsViaGroups,
@@ -1100,11 +1099,6 @@ class _$User extends User {
         identifier == other.identifier &&
         features == other.features &&
         emailSettings == other.emailSettings &&
-        readDataPoints == other.readDataPoints &&
-        parentId == other.parentId &&
-        directoryUsers == other.directoryUsers &&
-        whitelabelInformationId == other.whitelabelInformationId &&
-        salesPartnerId == other.salesPartnerId &&
         featuresDetailed == other.featuresDetailed &&
         locationGroupIds == other.locationGroupIds &&
         managedLocationsViaGroups == other.managedLocationsViaGroups &&
@@ -1129,11 +1123,6 @@ class _$User extends User {
     _$hash = $jc(_$hash, identifier.hashCode);
     _$hash = $jc(_$hash, features.hashCode);
     _$hash = $jc(_$hash, emailSettings.hashCode);
-    _$hash = $jc(_$hash, readDataPoints.hashCode);
-    _$hash = $jc(_$hash, parentId.hashCode);
-    _$hash = $jc(_$hash, directoryUsers.hashCode);
-    _$hash = $jc(_$hash, whitelabelInformationId.hashCode);
-    _$hash = $jc(_$hash, salesPartnerId.hashCode);
     _$hash = $jc(_$hash, featuresDetailed.hashCode);
     _$hash = $jc(_$hash, locationGroupIds.hashCode);
     _$hash = $jc(_$hash, managedLocationsViaGroups.hashCode);
@@ -1159,11 +1148,6 @@ class _$User extends User {
           ..add('identifier', identifier)
           ..add('features', features)
           ..add('emailSettings', emailSettings)
-          ..add('readDataPoints', readDataPoints)
-          ..add('parentId', parentId)
-          ..add('directoryUsers', directoryUsers)
-          ..add('whitelabelInformationId', whitelabelInformationId)
-          ..add('salesPartnerId', salesPartnerId)
           ..add('featuresDetailed', featuresDetailed)
           ..add('locationGroupIds', locationGroupIds)
           ..add('managedLocationsViaGroups', managedLocationsViaGroups)
@@ -1205,10 +1189,10 @@ class UserBuilder implements Builder<User, UserBuilder> {
   UserRoleEnum? get role => _$this._role;
   set role(UserRoleEnum? role) => _$this._role = role;
 
-  SetBuilder<int>? _managedLocations;
-  SetBuilder<int> get managedLocations =>
-      _$this._managedLocations ??= new SetBuilder<int>();
-  set managedLocations(SetBuilder<int>? managedLocations) =>
+  SetBuilder<Location>? _managedLocations;
+  SetBuilder<Location> get managedLocations =>
+      _$this._managedLocations ??= new SetBuilder<Location>();
+  set managedLocations(SetBuilder<Location>? managedLocations) =>
       _$this._managedLocations = managedLocations;
 
   SetBuilder<Business>? _managedBusinesses;
@@ -1243,30 +1227,6 @@ class UserBuilder implements Builder<User, UserBuilder> {
       _$this._emailSettings ??= new SetBuilder<EmailSettings>();
   set emailSettings(SetBuilder<EmailSettings>? emailSettings) =>
       _$this._emailSettings = emailSettings;
-
-  JsonObject? _readDataPoints;
-  JsonObject? get readDataPoints => _$this._readDataPoints;
-  set readDataPoints(JsonObject? readDataPoints) =>
-      _$this._readDataPoints = readDataPoints;
-
-  JsonObject? _parentId;
-  JsonObject? get parentId => _$this._parentId;
-  set parentId(JsonObject? parentId) => _$this._parentId = parentId;
-
-  JsonObject? _directoryUsers;
-  JsonObject? get directoryUsers => _$this._directoryUsers;
-  set directoryUsers(JsonObject? directoryUsers) =>
-      _$this._directoryUsers = directoryUsers;
-
-  JsonObject? _whitelabelInformationId;
-  JsonObject? get whitelabelInformationId => _$this._whitelabelInformationId;
-  set whitelabelInformationId(JsonObject? whitelabelInformationId) =>
-      _$this._whitelabelInformationId = whitelabelInformationId;
-
-  JsonObject? _salesPartnerId;
-  JsonObject? get salesPartnerId => _$this._salesPartnerId;
-  set salesPartnerId(JsonObject? salesPartnerId) =>
-      _$this._salesPartnerId = salesPartnerId;
 
   JsonObject? _featuresDetailed;
   JsonObject? get featuresDetailed => _$this._featuresDetailed;
@@ -1313,11 +1273,6 @@ class UserBuilder implements Builder<User, UserBuilder> {
       _identifier = $v.identifier;
       _features = $v.features?.toBuilder();
       _emailSettings = $v.emailSettings?.toBuilder();
-      _readDataPoints = $v.readDataPoints;
-      _parentId = $v.parentId;
-      _directoryUsers = $v.directoryUsers;
-      _whitelabelInformationId = $v.whitelabelInformationId;
-      _salesPartnerId = $v.salesPartnerId;
       _featuresDetailed = $v.featuresDetailed;
       _locationGroupIds = $v.locationGroupIds?.toBuilder();
       _managedLocationsViaGroups = $v.managedLocationsViaGroups?.toBuilder();
@@ -1362,11 +1317,6 @@ class UserBuilder implements Builder<User, UserBuilder> {
             identifier: identifier,
             features: _features?.build(),
             emailSettings: _emailSettings?.build(),
-            readDataPoints: readDataPoints,
-            parentId: parentId,
-            directoryUsers: directoryUsers,
-            whitelabelInformationId: whitelabelInformationId,
-            salesPartnerId: salesPartnerId,
             featuresDetailed: featuresDetailed,
             locationGroupIds: _locationGroupIds?.build(),
             managedLocationsViaGroups: _managedLocationsViaGroups?.build(),

@@ -22,6 +22,9 @@ const FeaturesResponseDefaultFeaturesEnum
     _$featuresResponseDefaultFeaturesEnum_ADVANCED_ANALYTICS =
     const FeaturesResponseDefaultFeaturesEnum._('ADVANCED_ANALYTICS');
 const FeaturesResponseDefaultFeaturesEnum
+    _$featuresResponseDefaultFeaturesEnum_aDVANCEDANALYTICS20 =
+    const FeaturesResponseDefaultFeaturesEnum._('aDVANCEDANALYTICS20');
+const FeaturesResponseDefaultFeaturesEnum
     _$featuresResponseDefaultFeaturesEnum_AI_KNOWLEDGEBASE =
     const FeaturesResponseDefaultFeaturesEnum._('AI_KNOWLEDGEBASE');
 const FeaturesResponseDefaultFeaturesEnum
@@ -111,6 +114,9 @@ const FeaturesResponseDefaultFeaturesEnum
 const FeaturesResponseDefaultFeaturesEnum
     _$featuresResponseDefaultFeaturesEnum_FORMS =
     const FeaturesResponseDefaultFeaturesEnum._('FORMS');
+const FeaturesResponseDefaultFeaturesEnum
+    _$featuresResponseDefaultFeaturesEnum_GOOGLE_POSTING =
+    const FeaturesResponseDefaultFeaturesEnum._('GOOGLE_POSTING');
 const FeaturesResponseDefaultFeaturesEnum
     _$featuresResponseDefaultFeaturesEnum_HOMEPAGE =
     const FeaturesResponseDefaultFeaturesEnum._('HOMEPAGE');
@@ -329,6 +335,8 @@ FeaturesResponseDefaultFeaturesEnum
       return _$featuresResponseDefaultFeaturesEnum_ADS_WRITE;
     case 'ADVANCED_ANALYTICS':
       return _$featuresResponseDefaultFeaturesEnum_ADVANCED_ANALYTICS;
+    case 'aDVANCEDANALYTICS20':
+      return _$featuresResponseDefaultFeaturesEnum_aDVANCEDANALYTICS20;
     case 'AI_KNOWLEDGEBASE':
       return _$featuresResponseDefaultFeaturesEnum_AI_KNOWLEDGEBASE;
     case 'AI_LOCALISATION':
@@ -389,6 +397,8 @@ FeaturesResponseDefaultFeaturesEnum
       return _$featuresResponseDefaultFeaturesEnum_FIRST_PARTY_REVIEW_APPROVAL;
     case 'FORMS':
       return _$featuresResponseDefaultFeaturesEnum_FORMS;
+    case 'GOOGLE_POSTING':
+      return _$featuresResponseDefaultFeaturesEnum_GOOGLE_POSTING;
     case 'HOMEPAGE':
       return _$featuresResponseDefaultFeaturesEnum_HOMEPAGE;
     case 'INBOX':
@@ -538,6 +548,7 @@ final BuiltSet<FeaturesResponseDefaultFeaturesEnum>
   _$featuresResponseDefaultFeaturesEnum_ADS_READ,
   _$featuresResponseDefaultFeaturesEnum_ADS_WRITE,
   _$featuresResponseDefaultFeaturesEnum_ADVANCED_ANALYTICS,
+  _$featuresResponseDefaultFeaturesEnum_aDVANCEDANALYTICS20,
   _$featuresResponseDefaultFeaturesEnum_AI_KNOWLEDGEBASE,
   _$featuresResponseDefaultFeaturesEnum_AI_LOCALISATION,
   _$featuresResponseDefaultFeaturesEnum_AI_SUGGESTED_REPLIES,
@@ -568,6 +579,7 @@ final BuiltSet<FeaturesResponseDefaultFeaturesEnum>
   _$featuresResponseDefaultFeaturesEnum_FACEBOOK_UNOWNED_PAGE_CREATE,
   _$featuresResponseDefaultFeaturesEnum_FIRST_PARTY_REVIEW_APPROVAL,
   _$featuresResponseDefaultFeaturesEnum_FORMS,
+  _$featuresResponseDefaultFeaturesEnum_GOOGLE_POSTING,
   _$featuresResponseDefaultFeaturesEnum_HOMEPAGE,
   _$featuresResponseDefaultFeaturesEnum_INBOX,
   _$featuresResponseDefaultFeaturesEnum_INBOX_APPROVAL,
@@ -650,6 +662,7 @@ class _$FeaturesResponseDefaultFeaturesEnumSerializer
     'ADS_READ': 'ADS_READ',
     'ADS_WRITE': 'ADS_WRITE',
     'ADVANCED_ANALYTICS': 'ADVANCED_ANALYTICS',
+    'aDVANCEDANALYTICS20': 'ADVANCED_ANALYTICS_2_0',
     'AI_KNOWLEDGEBASE': 'AI_KNOWLEDGEBASE',
     'AI_LOCALISATION': 'AI_LOCALISATION',
     'AI_SUGGESTED_REPLIES': 'AI_SUGGESTED_REPLIES',
@@ -680,6 +693,7 @@ class _$FeaturesResponseDefaultFeaturesEnumSerializer
     'FACEBOOK_UNOWNED_PAGE_CREATE': 'FACEBOOK_UNOWNED_PAGE_CREATE',
     'FIRST_PARTY_REVIEW_APPROVAL': 'FIRST_PARTY_REVIEW_APPROVAL',
     'FORMS': 'FORMS',
+    'GOOGLE_POSTING': 'GOOGLE_POSTING',
     'HOMEPAGE': 'HOMEPAGE',
     'INBOX': 'INBOX',
     'INBOX_APPROVAL': 'INBOX_APPROVAL',
@@ -755,6 +769,7 @@ class _$FeaturesResponseDefaultFeaturesEnumSerializer
     'ADS_READ': 'ADS_READ',
     'ADS_WRITE': 'ADS_WRITE',
     'ADVANCED_ANALYTICS': 'ADVANCED_ANALYTICS',
+    'ADVANCED_ANALYTICS_2_0': 'aDVANCEDANALYTICS20',
     'AI_KNOWLEDGEBASE': 'AI_KNOWLEDGEBASE',
     'AI_LOCALISATION': 'AI_LOCALISATION',
     'AI_SUGGESTED_REPLIES': 'AI_SUGGESTED_REPLIES',
@@ -785,6 +800,7 @@ class _$FeaturesResponseDefaultFeaturesEnumSerializer
     'FACEBOOK_UNOWNED_PAGE_CREATE': 'FACEBOOK_UNOWNED_PAGE_CREATE',
     'FIRST_PARTY_REVIEW_APPROVAL': 'FIRST_PARTY_REVIEW_APPROVAL',
     'FORMS': 'FORMS',
+    'GOOGLE_POSTING': 'GOOGLE_POSTING',
     'HOMEPAGE': 'HOMEPAGE',
     'INBOX': 'INBOX',
     'INBOX_APPROVAL': 'INBOX_APPROVAL',
