@@ -108,7 +108,7 @@ abstract class StoreFinderResponse
 
   /// A list of category IDs describing the location
   @BuiltValueField(wireName: r'categories')
-  BuiltList<BuiltMap<String, JsonObject>>? get categories;
+  BuiltList<int>? get categories;
 
   /// A contact mobile phone number
   @BuiltValueField(wireName: r'cellphone')
@@ -364,9 +364,7 @@ class _$StoreFinderResponseSerializer
       yield r'categories';
       yield serializers.serialize(
         object.categories,
-        specifiedType: const FullType(BuiltList, [
-          FullType(BuiltMap, [FullType(String), FullType(JsonObject)])
-        ]),
+        specifiedType: const FullType(BuiltList, [FullType(int)]),
       );
     }
     if (object.cellphone != null) {
@@ -748,10 +746,8 @@ class _$StoreFinderResponseSerializer
         case r'categories':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [
-              FullType(BuiltMap, [FullType(String), FullType(JsonObject)])
-            ]),
-          ) as BuiltList<BuiltMap<String, JsonObject>>;
+            specifiedType: const FullType(BuiltList, [FullType(int)]),
+          ) as BuiltList<int>;
           result.categories.replace(valueDes);
           break;
         case r'cellphone':

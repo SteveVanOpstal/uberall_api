@@ -1816,7 +1816,7 @@ class _$StoreFinderResponse extends StoreFinderResponse {
   @override
   final BuiltList<JsonObject>? callToActions;
   @override
-  final BuiltList<BuiltMap<String, JsonObject>>? categories;
+  final BuiltList<int>? categories;
   @override
   final String? cellphone;
   @override
@@ -2180,10 +2180,10 @@ class StoreFinderResponseBuilder
   set callToActions(ListBuilder<JsonObject>? callToActions) =>
       _$this._callToActions = callToActions;
 
-  ListBuilder<BuiltMap<String, JsonObject>>? _categories;
-  ListBuilder<BuiltMap<String, JsonObject>> get categories =>
-      _$this._categories ??= new ListBuilder<BuiltMap<String, JsonObject>>();
-  set categories(ListBuilder<BuiltMap<String, JsonObject>>? categories) =>
+  ListBuilder<int>? _categories;
+  ListBuilder<int> get categories =>
+      _$this._categories ??= new ListBuilder<int>();
+  set categories(ListBuilder<int>? categories) =>
       _$this._categories = categories;
 
   String? _cellphone;

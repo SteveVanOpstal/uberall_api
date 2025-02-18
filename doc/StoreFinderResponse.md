@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **businessName** | **String** | Name of the business | [optional] 
 **businessIdentifier** | **String** | The business identifier based on your internal identification system | [optional] 
 **callToActions** | [**BuiltList&lt;JsonObject&gt;**](JsonObject.md) | A list of callToAction objects, each with a title and URL, formatted as <pre>callToActions: [&#123; text: ''cta_text1'', url: ''cta_url1'' &#125;, &#123; text: ''cta_text2'', url: ''cta_url2'' &#125;]</pre> | [optional] 
-**categories** | [**BuiltList&lt;BuiltMap&lt;String, JsonObject&gt;&gt;**](BuiltMap.md) | A list of category IDs describing the location | [optional] 
+**categories** | **BuiltList&lt;int&gt;** | A list of category IDs describing the location | [optional] 
 **cellphone** | **String** | A contact mobile phone number | [optional] 
 **city** | **String** | The city the location is residing in. | [optional] 
 **country** | **String** | The country the location is residing in. | [optional] 
