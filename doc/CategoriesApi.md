@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **getCategories**
-> UberallResponse getCategories(language, categories, q, roots, max, offset)
+> GetCategories200Response getCategories(language, categories, q, roots, max, offset)
 
 Get All or Several Categories
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UberallResponse**](UberallResponse.md)
+[**GetCategories200Response**](GetCategories200Response.md)
 
 ### Authorization
 

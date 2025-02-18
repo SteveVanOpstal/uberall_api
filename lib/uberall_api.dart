@@ -164,6 +164,8 @@ export 'package:uberall_api/src/model/feed_item.dart';
 export 'package:uberall_api/src/model/feed_item_wrapper.dart';
 export 'package:uberall_api/src/model/filters_response.dart';
 export 'package:uberall_api/src/model/filters_response_wrapper.dart';
+export 'package:uberall_api/src/model/get_categories200_response.dart';
+export 'package:uberall_api/src/model/get_categories200_response_response.dart';
 export 'package:uberall_api/src/model/get_templates_authors_request.dart';
 export 'package:uberall_api/src/model/google_service_item.dart';
 export 'package:uberall_api/src/model/google_services_response_object.dart';

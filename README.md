@@ -419,6 +419,8 @@ Class | Method | HTTP request | Description
  - [FeedItemWrapper](doc/FeedItemWrapper.md)
  - [FiltersResponse](doc/FiltersResponse.md)
  - [FiltersResponseWrapper](doc/FiltersResponseWrapper.md)
+ - [GetCategories200Response](doc/GetCategories200Response.md)
+ - [GetCategories200ResponseResponse](doc/GetCategories200ResponseResponse.md)
  - [GetTemplatesAuthorsRequest](doc/GetTemplatesAuthorsRequest.md)
  - [GoogleServiceItem](doc/GoogleServiceItem.md)
  - [GoogleServicesResponseObject](doc/GoogleServicesResponseObject.md)

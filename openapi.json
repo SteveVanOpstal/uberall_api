@@ -2094,7 +2094,82 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Response"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "SUCCESS",
+                        "QUOTA_LIMIT_EXCEED",
+                        "NOT_AUTHORIZED",
+                        "FORBIDDEN",
+                        "BAD_ACCESS_TOKEN",
+                        "BAD_PRIVATE_KEY",
+                        "BAD_PUBLIC_KEY",
+                        "MISSING_PARAMETER",
+                        "INVALID_PARAMETER",
+                        "WRONG_PARAMETER_TYPE",
+                        "CONFLICT",
+                        "RESOURCE_LOCKED",
+                        "SERVER_ERROR",
+                        "ERROR",
+                        "NOT_FOUND",
+                        "BAD_REQUEST",
+                        "USER_ERROR",
+                        "PARTIAL_ERROR",
+                        "METHOD_NOT_ALLOWED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "(optional) Holds further information about the response"
+                    },
+                    "errorCode": {
+                      "type": "string",
+                      "enum": [
+                        "NORMALIZATION_FAILED",
+                        "DATA_CORRUPTED",
+                        "INVALID_INPUT",
+                        "NOT_SYNCABLE",
+                        "PAYMENT_FAILED",
+                        "FREE_TIER_REACHED",
+                        "LIMIT_REACHED",
+                        "INACTIVE",
+                        "UNKNOWN",
+                        "IDENTIFIER_NOT_UNIQUE",
+                        "ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT",
+                        "NO_ACCOUNT_CONNECTED",
+                        "NO_PAGE_SELECTED",
+                        "PAGE_NOT_CREATED",
+                        "PAGE_IN_REVIEW",
+                        "PAGE_CLAIMED_BY_OTHERS",
+                        "OVERLAPPING_SOCIALPOST",
+                        "TOO_MANY_REPLIES",
+                        "REPLY_TOO_LONG",
+                        "DEPRECATED"
+                      ]
+                    },
+                    "warnings": {
+                      "type": "array",
+                      "description": "(optional) Holds further warnings",
+                      "items": {
+                        "type": "string",
+                        "description": "(optional) Holds further warnings"
+                      }
+                    },
+                    "response": {
+                      "type": "object",
+                      "properties": {
+                        "results": {
+                          "type": "array",
+                          "description": "Required to start location sync  - A list of category IDs describing the location",
+                          "items": {
+                            "$ref": "#/components/schemas/Category"
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }

@@ -301,6 +301,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(FiltersResponseWrapper.serializer)
       ..add(FiltersResponseWrapperErrorCodeEnum.serializer)
       ..add(FiltersResponseWrapperStatusEnum.serializer)
+      ..add(GetCategories200Response.serializer)
+      ..add(GetCategories200ResponseErrorCodeEnum.serializer)
+      ..add(GetCategories200ResponseResponse.serializer)
+      ..add(GetCategories200ResponseStatusEnum.serializer)
       ..add(GetTemplatesAuthorsRequest.serializer)
       ..add(GoogleServiceItem.serializer)
       ..add(GoogleServicesResponseObject.serializer)
@@ -732,6 +736,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(TimeSeriesSegment)]),
           () => new ListBuilder<TimeSeriesSegment>())
       ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(Category)]),
+          () => new ListBuilder<Category>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ContentList)]),
           () => new ListBuilder<ContentList>())
       ..addBuilderFactory(
@@ -995,6 +1002,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(StoreFinderResponse)]),
           () => new ListBuilder<StoreFinderResponse>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
