@@ -246,7 +246,7 @@ class _$SalesPartner extends SalesPartner {
   @override
   final int? contractualMaxLocations;
   @override
-  final User? contactPerson;
+  final int? contactPerson;
   @override
   final int? usersLeft;
   @override
@@ -472,9 +472,9 @@ class SalesPartnerBuilder
   set contractualMaxLocations(int? contractualMaxLocations) =>
       _$this._contractualMaxLocations = contractualMaxLocations;
 
-  UserBuilder? _contactPerson;
-  UserBuilder get contactPerson => _$this._contactPerson ??= new UserBuilder();
-  set contactPerson(UserBuilder? contactPerson) =>
+  int? _contactPerson;
+  int? get contactPerson => _$this._contactPerson;
+  set contactPerson(int? contactPerson) =>
       _$this._contactPerson = contactPerson;
 
   int? _usersLeft;
@@ -512,7 +512,7 @@ class SalesPartnerBuilder
       _whitelabelInformations = $v.whitelabelInformations?.toBuilder();
       _activeLocations = $v.activeLocations;
       _contractualMaxLocations = $v.contractualMaxLocations;
-      _contactPerson = $v.contactPerson?.toBuilder();
+      _contactPerson = $v.contactPerson;
       _usersLeft = $v.usersLeft;
       _locationsLeft = $v.locationsLeft;
       _$v = null;
@@ -558,7 +558,7 @@ class SalesPartnerBuilder
             whitelabelInformations: _whitelabelInformations?.build(),
             activeLocations: activeLocations,
             contractualMaxLocations: contractualMaxLocations,
-            contactPerson: _contactPerson?.build(),
+            contactPerson: contactPerson,
             usersLeft: usersLeft,
             locationsLeft: locationsLeft,
           );
@@ -573,9 +573,6 @@ class SalesPartnerBuilder
 
         _$failedField = 'whitelabelInformations';
         _whitelabelInformations?.build();
-
-        _$failedField = 'contactPerson';
-        _contactPerson?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'SalesPartner', _$failedField, e.toString());

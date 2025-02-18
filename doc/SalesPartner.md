@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **whitelabelInformations** | [**BuiltSet&lt;WhitelabelInformation&gt;**](WhitelabelInformation.md) | List of the sales partner''s white-label information | [optional] 
 **activeLocations** | **int** |  | [optional] 
 **contractualMaxLocations** | **int** |  | [optional] 
-**contactPerson** | [**User**](User.md) |  | [optional] 
+**contactPerson** | **int** |  | [optional] 
 **usersLeft** | **int** |  | [optional] 
 **locationsLeft** | **int** |  | [optional] 
 

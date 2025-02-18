@@ -31591,7 +31591,8 @@
             "format": "int32"
           },
           "contactPerson": {
-            "$ref": "#/components/schemas/User"
+            "type": "integer",
+            "format": "int32"
           },
           "usersLeft": {
             "type": "integer",
