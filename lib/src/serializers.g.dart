@@ -324,6 +324,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(InboxResponseWrapperErrorCodeEnum.serializer)
       ..add(InboxResponseWrapperStatusEnum.serializer)
       ..add(Insights.serializer)
+      ..add(InsightsMetricsInner.serializer)
+      ..add(InsightsMetricsInnerDataInner.serializer)
       ..add(InsightsWrapper.serializer)
       ..add(InsightsWrapperErrorCodeEnum.serializer)
       ..add(InsightsWrapperStatusEnum.serializer)
@@ -813,6 +815,14 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(GoogleServiceItem)]),
           () => new ListBuilder<GoogleServiceItem>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(InsightsMetricsInner)]),
+          () => new ListBuilder<InsightsMetricsInner>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(InsightsMetricsInnerDataInner)]),
+          () => new ListBuilder<InsightsMetricsInnerDataInner>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(JsonObject)]),
           () => new ListBuilder<JsonObject>())
@@ -1538,16 +1548,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(int)]),
           () => new ListBuilder<int>())
-      ..addBuilderFactory(
-          const FullType(BuiltMap, const [
-            const FullType(String),
-            const FullType(BuiltMap, const [
-              const FullType(String),
-              const FullType(BuiltList, const [const FullType(JsonObject)])
-            ])
-          ]),
-          () =>
-              new MapBuilder<String, BuiltMap<String, BuiltList<JsonObject>>>())
       ..addBuilderFactory(
           const FullType(BuiltMap, const [
             const FullType(String),

@@ -80,6 +80,7 @@ Name | Type | Description | Notes
 **timeZone** | **String** | The location''s timezone  | [optional] 
 **videos** | [**BuiltList&lt;Video&gt;**](Video.md) | The location''s videos | [optional] 
 **visibilityIndex** | **int** | Output only. The location''s latest visibility index | [optional] 
+**averageRating** | **double** | The average rating of all Google Reviews | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

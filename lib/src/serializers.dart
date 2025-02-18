@@ -145,6 +145,8 @@ import 'package:uberall_api/src/model/inbox_response.dart';
 import 'package:uberall_api/src/model/inbox_response_object.dart';
 import 'package:uberall_api/src/model/inbox_response_wrapper.dart';
 import 'package:uberall_api/src/model/insights.dart';
+import 'package:uberall_api/src/model/insights_metrics_inner.dart';
+import 'package:uberall_api/src/model/insights_metrics_inner_data_inner.dart';
 import 'package:uberall_api/src/model/insights_wrapper.dart';
 import 'package:uberall_api/src/model/keywords_object.dart';
 import 'package:uberall_api/src/model/keywords_wrapper.dart';
@@ -458,6 +460,8 @@ part 'serializers.g.dart';
   InboxResponseObject,
   InboxResponseWrapper,
   Insights,
+  InsightsMetricsInner,
+  InsightsMetricsInnerDataInner,
   InsightsWrapper,
   KeywordsObject,
   KeywordsWrapper,
@@ -638,11 +642,6 @@ part 'serializers.g.dart';
   WhitelabelInformationWrapper,
 ])
 Serializers serializers = (_$serializers.toBuilder()
-      ..addBuilderFactory(
-        const FullType(
-            BuiltMap, [FullType(String), FullType(BuiltList<JsonObject>)]),
-        () => MapBuilder<String, BuiltList<JsonObject>>(),
-      )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(ContentList)]),
         () => ListBuilder<ContentList>(),

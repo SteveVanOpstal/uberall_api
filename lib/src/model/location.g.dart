@@ -3599,6 +3599,8 @@ class _$Location extends Location {
   final BuiltList<Video>? videos;
   @override
   final int? visibilityIndex;
+  @override
+  final double? averageRating;
 
   factory _$Location([void Function(LocationBuilder)? updates]) =>
       (new LocationBuilder()..update(updates))._build();
@@ -3675,7 +3677,8 @@ class _$Location extends Location {
       this.socialProfiles,
       this.timeZone,
       this.videos,
-      this.visibilityIndex})
+      this.visibilityIndex,
+      this.averageRating})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(name, r'Location', 'name');
     BuiltValueNullFieldError.checkNotNull(street, r'Location', 'street');
@@ -3767,7 +3770,8 @@ class _$Location extends Location {
         socialProfiles == other.socialProfiles &&
         timeZone == other.timeZone &&
         videos == other.videos &&
-        visibilityIndex == other.visibilityIndex;
+        visibilityIndex == other.visibilityIndex &&
+        averageRating == other.averageRating;
   }
 
   @override
@@ -3845,6 +3849,7 @@ class _$Location extends Location {
     _$hash = $jc(_$hash, timeZone.hashCode);
     _$hash = $jc(_$hash, videos.hashCode);
     _$hash = $jc(_$hash, visibilityIndex.hashCode);
+    _$hash = $jc(_$hash, averageRating.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -3923,7 +3928,8 @@ class _$Location extends Location {
           ..add('socialProfiles', socialProfiles)
           ..add('timeZone', timeZone)
           ..add('videos', videos)
-          ..add('visibilityIndex', visibilityIndex))
+          ..add('visibilityIndex', visibilityIndex)
+          ..add('averageRating', averageRating))
         .toString();
   }
 }
@@ -4282,6 +4288,11 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   set visibilityIndex(int? visibilityIndex) =>
       _$this._visibilityIndex = visibilityIndex;
 
+  double? _averageRating;
+  double? get averageRating => _$this._averageRating;
+  set averageRating(double? averageRating) =>
+      _$this._averageRating = averageRating;
+
   LocationBuilder() {
     Location._defaults(this);
   }
@@ -4361,6 +4372,7 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
       _timeZone = $v.timeZone;
       _videos = $v.videos?.toBuilder();
       _visibilityIndex = $v.visibilityIndex;
+      _averageRating = $v.averageRating;
       _$v = null;
     }
     return this;
@@ -4461,6 +4473,7 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
             timeZone: timeZone,
             videos: _videos?.build(),
             visibilityIndex: visibilityIndex,
+            averageRating: averageRating,
           );
     } catch (_) {
       late String _$failedField;

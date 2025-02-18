@@ -432,6 +432,8 @@ Class | Method | HTTP request | Description
  - [InboxResponseObject](doc/InboxResponseObject.md)
  - [InboxResponseWrapper](doc/InboxResponseWrapper.md)
  - [Insights](doc/Insights.md)
+ - [InsightsMetricsInner](doc/InsightsMetricsInner.md)
+ - [InsightsMetricsInnerDataInner](doc/InsightsMetricsInnerDataInner.md)
  - [InsightsWrapper](doc/InsightsWrapper.md)
  - [KeywordsObject](doc/KeywordsObject.md)
  - [KeywordsWrapper](doc/KeywordsWrapper.md)

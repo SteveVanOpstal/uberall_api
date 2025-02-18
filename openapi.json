@@ -24656,18 +24656,30 @@
         "type": "object",
         "properties": {
           "metrics": {
-            "type": "object",
-            "additionalProperties": {
+            "type": "array",
+            "items": {
               "type": "object",
-              "additionalProperties": {
-                "type": "array",
-                "description": "Metrics",
-                "items": {
-                  "type": "object",
-                  "description": "Metrics"
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "period": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "count": {
+                        "type": "integer",
+                        "format": "int32"
+                      }
+                    }
+                  }
                 }
-              },
-              "description": "Metrics"
+              }
             },
             "description": "<b>Google:</b>\n<pre>\nBUSINESS_IMPRESSIONS_DESKTOP_MAPS \nBUSINESS_IMPRESSIONS_DESKTOP_SEARCH \nBUSINESS_IMPRESSIONS_MOBILE_MAPS \nBUSINESS_IMPRESSIONS_MOBILE_SEARCH \nBUSINESS_CONVERSATIONS \nBUSINESS_DIRECTION_REQUESTS \nCALL_CLICKS \nWEBSITE_CLICKS \nBUSINESS_BOOKINGS \nBUSINESS_FOOD_ORDERS \nBUSINESS_FOOD_MENU_CLICKS\n</pre>\n\n<b>Deprecated Google Metrics:</b>\n<br>(To be used to fetch historical data)\n<pre>\nQUERIES_DIRECT \nQUERIES_INDIRECT \nVIEWS_MAPS \nVIEWS_SEARCH \nACTIONS_WEBSITE \nACTIONS_PHONE \nACTIONS_DRIVING_DIRECTIONS \nPHOTOS_VIEWS_MERCHANT \nPHOTOS_VIEWS_CUSTOMERS \nLOCAL_POST_VIEWS_SEARCH \nLOCAL_POST_ACTIONS_CALL_TO_ACTION\n</pre>\n\n<b>Facebook:</b>\n<pre>\nPAGE_IMPRESSIONS \nPAGE_CONSUMPTIONS\n</pre>\n\n<b>Bing:</b>\n<pre>\nCLICKS_DESKTOP_CORTANA_CALL \nCLICKS_DESKTOP_CORTANA_DIRECTIONS \nCLICKS_DESKTOP_CORTANA_PHOTOS \nCLICKS_DESKTOP_CORTANA_WEBSITE \nCLICKS_DESKTOP_MAPS_CALL \nCLICKS_DESKTOP_MAPS_DIRECTIONS \nCLICKS_DESKTOP_MAPS_PHOTOS \nCLICKS_DESKTOP_MAPS_WEBSITE \nCLICKS_DESKTOP_SEARCH_PAGE_CALL \nCLICKS_DESKTOP_SEARCH_PAGE_DIRECTIONS \nCLICKS_DESKTOP_SEARCH_PAGE_PHOTOS \nCLICKS_DESKTOP_SEARCH_PAGE_WEBSITE \nCLICKS_MOBILE_CORTANA_CALL\nCLICKS_MOBILE_CORTANA_DIRECTIONS \nCLICKS_MOBILE_CORTANA_PHOTOS \nCLICKS_MOBILE_CORTANA_WEBSITE \nCLICKS_MOBILE_MAPS_CALL \nCLICKS_MOBILE_MAPS_DIRECTIONS\nCLICKS_MOBILE_MAPS_PHOTOS \nCLICKS_MOBILE_MAPS_WEBSITE \nCLICKS_MOBILE_SEARCH_PAGE_CALL \nCLICKS_MOBILE_SEARCH_PAGE_DIRECTIONS \nCLICKS_MOBILE_SEARCH_PAGE_PHOTOS \nCLICKS_MOBILE_SEARCH_PAGE_WEBSITE \nIMPRESSIONS_DESKTOP_CORTANA \nIMPRESSIONS_DESKTOP_MAPS \nIMPRESSIONS_DESKTOP_SEARCH_PAGE \nIMPRESSIONS_MOBILE_CORTANA \nIMPRESSIONS_MOBILE_MAPS \nIMPRESSIONS_MOBILE_SEARCH_PAGE\n</pre>\n<b>Yelp:</b>\n<pre>\nNUM_CALLS \nNUM_DIRECTIONS_AND_MAP_VIEWS \nNUM_PAGE_VIEWS URL_CLICKS\n</pre>"
           },
@@ -26852,6 +26864,11 @@
             "type": "integer",
             "description": "Output only. The location''s latest visibility index",
             "format": "int32"
+          },
+          "averageRating": {
+            "type": "number",
+            "description": "The average rating of all Google Reviews",
+            "format": "float"
           }
         },
         "description": "Location"

@@ -102,6 +102,7 @@ part 'location.g.dart';
 /// * [timeZone] - The location''s timezone
 /// * [videos] - The location''s videos
 /// * [visibilityIndex] - Output only. The location''s latest visibility index
+/// * [averageRating] - The average rating of all Google Reviews
 @BuiltValue()
 abstract class Location implements Built<Location, LocationBuilder> {
   /// Output only. The uberall unique id for the location
@@ -396,6 +397,10 @@ abstract class Location implements Built<Location, LocationBuilder> {
   /// Output only. The location''s latest visibility index
   @BuiltValueField(wireName: r'visibilityIndex')
   int? get visibilityIndex;
+
+  /// The average rating of all Google Reviews
+  @BuiltValueField(wireName: r'averageRating')
+  double? get averageRating;
 
   Location._();
 
@@ -916,6 +921,13 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
       yield serializers.serialize(
         object.visibilityIndex,
         specifiedType: const FullType(int),
+      );
+    }
+    if (object.averageRating != null) {
+      yield r'averageRating';
+      yield serializers.serialize(
+        object.averageRating,
+        specifiedType: const FullType(double),
       );
     }
   }
@@ -1453,6 +1465,13 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
             specifiedType: const FullType(int),
           ) as int;
           result.visibilityIndex = valueDes;
+          break;
+        case r'averageRating':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(double),
+          ) as double;
+          result.averageRating = valueDes;
           break;
         default:
           unhandled.add(key);
