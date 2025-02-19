@@ -9,6 +9,7 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'dart:typed_data';
+import 'package:built_value/json_object.dart';
 import 'package:uberall_api/src/api_util.dart';
 import 'package:uberall_api/src/model/dashboard_export_data_list_wrapper.dart';
 import 'package:uberall_api/src/model/dashboard_export_data_wrapper.dart';
