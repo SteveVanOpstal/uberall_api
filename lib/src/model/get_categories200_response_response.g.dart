@@ -9,13 +9,18 @@ part of 'get_categories200_response_response.dart';
 class _$GetCategories200ResponseResponse
     extends GetCategories200ResponseResponse {
   @override
-  final BuiltList<Category>? results;
+  final int? max;
+  @override
+  final int? offset;
+  @override
+  final GetCategories200ResponseResponseResults? results;
 
   factory _$GetCategories200ResponseResponse(
           [void Function(GetCategories200ResponseResponseBuilder)? updates]) =>
       (new GetCategories200ResponseResponseBuilder()..update(updates))._build();
 
-  _$GetCategories200ResponseResponse._({this.results}) : super._();
+  _$GetCategories200ResponseResponse._({this.max, this.offset, this.results})
+      : super._();
 
   @override
   GetCategories200ResponseResponse rebuild(
@@ -30,12 +35,16 @@ class _$GetCategories200ResponseResponse
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is GetCategories200ResponseResponse &&
+        max == other.max &&
+        offset == other.offset &&
         results == other.results;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, max.hashCode);
+    _$hash = $jc(_$hash, offset.hashCode);
     _$hash = $jc(_$hash, results.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -44,6 +53,8 @@ class _$GetCategories200ResponseResponse
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'GetCategories200ResponseResponse')
+          ..add('max', max)
+          ..add('offset', offset)
           ..add('results', results))
         .toString();
   }
@@ -55,10 +66,19 @@ class GetCategories200ResponseResponseBuilder
             GetCategories200ResponseResponseBuilder> {
   _$GetCategories200ResponseResponse? _$v;
 
-  ListBuilder<Category>? _results;
-  ListBuilder<Category> get results =>
-      _$this._results ??= new ListBuilder<Category>();
-  set results(ListBuilder<Category>? results) => _$this._results = results;
+  int? _max;
+  int? get max => _$this._max;
+  set max(int? max) => _$this._max = max;
+
+  int? _offset;
+  int? get offset => _$this._offset;
+  set offset(int? offset) => _$this._offset = offset;
+
+  GetCategories200ResponseResponseResultsBuilder? _results;
+  GetCategories200ResponseResponseResultsBuilder get results =>
+      _$this._results ??= new GetCategories200ResponseResponseResultsBuilder();
+  set results(GetCategories200ResponseResponseResultsBuilder? results) =>
+      _$this._results = results;
 
   GetCategories200ResponseResponseBuilder() {
     GetCategories200ResponseResponse._defaults(this);
@@ -67,6 +87,8 @@ class GetCategories200ResponseResponseBuilder
   GetCategories200ResponseResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _max = $v.max;
+      _offset = $v.offset;
       _results = $v.results?.toBuilder();
       _$v = null;
     }
@@ -92,6 +114,8 @@ class GetCategories200ResponseResponseBuilder
     try {
       _$result = _$v ??
           new _$GetCategories200ResponseResponse._(
+            max: max,
+            offset: offset,
             results: _results?.build(),
           );
     } catch (_) {

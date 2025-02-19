@@ -3,73 +3,69 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:uberall_api/src/model/get_categories200_response_response_results.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:uberall_api/src/model/category.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'get_categories200_response_response.g.dart';
+part 'get_categories200_response_response_results_one_of.g.dart';
 
-/// GetCategories200ResponseResponse
+/// GetCategories200ResponseResponseResultsOneOf
 ///
 /// Properties:
-/// * [max]
-/// * [offset]
-/// * [results]
+/// * [resultTotalCount]
+/// * [results] - A list of categories
 @BuiltValue()
-abstract class GetCategories200ResponseResponse
+abstract class GetCategories200ResponseResponseResultsOneOf
     implements
-        Built<GetCategories200ResponseResponse,
-            GetCategories200ResponseResponseBuilder> {
-  @BuiltValueField(wireName: r'max')
-  int? get max;
+        Built<GetCategories200ResponseResponseResultsOneOf,
+            GetCategories200ResponseResponseResultsOneOfBuilder> {
+  @BuiltValueField(wireName: r'resultTotalCount')
+  int? get resultTotalCount;
 
-  @BuiltValueField(wireName: r'offset')
-  int? get offset;
-
+  /// A list of categories
   @BuiltValueField(wireName: r'results')
-  GetCategories200ResponseResponseResults? get results;
+  BuiltList<Category>? get results;
 
-  GetCategories200ResponseResponse._();
+  GetCategories200ResponseResponseResultsOneOf._();
 
-  factory GetCategories200ResponseResponse(
-          [void updates(GetCategories200ResponseResponseBuilder b)]) =
-      _$GetCategories200ResponseResponse;
+  factory GetCategories200ResponseResponseResultsOneOf(
+          [void updates(
+              GetCategories200ResponseResponseResultsOneOfBuilder b)]) =
+      _$GetCategories200ResponseResponseResultsOneOf;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(GetCategories200ResponseResponseBuilder b) => b;
+  static void _defaults(
+          GetCategories200ResponseResponseResultsOneOfBuilder b) =>
+      b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<GetCategories200ResponseResponse> get serializer =>
-      _$GetCategories200ResponseResponseSerializer();
+  static Serializer<GetCategories200ResponseResponseResultsOneOf>
+      get serializer =>
+          _$GetCategories200ResponseResponseResultsOneOfSerializer();
 }
 
-class _$GetCategories200ResponseResponseSerializer
-    implements PrimitiveSerializer<GetCategories200ResponseResponse> {
+class _$GetCategories200ResponseResponseResultsOneOfSerializer
+    implements
+        PrimitiveSerializer<GetCategories200ResponseResponseResultsOneOf> {
   @override
   final Iterable<Type> types = const [
-    GetCategories200ResponseResponse,
-    _$GetCategories200ResponseResponse
+    GetCategories200ResponseResponseResultsOneOf,
+    _$GetCategories200ResponseResponseResultsOneOf
   ];
 
   @override
-  final String wireName = r'GetCategories200ResponseResponse';
+  final String wireName = r'GetCategories200ResponseResponseResultsOneOf';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    GetCategories200ResponseResponse object, {
+    GetCategories200ResponseResponseResultsOneOf object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.max != null) {
-      yield r'max';
+    if (object.resultTotalCount != null) {
+      yield r'resultTotalCount';
       yield serializers.serialize(
-        object.max,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.offset != null) {
-      yield r'offset';
-      yield serializers.serialize(
-        object.offset,
+        object.resultTotalCount,
         specifiedType: const FullType(int),
       );
     }
@@ -77,7 +73,7 @@ class _$GetCategories200ResponseResponseSerializer
       yield r'results';
       yield serializers.serialize(
         object.results,
-        specifiedType: const FullType(GetCategories200ResponseResponseResults),
+        specifiedType: const FullType(BuiltList, [FullType(Category)]),
       );
     }
   }
@@ -85,7 +81,7 @@ class _$GetCategories200ResponseResponseSerializer
   @override
   Object serialize(
     Serializers serializers,
-    GetCategories200ResponseResponse object, {
+    GetCategories200ResponseResponseResultsOneOf object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -98,33 +94,25 @@ class _$GetCategories200ResponseResponseSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required GetCategories200ResponseResponseBuilder result,
+    required GetCategories200ResponseResponseResultsOneOfBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'max':
+        case r'resultTotalCount':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(int),
           ) as int;
-          result.max = valueDes;
-          break;
-        case r'offset':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.offset = valueDes;
+          result.resultTotalCount = valueDes;
           break;
         case r'results':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType:
-                const FullType(GetCategories200ResponseResponseResults),
-          ) as GetCategories200ResponseResponseResults;
+            specifiedType: const FullType(BuiltList, [FullType(Category)]),
+          ) as BuiltList<Category>;
           result.results.replace(valueDes);
           break;
         default:
@@ -136,12 +124,12 @@ class _$GetCategories200ResponseResponseSerializer
   }
 
   @override
-  GetCategories200ResponseResponse deserialize(
+  GetCategories200ResponseResponseResultsOneOf deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = GetCategories200ResponseResponseBuilder();
+    final result = GetCategories200ResponseResponseResultsOneOfBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

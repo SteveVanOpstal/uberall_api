@@ -2160,12 +2160,37 @@
                     "response": {
                       "type": "object",
                       "properties": {
+                        "max": {
+                          "type": "integer"
+                        },
+                        "offset": {
+                          "type": "integer"
+                        },
                         "results": {
-                          "type": "array",
-                          "description": "Required to start location sync  - A list of category IDs describing the location",
-                          "items": {
-                            "$ref": "#/components/schemas/Category"
-                          }
+                          "oneOf": [
+                            {
+                              "type": "array",
+                              "description": "A list of categories",
+                              "items": {
+                                "$ref": "#/components/schemas/Category"
+                              }
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "resultTotalCount": {
+                                  "type": "integer"
+                                },
+                                "results": {
+                                  "type": "array",
+                                  "description": "A list of categories",
+                                  "items": {
+                                    "$ref": "#/components/schemas/Category"
+                                  }
+                                }
+                              }
+                            }
+                          ]
                         }
                       }
                     }

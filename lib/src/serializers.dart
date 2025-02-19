@@ -134,6 +134,8 @@ import 'package:uberall_api/src/model/filters_response.dart';
 import 'package:uberall_api/src/model/filters_response_wrapper.dart';
 import 'package:uberall_api/src/model/get_categories200_response.dart';
 import 'package:uberall_api/src/model/get_categories200_response_response.dart';
+import 'package:uberall_api/src/model/get_categories200_response_response_results.dart';
+import 'package:uberall_api/src/model/get_categories200_response_response_results_one_of.dart';
 import 'package:uberall_api/src/model/get_templates_authors_request.dart';
 import 'package:uberall_api/src/model/google_service_item.dart';
 import 'package:uberall_api/src/model/google_services_response_object.dart';
@@ -449,6 +451,8 @@ part 'serializers.g.dart';
   FiltersResponseWrapper,
   GetCategories200Response,
   GetCategories200ResponseResponse,
+  GetCategories200ResponseResponseResults,
+  GetCategories200ResponseResponseResultsOneOf,
   GetTemplatesAuthorsRequest,
   GoogleServiceItem,
   GoogleServicesResponseObject,

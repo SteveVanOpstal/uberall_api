@@ -421,6 +421,8 @@ Class | Method | HTTP request | Description
  - [FiltersResponseWrapper](doc/FiltersResponseWrapper.md)
  - [GetCategories200Response](doc/GetCategories200Response.md)
  - [GetCategories200ResponseResponse](doc/GetCategories200ResponseResponse.md)
+ - [GetCategories200ResponseResponseResults](doc/GetCategories200ResponseResponseResults.md)
+ - [GetCategories200ResponseResponseResultsOneOf](doc/GetCategories200ResponseResponseResultsOneOf.md)
  - [GetTemplatesAuthorsRequest](doc/GetTemplatesAuthorsRequest.md)
  - [GoogleServiceItem](doc/GoogleServiceItem.md)
  - [GoogleServicesResponseObject](doc/GoogleServicesResponseObject.md)

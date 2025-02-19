@@ -136,6 +136,8 @@ doc/FiltersResponse.md
 doc/FiltersResponseWrapper.md
 doc/GetCategories200Response.md
 doc/GetCategories200ResponseResponse.md
+doc/GetCategories200ResponseResponseResults.md
+doc/GetCategories200ResponseResponseResultsOneOf.md
 doc/GetTemplatesAuthorsRequest.md
 doc/GoogleServiceItem.md
 doc/GoogleServicesResponseObject.md
@@ -510,6 +512,8 @@ lib/src/model/filters_response.dart
 lib/src/model/filters_response_wrapper.dart
 lib/src/model/get_categories200_response.dart
 lib/src/model/get_categories200_response_response.dart
+lib/src/model/get_categories200_response_response_results.dart
+lib/src/model/get_categories200_response_response_results_one_of.dart
 lib/src/model/get_templates_authors_request.dart
 lib/src/model/google_service_item.dart
 lib/src/model/google_services_response_object.dart
@@ -703,3 +707,5 @@ lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
 lib/uberall_api.dart
+test/get_categories200_response_response_results_one_of_test.dart
+test/get_categories200_response_response_results_test.dart
