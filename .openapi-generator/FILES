@@ -707,5 +707,3 @@ lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
 lib/uberall_api.dart
-test/get_categories200_response_response_results_one_of_test.dart
-test/get_categories200_response_response_results_test.dart

@@ -1714,24 +1714,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
           ]),
           () => new SetBuilder<ListingHealthDirectoriesMissingConnectEnum>())
       ..addBuilderFactory(
-          const FullType(BuiltSet, const [const FullType(Location)]),
-          () => new SetBuilder<Location>())
-      ..addBuilderFactory(
-          const FullType(BuiltSet, const [const FullType(Business)]),
-          () => new SetBuilder<Business>())
-      ..addBuilderFactory(
-          const FullType(BuiltSet, const [const FullType(UserFeaturesEnum)]),
-          () => new SetBuilder<UserFeaturesEnum>())
-      ..addBuilderFactory(
-          const FullType(BuiltSet, const [const FullType(EmailSettings)]),
-          () => new SetBuilder<EmailSettings>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(int)]),
-          () => new ListBuilder<int>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(int)]),
-          () => new ListBuilder<int>())
-      ..addBuilderFactory(
           const FullType(BuiltSet, const [const FullType(PricePerCountry)]),
           () => new SetBuilder<PricePerCountry>())
       ..addBuilderFactory(
@@ -1842,7 +1824,24 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(
               BuiltSet, const [const FullType(WhitelabelInformation)]),
-          () => new SetBuilder<WhitelabelInformation>()))
+          () => new SetBuilder<WhitelabelInformation>())
+      ..addBuilderFactory(const FullType(BuiltSet, const [const FullType(int)]),
+          () => new SetBuilder<int>())
+      ..addBuilderFactory(
+          const FullType(BuiltSet, const [const FullType(Business)]),
+          () => new SetBuilder<Business>())
+      ..addBuilderFactory(
+          const FullType(BuiltSet, const [const FullType(UserFeaturesEnum)]),
+          () => new SetBuilder<UserFeaturesEnum>())
+      ..addBuilderFactory(
+          const FullType(BuiltSet, const [const FullType(EmailSettings)]),
+          () => new SetBuilder<EmailSettings>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(int)]),
+          () => new ListBuilder<int>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(int)]),
+          () => new ListBuilder<int>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint
