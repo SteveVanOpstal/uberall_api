@@ -12,7 +12,7 @@ class _$Category extends Category {
   @override
   final String? name;
   @override
-  final Category? parent;
+  final int? parent;
   @override
   final bool? selectable;
 
@@ -71,9 +71,9 @@ class CategoryBuilder implements Builder<Category, CategoryBuilder> {
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  CategoryBuilder? _parent;
-  CategoryBuilder get parent => _$this._parent ??= new CategoryBuilder();
-  set parent(CategoryBuilder? parent) => _$this._parent = parent;
+  int? _parent;
+  int? get parent => _$this._parent;
+  set parent(int? parent) => _$this._parent = parent;
 
   bool? _selectable;
   bool? get selectable => _$this._selectable;
@@ -88,7 +88,7 @@ class CategoryBuilder implements Builder<Category, CategoryBuilder> {
     if ($v != null) {
       _id = $v.id;
       _name = $v.name;
-      _parent = $v.parent?.toBuilder();
+      _parent = $v.parent;
       _selectable = $v.selectable;
       _$v = null;
     }
@@ -110,26 +110,13 @@ class CategoryBuilder implements Builder<Category, CategoryBuilder> {
   Category build() => _build();
 
   _$Category _build() {
-    _$Category _$result;
-    try {
-      _$result = _$v ??
-          new _$Category._(
-            id: id,
-            name: name,
-            parent: _parent?.build(),
-            selectable: selectable,
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'parent';
-        _parent?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'Category', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        new _$Category._(
+          id: id,
+          name: name,
+          parent: parent,
+          selectable: selectable,
+        );
     replace(_$result);
     return _$result;
   }

@@ -18158,7 +18158,9 @@
             "description": "The category description"
           },
           "parent": {
-            "$ref": "#/components/schemas/Category"
+            "type": "integer",
+            "description": "The uberall unique id for the parent category",
+            "format": "int64"
           },
           "selectable": {
             "type": "boolean",

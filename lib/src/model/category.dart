@@ -13,7 +13,7 @@ part 'category.g.dart';
 /// Properties:
 /// * [id] - The uberall unique id for the category
 /// * [name] - The category description
-/// * [parent]
+/// * [parent] - The uberall unique id for the parent category
 /// * [selectable] - Boolean indicating whether the category can be used
 @BuiltValue()
 abstract class Category implements Built<Category, CategoryBuilder> {
@@ -25,8 +25,9 @@ abstract class Category implements Built<Category, CategoryBuilder> {
   @BuiltValueField(wireName: r'name')
   String? get name;
 
+  /// The uberall unique id for the parent category
   @BuiltValueField(wireName: r'parent')
-  Category? get parent;
+  int? get parent;
 
   /// Boolean indicating whether the category can be used
   @BuiltValueField(wireName: r'selectable')
@@ -73,7 +74,7 @@ class _$CategorySerializer implements PrimitiveSerializer<Category> {
       yield r'parent';
       yield serializers.serialize(
         object.parent,
-        specifiedType: const FullType(Category),
+        specifiedType: const FullType(int),
       );
     }
     if (object.selectable != null) {
@@ -125,9 +126,9 @@ class _$CategorySerializer implements PrimitiveSerializer<Category> {
         case r'parent':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(Category),
-          ) as Category;
-          result.parent.replace(valueDes);
+            specifiedType: const FullType(int),
+          ) as int;
+          result.parent = valueDes;
           break;
         case r'selectable':
           final valueDes = serializers.deserialize(
