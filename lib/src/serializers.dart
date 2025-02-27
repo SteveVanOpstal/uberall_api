@@ -217,6 +217,7 @@ import 'package:uberall_api/src/model/person_search_response_object.dart';
 import 'package:uberall_api/src/model/person_search_response_wrapper.dart';
 import 'package:uberall_api/src/model/photo_container.dart';
 import 'package:uberall_api/src/model/post_auto_response_rules_request.dart';
+import 'package:uberall_api/src/model/post_photos_request.dart';
 import 'package:uberall_api/src/model/post_social_templates_request.dart';
 import 'package:uberall_api/src/model/postcodes_response.dart';
 import 'package:uberall_api/src/model/postcodes_response_wrapper.dart';
@@ -534,6 +535,7 @@ part 'serializers.g.dart';
   PersonSearchResponseWrapper,
   PhotoContainer,
   PostAutoResponseRulesRequest,
+  PostPhotosRequest,
   PostSocialTemplatesRequest,
   PostcodesResponse,
   PostcodesResponseWrapper,

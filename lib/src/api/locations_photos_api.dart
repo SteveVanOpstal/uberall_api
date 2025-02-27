@@ -10,6 +10,7 @@ import 'package:dio/dio.dart';
 import 'package:uberall_api/src/api_util.dart';
 import 'package:uberall_api/src/model/location_photo.dart';
 import 'package:uberall_api/src/model/location_photo_response_wrapper.dart';
+import 'package:uberall_api/src/model/post_photos_request.dart';
 import 'package:uberall_api/src/model/uberall_response.dart';
 
 class LocationsPhotosApi {
@@ -320,7 +321,7 @@ class LocationsPhotosApi {
   /// Upload a photo
   ///
   /// Parameters:
-  /// * [locationPhoto] - The photo data to upload
+  /// * [postPhotosRequest] - The photo data to upload
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -331,7 +332,7 @@ class LocationsPhotosApi {
   /// Returns a [Future] containing a [Response] with a [LocationPhotoResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<LocationPhotoResponseWrapper>> postPhotos({
-    required LocationPhoto locationPhoto,
+    required PostPhotosRequest postPhotosRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -369,8 +370,9 @@ class LocationsPhotosApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(LocationPhoto);
-      _bodyData = _serializers.serialize(locationPhoto, specifiedType: _type);
+      const _type = FullType(PostPhotosRequest);
+      _bodyData =
+          _serializers.serialize(postPhotosRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(

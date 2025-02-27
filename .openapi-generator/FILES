@@ -226,6 +226,7 @@ doc/PersonSearchResponseWrapper.md
 doc/PersonsApi.md
 doc/PhotoContainer.md
 doc/PostAutoResponseRulesRequest.md
+doc/PostPhotosRequest.md
 doc/PostSocialTemplatesRequest.md
 doc/PostcodesResponse.md
 doc/PostcodesResponseWrapper.md
@@ -595,6 +596,7 @@ lib/src/model/person_search_response_object.dart
 lib/src/model/person_search_response_wrapper.dart
 lib/src/model/photo_container.dart
 lib/src/model/post_auto_response_rules_request.dart
+lib/src/model/post_photos_request.dart
 lib/src/model/post_social_templates_request.dart
 lib/src/model/postcodes_response.dart
 lib/src/model/postcodes_response_wrapper.dart
@@ -707,3 +709,4 @@ lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
 lib/uberall_api.dart
+test/post_photos_request_test.dart

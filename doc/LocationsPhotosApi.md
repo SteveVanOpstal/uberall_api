@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postPhotos**
-> LocationPhotoResponseWrapper postPhotos(locationPhoto)
+> LocationPhotoResponseWrapper postPhotos(postPhotosRequest)
 
 Upload a Photo
 
@@ -190,10 +190,10 @@ import 'package:uberall_api/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
 final api = UberallApi().getLocationsPhotosApi();
-final LocationPhoto locationPhoto = ; // LocationPhoto | The photo data to upload
+final PostPhotosRequest postPhotosRequest = ; // PostPhotosRequest | The photo data to upload
 
 try {
-    final response = api.postPhotos(locationPhoto);
+    final response = api.postPhotos(postPhotosRequest);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling LocationsPhotosApi->postPhotos: $e\n');
@@ -204,7 +204,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **locationPhoto** | [**LocationPhoto**](LocationPhoto.md)| The photo data to upload | 
+ **postPhotosRequest** | [**PostPhotosRequest**](PostPhotosRequest.md)| The photo data to upload | 
 
 ### Return type
 

@@ -504,6 +504,7 @@ Class | Method | HTTP request | Description
  - [PersonSearchResponseWrapper](doc/PersonSearchResponseWrapper.md)
  - [PhotoContainer](doc/PhotoContainer.md)
  - [PostAutoResponseRulesRequest](doc/PostAutoResponseRulesRequest.md)
+ - [PostPhotosRequest](doc/PostPhotosRequest.md)
  - [PostSocialTemplatesRequest](doc/PostSocialTemplatesRequest.md)
  - [PostcodesResponse](doc/PostcodesResponse.md)
  - [PostcodesResponseWrapper](doc/PostcodesResponseWrapper.md)

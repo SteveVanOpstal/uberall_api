@@ -249,6 +249,7 @@ export 'package:uberall_api/src/model/person_search_response_object.dart';
 export 'package:uberall_api/src/model/person_search_response_wrapper.dart';
 export 'package:uberall_api/src/model/photo_container.dart';
 export 'package:uberall_api/src/model/post_auto_response_rules_request.dart';
+export 'package:uberall_api/src/model/post_photos_request.dart';
 export 'package:uberall_api/src/model/post_social_templates_request.dart';
 export 'package:uberall_api/src/model/postcodes_response.dart';
 export 'package:uberall_api/src/model/postcodes_response_wrapper.dart';

@@ -10324,7 +10324,56 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/LocationPhoto"
+                "required": [
+                  "locationId",
+                  "photo",
+                  "type"
+                ],
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "description": "A description for the photo - max 255 chars"
+                  },
+                  "identifier": {
+                    "type": "string",
+                    "description": "The photo identifier based on your internal identification system"
+                  },
+                  "locationId": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Location ID"
+                  },
+                  "photo": {
+                    "type": "string",
+                    "description": "file or base64"
+                  },
+                  "type": {
+                    "type": "string",
+                    "description": "Required - One of: <br>\n\nMAIN <br>\nLOGO <br>\nSQUARED_LOGO <br>\nDOCTOR_COM_PORTRAIT - Doctor.com clients only <br>\nLANDSCAPE - Updates Google Cover Photo<br>\nAPPLE_LANDSCAPE <br>\nPHOTO  <br>\nSTOREFINDER_LOGO - Only for Uberall locator product <br>\nSTOREFINDER_COVER - Only for Uberall locator product<br>\nFACEBOOK_LANDSCAPE - Facebook Cover Photo <br>\nEXTERIOR - Google''s Exterior Photo tag - availability dependent on a location''s business category <br>\nINTERIOR - Google''s Interior Photo tag  - availability dependent on a location''s business category <br>\nFOOD_AND_DRINK - Google''s Food and Drink Photo tag - availability dependent on a location''s business category  <br>\nMENU  - Google''s Menu Photo tag, which should only be photos of the menu - availability dependent on a location''s business category <br>\nPRODUCT  - Google''s Product Photo tag - availability dependent on a location''s business category <br>\nTEAMS  - Google''s Teams Photo tag - availability dependent on a location''s business category <br>\nAT_WORK  - Google''s At Work Photo tag - availability dependent on a location''s business category <br>\nCOMMON_AREA  - Google''s Common Area Photo tag - availability dependent on a location''s business category <br>\nROOMS - Google''s Rooms Photo tag - availability dependent on a location''s business category ",
+                    "enum": [
+                      "MAIN",
+                      "DOCTOR_COM_PORTRAIT",
+                      "LOGO",
+                      "STOREFINDER_LOGO",
+                      "SQUARED_LOGO",
+                      "LANDSCAPE",
+                      "STOREFINDER_COVER",
+                      "FACEBOOK_LANDSCAPE",
+                      "APPLE_LANDSCAPE",
+                      "MENU",
+                      "PHOTO",
+                      "ROOMS",
+                      "TEAMS",
+                      "AT_WORK",
+                      "PRODUCT",
+                      "EXTERIOR",
+                      "INTERIOR",
+                      "COMMON_AREA",
+                      "FOOD_AND_DRINK"
+                    ]
+                  }
+                }
               }
             }
           },
