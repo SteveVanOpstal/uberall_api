@@ -182,6 +182,7 @@ import 'package:uberall_api/src/model/location_object.dart';
 import 'package:uberall_api/src/model/location_photo.dart';
 import 'package:uberall_api/src/model/location_photo_response.dart';
 import 'package:uberall_api/src/model/location_photo_response_wrapper.dart';
+import 'package:uberall_api/src/model/location_photo_type_enum.dart';
 import 'package:uberall_api/src/model/location_response.dart';
 import 'package:uberall_api/src/model/location_response_wrapper.dart';
 import 'package:uberall_api/src/model/location_search_response.dart';
@@ -500,6 +501,7 @@ part 'serializers.g.dart';
   LocationPhoto,
   LocationPhotoResponse,
   LocationPhotoResponseWrapper,
+  LocationPhotoTypeEnum,
   LocationResponse,
   LocationResponseWrapper,
   LocationSearchResponse,
