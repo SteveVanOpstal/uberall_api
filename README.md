@@ -469,6 +469,7 @@ Class | Method | HTTP request | Description
  - [LocationPhoto](doc/LocationPhoto.md)
  - [LocationPhotoResponse](doc/LocationPhotoResponse.md)
  - [LocationPhotoResponseWrapper](doc/LocationPhotoResponseWrapper.md)
+ - [LocationPhotoResponseWrapperResponse](doc/LocationPhotoResponseWrapperResponse.md)
  - [LocationPhotoTypeEnum](doc/LocationPhotoTypeEnum.md)
  - [LocationResponse](doc/LocationResponse.md)
  - [LocationResponseWrapper](doc/LocationResponseWrapper.md)

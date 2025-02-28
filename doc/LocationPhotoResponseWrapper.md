@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **message** | **String** | (optional) Holds further information about the response | [optional] 
 **errorCode** | **String** |  | [optional] 
 **warnings** | **BuiltList&lt;String&gt;** | (optional) Holds further warnings | [optional] 
-**response** | [**LocationPhotoResponse**](LocationPhotoResponse.md) |  | [optional] 
+**response** | [**LocationPhotoResponseWrapperResponse**](LocationPhotoResponseWrapperResponse.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -3,8 +3,8 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:uberall_api/src/model/location_photo_response.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:uberall_api/src/model/location_photo_response_wrapper_response.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -40,7 +40,7 @@ abstract class LocationPhotoResponseWrapper
   BuiltList<String>? get warnings;
 
   @BuiltValueField(wireName: r'response')
-  LocationPhotoResponse? get response;
+  LocationPhotoResponseWrapperResponse? get response;
 
   LocationPhotoResponseWrapper._();
 
@@ -105,7 +105,7 @@ class _$LocationPhotoResponseWrapperSerializer
       yield r'response';
       yield serializers.serialize(
         object.response,
-        specifiedType: const FullType(LocationPhotoResponse),
+        specifiedType: const FullType(LocationPhotoResponseWrapperResponse),
       );
     }
   }
@@ -166,8 +166,8 @@ class _$LocationPhotoResponseWrapperSerializer
         case r'response':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(LocationPhotoResponse),
-          ) as LocationPhotoResponse;
+            specifiedType: const FullType(LocationPhotoResponseWrapperResponse),
+          ) as LocationPhotoResponseWrapperResponse;
           result.response.replace(valueDes);
           break;
         default:

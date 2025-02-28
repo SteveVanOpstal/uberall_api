@@ -214,6 +214,7 @@ export 'package:uberall_api/src/model/location_object.dart';
 export 'package:uberall_api/src/model/location_photo.dart';
 export 'package:uberall_api/src/model/location_photo_response.dart';
 export 'package:uberall_api/src/model/location_photo_response_wrapper.dart';
+export 'package:uberall_api/src/model/location_photo_response_wrapper_response.dart';
 export 'package:uberall_api/src/model/location_photo_type_enum.dart';
 export 'package:uberall_api/src/model/location_response.dart';
 export 'package:uberall_api/src/model/location_response_wrapper.dart';

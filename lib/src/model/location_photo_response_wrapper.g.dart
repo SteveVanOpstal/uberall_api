@@ -422,7 +422,7 @@ class _$LocationPhotoResponseWrapper extends LocationPhotoResponseWrapper {
   @override
   final BuiltList<String>? warnings;
   @override
-  final LocationPhotoResponse? response;
+  final LocationPhotoResponseWrapperResponse? response;
 
   factory _$LocationPhotoResponseWrapper(
           [void Function(LocationPhotoResponseWrapperBuilder)? updates]) =>
@@ -501,10 +501,10 @@ class LocationPhotoResponseWrapperBuilder
       _$this._warnings ??= new ListBuilder<String>();
   set warnings(ListBuilder<String>? warnings) => _$this._warnings = warnings;
 
-  LocationPhotoResponseBuilder? _response;
-  LocationPhotoResponseBuilder get response =>
-      _$this._response ??= new LocationPhotoResponseBuilder();
-  set response(LocationPhotoResponseBuilder? response) =>
+  LocationPhotoResponseWrapperResponseBuilder? _response;
+  LocationPhotoResponseWrapperResponseBuilder get response =>
+      _$this._response ??= new LocationPhotoResponseWrapperResponseBuilder();
+  set response(LocationPhotoResponseWrapperResponseBuilder? response) =>
       _$this._response = response;
 
   LocationPhotoResponseWrapperBuilder() {

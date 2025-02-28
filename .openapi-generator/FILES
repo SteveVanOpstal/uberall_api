@@ -187,6 +187,7 @@ doc/LocationObject.md
 doc/LocationPhoto.md
 doc/LocationPhotoResponse.md
 doc/LocationPhotoResponseWrapper.md
+doc/LocationPhotoResponseWrapperResponse.md
 doc/LocationPhotoTypeEnum.md
 doc/LocationResponse.md
 doc/LocationResponseWrapper.md
@@ -562,6 +563,7 @@ lib/src/model/location_object.dart
 lib/src/model/location_photo.dart
 lib/src/model/location_photo_response.dart
 lib/src/model/location_photo_response_wrapper.dart
+lib/src/model/location_photo_response_wrapper_response.dart
 lib/src/model/location_photo_type_enum.dart
 lib/src/model/location_response.dart
 lib/src/model/location_response_wrapper.dart
@@ -711,3 +713,4 @@ lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
 lib/uberall_api.dart
+test/location_photo_response_wrapper_response_test.dart

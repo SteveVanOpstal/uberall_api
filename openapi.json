@@ -28099,7 +28099,12 @@
             }
           },
           "response": {
-            "$ref": "#/components/schemas/LocationPhotoResponse"
+            "type": "object",
+            "properties": {
+              "photo": {
+                "$ref": "#/components/schemas/LocationPhotoResponse"
+              }
+            }
           }
         }
       },
