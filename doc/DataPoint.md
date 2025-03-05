@@ -28,6 +28,15 @@ Name | Type | Description | Notes
 **repliedByOwner** | **bool** | True if the owner of the business has replied | [optional] 
 **secondaryData** | **String** | Additional info about the datapoint (eg. text content on instagram pictures) | [optional] 
 **threadActionDate** | [**DateTime**](DateTime.md) | The date of the last interaction in that thread. When a review receives a new comment, the parent will update. | [optional] 
+**connectStatus** | **String** | Connect status of the listing. | [optional] 
+**replyByOwner** | **bool** |  | [optional] 
+**read** | **bool** |  | [optional] 
+**supportsReply** | **bool** |  | [optional] 
+**supportsLike** | **bool** |  | [optional] 
+**supportsUnlike** | **bool** |  | [optional] 
+**hasRepliesInApprovalNeeded** | **bool** |  | [optional] 
+**status** | **String** |  | [optional] 
+**replyMaxLength** | **num** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

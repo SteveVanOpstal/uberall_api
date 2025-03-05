@@ -1145,10 +1145,63 @@ final BuiltSet<DataPointDirectoryTypeEnum> _$dataPointDirectoryTypeEnumValues =
   _$dataPointDirectoryTypeEnum_LINKED_IN,
 ]);
 
+const DataPointConnectStatusEnum _$dataPointConnectStatusEnum_CONNECTED =
+    const DataPointConnectStatusEnum._('CONNECTED');
+const DataPointConnectStatusEnum _$dataPointConnectStatusEnum_NOT_CONNECTED =
+    const DataPointConnectStatusEnum._('NOT_CONNECTED');
+const DataPointConnectStatusEnum _$dataPointConnectStatusEnum_NOT_NEEDED =
+    const DataPointConnectStatusEnum._('NOT_NEEDED');
+
+DataPointConnectStatusEnum _$dataPointConnectStatusEnumValueOf(String name) {
+  switch (name) {
+    case 'CONNECTED':
+      return _$dataPointConnectStatusEnum_CONNECTED;
+    case 'NOT_CONNECTED':
+      return _$dataPointConnectStatusEnum_NOT_CONNECTED;
+    case 'NOT_NEEDED':
+      return _$dataPointConnectStatusEnum_NOT_NEEDED;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<DataPointConnectStatusEnum> _$dataPointConnectStatusEnumValues =
+    new BuiltSet<DataPointConnectStatusEnum>(const <DataPointConnectStatusEnum>[
+  _$dataPointConnectStatusEnum_CONNECTED,
+  _$dataPointConnectStatusEnum_NOT_CONNECTED,
+  _$dataPointConnectStatusEnum_NOT_NEEDED,
+]);
+
+const DataPointStatusEnum _$dataPointStatusEnum_VALID =
+    const DataPointStatusEnum._('VALID');
+const DataPointStatusEnum _$dataPointStatusEnum_INVALID =
+    const DataPointStatusEnum._('INVALID');
+
+DataPointStatusEnum _$dataPointStatusEnumValueOf(String name) {
+  switch (name) {
+    case 'VALID':
+      return _$dataPointStatusEnum_VALID;
+    case 'INVALID':
+      return _$dataPointStatusEnum_INVALID;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<DataPointStatusEnum> _$dataPointStatusEnumValues =
+    new BuiltSet<DataPointStatusEnum>(const <DataPointStatusEnum>[
+  _$dataPointStatusEnum_VALID,
+  _$dataPointStatusEnum_INVALID,
+]);
+
 Serializer<DataPointTypeEnum> _$dataPointTypeEnumSerializer =
     new _$DataPointTypeEnumSerializer();
 Serializer<DataPointDirectoryTypeEnum> _$dataPointDirectoryTypeEnumSerializer =
     new _$DataPointDirectoryTypeEnumSerializer();
+Serializer<DataPointConnectStatusEnum> _$dataPointConnectStatusEnumSerializer =
+    new _$DataPointConnectStatusEnumSerializer();
+Serializer<DataPointStatusEnum> _$dataPointStatusEnumSerializer =
+    new _$DataPointStatusEnumSerializer();
 
 class _$DataPointTypeEnumSerializer
     implements PrimitiveSerializer<DataPointTypeEnum> {
@@ -1635,6 +1688,65 @@ class _$DataPointDirectoryTypeEnumSerializer
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
+class _$DataPointConnectStatusEnumSerializer
+    implements PrimitiveSerializer<DataPointConnectStatusEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'CONNECTED': 'CONNECTED',
+    'NOT_CONNECTED': 'NOT_CONNECTED',
+    'NOT_NEEDED': 'NOT_NEEDED',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'CONNECTED': 'CONNECTED',
+    'NOT_CONNECTED': 'NOT_CONNECTED',
+    'NOT_NEEDED': 'NOT_NEEDED',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[DataPointConnectStatusEnum];
+  @override
+  final String wireName = 'DataPointConnectStatusEnum';
+
+  @override
+  Object serialize(Serializers serializers, DataPointConnectStatusEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  DataPointConnectStatusEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      DataPointConnectStatusEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
+class _$DataPointStatusEnumSerializer
+    implements PrimitiveSerializer<DataPointStatusEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'VALID': 'VALID',
+    'INVALID': 'INVALID',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'VALID': 'VALID',
+    'INVALID': 'INVALID',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[DataPointStatusEnum];
+  @override
+  final String wireName = 'DataPointStatusEnum';
+
+  @override
+  Object serialize(Serializers serializers, DataPointStatusEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  DataPointStatusEnum deserialize(Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      DataPointStatusEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$DataPoint extends DataPoint {
   @override
   final int? id;
@@ -1676,6 +1788,24 @@ class _$DataPoint extends DataPoint {
   final String? secondaryData;
   @override
   final DateTime? threadActionDate;
+  @override
+  final DataPointConnectStatusEnum? connectStatus;
+  @override
+  final bool? replyByOwner;
+  @override
+  final bool? read;
+  @override
+  final bool? supportsReply;
+  @override
+  final bool? supportsLike;
+  @override
+  final bool? supportsUnlike;
+  @override
+  final bool? hasRepliesInApprovalNeeded;
+  @override
+  final DataPointStatusEnum? status;
+  @override
+  final num? replyMaxLength;
 
   factory _$DataPoint([void Function(DataPointBuilder)? updates]) =>
       (new DataPointBuilder()..update(updates))._build();
@@ -1700,7 +1830,16 @@ class _$DataPoint extends DataPoint {
       this.rating,
       this.repliedByOwner,
       this.secondaryData,
-      this.threadActionDate})
+      this.threadActionDate,
+      this.connectStatus,
+      this.replyByOwner,
+      this.read,
+      this.supportsReply,
+      this.supportsLike,
+      this.supportsUnlike,
+      this.hasRepliesInApprovalNeeded,
+      this.status,
+      this.replyMaxLength})
       : super._();
 
   @override
@@ -1733,7 +1872,16 @@ class _$DataPoint extends DataPoint {
         rating == other.rating &&
         repliedByOwner == other.repliedByOwner &&
         secondaryData == other.secondaryData &&
-        threadActionDate == other.threadActionDate;
+        threadActionDate == other.threadActionDate &&
+        connectStatus == other.connectStatus &&
+        replyByOwner == other.replyByOwner &&
+        read == other.read &&
+        supportsReply == other.supportsReply &&
+        supportsLike == other.supportsLike &&
+        supportsUnlike == other.supportsUnlike &&
+        hasRepliesInApprovalNeeded == other.hasRepliesInApprovalNeeded &&
+        status == other.status &&
+        replyMaxLength == other.replyMaxLength;
   }
 
   @override
@@ -1759,6 +1907,15 @@ class _$DataPoint extends DataPoint {
     _$hash = $jc(_$hash, repliedByOwner.hashCode);
     _$hash = $jc(_$hash, secondaryData.hashCode);
     _$hash = $jc(_$hash, threadActionDate.hashCode);
+    _$hash = $jc(_$hash, connectStatus.hashCode);
+    _$hash = $jc(_$hash, replyByOwner.hashCode);
+    _$hash = $jc(_$hash, read.hashCode);
+    _$hash = $jc(_$hash, supportsReply.hashCode);
+    _$hash = $jc(_$hash, supportsLike.hashCode);
+    _$hash = $jc(_$hash, supportsUnlike.hashCode);
+    _$hash = $jc(_$hash, hasRepliesInApprovalNeeded.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, replyMaxLength.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -1785,7 +1942,16 @@ class _$DataPoint extends DataPoint {
           ..add('rating', rating)
           ..add('repliedByOwner', repliedByOwner)
           ..add('secondaryData', secondaryData)
-          ..add('threadActionDate', threadActionDate))
+          ..add('threadActionDate', threadActionDate)
+          ..add('connectStatus', connectStatus)
+          ..add('replyByOwner', replyByOwner)
+          ..add('read', read)
+          ..add('supportsReply', supportsReply)
+          ..add('supportsLike', supportsLike)
+          ..add('supportsUnlike', supportsUnlike)
+          ..add('hasRepliesInApprovalNeeded', hasRepliesInApprovalNeeded)
+          ..add('status', status)
+          ..add('replyMaxLength', replyMaxLength))
         .toString();
   }
 }
@@ -1879,6 +2045,47 @@ class DataPointBuilder implements Builder<DataPoint, DataPointBuilder> {
   set threadActionDate(DateTime? threadActionDate) =>
       _$this._threadActionDate = threadActionDate;
 
+  DataPointConnectStatusEnum? _connectStatus;
+  DataPointConnectStatusEnum? get connectStatus => _$this._connectStatus;
+  set connectStatus(DataPointConnectStatusEnum? connectStatus) =>
+      _$this._connectStatus = connectStatus;
+
+  bool? _replyByOwner;
+  bool? get replyByOwner => _$this._replyByOwner;
+  set replyByOwner(bool? replyByOwner) => _$this._replyByOwner = replyByOwner;
+
+  bool? _read;
+  bool? get read => _$this._read;
+  set read(bool? read) => _$this._read = read;
+
+  bool? _supportsReply;
+  bool? get supportsReply => _$this._supportsReply;
+  set supportsReply(bool? supportsReply) =>
+      _$this._supportsReply = supportsReply;
+
+  bool? _supportsLike;
+  bool? get supportsLike => _$this._supportsLike;
+  set supportsLike(bool? supportsLike) => _$this._supportsLike = supportsLike;
+
+  bool? _supportsUnlike;
+  bool? get supportsUnlike => _$this._supportsUnlike;
+  set supportsUnlike(bool? supportsUnlike) =>
+      _$this._supportsUnlike = supportsUnlike;
+
+  bool? _hasRepliesInApprovalNeeded;
+  bool? get hasRepliesInApprovalNeeded => _$this._hasRepliesInApprovalNeeded;
+  set hasRepliesInApprovalNeeded(bool? hasRepliesInApprovalNeeded) =>
+      _$this._hasRepliesInApprovalNeeded = hasRepliesInApprovalNeeded;
+
+  DataPointStatusEnum? _status;
+  DataPointStatusEnum? get status => _$this._status;
+  set status(DataPointStatusEnum? status) => _$this._status = status;
+
+  num? _replyMaxLength;
+  num? get replyMaxLength => _$this._replyMaxLength;
+  set replyMaxLength(num? replyMaxLength) =>
+      _$this._replyMaxLength = replyMaxLength;
+
   DataPointBuilder() {
     DataPoint._defaults(this);
   }
@@ -1906,6 +2113,15 @@ class DataPointBuilder implements Builder<DataPoint, DataPointBuilder> {
       _repliedByOwner = $v.repliedByOwner;
       _secondaryData = $v.secondaryData;
       _threadActionDate = $v.threadActionDate;
+      _connectStatus = $v.connectStatus;
+      _replyByOwner = $v.replyByOwner;
+      _read = $v.read;
+      _supportsReply = $v.supportsReply;
+      _supportsLike = $v.supportsLike;
+      _supportsUnlike = $v.supportsUnlike;
+      _hasRepliesInApprovalNeeded = $v.hasRepliesInApprovalNeeded;
+      _status = $v.status;
+      _replyMaxLength = $v.replyMaxLength;
       _$v = null;
     }
     return this;
@@ -1950,6 +2166,15 @@ class DataPointBuilder implements Builder<DataPoint, DataPointBuilder> {
             repliedByOwner: repliedByOwner,
             secondaryData: secondaryData,
             threadActionDate: threadActionDate,
+            connectStatus: connectStatus,
+            replyByOwner: replyByOwner,
+            read: read,
+            supportsReply: supportsReply,
+            supportsLike: supportsLike,
+            supportsUnlike: supportsUnlike,
+            hasRepliesInApprovalNeeded: hasRepliesInApprovalNeeded,
+            status: status,
+            replyMaxLength: replyMaxLength,
           );
     } catch (_) {
       late String _$failedField;

@@ -20233,6 +20233,43 @@
             "type": "string",
             "description": "The date of the last interaction in that thread. When a review receives a new comment, the parent will update.",
             "format": "date-time"
+          },
+          "connectStatus": {
+            "type": "string",
+            "description": "Connect status of the listing.",
+            "enum": [
+              "CONNECTED",
+              "NOT_CONNECTED",
+              "NOT_NEEDED"
+            ]
+          },
+          "replyByOwner": {
+            "type": "boolean"
+          },
+          "read": {
+            "type": "boolean"
+          },
+          "supportsReply": {
+            "type": "boolean"
+          },
+          "supportsLike": {
+            "type": "boolean"
+          },
+          "supportsUnlike": {
+            "type": "boolean"
+          },
+          "hasRepliesInApprovalNeeded": {
+            "type": "boolean"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "VALID",
+              "INVALID"
+            ]
+          },
+          "replyMaxLength": {
+            "type": "number"
           }
         },
         "description": "Data Point Model"

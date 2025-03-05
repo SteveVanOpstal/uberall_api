@@ -32,6 +32,15 @@ part 'data_point.g.dart';
 /// * [repliedByOwner] - True if the owner of the business has replied
 /// * [secondaryData] - Additional info about the datapoint (eg. text content on instagram pictures)
 /// * [threadActionDate] - The date of the last interaction in that thread. When a review receives a new comment, the parent will update.
+/// * [connectStatus] - Connect status of the listing.
+/// * [replyByOwner]
+/// * [read]
+/// * [supportsReply]
+/// * [supportsLike]
+/// * [supportsUnlike]
+/// * [hasRepliesInApprovalNeeded]
+/// * [status]
+/// * [replyMaxLength]
 @BuiltValue()
 abstract class DataPoint implements Built<DataPoint, DataPointBuilder> {
   /// The uberall unique id of the data point
@@ -114,6 +123,36 @@ abstract class DataPoint implements Built<DataPoint, DataPointBuilder> {
   /// The date of the last interaction in that thread. When a review receives a new comment, the parent will update.
   @BuiltValueField(wireName: r'threadActionDate')
   DateTime? get threadActionDate;
+
+  /// Connect status of the listing.
+  @BuiltValueField(wireName: r'connectStatus')
+  DataPointConnectStatusEnum? get connectStatus;
+  // enum connectStatusEnum {  CONNECTED,  NOT_CONNECTED,  NOT_NEEDED,  };
+
+  @BuiltValueField(wireName: r'replyByOwner')
+  bool? get replyByOwner;
+
+  @BuiltValueField(wireName: r'read')
+  bool? get read;
+
+  @BuiltValueField(wireName: r'supportsReply')
+  bool? get supportsReply;
+
+  @BuiltValueField(wireName: r'supportsLike')
+  bool? get supportsLike;
+
+  @BuiltValueField(wireName: r'supportsUnlike')
+  bool? get supportsUnlike;
+
+  @BuiltValueField(wireName: r'hasRepliesInApprovalNeeded')
+  bool? get hasRepliesInApprovalNeeded;
+
+  @BuiltValueField(wireName: r'status')
+  DataPointStatusEnum? get status;
+  // enum statusEnum {  VALID,  INVALID,  };
+
+  @BuiltValueField(wireName: r'replyMaxLength')
+  num? get replyMaxLength;
 
   DataPoint._();
 
@@ -276,6 +315,69 @@ class _$DataPointSerializer implements PrimitiveSerializer<DataPoint> {
       yield serializers.serialize(
         object.threadActionDate,
         specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.connectStatus != null) {
+      yield r'connectStatus';
+      yield serializers.serialize(
+        object.connectStatus,
+        specifiedType: const FullType(DataPointConnectStatusEnum),
+      );
+    }
+    if (object.replyByOwner != null) {
+      yield r'replyByOwner';
+      yield serializers.serialize(
+        object.replyByOwner,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.read != null) {
+      yield r'read';
+      yield serializers.serialize(
+        object.read,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.supportsReply != null) {
+      yield r'supportsReply';
+      yield serializers.serialize(
+        object.supportsReply,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.supportsLike != null) {
+      yield r'supportsLike';
+      yield serializers.serialize(
+        object.supportsLike,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.supportsUnlike != null) {
+      yield r'supportsUnlike';
+      yield serializers.serialize(
+        object.supportsUnlike,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.hasRepliesInApprovalNeeded != null) {
+      yield r'hasRepliesInApprovalNeeded';
+      yield serializers.serialize(
+        object.hasRepliesInApprovalNeeded,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.status != null) {
+      yield r'status';
+      yield serializers.serialize(
+        object.status,
+        specifiedType: const FullType(DataPointStatusEnum),
+      );
+    }
+    if (object.replyMaxLength != null) {
+      yield r'replyMaxLength';
+      yield serializers.serialize(
+        object.replyMaxLength,
+        specifiedType: const FullType(num),
       );
     }
   }
@@ -442,6 +544,69 @@ class _$DataPointSerializer implements PrimitiveSerializer<DataPoint> {
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.threadActionDate = valueDes;
+          break;
+        case r'connectStatus':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DataPointConnectStatusEnum),
+          ) as DataPointConnectStatusEnum;
+          result.connectStatus = valueDes;
+          break;
+        case r'replyByOwner':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.replyByOwner = valueDes;
+          break;
+        case r'read':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.read = valueDes;
+          break;
+        case r'supportsReply':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.supportsReply = valueDes;
+          break;
+        case r'supportsLike':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.supportsLike = valueDes;
+          break;
+        case r'supportsUnlike':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.supportsUnlike = valueDes;
+          break;
+        case r'hasRepliesInApprovalNeeded':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.hasRepliesInApprovalNeeded = valueDes;
+          break;
+        case r'status':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DataPointStatusEnum),
+          ) as DataPointStatusEnum;
+          result.status = valueDes;
+          break;
+        case r'replyMaxLength':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.replyMaxLength = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -1571,4 +1736,48 @@ class DataPointDirectoryTypeEnum extends EnumClass {
       _$dataPointDirectoryTypeEnumValues;
   static DataPointDirectoryTypeEnum valueOf(String name) =>
       _$dataPointDirectoryTypeEnumValueOf(name);
+}
+
+class DataPointConnectStatusEnum extends EnumClass {
+  /// Connect status of the listing.
+  @BuiltValueEnumConst(wireName: r'CONNECTED')
+  static const DataPointConnectStatusEnum CONNECTED =
+      _$dataPointConnectStatusEnum_CONNECTED;
+
+  /// Connect status of the listing.
+  @BuiltValueEnumConst(wireName: r'NOT_CONNECTED')
+  static const DataPointConnectStatusEnum NOT_CONNECTED =
+      _$dataPointConnectStatusEnum_NOT_CONNECTED;
+
+  /// Connect status of the listing.
+  @BuiltValueEnumConst(wireName: r'NOT_NEEDED')
+  static const DataPointConnectStatusEnum NOT_NEEDED =
+      _$dataPointConnectStatusEnum_NOT_NEEDED;
+
+  static Serializer<DataPointConnectStatusEnum> get serializer =>
+      _$dataPointConnectStatusEnumSerializer;
+
+  const DataPointConnectStatusEnum._(String name) : super(name);
+
+  static BuiltSet<DataPointConnectStatusEnum> get values =>
+      _$dataPointConnectStatusEnumValues;
+  static DataPointConnectStatusEnum valueOf(String name) =>
+      _$dataPointConnectStatusEnumValueOf(name);
+}
+
+class DataPointStatusEnum extends EnumClass {
+  @BuiltValueEnumConst(wireName: r'VALID')
+  static const DataPointStatusEnum VALID = _$dataPointStatusEnum_VALID;
+  @BuiltValueEnumConst(wireName: r'INVALID')
+  static const DataPointStatusEnum INVALID = _$dataPointStatusEnum_INVALID;
+
+  static Serializer<DataPointStatusEnum> get serializer =>
+      _$dataPointStatusEnumSerializer;
+
+  const DataPointStatusEnum._(String name) : super(name);
+
+  static BuiltSet<DataPointStatusEnum> get values =>
+      _$dataPointStatusEnumValues;
+  static DataPointStatusEnum valueOf(String name) =>
+      _$dataPointStatusEnumValueOf(name);
 }
