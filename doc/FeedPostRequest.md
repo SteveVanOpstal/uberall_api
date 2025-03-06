@@ -8,9 +8,9 @@ import 'package:uberall_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**brandPage** | **bool** |  | [optional] 
+**brandPage** | **String** |  | [optional] 
 **endDate** | [**DateTime**](DateTime.md) |  | [optional] 
-**isClient** | **bool** |  | [optional] 
+**isClient** | **String** |  | [optional] 
 **paginationOptions** | [**FeedPostRequestPaginationOptions**](FeedPostRequestPaginationOptions.md) |  | [optional] 
 **startDate** | [**DateTime**](DateTime.md) |  | [optional] 
 **status** | **BuiltList&lt;String&gt;** |  | [optional] 

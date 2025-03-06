@@ -23,13 +23,15 @@ part 'feed_post_request.g.dart';
 abstract class FeedPostRequest
     implements Built<FeedPostRequest, FeedPostRequestBuilder> {
   @BuiltValueField(wireName: r'brandPage')
-  bool? get brandPage;
+  FeedPostRequestBrandPageEnum? get brandPage;
+  // enum brandPageEnum {  true,  false,  };
 
   @BuiltValueField(wireName: r'endDate')
   DateTime? get endDate;
 
   @BuiltValueField(wireName: r'isClient')
-  bool? get isClient;
+  FeedPostRequestIsClientEnum? get isClient;
+  // enum isClientEnum {  true,  false,  };
 
   @BuiltValueField(wireName: r'paginationOptions')
   FeedPostRequestPaginationOptions? get paginationOptions;
@@ -71,7 +73,7 @@ class _$FeedPostRequestSerializer
       yield r'brandPage';
       yield serializers.serialize(
         object.brandPage,
-        specifiedType: const FullType(bool),
+        specifiedType: const FullType(FeedPostRequestBrandPageEnum),
       );
     }
     if (object.endDate != null) {
@@ -85,7 +87,7 @@ class _$FeedPostRequestSerializer
       yield r'isClient';
       yield serializers.serialize(
         object.isClient,
-        specifiedType: const FullType(bool),
+        specifiedType: const FullType(FeedPostRequestIsClientEnum),
       );
     }
     if (object.paginationOptions != null) {
@@ -138,8 +140,8 @@ class _$FeedPostRequestSerializer
         case r'brandPage':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType(FeedPostRequestBrandPageEnum),
+          ) as FeedPostRequestBrandPageEnum;
           result.brandPage = valueDes;
           break;
         case r'endDate':
@@ -152,8 +154,8 @@ class _$FeedPostRequestSerializer
         case r'isClient':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType(FeedPostRequestIsClientEnum),
+          ) as FeedPostRequestIsClientEnum;
           result.isClient = valueDes;
           break;
         case r'paginationOptions':
@@ -205,6 +207,44 @@ class _$FeedPostRequestSerializer
     );
     return result.build();
   }
+}
+
+class FeedPostRequestBrandPageEnum extends EnumClass {
+  @BuiltValueEnumConst(wireName: r'true')
+  static const FeedPostRequestBrandPageEnum true_ =
+      _$feedPostRequestBrandPageEnum_true_;
+  @BuiltValueEnumConst(wireName: r'false')
+  static const FeedPostRequestBrandPageEnum false_ =
+      _$feedPostRequestBrandPageEnum_false_;
+
+  static Serializer<FeedPostRequestBrandPageEnum> get serializer =>
+      _$feedPostRequestBrandPageEnumSerializer;
+
+  const FeedPostRequestBrandPageEnum._(String name) : super(name);
+
+  static BuiltSet<FeedPostRequestBrandPageEnum> get values =>
+      _$feedPostRequestBrandPageEnumValues;
+  static FeedPostRequestBrandPageEnum valueOf(String name) =>
+      _$feedPostRequestBrandPageEnumValueOf(name);
+}
+
+class FeedPostRequestIsClientEnum extends EnumClass {
+  @BuiltValueEnumConst(wireName: r'true')
+  static const FeedPostRequestIsClientEnum true_ =
+      _$feedPostRequestIsClientEnum_true_;
+  @BuiltValueEnumConst(wireName: r'false')
+  static const FeedPostRequestIsClientEnum false_ =
+      _$feedPostRequestIsClientEnum_false_;
+
+  static Serializer<FeedPostRequestIsClientEnum> get serializer =>
+      _$feedPostRequestIsClientEnumSerializer;
+
+  const FeedPostRequestIsClientEnum._(String name) : super(name);
+
+  static BuiltSet<FeedPostRequestIsClientEnum> get values =>
+      _$feedPostRequestIsClientEnumValues;
+  static FeedPostRequestIsClientEnum valueOf(String name) =>
+      _$feedPostRequestIsClientEnumValueOf(name);
 }
 
 class FeedPostRequestStatusEnum extends EnumClass {

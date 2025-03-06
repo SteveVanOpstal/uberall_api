@@ -6,6 +6,53 @@ part of 'feed_post_request.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const FeedPostRequestBrandPageEnum _$feedPostRequestBrandPageEnum_true_ =
+    const FeedPostRequestBrandPageEnum._('true_');
+const FeedPostRequestBrandPageEnum _$feedPostRequestBrandPageEnum_false_ =
+    const FeedPostRequestBrandPageEnum._('false_');
+
+FeedPostRequestBrandPageEnum _$feedPostRequestBrandPageEnumValueOf(
+    String name) {
+  switch (name) {
+    case 'true_':
+      return _$feedPostRequestBrandPageEnum_true_;
+    case 'false_':
+      return _$feedPostRequestBrandPageEnum_false_;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<FeedPostRequestBrandPageEnum>
+    _$feedPostRequestBrandPageEnumValues = new BuiltSet<
+        FeedPostRequestBrandPageEnum>(const <FeedPostRequestBrandPageEnum>[
+  _$feedPostRequestBrandPageEnum_true_,
+  _$feedPostRequestBrandPageEnum_false_,
+]);
+
+const FeedPostRequestIsClientEnum _$feedPostRequestIsClientEnum_true_ =
+    const FeedPostRequestIsClientEnum._('true_');
+const FeedPostRequestIsClientEnum _$feedPostRequestIsClientEnum_false_ =
+    const FeedPostRequestIsClientEnum._('false_');
+
+FeedPostRequestIsClientEnum _$feedPostRequestIsClientEnumValueOf(String name) {
+  switch (name) {
+    case 'true_':
+      return _$feedPostRequestIsClientEnum_true_;
+    case 'false_':
+      return _$feedPostRequestIsClientEnum_false_;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<FeedPostRequestIsClientEnum>
+    _$feedPostRequestIsClientEnumValues = new BuiltSet<
+        FeedPostRequestIsClientEnum>(const <FeedPostRequestIsClientEnum>[
+  _$feedPostRequestIsClientEnum_true_,
+  _$feedPostRequestIsClientEnum_false_,
+]);
+
 const FeedPostRequestStatusEnum _$feedPostRequestStatusEnum_unresolved =
     const FeedPostRequestStatusEnum._('unresolved');
 const FeedPostRequestStatusEnum _$feedPostRequestStatusEnum_unreplied =
@@ -28,8 +75,72 @@ final BuiltSet<FeedPostRequestStatusEnum> _$feedPostRequestStatusEnumValues =
   _$feedPostRequestStatusEnum_unreplied,
 ]);
 
+Serializer<FeedPostRequestBrandPageEnum>
+    _$feedPostRequestBrandPageEnumSerializer =
+    new _$FeedPostRequestBrandPageEnumSerializer();
+Serializer<FeedPostRequestIsClientEnum>
+    _$feedPostRequestIsClientEnumSerializer =
+    new _$FeedPostRequestIsClientEnumSerializer();
 Serializer<FeedPostRequestStatusEnum> _$feedPostRequestStatusEnumSerializer =
     new _$FeedPostRequestStatusEnumSerializer();
+
+class _$FeedPostRequestBrandPageEnumSerializer
+    implements PrimitiveSerializer<FeedPostRequestBrandPageEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'true_': 'true',
+    'false_': 'false',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'true': 'true_',
+    'false': 'false_',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[FeedPostRequestBrandPageEnum];
+  @override
+  final String wireName = 'FeedPostRequestBrandPageEnum';
+
+  @override
+  Object serialize(Serializers serializers, FeedPostRequestBrandPageEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  FeedPostRequestBrandPageEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      FeedPostRequestBrandPageEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
+class _$FeedPostRequestIsClientEnumSerializer
+    implements PrimitiveSerializer<FeedPostRequestIsClientEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'true_': 'true',
+    'false_': 'false',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'true': 'true_',
+    'false': 'false_',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[FeedPostRequestIsClientEnum];
+  @override
+  final String wireName = 'FeedPostRequestIsClientEnum';
+
+  @override
+  Object serialize(Serializers serializers, FeedPostRequestIsClientEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  FeedPostRequestIsClientEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      FeedPostRequestIsClientEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
 
 class _$FeedPostRequestStatusEnumSerializer
     implements PrimitiveSerializer<FeedPostRequestStatusEnum> {
@@ -62,11 +173,11 @@ class _$FeedPostRequestStatusEnumSerializer
 
 class _$FeedPostRequest extends FeedPostRequest {
   @override
-  final bool? brandPage;
+  final FeedPostRequestBrandPageEnum? brandPage;
   @override
   final DateTime? endDate;
   @override
-  final bool? isClient;
+  final FeedPostRequestIsClientEnum? isClient;
   @override
   final FeedPostRequestPaginationOptions? paginationOptions;
   @override
@@ -136,17 +247,19 @@ class FeedPostRequestBuilder
     implements Builder<FeedPostRequest, FeedPostRequestBuilder> {
   _$FeedPostRequest? _$v;
 
-  bool? _brandPage;
-  bool? get brandPage => _$this._brandPage;
-  set brandPage(bool? brandPage) => _$this._brandPage = brandPage;
+  FeedPostRequestBrandPageEnum? _brandPage;
+  FeedPostRequestBrandPageEnum? get brandPage => _$this._brandPage;
+  set brandPage(FeedPostRequestBrandPageEnum? brandPage) =>
+      _$this._brandPage = brandPage;
 
   DateTime? _endDate;
   DateTime? get endDate => _$this._endDate;
   set endDate(DateTime? endDate) => _$this._endDate = endDate;
 
-  bool? _isClient;
-  bool? get isClient => _$this._isClient;
-  set isClient(bool? isClient) => _$this._isClient = isClient;
+  FeedPostRequestIsClientEnum? _isClient;
+  FeedPostRequestIsClientEnum? get isClient => _$this._isClient;
+  set isClient(FeedPostRequestIsClientEnum? isClient) =>
+      _$this._isClient = isClient;
 
   FeedPostRequestPaginationOptionsBuilder? _paginationOptions;
   FeedPostRequestPaginationOptionsBuilder get paginationOptions =>

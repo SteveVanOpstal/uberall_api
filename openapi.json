@@ -14884,14 +14884,22 @@
                 "type": "object",
                 "properties": {
                   "brandPage": {
-                    "type": "boolean"
+                    "type": "string",
+                    "enum": [
+                      "true",
+                      "false"
+                    ]
                   },
                   "endDate": {
                     "type": "string",
                     "format": "date-time"
                   },
                   "isClient": {
-                    "type": "boolean"
+                    "type": "string",
+                    "enum": [
+                      "true",
+                      "false"
+                    ]
                   },
                   "paginationOptions": {
                     "type": "object",
