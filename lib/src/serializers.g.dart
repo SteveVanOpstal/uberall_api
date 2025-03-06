@@ -291,11 +291,18 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(FeaturesResponseWrapper.serializer)
       ..add(FeaturesResponseWrapperErrorCodeEnum.serializer)
       ..add(FeaturesResponseWrapperStatusEnum.serializer)
+      ..add(FeedDataItem.serializer)
+      ..add(FeedDataItemAuthor.serializer)
+      ..add(FeedDataItemMetrics.serializer)
       ..add(FeedItem.serializer)
       ..add(FeedItemTypeEnum.serializer)
       ..add(FeedItemWrapper.serializer)
       ..add(FeedItemWrapperErrorCodeEnum.serializer)
       ..add(FeedItemWrapperStatusEnum.serializer)
+      ..add(FeedPost200Response.serializer)
+      ..add(FeedPostRequest.serializer)
+      ..add(FeedPostRequestPaginationOptions.serializer)
+      ..add(FeedPostRequestStatusEnum.serializer)
       ..add(FiltersResponse.serializer)
       ..add(FiltersResponseCountriesEnum.serializer)
       ..add(FiltersResponseDirectoriesEnum.serializer)
@@ -800,6 +807,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(Event)]),
           () => new ListBuilder<Event>())
       ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(FeedDataItem)]),
+          () => new ListBuilder<FeedDataItem>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(FeedPostRequestStatusEnum)]),
+          () => new ListBuilder<FeedPostRequestStatusEnum>())
+      ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(FiltersResponseDirectoriesEnum)]),
           () => new ListBuilder<FiltersResponseDirectoriesEnum>())
@@ -1018,6 +1032,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(StoreFinderResponse)]),
           () => new ListBuilder<StoreFinderResponse>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

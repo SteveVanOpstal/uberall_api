@@ -14871,6 +14871,120 @@
           }
         ]
       }
+    },
+    "/feed": {
+      "post": {
+        "tags": [
+          "Feed"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "brandPage": {
+                    "type": "boolean"
+                  },
+                  "endDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "isClient": {
+                    "type": "boolean"
+                  },
+                  "paginationOptions": {
+                    "type": "object",
+                    "properties": {
+                      "page": {
+                        "type": "number"
+                      },
+                      "pageSize": {
+                        "type": "number"
+                      },
+                      "sort": {
+                        "type": "string"
+                      },
+                      "sortDir": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "startDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "status": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "unresolved",
+                        "unreplied"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/FeedDataItem"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/feed/{id}/children": {
+      "get": {
+        "tags": [
+          "Feed"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/FeedDataItem"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "401": {
+            "description": "Not Authorized"
+          },
+          "400": {
+            "description": "Invalid or Missing Parameter"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -23732,6 +23846,106 @@
           },
           "response": {
             "$ref": "#/components/schemas/FeaturesResponse"
+          }
+        }
+      },
+      "FeedDataItem": {
+        "type": "object",
+        "properties": {
+          "actionDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "author": {
+            "type": "object",
+            "properties": {
+              "image": {
+                "type": "string"
+              },
+              "isClient": {
+                "type": "boolean"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "businessIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "contentType": {
+            "type": "string"
+          },
+          "dataPointId": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "indexedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isBrand": {
+            "type": "boolean"
+          },
+          "isExpandedReviewNetwork": {
+            "type": "boolean"
+          },
+          "location": {
+            "$ref": "#/components/schemas/StoreFinderResponse"
+          },
+          "locationId": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "metrics": {
+            "type": "object",
+            "properties": {
+              "likes": {
+                "type": "integer"
+              }
+            }
+          },
+          "nativeId": {
+            "type": "string"
+          },
+          "nativeLink": {
+            "type": "string"
+          },
+          "nativeVenueLink": {
+            "type": "string"
+          },
+          "parentDataPointId": {
+            "type": "number"
+          },
+          "priority": {
+            "type": "number",
+            "format": "double"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "rootDataPointId": {
+            "type": "string"
+          },
+          "rootIdLink": {
+            "type": "string"
+          },
+          "salesPartnerId": {
+            "type": "string"
+          },
+          "sortDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string"
           }
         }
       },

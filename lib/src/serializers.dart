@@ -128,8 +128,14 @@ import 'package:uberall_api/src/model/external_entities_object.dart';
 import 'package:uberall_api/src/model/external_entities_wrapper.dart';
 import 'package:uberall_api/src/model/features_response.dart';
 import 'package:uberall_api/src/model/features_response_wrapper.dart';
+import 'package:uberall_api/src/model/feed_data_item.dart';
+import 'package:uberall_api/src/model/feed_data_item_author.dart';
+import 'package:uberall_api/src/model/feed_data_item_metrics.dart';
 import 'package:uberall_api/src/model/feed_item.dart';
 import 'package:uberall_api/src/model/feed_item_wrapper.dart';
+import 'package:uberall_api/src/model/feed_post200_response.dart';
+import 'package:uberall_api/src/model/feed_post_request.dart';
+import 'package:uberall_api/src/model/feed_post_request_pagination_options.dart';
 import 'package:uberall_api/src/model/filters_response.dart';
 import 'package:uberall_api/src/model/filters_response_wrapper.dart';
 import 'package:uberall_api/src/model/get_categories200_response.dart';
@@ -448,8 +454,14 @@ part 'serializers.g.dart';
   ExternalEntitiesWrapper,
   FeaturesResponse,
   FeaturesResponseWrapper,
+  FeedDataItem,
+  FeedDataItemAuthor,
+  FeedDataItemMetrics,
   FeedItem,
   FeedItemWrapper,
+  FeedPost200Response,
+  FeedPostRequest,
+  FeedPostRequestPaginationOptions,
   FiltersResponse,
   FiltersResponseWrapper,
   GetCategories200Response,

@@ -170,6 +170,8 @@ Class | Method | HTTP request | Description
 [*EventsApi*](doc/EventsApi.md) | [**patchEvents**](doc/EventsApi.md#patchevents) | **PATCH** /events | Update an Event using identifier
 [*EventsApi*](doc/EventsApi.md) | [**patchEventsId**](doc/EventsApi.md#patcheventsid) | **PATCH** /events/{id} | Update an Event
 [*EventsApi*](doc/EventsApi.md) | [**postEvents**](doc/EventsApi.md#postevents) | **POST** /events | Create an Event
+[*FeedApi*](doc/FeedApi.md) | [**feedIdChildrenGet**](doc/FeedApi.md#feedidchildrenget) | **GET** /feed/{id}/children | 
+[*FeedApi*](doc/FeedApi.md) | [**feedPost**](doc/FeedApi.md#feedpost) | **POST** /feed | 
 [*LabelsApi*](doc/LabelsApi.md) | [**getLabels**](doc/LabelsApi.md#getlabels) | **GET** /labels | Get All Labels
 [*ListingsApi*](doc/ListingsApi.md) | [**deleteLocationsIdFacebookPage**](doc/ListingsApi.md#deletelocationsidfacebookpage) | **DELETE** /locations/{id}/facebook/page | Disconnect Location&#39;&#39;s Facebook Page
 [*ListingsApi*](doc/ListingsApi.md) | [**deleteLocationsIdGooglePage**](doc/ListingsApi.md#deletelocationsidgooglepage) | **DELETE** /locations/{id}/google/page | Disconnect Google Page
@@ -415,8 +417,14 @@ Class | Method | HTTP request | Description
  - [ExternalEntitiesWrapper](doc/ExternalEntitiesWrapper.md)
  - [FeaturesResponse](doc/FeaturesResponse.md)
  - [FeaturesResponseWrapper](doc/FeaturesResponseWrapper.md)
+ - [FeedDataItem](doc/FeedDataItem.md)
+ - [FeedDataItemAuthor](doc/FeedDataItemAuthor.md)
+ - [FeedDataItemMetrics](doc/FeedDataItemMetrics.md)
  - [FeedItem](doc/FeedItem.md)
  - [FeedItemWrapper](doc/FeedItemWrapper.md)
+ - [FeedPost200Response](doc/FeedPost200Response.md)
+ - [FeedPostRequest](doc/FeedPostRequest.md)
+ - [FeedPostRequestPaginationOptions](doc/FeedPostRequestPaginationOptions.md)
  - [FiltersResponse](doc/FiltersResponse.md)
  - [FiltersResponseWrapper](doc/FiltersResponseWrapper.md)
  - [GetCategories200Response](doc/GetCategories200Response.md)
