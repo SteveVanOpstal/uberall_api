@@ -46,7 +46,7 @@ class _$FeedDataItem extends FeedDataItem {
   @override
   final String? provider;
   @override
-  final num? rating;
+  final double? rating;
   @override
   final String? rootDataPointId;
   @override
@@ -280,9 +280,9 @@ class FeedDataItemBuilder
   String? get provider => _$this._provider;
   set provider(String? provider) => _$this._provider = provider;
 
-  num? _rating;
-  num? get rating => _$this._rating;
-  set rating(num? rating) => _$this._rating = rating;
+  double? _rating;
+  double? get rating => _$this._rating;
+  set rating(double? rating) => _$this._rating = rating;
 
   String? _rootDataPointId;
   String? get rootDataPointId => _$this._rootDataPointId;

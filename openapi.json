@@ -23932,7 +23932,8 @@
             "type": "string"
           },
           "rating": {
-            "type": "number"
+            "type": "number",
+            "format": "double"
           },
           "rootDataPointId": {
             "type": "string"

@@ -101,7 +101,7 @@ abstract class FeedDataItem
   String? get provider;
 
   @BuiltValueField(wireName: r'rating')
-  num? get rating;
+  double? get rating;
 
   @BuiltValueField(wireName: r'rootDataPointId')
   String? get rootDataPointId;
@@ -278,7 +278,7 @@ class _$FeedDataItemSerializer implements PrimitiveSerializer<FeedDataItem> {
       yield r'rating';
       yield serializers.serialize(
         object.rating,
-        specifiedType: const FullType(num),
+        specifiedType: const FullType(double),
       );
     }
     if (object.rootDataPointId != null) {
@@ -477,8 +477,8 @@ class _$FeedDataItemSerializer implements PrimitiveSerializer<FeedDataItem> {
         case r'rating':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(num),
-          ) as num;
+            specifiedType: const FullType(double),
+          ) as double;
           result.rating = valueDes;
           break;
         case r'rootDataPointId':

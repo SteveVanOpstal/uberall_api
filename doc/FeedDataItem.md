@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **parentDataPointId** | **num** |  | [optional] 
 **priority** | **double** |  | [optional] 
 **provider** | **String** |  | [optional] 
-**rating** | **num** |  | [optional] 
+**rating** | **double** |  | [optional] 
 **rootDataPointId** | **String** |  | [optional] 
 **rootIdLink** | **String** |  | [optional] 
 **salesPartnerId** | **String** |  | [optional] 
