@@ -23931,6 +23931,9 @@
           "provider": {
             "type": "string"
           },
+          "rating": {
+            "type": "number"
+          },
           "rootDataPointId": {
             "type": "string"
           },

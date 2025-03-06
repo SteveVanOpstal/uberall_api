@@ -46,6 +46,8 @@ class _$FeedDataItem extends FeedDataItem {
   @override
   final String? provider;
   @override
+  final num? rating;
+  @override
   final String? rootDataPointId;
   @override
   final String? rootIdLink;
@@ -79,6 +81,7 @@ class _$FeedDataItem extends FeedDataItem {
       this.parentDataPointId,
       this.priority,
       this.provider,
+      this.rating,
       this.rootDataPointId,
       this.rootIdLink,
       this.salesPartnerId,
@@ -116,6 +119,7 @@ class _$FeedDataItem extends FeedDataItem {
         parentDataPointId == other.parentDataPointId &&
         priority == other.priority &&
         provider == other.provider &&
+        rating == other.rating &&
         rootDataPointId == other.rootDataPointId &&
         rootIdLink == other.rootIdLink &&
         salesPartnerId == other.salesPartnerId &&
@@ -145,6 +149,7 @@ class _$FeedDataItem extends FeedDataItem {
     _$hash = $jc(_$hash, parentDataPointId.hashCode);
     _$hash = $jc(_$hash, priority.hashCode);
     _$hash = $jc(_$hash, provider.hashCode);
+    _$hash = $jc(_$hash, rating.hashCode);
     _$hash = $jc(_$hash, rootDataPointId.hashCode);
     _$hash = $jc(_$hash, rootIdLink.hashCode);
     _$hash = $jc(_$hash, salesPartnerId.hashCode);
@@ -176,6 +181,7 @@ class _$FeedDataItem extends FeedDataItem {
           ..add('parentDataPointId', parentDataPointId)
           ..add('priority', priority)
           ..add('provider', provider)
+          ..add('rating', rating)
           ..add('rootDataPointId', rootDataPointId)
           ..add('rootIdLink', rootIdLink)
           ..add('salesPartnerId', salesPartnerId)
@@ -274,6 +280,10 @@ class FeedDataItemBuilder
   String? get provider => _$this._provider;
   set provider(String? provider) => _$this._provider = provider;
 
+  num? _rating;
+  num? get rating => _$this._rating;
+  set rating(num? rating) => _$this._rating = rating;
+
   String? _rootDataPointId;
   String? get rootDataPointId => _$this._rootDataPointId;
   set rootDataPointId(String? rootDataPointId) =>
@@ -322,6 +332,7 @@ class FeedDataItemBuilder
       _parentDataPointId = $v.parentDataPointId;
       _priority = $v.priority;
       _provider = $v.provider;
+      _rating = $v.rating;
       _rootDataPointId = $v.rootDataPointId;
       _rootIdLink = $v.rootIdLink;
       _salesPartnerId = $v.salesPartnerId;
@@ -370,6 +381,7 @@ class FeedDataItemBuilder
             parentDataPointId: parentDataPointId,
             priority: priority,
             provider: provider,
+            rating: rating,
             rootDataPointId: rootDataPointId,
             rootIdLink: rootIdLink,
             salesPartnerId: salesPartnerId,

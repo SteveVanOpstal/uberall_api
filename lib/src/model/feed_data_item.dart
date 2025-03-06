@@ -34,6 +34,7 @@ part 'feed_data_item.g.dart';
 /// * [parentDataPointId]
 /// * [priority]
 /// * [provider]
+/// * [rating]
 /// * [rootDataPointId]
 /// * [rootIdLink]
 /// * [salesPartnerId]
@@ -98,6 +99,9 @@ abstract class FeedDataItem
 
   @BuiltValueField(wireName: r'provider')
   String? get provider;
+
+  @BuiltValueField(wireName: r'rating')
+  num? get rating;
 
   @BuiltValueField(wireName: r'rootDataPointId')
   String? get rootDataPointId;
@@ -268,6 +272,13 @@ class _$FeedDataItemSerializer implements PrimitiveSerializer<FeedDataItem> {
       yield serializers.serialize(
         object.provider,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.rating != null) {
+      yield r'rating';
+      yield serializers.serialize(
+        object.rating,
+        specifiedType: const FullType(num),
       );
     }
     if (object.rootDataPointId != null) {
@@ -462,6 +473,13 @@ class _$FeedDataItemSerializer implements PrimitiveSerializer<FeedDataItem> {
             specifiedType: const FullType(String),
           ) as String;
           result.provider = valueDes;
+          break;
+        case r'rating':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.rating = valueDes;
           break;
         case r'rootDataPointId':
           final valueDes = serializers.deserialize(

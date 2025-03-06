@@ -727,9 +727,3 @@ lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
 lib/uberall_api.dart
-test/feed_data_item_author_test.dart
-test/feed_data_item_metrics_test.dart
-test/feed_data_item_test.dart
-test/feed_post200_response_test.dart
-test/feed_post_request_pagination_options_test.dart
-test/feed_post_request_test.dart
