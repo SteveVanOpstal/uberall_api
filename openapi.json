@@ -23922,7 +23922,7 @@
             "type": "string"
           },
           "parentDataPointId": {
-            "type": "number"
+            "type": "string"
           },
           "priority": {
             "type": "number",

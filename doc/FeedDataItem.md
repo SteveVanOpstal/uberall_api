@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **nativeId** | **String** |  | [optional] 
 **nativeLink** | **String** |  | [optional] 
 **nativeVenueLink** | **String** |  | [optional] 
-**parentDataPointId** | **num** |  | [optional] 
+**parentDataPointId** | **String** |  | [optional] 
 **priority** | **double** |  | [optional] 
 **provider** | **String** |  | [optional] 
 **rating** | **double** |  | [optional] 

@@ -40,7 +40,7 @@ class _$FeedDataItem extends FeedDataItem {
   @override
   final String? nativeVenueLink;
   @override
-  final num? parentDataPointId;
+  final String? parentDataPointId;
   @override
   final double? priority;
   @override
@@ -267,9 +267,9 @@ class FeedDataItemBuilder
   set nativeVenueLink(String? nativeVenueLink) =>
       _$this._nativeVenueLink = nativeVenueLink;
 
-  num? _parentDataPointId;
-  num? get parentDataPointId => _$this._parentDataPointId;
-  set parentDataPointId(num? parentDataPointId) =>
+  String? _parentDataPointId;
+  String? get parentDataPointId => _$this._parentDataPointId;
+  set parentDataPointId(String? parentDataPointId) =>
       _$this._parentDataPointId = parentDataPointId;
 
   double? _priority;

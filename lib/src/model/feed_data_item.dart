@@ -92,7 +92,7 @@ abstract class FeedDataItem
   String? get nativeVenueLink;
 
   @BuiltValueField(wireName: r'parentDataPointId')
-  num? get parentDataPointId;
+  String? get parentDataPointId;
 
   @BuiltValueField(wireName: r'priority')
   double? get priority;
@@ -257,7 +257,7 @@ class _$FeedDataItemSerializer implements PrimitiveSerializer<FeedDataItem> {
       yield r'parentDataPointId';
       yield serializers.serialize(
         object.parentDataPointId,
-        specifiedType: const FullType(num),
+        specifiedType: const FullType(String),
       );
     }
     if (object.priority != null) {
@@ -456,8 +456,8 @@ class _$FeedDataItemSerializer implements PrimitiveSerializer<FeedDataItem> {
         case r'parentDataPointId':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(num),
-          ) as num;
+            specifiedType: const FullType(String),
+          ) as String;
           result.parentDataPointId = valueDes;
           break;
         case r'priority':
