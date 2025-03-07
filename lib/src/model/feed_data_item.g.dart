@@ -42,6 +42,8 @@ class _$FeedDataItem extends FeedDataItem {
   @override
   final String? parentDataPointId;
   @override
+  final String? parentIdLink;
+  @override
   final double? priority;
   @override
   final String? provider;
@@ -79,6 +81,7 @@ class _$FeedDataItem extends FeedDataItem {
       this.nativeLink,
       this.nativeVenueLink,
       this.parentDataPointId,
+      this.parentIdLink,
       this.priority,
       this.provider,
       this.rating,
@@ -117,6 +120,7 @@ class _$FeedDataItem extends FeedDataItem {
         nativeLink == other.nativeLink &&
         nativeVenueLink == other.nativeVenueLink &&
         parentDataPointId == other.parentDataPointId &&
+        parentIdLink == other.parentIdLink &&
         priority == other.priority &&
         provider == other.provider &&
         rating == other.rating &&
@@ -147,6 +151,7 @@ class _$FeedDataItem extends FeedDataItem {
     _$hash = $jc(_$hash, nativeLink.hashCode);
     _$hash = $jc(_$hash, nativeVenueLink.hashCode);
     _$hash = $jc(_$hash, parentDataPointId.hashCode);
+    _$hash = $jc(_$hash, parentIdLink.hashCode);
     _$hash = $jc(_$hash, priority.hashCode);
     _$hash = $jc(_$hash, provider.hashCode);
     _$hash = $jc(_$hash, rating.hashCode);
@@ -179,6 +184,7 @@ class _$FeedDataItem extends FeedDataItem {
           ..add('nativeLink', nativeLink)
           ..add('nativeVenueLink', nativeVenueLink)
           ..add('parentDataPointId', parentDataPointId)
+          ..add('parentIdLink', parentIdLink)
           ..add('priority', priority)
           ..add('provider', provider)
           ..add('rating', rating)
@@ -272,6 +278,10 @@ class FeedDataItemBuilder
   set parentDataPointId(String? parentDataPointId) =>
       _$this._parentDataPointId = parentDataPointId;
 
+  String? _parentIdLink;
+  String? get parentIdLink => _$this._parentIdLink;
+  set parentIdLink(String? parentIdLink) => _$this._parentIdLink = parentIdLink;
+
   double? _priority;
   double? get priority => _$this._priority;
   set priority(double? priority) => _$this._priority = priority;
@@ -330,6 +340,7 @@ class FeedDataItemBuilder
       _nativeLink = $v.nativeLink;
       _nativeVenueLink = $v.nativeVenueLink;
       _parentDataPointId = $v.parentDataPointId;
+      _parentIdLink = $v.parentIdLink;
       _priority = $v.priority;
       _provider = $v.provider;
       _rating = $v.rating;
@@ -379,6 +390,7 @@ class FeedDataItemBuilder
             nativeLink: nativeLink,
             nativeVenueLink: nativeVenueLink,
             parentDataPointId: parentDataPointId,
+            parentIdLink: parentIdLink,
             priority: priority,
             provider: provider,
             rating: rating,

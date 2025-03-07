@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **nativeLink** | **String** |  | [optional] 
 **nativeVenueLink** | **String** |  | [optional] 
 **parentDataPointId** | **String** |  | [optional] 
+**parentIdLink** | **String** |  | [optional] 
 **priority** | **double** |  | [optional] 
 **provider** | **String** |  | [optional] 
 **rating** | **double** |  | [optional] 
