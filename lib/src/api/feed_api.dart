@@ -34,7 +34,7 @@ class FeedApi {
   /// Returns a [Future] containing a [Response] with a [FeedPost200Response] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<FeedPost200Response>> feedIdChildrenGet({
-    String? id,
+    required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -42,7 +42,10 @@ class FeedApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/feed/{id}/children';
+    final _path = r'/feed/{id}/children'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -55,15 +58,9 @@ class FeedApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      if (id != null)
-        r'id': encodeQueryParameter(_serializers, id, const FullType(String)),
-    };
-
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
-      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -116,7 +113,7 @@ class FeedApi {
   /// Returns a [Future] containing a [Response] with a [FeedDataItem] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<FeedDataItem>> feedIdGet({
-    String? id,
+    required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -124,7 +121,10 @@ class FeedApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/feed/{id}';
+    final _path = r'/feed/{id}'.replaceAll(
+        '{' r'id' '}',
+        encodeQueryParameter(_serializers, id, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -137,15 +137,9 @@ class FeedApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      if (id != null)
-        r'id': encodeQueryParameter(_serializers, id, const FullType(String)),
-    };
-
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
-      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
