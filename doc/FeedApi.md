@@ -10,6 +10,7 @@ All URIs are relative to *https://uberall.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**feedIdChildrenGet**](FeedApi.md#feedidchildrenget) | **GET** /feed/{id}/children | 
+[**feedIdGet**](FeedApi.md#feedidget) | **GET** /feed/{id} | 
 [**feedPost**](FeedApi.md#feedpost) | **POST** /feed | 
 
 
@@ -38,6 +39,43 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**FeedPost200Response**](FeedPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **feedIdGet**
+> FeedDataItem feedIdGet()
+
+
+
+### Example
+```dart
+import 'package:uberall_api/api.dart';
+
+final api = UberallApi().getFeedApi();
+
+try {
+    final response = api.feedIdGet();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling FeedApi->feedIdGet: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**FeedDataItem**](FeedDataItem.md)
 
 ### Authorization
 

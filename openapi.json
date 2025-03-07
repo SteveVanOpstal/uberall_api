@@ -14959,6 +14959,33 @@
         }
       }
     },
+    "/feed/{id}": {
+      "get": {
+        "tags": [
+          "Feed"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedDataItem"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "401": {
+            "description": "Not Authorized"
+          },
+          "400": {
+            "description": "Invalid or Missing Parameter"
+          }
+        }
+      }
+    },
     "/feed/{id}/children": {
       "get": {
         "tags": [

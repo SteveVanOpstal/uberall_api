@@ -171,6 +171,7 @@ Class | Method | HTTP request | Description
 [*EventsApi*](doc/EventsApi.md) | [**patchEventsId**](doc/EventsApi.md#patcheventsid) | **PATCH** /events/{id} | Update an Event
 [*EventsApi*](doc/EventsApi.md) | [**postEvents**](doc/EventsApi.md#postevents) | **POST** /events | Create an Event
 [*FeedApi*](doc/FeedApi.md) | [**feedIdChildrenGet**](doc/FeedApi.md#feedidchildrenget) | **GET** /feed/{id}/children | 
+[*FeedApi*](doc/FeedApi.md) | [**feedIdGet**](doc/FeedApi.md#feedidget) | **GET** /feed/{id} | 
 [*FeedApi*](doc/FeedApi.md) | [**feedPost**](doc/FeedApi.md#feedpost) | **POST** /feed | 
 [*LabelsApi*](doc/LabelsApi.md) | [**getLabels**](doc/LabelsApi.md#getlabels) | **GET** /labels | Get All Labels
 [*ListingsApi*](doc/ListingsApi.md) | [**deleteLocationsIdFacebookPage**](doc/ListingsApi.md#deletelocationsidfacebookpage) | **DELETE** /locations/{id}/facebook/page | Disconnect Location&#39;&#39;s Facebook Page
