@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **feedIdChildrenGet**
-> FeedPost200Response feedIdChildrenGet()
+> FeedPost200Response feedIdChildrenGet(id)
 
 
 
@@ -24,9 +24,10 @@ Method | HTTP request | Description
 import 'package:uberall_api/api.dart';
 
 final api = UberallApi().getFeedApi();
+final String id = id_example; // String | 
 
 try {
-    final response = api.feedIdChildrenGet();
+    final response = api.feedIdChildrenGet(id);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling FeedApi->feedIdChildrenGet: $e\n');
@@ -34,7 +35,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | [optional] 
 
 ### Return type
 
