@@ -52,7 +52,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **feedIdGet**
-> FeedDataItem feedIdGet()
+> FeedDataItem feedIdGet(id)
 
 
 
@@ -61,9 +61,10 @@ No authorization required
 import 'package:uberall_api/api.dart';
 
 final api = UberallApi().getFeedApi();
+final String id = id_example; // String | 
 
 try {
-    final response = api.feedIdGet();
+    final response = api.feedIdGet(id);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling FeedApi->feedIdGet: $e\n');
@@ -71,7 +72,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | [optional] 
 
 ### Return type
 
