@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **salesPartnerId** | **String** |  | [optional] 
 **sortDate** | [**DateTime**](DateTime.md) |  | [optional] 
 **status** | **String** |  | [optional] 
+**media** | [**BuiltList&lt;FeedDataItemMediaInner&gt;**](FeedDataItemMediaInner.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

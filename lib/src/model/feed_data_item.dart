@@ -6,6 +6,7 @@
 import 'package:uberall_api/src/model/feed_data_item_author.dart';
 import 'package:uberall_api/src/model/feed_data_item_metrics.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:uberall_api/src/model/feed_data_item_media_inner.dart';
 import 'package:uberall_api/src/model/store_finder_response.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -41,6 +42,7 @@ part 'feed_data_item.g.dart';
 /// * [salesPartnerId]
 /// * [sortDate]
 /// * [status]
+/// * [media]
 @BuiltValue()
 abstract class FeedDataItem
     implements Built<FeedDataItem, FeedDataItemBuilder> {
@@ -121,6 +123,9 @@ abstract class FeedDataItem
 
   @BuiltValueField(wireName: r'status')
   String? get status;
+
+  @BuiltValueField(wireName: r'media')
+  BuiltList<FeedDataItemMediaInner>? get media;
 
   FeedDataItem._();
 
@@ -325,6 +330,14 @@ class _$FeedDataItemSerializer implements PrimitiveSerializer<FeedDataItem> {
       yield serializers.serialize(
         object.status,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.media != null) {
+      yield r'media';
+      yield serializers.serialize(
+        object.media,
+        specifiedType:
+            const FullType(BuiltList, [FullType(FeedDataItemMediaInner)]),
       );
     }
   }
@@ -533,6 +546,14 @@ class _$FeedDataItemSerializer implements PrimitiveSerializer<FeedDataItem> {
             specifiedType: const FullType(String),
           ) as String;
           result.status = valueDes;
+          break;
+        case r'media':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType:
+                const FullType(BuiltList, [FullType(FeedDataItemMediaInner)]),
+          ) as BuiltList<FeedDataItemMediaInner>;
+          result.media.replace(valueDes);
           break;
         default:
           unhandled.add(key);

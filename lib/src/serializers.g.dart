@@ -293,6 +293,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(FeaturesResponseWrapperStatusEnum.serializer)
       ..add(FeedDataItem.serializer)
       ..add(FeedDataItemAuthor.serializer)
+      ..add(FeedDataItemMediaInner.serializer)
       ..add(FeedDataItemMetrics.serializer)
       ..add(FeedItem.serializer)
       ..add(FeedItemTypeEnum.serializer)
@@ -1404,14 +1405,18 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
-      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(DirectoryCategory)]),
           () => new ListBuilder<DirectoryCategory>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(JsonObject)]),
           () => new ListBuilder<JsonObject>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(FeedDataItemMediaInner)]),
+          () => new ListBuilder<FeedDataItemMediaInner>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

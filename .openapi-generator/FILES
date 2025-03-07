@@ -133,6 +133,7 @@ doc/FeaturesResponseWrapper.md
 doc/FeedApi.md
 doc/FeedDataItem.md
 doc/FeedDataItemAuthor.md
+doc/FeedDataItemMediaInner.md
 doc/FeedDataItemMetrics.md
 doc/FeedItem.md
 doc/FeedItemWrapper.md
@@ -519,6 +520,7 @@ lib/src/model/features_response.dart
 lib/src/model/features_response_wrapper.dart
 lib/src/model/feed_data_item.dart
 lib/src/model/feed_data_item_author.dart
+lib/src/model/feed_data_item_media_inner.dart
 lib/src/model/feed_data_item_metrics.dart
 lib/src/model/feed_item.dart
 lib/src/model/feed_item_wrapper.dart
@@ -727,3 +729,4 @@ lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
 lib/uberall_api.dart
+test/feed_data_item_media_inner_test.dart

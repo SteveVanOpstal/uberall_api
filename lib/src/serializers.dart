@@ -130,6 +130,7 @@ import 'package:uberall_api/src/model/features_response.dart';
 import 'package:uberall_api/src/model/features_response_wrapper.dart';
 import 'package:uberall_api/src/model/feed_data_item.dart';
 import 'package:uberall_api/src/model/feed_data_item_author.dart';
+import 'package:uberall_api/src/model/feed_data_item_media_inner.dart';
 import 'package:uberall_api/src/model/feed_data_item_metrics.dart';
 import 'package:uberall_api/src/model/feed_item.dart';
 import 'package:uberall_api/src/model/feed_item_wrapper.dart';
@@ -456,6 +457,7 @@ part 'serializers.g.dart';
   FeaturesResponseWrapper,
   FeedDataItem,
   FeedDataItemAuthor,
+  FeedDataItemMediaInner,
   FeedDataItemMetrics,
   FeedItem,
   FeedItemWrapper,

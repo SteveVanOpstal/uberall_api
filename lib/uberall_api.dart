@@ -163,6 +163,7 @@ export 'package:uberall_api/src/model/features_response.dart';
 export 'package:uberall_api/src/model/features_response_wrapper.dart';
 export 'package:uberall_api/src/model/feed_data_item.dart';
 export 'package:uberall_api/src/model/feed_data_item_author.dart';
+export 'package:uberall_api/src/model/feed_data_item_media_inner.dart';
 export 'package:uberall_api/src/model/feed_data_item_metrics.dart';
 export 'package:uberall_api/src/model/feed_item.dart';
 export 'package:uberall_api/src/model/feed_item_wrapper.dart';

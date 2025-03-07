@@ -420,6 +420,7 @@ Class | Method | HTTP request | Description
  - [FeaturesResponseWrapper](doc/FeaturesResponseWrapper.md)
  - [FeedDataItem](doc/FeedDataItem.md)
  - [FeedDataItemAuthor](doc/FeedDataItemAuthor.md)
+ - [FeedDataItemMediaInner](doc/FeedDataItemMediaInner.md)
  - [FeedDataItemMetrics](doc/FeedDataItemMetrics.md)
  - [FeedItem](doc/FeedItem.md)
  - [FeedItemWrapper](doc/FeedItemWrapper.md)

@@ -59,6 +59,8 @@ class _$FeedDataItem extends FeedDataItem {
   final DateTime? sortDate;
   @override
   final String? status;
+  @override
+  final BuiltList<FeedDataItemMediaInner>? media;
 
   factory _$FeedDataItem([void Function(FeedDataItemBuilder)? updates]) =>
       (new FeedDataItemBuilder()..update(updates))._build();
@@ -89,7 +91,8 @@ class _$FeedDataItem extends FeedDataItem {
       this.rootIdLink,
       this.salesPartnerId,
       this.sortDate,
-      this.status})
+      this.status,
+      this.media})
       : super._();
 
   @override
@@ -128,7 +131,8 @@ class _$FeedDataItem extends FeedDataItem {
         rootIdLink == other.rootIdLink &&
         salesPartnerId == other.salesPartnerId &&
         sortDate == other.sortDate &&
-        status == other.status;
+        status == other.status &&
+        media == other.media;
   }
 
   @override
@@ -160,6 +164,7 @@ class _$FeedDataItem extends FeedDataItem {
     _$hash = $jc(_$hash, salesPartnerId.hashCode);
     _$hash = $jc(_$hash, sortDate.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, media.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -192,7 +197,8 @@ class _$FeedDataItem extends FeedDataItem {
           ..add('rootIdLink', rootIdLink)
           ..add('salesPartnerId', salesPartnerId)
           ..add('sortDate', sortDate)
-          ..add('status', status))
+          ..add('status', status)
+          ..add('media', media))
         .toString();
   }
 }
@@ -316,6 +322,12 @@ class FeedDataItemBuilder
   String? get status => _$this._status;
   set status(String? status) => _$this._status = status;
 
+  ListBuilder<FeedDataItemMediaInner>? _media;
+  ListBuilder<FeedDataItemMediaInner> get media =>
+      _$this._media ??= new ListBuilder<FeedDataItemMediaInner>();
+  set media(ListBuilder<FeedDataItemMediaInner>? media) =>
+      _$this._media = media;
+
   FeedDataItemBuilder() {
     FeedDataItem._defaults(this);
   }
@@ -349,6 +361,7 @@ class FeedDataItemBuilder
       _salesPartnerId = $v.salesPartnerId;
       _sortDate = $v.sortDate;
       _status = $v.status;
+      _media = $v.media?.toBuilder();
       _$v = null;
     }
     return this;
@@ -399,6 +412,7 @@ class FeedDataItemBuilder
             salesPartnerId: salesPartnerId,
             sortDate: sortDate,
             status: status,
+            media: _media?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -413,6 +427,9 @@ class FeedDataItemBuilder
 
         _$failedField = 'metrics';
         _metrics?.build();
+
+        _$failedField = 'media';
+        _media?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'FeedDataItem', _$failedField, e.toString());

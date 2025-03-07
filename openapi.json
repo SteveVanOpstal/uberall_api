@@ -24006,6 +24006,20 @@
           },
           "status": {
             "type": "string"
+          },
+          "media": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "image": {
+                  "type": "string"
+                },
+                "dataPointId": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
