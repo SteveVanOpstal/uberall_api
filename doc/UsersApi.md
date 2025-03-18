@@ -387,7 +387,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patchUserMe**
-> UserWrapper patchUserMe()
+> UserWrapper patchUserMe(user)
 
 Update the current user
 
@@ -406,9 +406,10 @@ import 'package:uberall_api/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('accessToken').apiKeyPrefix = 'Bearer';
 
 final api = UberallApi().getUsersApi();
+final User user = ; // User | 
 
 try {
-    final response = api.patchUserMe();
+    final response = api.patchUserMe(user);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling UsersApi->patchUserMe: $e\n');
@@ -416,7 +417,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user** | [**User**](User.md)|  | 
 
 ### Return type
 
@@ -428,7 +432,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
