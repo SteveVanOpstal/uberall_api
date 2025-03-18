@@ -14447,6 +14447,16 @@
         "summary": "Update the current user",
         "description": "Update the current user",
         "operationId": "patch_user_me",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Successfully edited user",
